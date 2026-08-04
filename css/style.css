@@ -8,7 +8,7 @@ body{
     padding:120px 20px;
     text-align:center;
 }
-
+<link rel="stylesheet" href="css/style.css">
 .hero h2{
     font-size:42px;
 }
