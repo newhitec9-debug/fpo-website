@@ -1,37 +1,156 @@
-body{
-    background:red;
-}body{
-    margin:0;
-    font-family:Arial,sans-serif;
-}
-.hero{
-    background:linear-gradient(to right,#2E7D32,#66BB6A);
-    color:white;
-    padding:120px 20px;
-    text-align:center;
-}
-<link rel="stylesheet" href="css/style.css">
-.hero h2{
-    font-size:42px;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-.hero p{
-    font-size:22px;
-    margin:20px 0;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bundelkhand Organic Farmer Producer Company Limited</title>
 
-button{
-    padding:15px 35px;
-    background:#FFC107;
-    border:none;
-    border-radius:8px;
-    margin:10px;
-    font-size:18px;
-    cursor:pointer;
-    transition:.3s;
-}
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-button:hover{
-    background:#FF9800;
-    transform:scale(1.05);
-}
+<body>
+
+    <!-- Header -->
+    <header class="top-header">
+
+        <div class="logo">
+
+            <img src="images/logo.png" alt="FPO Logo">
+
+            <div>
+                <h1>Bundelkhand Organic Farmer Producer Company Limited</h1>
+                <p>🌾 From Farmers to Your Home</p>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <a href="index.html">🏠 Home</a>
+
+        <a href="about.html">🌿 About</a>
+
+        <a href="products.html">🛒 Products</a>
+
+        <a href="farmers.html">👨‍🌾 Kisan Corner</a>
+
+        <a href="membership.html">📝 Membership</a>
+
+        <a href="bulk-order.html">📦 Bulk Order</a>
+
+        <a href="gallery.html">📷 Gallery</a>
+
+        <a href="contact.html">📞 Contact</a>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <h1>🌾 Welcome to Bundelkhand Organic Farmer Producer Company Limited</h1>
+
+        <h2>Healthy Farmers • Healthy Food • Healthy Future</h2>
+
+        <p>
+            हम किसानों द्वारा उगाए गए शुद्ध जैविक उत्पाद सीधे आपके घर तक पहुँचाते हैं।
+            <br><br>
+            We deliver fresh organic products directly from our farmers.
+        </p>
+
+        <a href="products.html">
+            <button>🛒 Shop Now</button>
+        </a>
+
+        <a href="farmers.html">
+            <button>👨‍🌾 Join Our FPO</button>
+        </a>
+
+    </section>
+
+    <!-- Products -->
+
+    <section class="products">
+
+        <h2>🌾 Featured Organic Products</h2>
+
+        <div class="product-container">
+
+            <div class="card">
+
+                <img src="images/wheat.jpg" alt="Organic Wheat">
+
+                <h3>Organic Wheat</h3>
+
+                <p>100% Natural Wheat</p>
+
+                <button>Buy Now</button>
+
+            </div>
+
+            <div class="card">
+
+                <img src="images/chana.jpg" alt="Organic Chana">
+
+                <h3>Organic Chana</h3>
+
+                <p>Chemical Free Gram</p>
+
+                <button>Buy Now</button>
+
+            </div>
+
+            <div class="card">
+
+                <img src="images/mustard.jpg" alt="Mustard">
+
+                <h3>Mustard Seeds</h3>
+
+                <p>Pure Organic Mustard</p>
+
+                <button>Buy Now</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+
+    <section class="about">
+
+        <h2>About Our FPO</h2>
+
+        <p>
+
+            Bundelkhand Organic Farmer Producer Company Limited किसानों द्वारा संचालित
+            एक Farmer Producer Organization (FPO) है जिसका उद्देश्य किसानों को उचित
+            मूल्य, आधुनिक कृषि सेवाएँ तथा जैविक उत्पादों का बड़ा बाजार उपलब्ध कराना है।
+
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Bundelkhand Organic Farmer Producer Company Limited
+
+        </p>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
