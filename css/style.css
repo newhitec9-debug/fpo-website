@@ -2,3 +2,34 @@ body{
     margin:0;
     font-family:Arial,sans-serif;
 }
+.hero{
+    background:linear-gradient(to right,#2E7D32,#66BB6A);
+    color:white;
+    padding:120px 20px;
+    text-align:center;
+}
+
+.hero h2{
+    font-size:42px;
+}
+
+.hero p{
+    font-size:22px;
+    margin:20px 0;
+}
+
+button{
+    padding:15px 35px;
+    background:#FFC107;
+    border:none;
+    border-radius:8px;
+    margin:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#FF9800;
+    transform:scale(1.05);
+}
