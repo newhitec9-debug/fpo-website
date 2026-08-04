@@ -1,5 +1,70 @@
 <script src="js/script.js"></script>
-</body>
+</body>body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4fff4;
+}
+
+header{
+    background:#2E7D32;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+nav{
+    background:#1B5E20;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:10px;
+    padding:10px 15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:#F9A825;
+    color:black;
+    border-radius:5px;
+}
+
+.hero{
+    background:#E8F5E9;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    color:#2E7D32;
+}
+
+.hero button{
+    background:#F9A825;
+    color:black;
+    border:none;
+    padding:15px 30px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.hero button:hover{
+    background:#FFC107;
+}
+
+footer{
+    background:#2E7D32;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
 </html>
 .top-header{
 background:#2E7D32;
