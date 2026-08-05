@@ -1,3 +1,38 @@
-FPO-Website
-│
-├── login.html   ✅
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FPO Login</title>
+<link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+<div class="login-container">
+
+<h1>🌾 Bundelkhand Organic FPO</h1>
+
+<div class="tabs">
+<button id="farmerBtn" class="active">Farmer Login</button>
+<button id="adminBtn">Admin Login</button>
+</div>
+
+<form id="loginForm">
+
+<input type="text" id="username" placeholder="Username" required>
+
+<input type="password" id="password" placeholder="Password" required>
+
+<button type="submit">Login</button>
+
+</form>
+
+<p id="message"></p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
