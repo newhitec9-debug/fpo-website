@@ -205,6 +205,11 @@ footer{
 
 .logo{
     flex-direction:column;
+    text-align:center;
+}
+
+.logo-left{
+    flex-direction:column;
 }
 
 .logo h1{
@@ -222,6 +227,13 @@ footer{
 nav a{
     width:100%;
     text-align:center;
+}
+
+.login-btn{
+    margin-top:15px;
+}
+
+}
 }
 
 }
