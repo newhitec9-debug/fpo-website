@@ -1,7 +1,8 @@
 alert("🎉 Welcome to Bundelkhand Organic Farmer Producer Company Limited");
+
 document.addEventListener("DOMContentLoaded", function () {
 
-    const form = document.querySelector("form");
+    const form = document.getElementById("farmerForm");
 
     if(form){
 
@@ -9,9 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             e.preventDefault();
 
-            let mobile = document.getElementById("mobile").value;
-            let aadhaar = document.getElementById("aadhaar").value;
-            let name = document.getElementById("name").value;
+            let name = document.getElementById("name").value.trim();
+            let mobile = document.getElementById("mobile").value.trim();
+            let aadhaar = document.getElementById("aadhaar").value.trim();
 
             if(name==""){
                 alert("Please Enter Farmer Name");
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             alert("🎉 Farmer Registration Successful!");
+
         });
 
     }
