@@ -63,53 +63,82 @@ Become a Shareholder Member of Bundelkhand Organic Farmer Producer Company Limit
 <input type="text" id="father" placeholder="Enter Father Name" required><br><br>
 
 <label>Mobile Number</label><br>
-<input type="tel" id="mobile" placeholder="10 Digit Mobile Number" required><br><br>
+<input type="tel" id="mobile" placeholder="Enter 10 Digit Mobile Number" maxlength="10" required><br><br>
 
 <label>Aadhaar Number</label><br>
-<input type="text" id="aadhaar" placeholder="12 Digit Aadhaar Number" required><br><br>
+<input type="text" id="aadhaar" placeholder="Enter 12 Digit Aadhaar Number" maxlength="12" required><br><br>
 
 <label>PAN Number</label><br>
-<input type="text" id="pan" placeholder="PAN Number"><br><br>
+<input type="text" id="pan" placeholder="Enter PAN Number"><br><br>
+
+<label>Farmer Registration Number</label><br>
+<input type="text" id="farmerid" placeholder="UP Farmer Registration Number"><br><br>
 
 <label>Village</label><br>
-<input type="text" id="village" placeholder="Village Name"><br><br>
-<label>Gram Panchayat</label><br>
-<input type="text" id="panchayat" placeholder="Enter Gram Panchayat"><br><br>
+<input type="text" id="village" placeholder="Village Name" required><br><br>
 
-<label>Block / Development Block</label><br>
-<input type="text" id="block" placeholder="Enter Block Name"><br><br>
+<label>Gram Panchayat</label><br>
+<input type="text" id="panchayat" placeholder="Gram Panchayat"><br><br>
+
+<label>Block</label><br>
+<input type="text" id="block" placeholder="Block Name"><br><br>
 
 <label>District</label><br>
-<input type="text" id="district" placeholder="Enter District Name"><br><br>
+<input type="text" id="district" placeholder="District Name"><br><br>
 
 <label>State</label><br>
-<input type="text" id="state" value="Uttar Pradesh"><br><br>
+<input type="text" id="state" value="Uttar Pradesh" readonly><br><br>
 
-<label>Total Land Holding (Acres / Hectares)</label><br>
+<label>Total Land Holding (Acres/Hectares)</label><br>
 <input type="text" id="land" placeholder="Example: 2.5 Acres"><br><br>
 
 <label>Main Crops</label><br>
-<input type="text" id="crops" placeholder="Wheat, Chana, Mustard"><br><br>
+<input type="text" id="crop" placeholder="Wheat, Chana, Mustard"><br><br>
 
 <label>Irrigation Source</label><br>
+
 <select id="irrigation">
-    <option>Tube Well</option>
-    <option>Canal</option>
-    <option>Pond</option>
-    <option>Rainfed</option>
-    <option>Other</option>
-</select><br><br>
+
+<option>Tube Well</option>
+<option>Canal</option>
+<option>Pond</option>
+<option>Rainfed</option>
+<option>Drip Irrigation</option>
+<option>Sprinkler</option>
+<option>Other</option>
+
+</select>
+
+<br><br>
+
+<label>Bank Name</label><br>
+<input type="text" id="bank" placeholder="Bank Name"><br><br>
+
+<label>Account Number</label><br>
+<input type="text" id="account" placeholder="Account Number"><br><br>
+
+<label>IFSC Code</label><br>
+<input type="text" id="ifsc" placeholder="IFSC Code"><br><br>
+
 <label>Membership Share Amount (₹)</label><br>
-<input type="number" id="share" value=""><br><br>
+<input type="number" id="share" value="500" readonly><br><br>
 
-<label>Upload Photo</label><br>
-<input type="file"><br><br>
+<label>Upload Passport Size Photo</label><br>
+<input type="file" accept="image/*"><br><br>
 
-<label>Upload Aadhaar</label><br>
-<input type="file"><br><br>
+<label>Upload Aadhaar Card</label><br>
+<input type="file" accept=".jpg,.jpeg,.png,.pdf"><br><br>
 
-<label>Upload PAN</label><br>
-<input type="file"><br><br>
+<label>Upload PAN Card</label><br>
+<input type="file" accept=".jpg,.jpeg,.png,.pdf"><br><br>
+
+<input type="checkbox" id="agree" required>
+
+<label for="agree">
+मैं घोषणा करता/करती हूँ कि मेरे द्वारा दी गई सभी जानकारी सत्य एवं सही है।
+</label>
+
+<br><br>
 
 <button type="submit">
 ✅ Submit Membership
@@ -129,15 +158,30 @@ Become a Shareholder Member of Bundelkhand Organic Farmer Producer Company Limit
 
 <script>
 
-document.getElementById("membershipForm").addEventListener("submit",function(e){
+document.getElementById("membershipForm").addEventListener("submit", function(e){
 
 e.preventDefault();
-<input type="checkbox" required>
-<label>
-मैं घोषणा करता/करती हूँ कि मेरे द्वारा दी गई सभी जानकारी सही है।
-</label>
-<br><br>
-alert("🎉 Membership Application Submitted Successfully!");
+
+let mobile=document.getElementById("mobile").value;
+let aadhaar=document.getElementById("aadhaar").value;
+let name=document.getElementById("name").value;
+
+if(name==""){
+alert("Please Enter Farmer Name");
+return;
+}
+
+if(mobile.length!=10){
+alert("Please Enter Valid 10 Digit Mobile Number");
+return;
+}
+
+if(aadhaar.length!=12){
+alert("Please Enter Valid 12 Digit Aadhaar Number");
+return;
+}
+
+alert("🎉 Congratulations!\n\nYour FPO Membership Application has been Submitted Successfully.");
 
 });
 
