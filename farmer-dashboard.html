@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
 <title>Farmer Dashboard</title>
 
 <style>
@@ -31,6 +38,7 @@ font-size:32px;
 
 header p{
 margin-top:5px;
+font-size:18px;
 }
 
 .container{
@@ -90,19 +98,21 @@ background:#1B5E20;
 
 .logout{
 text-align:center;
-margin-top:30px;
+margin-top:35px;
 }
 
-.logout a{
-background:red;
+.logout button{
+background:#d32f2f;
 color:white;
-padding:12px 25px;
-text-decoration:none;
-border-radius:5px;
+border:none;
+padding:12px 30px;
+font-size:18px;
+border-radius:6px;
+cursor:pointer;
 }
 
-.logout a:hover{
-background:darkred;
+.logout button:hover{
+background:#b71c1c;
 }
 
 footer{
@@ -118,11 +128,21 @@ padding:15px;
 </head>
 
 <body>
+
 <script>
+
 if(localStorage.getItem("user")!="farmer"){
-    window.location.replace("login.html");
+window.location.replace("login.html");
 }
+
+history.pushState(null,null,location.href);
+
+window.onpopstate=function(){
+history.go(1);
+}
+
 </script>
+
 <header>
 
 <h1>👨‍🌾 Farmer Dashboard</h1>
@@ -138,8 +158,11 @@ if(localStorage.getItem("user")!="farmer"){
 <h2>Welcome Farmer</h2>
 
 <p>
+
 यह आपका व्यक्तिगत Dashboard है।
-यहाँ से आप अपनी प्रोफ़ाइल, सदस्यता, उत्पाद और सरकारी योजनाओं की जानकारी देख सकते हैं।
+
+यहाँ से आप अपनी प्रोफ़ाइल, सदस्यता, उत्पाद, मौसम, मंडी भाव तथा सरकारी योजनाओं की जानकारी देख सकते हैं।
+
 </p>
 
 </div>
@@ -185,14 +208,8 @@ if(localStorage.getItem("user")!="farmer"){
 </div>
 
 <div class="logout">
-<a href="#" onclick="logout()">Logout</a>
 
-<script>
-function logout(){
-    localStorage.removeItem("user");
-    window.location.replace("login.html");
-}
-</script>
+<button onclick="logout()">Logout</button>
 
 </div>
 
@@ -204,5 +221,20 @@ function logout(){
 
 </footer>
 
+<script>
+
+function logout(){
+
+localStorage.removeItem("user");
+
+history.replaceState(null,null,"login.html");
+
+window.location.replace("login.html");
+
+}
+
+</script>
+
 </body>
+
 </html>
