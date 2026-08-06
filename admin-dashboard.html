@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Dashboard</title>
+
+<title>Admin Dashboard | Bundelkhand Organic FPO</title>
 
 <style>
 
@@ -14,195 +17,407 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
+
 body{
 background:#f4fff4;
 }
 
+
+/* Header */
+
 header{
+
 background:#1B5E20;
 color:white;
-padding:20px;
+padding:25px;
 text-align:center;
+
 }
+
 
 header h1{
+
 font-size:32px;
+
 }
 
+
+/* Container */
+
 .container{
+
 max-width:1200px;
 margin:30px auto;
 padding:20px;
+
 }
+
+
+/* Welcome */
 
 .welcome{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,.15);
-margin-bottom:25px;
-}
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
 background:white;
 padding:25px;
 border-radius:10px;
-text-align:center;
-box-shadow:0 0 10px rgba(0,0,0,.15);
-transition:.3s;
+box-shadow:0 0 10px #ccc;
+margin-bottom:30px;
+
 }
+
+
+/* Cards */
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+
+}
+
+
+.card{
+
+background:white;
+padding:25px;
+text-align:center;
+border-radius:10px;
+box-shadow:0 0 10px #ccc;
+transition:.3s;
+
+}
+
 
 .card:hover{
+
 transform:translateY(-5px);
+
 }
+
 
 .card h2{
+
 color:#2E7D32;
 margin-bottom:10px;
+
 }
+
 
 .card p{
+
 margin-bottom:15px;
+
 }
+
 
 .card a{
-display:inline-block;
-padding:10px 20px;
+
 background:#2E7D32;
 color:white;
-text-decoration:none;
+padding:10px 25px;
 border-radius:5px;
+text-decoration:none;
+
 }
+
 
 .card a:hover{
+
 background:#1B5E20;
+
 }
+
+
+
+/* Logout */
 
 .logout{
+
 text-align:center;
 margin-top:30px;
+
 }
+
 
 .logout button{
+
 background:#d32f2f;
 color:white;
-padding:12px 25px;
+padding:12px 30px;
 border:none;
 border-radius:5px;
-cursor:pointer;
 font-size:16px;
+cursor:pointer;
+
 }
+
 
 .logout button:hover{
+
 background:#b71c1c;
+
 }
 
+
+
+/* Footer */
+
 footer{
-margin-top:40px;
+
 background:#2E7D32;
 color:white;
 text-align:center;
 padding:15px;
+margin-top:40px;
+
 }
 
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <script>
-// Admin Login Check
+
 if(localStorage.getItem("user")!="admin"){
-    window.location.replace("login.html");
+
+window.location.replace("login.html");
+
 }
+
 </script>
 
+
+
 <header>
+
 <h1>👨‍💼 Admin Dashboard</h1>
-<p>Bundelkhand Organic Farmer Producer Company Limited</p>
+
+<p>
+Bundelkhand Organic Farmer Producer Company Limited
+</p>
+
 </header>
+
+
+
 
 <div class="container">
 
+
+
 <div class="welcome">
-<h2>Welcome Admin</h2>
-<p>यह Admin Dashboard है। यहाँ से आप पूरी FPO Website और सदस्यों का प्रबंधन कर सकते हैं।</p>
+
+<h2>Welcome Admin 👋</h2>
+
+<p>
+यह Admin Panel है। यहाँ से आप FPO Members, Products और Orders को Manage कर सकते हैं।
+</p>
+
 </div>
+
+
+
+
 
 <div class="cards">
 
+
+
 <div class="card">
+
 <h2>👥 Total Farmers</h2>
-<p>Registered Farmers देखें।</p>
-<a href="#">Open</a>
+
+<p>
+Registered Farmers देखें।
+</p>
+
+<a href="#">
+Open
+</a>
+
 </div>
 
+
+
+
 <div class="card">
+
 <h2>📝 Membership Requests</h2>
-<p>नई सदस्यता आवेदन देखें।</p>
-<a href="#">Open</a>
+
+<p>
+नई सदस्यता आवेदन देखें।
+</p>
+
+<a href="membership-requests.html">
+Open
+</a>
+
 </div>
 
+
+
+
+
 <div class="card">
+
 <h2>📦 Products</h2>
-<p>उत्पाद जोड़ें या संपादित करें।</p>
-<a href="#">Open</a>
+
+<p>
+उत्पाद जोड़ें या Edit करें।
+</p>
+
+<a href="products.html">
+Open
+</a>
+
 </div>
 
-<div class="card">
-<h2>📰 News</h2>
-<p>कृषि समाचार प्रकाशित करें।</p>
-<a href="#">Open</a>
-</div>
+
+
+
 
 <div class="card">
+
+<h2>🛒 Orders</h2>
+
+<p>
+Customer और Bulk Orders देखें।
+</p>
+
+<a href="bulk-order.html">
+Open
+</a>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>📰 Agriculture News</h2>
+
+<p>
+कृषि समाचार जोड़ें।
+</p>
+
+<a href="#">
+Open
+</a>
+
+</div>
+
+
+
+
+
+<div class="card">
+
 <h2>🖼 Gallery</h2>
-<p>नई फोटो अपलोड करें।</p>
-<a href="#">Open</a>
+
+<p>
+नई फोटो Manage करें।
+</p>
+
+<a href="gallery.html">
+Open
+</a>
+
 </div>
 
-<div class="card">
-<h2>📞 Contact Messages</h2>
-<p>उपयोगकर्ताओं के संदेश देखें।</p>
-<a href="#">Open</a>
-</div>
+
+
+
 
 <div class="card">
+
 <h2>📊 Reports</h2>
-<p>रिपोर्ट और आँकड़े देखें।</p>
-<a href="#">Open</a>
+
+<p>
+FPO रिपोर्ट और Statistics।
+</p>
+
+<a href="#">
+Open
+</a>
+
 </div>
+
+
+
+
 
 <div class="card">
+
 <h2>⚙️ Settings</h2>
-<p>Website Settings प्रबंधित करें।</p>
-<a href="#">Open</a>
-</div>
+
+<p>
+Website Settings।
+</p>
+
+<a href="#">
+Open
+</a>
 
 </div>
+
+
+
+</div>
+
+
+
+
 
 <div class="logout">
-<button onclick="logout()">Logout</button>
-</div>
+
+<button onclick="logout()">
+
+Logout
+
+</button>
 
 </div>
+
+
+
+</div>
+
+
+
+
 
 <footer>
+
 © 2026 Bundelkhand Organic Farmer Producer Company Limited
+
 </footer>
 
+
+
+
+
 <script>
+
 function logout(){
-    localStorage.removeItem("user");
-    window.location.replace("login.html");
+
+localStorage.removeItem("user");
+
+window.location.replace("login.html");
+
 }
+
 </script>
 
+
+
 </body>
+
 </html>
