@@ -410,7 +410,95 @@ Delete
 </footer>
 
 
+<script>
 
+function addProduct(){
+
+let product =
+document.getElementById("product").value;
+
+let category =
+document.getElementById("category").value;
+
+let price =
+document.getElementById("price").value;
+
+let stock =
+document.getElementById("stock").value;
+
+
+if(product==""){
+alert("Please Enter Product Name");
+return;
+}
+
+
+let table =
+document.getElementById("productTable");
+
+
+let row = table.insertRow();
+
+
+row.innerHTML =
+`
+<td>${table.rows.length}</td>
+<td>${product}</td>
+<td>${category}</td>
+<td>₹${price}/Kg</td>
+<td>${stock}</td>
+
+<td>
+
+<button onclick="editProduct(this)">
+Edit
+</button>
+
+<button onclick="deleteProduct(this)">
+Delete
+</button>
+
+</td>
+`;
+
+
+document.getElementById("product").value="";
+document.getElementById("price").value="";
+document.getElementById("stock").value="";
+
+
+alert("✅ Product Added Successfully");
+
+
+}
+
+
+
+function deleteProduct(btn){
+
+let row=btn.parentNode.parentNode;
+
+row.remove();
+
+alert("Product Deleted");
+
+}
+
+
+
+function editProduct(btn){
+
+let row=btn.parentNode.parentNode;
+
+alert(
+"Edit Product: "
++ row.cells[1].innerHTML
+);
+
+}
+
+
+</script>
 </body>
 
 </html>
