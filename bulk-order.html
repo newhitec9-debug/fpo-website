@@ -165,7 +165,38 @@ padding:15px;
 <textarea placeholder="Write Your Requirement"></textarea>
 
 <button type="submit">
+<script>
 
+function sendBulkOrder(){
+
+let company = document.getElementById("company").value;
+let person = document.getElementById("person").value;
+let mobile = document.getElementById("mobile").value;
+let product = document.getElementById("product").value;
+let quantity = document.getElementById("quantity").value;
+let address = document.getElementById("address").value;
+
+
+let message =
+"Hello Bundelkhand Organic FPO,%0A%0A"+
+"📦 Bulk Order Request%0A%0A"+
+"Company Name: "+company+"%0A"+
+"Contact Person: "+person+"%0A"+
+"Mobile: "+mobile+"%0A"+
+"Product: "+product+"%0A"+
+"Quantity: "+quantity+"%0A"+
+"Delivery Address: "+address;
+
+
+window.open(
+"https://wa.me/918090040580?text="+message,
+"_blank"
+);
+
+
+}
+
+</script>
 Submit Bulk Order
 
 </button>
