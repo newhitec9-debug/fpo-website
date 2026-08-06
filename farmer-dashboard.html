@@ -185,8 +185,14 @@ if(localStorage.getItem("user")!="farmer"){
 </div>
 
 <div class="logout">
+<a href="#" onclick="logout()">Logout</a>
 
-<a href="login.html">Logout</a>
+<script>
+function logout(){
+    localStorage.removeItem("user");
+    window.location.replace("login.html");
+}
+</script>
 
 </div>
 
