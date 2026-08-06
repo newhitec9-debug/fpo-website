@@ -17,7 +17,6 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
-
 body{
 background:#f4fff4;
 }
@@ -36,9 +35,7 @@ text-align:center;
 
 
 header h1{
-
 font-size:32px;
-
 }
 
 
@@ -51,6 +48,7 @@ margin:30px auto;
 padding:20px;
 
 }
+
 
 
 /* Welcome */
@@ -66,6 +64,15 @@ margin-bottom:30px;
 }
 
 
+
+.welcome h2{
+
+color:#2E7D32;
+
+}
+
+
+
 /* Cards */
 
 .cards{
@@ -77,6 +84,7 @@ gap:20px;
 }
 
 
+
 .card{
 
 background:white;
@@ -84,16 +92,9 @@ padding:25px;
 text-align:center;
 border-radius:10px;
 box-shadow:0 0 10px #ccc;
-transition:.3s;
 
 }
 
-
-.card:hover{
-
-transform:translateY(-5px);
-
-}
 
 
 .card h2{
@@ -106,20 +107,22 @@ margin-bottom:10px;
 
 .card p{
 
-margin-bottom:15px;
+margin-bottom:20px;
 
 }
+
 
 
 .card a{
 
 background:#2E7D32;
 color:white;
-padding:10px 25px;
-border-radius:5px;
+padding:12px 25px;
 text-decoration:none;
+border-radius:5px;
 
 }
+
 
 
 .card a:hover{
@@ -135,7 +138,7 @@ background:#1B5E20;
 .logout{
 
 text-align:center;
-margin-top:30px;
+margin-top:40px;
 
 }
 
@@ -147,15 +150,7 @@ color:white;
 padding:12px 30px;
 border:none;
 border-radius:5px;
-font-size:16px;
 cursor:pointer;
-
-}
-
-
-.logout button:hover{
-
-background:#b71c1c;
 
 }
 
@@ -182,11 +177,12 @@ margin-top:40px;
 <body>
 
 
+
 <script>
 
 if(localStorage.getItem("user")!="admin"){
 
-window.location.replace("login.html");
+window.location.href="login.html";
 
 }
 
@@ -196,11 +192,15 @@ window.location.replace("login.html");
 
 <header>
 
-<h1>👨‍💼 Admin Dashboard</h1>
+<h1>
+👨‍💼 Admin Dashboard
+</h1>
+
 
 <p>
 Bundelkhand Organic Farmer Producer Company Limited
 </p>
+
 
 </header>
 
@@ -213,11 +213,15 @@ Bundelkhand Organic Farmer Producer Company Limited
 
 <div class="welcome">
 
-<h2>Welcome Admin 👋</h2>
+<h2>
+Welcome Admin 👋
+</h2>
+
 
 <p>
-यह Admin Panel है। यहाँ से आप FPO Members, Products और Orders को Manage कर सकते हैं।
+यह Admin Panel है। यहाँ से आप FPO Members, Products, Orders और Website को Manage कर सकते हैं।
 </p>
+
 
 </div>
 
@@ -237,11 +241,12 @@ Bundelkhand Organic Farmer Producer Company Limited
 Registered Farmers देखें।
 </p>
 
-<a href="#">
+<a href="membership-requests.html">
 Open
 </a>
 
 </div>
+
 
 
 
@@ -254,11 +259,12 @@ Open
 नई सदस्यता आवेदन देखें।
 </p>
 
-<a href="manage-products.html">
+<a href="membership-requests.html">
 Open
 </a>
 
 </div>
+
 
 
 
@@ -269,14 +275,15 @@ Open
 <h2>📦 Products</h2>
 
 <p>
-उत्पाद जोड़ें या Edit करें।
+उत्पाद जोड़ें और Edit करें।
 </p>
 
-<a href="products.html">
+<a href="manage-products.html">
 Open
 </a>
 
 </div>
+
 
 
 
@@ -300,6 +307,7 @@ Open
 
 
 
+
 <div class="card">
 
 <h2>📰 Agriculture News</h2>
@@ -318,6 +326,7 @@ Open
 
 
 
+
 <div class="card">
 
 <h2>🖼 Gallery</h2>
@@ -326,11 +335,12 @@ Open
 नई फोटो Manage करें।
 </p>
 
-<a href="./membership-requests.html">
+<a href="gallery.html">
 Open
 </a>
 
 </div>
+
 
 
 
@@ -354,6 +364,7 @@ Open
 
 
 
+
 <div class="card">
 
 <h2>⚙️ Settings</h2>
@@ -367,6 +378,7 @@ Open
 </a>
 
 </div>
+
 
 
 
@@ -403,14 +415,13 @@ Logout
 
 
 
-
 <script>
 
 function logout(){
 
 localStorage.removeItem("user");
 
-window.location.replace("login.html");
+window.location.href="login.html";
 
 }
 
