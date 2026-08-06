@@ -6,96 +6,176 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Organic Products | Bundelkhand Organic FPO</title>
+<title>Manage Products | Admin</title>
 
-<link rel="stylesheet" href="css/style.css">
 
 <style>
 
-.search-box{
-text-align:center;
-padding:30px;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
-.search-box input{
-width:80%;
-max-width:600px;
-padding:15px;
-font-size:18px;
+
+body{
+
+background:#f4fff4;
+
+}
+
+
+
+header{
+
+background:#1B5E20;
+color:white;
+padding:25px;
+text-align:center;
+
+}
+
+
+header h1{
+
+font-size:30px;
+
+}
+
+
+
+.container{
+
+max-width:1200px;
+margin:30px auto;
+padding:20px;
+
+}
+
+
+
+.box{
+
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px #ccc;
+margin-bottom:30px;
+
+}
+
+
+
+h2{
+
+color:#2E7D32;
+margin-bottom:20px;
+
+}
+
+
+
+input,select{
+
+width:100%;
+padding:12px;
+margin:8px 0;
 border:1px solid #ccc;
-border-radius:8px;
+border-radius:5px;
+font-size:16px;
+
 }
 
 
-.category{
-text-align:center;
-margin:20px;
-}
 
-.category button{
+button{
 
 padding:12px 20px;
-margin:5px;
-border:none;
 background:#2E7D32;
 color:white;
+border:none;
 border-radius:5px;
 cursor:pointer;
 
 }
 
 
-.product-container{
 
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
+button:hover{
+
+background:#1B5E20;
 
 }
 
 
-.product-card{
 
-background:white;
-width:280px;
-padding:20px;
-border-radius:12px;
-box-shadow:0 5px 15px #ccc;
+table{
+
+width:100%;
+border-collapse:collapse;
+
+}
+
+
+th{
+
+background:#2E7D32;
+color:white;
+padding:12px;
+
+}
+
+
+td{
+
+padding:12px;
+text-align:center;
+border-bottom:1px solid #ddd;
+
+}
+
+
+
+.delete{
+
+background:red;
+
+}
+
+
+.edit{
+
+background:#F9A825;
+color:black;
+
+}
+
+
+
+.back{
+
+display:inline-block;
+margin-top:20px;
+background:#1B5E20;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:5px;
+
+}
+
+
+
+footer{
+
+background:#2E7D32;
+color:white;
+padding:15px;
 text-align:center;
 
 }
 
-
-.product-card img{
-
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:10px;
-
-}
-
-
-.product-card h3{
-
-color:#2E7D32;
-margin:15px;
-
-}
-
-
-.buy-btn{
-
-display:inline-block;
-background:#25D366;
-color:white;
-padding:12px 25px;
-border-radius:5px;
-text-decoration:none;
-font-weight:bold;
-
-}
 
 
 </style>
@@ -106,454 +186,200 @@ font-weight:bold;
 <body>
 
 
-<header class="top-header">
 
-<div class="logo">
-
-<img src="images/logo.png">
-
-<div class="logo-text">
+<header>
 
 <h1>
-Bundelkhand Organic Farmer Producer Company Limited
+📦 Manage Products
 </h1>
 
 <p>
-🌾 Organic Products Store
+Bundelkhand Organic Farmer Producer Company Limited
 </p>
-
-</div>
-
-
-</div>
 
 </header>
 
 
 
-<nav>
-
-<a href="index.html">🏠 Home</a>
-
-<a href="about.html">🌿 About</a>
-
-<a href="products.html">🛒 Products</a>
-
-<a href="farmers.html">👨‍🌾 Kisan Corner</a>
-
-<a href="membership.html">📝 Join FPO</a>
-
-<a href="bulk-order.html">📦 Bulk Order</a>
-
-<a href="contact.html">📞 Contact</a>
-
-
-</nav>
+<div class="container">
 
 
 
-<section class="hero">
-
-
-<h1>
-🌾 Organic Products
-</h1>
+<div class="box">
 
 
 <h2>
-Fresh Products Direct From Farmers
+➕ Add New Product
 </h2>
 
 
-<p>
-हम किसानों द्वारा उत्पादित शुद्ध जैविक उत्पाद सीधे ग्राहकों तक पहुँचाते हैं।
-</p>
+<input type="text" id="pname"
+placeholder="Product Name">
 
 
-</section>
+<select id="category">
+
+<option>Cereals</option>
+<option>Pulses</option>
+<option>Oil Seeds</option>
+<option>Organic Products</option>
+
+</select>
 
 
-<section class="search-box">
+<input type="text" id="price"
+placeholder="Price Example ₹40/Kg">
+
+
+<input type="text" id="stock"
+placeholder="Stock Available">
+
+
+<button onclick="addProduct()">
+
+Add Product
+
+</button>
+
+
+</div>
+
+
+
+<div class="box">
 
 
 <h2>
-🔍 Search Product
+🌾 Product List
 </h2>
 
 
-<input type="text" 
-id="search"
-placeholder="Search Organic Product..."
-onkeyup="searchProduct()">
+<table>
 
 
+<thead>
 
-</section>
+<tr>
 
+<th>
+Sr No.
+</th>
 
-<section class="category">
+<th>
+Product
+</th>
 
+<th>
+Category
+</th>
 
-<button onclick="filterProduct('all')">
-All
-</button>
+<th>
+Price
+</th>
 
+<th>
+Stock
+</th>
 
-<button onclick="filterProduct('Cereals')">
-🌾 Cereals
-</button>
+<th>
+Action
+</th>
 
 
-<button onclick="filterProduct('Pulses')">
-🌱 Pulses
-</button>
+</tr>
 
+</thead>
 
-<button onclick="filterProduct('Oil Seeds')">
-🌼 Oil Seeds
-</button>
 
+<tbody id="productTable">
 
-</section>
 
+</tbody>
 
-<section class="products">
 
+</table>
 
-<h2 style="text-align:center;color:#2E7D32;">
-🌾 Our Products
-</h2>
 
 
-<div class="product-container" id="productList"> 
-  <!-- ================= PRODUCT SECTION ================= -->
+</div> 
+  <script>
 
-<section class="products">
 
-<h2>🌾 Our Organic Products</h2>
+let products = JSON.parse(localStorage.getItem("products")) || [
 
-<div class="product-container">
+{
+name:"Organic Wheat",
+category:"Cereals",
+price:"₹40/Kg",
+stock:"Available"
+},
 
+{
+name:"Organic Chana",
+category:"Pulses",
+price:"₹80/Kg",
+stock:"Available"
+},
 
-<!-- Product 1 -->
+{
+name:"Mustard Seeds",
+category:"Oil Seeds",
+price:"₹90/Kg",
+stock:"Available"
+}
 
-<div class="card">
+];
 
-<img src="images/wheat.jpg">
 
-<h3>🌾 Organic Wheat</h3>
 
-<p>100% Chemical Free Wheat</p>
+let editIndex = -1;
 
-<p>
-<b>Price:</b> ₹40/Kg
-</p>
 
-<p>
-<b>Stock:</b> Available
-</p>
 
 
-<a href="javascript:void(0)"
-onclick="buyProduct('Organic Wheat')">
+// Add Product
 
-<button>
-🛒 Buy Now
-</button>
+function addProduct(){
 
-</a>
 
+let name=document.getElementById("pname").value;
 
-</div>
+let category=document.getElementById("category").value;
 
+let price=document.getElementById("price").value;
 
+let stock=document.getElementById("stock").value;
 
-<!-- Product 2 -->
 
-<div class="card">
 
-<img src="images/chana.jpg">
+if(name=="" || price==""){
 
-<h3>🌱 Organic Chana</h3>
+alert("Please Enter Product Name and Price");
 
-<p>Premium Quality Gram</p>
-
-<p>
-<b>Price:</b> ₹80/Kg
-</p>
-
-<p>
-<b>Stock:</b> Available
-</p>
-
-
-<a href="javascript:void(0)"
-onclick="buyProduct('Organic Chana')">
-
-<button>
-🛒 Buy Now
-</button>
-
-</a>
-
-
-</div>
-
-
-
-<!-- Product 3 -->
-
-<div class="card">
-
-<img src="images/mustard.jpg">
-
-<h3>🌼 Mustard Seeds</h3>
-
-<p>Fresh Organic Mustard</p>
-
-<p>
-<b>Price:</b> ₹90/Kg
-</p>
-
-<p>
-<b>Stock:</b> Available
-</p>
-
-
-<a href="javascript:void(0)"
-onclick="buyProduct('Mustard Seeds')">
-
-<button>
-🛒 Buy Now
-</button>
-
-</a>
-
-
-</div>
-
-
-
-<!-- Product 4 -->
-
-<div class="card">
-
-<img src="images/groundnut.jpg">
-
-<h3>🥜 Organic Groundnut</h3>
-
-<p>Fresh Organic Peanut</p>
-
-<p>
-<b>Price:</b> ₹120/Kg
-</p>
-
-<p>
-<b>Stock:</b> Available
-</p>
-
-
-<a href="javascript:void(0)"
-onclick="buyProduct('Organic Groundnut')">
-
-<button>
-🛒 Buy Now
-</button>
-
-</a>
-
-
-</div>
-
-
-
-<!-- Product 5 -->
-
-<div class="card">
-
-<img src="images/sesame.jpg">
-
-<h3>🌿 Organic Sesame</h3>
-
-<p>Premium White Sesame</p>
-
-<p>
-<b>Price:</b> ₹180/Kg
-</p>
-
-<p>
-<b>Stock:</b> Available
-</p>
-
-
-<a href="javascript:void(0)"
-onclick="buyProduct('Organic Sesame')">
-
-<button>
-🛒 Buy Now
-</button>
-
-</a>
-
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- ================= BULK ORDER ================= -->
-
-
-<section class="about">
-
-<h2>
-📦 Bulk Order
-</h2>
-
-
-<p>
-
-Restaurants, Hotels, Retail Shops, NGOs तथा बड़े खरीदारों के लिए थोक आपूर्ति उपलब्ध है।
-
-</p>
-
-
-<br>
-
-
-<a href="bulk-order.html">
-
-<button>
-📞 Bulk Order Form
-</button>
-
-</a>
-
-
-</section> 
-  <!-- ================= DELIVERY INFORMATION ================= -->
-
-<section class="about">
-
-<h2>🚚 Delivery Information</h2>
-
-<p>
-
-✅ Farm Fresh Products
-<br><br>
-
-✅ Direct From Farmers
-<br><br>
-
-✅ Chemical Free Organic Farming
-<br><br>
-
-✅ Bulk Supply Available
-<br><br>
-
-✅ WhatsApp Order Support
-
-</p>
-
-</section>
-
-
-
-<!-- ================= FOOTER ================= -->
-
-
-<footer>
-
-<p>
-© 2026 Bundelkhand Organic Farmer Producer Company Limited
-</p>
-
-<p>
-🌾 Healthy Farmers • Healthy Food • Healthy Future
-</p>
-
-</footer>
-
-
-
-
-<!-- ================= JAVASCRIPT ================= -->
-
-
-<script>
-
-
-// WhatsApp Buy System
-
-function buyProduct(product){
-
-
-let message =
-
-"Hello Bundelkhand Organic FPO,%0A%0A"+
-
-"I want to buy:%0A"+
-
-"Product : "+product+"%0A%0"+
-
-"Please send me:%0A"+
-
-"✅ Latest Price%0A"+
-
-"✅ Available Quantity%0A"+
-
-"✅ Delivery Details%0A%0"+
-
-"Thank You";
-
-
-window.open(
-
-"https://wa.me/918090040580?text="+message,
-
-"_blank"
-
-);
-
+return;
 
 }
 
 
 
+let product={
 
-// Product Search
+name:name,
 
-function searchProduct(){
+category:category,
 
+price:price,
 
-let input=document
-.getElementById("searchBox")
-.value
-.toLowerCase();
+stock:stock
 
-
-
-let products=document
-.getElementsByClassName("card");
+};
 
 
 
-for(let i=0;i<products.length;i++){
+if(editIndex==-1){
 
 
-let text=products[i]
-.innerText
-.toLowerCase();
-
-
-
-if(text.includes(input)){
-
-
-products[i].style.display="block";
+products.push(product);
 
 
 }
@@ -561,20 +387,256 @@ products[i].style.display="block";
 else{
 
 
-products[i].style.display="none";
+products[editIndex]=product;
+
+editIndex=-1;
 
 
 }
 
 
-}
+
+
+localStorage.setItem(
+
+"products",
+
+JSON.stringify(products)
+
+);
+
+
+
+clearForm();
+
+displayProducts();
+
+
+alert("Product Saved Successfully");
 
 
 }
 
 
 
-</script>
+
+// Show Products
+
+
+function displayProducts(){
+
+
+let table=document.getElementById("productTable");
+
+
+table.innerHTML="";
+
+
+
+products.forEach(function(product,index){
+
+
+table.innerHTML += `
+
+
+<tr>
+
+
+<td>
+${index+1}
+</td>
+
+
+<td>
+${product.name}
+</td>
+
+
+<td>
+${product.category}
+</td>
+
+
+<td>
+${product.price}
+</td>
+
+
+<td>
+${product.stock}
+</td>
+
+
+
+<td>
+
+
+<button class="edit"
+onclick="editProduct(${index})">
+
+Edit
+
+</button>
+
+
+
+<button class="delete"
+onclick="deleteProduct(${index})">
+
+Delete
+
+</button>
+
+
+
+</td>
+
+
+</tr>
+
+
+`;
+
+
+
+});
+
+
+
+}
+
+
+
+
+
+// Delete Product
+
+
+function deleteProduct(index){
+
+
+if(confirm("Delete this Product?")){
+
+
+products.splice(index,1);
+
+
+
+localStorage.setItem(
+
+"products",
+
+JSON.stringify(products)
+
+);
+
+
+
+displayProducts();
+
+
+}
+
+
+
+}
+
+
+
+
+// Edit Product
+
+
+function editProduct(index){
+
+
+let p=products[index];
+
+
+document.getElementById("pname").value=p.name;
+
+
+document.getElementById("category").value=p.category;
+
+
+document.getElementById("price").value=p.price;
+
+
+document.getElementById("stock").value=p.stock;
+
+
+
+editIndex=index;
+
+
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+
+}
+
+
+
+
+
+function clearForm(){
+
+
+document.getElementById("pname").value="";
+
+document.getElementById("price").value="";
+
+document.getElementById("stock").value="";
+
+
+}
+
+
+
+
+
+// Load Product
+
+
+displayProducts();
+
+
+
+</script> 
+  <!-- Back Button -->
+
+<div style="text-align:center;margin-top:30px;">
+
+<a class="back" href="admin-dashboard.html">
+
+⬅ Back To Dashboard
+
+</a>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+<footer>
+
+© 2026 Bundelkhand Organic Farmer Producer Company Limited
+
+</footer>
+
 
 
 </body>
