@@ -6,178 +6,99 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Manage Products | Admin</title>
+<title>Organic Products | Bundelkhand Organic FPO</title>
 
+<link rel="stylesheet" href="css/style.css">
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-
-body{
-
-background:#f4fff4;
-
-}
-
-
-header{
-
-background:#1B5E20;
-color:white;
-padding:25px;
+.search-box{
 text-align:center;
-
+padding:30px;
 }
 
-
-header h1{
-
-font-size:32px;
-
-}
-
-
-
-.container{
-
-max-width:1200px;
-margin:30px auto;
-padding:20px;
-
-}
-
-
-.box{
-
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 0 10px #ccc;
-margin-bottom:30px;
-
-}
-
-
-h2{
-
-color:#2E7D32;
-margin-bottom:20px;
-
-}
-
-
-
-input,select{
-
-width:100%;
-padding:12px;
-margin:8px 0;
+.search-box input{
+width:80%;
+max-width:600px;
+padding:15px;
+font-size:18px;
 border:1px solid #ccc;
-border-radius:5px;
-
+border-radius:8px;
 }
 
 
+.category{
+text-align:center;
+margin:20px;
+}
 
-.add-btn{
+.category button{
 
+padding:12px 20px;
+margin:5px;
+border:none;
 background:#2E7D32;
 color:white;
-padding:12px 25px;
-border:none;
 border-radius:5px;
 cursor:pointer;
 
 }
 
 
+.product-container{
 
-table{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+
+}
+
+
+.product-card{
+
+background:white;
+width:280px;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 15px #ccc;
+text-align:center;
+
+}
+
+
+.product-card img{
 
 width:100%;
-border-collapse:collapse;
+height:200px;
+object-fit:cover;
+border-radius:10px;
 
 }
 
 
+.product-card h3{
 
-th{
-
-background:#2E7D32;
-color:white;
-padding:12px;
+color:#2E7D32;
+margin:15px;
 
 }
 
 
-
-td{
-
-padding:12px;
-border-bottom:1px solid #ddd;
-text-align:center;
-
-}
-
-
-
-.edit{
-
-background:#1976D2;
-color:white;
-padding:8px 15px;
-border:none;
-border-radius:5px;
-
-}
-
-
-
-.delete{
-
-background:red;
-color:white;
-padding:8px 15px;
-border:none;
-border-radius:5px;
-
-}
-
-
-
-.back{
+.buy-btn{
 
 display:inline-block;
-margin-top:20px;
-background:#1B5E20;
+background:#25D366;
 color:white;
 padding:12px 25px;
-text-decoration:none;
 border-radius:5px;
-
-}
-
-
-
-footer{
-
-margin-top:40px;
-background:#2E7D32;
-color:white;
-padding:15px;
-text-align:center;
+text-decoration:none;
+font-weight:bold;
 
 }
 
 
 </style>
-
 
 </head>
 
@@ -185,320 +106,477 @@ text-align:center;
 <body>
 
 
-<script>
+<header class="top-header">
 
-if(localStorage.getItem("user")!="admin"){
+<div class="logo">
 
-window.location.replace("login.html");
+<img src="images/logo.png">
 
-}
+<div class="logo-text">
 
-</script>
-
-
-
-<header>
-
-<h1>📦 Manage Products</h1>
+<h1>
+Bundelkhand Organic Farmer Producer Company Limited
+</h1>
 
 <p>
-Bundelkhand Organic Farmer Producer Company Limited
+🌾 Organic Products Store
 </p>
+
+</div>
+
+
+</div>
 
 </header>
 
 
 
+<nav>
 
-<div class="container">
+<a href="index.html">🏠 Home</a>
+
+<a href="about.html">🌿 About</a>
+
+<a href="products.html">🛒 Products</a>
+
+<a href="farmers.html">👨‍🌾 Kisan Corner</a>
+
+<a href="membership.html">📝 Join FPO</a>
+
+<a href="bulk-order.html">📦 Bulk Order</a>
+
+<a href="contact.html">📞 Contact</a>
 
 
-
-<div class="box">
-
-
-<h2>➕ Add New Product</h2>
-
-
-<input type="text" placeholder="Product Name">
-
-
-<select>
-
-<option>Select Category</option>
-<option>Cereals</option>
-<option>Pulses</option>
-<option>Oil Seeds</option>
-<option>Organic Products</option>
-
-</select>
+</nav>
 
 
 
-<input type="text" placeholder="Price ₹">
+<section class="hero">
 
 
-<input type="text" placeholder="Stock Quantity">
+<h1>
+🌾 Organic Products
+</h1>
+
+
+<h2>
+Fresh Products Direct From Farmers
+</h2>
+
+
+<p>
+हम किसानों द्वारा उत्पादित शुद्ध जैविक उत्पाद सीधे ग्राहकों तक पहुँचाते हैं।
+</p>
+
+
+</section>
+
+
+<section class="search-box">
+
+
+<h2>
+🔍 Search Product
+</h2>
+
+
+<input type="text" 
+id="search"
+placeholder="Search Organic Product..."
+onkeyup="searchProduct()">
 
 
 
-<button class="add-btn">
+</section>
 
-Add Product
 
+<section class="category">
+
+
+<button onclick="filterProduct('all')">
+All
 </button>
 
 
-
-</div>
-
-
-
-
-
-
-<div class="box">
-
-
-<h2>🌾 Product List</h2>
-
-
-
-<table>
-
-
-<tr>
-
-<th>Sr No.</th>
-
-<th>Product</th>
-
-<th>Category</th>
-
-<th>Price</th>
-
-<th>Stock</th>
-
-<th>Action</th>
-
-</tr>
-
-
-
-<tr>
-
-<td>1</td>
-
-<td>Organic Wheat</td>
-
-<td>Cereals</td>
-
-<td>₹40/Kg</td>
-
-<td>Available</td>
-
-<td>
-
-<button class="edit">
-Edit
+<button onclick="filterProduct('Cereals')">
+🌾 Cereals
 </button>
 
 
-<button class="delete">
-Delete
+<button onclick="filterProduct('Pulses')">
+🌱 Pulses
 </button>
 
 
-</td>
-
-
-</tr>
-
-
-
-
-
-<tr>
-
-<td>2</td>
-
-<td>Organic Chana</td>
-
-<td>Pulses</td>
-
-<td>₹80/Kg</td>
-
-<td>Available</td>
-
-
-<td>
-
-<button class="edit">
-Edit
+<button onclick="filterProduct('Oil Seeds')">
+🌼 Oil Seeds
 </button>
 
 
-<button class="delete">
-Delete
+</section>
+
+
+<section class="products">
+
+
+<h2 style="text-align:center;color:#2E7D32;">
+🌾 Our Products
+</h2>
+
+
+<div class="product-container" id="productList"> 
+  <!-- ================= PRODUCT SECTION ================= -->
+
+<section class="products">
+
+<h2>🌾 Our Organic Products</h2>
+
+<div class="product-container">
+
+
+<!-- Product 1 -->
+
+<div class="card">
+
+<img src="images/wheat.jpg">
+
+<h3>🌾 Organic Wheat</h3>
+
+<p>100% Chemical Free Wheat</p>
+
+<p>
+<b>Price:</b> ₹40/Kg
+</p>
+
+<p>
+<b>Stock:</b> Available
+</p>
+
+
+<a href="javascript:void(0)"
+onclick="buyProduct('Organic Wheat')">
+
+<button>
+🛒 Buy Now
 </button>
-
-
-</td>
-
-
-</tr>
-
-
-
-
-
-<tr>
-
-<td>3</td>
-
-<td>Mustard Seeds</td>
-
-<td>Oil Seeds</td>
-
-<td>₹90/Kg</td>
-
-<td>Available</td>
-
-
-<td>
-
-<button class="edit">
-Edit
-</button>
-
-
-<button class="delete">
-Delete
-</button>
-
-
-</td>
-
-
-</tr>
-
-
-
-</table>
-
-
-<a class="back" href="admin-dashboard.html">
-
-⬅ Back To Dashboard
 
 </a>
 
 
+</div>
+
+
+
+<!-- Product 2 -->
+
+<div class="card">
+
+<img src="images/chana.jpg">
+
+<h3>🌱 Organic Chana</h3>
+
+<p>Premium Quality Gram</p>
+
+<p>
+<b>Price:</b> ₹80/Kg
+</p>
+
+<p>
+<b>Stock:</b> Available
+</p>
+
+
+<a href="javascript:void(0)"
+onclick="buyProduct('Organic Chana')">
+
+<button>
+🛒 Buy Now
+</button>
+
+</a>
+
+
+</div>
+
+
+
+<!-- Product 3 -->
+
+<div class="card">
+
+<img src="images/mustard.jpg">
+
+<h3>🌼 Mustard Seeds</h3>
+
+<p>Fresh Organic Mustard</p>
+
+<p>
+<b>Price:</b> ₹90/Kg
+</p>
+
+<p>
+<b>Stock:</b> Available
+</p>
+
+
+<a href="javascript:void(0)"
+onclick="buyProduct('Mustard Seeds')">
+
+<button>
+🛒 Buy Now
+</button>
+
+</a>
+
+
+</div>
+
+
+
+<!-- Product 4 -->
+
+<div class="card">
+
+<img src="images/groundnut.jpg">
+
+<h3>🥜 Organic Groundnut</h3>
+
+<p>Fresh Organic Peanut</p>
+
+<p>
+<b>Price:</b> ₹120/Kg
+</p>
+
+<p>
+<b>Stock:</b> Available
+</p>
+
+
+<a href="javascript:void(0)"
+onclick="buyProduct('Organic Groundnut')">
+
+<button>
+🛒 Buy Now
+</button>
+
+</a>
+
+
+</div>
+
+
+
+<!-- Product 5 -->
+
+<div class="card">
+
+<img src="images/sesame.jpg">
+
+<h3>🌿 Organic Sesame</h3>
+
+<p>Premium White Sesame</p>
+
+<p>
+<b>Price:</b> ₹180/Kg
+</p>
+
+<p>
+<b>Stock:</b> Available
+</p>
+
+
+<a href="javascript:void(0)"
+onclick="buyProduct('Organic Sesame')">
+
+<button>
+🛒 Buy Now
+</button>
+
+</a>
+
 
 </div>
 
 
 </div>
 
+</section>
 
+
+<!-- ================= BULK ORDER ================= -->
+
+
+<section class="about">
+
+<h2>
+📦 Bulk Order
+</h2>
+
+
+<p>
+
+Restaurants, Hotels, Retail Shops, NGOs तथा बड़े खरीदारों के लिए थोक आपूर्ति उपलब्ध है।
+
+</p>
+
+
+<br>
+
+
+<a href="bulk-order.html">
+
+<button>
+📞 Bulk Order Form
+</button>
+
+</a>
+
+
+</section> 
+  <!-- ================= DELIVERY INFORMATION ================= -->
+
+<section class="about">
+
+<h2>🚚 Delivery Information</h2>
+
+<p>
+
+✅ Farm Fresh Products
+<br><br>
+
+✅ Direct From Farmers
+<br><br>
+
+✅ Chemical Free Organic Farming
+<br><br>
+
+✅ Bulk Supply Available
+<br><br>
+
+✅ WhatsApp Order Support
+
+</p>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
 
 
 <footer>
 
+<p>
 © 2026 Bundelkhand Organic Farmer Producer Company Limited
+</p>
+
+<p>
+🌾 Healthy Farmers • Healthy Food • Healthy Future
+</p>
 
 </footer>
 
 
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+
 <script>
 
-function addProduct(){
 
-let product =
-document.getElementById("product").value;
+// WhatsApp Buy System
 
-let category =
-document.getElementById("category").value;
-
-let price =
-document.getElementById("price").value;
-
-let stock =
-document.getElementById("stock").value;
+function buyProduct(product){
 
 
-if(product==""){
-alert("Please Enter Product Name");
-return;
-}
+let message =
+
+"Hello Bundelkhand Organic FPO,%0A%0A"+
+
+"I want to buy:%0A"+
+
+"Product : "+product+"%0A%0"+
+
+"Please send me:%0A"+
+
+"✅ Latest Price%0A"+
+
+"✅ Available Quantity%0A"+
+
+"✅ Delivery Details%0A%0"+
+
+"Thank You";
 
 
-let table =
-document.getElementById("productTable");
+window.open(
 
+"https://wa.me/918090040580?text="+message,
 
-let row = table.insertRow();
+"_blank"
 
-
-row.innerHTML =
-`
-<td>${table.rows.length}</td>
-<td>${product}</td>
-<td>${category}</td>
-<td>₹${price}/Kg</td>
-<td>${stock}</td>
-
-<td>
-
-<button onclick="editProduct(this)">
-Edit
-</button>
-
-<button onclick="deleteProduct(this)">
-Delete
-</button>
-
-</td>
-`;
-
-
-document.getElementById("product").value="";
-document.getElementById("price").value="";
-document.getElementById("stock").value="";
-
-
-alert("✅ Product Added Successfully");
-
-
-}
-
-
-
-function deleteProduct(btn){
-
-let row=btn.parentNode.parentNode;
-
-row.remove();
-
-alert("Product Deleted");
-
-}
-
-
-
-function editProduct(btn){
-
-let row=btn.parentNode.parentNode;
-
-alert(
-"Edit Product: "
-+ row.cells[1].innerHTML
 );
 
+
 }
+
+
+
+
+// Product Search
+
+function searchProduct(){
+
+
+let input=document
+.getElementById("searchBox")
+.value
+.toLowerCase();
+
+
+
+let products=document
+.getElementsByClassName("card");
+
+
+
+for(let i=0;i<products.length;i++){
+
+
+let text=products[i]
+.innerText
+.toLowerCase();
+
+
+
+if(text.includes(input)){
+
+
+products[i].style.display="block";
+
+
+}
+
+else{
+
+
+products[i].style.display="none";
+
+
+}
+
+
+}
+
+
+}
+
 
 
 </script>
+
+
 </body>
 
 </html>
