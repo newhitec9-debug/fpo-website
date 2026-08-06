@@ -36,3 +36,43 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+// =====================
+// LOGIN SYSTEM
+// =====================
+
+const loginForm = document.getElementById("loginForm");
+
+if (loginForm) {
+
+    loginForm.addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        let username = document.getElementById("username").value.trim();
+        let password = document.getElementById("password").value.trim();
+
+        // Farmer Login
+
+        if(username === "farmer" && password === "12345"){
+
+            window.location.href = "farmer-dashboard.html";
+
+        }
+
+        // Admin Login
+
+        else if(username === "admin" && password === "admin123"){
+
+            window.location.href = "admin-dashboard.html";
+
+        }
+
+        else{
+
+            alert("Invalid Username or Password");
+
+        }
+
+    });
+
+}
