@@ -55,7 +55,8 @@ if (loginForm) {
 
         if(username === "farmer" && password === "12345"){
 
-            window.location.href = "farmer-dashboard.html";
+            localStorage.setItem("user","farmer");
+window.location.replace("farmer-dashboard.html");
 
         }
 
@@ -63,7 +64,8 @@ if (loginForm) {
 
         else if(username === "admin" && password === "admin123"){
 
-            window.location.href = "admin-dashboard.html";
+            localStorage.setItem("user","admin");
+window.location.replace("admin-dashboard.html");
 
         }
 
