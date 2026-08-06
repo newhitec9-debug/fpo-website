@@ -89,12 +89,18 @@ text-align:center;
 margin-top:30px;
 }
 
-.logout a{
+.logout button{
 background:#d32f2f;
 color:white;
 padding:12px 25px;
-text-decoration:none;
+border:none;
 border-radius:5px;
+cursor:pointer;
+font-size:16px;
+}
+
+.logout button:hover{
+background:#b71c1c;
 }
 
 footer{
@@ -109,6 +115,13 @@ padding:15px;
 </head>
 
 <body>
+
+<script>
+// Admin Login Check
+if(localStorage.getItem("user")!="admin"){
+    window.location.replace("login.html");
+}
+</script>
 
 <header>
 <h1>👨‍💼 Admin Dashboard</h1>
@@ -175,7 +188,7 @@ padding:15px;
 </div>
 
 <div class="logout">
-<a href="login.html">Logout</a>
+<button onclick="logout()">Logout</button>
 </div>
 
 </div>
@@ -183,6 +196,13 @@ padding:15px;
 <footer>
 © 2026 Bundelkhand Organic Farmer Producer Company Limited
 </footer>
+
+<script>
+function logout(){
+    localStorage.removeItem("user");
+    window.location.replace("login.html");
+}
+</script>
 
 </body>
 </html>
