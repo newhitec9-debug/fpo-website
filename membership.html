@@ -162,63 +162,40 @@ document.getElementById("membershipForm").addEventListener("submit", function(e)
 
 e.preventDefault();
 
+let name = document.getElementById("name").value;
+let father = document.getElementById("father").value;
+let mobile = document.getElementById("mobile").value;
+let village = document.getElementById("village").value;
+let district = document.getElementById("district").value;
+let land = document.getElementById("land").value;
+let crop = document.getElementById("crop").value;
+let irrigation = document.getElementById("irrigation").value;
 
-let name=document.getElementById("name").value;
-let father=document.getElementById("father").value;
-let mobile=document.getElementById("mobile").value;
-let village=document.getElementById("village").value;
-let district=document.getElementById("district").value;
-let land=document.getElementById("land").value;
-let crop=document.getElementById("crop").value;
-let irrigation=document.getElementById("irrigation").value;
 
-
-if(mobile.length!=10){
-
-alert("Please Enter Valid Mobile Number");
-return;
-
+if(mobile.length != 10){
+    alert("कृपया सही Mobile Number डालें");
+    return;
 }
 
 
 let message =
-`🌾 Bundelkhand Organic Farmer Producer Company Limited
-
-📝 New Membership Request
-
-👨‍🌾 Farmer Name:
-${name}
-
-Father Name:
-${father}
-
-📱 Mobile:
-${mobile}
-
-🏠 Village:
-${village}
-
-District:
-${district}
-
-🌱 Main Crops:
-${crop}
-
-🌾 Land Holding:
-${land}
-
-💧 Irrigation:
-${irrigation}
-
-Please verify membership application.`;
+"🌾 Bundelkhand Organic Farmer Producer Company Limited\n\n"+
+"📝 New Membership Request\n\n"+
+"👨‍🌾 Farmer Name: "+name+"\n"+
+"Father Name: "+father+"\n"+
+"📱 Mobile: "+mobile+"\n"+
+"🏠 Village: "+village+"\n"+
+"District: "+district+"\n"+
+"🌱 Main Crops: "+crop+"\n"+
+"🌾 Land Holding: "+land+"\n"+
+"💧 Irrigation: "+irrigation;
 
 
-let whatsappURL =
-"https://wa.me/918090040580?text="
-+encodeURIComponent(message);
+let url =
+"https://wa.me/918090040580?text="+encodeURIComponent(message);
 
 
-window.open(whatsappURL,"_blank");
+window.location.href = url;
 
 
 });
