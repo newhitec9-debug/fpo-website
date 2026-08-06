@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Products | Bundelkhand Organic Farmer Producer Company Limited</title>
@@ -12,35 +15,55 @@
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header class="top-header">
 
 <div class="logo">
 
+<div class="logo-left">
+
 <img src="images/logo.png" alt="FPO Logo">
 
-<div>
+<div class="logo-text">
 
 <h1>Bundelkhand Organic Farmer Producer Company Limited</h1>
 
-<p>🌾 Organic Products Store</p>
+<p>Healthy Farmers • Healthy Food • Healthy Future</p>
 
 </div>
+
+</div>
+
+<a href="login.html" class="login-btn">Login</a>
 
 </div>
 
 </header>
 
+<!-- ================= NAVIGATION ================= -->
+
 <nav>
 
 <a href="index.html">🏠 Home</a>
+
 <a href="about.html">🌿 About</a>
+
 <a href="products.html">🛒 Products</a>
+
 <a href="farmers.html">👨‍🌾 Kisan Corner</a>
-<a href="membership.html">📝 Join FPO</a>
+
+<a href="membership.html">📝 Membership</a>
+
 <a href="bulk-order.html">📦 Bulk Order</a>
+
+<a href="gallery.html">📷 Gallery</a>
+
 <a href="contact.html">📞 Contact</a>
 
 </nav>
+
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -52,15 +75,23 @@
 
 हम किसानों द्वारा उत्पादित शुद्ध जैविक उत्पाद सीधे ग्राहकों तक पहुँचाते हैं।
 
+<br><br>
+
+Buy Premium Organic Products Directly From Farmers.
+
 </p>
 
 </section>
+
+<!-- ================= SEARCH ================= -->
 
 <section class="about">
 
 <h2>🔍 Search Products</h2>
 
-<input type="text"
+<input
+type="text"
+id="searchBox"
 placeholder="Search Organic Product..."
 style="width:80%;padding:15px;font-size:18px;">
 
@@ -70,28 +101,33 @@ style="width:80%;padding:15px;font-size:18px;">
 
 </section>
 
+<!-- ================= CATEGORY ================= -->
+
 <section class="about">
 
 <h2>📂 Product Categories</h2>
 
 <button>🌾 Cereals</button>
+
 <button>🌱 Pulses</button>
+
 <button>🌼 Oil Seeds</button>
+
 <button>🌿 Organic Products</button>
 
 </section>
+
+<!-- ================= PRODUCTS ================= -->
 
 <section class="products">
 
 <h2>🌾 Our Best Selling Products</h2>
 
-<div class="product-container">
-
-<!-- Wheat -->
+<div class="product-container"> <!-- ================= PRODUCT 1 ================= -->
 
 <div class="card">
 
-<img src="images/wheat.jpg" alt="Wheat">
+<img src="images/wheat.jpg" alt="Organic Wheat">
 
 <h3>🌾 Organic Wheat</h3>
 
@@ -101,17 +137,17 @@ style="width:80%;padding:15px;font-size:18px;">
 
 <p><b>Stock :</b> Available</p>
 
-<a href="https://wa.me/918090040580?text=Hello%20Bundelkhand%20Organic%20FPO,%20I%20want%20to%20buy%20Organic%20Wheat." target="_blank">
-<button>🛒 Buy Now</button>
-</a>
+<button class="buyBtn" data-product="Organic Wheat">
+🛒 Buy Now
+</button>
 
 </div>
 
-<!-- Chana -->
+<!-- ================= PRODUCT 2 ================= -->
 
 <div class="card">
 
-<img src="images/chana.jpg" alt="Chana">
+<img src="images/chana.jpg" alt="Organic Chana">
 
 <h3>🌱 Organic Chana</h3>
 
@@ -121,13 +157,13 @@ style="width:80%;padding:15px;font-size:18px;">
 
 <p><b>Stock :</b> Available</p>
 
-<a href="https://wa.me/918090040580?text=Hello%20Bundelkhand%20Organic%20FPO,%20I%20want%20to%20buy%20Organic%20Chana." target="_blank">
-<button>🛒 Buy Now</button>
-</a>
+<button class="buyBtn" data-product="Organic Chana">
+🛒 Buy Now
+</button>
 
 </div>
 
-<!-- Mustard -->
+<!-- ================= PRODUCT 3 ================= -->
 
 <div class="card">
 
@@ -141,13 +177,13 @@ style="width:80%;padding:15px;font-size:18px;">
 
 <p><b>Stock :</b> Available</p>
 
-<a href="https://wa.me/918090040580?text=Hello%20Bundelkhand%20Organic%20FPO,%20I%20want%20to%20buy%20Mustard%20Seeds." target="_blank">
-<button>🛒 Buy Now</button>
-</a>
+<button class="buyBtn" data-product="Mustard Seeds">
+🛒 Buy Now
+</button>
 
 </div>
 
-<!-- Groundnut -->
+<!-- ================= PRODUCT 4 ================= -->
 
 <div class="card">
 
@@ -161,13 +197,13 @@ style="width:80%;padding:15px;font-size:18px;">
 
 <p><b>Stock :</b> Available</p>
 
-<a href="https://wa.me/918090040580?text=Hello%20Bundelkhand%20Organic%20FPO,%20I%20want%20to%20buy%20Organic%20Groundnut." target="_blank">
-<button>🛒 Buy Now</button>
-</a>
+<button class="buyBtn" data-product="Organic Groundnut">
+🛒 Buy Now
+</button>
 
 </div>
 
-<!-- Sesame -->
+<!-- ================= PRODUCT 5 ================= -->
 
 <div class="card">
 
@@ -181,13 +217,13 @@ style="width:80%;padding:15px;font-size:18px;">
 
 <p><b>Stock :</b> Available</p>
 
-<a href="https://wa.me/918090040580?text=Hello%20Bundelkhand%20Organic%20FPO,%20I%20want%20to%20buy%20Organic%20Sesame." target="_blank">
-<button>🛒 Buy Now</button>
-</a>
+<button class="buyBtn" data-product="Organic Sesame">
+🛒 Buy Now
+</button>
 
 </div>
 
-<!-- Arhar -->
+<!-- ================= PRODUCT 6 ================= -->
 
 <div class="card">
 
@@ -201,13 +237,13 @@ style="width:80%;padding:15px;font-size:18px;">
 
 <p><b>Stock :</b> Available</p>
 
-<a href="https://wa.me/918090040580?text=Hello%20Bundelkhand%20Organic%20FPO,%20I%20want%20to%20buy%20Arhar%20Dal." target="_blank">
-<button>🛒 Buy Now</button>
-</a>
+<button class="buyBtn" data-product="Arhar Dal">
+🛒 Buy Now
+</button>
 
 </div>
 
-<!-- Moong -->
+<!-- ================= PRODUCT 7 ================= -->
 
 <div class="card">
 
@@ -221,13 +257,13 @@ style="width:80%;padding:15px;font-size:18px;">
 
 <p><b>Stock :</b> Available</p>
 
-<a href="https://wa.me/918090040580?text=Hello%20Bundelkhand%20Organic%20FPO,%20I%20want%20to%20buy%20Organic%20Moong." target="_blank">
-<button>🛒 Buy Now</button>
-</a>
+<button class="buyBtn" data-product="Organic Moong">
+🛒 Buy Now
+</button>
 
 </div>
 
-<!-- Urad -->
+<!-- ================= PRODUCT 8 ================= -->
 
 <div class="card">
 
@@ -241,13 +277,13 @@ style="width:80%;padding:15px;font-size:18px;">
 
 <p><b>Stock :</b> Available</p>
 
-<a href="https://wa.me/918090040580?text=Hello%20Bundelkhand%20Organic%20FPO,%20I%20want%20to%20buy%20Organic%20Urad." target="_blank">
-<button>🛒 Buy Now</button>
-</a>
+<button class="buyBtn" data-product="Organic Urad">
+🛒 Buy Now
+</button>
 
 </div>
 
-<!-- Masoor -->
+<!-- ================= PRODUCT 9 ================= -->
 
 <div class="card">
 
@@ -261,13 +297,13 @@ style="width:80%;padding:15px;font-size:18px;">
 
 <p><b>Stock :</b> Available</p>
 
-<a href="https://wa.me/918090040580?text=Hello%20Bundelkhand%20Organic%20FPO,%20I%20want%20to%20buy%20Organic%20Masoor." target="_blank">
-<button>🛒 Buy Now</button>
-</a>
+<button class="buyBtn" data-product="Organic Masoor">
+🛒 Buy Now
+</button>
 
 </div>
 
-<!-- Bajra -->
+<!-- ================= PRODUCT 10 ================= -->
 
 <div class="card">
 
@@ -281,13 +317,13 @@ style="width:80%;padding:15px;font-size:18px;">
 
 <p><b>Stock :</b> Available</p>
 
-<a href="https://wa.me/918090040580?text=Hello%20Bundelkhand%20Organic%20FPO,%20I%20want%20to%20buy%20Organic%20Bajra." target="_blank">
-<button>🛒 Buy Now</button>
-</a>
+<button class="buyBtn" data-product="Organic Bajra">
+🛒 Buy Now
+</button>
 
 </div>
 
-<!-- Jowar -->
+<!-- ================= PRODUCT 11 ================= -->
 
 <div class="card">
 
@@ -301,15 +337,15 @@ style="width:80%;padding:15px;font-size:18px;">
 
 <p><b>Stock :</b> Available</p>
 
-<a href="https://wa.me/918090040580?text=Hello%20Bundelkhand%20Organic%20FPO,%20I%20want%20to%20buy%20Organic%20Jowar." target="_blank">
-<button>🛒 Buy Now</button>
-</a>
+<button class="buyBtn" data-product="Organic Jowar">
+🛒 Buy Now
+</button>
 
 </div>
 
 </div>
 
-</section>
+</section> <!-- ================= BULK ORDER ================= -->
 
 <section class="about">
 
@@ -317,7 +353,7 @@ style="width:80%;padding:15px;font-size:18px;">
 
 <p>
 
-Restaurants, Hotels, Retail Shops, NGOs, Schools तथा बड़े खरीदारों के लिए थोक आपूर्ति उपलब्ध है.
+Restaurants, Hotels, Retail Shops, NGOs, Schools तथा बड़े खरीदारों के लिए थोक आपूर्ति उपलब्ध है।
 
 </p>
 
@@ -325,11 +361,13 @@ Restaurants, Hotels, Retail Shops, NGOs, Schools तथा बड़े खर�
 
 <a href="bulk-order.html">
 
-<button>📞 Bulk Order Form</button>
+<button>📦 Bulk Order Form</button>
 
 </a>
 
 </section>
+
+<!-- ================= DELIVERY ================= -->
 
 <section class="about">
 
@@ -337,17 +375,25 @@ Restaurants, Hotels, Retail Shops, NGOs, Schools तथा बड़े खर�
 
 <p>
 
-✅ Farm Fresh Products<br><br>
+✅ Farm Fresh Products
 
-✅ Direct From Farmers<br><br>
+<br><br>
 
-✅ Organic Certified Products<br><br>
+✅ Direct From Farmers
+
+<br><br>
+
+✅ Organic Certified Products
+
+<br><br>
 
 ✅ Bulk Supply Available
 
 </p>
 
 </section>
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -359,7 +405,83 @@ Restaurants, Hotels, Retail Shops, NGOs, Schools तथा बड़े खर�
 
 </footer>
 
-<script src="js/script.js"></script>
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+// =============================
+// Product Search
+// =============================
+
+const searchBox=document.getElementById("searchBox");
+
+if(searchBox){
+
+searchBox.addEventListener("keyup",function(){
+
+let value=this.value.toLowerCase();
+
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(function(card){
+
+let product=card.innerText.toLowerCase();
+
+if(product.indexOf(value)>-1){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+});
+
+}
+
+// =============================
+// WhatsApp Buy Now System
+// =============================
+
+const buttons=document.querySelectorAll(".buyBtn");
+
+buttons.forEach(function(btn){
+
+btn.addEventListener("click",function(){
+
+let product=this.dataset.product;
+
+let message=
+`🌾 Bundelkhand Organic Farmer Producer Company Limited
+
+Hello,
+
+I want to buy:
+
+Product : ${product}
+
+Please send me:
+
+✅ Latest Price
+✅ Available Quantity
+✅ Delivery Details
+
+Thank You.`;
+
+let url="https://wa.me/918090040580?text="+encodeURIComponent(message);
+
+window.open(url,"_blank");
+
+});
+
+});
+
+</script>
 
 </body>
+
 </html>
