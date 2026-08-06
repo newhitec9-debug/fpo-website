@@ -4,30 +4,23 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Manage Products | Admin</title>
 
+<link rel="stylesheet" href="css/style.css">
+
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+body{
+background:#f4fff4;
 font-family:Arial,sans-serif;
 }
 
 
-body{
-
-background:#f4fff4;
-
-}
-
-
-
-header{
+.admin-header{
 
 background:#1B5E20;
 color:white;
@@ -37,22 +30,13 @@ text-align:center;
 }
 
 
-header h1{
-
-font-size:30px;
-
-}
-
-
-
 .container{
 
-max-width:1200px;
+max-width:1000px;
 margin:30px auto;
 padding:20px;
 
 }
-
 
 
 .box{
@@ -61,10 +45,9 @@ background:white;
 padding:25px;
 border-radius:10px;
 box-shadow:0 0 10px #ccc;
-margin-bottom:30px;
+margin-bottom:25px;
 
 }
-
 
 
 h2{
@@ -75,7 +58,6 @@ margin-bottom:20px;
 }
 
 
-
 input,select{
 
 width:100%;
@@ -83,17 +65,15 @@ padding:12px;
 margin:8px 0;
 border:1px solid #ccc;
 border-radius:5px;
-font-size:16px;
 
 }
 
 
-
 button{
 
-padding:12px 20px;
 background:#2E7D32;
 color:white;
+padding:12px 20px;
 border:none;
 border-radius:5px;
 cursor:pointer;
@@ -101,13 +81,11 @@ cursor:pointer;
 }
 
 
-
 button:hover{
 
 background:#1B5E20;
 
 }
-
 
 
 table{
@@ -130,11 +108,10 @@ padding:12px;
 td{
 
 padding:12px;
-text-align:center;
 border-bottom:1px solid #ddd;
+text-align:center;
 
 }
-
 
 
 .delete{
@@ -142,40 +119,6 @@ border-bottom:1px solid #ddd;
 background:red;
 
 }
-
-
-.edit{
-
-background:#F9A825;
-color:black;
-
-}
-
-
-
-.back{
-
-display:inline-block;
-margin-top:20px;
-background:#1B5E20;
-color:white;
-padding:12px 25px;
-text-decoration:none;
-border-radius:5px;
-
-}
-
-
-
-footer{
-
-background:#2E7D32;
-color:white;
-padding:15px;
-text-align:center;
-
-}
-
 
 
 </style>
@@ -186,8 +129,7 @@ text-align:center;
 <body>
 
 
-
-<header>
+<header class="admin-header">
 
 <h1>
 📦 Manage Products
@@ -200,9 +142,7 @@ Bundelkhand Organic Farmer Producer Company Limited
 </header>
 
 
-
 <div class="container">
-
 
 
 <div class="box">
@@ -213,26 +153,26 @@ Bundelkhand Organic Farmer Producer Company Limited
 </h2>
 
 
-<input type="text" id="pname"
-placeholder="Product Name">
+<input type="text" id="productName" placeholder="Product Name">
 
 
 <select id="category">
 
 <option>Cereals</option>
+
 <option>Pulses</option>
+
 <option>Oil Seeds</option>
+
 <option>Organic Products</option>
 
 </select>
 
 
-<input type="text" id="price"
-placeholder="Price Example ₹40/Kg">
+<input type="text" id="price" placeholder="Price Example ₹40/Kg">
 
 
-<input type="text" id="stock"
-placeholder="Stock Available">
+<input type="text" id="stock" placeholder="Stock Quantity">
 
 
 <button onclick="addProduct()">
@@ -242,12 +182,10 @@ Add Product
 </button>
 
 
-</div>
-
-
+</div> 
+  <!-- Product List -->
 
 <div class="box">
-
 
 <h2>
 🌾 Product List
@@ -261,37 +199,24 @@ Add Product
 
 <tr>
 
-<th>
-Sr No.
-</th>
+<th>Sr No.</th>
 
-<th>
-Product
-</th>
+<th>Product</th>
 
-<th>
-Category
-</th>
+<th>Category</th>
 
-<th>
-Price
-</th>
+<th>Price</th>
 
-<th>
-Stock
-</th>
+<th>Stock</th>
 
-<th>
-Action
-</th>
-
+<th>Action</th>
 
 </tr>
 
 </thead>
 
 
-<tbody id="productTable">
+<tbody id="productList">
 
 
 </tbody>
@@ -300,69 +225,76 @@ Action
 </table>
 
 
+</div>
+
+
+<a href="admin-dashboard.html"
+style="
+display:inline-block;
+background:#1B5E20;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:5px;
+">
+
+⬅ Back To Dashboard
+
+</a>
+
+
 
 </div> 
   <script>
 
 
-let products = JSON.parse(localStorage.getItem("products")) || [
+// Load Products
 
-{
-name:"Organic Wheat",
-category:"Cereals",
-price:"₹40/Kg",
-stock:"Available"
-},
-
-{
-name:"Organic Chana",
-category:"Pulses",
-price:"₹80/Kg",
-stock:"Available"
-},
-
-{
-name:"Mustard Seeds",
-category:"Oil Seeds",
-price:"₹90/Kg",
-stock:"Available"
-}
-
-];
+let products = JSON.parse(localStorage.getItem("products")) || [];
 
 
 
-let editIndex = -1;
+displayProducts();
 
 
 
 
-// Add Product
+// Add Product Function
 
 function addProduct(){
 
 
-let name=document.getElementById("pname").value;
-
-let category=document.getElementById("category").value;
-
-let price=document.getElementById("price").value;
-
-let stock=document.getElementById("stock").value;
+let name =
+document.getElementById("productName").value;
 
 
+let category =
+document.getElementById("category").value;
 
-if(name=="" || price==""){
 
-alert("Please Enter Product Name and Price");
+let price =
+document.getElementById("price").value;
+
+
+let stock =
+document.getElementById("stock").value;
+
+
+
+if(name=="" || price=="" || stock==""){
+
+
+alert("Please Fill All Details");
 
 return;
+
 
 }
 
 
 
-let product={
+let product = {
+
 
 name:name,
 
@@ -372,223 +304,31 @@ price:price,
 
 stock:stock
 
+
 };
 
-
-
-if(editIndex==-1){
 
 
 products.push(product);
 
 
-}
-
-else{
-
-
-products[editIndex]=product;
-
-editIndex=-1;
-
-
-}
-
-
-
 
 localStorage.setItem(
-
 "products",
-
 JSON.stringify(products)
-
 );
 
 
 
-clearForm();
-
-displayProducts();
-
-
-alert("Product Saved Successfully");
-
-
-}
-
-
-
-
-// Show Products
-
-
-function displayProducts(){
-
-
-let table=document.getElementById("productTable");
-
-
-table.innerHTML="";
-
-
-
-products.forEach(function(product,index){
-
-
-table.innerHTML += `
-
-
-<tr>
-
-
-<td>
-${index+1}
-</td>
-
-
-<td>
-${product.name}
-</td>
-
-
-<td>
-${product.category}
-</td>
-
-
-<td>
-${product.price}
-</td>
-
-
-<td>
-${product.stock}
-</td>
-
-
-
-<td>
-
-
-<button class="edit"
-onclick="editProduct(${index})">
-
-Edit
-
-</button>
-
-
-
-<button class="delete"
-onclick="deleteProduct(${index})">
-
-Delete
-
-</button>
-
-
-
-</td>
-
-
-</tr>
-
-
-`;
-
-
-
-});
-
-
-
-}
-
-
-
-
-
-// Delete Product
-
-
-function deleteProduct(index){
-
-
-if(confirm("Delete this Product?")){
-
-
-products.splice(index,1);
-
-
-
-localStorage.setItem(
-
-"products",
-
-JSON.stringify(products)
-
-);
+alert("✅ Product Added Successfully");
 
 
 
 displayProducts();
 
 
-}
 
-
-
-}
-
-
-
-
-// Edit Product
-
-
-function editProduct(index){
-
-
-let p=products[index];
-
-
-document.getElementById("pname").value=p.name;
-
-
-document.getElementById("category").value=p.category;
-
-
-document.getElementById("price").value=p.price;
-
-
-document.getElementById("stock").value=p.stock;
-
-
-
-editIndex=index;
-
-
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-
-}
-
-
-
-
-
-function clearForm(){
-
-
-document.getElementById("pname").value="";
+document.getElementById("productName").value="";
 
 document.getElementById("price").value="";
 
@@ -601,41 +341,112 @@ document.getElementById("stock").value="";
 
 
 
-// Load Product
+
+// Display Products
+
+
+function displayProducts(){
+
+
+
+let list =
+document.getElementById("productList");
+
+
+
+list.innerHTML="";
+
+
+
+products.forEach(function(product,index){
+
+
+
+list.innerHTML += `
+
+
+<tr>
+
+
+<td>${index+1}</td>
+
+
+<td>${product.name}</td>
+
+
+<td>${product.category}</td>
+
+
+<td>${product.price}</td>
+
+
+<td>${product.stock}</td>
+
+
+<td>
+
+
+<button class="delete"
+onclick="deleteProduct(${index})">
+
+Delete
+
+</button>
+
+
+</td>
+
+
+</tr>
+
+
+`;
+
+
+});
+
+
+}
+
+
+
+
+
+
+
+// Delete Product
+
+
+function deleteProduct(index){
+
+
+
+if(confirm("Delete this Product?")){
+
+
+products.splice(index,1);
+
+
+
+localStorage.setItem(
+"products",
+JSON.stringify(products)
+);
+
 
 
 displayProducts();
 
 
 
-</script> 
-  <!-- Back Button -->
+}
 
-<div style="text-align:center;margin-top:30px;">
 
-<a class="back" href="admin-dashboard.html">
-
-⬅ Back To Dashboard
-
-</a>
-
-</div>
+}
 
 
 
-</div>
-
-
-</div>
-
-
-
-
-<footer>
-
-© 2026 Bundelkhand Organic Farmer Producer Company Limited
-
-</footer>
+</script>
 
 
 
