@@ -1,405 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
+<form onsubmit="sendBulkOrder(); return false;">
 
-<head>
+<label>Company / Shop Name</label>
+<input id="company" type="text" placeholder="Enter Company Name" required>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bulk Order | Bundelkhand Organic Farmer Producer Company Limited</title>
+<label>Contact Person</label>
+<input id="person" type="text" placeholder="Enter Contact Person" required>
 
-<link rel="stylesheet" href="css/style.css">
 
-</head>
+<label>Mobile Number</label>
+<input id="mobile" type="tel" placeholder="Enter Mobile Number" required>
 
 
-<body>
+<label>Email</label>
+<input id="email" type="email" placeholder="Enter Email">
 
 
-<!-- Header -->
-
-<header class="top-header">
-
-<div class="logo">
-
-<div class="logo-left">
-
-<img src="images/logo.png" alt="FPO Logo">
-
-<div class="logo-text">
-
-<h1>
-Bundelkhand Organic Farmer Producer Company Limited
-</h1>
-
-<p>
-🌾 Bulk Order Portal
-</p>
-
-</div>
-
-</div>
-
-
-<a href="login.html" class="login-btn">
-Login
-</a>
-
-
-</div>
-
-</header>
-
-
-
-<!-- Navigation -->
-
-
-<nav>
-
-<a href="index.html">🏠 Home</a>
-
-<a href="about.html">🌿 About</a>
-
-<a href="products.html">🛒 Products</a>
-
-<a href="farmers.html">👨‍🌾 Kisan Corner</a>
-
-<a href="membership.html">📝 Join FPO</a>
-
-<a href="bulk-order.html">📦 Bulk Order</a>
-
-<a href="contact.html">📞 Contact</a>
-
-
-</nav>
-
-
-
-
-<!-- Bulk Order Section -->
-
-
-<section class="about">
-
-
-<h2>📦 Bulk Purchase Enquiry Form</h2>
-
-
-<p>
-Restaurants, Hotels, Retail Shops, NGOs, Schools तथा बड़े खरीदारों के लिए थोक आपूर्ति उपलब्ध है।
-</p>
-
-
-</section>
-
-
-
-
-<section class="products">
-
-
-<div class="container">
-
-
-
-<form id="bulkForm">
-
-
-<label>
-Company / Shop Name
-</label>
-
-<input 
-type="text"
-id="company"
-placeholder="Enter Company Name"
-required>
-
-
-
-
-<label>
-Contact Person
-</label>
-
-<input
-type="text"
-id="person"
-placeholder="Enter Contact Person"
-required>
-
-
-
-
-<label>
-Mobile Number
-</label>
-
-<input
-type="tel"
-id="mobile"
-placeholder="Enter Mobile Number"
-required>
-
-
-
-
-<label>
-Email
-</label>
-
-<input
-type="email"
-id="email"
-placeholder="Enter Email Address">
-
-
-
-
-
-<label>
-Select Product
-</label>
-
+<label>Select Product</label>
 
 <select id="product">
 
-
 <option>Organic Wheat</option>
-
 <option>Organic Chana</option>
-
-<option>Mustard Seeds</option>
-
+<option>Mustard</option>
 <option>Groundnut</option>
-
 <option>Sesame</option>
-
-<option>Arhar Dal</option>
-
+<option>Arhar</option>
 <option>Moong</option>
-
 <option>Urad</option>
-
-<option>Masoor</option>
-
-<option>Bajra</option>
-
-<option>Jowar</option>
-
 
 </select>
 
 
+<label>Quantity</label>
+
+<input id="quantity" type="text" placeholder="Example : 100 Kg / 10 Quintal" required>
 
 
+<label>Delivery Address</label>
 
-<label>
-Quantity
-</label>
-
-
-<input
-
-type="text"
-
-id="quantity"
-
-placeholder="Example : 100 Kg / 10 Quintal"
-
-required
-
->
+<textarea id="address" placeholder="Enter Delivery Address" required></textarea>
 
 
+<label>Additional Message</label>
+
+<textarea id="message" placeholder="Write Your Requirement"></textarea>
 
 
-
-<label>
-Delivery Address
-</label>
-
-
-<textarea
-
-id="address"
-
-placeholder="Enter Delivery Address"
-
-required>
-
-</textarea>
-
-
-
-
-
-<label>
-Additional Message
-</label>
-
-
-<textarea
-
-id="message"
-
-placeholder="Write Your Requirement">
-
-</textarea>
-
-
-
-
-
-<button type="button" onclick="sendBulkOrder()">
-
+<button type="submit">
 📦 Submit Bulk Order
-
 </button>
-
 
 
 </form>
 
 
-
-<br>
-
-
-
 <a class="whatsapp"
-
 href="https://wa.me/918090040580?text=Hello%20Bundelkhand%20Organic%20FPO,%20I%20want%20to%20place%20a%20Bulk%20Order."
-
 target="_blank">
 
-
-💬 Order Direct on WhatsApp
-
+💬 Order on WhatsApp
 
 </a>
 
 
-
-</div>
-
-
-</section>
-
-
-
-
-
-<!-- Footer -->
-
-
-<footer>
-
-
-<p>
-
-© 2026 Bundelkhand Organic Farmer Producer Company Limited
-
-</p>
-
-
-</footer>
-
-
-
-
-
 <script>
-
 
 function sendBulkOrder(){
 
-
-let company =
-document.getElementById("company").value;
-
-
-let person =
-document.getElementById("person").value;
-
-
-let mobile =
-document.getElementById("mobile").value;
-
-
-let email =
-document.getElementById("email").value;
-
-
-let product =
-document.getElementById("product").value;
-
-
-let quantity =
-document.getElementById("quantity").value;
-
-
-let address =
-document.getElementById("address").value;
-
-
-let message =
-document.getElementById("message").value;
-
-
-
-if(company=="" || person=="" || mobile==""){
-
-alert("Please fill required details");
-
-return;
-
-}
-
+let company=document.getElementById("company").value;
+let person=document.getElementById("person").value;
+let mobile=document.getElementById("mobile").value;
+let email=document.getElementById("email").value;
+let product=document.getElementById("product").value;
+let quantity=document.getElementById("quantity").value;
+let address=document.getElementById("address").value;
+let msg=document.getElementById("message").value;
 
 
 let whatsappMessage =
+`Hello Bundelkhand Organic FPO
 
-"🌾 Bundelkhand Organic Farmer Producer Company Limited\n\n"+
+📦 Bulk Order Request
 
-"📦 Bulk Order Request\n\n"+
+🏢 Company:
+${company}
 
-"Company Name : "+company+"\n"+
+👤 Contact Person:
+${person}
 
-"Contact Person : "+person+"\n"+
+📱 Mobile:
+${mobile}
 
-"Mobile : "+mobile+"\n"+
+📧 Email:
+${email}
 
-"Email : "+email+"\n"+
+🌾 Product:
+${product}
 
-"Product : "+product+"\n"+
+⚖ Quantity:
+${quantity}
 
-"Quantity : "+quantity+"\n"+
+📍 Address:
+${address}
 
-"Delivery Address : "+address+"\n"+
-
-"Message : "+message;
-
+📝 Message:
+${msg}`;
 
 
 let url =
-
 "https://wa.me/918090040580?text="
-
 +encodeURIComponent(whatsappMessage);
-
 
 
 window.open(url,"_blank");
 
 }
 
-
 </script>
-
-
-
-</body>
-
-</html>
