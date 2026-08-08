@@ -23,7 +23,7 @@ body{
 background:#f4fff4;
 }
 
-/* Header */
+/* HEADER */
 
 header{
 background:#1B5E20;
@@ -37,8 +37,7 @@ font-size:30px;
 margin-bottom:8px;
 }
 
-
-/* Container */
+/* CONTAINER */
 
 .container{
 max-width:1200px;
@@ -46,8 +45,7 @@ margin:30px auto;
 padding:20px;
 }
 
-
-/* Welcome */
+/* WELCOME */
 
 .welcome{
 background:white;
@@ -62,15 +60,13 @@ color:#2E7D32;
 margin-bottom:10px;
 }
 
-
-/* Cards */
+/* CARDS */
 
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
-
 
 .card{
 background:white;
@@ -80,30 +76,29 @@ border-radius:10px;
 box-shadow:0 0 10px #ccc;
 }
 
-
 .card h2{
 color:#2E7D32;
 margin-bottom:10px;
 }
 
-
 .card p{
 margin-bottom:15px;
 }
 
-
 .count{
-font-size:22px;
+font-size:24px;
 font-weight:bold;
 color:#1565C0;
 margin:10px 0;
 }
 
-
 .pending{
 color:#F57C00;
 }
 
+.approved{
+color:#2E7D32;
+}
 
 .card a{
 display:inline-block;
@@ -114,19 +109,16 @@ text-decoration:none;
 border-radius:5px;
 }
 
-
 .card a:hover{
 background:#1B5E20;
 }
 
-
-/* Logout */
+/* LOGOUT */
 
 .logout{
 text-align:center;
 margin-top:40px;
 }
-
 
 .logout button{
 background:#D32F2F;
@@ -138,13 +130,11 @@ cursor:pointer;
 font-size:16px;
 }
 
-
 .logout button:hover{
 background:#B71C1C;
 }
 
-
-/* Footer */
+/* FOOTER */
 
 footer{
 background:#2E7D32;
@@ -154,8 +144,7 @@ padding:15px;
 margin-top:40px;
 }
 
-
-/* Mobile */
+/* MOBILE */
 
 @media(max-width:600px){
 
@@ -181,7 +170,7 @@ padding:20px;
 <body>
 
 
-<!-- Admin Login Check -->
+<!-- ADMIN LOGIN CHECK -->
 
 <script>
 
@@ -194,7 +183,7 @@ window.location.href="login.html";
 </script>
 
 
-<!-- Header -->
+<!-- HEADER -->
 
 <header>
 
@@ -212,7 +201,7 @@ Bundelkhand Organic Farmer Producer Company Limited
 <div class="container">
 
 
-<!-- Welcome -->
+<!-- WELCOME -->
 
 <div class="welcome">
 
@@ -227,12 +216,12 @@ Welcome Admin 👋
 </div>
 
 
-<!-- Cards -->
+<!-- CARDS -->
 
 <div class="cards">
 
 
-<!-- Farmers -->
+<!-- TOTAL FARMERS -->
 
 <div class="card">
 
@@ -241,13 +230,12 @@ Welcome Admin 👋
 </h2>
 
 <p>
-Registered Farmers देखें।
+Approved Registered Farmers
 </p>
 
 <div
-class="count"
-id="totalFarmers"
->
+class="count approved"
+id="totalFarmers">
 0
 </div>
 
@@ -258,7 +246,7 @@ Open
 </div>
 
 
-<!-- Membership -->
+<!-- MEMBERSHIP REQUESTS -->
 
 <div class="card">
 
@@ -267,13 +255,12 @@ Open
 </h2>
 
 <p>
-नई सदस्यता आवेदन देखें।
+Pending Membership Applications
 </p>
 
 <div
-class="count"
-id="totalMembership"
->
+class="count pending"
+id="totalMembership">
 0
 </div>
 
@@ -284,7 +271,7 @@ Open
 </div>
 
 
-<!-- Products -->
+<!-- PRODUCTS -->
 
 <div class="card">
 
@@ -298,8 +285,7 @@ Open
 
 <div
 class="count"
-id="totalProducts"
->
+id="totalProducts">
 0
 </div>
 
@@ -310,7 +296,7 @@ Open
 </div>
 
 
-<!-- Orders -->
+<!-- ORDERS -->
 
 <div class="card">
 
@@ -347,7 +333,7 @@ Open
 </div>
 
 
-<!-- Agriculture News -->
+<!-- AGRICULTURE NEWS -->
 
 <div class="card">
 
@@ -366,7 +352,7 @@ Open
 </div>
 
 
-<!-- Gallery -->
+<!-- GALLERY -->
 
 <div class="card">
 
@@ -385,7 +371,7 @@ Open
 </div>
 
 
-<!-- Reports -->
+<!-- REPORTS -->
 
 <div class="card">
 
@@ -404,7 +390,7 @@ Open
 </div>
 
 
-<!-- Settings -->
+<!-- SETTINGS -->
 
 <div class="card">
 
@@ -426,7 +412,7 @@ Open
 </div>
 
 
-<!-- Logout -->
+<!-- LOGOUT -->
 
 <div class="logout">
 
@@ -442,7 +428,7 @@ Logout
 </div>
 
 
-<!-- Footer -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -454,9 +440,9 @@ Logout
 <script>
 
 
-// ===============================
+// ======================================
 // PRODUCTS COUNT
-// ===============================
+// ======================================
 
 let products =
 JSON.parse(localStorage.getItem("products")) || [];
@@ -466,9 +452,9 @@ document.getElementById("totalProducts").textContent =
 products.length;
 
 
-// ===============================
+// ======================================
 // ORDERS COUNT
-// ===============================
+// ======================================
 
 let orders =
 JSON.parse(localStorage.getItem("orders")) || [];
@@ -478,12 +464,14 @@ document.getElementById("totalOrders").textContent =
 orders.length;
 
 
-// Pending Orders
+// ======================================
+// PENDING ORDERS
+// ======================================
 
 let pendingOrders =
 orders.filter(function(order){
 
-return order.status === "Pending";
+return (order.status || "Pending") === "Pending";
 
 }).length;
 
@@ -492,33 +480,50 @@ document.getElementById("pendingOrders").textContent =
 pendingOrders;
 
 
-// ===============================
-// MEMBERSHIP COUNT
-// ===============================
+// ======================================
+// MEMBERSHIP DATA
+// ======================================
 
 let members =
 JSON.parse(localStorage.getItem("members")) || [];
 
 
-document.getElementById("totalMembership").textContent =
-members.length;
+// ======================================
+// APPROVED FARMERS
+// ======================================
 
+let approvedFarmers =
+members.filter(function(member){
 
-// ===============================
-// FARMERS COUNT
-// ===============================
+return member.status === "Approved";
 
-let farmers =
-JSON.parse(localStorage.getItem("farmers")) || [];
+}).length;
 
 
 document.getElementById("totalFarmers").textContent =
-farmers.length;
+approvedFarmers;
 
 
-// ===============================
+// ======================================
+// PENDING MEMBERSHIP REQUESTS
+// ======================================
+
+let pendingMembers =
+members.filter(function(member){
+
+return !member.status ||
+member.status === "Pending";
+
+}).length;
+
+
+document.getElementById("totalMembership").textContent =
+pendingMembers;
+
+
+// ======================================
 // LOGOUT
-// ===============================
+// ======================================
 
 function logout(){
 
