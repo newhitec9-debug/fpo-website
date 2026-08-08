@@ -1,156 +1,150 @@
+```html
 <!DOCTYPE html>
 <html lang="hi">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Farmers List | Bundelkhand Organic FPO</title>
+<title>Approved Farmers | Bundelkhand Organic FPO</title>
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
 }
 
 body{
-background:#f4fff4;
+    background:#f4fff4;
 }
 
-/* Header */
-
 header{
-background:#1B5E20;
-color:white;
-padding:25px;
-text-align:center;
+    background:#1B5E20;
+    color:white;
+    text-align:center;
+    padding:25px 10px;
 }
 
 header h1{
-font-size:30px;
-margin-bottom:8px;
+    margin-bottom:8px;
 }
-
-/* Container */
 
 .container{
-max-width:1200px;
-margin:30px auto;
-padding:20px;
+    max-width:1100px;
+    margin:30px auto;
+    padding:20px;
 }
 
-/* Top Bar */
-
-.top-bar{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px #ccc;
-margin-bottom:20px;
+.box{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px #ccc;
 }
 
-.top-bar h2{
-color:#2E7D32;
-margin-bottom:15px;
+h2{
+    color:#2E7D32;
+    margin-bottom:20px;
+    text-align:center;
 }
-
-/* Search */
 
 .search-box{
-width:100%;
-padding:12px;
-border:1px solid #ccc;
-border-radius:5px;
-font-size:16px;
+    width:100%;
+    padding:14px;
+    font-size:17px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    margin-bottom:20px;
 }
 
-/* Table */
-
-.table-box{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px #ccc;
-overflow-x:auto;
+.table-container{
+    overflow-x:auto;
 }
 
 table{
-width:100%;
-border-collapse:collapse;
+    width:100%;
+    border-collapse:collapse;
+    min-width:800px;
 }
 
 th{
-background:#2E7D32;
-color:white;
-padding:12px;
+    background:#2E7D32;
+    color:white;
+    padding:12px;
 }
 
 td{
-padding:12px;
-border-bottom:1px solid #ddd;
-text-align:center;
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
 }
 
-tr:hover{
-background:#f1f8e9;
+.approved{
+    color:green;
+    font-weight:bold;
 }
 
-/* Back Button */
+.delete-btn{
+    background:#D32F2F;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.delete-btn:hover{
+    background:#B71C1C;
+}
 
 .back{
-display:inline-block;
-margin-top:20px;
-background:#2E7D32;
-color:white;
-padding:12px 25px;
-text-decoration:none;
-border-radius:5px;
+    display:inline-block;
+    margin-top:20px;
+    background:#1565C0;
+    color:white;
+    padding:12px 20px;
+    text-decoration:none;
+    border-radius:5px;
 }
-
-.back:hover{
-background:#1B5E20;
-}
-
-/* Footer */
 
 footer{
-background:#2E7D32;
-color:white;
-text-align:center;
-padding:15px;
-margin-top:40px;
+    margin-top:40px;
+    background:#2E7D32;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+.empty{
+    text-align:center;
+    padding:20px;
+    color:#777;
 }
 
 </style>
 
 </head>
 
-
 <body>
-
 
 <header>
 
-<h1>👨‍🌾 Farmers Management</h1>
+<h1>👨‍🌾 Approved Farmers</h1>
 
-<p>
-Bundelkhand Organic Farmer Producer Company Limited
-</p>
+<p>Bundelkhand Organic Farmer Producer Company Limited</p>
 
 </header>
 
 
 <div class="container">
 
+<div class="box">
 
-<div class="top-bar">
+<h2>👥 Registered Approved Farmers</h2>
 
-<h2>👥 Registered Farmers</h2>
 
 <input
 type="text"
@@ -160,85 +154,27 @@ placeholder="🔍 किसान का नाम खोजें..."
 onkeyup="searchFarmers()"
 >
 
-</div>
 
-
-<div class="table-box">
+<div class="table-container">
 
 <table>
 
 <thead>
 
 <tr>
-
 <th>Sr No.</th>
-
 <th>Farmer Name</th>
-
 <th>Mobile</th>
-
 <th>Village</th>
-
 <th>District</th>
-
+<th>Main Crop</th>
 <th>Status</th>
-
+<th>Action</th>
 </tr>
 
 </thead>
 
-
-<tbody id="farmerTable">
-
-<tr>
-
-<td>1</td>
-
-<td>Demo Farmer</td>
-
-<td>9876543210</td>
-
-<td>Srinagar</td>
-
-<td>Mahoba</td>
-
-<td>✅ Active</td>
-
-</tr>
-
-
-<tr>
-
-<td>2</td>
-
-<td>Ram Kumar</td>
-
-<td>9876543211</td>
-
-<td>Belatal</td>
-
-<td>Mahoba</td>
-
-<td>✅ Active</td>
-
-</tr>
-
-
-<tr>
-
-<td>3</td>
-
-<td>Shyam Lal</td>
-
-<td>9876543212</td>
-
-<td>Kulpahar</td>
-
-<td>Mahoba</td>
-
-<td>⏳ Pending</td>
-
-</tr>
+<tbody id="farmersTable">
 
 </tbody>
 
@@ -247,12 +183,14 @@ onkeyup="searchFarmers()"
 </div>
 
 
-<a href="admin-dashboard.html" class="back">
-
+<a
+href="admin-dashboard.html"
+class="back"
+>
 ⬅ Back to Admin Dashboard
-
 </a>
 
+</div>
 
 </div>
 
@@ -266,36 +204,177 @@ onkeyup="searchFarmers()"
 
 <script>
 
+
+// ==================================
+// LOAD APPROVED FARMERS
+// ==================================
+
+function getApprovedFarmers(){
+
+    let members =
+    JSON.parse(localStorage.getItem("members")) || [];
+
+    return members.filter(function(member){
+
+        return member.status === "Approved";
+
+    });
+
+}
+
+
+// ==================================
+// DISPLAY FARMERS
+// ==================================
+
+function displayFarmers(list){
+
+    let table =
+    document.getElementById("farmersTable");
+
+    table.innerHTML = "";
+
+    if(list.length === 0){
+
+        table.innerHTML =
+        `<tr>
+        <td colspan="8" class="empty">
+        अभी कोई Approved Farmer उपलब्ध नहीं है।
+        </td>
+        </tr>`;
+
+        return;
+    }
+
+
+    list.forEach(function(farmer,index){
+
+        let row =
+        document.createElement("tr");
+
+        row.innerHTML = `
+
+        <td>${index + 1}</td>
+
+        <td>${farmer.name || ""}</td>
+
+        <td>${farmer.mobile || ""}</td>
+
+        <td>${farmer.village || ""}</td>
+
+        <td>${farmer.district || ""}</td>
+
+        <td>${farmer.crop || ""}</td>
+
+        <td class="approved">
+        🟢 Approved
+        </td>
+
+        <td>
+        <button
+        class="delete-btn"
+        onclick="deleteFarmer(${index})">
+        🗑️ Delete
+        </button>
+        </td>
+
+        `;
+
+        table.appendChild(row);
+
+    });
+
+}
+
+
+// ==================================
+// SEARCH FARMERS
+// ==================================
+
 function searchFarmers(){
 
-let input =
-document.getElementById("search").value.toLowerCase();
+    let search =
+    document.getElementById("search")
+    .value
+    .toLowerCase();
 
-let rows =
-document.querySelectorAll("#farmerTable tr");
+    let farmers =
+    getApprovedFarmers();
 
-rows.forEach(function(row){
+    let filtered =
+    farmers.filter(function(farmer){
 
-let name =
-row.cells[1].textContent.toLowerCase();
+        return (
+            (farmer.name || "")
+            .toLowerCase()
+            .includes(search)
+        );
 
-if(name.includes(input)){
+    });
 
-row.style.display="";
+    displayFarmers(filtered);
 
-}else{
+}
 
-row.style.display="none";
+
+// ==================================
+// DELETE FARMER
+// ==================================
+
+function deleteFarmer(index){
+
+    if(!confirm(
+        "क्या आप इस Approved Farmer को Delete करना चाहते हैं?"
+    )){
+        return;
+    }
+
+    let members =
+    JSON.parse(localStorage.getItem("members")) || [];
+
+    let approved =
+    members.filter(function(member){
+
+        return member.status === "Approved";
+
+    });
+
+    let farmer =
+    approved[index];
+
+    let realIndex =
+    members.indexOf(farmer);
+
+    if(realIndex !== -1){
+
+        members.splice(realIndex,1);
+
+        localStorage.setItem(
+            "members",
+            JSON.stringify(members)
+        );
+
+    }
+
+    displayFarmers(
+        getApprovedFarmers()
+    );
 
 }
 
-});
 
-}
+// ==================================
+// PAGE LOAD
+// ==================================
+
+displayFarmers(
+    getApprovedFarmers()
+);
+
 
 </script>
-
 
 </body>
 
 </html>
+```
