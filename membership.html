@@ -1,0 +1,562 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Join FPO | Bundelkhand Organic Farmer Producer Company Limited</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#f4fff4;
+margin:0;
+}
+
+.top-header{
+background:#1B5E20;
+color:white;
+padding:20px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+max-width:1200px;
+margin:auto;
+}
+
+.logo img{
+width:70px;
+height:70px;
+object-fit:contain;
+}
+
+.logo h1{
+margin:0;
+font-size:28px;
+}
+
+.logo p{
+margin:5px 0 0;
+}
+
+nav{
+background:#2E7D32;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-weight:bold;
+}
+
+.hero{
+background:#e8f5e9;
+text-align:center;
+padding:35px 20px;
+}
+
+.hero h1{
+color:#1B5E20;
+}
+
+.about{
+max-width:850px;
+margin:30px auto;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 0 10px #ccc;
+}
+
+.about h2{
+color:#2E7D32;
+text-align:center;
+}
+
+label{
+font-weight:bold;
+display:block;
+margin-top:12px;
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin-top:6px;
+border:1px solid #ccc;
+border-radius:6px;
+box-sizing:border-box;
+}
+
+.checkbox{
+width:auto;
+margin-right:8px;
+}
+
+.agree-label{
+display:inline;
+font-weight:normal;
+}
+
+button{
+background:#2E7D32;
+color:white;
+border:none;
+padding:13px 25px;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+background:#1B5E20;
+}
+
+.success{
+display:none;
+background:#e8f5e9;
+border:2px solid #2E7D32;
+padding:25px;
+margin-top:25px;
+border-radius:10px;
+text-align:center;
+color:#1B5E20;
+}
+
+footer{
+background:#2E7D32;
+color:white;
+text-align:center;
+padding:18px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="top-header">
+
+<div class="logo">
+
+<img src="images/logo.png" alt="FPO Logo">
+
+<div>
+
+<h1>
+Bundelkhand Organic Farmer Producer Company Limited
+</h1>
+
+<p>
+🌾 Join Our Farmer Producer Organization
+</p>
+
+</div>
+
+</div>
+
+</header>
+
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="about.html">🌿 About</a>
+
+<a href="products.html">🛒 Products</a>
+
+<a href="farmers.html">👨‍🌾 Kisan Corner</a>
+
+<a href="membership.html">📝 Join FPO</a>
+
+<a href="contact.html">📞 Contact</a>
+
+</nav>
+
+
+<section class="hero">
+
+<h1>
+📝 FPO Membership Registration
+</h1>
+
+<p>
+Become a Shareholder Member of Bundelkhand Organic Farmer Producer Company Limited.
+</p>
+
+</section>
+
+
+<section class="about">
+
+
+<form id="membershipForm">
+
+<h2>
+👨‍🌾 Membership Application Form
+</h2>
+
+
+<label>
+Farmer Name *
+</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter Farmer Name"
+required
+>
+
+
+<label>
+Father Name *
+</label>
+
+<input
+type="text"
+id="father"
+placeholder="Enter Father Name"
+required
+>
+
+
+<label>
+Mobile Number *
+</label>
+
+<input
+type="tel"
+id="mobile"
+placeholder="Enter 10 Digit Mobile Number"
+maxlength="10"
+required
+>
+
+
+<label>
+Village *
+</label>
+
+<input
+type="text"
+id="village"
+placeholder="Village Name"
+required
+>
+
+
+<label>
+Gram Panchayat
+</label>
+
+<input
+type="text"
+id="panchayat"
+placeholder="Gram Panchayat"
+>
+
+
+<label>
+Block
+</label>
+
+<input
+type="text"
+id="block"
+placeholder="Block Name"
+>
+
+
+<label>
+District *
+</label>
+
+<input
+type="text"
+id="district"
+placeholder="District Name"
+required
+>
+
+
+<label>
+State
+</label>
+
+<input
+type="text"
+id="state"
+value="Uttar Pradesh"
+readonly
+>
+
+
+<label>
+Total Land Holding
+</label>
+
+<input
+type="text"
+id="land"
+placeholder="Example: 2.5 Acres"
+>
+
+
+<label>
+Main Crops
+</label>
+
+<input
+type="text"
+id="crop"
+placeholder="Wheat, Chana, Mustard"
+>
+
+
+<label>
+Irrigation Source
+</label>
+
+<select id="irrigation">
+
+<option>Tube Well</option>
+
+<option>Canal</option>
+
+<option>Pond</option>
+
+<option>Rainfed</option>
+
+<option>Drip Irrigation</option>
+
+<option>Sprinkler</option>
+
+<option>Other</option>
+
+</select>
+
+
+<label>
+Membership Share Amount (₹)
+</label>
+
+<input
+type="number"
+id="share"
+value="500"
+readonly
+>
+
+
+<br><br>
+
+
+<input
+type="checkbox"
+id="agree"
+class="checkbox"
+required
+>
+
+<label
+for="agree"
+class="agree-label"
+>
+
+मैं घोषणा करता/करती हूँ कि मेरे द्वारा दी गई सभी जानकारी सत्य एवं सही है।
+
+</label>
+
+
+<br>
+
+
+<button type="submit">
+
+✅ Submit Membership
+
+</button>
+
+
+</form>
+
+
+<div
+id="successMessage"
+class="success"
+>
+
+<h2>
+✅ Membership Request Submitted
+</h2>
+
+<p>
+आपका Membership आवेदन सफलतापूर्वक प्राप्त हो गया है।
+</p>
+
+<p>
+FPO Team आपके आवेदन की जाँच करके आपसे संपर्क करेगी।
+</p>
+
+</div>
+
+
+</section>
+
+
+<footer>
+
+<p>
+© 2026 Bundelkhand Organic Farmer Producer Company Limited
+</p>
+
+</footer>
+
+
+<script>
+
+document
+.getElementById("membershipForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+
+let name =
+document.getElementById("name").value.trim();
+
+let father =
+document.getElementById("father").value.trim();
+
+let mobile =
+document.getElementById("mobile").value.trim();
+
+let village =
+document.getElementById("village").value.trim();
+
+let panchayat =
+document.getElementById("panchayat").value.trim();
+
+let block =
+document.getElementById("block").value.trim();
+
+let district =
+document.getElementById("district").value.trim();
+
+let state =
+document.getElementById("state").value;
+
+let land =
+document.getElementById("land").value.trim();
+
+let crop =
+document.getElementById("crop").value.trim();
+
+let irrigation =
+document.getElementById("irrigation").value;
+
+let share =
+document.getElementById("share").value;
+
+
+if(!/^[0-9]{10}$/.test(mobile)){
+
+alert("कृपया सही 10 Digit Mobile Number डालें।");
+
+return;
+
+}
+
+
+/* Existing Members Load */
+
+let members =
+JSON.parse(localStorage.getItem("members")) || [];
+
+
+/* New Membership */
+
+let member = {
+
+name:name,
+
+father:father,
+
+mobile:mobile,
+
+village:village,
+
+panchayat:panchayat,
+
+block:block,
+
+district:district,
+
+state:state,
+
+land:land,
+
+crop:crop,
+
+irrigation:irrigation,
+
+share:share,
+
+status:"Pending",
+
+date:new Date().toLocaleString("en-IN")
+
+};
+
+
+/* Save */
+
+members.push(member);
+
+localStorage.setItem(
+"members",
+JSON.stringify(members)
+);
+
+
+/* Success */
+
+document.getElementById(
+"membershipForm"
+).style.display="none";
+
+
+document.getElementById(
+"successMessage"
+).style.display="block";
+
+
+});
+
+</script>
+
+
+</body>
+
+</html>
+```
