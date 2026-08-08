@@ -1,120 +1,495 @@
-<form onsubmit="sendBulkOrder(); return false;">
+```html
+<!DOCTYPE html>
+<html lang="hi">
 
-<label>Company / Shop Name</label>
-<input id="company" type="text" placeholder="Enter Company Name" required>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Order Product | Bundelkhand Organic FPO</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4fff4;
+}
+
+/* Header */
+
+header{
+background:#1B5E20;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+header h1{
+font-size:28px;
+margin-bottom:8px;
+}
+
+/* Navigation */
+
+nav{
+background:#2E7D32;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-weight:bold;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+/* Container */
+
+.container{
+max-width:800px;
+margin:30px auto;
+padding:20px;
+}
+
+/* Order Box */
+
+.order-box{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px #ccc;
+}
+
+.order-box h2{
+color:#2E7D32;
+margin-bottom:20px;
+text-align:center;
+}
+
+/* Form */
+
+label{
+display:block;
+margin-top:15px;
+font-weight:bold;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:12px;
+margin-top:7px;
+border:1px solid #ccc;
+border-radius:5px;
+font-size:16px;
+}
+
+textarea{
+height:100px;
+resize:vertical;
+}
+
+/* Button */
+
+button{
+width:100%;
+margin-top:25px;
+padding:14px;
+background:#2E7D32;
+color:white;
+border:none;
+border-radius:5px;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1B5E20;
+}
+
+/* Success */
+
+.success{
+display:none;
+background:#E8F5E9;
+border:1px solid #66BB6A;
+padding:20px;
+margin-top:20px;
+border-radius:8px;
+color:#1B5E20;
+}
+
+.success h3{
+margin-bottom:10px;
+}
+
+/* Footer */
+
+footer{
+background:#2E7D32;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.container{
+padding:10px;
+}
+
+.order-box{
+padding:20px;
+}
+
+nav a{
+display:inline-block;
+margin:5px;
+}
+
+}
+
+</style>
+
+</head>
 
 
-<label>Contact Person</label>
-<input id="person" type="text" placeholder="Enter Contact Person" required>
+<body>
 
 
-<label>Mobile Number</label>
-<input id="mobile" type="tel" placeholder="Enter Mobile Number" required>
+<!-- Header -->
+
+<header>
+
+<h1>
+🌾 Bundelkhand Organic Farmer Producer Company Limited
+</h1>
+
+<p>
+Organic Products Directly From Farmers
+</p>
+
+</header>
 
 
-<label>Email</label>
-<input id="email" type="email" placeholder="Enter Email">
+<!-- Navigation -->
+
+<nav>
+
+<a href="index.html">
+🏠 Home
+</a>
+
+<a href="about.html">
+🌿 About
+</a>
+
+<a href="products.html">
+🛒 Products
+</a>
+
+<a href="farmers.html">
+👨‍🌾 Kisan Corner
+</a>
+
+<a href="membership.html">
+📝 Join FPO
+</a>
+
+<a href="bulk-order.html">
+📦 Order
+</a>
+
+<a href="contact.html">
+📞 Contact
+</a>
+
+</nav>
 
 
-<label>Select Product</label>
+<div class="container">
 
-<select id="product">
 
-<option>Organic Wheat</option>
-<option>Organic Chana</option>
-<option>Mustard</option>
-<option>Groundnut</option>
-<option>Sesame</option>
-<option>Arhar</option>
-<option>Moong</option>
-<option>Urad</option>
+<div class="order-box">
+
+<h2>
+🛒 Customer Product Order
+</h2>
+
+
+<form onsubmit="submitOrder(event)">
+
+
+<label>
+Select Product
+</label>
+
+<select id="product" required>
+
+<option value="">
+-- Select Product --
+</option>
 
 </select>
 
 
-<label>Quantity</label>
+<label>
+Customer Name
+</label>
 
-<input id="quantity" type="text" placeholder="Example : 100 Kg / 10 Quintal" required>
+<input
+type="text"
+id="customerName"
+placeholder="Enter Your Name"
+required
+>
 
 
-<label>Delivery Address</label>
+<label>
+Mobile Number
+</label>
 
-<textarea id="address" placeholder="Enter Delivery Address" required></textarea>
+<input
+type="tel"
+id="mobile"
+placeholder="Enter Mobile Number"
+maxlength="10"
+required
+>
 
 
-<label>Additional Message</label>
+<label>
+Quantity
+</label>
 
-<textarea id="message" placeholder="Write Your Requirement"></textarea>
+<input
+type="text"
+id="quantity"
+placeholder="Example: 10 Kg"
+required
+>
+
+
+<label>
+Delivery Address
+</label>
+
+<textarea
+id="address"
+placeholder="Enter Complete Delivery Address"
+required
+></textarea>
 
 
 <button type="submit">
-📦 Submit Bulk Order
+
+🛒 Submit Order
+
 </button>
 
 
 </form>
 
 
-<a class="whatsapp"
-href="https://wa.me/918090040580?text=Hello%20Bundelkhand%20Organic%20FPO,%20I%20want%20to%20place%20a%20Bulk%20Order."
-target="_blank">
+<div
+class="success"
+id="success"
+>
 
-💬 Order on WhatsApp
+<h3>
+✅ Order Submitted Successfully!
+</h3>
 
-</a>
+<p>
+आपका Order प्राप्त हो गया है।
+</p>
+
+<p>
+हमारी FPO Team आपसे जल्द संपर्क करेगी।
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+© 2026 Bundelkhand Organic Farmer Producer Company Limited
+
+</footer>
 
 
 <script>
 
-function sendBulkOrder(){
 
-let company=document.getElementById("company").value;
-let person=document.getElementById("person").value;
-let mobile=document.getElementById("mobile").value;
-let email=document.getElementById("email").value;
-let product=document.getElementById("product").value;
-let quantity=document.getElementById("quantity").value;
-let address=document.getElementById("address").value;
-let msg=document.getElementById("message").value;
+// Load Products
+
+let products =
+JSON.parse(localStorage.getItem("products")) || [];
 
 
-let whatsappMessage =
-`Hello Bundelkhand Organic FPO
+// Product Dropdown
 
-📦 Bulk Order Request
-
-🏢 Company:
-${company}
-
-👤 Contact Person:
-${person}
-
-📱 Mobile:
-${mobile}
-
-📧 Email:
-${email}
-
-🌾 Product:
-${product}
-
-⚖ Quantity:
-${quantity}
-
-📍 Address:
-${address}
-
-📝 Message:
-${msg}`;
+let productSelect =
+document.getElementById("product");
 
 
-let url =
-"https://wa.me/918090040580?text="
-+encodeURIComponent(whatsappMessage);
+products.forEach(function(product){
+
+let option =
+document.createElement("option");
+
+option.value =
+product.name;
+
+option.textContent =
+product.name +
+" - ₹" +
+product.price;
+
+productSelect.appendChild(option);
+
+});
 
 
-window.open(url,"_blank");
+// Submit Order
+
+function submitOrder(event){
+
+event.preventDefault();
+
+
+let product =
+document.getElementById("product").value;
+
+let customerName =
+document.getElementById("customerName").value.trim();
+
+let mobile =
+document.getElementById("mobile").value.trim();
+
+let quantity =
+document.getElementById("quantity").value.trim();
+
+let address =
+document.getElementById("address").value.trim();
+
+
+if(
+product === "" ||
+customerName === "" ||
+mobile === "" ||
+quantity === "" ||
+address === ""
+){
+
+alert("⚠️ Please Fill All Details");
+
+return;
+
+}
+
+
+// Mobile Validation
+
+if(!/^[0-9]{10}$/.test(mobile)){
+
+alert("⚠️ Please Enter Valid 10 Digit Mobile Number");
+
+return;
+
+}
+
+
+// Create Order
+
+let order = {
+
+id:Date.now(),
+
+product:product,
+
+customerName:customerName,
+
+mobile:mobile,
+
+quantity:quantity,
+
+address:address,
+
+status:"Pending",
+
+date:new Date().toLocaleString()
+
+};
+
+
+// Get Existing Orders
+
+let orders =
+JSON.parse(localStorage.getItem("orders")) || [];
+
+
+// Add New Order
+
+orders.push(order);
+
+
+// Save Orders
+
+localStorage.setItem(
+"orders",
+JSON.stringify(orders)
+);
+
+
+// Show Success
+
+document.getElementById("success").style.display =
+"block";
+
+
+// Reset Form
+
+document.querySelector("form").reset();
+
+
+// Scroll To Success
+
+document.getElementById("success").scrollIntoView({
+
+behavior:"smooth"
+
+});
 
 }
 
 </script>
+
+
+</body>
+
+</html>
+```
