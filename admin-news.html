@@ -1,0 +1,590 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Agriculture News | Admin</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4fff4;
+}
+
+header{
+    background:#1B5E20;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+header h1{
+    margin-bottom:8px;
+}
+
+.container{
+    max-width:1100px;
+    margin:30px auto;
+    padding:20px;
+}
+
+.box{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px #ccc;
+    margin-bottom:25px;
+}
+
+h2{
+    color:#2E7D32;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-top:12px;
+    margin-bottom:6px;
+    font-weight:bold;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.add-btn{
+    background:#2E7D32;
+    color:white;
+}
+
+.update-btn{
+    background:#1565C0;
+    color:white;
+}
+
+.cancel-btn{
+    background:#757575;
+    color:white;
+    margin-left:8px;
+}
+
+.edit-btn{
+    background:#1565C0;
+    color:white;
+}
+
+.delete-btn{
+    background:#D32F2F;
+    color:white;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th{
+    background:#2E7D32;
+    color:white;
+    padding:12px;
+}
+
+td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:center;
+}
+
+.news-title{
+    font-weight:bold;
+}
+
+.back{
+    display:inline-block;
+    margin-top:20px;
+    background:#1565C0;
+    color:white;
+    padding:12px 20px;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+@media(max-width:700px){
+
+.container{
+    padding:10px;
+}
+
+table{
+    min-width:800px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>📰 Agriculture News Management</h1>
+
+<p>
+Bundelkhand Organic Farmer Producer Company Limited
+</p>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- ADD NEWS -->
+
+<div class="box">
+
+<h2 id="formTitle">
+➕ Add Agriculture News
+</h2>
+
+
+<label>
+News Title
+</label>
+
+<input
+type="text"
+id="newsTitle"
+placeholder="Enter News Title"
+>
+
+
+<label>
+News Description
+</label>
+
+<textarea
+id="newsDescription"
+placeholder="Enter Agriculture News..."
+></textarea>
+
+
+<label>
+News Date
+</label>
+
+<input
+type="date"
+id="newsDate"
+>
+
+
+<button
+class="add-btn"
+id="saveBtn"
+onclick="saveNews()"
+>
+➕ Add News
+</button>
+
+
+<button
+class="cancel-btn"
+id="cancelBtn"
+onclick="cancelEdit()"
+style="display:none;"
+>
+❌ Cancel
+</button>
+
+
+</div>
+
+
+<!-- NEWS LIST -->
+
+<div class="box">
+
+<h2>
+📰 Agriculture News List
+</h2>
+
+
+<div style="overflow-x:auto;">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Sr No.</th>
+
+<th>News Title</th>
+
+<th>Description</th>
+
+<th>Date</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="newsTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<a
+href="admin-dashboard.html"
+class="back"
+>
+⬅ Back To Dashboard
+</a>
+
+
+</div>
+
+
+</div>
+
+
+<script>
+
+
+// ======================================
+// LOAD NEWS
+// ======================================
+
+let news =
+JSON.parse(localStorage.getItem("agricultureNews")) || [];
+
+let editIndex = -1;
+
+
+// ======================================
+// DISPLAY NEWS
+// ======================================
+
+function displayNews(){
+
+    let table =
+    document.getElementById("newsTable");
+
+    table.innerHTML = "";
+
+
+    if(news.length === 0){
+
+        table.innerHTML = `
+        <tr>
+        <td colspan="5">
+        अभी कोई Agriculture News उपलब्ध नहीं है।
+        </td>
+        </tr>
+        `;
+
+        return;
+    }
+
+
+    news.forEach(function(item,index){
+
+        let row =
+        document.createElement("tr");
+
+
+        row.innerHTML = `
+
+        <td>${index + 1}</td>
+
+        <td class="news-title">
+        ${item.title}
+        </td>
+
+        <td>
+        ${item.description}
+        </td>
+
+        <td>
+        ${item.date}
+        </td>
+
+        <td>
+
+        <button
+        class="edit-btn"
+        onclick="editNews(${index})"
+        >
+        ✏️ Edit
+        </button>
+
+        <button
+        class="delete-btn"
+        onclick="deleteNews(${index})"
+        >
+        🗑️ Delete
+        </button>
+
+        </td>
+
+        `;
+
+        table.appendChild(row);
+
+    });
+
+}
+
+
+// ======================================
+// ADD NEWS
+// ======================================
+
+function saveNews(){
+
+    let title =
+    document.getElementById("newsTitle")
+    .value.trim();
+
+    let description =
+    document.getElementById("newsDescription")
+    .value.trim();
+
+    let date =
+    document.getElementById("newsDate")
+    .value;
+
+
+    if(title === "" ||
+       description === "" ||
+       date === ""){
+
+        alert("कृपया सभी जानकारी भरें।");
+
+        return;
+    }
+
+
+    let newsData = {
+
+        title:title,
+
+        description:description,
+
+        date:date
+
+    };
+
+
+    // ADD
+
+    if(editIndex === -1){
+
+        news.push(newsData);
+
+    }
+
+    // UPDATE
+
+    else{
+
+        news[editIndex] = newsData;
+
+        editIndex = -1;
+
+        document.getElementById("formTitle")
+        .textContent =
+        "➕ Add Agriculture News";
+
+        document.getElementById("saveBtn")
+        .textContent =
+        "➕ Add News";
+
+        document.getElementById("cancelBtn")
+        .style.display = "none";
+
+    }
+
+
+    localStorage.setItem(
+        "agricultureNews",
+        JSON.stringify(news)
+    );
+
+
+    clearForm();
+
+    displayNews();
+
+}
+
+
+// ======================================
+// EDIT NEWS
+// ======================================
+
+function editNews(index){
+
+    let item = news[index];
+
+    document.getElementById("newsTitle")
+    .value = item.title;
+
+    document.getElementById("newsDescription")
+    .value = item.description;
+
+    document.getElementById("newsDate")
+    .value = item.date;
+
+
+    editIndex = index;
+
+
+    document.getElementById("formTitle")
+    .textContent =
+    "✏️ Edit Agriculture News";
+
+
+    document.getElementById("saveBtn")
+    .textContent =
+    "🔄 Update News";
+
+
+    document.getElementById("cancelBtn")
+    .style.display = "inline-block";
+
+}
+
+
+// ======================================
+// DELETE NEWS
+// ======================================
+
+function deleteNews(index){
+
+    if(!confirm(
+        "क्या आप यह News Delete करना चाहते हैं?"
+    )){
+
+        return;
+
+    }
+
+
+    news.splice(index,1);
+
+
+    localStorage.setItem(
+        "agricultureNews",
+        JSON.stringify(news)
+    );
+
+
+    displayNews();
+
+}
+
+
+// ======================================
+// CANCEL EDIT
+// ======================================
+
+function cancelEdit(){
+
+    editIndex = -1;
+
+    clearForm();
+
+
+    document.getElementById("formTitle")
+    .textContent =
+    "➕ Add Agriculture News";
+
+
+    document.getElementById("saveBtn")
+    .textContent =
+    "➕ Add News";
+
+
+    document.getElementById("cancelBtn")
+    .style.display = "none";
+
+}
+
+
+// ======================================
+// CLEAR FORM
+// ======================================
+
+function clearForm(){
+
+    document.getElementById("newsTitle")
+    .value = "";
+
+    document.getElementById("newsDescription")
+    .value = "";
+
+    document.getElementById("newsDate")
+    .value = "";
+
+}
+
+
+// ======================================
+// START
+// ======================================
+
+displayNews();
+
+</script>
+
+
+</body>
+
+</html>
+```
