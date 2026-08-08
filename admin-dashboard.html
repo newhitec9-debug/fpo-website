@@ -367,13 +367,23 @@ Open
 
 <div class="card">
 
-<h2>⚙️ Settings</h2>
+<h2>🛒 Orders</h2>
 
 <p>
-Website Settings।
+Customer और Bulk Orders देखें।
 </p>
 
-<a href="#">
+<p>
+📦 Total Orders:
+<strong id="totalOrders">0</strong>
+</p>
+
+<p>
+🟡 Pending Orders:
+<strong id="pendingOrders">0</strong>
+</p>
+
+<a href="orders.html">
 Open
 </a>
 
@@ -427,7 +437,32 @@ window.location.href="login.html";
 
 </script>
 
+<script>
 
+let orders =
+JSON.parse(localStorage.getItem("orders")) || [];
+
+
+// Total Orders
+
+document.getElementById("totalOrders").textContent =
+orders.length;
+
+
+// Pending Orders
+
+let pending =
+orders.filter(function(order){
+
+return order.status === "Pending";
+
+}).length;
+
+
+document.getElementById("pendingOrders").textContent =
+pending;
+
+</script>
 
 </body>
 
