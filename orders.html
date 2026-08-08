@@ -1,0 +1,499 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manage Orders | Bundelkhand Organic FPO</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4fff4;
+}
+
+/* Header */
+
+header{
+background:#1B5E20;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+header h1{
+font-size:30px;
+margin-bottom:8px;
+}
+
+/* Container */
+
+.container{
+max-width:1200px;
+margin:30px auto;
+padding:20px;
+}
+
+/* Box */
+
+.box{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px #ccc;
+margin-bottom:25px;
+}
+
+.box h2{
+color:#2E7D32;
+margin-bottom:20px;
+}
+
+/* Search */
+
+#search{
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:5px;
+font-size:16px;
+margin-bottom:20px;
+}
+
+/* Table */
+
+.table-container{
+overflow-x:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+background:#2E7D32;
+color:white;
+padding:12px;
+}
+
+td{
+padding:12px;
+border-bottom:1px solid #ddd;
+text-align:center;
+}
+
+tr:hover{
+background:#f1f8e9;
+}
+
+/* Status */
+
+select{
+padding:8px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.pending{
+color:#F57C00;
+font-weight:bold;
+}
+
+.confirmed{
+color:#2E7D32;
+font-weight:bold;
+}
+
+.cancelled{
+color:#D32F2F;
+font-weight:bold;
+}
+
+/* Delete */
+
+.delete{
+background:#D32F2F;
+color:white;
+padding:8px 12px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.delete:hover{
+background:#B71C1C;
+}
+
+/* Back */
+
+.back{
+display:inline-block;
+background:#1B5E20;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:5px;
+}
+
+.back:hover{
+background:#2E7D32;
+}
+
+/* Empty */
+
+.empty{
+text-align:center;
+padding:30px;
+color:#777;
+}
+
+/* Mobile */
+
+@media(max-width:700px){
+
+.container{
+padding:10px;
+}
+
+.box{
+padding:15px;
+}
+
+th,td{
+font-size:13px;
+padding:8px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>
+🛒 Orders Management
+</h1>
+
+<p>
+Bundelkhand Organic Farmer Producer Company Limited
+</p>
+
+</header>
+
+
+<div class="container">
+
+
+<div class="box">
+
+<h2>
+📦 Customer Orders
+</h2>
+
+
+<input
+type="text"
+id="search"
+placeholder="🔍 Search Customer / Product / Mobile..."
+onkeyup="searchOrders()"
+>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Sr No.</th>
+
+<th>Customer</th>
+
+<th>Mobile</th>
+
+<th>Product</th>
+
+<th>Quantity</th>
+
+<th>Address</th>
+
+<th>Date</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="orderList">
+
+</tbody>
+
+</table>
+
+</div>
+
+
+</div>
+
+
+<a
+href="admin-dashboard.html"
+class="back"
+>
+
+⬅ Back To Dashboard
+
+</a>
+
+
+</div>
+
+
+<script>
+
+
+// Load Orders
+
+let orders =
+JSON.parse(localStorage.getItem("orders")) || [];
+
+
+// Display Orders
+
+displayOrders();
+
+
+function displayOrders(){
+
+let list =
+document.getElementById("orderList");
+
+list.innerHTML = "";
+
+
+if(orders.length === 0){
+
+list.innerHTML = `
+
+<tr>
+
+<td colspan="9" class="empty">
+
+📦 अभी कोई Order प्राप्त नहीं हुआ है।
+
+</td>
+
+</tr>
+
+`;
+
+return;
+
+}
+
+
+orders.forEach(function(order,index){
+
+let statusClass =
+order.status.toLowerCase();
+
+
+list.innerHTML += `
+
+<tr>
+
+<td>
+${index + 1}
+</td>
+
+<td>
+${order.customerName}
+</td>
+
+<td>
+${order.mobile}
+</td>
+
+<td>
+${order.product}
+</td>
+
+<td>
+${order.quantity}
+</td>
+
+<td>
+${order.address}
+</td>
+
+<td>
+${order.date}
+</td>
+
+<td>
+
+<select
+onchange="updateStatus(${index},this.value)"
+class="${statusClass}"
+>
+
+<option
+value="Pending"
+${order.status === "Pending" ? "selected" : ""}
+>
+🟡 Pending
+</option>
+
+<option
+value="Confirmed"
+${order.status === "Confirmed" ? "selected" : ""}
+>
+🟢 Confirmed
+</option>
+
+<option
+value="Cancelled"
+${order.status === "Cancelled" ? "selected" : ""}
+>
+🔴 Cancelled
+</option>
+
+</select>
+
+</td>
+
+<td>
+
+<button
+class="delete"
+onclick="deleteOrder(${index})"
+>
+
+🗑️ Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+
+// Update Status
+
+function updateStatus(index,status){
+
+orders[index].status = status;
+
+
+localStorage.setItem(
+"orders",
+JSON.stringify(orders)
+);
+
+
+displayOrders();
+
+
+}
+
+
+// Delete Order
+
+function deleteOrder(index){
+
+if(
+confirm("⚠️ Are you sure you want to delete this Order?")
+){
+
+orders.splice(index,1);
+
+
+localStorage.setItem(
+"orders",
+JSON.stringify(orders)
+);
+
+
+displayOrders();
+
+
+alert("🗑️ Order Deleted Successfully");
+
+}
+
+}
+
+
+// Search Orders
+
+function searchOrders(){
+
+let search =
+document.getElementById("search")
+.value
+.toLowerCase();
+
+
+let rows =
+document.querySelectorAll("#orderList tr");
+
+
+rows.forEach(function(row){
+
+let text =
+row.textContent.toLowerCase();
+
+
+if(text.includes(search)){
+
+row.style.display = "";
+
+}
+
+else{
+
+row.style.display = "none";
+
+}
+
+});
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+```
