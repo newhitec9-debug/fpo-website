@@ -1,14 +1,177 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Organic Products | Bundelkhand Organic FPO</title>
+<title>Products | Bundelkhand Organic FPO</title>
 
-<link rel="stylesheet" href="css/style.css">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4fff4;
+}
+
+/* Header */
+
+header{
+background:#1B5E20;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+header h1{
+font-size:30px;
+margin-bottom:8px;
+}
+
+/* Navigation */
+
+nav{
+background:#2E7D32;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 12px;
+font-weight:bold;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+/* Container */
+
+.container{
+max-width:1100px;
+margin:30px auto;
+padding:20px;
+}
+
+/* Search */
+
+.search-box{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px #ccc;
+margin-bottom:25px;
+text-align:center;
+}
+
+#search{
+width:80%;
+padding:14px;
+font-size:17px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+/* Products */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px;
+}
+
+/* Product Card */
+
+.product-card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px #ccc;
+text-align:center;
+}
+
+.product-card h2{
+color:#2E7D32;
+margin-bottom:12px;
+}
+
+.product-card p{
+margin:8px 0;
+}
+
+.price{
+font-size:20px;
+font-weight:bold;
+color:#D84315;
+}
+
+.stock{
+color:#2E7D32;
+font-weight:bold;
+}
+
+.order-btn{
+display:inline-block;
+margin-top:15px;
+background:#2E7D32;
+color:white;
+padding:10px 20px;
+text-decoration:none;
+border-radius:5px;
+}
+
+.order-btn:hover{
+background:#1B5E20;
+}
+
+/* No Product */
+
+.no-product{
+background:white;
+padding:30px;
+text-align:center;
+border-radius:10px;
+box-shadow:0 0 10px #ccc;
+display:none;
+}
+
+/* Footer */
+
+footer{
+background:#2E7D32;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+#search{
+width:100%;
+}
+
+nav a{
+display:inline-block;
+margin:5px;
+}
+
+}
+
+</style>
 
 </head>
 
@@ -16,678 +179,235 @@
 <body>
 
 
-<header class="top-header">
+<!-- Header -->
 
-
-<div class="logo">
-
-
-<img src="images/logo.png" alt="FPO Logo">
-
-
-<div class="logo-text">
+<header>
 
 <h1>
-Bundelkhand Organic Farmer Producer Company Limited
+🌾 Bundelkhand Organic Farmer Producer Company Limited
 </h1>
 
 <p>
-🌾 Organic Products Store
+Organic Products Directly From Farmers
 </p>
-
-</div>
-
-
-</div>
-
 
 </header>
 
 
+<!-- Navigation -->
 
 <nav>
 
-<a href="index.html">🏠 Home</a>
+<a href="index.html">
+🏠 Home
+</a>
 
-<a href="about.html">🌿 About</a>
+<a href="about.html">
+🌿 About
+</a>
 
-<a href="products.html">🛒 Products</a>
+<a href="products.html">
+🛒 Products
+</a>
 
-<a href="farmers.html">👨‍🌾 Kisan Corner</a>
+<a href="farmers.html">
+👨‍🌾 Kisan Corner
+</a>
 
-<a href="membership.html">📝 Join FPO</a>
+<a href="membership.html">
+📝 Join FPO
+</a>
 
-<a href="bulk-order.html">📦 Bulk Order</a>
+<a href="bulk-order.html">
+📦 Bulk Order
+</a>
 
-<a href="contact.html">📞 Contact</a>
-
+<a href="contact.html">
+📞 Contact
+</a>
 
 </nav>
 
 
+<div class="container">
 
 
-<section class="hero">
+<!-- Search -->
 
+<div class="search-box">
 
-<h1>
-🌾 Organic Products
-</h1>
-
-
-<h2>
-Fresh Products Direct From Farmers
-</h2>
-
-
-<p>
-हम किसानों द्वारा उत्पादित शुद्ध जैविक उत्पाद सीधे ग्राहकों तक पहुँचाते हैं।
-</p>
-
-
-</section>
-
-
-
-
-<section class="about">
-
-
-<h2>
-🔍 Search Products
-</h2>
-
-
-<input 
+<input
 type="text"
 id="search"
-placeholder="Search Organic Product..."
+placeholder="🔍 Search Organic Product..."
 onkeyup="searchProduct()"
-style="width:80%;padding:15px;font-size:18px;"
 >
 
+</div>
 
-<br><br>
 
+<!-- Product Area -->
+
+<div
+class="products"
+id="productsContainer"
+>
+</div>
+
+
+<div
+class="no-product"
+id="noProduct"
+>
 
 <h2>
-📂 Product Categories
-</h2>
-
-
-<button onclick="filterProduct('All')">
-All
-</button>
-
-
-<button onclick="filterProduct('Cereals')">
-🌾 Cereals
-</button>
-
-
-<button onclick="filterProduct('Pulses')">
-🌱 Pulses
-</button>
-
-
-<button onclick="filterProduct('Oil Seeds')">
-🌼 Oil Seeds
-</button>
-
-
-<button onclick="filterProduct('Organic Products')">
-🌿 Organic Products
-</button>
-
-
-</section>
-
-
-
-
-<section class="products">
-
-
-<h2>
-🌾 Our Organic Products
-</h2>
-
-
-<div class="product-container" id="productContainer">
-
-
-</div>  
-  <!-- Product Cards -->
-
-<div class="product-container" id="productContainer">
-
-
-<div class="card product" data-category="Cereals">
-
-<h3>🌾 Organic Wheat</h3>
-
-<p>
-100% Chemical Free Wheat
-</p>
-
-<p>
-<b>Price : ₹40 / Kg</b>
-</p>
-
-<p>
-Stock : Available
-</p>
-
-
-<button onclick="buyProduct('Organic Wheat')">
-🛒 Buy Now
-</button>
-
-
-</div>
-
-
-
-
-
-<div class="card product" data-category="Pulses">
-
-
-<h3>🌱 Organic Chana</h3>
-
-<p>
-Premium Quality Gram
-</p>
-
-
-<p>
-<b>Price : ₹80 / Kg</b>
-</p>
-
-
-<p>
-Stock : Available
-</p>
-
-
-<button onclick="buyProduct('Organic Chana')">
-🛒 Buy Now
-</button>
-
-
-</div>
-
-
-
-
-
-
-<div class="card product" data-category="Oil Seeds">
-
-
-<h3>🌼 Mustard Seeds</h3>
-
-
-<p>
-Fresh Organic Mustard
-</p>
-
-
-<p>
-<b>Price : ₹90 / Kg</b>
-</p>
-
-
-<p>
-Stock : Available
-</p>
-
-
-<button onclick="buyProduct('Mustard Seeds')">
-🛒 Buy Now
-</button>
-
-
-</div>
-
-
-
-
-
-
-<div class="card product" data-category="Organic Products">
-
-
-<h3>🥜 Organic Groundnut</h3>
-
-
-<p>
-Fresh Organic Peanut
-</p>
-
-
-<p>
-<b>Price : ₹120 / Kg</b>
-</p>
-
-
-<p>
-Stock : Available
-</p>
-
-
-<button onclick="buyProduct('Organic Groundnut')">
-🛒 Buy Now
-</button>
-
-
-</div>
-
-
-
-
-
-
-<div class="card product" data-category="Oil Seeds">
-
-
-<h3>🌿 Organic Sesame</h3>
-
-
-<p>
-Premium White Sesame
-</p>
-
-
-<p>
-<b>Price : ₹180 / Kg</b>
-</p>
-
-
-<p>
-Stock : Available
-</p>
-
-
-<button onclick="buyProduct('Organic Sesame')">
-🛒 Buy Now
-</button>
-
-
-</div>
-
-
-
-
-
-
-<div class="card product" data-category="Pulses">
-
-
-<h3>🌱 Arhar Dal</h3>
-
-
-<p>
-Natural Pigeon Pea
-</p>
-
-
-<p>
-<b>Price : ₹140 / Kg</b>
-</p>
-
-
-<p>
-Stock : Available
-</p>
-
-
-<button onclick="buyProduct('Arhar Dal')">
-🛒 Buy Now
-</button>
-
-
-</div>
-
-
-
-
-
-
-<div class="card product" data-category="Pulses">
-
-
-<h3>🟢 Organic Moong</h3>
-
-
-<p>
-Green Gram Premium
-</p>
-
-
-<p>
-<b>Price : ₹130 / Kg</b>
-</p>
-
-
-<p>
-Stock : Available
-</p>
-
-
-<button onclick="buyProduct('Organic Moong')">
-🛒 Buy Now
-</button>
-
-
-</div>
-
-
-
-
-
-
-<div class="card product" data-category="Pulses">
-
-
-<h3>⚫ Organic Urad</h3>
-
-
-<p>
-Black Gram
-</p>
-
-
-<p>
-<b>Price : ₹145 / Kg</b>
-</p>
-
-
-<p>
-Stock : Available
-</p>
-
-
-<button onclick="buyProduct('Organic Urad')">
-🛒 Buy Now
-</button>
-
-
-</div>
-
-
-
-
-
-
-<div class="card product" data-category="Pulses">
-
-
-<h3>🫘 Organic Masoor</h3>
-
-
-<p>
-Premium Lentil
-</p>
-
-
-<p>
-<b>Price : ₹110 / Kg</b>
-</p>
-
-
-<p>
-Stock : Available
-</p>
-
-
-<button onclick="buyProduct('Organic Masoor')">
-🛒 Buy Now
-</button>
-
-
-</div>
-
-
-
-
-</div> 
-<!-- Bulk Order Section -->
-
-<section class="about">
-
-<h2>
-📦 Bulk Orders
+🌾 No Product Found
 </h2>
 
 <p>
-Restaurants, Hotels, Retail Shops, NGOs, Schools तथा बड़े खरीदारों के लिए थोक आपूर्ति उपलब्ध है।
+अभी इस नाम का कोई Product उपलब्ध नहीं है।
 </p>
 
-
-<br>
-
-
-<a href="bulk-order.html" class="login-btn">
-📦 Bulk Order Form
-</a>
+</div>
 
 
-</section>
-
-
-
-
-
-<!-- Delivery Information -->
-
-<section class="about">
-
-
-<h2>
-🚚 Delivery Information
-</h2>
-
-
-<p>
-✅ Farm Fresh Products
-</p>
-
-<p>
-✅ Direct From Farmers
-</p>
-
-<p>
-✅ Organic Products
-</p>
-
-<p>
-✅ Bulk Supply Available
-</p>
-
-
-</section>
-
-
-
+</div>
 
 
 <footer>
 
-<p>
 © 2026 Bundelkhand Organic Farmer Producer Company Limited
-</p>
-
 
 </footer>
 
 
-
-
-
-
 <script>
+
+
+// Load Products From Admin
+
+let products =
+JSON.parse(localStorage.getItem("products")) || [];
+
+
+// Display Products
+
+displayProducts();
+
+
+function displayProducts(){
+
+let container =
+document.getElementById("productsContainer");
+
+let noProduct =
+document.getElementById("noProduct");
+
+
+container.innerHTML = "";
+
+
+if(products.length === 0){
+
+noProduct.style.display = "block";
+
+return;
+
+}
+
+
+noProduct.style.display = "none";
+
+
+products.forEach(function(product){
+
+container.innerHTML += `
+
+<div class="product-card">
+
+<h2>
+🌾 ${product.name}
+</h2>
+
+<p>
+<b>Category:</b> ${product.category}
+</p>
+
+<p class="price">
+₹ ${product.price}
+</p>
+
+<p class="stock">
+📦 Stock: ${product.stock}
+</p>
+
+<a
+href="bulk-order.html"
+class="order-btn"
+>
+
+🛒 Order Product
+
+</a>
+
+</div>
+
+`;
+
+});
+
+}
 
 
 // Search Product
 
 function searchProduct(){
 
-
-let input = document
-.getElementById("search")
+let search =
+document.getElementById("search")
 .value
 .toLowerCase();
 
 
-
-let products =
-document
-.querySelectorAll(".product");
+let cards =
+document.querySelectorAll(".product-card");
 
 
+let found = false;
 
-products.forEach(function(product){
 
+cards.forEach(function(card){
 
 let text =
-product.innerText.toLowerCase();
+card.textContent.toLowerCase();
 
 
+if(text.includes(search)){
 
-if(text.includes(input)){
+card.style.display = "block";
 
-
-product.style.display="block";
-
+found = true;
 
 }
 
 else{
 
-
-product.style.display="none";
-
+card.style.display = "none";
 
 }
-
 
 });
 
 
-}
-
-
-
-
-
-
-// Category Filter
-
-
-function filterProduct(category){
-
-
-let products =
-document
-.querySelectorAll(".product");
-
-
-
-products.forEach(function(product){
-
-
-
-if(category=="All"){
-
-
-product.style.display="block";
-
+document.getElementById("noProduct").style.display =
+found ? "none" : "block";
 
 }
-
-else{
-
-
-if(product.dataset.category==category){
-
-
-product.style.display="block";
-
-
-}
-
-else{
-
-
-product.style.display="none";
-
-
-}
-
-
-}
-
-
-
-});
-
-
-}
-
-
-
-
-
-
-// WhatsApp Buy Button
-
-
-function buyProduct(productName){
-
-
-
-let message =
-
-"Hello Bundelkhand Organic Farmer Producer Company Limited\n\n"+
-
-"I want to buy:\n\n"+
-
-"Product : "+productName+"\n\n"+
-
-"Please send me:\n"+
-
-"Latest Price\n"+
-
-"Available Quantity\n"+
-
-"Delivery Details\n\n"+
-
-"Thank You.";
-
-
-
-let url =
-
-"https://wa.me/918090040580?text="
-
-+encodeURIComponent(message);
-
-
-
-window.open(url,"_blank");
-
-
-
-}
-
 
 </script>
-
 
 
 </body>
 
 </html>
-
-</section>
+```
