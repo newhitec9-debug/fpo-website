@@ -385,14 +385,20 @@ list.innerHTML += `
 
 <td>
 
+<button
+onclick="editProduct(${index})">
 
-<button class="delete"
-onclick="deleteProduct(${index})">
-
-Delete
+✏️ Edit
 
 </button>
 
+<button
+class="delete"
+onclick="deleteProduct(${index})">
+
+🗑️ Delete
+
+</button>
 
 </td>
 
