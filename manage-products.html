@@ -401,7 +401,30 @@ onclick="deleteProduct(${index})">
 </button>
 
 </td>
+// Edit Product
 
+function editProduct(index){
+
+let product = products[index];
+
+document.getElementById("productName").value = product.name;
+
+document.getElementById("category").value = product.category;
+
+document.getElementById("price").value = product.price;
+
+document.getElementById("stock").value = product.stock;
+
+products.splice(index,1);
+
+localStorage.setItem(
+"products",
+JSON.stringify(products)
+);
+
+displayProducts();
+
+}
 
 </tr>
 
