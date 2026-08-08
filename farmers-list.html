@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Farmers List | Bundelkhand Organic FPO</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4fff4;
+}
+
+/* Header */
+
+header{
+background:#1B5E20;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+header h1{
+font-size:30px;
+margin-bottom:8px;
+}
+
+/* Container */
+
+.container{
+max-width:1200px;
+margin:30px auto;
+padding:20px;
+}
+
+/* Top Bar */
+
+.top-bar{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px #ccc;
+margin-bottom:20px;
+}
+
+.top-bar h2{
+color:#2E7D32;
+margin-bottom:15px;
+}
+
+/* Search */
+
+.search-box{
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:5px;
+font-size:16px;
+}
+
+/* Table */
+
+.table-box{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px #ccc;
+overflow-x:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+background:#2E7D32;
+color:white;
+padding:12px;
+}
+
+td{
+padding:12px;
+border-bottom:1px solid #ddd;
+text-align:center;
+}
+
+tr:hover{
+background:#f1f8e9;
+}
+
+/* Back Button */
+
+.back{
+display:inline-block;
+margin-top:20px;
+background:#2E7D32;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:5px;
+}
+
+.back:hover{
+background:#1B5E20;
+}
+
+/* Footer */
+
+footer{
+background:#2E7D32;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>👨‍🌾 Farmers Management</h1>
+
+<p>
+Bundelkhand Organic Farmer Producer Company Limited
+</p>
+
+</header>
+
+
+<div class="container">
+
+
+<div class="top-bar">
+
+<h2>👥 Registered Farmers</h2>
+
+<input
+type="text"
+id="search"
+class="search-box"
+placeholder="🔍 किसान का नाम खोजें..."
+onkeyup="searchFarmers()"
+>
+
+</div>
+
+
+<div class="table-box">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Sr No.</th>
+
+<th>Farmer Name</th>
+
+<th>Mobile</th>
+
+<th>Village</th>
+
+<th>District</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="farmerTable">
+
+<tr>
+
+<td>1</td>
+
+<td>Demo Farmer</td>
+
+<td>9876543210</td>
+
+<td>Srinagar</td>
+
+<td>Mahoba</td>
+
+<td>✅ Active</td>
+
+</tr>
+
+
+<tr>
+
+<td>2</td>
+
+<td>Ram Kumar</td>
+
+<td>9876543211</td>
+
+<td>Belatal</td>
+
+<td>Mahoba</td>
+
+<td>✅ Active</td>
+
+</tr>
+
+
+<tr>
+
+<td>3</td>
+
+<td>Shyam Lal</td>
+
+<td>9876543212</td>
+
+<td>Kulpahar</td>
+
+<td>Mahoba</td>
+
+<td>⏳ Pending</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<a href="admin-dashboard.html" class="back">
+
+⬅ Back to Admin Dashboard
+
+</a>
+
+
+</div>
+
+
+<footer>
+
+© 2026 Bundelkhand Organic Farmer Producer Company Limited
+
+</footer>
+
+
+<script>
+
+function searchFarmers(){
+
+let input =
+document.getElementById("search").value.toLowerCase();
+
+let rows =
+document.querySelectorAll("#farmerTable tr");
+
+rows.forEach(function(row){
+
+let name =
+row.cells[1].textContent.toLowerCase();
+
+if(name.includes(input)){
+
+row.style.display="";
+
+}else{
+
+row.style.display="none";
+
+}
+
+});
+
+}
+
+</script>
+
+
+</body>
+
+</html>
