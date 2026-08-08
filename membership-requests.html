@@ -1,13 +1,14 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Membership Requests | Admin</title>
-
+<title>Membership Requests | Bundelkhand Organic FPO</title>
 
 <style>
 
@@ -18,153 +19,126 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
-
 body{
-
 background:#f4fff4;
-
 }
 
-
-/* Header */
-
 header{
-
 background:#1B5E20;
 color:white;
 padding:25px;
 text-align:center;
-
 }
-
 
 header h1{
-
 font-size:30px;
-
+margin-bottom:8px;
 }
 
-
-
-/* Container */
-
 .container{
-
 max-width:1200px;
 margin:30px auto;
 padding:20px;
-
 }
 
-
-
-/* Box */
-
 .box{
-
 background:white;
 padding:25px;
 border-radius:10px;
 box-shadow:0 0 10px #ccc;
-
 }
-
-
 
 h2{
-
 color:#2E7D32;
 margin-bottom:20px;
-
 }
 
-
-
-/* Table */
+.table-box{
+overflow-x:auto;
+}
 
 table{
-
 width:100%;
 border-collapse:collapse;
-
 }
 
-
 th{
-
 background:#2E7D32;
 color:white;
 padding:12px;
-
 }
 
-
 td{
-
 padding:12px;
 border-bottom:1px solid #ddd;
 text-align:center;
-
 }
 
-
-
-/* Buttons */
-
+button{
+border:none;
+padding:9px 13px;
+border-radius:5px;
+color:white;
+cursor:pointer;
+margin:2px;
+}
 
 .approve{
-
-background:green;
-color:white;
-padding:8px 15px;
-border:none;
-border-radius:5px;
-
+background:#2E7D32;
 }
-
 
 .reject{
-
-background:red;
-color:white;
-padding:8px 15px;
-border:none;
-border-radius:5px;
-
+background:#D32F2F;
 }
 
+.delete{
+background:#555;
+}
 
+.approve:hover{
+background:#1B5E20;
+}
 
+.reject:hover{
+background:#B71C1C;
+}
+
+.delete:hover{
+background:#333;
+}
+
+.pending{
+color:#F57C00;
+font-weight:bold;
+}
+
+.approved{
+color:#2E7D32;
+font-weight:bold;
+}
+
+.rejected{
+color:#D32F2F;
+font-weight:bold;
+}
 
 .back{
-
 display:inline-block;
-margin-top:20px;
+margin-top:25px;
 background:#1B5E20;
 color:white;
 padding:12px 25px;
 text-decoration:none;
 border-radius:5px;
-
 }
 
-
-
-/* Footer */
-
-footer{
-
-margin-top:40px;
-background:#2E7D32;
-color:white;
+.empty{
 text-align:center;
-padding:15px;
-
+padding:30px;
+color:#777;
 }
-
 
 </style>
-
 
 </head>
 
@@ -172,10 +146,11 @@ padding:15px;
 <body>
 
 
-
 <header>
 
-<h1>📝 Membership Requests</h1>
+<h1>
+📝 Membership Requests
+</h1>
 
 <p>
 Bundelkhand Organic Farmer Producer Company Limited
@@ -184,137 +159,314 @@ Bundelkhand Organic Farmer Producer Company Limited
 </header>
 
 
-
-
 <div class="container">
-
 
 <div class="box">
 
+<h2>
+👨‍🌾 Farmer Membership Applications
+</h2>
 
-<h2>👨‍🌾 Farmer Membership Applications</h2>
 
-
+<div class="table-box">
 
 <table>
 
+<thead>
 
 <tr>
 
 <th>Sr No.</th>
-
 <th>Farmer Name</th>
-
 <th>Mobile</th>
-
 <th>Village</th>
-
 <th>District</th>
-
 <th>Crop</th>
-
 <th>Status</th>
+<th>Action</th>
 
 </tr>
 
+</thead>
 
+<tbody id="memberList">
 
-
-<tr>
-
-<td>1</td>
-
-<td>Vipin Ahirwar</td>
-
-<td>8858235571</td>
-
-<td>Srinagar</td>
-
-<td>Mahoba</td>
-
-<td>Chana</td>
-
-
-<td>
-
-<button class="approve">
-Approve
-</button>
-
-<button class="reject">
-Reject
-</button>
-
-</td>
-
-
-</tr>
-
-
-
-
-<tr>
-
-<td>2</td>
-
-<td>Radha</td>
-
-<td>8090040590</td>
-
-<td>Srinagar</td>
-
-<td>Mahoba</td>
-
-<td>Wheat</td>
-
-
-<td>
-
-<button class="approve">
-Approve
-</button>
-
-
-<button class="reject">
-Reject
-</button>
-
-
-</td>
-
-
-</tr>
-
-
+</tbody>
 
 </table>
 
+</div>
+
+</div>
 
 
-<a class="back" href="admin-dashboard.html">
+<a href="admin-dashboard.html" class="back">
 
 ⬅ Back To Dashboard
 
 </a>
 
-
-
 </div>
 
 
-</div>
+<script>
 
 
+/* Load Members */
+
+let members =
+JSON.parse(localStorage.getItem("members")) || [];
 
 
-<footer>
+/* Display */
 
-© 2026 Bundelkhand Organic Farmer Producer Company Limited
+displayMembers();
 
-</footer>
 
+function displayMembers(){
+
+let list =
+document.getElementById("memberList");
+
+list.innerHTML="";
+
+
+if(members.length === 0){
+
+list.innerHTML=`
+
+<tr>
+
+<td colspan="8" class="empty">
+
+📝 अभी कोई Membership Request नहीं है।
+
+</td>
+
+</tr>
+
+`;
+
+return;
+
+}
+
+
+members.forEach(function(member,index){
+
+let status =
+member.status || "Pending";
+
+
+let statusText="";
+
+let statusClass="";
+
+
+if(status === "Pending"){
+
+statusText="🟡 Pending";
+statusClass="pending";
+
+}
+
+else if(status === "Approved"){
+
+statusText="🟢 Approved";
+statusClass="approved";
+
+}
+
+else if(status === "Rejected"){
+
+statusText="🔴 Rejected";
+statusClass="rejected";
+
+}
+
+
+let actions="";
+
+
+if(status === "Pending"){
+
+actions=`
+
+<button
+class="approve"
+onclick="approveMember(${index})">
+
+🟢 Approve
+
+</button>
+
+<button
+class="reject"
+onclick="rejectMember(${index})">
+
+🔴 Reject
+
+</button>
+
+`;
+
+}
+
+else{
+
+actions=`
+
+<button
+class="delete"
+onclick="deleteMember(${index})">
+
+🗑️ Delete
+
+</button>
+
+`;
+
+}
+
+
+list.innerHTML += `
+
+<tr>
+
+<td>${index+1}</td>
+
+<td>${member.name || "-"}</td>
+
+<td>${member.mobile || "-"}</td>
+
+<td>${member.village || "-"}</td>
+
+<td>${member.district || "-"}</td>
+
+<td>${member.crop || "-"}</td>
+
+<td class="${statusClass}">
+
+${statusText}
+
+</td>
+
+<td>
+
+${actions}
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+
+/* APPROVE */
+
+function approveMember(index){
+
+let farmer =
+members[index];
+
+if(!farmer){
+
+return;
+
+}
+
+
+if(confirm(
+"क्या आप इस Farmer को Approve करना चाहते हैं?"
+)){
+
+members[index].status="Approved";
+
+localStorage.setItem(
+"members",
+JSON.stringify(members)
+);
+
+displayMembers();
+
+alert(
+"✅ Membership Approved Successfully"
+);
+
+}
+
+}
+
+
+/* REJECT */
+
+function rejectMember(index){
+
+let farmer =
+members[index];
+
+if(!farmer){
+
+return;
+
+}
+
+
+if(confirm(
+"क्या आप इस Membership Request को Reject करना चाहते हैं?"
+)){
+
+members[index].status="Rejected";
+
+localStorage.setItem(
+"members",
+JSON.stringify(members)
+);
+
+displayMembers();
+
+alert(
+"❌ Membership Rejected"
+);
+
+}
+
+}
+
+
+/* DELETE */
+
+function deleteMember(index){
+
+if(confirm(
+"क्या आप इस Membership को Delete करना चाहते हैं?"
+)){
+
+members.splice(index,1);
+
+localStorage.setItem(
+"members",
+JSON.stringify(members)
+);
+
+displayMembers();
+
+alert(
+"🗑️ Membership Deleted Successfully"
+);
+
+}
+
+}
+
+</script>
 
 
 </body>
 
 </html>
+```
