@@ -1,9 +1,11 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Admin Dashboard | Bundelkhand Organic FPO</title>
@@ -21,153 +23,155 @@ body{
 background:#f4fff4;
 }
 
-
 /* Header */
 
 header{
-
 background:#1B5E20;
 color:white;
 padding:25px;
 text-align:center;
-
 }
 
-
 header h1{
-font-size:32px;
+font-size:30px;
+margin-bottom:8px;
 }
 
 
 /* Container */
 
 .container{
-
 max-width:1200px;
 margin:30px auto;
 padding:20px;
-
 }
-
 
 
 /* Welcome */
 
 .welcome{
-
 background:white;
 padding:25px;
 border-radius:10px;
 box-shadow:0 0 10px #ccc;
 margin-bottom:30px;
-
 }
-
-
 
 .welcome h2{
-
 color:#2E7D32;
-
+margin-bottom:10px;
 }
-
 
 
 /* Cards */
 
 .cards{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
-
 }
 
 
-
 .card{
-
 background:white;
 padding:25px;
 text-align:center;
 border-radius:10px;
 box-shadow:0 0 10px #ccc;
-
 }
 
 
-
 .card h2{
-
 color:#2E7D32;
 margin-bottom:10px;
-
 }
 
 
 .card p{
-
-margin-bottom:20px;
-
+margin-bottom:15px;
 }
 
 
+.count{
+font-size:22px;
+font-weight:bold;
+color:#1565C0;
+margin:10px 0;
+}
+
+
+.pending{
+color:#F57C00;
+}
+
 
 .card a{
-
+display:inline-block;
 background:#2E7D32;
 color:white;
 padding:12px 25px;
 text-decoration:none;
 border-radius:5px;
-
 }
-
 
 
 .card a:hover{
-
 background:#1B5E20;
-
 }
-
 
 
 /* Logout */
 
 .logout{
-
 text-align:center;
 margin-top:40px;
-
 }
 
 
 .logout button{
-
-background:#d32f2f;
+background:#D32F2F;
 color:white;
 padding:12px 30px;
 border:none;
 border-radius:5px;
 cursor:pointer;
-
+font-size:16px;
 }
 
+
+.logout button:hover{
+background:#B71C1C;
+}
 
 
 /* Footer */
 
 footer{
-
 background:#2E7D32;
 color:white;
 text-align:center;
 padding:15px;
 margin-top:40px;
-
 }
 
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.container{
+padding:10px;
+}
+
+header h1{
+font-size:24px;
+}
+
+.card{
+padding:20px;
+}
+
+}
 
 </style>
 
@@ -177,6 +181,7 @@ margin-top:40px;
 <body>
 
 
+<!-- Admin Login Check -->
 
 <script>
 
@@ -189,6 +194,7 @@ window.location.href="login.html";
 </script>
 
 
+<!-- Header -->
 
 <header>
 
@@ -196,20 +202,17 @@ window.location.href="login.html";
 👨‍💼 Admin Dashboard
 </h1>
 
-
 <p>
 Bundelkhand Organic Farmer Producer Company Limited
 </p>
 
-
 </header>
-
-
 
 
 <div class="container">
 
 
+<!-- Welcome -->
 
 <div class="welcome">
 
@@ -217,47 +220,36 @@ Bundelkhand Organic Farmer Producer Company Limited
 Welcome Admin 👋
 </h2>
 
-
 <p>
 यह Admin Panel है। यहाँ से आप FPO Members, Products, Orders और Website को Manage कर सकते हैं।
 </p>
 
-
 </div>
 
 
-
-
+<!-- Cards -->
 
 <div class="cards">
 
 
+<!-- Farmers -->
 
 <div class="card">
 
-<h2>🛒 Orders</h2>
+<h2>
+👥 Total Farmers
+</h2>
 
 <p>
-Customer और Bulk Orders देखें।
+Registered Farmers देखें।
 </p>
 
-<a href="orders.html">
-Open
-</a>
-
+<div
+class="count"
+id="totalFarmers"
+>
+0
 </div>
-
-
-
-
-
-<div class="card">
-
-<h2>📝 Membership Requests</h2>
-
-<p>
-नई सदस्यता आवेदन देखें।
-</p>
 
 <a href="membership-requests.html">
 Open
@@ -266,17 +258,50 @@ Open
 </div>
 
 
-
-
-
+<!-- Membership -->
 
 <div class="card">
 
-<h2>📦 Products</h2>
+<h2>
+📝 Membership Requests
+</h2>
+
+<p>
+नई सदस्यता आवेदन देखें।
+</p>
+
+<div
+class="count"
+id="totalMembership"
+>
+0
+</div>
+
+<a href="membership-requests.html">
+Open
+</a>
+
+</div>
+
+
+<!-- Products -->
+
+<div class="card">
+
+<h2>
+📦 Products
+</h2>
 
 <p>
 उत्पाद जोड़ें और Edit करें।
 </p>
+
+<div
+class="count"
+id="totalProducts"
+>
+0
+</div>
 
 <a href="manage-products.html">
 Open
@@ -285,32 +310,50 @@ Open
 </div>
 
 
-
-
-
+<!-- Orders -->
 
 <div class="card">
 
-<h2>🛒 Orders</h2>
+<h2>
+🛒 Orders
+</h2>
 
 <p>
 Customer और Bulk Orders देखें।
 </p>
 
-<a href="bulk-order.html">
+<div class="count">
+
+📦 Total Orders:
+<span id="totalOrders">
+0
+</span>
+
+</div>
+
+<div class="count pending">
+
+🟡 Pending Orders:
+<span id="pendingOrders">
+0
+</span>
+
+</div>
+
+<a href="orders.html">
 Open
 </a>
 
 </div>
 
 
-
-
-
+<!-- Agriculture News -->
 
 <div class="card">
 
-<h2>📰 Agriculture News</h2>
+<h2>
+📰 Agriculture News
+</h2>
 
 <p>
 कृषि समाचार जोड़ें।
@@ -323,13 +366,13 @@ Open
 </div>
 
 
-
-
-
+<!-- Gallery -->
 
 <div class="card">
 
-<h2>🖼 Gallery</h2>
+<h2>
+🖼 Gallery
+</h2>
 
 <p>
 नई फोटो Manage करें।
@@ -342,13 +385,13 @@ Open
 </div>
 
 
-
-
-
+<!-- Reports -->
 
 <div class="card">
 
-<h2>📊 Reports</h2>
+<h2>
+📊 Reports
+</h2>
 
 <p>
 FPO रिपोर्ट और Statistics।
@@ -361,42 +404,29 @@ Open
 </div>
 
 
-
-
-
+<!-- Settings -->
 
 <div class="card">
 
-<h2>🛒 Orders</h2>
+<h2>
+⚙️ Settings
+</h2>
 
 <p>
-Customer और Bulk Orders देखें।
+Website Settings।
 </p>
 
-<p>
-📦 Total Orders:
-<strong id="totalOrders">0</strong>
-</p>
-
-<p>
-🟡 Pending Orders:
-<strong id="pendingOrders">0</strong>
-</p>
-
-<a href="orders.html">
+<a href="#">
 Open
 </a>
 
 </div>
 
 
-
-
 </div>
 
 
-
-
+<!-- Logout -->
 
 <div class="logout">
 
@@ -409,12 +439,10 @@ Logout
 </div>
 
 
-
 </div>
 
 
-
-
+<!-- Footer -->
 
 <footer>
 
@@ -423,9 +451,74 @@ Logout
 </footer>
 
 
-
-
 <script>
+
+
+// ===============================
+// PRODUCTS COUNT
+// ===============================
+
+let products =
+JSON.parse(localStorage.getItem("products")) || [];
+
+
+document.getElementById("totalProducts").textContent =
+products.length;
+
+
+// ===============================
+// ORDERS COUNT
+// ===============================
+
+let orders =
+JSON.parse(localStorage.getItem("orders")) || [];
+
+
+document.getElementById("totalOrders").textContent =
+orders.length;
+
+
+// Pending Orders
+
+let pendingOrders =
+orders.filter(function(order){
+
+return order.status === "Pending";
+
+}).length;
+
+
+document.getElementById("pendingOrders").textContent =
+pendingOrders;
+
+
+// ===============================
+// MEMBERSHIP COUNT
+// ===============================
+
+let members =
+JSON.parse(localStorage.getItem("members")) || [];
+
+
+document.getElementById("totalMembership").textContent =
+members.length;
+
+
+// ===============================
+// FARMERS COUNT
+// ===============================
+
+let farmers =
+JSON.parse(localStorage.getItem("farmers")) || [];
+
+
+document.getElementById("totalFarmers").textContent =
+farmers.length;
+
+
+// ===============================
+// LOGOUT
+// ===============================
 
 function logout(){
 
@@ -437,33 +530,8 @@ window.location.href="login.html";
 
 </script>
 
-<script>
-
-let orders =
-JSON.parse(localStorage.getItem("orders")) || [];
-
-
-// Total Orders
-
-document.getElementById("totalOrders").textContent =
-orders.length;
-
-
-// Pending Orders
-
-let pending =
-orders.filter(function(order){
-
-return order.status === "Pending";
-
-}).length;
-
-
-document.getElementById("pendingOrders").textContent =
-pending;
-
-</script>
 
 </body>
 
 </html>
+```
