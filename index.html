@@ -1,375 +1,996 @@
 ```html
-<!-- =========================================
-     AGRICULTURE NEWS SECTION
-========================================= -->
+<!DOCTYPE html>
+<html lang="hi">
 
-<section class="agriculture-news">
+<head>
 
-    <div class="news-container">
+<meta charset="UTF-8">
 
-        <div class="news-heading">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-            <h2>📰 Agriculture News</h2>
-
-            <p>
-                किसानों और कृषि से जुड़ी महत्वपूर्ण खबरें
-            </p>
-
-        </div>
-
-
-        <div
-            id="homeNewsList"
-            class="home-news-list"
-        >
-        </div>
-
-
-        <div class="all-news-button">
-
-            <a href="news.html">
-                📰 View All News
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
+<title>
+Bundelkhand Organic Farmer Producer Company Limited
+</title>
 
 <style>
 
-/* =========================================
-   NEWS SECTION
-========================================= */
+/* =========================
+   RESET
+========================= */
 
-.agriculture-news{
-
-    background:#f4fff4;
-
-    padding:50px 20px;
-
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
-.news-container{
-
-    max-width:1100px;
-
-    margin:auto;
-
-}
-
-.news-heading{
-
-    text-align:center;
-
-    margin-bottom:30px;
-
-}
-
-.news-heading h2{
-
-    color:#1B5E20;
-
-    font-size:30px;
-
-    margin-bottom:8px;
-
-}
-
-.news-heading p{
-
-    color:#666;
-
+body{
+background:#f4fff4;
+color:#333;
 }
 
 
-/* NEWS GRID */
+/* =========================
+   TOP HEADER
+========================= */
 
-.home-news-list{
+header{
 
-    display:grid;
+background:#1B5E20;
+color:white;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
+padding:20px;
 
-    gap:20px;
+text-align:center;
+
+}
+
+header h1{
+
+font-size:28px;
+
+margin-bottom:8px;
+
+}
+
+header p{
+
+font-size:16px;
 
 }
 
 
-/* NEWS CARD */
+/* =========================
+   LOGIN BAR
+========================= */
 
-.home-news-card{
+.login-bar{
 
-    background:white;
+background:#FFF176;
 
-    padding:22px;
+padding:12px;
 
-    border-radius:10px;
-
-    box-shadow:0 0 10px #ccc;
-
-    border-left:5px solid #2E7D32;
+text-align:right;
 
 }
 
-.home-news-card h3{
+.login-bar a{
 
-    color:#2E7D32;
+display:inline-block;
 
-    font-size:20px;
+background:#F57F17;
 
-    line-height:1.5;
+color:white;
 
-    margin-bottom:12px;
+padding:10px 18px;
+
+border-radius:5px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+margin-left:8px;
 
 }
 
-.home-news-card p{
+.login-bar a:hover{
 
-    line-height:1.6;
-
-    margin-bottom:12px;
-
-}
-
-.home-news-date{
-
-    color:#777;
-
-    font-size:14px;
-
-    font-weight:bold;
-
-    margin-bottom:15px;
+background:#E65100;
 
 }
 
 
-/* READ MORE */
+/* =========================
+   NAVIGATION
+========================= */
 
-.home-read-more{
+nav{
 
-    display:inline-block;
+background:#2E7D32;
 
-    background:#2E7D32;
+padding:14px;
 
-    color:white;
-
-    padding:10px 18px;
-
-    border-radius:5px;
-
-    text-decoration:none;
-
-    font-weight:bold;
+text-align:center;
 
 }
 
-.home-read-more:hover{
+nav a{
 
-    background:#1B5E20;
+color:white;
 
-}
+text-decoration:none;
 
+font-weight:bold;
 
-/* VIEW ALL */
+margin:0 10px;
 
-.all-news-button{
+display:inline-block;
 
-    text-align:center;
-
-    margin-top:30px;
-
-}
-
-.all-news-button a{
-
-    display:inline-block;
-
-    background:#1B5E20;
-
-    color:white;
-
-    padding:12px 25px;
-
-    border-radius:5px;
-
-    text-decoration:none;
-
-    font-weight:bold;
+padding:5px;
 
 }
 
-.all-news-button a:hover{
+nav a:hover{
 
-    background:#2E7D32;
+color:#FFF176;
 
 }
 
 
-/* NO NEWS */
+/* =========================
+   HERO
+========================= */
 
-.home-no-news{
+.hero{
 
-    background:white;
+background:
+linear-gradient(
+rgba(0,80,0,0.55),
+rgba(0,80,0,0.55)
+),
+url("images/farm.jpg.JPG");
 
-    padding:25px;
+background-size:cover;
 
-    text-align:center;
+background-position:center;
 
-    border-radius:10px;
+min-height:430px;
 
-    color:#777;
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:30px;
+
+color:white;
+
+}
+
+.hero-content{
+
+max-width:800px;
+
+}
+
+.hero h2{
+
+font-size:42px;
+
+margin-bottom:15px;
+
+}
+
+.hero h3{
+
+font-size:25px;
+
+margin-bottom:15px;
+
+}
+
+.hero p{
+
+font-size:19px;
+
+line-height:1.6;
+
+margin-bottom:25px;
 
 }
 
 
-/* MOBILE */
+/* =========================
+   BUTTONS
+========================= */
 
-@media(max-width:600px){
+.btn{
 
-    .agriculture-news{
+display:inline-block;
 
-        padding:35px 15px;
+padding:13px 25px;
 
-    }
+margin:5px;
 
-    .news-heading h2{
+border-radius:6px;
 
-        font-size:25px;
+text-decoration:none;
 
-    }
+font-weight:bold;
+
+}
+
+.shop{
+
+background:#FFD600;
+
+color:#333;
+
+}
+
+.join{
+
+background:#FF9800;
+
+color:white;
+
+}
+
+.btn:hover{
+
+opacity:.85;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+max-width:1150px;
+
+margin:35px auto;
+
+padding:20px;
+
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:25px;
+
+}
+
+.section-title h2{
+
+color:#2E7D32;
+
+font-size:30px;
+
+margin-bottom:8px;
+
+}
+
+.section-title p{
+
+color:#555;
+
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.feature{
+
+background:white;
+
+padding:25px;
+
+text-align:center;
+
+border-radius:10px;
+
+box-shadow:0 0 10px #ccc;
+
+}
+
+.feature h3{
+
+color:#2E7D32;
+
+margin:12px 0;
+
+}
+
+.feature .icon{
+
+font-size:40px;
+
+}
+
+
+/* =========================
+   NEWS
+========================= */
+
+.news-section{
+
+margin-top:45px;
+
+}
+
+.news-card{
+
+background:white;
+
+padding:25px;
+
+border-radius:10px;
+
+box-shadow:0 0 10px #ccc;
+
+margin-bottom:20px;
+
+}
+
+.news-card h3{
+
+color:#2E7D32;
+
+margin-bottom:12px;
+
+}
+
+.news-card p{
+
+line-height:1.6;
+
+margin-bottom:10px;
+
+}
+
+.news-date{
+
+font-weight:bold;
+
+color:#777;
+
+margin-bottom:15px;
+
+}
+
+.read-more{
+
+display:inline-block;
+
+background:#2E7D32;
+
+color:white;
+
+padding:10px 18px;
+
+border-radius:5px;
+
+text-decoration:none;
+
+}
+
+.read-more:hover{
+
+background:#1B5E20;
+
+}
+
+
+/* =========================
+   QUICK LINKS
+========================= */
+
+.quick-links{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(200px,1fr));
+
+gap:20px;
+
+margin-top:35px;
+
+}
+
+.quick-links a{
+
+background:#2E7D32;
+
+color:white;
+
+padding:18px;
+
+text-align:center;
+
+text-decoration:none;
+
+border-radius:8px;
+
+font-weight:bold;
+
+}
+
+.quick-links a:hover{
+
+background:#1B5E20;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+background:#1B5E20;
+
+color:white;
+
+text-align:center;
+
+padding:25px;
+
+margin-top:40px;
+
+}
+
+footer p{
+
+margin:7px 0;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+header h1{
+
+font-size:22px;
+
+}
+
+.login-bar{
+
+text-align:center;
+
+}
+
+nav a{
+
+margin:5px;
+
+font-size:14px;
+
+}
+
+.hero{
+
+min-height:420px;
+
+}
+
+.hero h2{
+
+font-size:30px;
+
+}
+
+.hero h3{
+
+font-size:20px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
 
 }
 
 </style>
 
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<h1>
+🌾 Bundelkhand Organic Farmer Producer Company Limited
+</h1>
+
+<p>
+Healthy Farmers • Healthy Food • Healthy Future
+</p>
+
+</header>
+
+
+<!-- =========================
+     LOGIN
+========================= -->
+
+<div class="login-bar">
+
+<a href="login.html">
+🔐 Login
+</a>
+
+<a href="login.html">
+👨‍💼 Admin Login
+</a>
+
+</div>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+<a href="index.html">
+🏠 Home
+</a>
+
+<a href="about.html">
+🌿 About
+</a>
+
+<a href="products.html">
+🛒 Products
+</a>
+
+<a href="farmers.html">
+👨‍🌾 Kisan Corner
+</a>
+
+<a href="membership.html">
+📝 Join FPO
+</a>
+
+<a href="news.html">
+📰 Agriculture News
+</a>
+
+<a href="bulk-order.html">
+📦 Bulk Order
+</a>
+
+<a href="gallery.html">
+🖼️ Gallery
+</a>
+
+<a href="contact.html">
+📞 Contact
+</a>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h2>
+Healthy Farmers • Healthy Food • Healthy Future
+</h2>
+
+<h3>
+From Farmers To Your Home
+</h3>
+
+<p>
+
+हम किसानों द्वारा उगाए गए
+शुद्ध एवं गुणवत्तापूर्ण कृषि उत्पाद
+सीधे आपके घर तक पहुँचाने के लिए
+प्रतिबद्ध हैं।
+
+<br><br>
+
+We deliver fresh and quality
+organic products directly from farmers
+to consumers.
+
+</p>
+
+
+<a
+href="products.html"
+class="btn shop"
+>
+
+🛒 Shop Now
+
+</a>
+
+
+<a
+href="membership.html"
+class="btn join"
+>
+
+👨‍🌾 Join FPO
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT FEATURES
+========================= -->
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+🌾 Our FPO
+</h2>
+
+<p>
+किसानों के विकास और जैविक कृषि को बढ़ावा देने की हमारी पहल
+</p>
+
+</div>
+
+
+<div class="features">
+
+
+<div class="feature">
+
+<div class="icon">
+👨‍🌾
+</div>
+
+<h3>
+Farmer Empowerment
+</h3>
+
+<p>
+किसानों को बेहतर बाजार और उचित मूल्य उपलब्ध कराने का प्रयास।
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="icon">
+🌱
+</div>
+
+<h3>
+Organic Agriculture
+</h3>
+
+<p>
+जैविक एवं प्राकृतिक खेती को बढ़ावा देना।
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="icon">
+🛒
+</div>
+
+<h3>
+Direct Marketing
+</h3>
+
+<p>
+किसानों से सीधे उपभोक्ताओं तक कृषि उत्पाद पहुँचाना।
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="icon">
+📈
+</div>
+
+<h3>
+Better Income
+</h3>
+
+<p>
+किसानों की आय बढ़ाने के लिए बाजार से जोड़ना।
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+     AGRICULTURE NEWS
+========================= -->
+
+<section class="news-section">
+
+<div class="section-title">
+
+<h2>
+📰 Agriculture News
+</h2>
+
+<p>
+किसानों और कृषि से जुड़ी महत्वपूर्ण खबरें
+</p>
+
+</div>
+
+
+<div
+id="newsContainer"
+>
+
+</div>
+
+
+</section>
+
+
+<!-- =========================
+     QUICK LINKS
+========================= -->
+
+<div class="section-title">
+
+<h2>
+🔗 Quick Links
+</h2>
+
+</div>
+
+
+<div class="quick-links">
+
+<a href="products.html">
+🛒 Our Products
+</a>
+
+<a href="membership.html">
+📝 Join FPO
+</a>
+
+<a href="farmers.html">
+👨‍🌾 Kisan Corner
+</a>
+
+<a href="news.html">
+📰 All Agriculture News
+</a>
+
+<a href="bulk-order.html">
+📦 Bulk Order
+</a>
+
+<a href="contact.html">
+📞 Contact Us
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<p>
+
+🌾 Bundelkhand Organic Farmer Producer Company Limited
+
+</p>
+
+<p>
+
+Empowering Farmers • Promoting Organic Agriculture
+
+</p>
+
+<p>
+
+© 2026 All Rights Reserved
+
+</p>
+
+</footer>
+
+
+<!-- =========================
+     NEWS JAVASCRIPT
+========================= -->
 
 <script>
 
-/* =========================================
-   LOAD NEWS FROM ADMIN
-========================================= */
 
-let homeAgricultureNews =
+let news =
 
 JSON.parse(
 
-    localStorage.getItem(
-        "agricultureNews"
-    )
+localStorage.getItem(
+"agricultureNews"
+)
 
 ) || [];
 
 
-let homeNewsList =
+let newsContainer =
 
 document.getElementById(
-    "homeNewsList"
+"newsContainer"
 );
 
 
-/* =========================================
-   DISPLAY NEWS
-========================================= */
+/*
+   अगर Admin से News Added है
+*/
 
-if(
+if(news.length > 0){
 
-    homeAgricultureNews.length === 0
+newsContainer.innerHTML = "";
 
-){
 
-    homeNewsList.innerHTML = `
+/*
+   Latest News पहले
+*/
 
-        <div class="home-no-news">
+news
+.slice()
+.reverse()
+.forEach(function(item,index){
 
-            📰 अभी कोई Agriculture News उपलब्ध नहीं है।
+let originalIndex =
+news.length - 1 - index;
 
-        </div>
 
-    `;
+newsContainer.innerHTML += `
+
+<div class="news-card">
+
+<h3>
+
+🌾 ${item.title}
+
+</h3>
+
+<p>
+
+${item.description}
+
+</p>
+
+<div class="news-date">
+
+📅 ${item.date}
+
+</div>
+
+<a
+href="news-details.html?id=${originalIndex}"
+class="read-more"
+>
+
+👁️ Read More
+
+</a>
+
+</div>
+
+`;
+
+});
 
 }
+
+
+/*
+   अगर कोई News नहीं है
+*/
 
 else{
 
+newsContainer.innerHTML = `
 
-    /*
-       केवल Latest 3 News Home Page पर
-    */
+<div class="news-card">
 
-    let latestNews =
+<h3>
+🌾 Agriculture News
+</h3>
 
-        homeAgricultureNews
-        .slice()
-        .reverse()
-        .slice(0,3);
+<p>
+अभी कोई कृषि समाचार उपलब्ध नहीं है।
+</p>
 
+<a
+href="news.html"
+class="read-more"
+>
 
-    latestNews.forEach(
+📰 View All News
 
-        function(news){
+</a>
 
-            /*
-               Original News का index
-               निकालना जरूरी है
-            */
+</div>
 
-            let originalIndex =
-
-                homeAgricultureNews
-                .indexOf(news);
-
-
-            homeNewsList.innerHTML += `
-
-                <div class="home-news-card">
-
-                    <h3>
-
-                        🌾 ${news.title}
-
-                    </h3>
-
-
-                    <p>
-
-                        ${news.description}
-
-                    </p>
-
-
-                    <div class="home-news-date">
-
-                        📅 ${news.date}
-
-                    </div>
-
-
-                    <a
-
-                        href="news-details.html?id=${originalIndex}"
-
-                        class="home-read-more"
-
-                    >
-
-                        👁️ Read More
-
-                    </a>
-
-                </div>
-
-            `;
-
-        }
-
-    );
+`;
 
 }
 
+
 </script>
+
+
+</body>
+
+</html>
 ```
