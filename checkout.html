@@ -1,0 +1,889 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout | Bundelkhand Organic FPO</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4fff4;
+    color:#333;
+}
+
+/* HEADER */
+
+header{
+    background:#1B5E20;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+header h1{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+/* NAVIGATION */
+
+nav{
+    background:#2E7D32;
+    padding:14px 10px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 9px;
+    font-weight:bold;
+    display:inline-block;
+}
+
+nav a:hover{
+    color:#FFD54F;
+}
+
+/* MAIN */
+
+.container{
+    max-width:1000px;
+    margin:30px auto;
+    padding:20px;
+}
+
+/* TITLE */
+
+.page-title{
+    text-align:center;
+    color:#2E7D32;
+    margin-bottom:25px;
+}
+
+/* GRID */
+
+.checkout-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+/* BOX */
+
+.box{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 10px #ccc;
+}
+
+.box h2{
+    color:#2E7D32;
+    margin-bottom:20px;
+    border-bottom:2px solid #2E7D32;
+    padding-bottom:10px;
+}
+
+/* FORM */
+
+.form-group{
+    margin-bottom:17px;
+}
+
+.form-group label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:16px;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+    border-color:#2E7D32;
+}
+
+.form-group textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+/* ORDER ITEMS */
+
+.order-item{
+    border-bottom:1px solid #ddd;
+    padding:12px 0;
+}
+
+.order-item:last-child{
+    border-bottom:none;
+}
+
+.order-item h3{
+    color:#2E7D32;
+    margin-bottom:5px;
+}
+
+.order-item p{
+    margin:4px 0;
+}
+
+.item-total{
+    color:#D84315;
+    font-weight:bold;
+}
+
+/* TOTAL */
+
+.total{
+    background:#f1f8e9;
+    padding:15px;
+    margin-top:15px;
+    border-radius:7px;
+    text-align:right;
+}
+
+.total h2{
+    color:#D84315;
+}
+
+/* PAYMENT */
+
+.payment-option{
+    background:#f9f9f9;
+    padding:12px;
+    margin:8px 0;
+    border-radius:6px;
+    border:1px solid #ddd;
+}
+
+.payment-option label{
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.payment-option input{
+    margin-right:8px;
+}
+
+/* BUTTON */
+
+.place-order{
+    width:100%;
+    background:#2E7D32;
+    color:white;
+    padding:15px;
+    border:none;
+    border-radius:7px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+.place-order:hover{
+    background:#1B5E20;
+}
+
+/* SUCCESS */
+
+.success{
+    display:none;
+    background:#E8F5E9;
+    border:2px solid #2E7D32;
+    color:#1B5E20;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    margin-top:25px;
+}
+
+.success h2{
+    margin-bottom:10px;
+}
+
+/* EMPTY */
+
+.empty{
+    text-align:center;
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 0 10px #ccc;
+}
+
+.empty h2{
+    color:#D84315;
+    margin-bottom:15px;
+}
+
+.shop-btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#2E7D32;
+    color:white;
+    padding:12px 20px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    background:#2E7D32;
+    color:white;
+    text-align:center;
+    padding:18px 10px;
+    margin-top:40px;
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+    .checkout-grid{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:22px;
+    }
+
+    nav a{
+        font-size:14px;
+        margin:5px 3px;
+    }
+
+    .container{
+        padding:15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<h1>
+🌾 Bundelkhand Organic Farmer Producer Company Limited
+</h1>
+
+<p>
+Organic Products Directly From Farmers
+</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="about.html">🌿 About</a>
+
+<a href="products.html">🛒 Products</a>
+
+<a href="farmers.html">👨‍🌾 Kisan Corner</a>
+
+<a href="membership.html">📝 Join FPO</a>
+
+<a href="bulk-order.html">📦 Bulk Order</a>
+
+<a href="contact.html">📞 Contact</a>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+<h1 class="page-title">
+📦 Checkout / Place Order
+</h1>
+
+
+<!-- CHECKOUT AREA -->
+
+<div id="checkoutArea">
+
+<div class="checkout-grid">
+
+
+<!-- CUSTOMER DETAILS -->
+
+<div class="box">
+
+<h2>
+👤 Customer Details
+</h2>
+
+
+<form id="orderForm">
+
+
+<div class="form-group">
+
+<label>
+Full Name *
+</label>
+
+<input
+type="text"
+id="customerName"
+placeholder="अपना पूरा नाम लिखें"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Mobile Number *
+</label>
+
+<input
+type="tel"
+id="customerMobile"
+placeholder="10 Digit Mobile Number"
+pattern="[0-9]{10}"
+maxlength="10"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Village / Town *
+</label>
+
+<input
+type="text"
+id="customerVillage"
+placeholder="गाँव / शहर"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+District *
+</label>
+
+<input
+type="text"
+id="customerDistrict"
+placeholder="जिला"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+State *
+</label>
+
+<input
+type="text"
+id="customerState"
+value="Uttar Pradesh"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Complete Address *
+</label>
+
+<textarea
+id="customerAddress"
+placeholder="पूरा पता लिखें"
+required
+></textarea>
+
+</div>
+
+
+<h2>
+💳 Payment Method
+</h2>
+
+
+<div class="payment-option">
+
+<label>
+
+<input
+type="radio"
+name="payment"
+value="Cash on Delivery"
+checked
+>
+
+Cash on Delivery
+
+</label>
+
+</div>
+
+
+<div class="payment-option">
+
+<label>
+
+<input
+type="radio"
+name="payment"
+value="UPI"
+>
+
+UPI Payment
+
+</label>
+
+</div>
+
+
+<div class="payment-option">
+
+<label>
+
+<input
+type="radio"
+name="payment"
+value="Bank Transfer"
+>
+
+Bank Transfer
+
+</label>
+
+</div>
+
+
+<button
+type="submit"
+class="place-order"
+>
+
+✅ Place Order
+
+</button>
+
+
+</form>
+
+</div>
+
+
+<!-- ORDER SUMMARY -->
+
+<div class="box">
+
+<h2>
+🛒 Order Summary
+</h2>
+
+
+<div id="orderItems">
+
+</div>
+
+
+<div class="total">
+
+<h2>
+Total: ₹<span id="orderTotal">0</span>
+</h2>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- SUCCESS MESSAGE -->
+
+<div
+class="success"
+id="successBox"
+>
+
+<h2>
+🎉 Order Successfully Placed!
+</h2>
+
+<p>
+आपका Order सफलतापूर्वक दर्ज हो गया है।
+</p>
+
+<p>
+<strong>
+Order ID:
+<span id="orderId"></span>
+</strong>
+</p>
+
+<p>
+कृपया Order ID सुरक्षित रखें।
+</p>
+
+<br>
+
+<a
+href="products.html"
+class="shop-btn"
+>
+
+🛒 Continue Shopping
+
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 Bundelkhand Organic Farmer Producer Company Limited
+
+<br>
+
+🌾 Empowering Farmers • Promoting Organic Agriculture
+
+</footer>
+
+
+<script>
+
+/* ==========================================
+   LOAD CART
+========================================== */
+
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+
+/* ==========================================
+   DISPLAY ORDER SUMMARY
+========================================== */
+
+displayOrder();
+
+
+function displayOrder(){
+
+    let container =
+    document.getElementById("orderItems");
+
+    let total = 0;
+
+
+    container.innerHTML = "";
+
+
+    /* EMPTY CART */
+
+    if(cart.length === 0){
+
+        document.getElementById("checkoutArea")
+        .innerHTML = `
+
+        <div class="empty">
+
+            <h2>
+            🛒 Your Cart Is Empty
+            </h2>
+
+            <p>
+            Order करने के लिए पहले Product को Cart में जोड़ें।
+            </p>
+
+            <a
+            href="products.html"
+            class="shop-btn"
+            >
+
+            🛒 Go To Products
+
+            </a>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    /* PRODUCTS */
+
+    cart.forEach(function(item){
+
+        let price =
+        Number(item.price) || 0;
+
+        let quantity =
+        Number(item.quantity) || 1;
+
+        let subtotal =
+        price * quantity;
+
+
+        total += subtotal;
+
+
+        container.innerHTML += `
+
+        <div class="order-item">
+
+            <h3>
+            🌾 ${item.name}
+            </h3>
+
+            <p>
+            Category:
+            ${item.category || "Organic Product"}
+            </p>
+
+            <p>
+            Quantity:
+            <strong>${quantity}</strong>
+            </p>
+
+            <p>
+            Price:
+            ₹${price}
+            </p>
+
+            <p class="item-total">
+            Subtotal: ₹${subtotal}
+            </p>
+
+        </div>
+
+        `;
+
+    });
+
+
+    document.getElementById("orderTotal")
+    .textContent = total;
+
+}
+
+
+/* ==========================================
+   PLACE ORDER
+========================================== */
+
+document.getElementById("orderForm")
+.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+
+    /* CUSTOMER DETAILS */
+
+    let name =
+    document.getElementById("customerName")
+    .value.trim();
+
+
+    let mobile =
+    document.getElementById("customerMobile")
+    .value.trim();
+
+
+    let village =
+    document.getElementById("customerVillage")
+    .value.trim();
+
+
+    let district =
+    document.getElementById("customerDistrict")
+    .value.trim();
+
+
+    let state =
+    document.getElementById("customerState")
+    .value.trim();
+
+
+    let address =
+    document.getElementById("customerAddress")
+    .value.trim();
+
+
+    let payment =
+    document.querySelector(
+    'input[name="payment"]:checked'
+    ).value;
+
+
+    /* TOTAL */
+
+    let total = 0;
+
+
+    cart.forEach(function(item){
+
+        total +=
+        (Number(item.price) || 0) *
+        (Number(item.quantity) || 1);
+
+    });
+
+
+    /* ORDER ID */
+
+    let orderId =
+    "FPO" +
+    Date.now().toString().slice(-8);
+
+
+    /* ORDER OBJECT */
+
+    let order = {
+
+        orderId: orderId,
+
+        customerName: name,
+
+        mobile: mobile,
+
+        village: village,
+
+        district: district,
+
+        state: state,
+
+        address: address,
+
+        payment: payment,
+
+        products: cart,
+
+        total: total,
+
+        status: "New",
+
+        date: new Date().toLocaleString("en-IN")
+
+    };
+
+
+    /* LOAD OLD ORDERS */
+
+    let orders =
+    JSON.parse(
+    localStorage.getItem("orders")
+    ) || [];
+
+
+    /* ADD NEW ORDER */
+
+    orders.push(order);
+
+
+    /* SAVE ORDERS */
+
+    localStorage.setItem(
+        "orders",
+        JSON.stringify(orders)
+    );
+
+
+    /* SAVE LAST ORDER */
+
+    localStorage.setItem(
+        "lastOrder",
+        JSON.stringify(order)
+    );
+
+
+    /* CLEAR CART */
+
+    localStorage.removeItem("cart");
+
+
+    /* SHOW SUCCESS */
+
+    document.getElementById("checkoutArea")
+    .style.display = "none";
+
+
+    document.getElementById("successBox")
+    .style.display = "block";
+
+
+    document.getElementById("orderId")
+    .textContent = orderId;
+
+});
+
+</script>
+
+
+</body>
+
+</html>
+```
