@@ -7,253 +7,269 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gallery Management | Bundelkhand Organic FPO</title>
+<title>Admin Gallery | Bundelkhand Organic FPO</title>
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,"Noto Sans Devanagari",sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
 }
 
 body{
-background:#f4fff4;
-color:#333;
+    background:#f4fff4;
+    color:#333;
 }
 
 /* HEADER */
 
 header{
-background:linear-gradient(135deg,#1b5e20,#2e7d32);
-color:white;
-text-align:center;
-padding:25px 15px;
+    background:linear-gradient(135deg,#1b5e20,#43a047);
+    color:white;
+    text-align:center;
+    padding:25px 15px;
 }
 
 header h1{
-font-size:28px;
-margin-bottom:8px;
+    font-size:30px;
+    margin-bottom:8px;
 }
 
 header p{
-font-size:16px;
+    font-size:17px;
 }
 
 /* CONTAINER */
 
 .container{
-max-width:1100px;
-margin:30px auto;
-padding:20px;
+    max-width:1100px;
+    margin:30px auto;
+    padding:15px;
 }
 
 /* BOX */
 
 .box{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 3px 12px #ccc;
-margin-bottom:30px;
+    background:white;
+    padding:25px;
+    margin-bottom:30px;
+    border-radius:12px;
+    box-shadow:0 3px 12px #ccc;
 }
 
 .box h2{
-color:#2e7d32;
-margin-bottom:20px;
+    color:#1b5e20;
+    margin-bottom:20px;
 }
 
 /* FORM */
 
 .form-group{
-margin-bottom:18px;
+    margin-bottom:18px;
 }
 
 .form-group label{
-display:block;
-font-weight:bold;
-margin-bottom:7px;
-color:#333;
+    display:block;
+    font-weight:bold;
+    margin-bottom:8px;
 }
 
 .form-group input,
 .form-group textarea{
-width:100%;
-padding:12px;
-border:1px solid #ccc;
-border-radius:6px;
-font-size:16px;
+    width:100%;
+    padding:12px;
+    border:1px solid #bbb;
+    border-radius:6px;
+    font-size:16px;
 }
 
 .form-group textarea{
-min-height:100px;
-resize:vertical;
+    min-height:100px;
+    resize:vertical;
 }
 
 /* FILE */
 
 .file-box{
-background:#f1f8e9;
-padding:15px;
-border-radius:8px;
-border:2px dashed #66bb6a;
+    background:#f1f8e9;
+    border:2px dashed #43a047;
+    padding:15px;
+    border-radius:8px;
 }
 
 .file-box input{
-border:none;
-padding:8px 0;
-background:transparent;
+    border:none;
+    background:none;
+    padding:5px;
 }
 
-/* BUTTON */
+/* ADD BUTTON */
 
 .add-btn{
-background:#2e7d32;
-color:white;
-border:none;
-padding:13px 28px;
-border-radius:6px;
-font-size:17px;
-font-weight:bold;
-cursor:pointer;
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:13px 28px;
+    border-radius:6px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 .add-btn:hover{
-background:#1b5e20;
+    background:#1b5e20;
 }
 
 /* PREVIEW */
 
 .preview{
-margin-top:15px;
-display:none;
+    display:none;
+    margin-top:15px;
 }
 
 .preview img{
-width:250px;
-max-width:100%;
-height:160px;
-object-fit:cover;
-border-radius:8px;
-border:2px solid #ddd;
+    width:250px;
+    max-width:100%;
+    height:170px;
+    object-fit:cover;
+    border-radius:8px;
+    border:2px solid #ccc;
 }
 
-/* GALLERY */
+/* GALLERY GRID */
 
 .gallery{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:22px;
 }
 
+/* CARD */
+
 .gallery-card{
-background:white;
-border-radius:10px;
-overflow:hidden;
-box-shadow:0 3px 10px #ccc;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 3px 12px #ccc;
+    border:1px solid #ddd;
 }
 
 .gallery-card img{
-width:100%;
-height:200px;
-object-fit:cover;
-display:block;
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    display:block;
 }
 
 .gallery-content{
-padding:15px;
+    padding:18px;
 }
 
 .gallery-content h3{
-color:#2e7d32;
-margin-bottom:8px;
+    color:#1b5e20;
+    font-size:19px;
+    margin-bottom:8px;
 }
 
 .gallery-content p{
-color:#555;
-line-height:1.5;
-margin-bottom:12px;
+    color:#555;
+    line-height:1.5;
+    margin-bottom:10px;
 }
 
+.gallery-date{
+    font-size:13px;
+    color:#777;
+    margin-bottom:15px;
+}
+
+/* DELETE BUTTON */
+
 .delete-btn{
-background:#d32f2f;
-color:white;
-border:none;
-padding:9px 15px;
-border-radius:5px;
-cursor:pointer;
-font-weight:bold;
+    display:block;
+    width:100%;
+    background:#d32f2f;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:6px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 .delete-btn:hover{
-background:#b71c1c;
+    background:#b71c1c;
 }
 
 /* EMPTY */
 
 .empty{
-text-align:center;
-padding:30px;
-color:#777;
+    text-align:center;
+    padding:35px;
+    color:#777;
+    background:#f9f9f9;
+    border-radius:8px;
 }
 
-/* BUTTONS */
+/* NAV BUTTONS */
 
 .buttons{
-text-align:center;
-margin-top:25px;
+    text-align:center;
+    margin:25px 0;
 }
 
 .buttons a{
-display:inline-block;
-text-decoration:none;
-color:white;
-background:#1b5e20;
-padding:12px 22px;
-border-radius:6px;
-margin:5px;
-font-weight:bold;
+    display:inline-block;
+    background:#1b5e20;
+    color:white;
+    text-decoration:none;
+    padding:12px 20px;
+    margin:5px;
+    border-radius:6px;
+    font-weight:bold;
 }
 
 .buttons a:hover{
-background:#2e7d32;
+    background:#43a047;
 }
 
 /* FOOTER */
 
 footer{
-background:#1b5e20;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:40px;
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:22px 15px;
+    margin-top:40px;
 }
 
 footer h3{
-margin-bottom:7px;
+    margin-bottom:7px;
 }
 
 /* MOBILE */
 
 @media(max-width:600px){
 
-header h1{
-font-size:22px;
-}
+    header h1{
+        font-size:22px;
+    }
 
-.container{
-padding:10px;
-}
+    .container{
+        padding:10px;
+    }
 
-.box{
-padding:18px;
-}
+    .box{
+        padding:18px;
+    }
 
-.gallery{
-grid-template-columns:1fr;
-}
+    .gallery{
+        grid-template-columns:1fr;
+    }
 
 }
 
@@ -283,7 +299,7 @@ Bundelkhand Organic Farmer Producer Company Limited
 <div class="container">
 
 
-<!-- ADD PHOTO -->
+<!-- ADD PHOTO BOX -->
 
 <div class="box">
 
@@ -315,7 +331,7 @@ Photo Description
 
 <textarea
 id="photoDescription"
-placeholder="फोटो के बारे में जानकारी लिखें..."
+placeholder="अधिक से अधिक किसान जुड़ें और लाभ प्राप्त करें"
 ></textarea>
 
 </div>
@@ -341,7 +357,7 @@ onchange="previewPhoto()"
 </div>
 
 
-<!-- PREVIEW -->
+<!-- PHOTO PREVIEW -->
 
 <div
 class="preview"
@@ -349,13 +365,15 @@ id="previewBox"
 >
 
 <p>
-<b>Photo Preview:</b>
+<b>Photo Preview</b>
 </p>
+
+<br>
 
 <img
 id="previewImage"
 src=""
-alt="Preview"
+alt="Photo Preview"
 >
 
 </div>
@@ -378,7 +396,7 @@ onclick="addPhoto()"
 </div>
 
 
-<!-- GALLERY LIST -->
+<!-- PHOTO LIST -->
 
 <div class="box">
 
@@ -408,7 +426,7 @@ style="display:none;"
 </div>
 
 
-<!-- BUTTONS -->
+<!-- NAVIGATION -->
 
 <div class="buttons">
 
@@ -456,7 +474,7 @@ Empowering Farmers • Promoting Organic Agriculture
 <script>
 
 /* =====================================
-   LOAD GALLERY
+   LOAD OLD GALLERY
 ===================================== */
 
 let gallery =
@@ -464,7 +482,7 @@ JSON.parse(localStorage.getItem("gallery")) || [];
 
 
 /* =====================================
-   PREVIEW PHOTO
+   PHOTO PREVIEW
 ===================================== */
 
 function previewPhoto(){
@@ -505,11 +523,13 @@ let reader =
 new FileReader();
 
 
-reader.onload=function(e){
+reader.onload=function(event){
 
-previewImage.src=e.target.result;
+previewImage.src =
+event.target.result;
 
-previewBox.style.display="block";
+previewBox.style.display =
+"block";
 
 };
 
@@ -562,22 +582,21 @@ return;
 }
 
 
-/* FILE READER */
-
 let reader =
 new FileReader();
 
 
-reader.onload=function(e){
+reader.onload=function(event){
 
 let newPhoto={
 
 title:title,
 
 description:
-description || "Bundelkhand Organic Farmer Producer Company Limited",
+description ||
+"Bundelkhand Organic Farmer Producer Company Limited",
 
-image:e.target.result,
+image:event.target.result,
 
 date:new Date().toLocaleDateString("en-IN")
 
@@ -609,13 +628,24 @@ return;
 
 /* CLEAR FORM */
 
-document.getElementById("photoTitle").value="";
+document.getElementById(
+"photoTitle"
+).value="";
 
-document.getElementById("photoDescription").value="";
 
-document.getElementById("photoFile").value="";
+document.getElementById(
+"photoDescription"
+).value="";
 
-document.getElementById("previewBox").style.display="none";
+
+document.getElementById(
+"photoFile"
+).value="";
+
+
+document.getElementById(
+"previewBox"
+).style.display="none";
 
 
 displayGallery();
@@ -638,10 +668,14 @@ reader.readAsDataURL(file);
 function displayGallery(){
 
 let container =
-document.getElementById("galleryContainer");
+document.getElementById(
+"galleryContainer"
+);
 
 let empty =
-document.getElementById("emptyGallery");
+document.getElementById(
+"emptyGallery"
+);
 
 
 container.innerHTML="";
@@ -659,7 +693,8 @@ return;
 empty.style.display="none";
 
 
-gallery.forEach(function(item,index){
+gallery.forEach(
+function(item,index){
 
 container.innerHTML += `
 
@@ -680,12 +715,17 @@ alt="${item.title}"
 ${item.description}
 </p>
 
+<div class="gallery-date">
+📅 ${item.date || ""}
+</div>
+
 <button
+type="button"
 class="delete-btn"
 onclick="deletePhoto(${index})"
 >
 
-🗑️ Delete
+🗑️ Delete Photo
 
 </button>
 
@@ -706,9 +746,13 @@ onclick="deletePhoto(${index})"
 
 function deletePhoto(index){
 
-if(
-confirm("⚠️ क्या आप इस Photo को Delete करना चाहते हैं?")
-){
+let answer =
+confirm(
+"⚠️ क्या आप इस Photo को Delete करना चाहते हैं?"
+);
+
+
+if(answer){
 
 gallery.splice(index,1);
 
@@ -722,7 +766,9 @@ JSON.stringify(gallery)
 displayGallery();
 
 
-alert("🗑️ Photo Deleted Successfully!");
+alert(
+"🗑️ Photo Successfully Deleted!"
+);
 
 }
 
@@ -730,7 +776,7 @@ alert("🗑️ Photo Deleted Successfully!");
 
 
 /* =====================================
-   START
+   LOAD GALLERY ON PAGE
 ===================================== */
 
 displayGallery();
