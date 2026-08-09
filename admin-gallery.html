@@ -1,789 +1,570 @@
+```html
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>Admin Gallery - Bundelkhand Organic FPO</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<title>Admin Gallery | Bundelkhand Organic FPO</title>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f8f4;
+            color: #222;
+        }
 
-<style>
+        /* Header */
+        .header {
+            background: #166534;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,"Noto Sans Devanagari",sans-serif;
-}
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
 
-body{
-    background:#f4fff4;
-    color:#333;
-}
+        .header p {
+            font-size: 15px;
+        }
 
-/* HEADER */
+        /* Main Container */
+        .container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 25px auto;
+        }
 
-header{
-    background:linear-gradient(135deg,#1b5e20,#43a047);
-    color:white;
-    text-align:center;
-    padding:25px 15px;
-}
+        /* Top Buttons */
+        .top-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
 
-header h1{
-    font-size:30px;
-    margin-bottom:8px;
-}
+        .btn {
+            display: inline-block;
+            padding: 11px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
 
-header p{
-    font-size:17px;
-}
+        .dashboard-btn {
+            background: #2563eb;
+        }
 
-/* CONTAINER */
+        .home-btn {
+            background: #475569;
+        }
 
-.container{
-    max-width:1100px;
-    margin:30px auto;
-    padding:15px;
-}
+        /* Add Gallery Box */
+        .add-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+            margin-bottom: 30px;
+        }
 
-/* BOX */
+        .add-box h2 {
+            color: #166534;
+            margin-bottom: 20px;
+        }
 
-.box{
-    background:white;
-    padding:25px;
-    margin-bottom:30px;
-    border-radius:12px;
-    box-shadow:0 3px 12px #ccc;
-}
+        .form-group {
+            margin-bottom: 18px;
+        }
 
-.box h2{
-    color:#1b5e20;
-    margin-bottom:20px;
-}
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
 
-/* FORM */
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
 
-.form-group{
-    margin-bottom:18px;
-}
+        .add-btn {
+            background: #16a34a;
+        }
 
-.form-group label{
-    display:block;
-    font-weight:bold;
-    margin-bottom:8px;
-}
+        .add-btn:hover {
+            background: #15803d;
+        }
 
-.form-group input,
-.form-group textarea{
-    width:100%;
-    padding:12px;
-    border:1px solid #bbb;
-    border-radius:6px;
-    font-size:16px;
-}
+        /* Gallery */
+        .gallery-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+        }
 
-.form-group textarea{
-    min-height:100px;
-    resize:vertical;
-}
+        .gallery-box h2 {
+            color: #166534;
+            margin-bottom: 20px;
+        }
 
-/* FILE */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
 
-.file-box{
-    background:#f1f8e9;
-    border:2px dashed #43a047;
-    padding:15px;
-    border-radius:8px;
-}
+        .gallery-item {
+            background: #f8fafc;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
 
-.file-box input{
-    border:none;
-    background:none;
-    padding:5px;
-}
+        .gallery-item img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+        }
 
-/* ADD BUTTON */
+        .gallery-info {
+            padding: 12px;
+        }
 
-.add-btn{
-    background:#2e7d32;
-    color:white;
-    border:none;
-    padding:13px 28px;
-    border-radius:6px;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-}
+        .gallery-info h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #166534;
+            word-break: break-word;
+        }
 
-.add-btn:hover{
-    background:#1b5e20;
-}
+        .delete-btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #dc2626;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
 
-/* PREVIEW */
+        .delete-btn:hover {
+            background: #b91c1c;
+        }
 
-.preview{
-    display:none;
-    margin-top:15px;
-}
+        .empty-message {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 17px;
+        }
 
-.preview img{
-    width:250px;
-    max-width:100%;
-    height:170px;
-    object-fit:cover;
-    border-radius:8px;
-    border:2px solid #ccc;
-}
+        /* Message */
+        #message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            font-weight: bold;
+        }
 
-/* GALLERY GRID */
+        .success {
+            background: #dcfce7;
+            color: #166534;
+        }
 
-.gallery{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-    gap:22px;
-}
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
 
-/* CARD */
+        /* Mobile */
+        @media (max-width: 600px) {
 
-.gallery-card{
-    background:#fff;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 3px 12px #ccc;
-    border:1px solid #ddd;
-}
+            .header h1 {
+                font-size: 22px;
+            }
 
-.gallery-card img{
-    width:100%;
-    height:210px;
-    object-fit:cover;
-    display:block;
-}
+            .container {
+                width: 92%;
+            }
 
-.gallery-content{
-    padding:18px;
-}
-
-.gallery-content h3{
-    color:#1b5e20;
-    font-size:19px;
-    margin-bottom:8px;
-}
-
-.gallery-content p{
-    color:#555;
-    line-height:1.5;
-    margin-bottom:10px;
-}
-
-.gallery-date{
-    font-size:13px;
-    color:#777;
-    margin-bottom:15px;
-}
-
-/* DELETE BUTTON */
-
-.delete-btn{
-    display:block;
-    width:100%;
-    background:#d32f2f;
-    color:white;
-    border:none;
-    padding:12px;
-    border-radius:6px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.delete-btn:hover{
-    background:#b71c1c;
-}
-
-/* EMPTY */
-
-.empty{
-    text-align:center;
-    padding:35px;
-    color:#777;
-    background:#f9f9f9;
-    border-radius:8px;
-}
-
-/* NAV BUTTONS */
-
-.buttons{
-    text-align:center;
-    margin:25px 0;
-}
-
-.buttons a{
-    display:inline-block;
-    background:#1b5e20;
-    color:white;
-    text-decoration:none;
-    padding:12px 20px;
-    margin:5px;
-    border-radius:6px;
-    font-weight:bold;
-}
-
-.buttons a:hover{
-    background:#43a047;
-}
-
-/* FOOTER */
-
-footer{
-    background:#1b5e20;
-    color:white;
-    text-align:center;
-    padding:22px 15px;
-    margin-top:40px;
-}
-
-footer h3{
-    margin-bottom:7px;
-}
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-    header h1{
-        font-size:22px;
-    }
-
-    .container{
-        padding:10px;
-    }
-
-    .box{
-        padding:18px;
-    }
-
-    .gallery{
-        grid-template-columns:1fr;
-    }
-
-}
-
-</style>
-
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
+    <!-- HEADER -->
+    <div class="header">
 
-<!-- HEADER -->
+        <h1>🖼️ Gallery Management</h1>
 
-<header>
+        <p>
+            Bundelkhand Organic Farmer Producer Company Limited
+        </p>
 
-<h1>
-🖼️ Gallery Management
-</h1>
+    </div>
 
-<p>
-Bundelkhand Organic Farmer Producer Company Limited
-</p>
 
-</header>
+    <div class="container">
 
+        <!-- TOP BUTTONS -->
+        <div class="top-buttons">
 
-<div class="container">
+            <a href="admin-dashboard.html"
+               class="btn dashboard-btn">
+                🏠 Admin Dashboard
+            </a>
 
+            <a href="gallery.html"
+               class="btn home-btn">
+                👁️ View Public Gallery
+            </a>
 
-<!-- ADD PHOTO BOX -->
+        </div>
 
-<div class="box">
 
-<h2>
-➕ Add Gallery Photo
-</h2>
+        <!-- ADD PHOTO -->
+        <div class="add-box">
 
+            <h2>➕ Add New Gallery Photo</h2>
 
-<div class="form-group">
+            <form id="galleryForm">
 
-<label>
-Photo Title
-</label>
+                <div class="form-group">
 
-<input
-type="text"
-id="photoTitle"
-placeholder="उदाहरण: किसान FPO की श्रीनगर में शुरुआत"
->
+                    <label for="photoTitle">
+                        Photo Title
+                    </label>
 
-</div>
+                    <input
+                        type="text"
+                        id="photoTitle"
+                        placeholder="जैसे - किसान प्रशिक्षण कार्यक्रम"
+                        required
+                    >
 
+                </div>
 
-<div class="form-group">
 
-<label>
-Photo Description
-</label>
+                <div class="form-group">
 
-<textarea
-id="photoDescription"
-placeholder="अधिक से अधिक किसान जुड़ें और लाभ प्राप्त करें"
-></textarea>
+                    <label for="photoUrl">
+                        Photo URL
+                    </label>
 
-</div>
+                    <input
+                        type="url"
+                        id="photoUrl"
+                        placeholder="https://example.com/photo.jpg"
+                        required
+                    >
 
+                </div>
 
-<div class="form-group">
 
-<label>
-📸 Choose Photo
-</label>
+                <button
+                    type="submit"
+                    class="btn add-btn">
+                    ➕ Add Photo
+                </button>
 
-<div class="file-box">
+            </form>
 
-<input
-type="file"
-id="photoFile"
-accept="image/*"
-onchange="previewPhoto()"
->
+            <div id="message"></div>
 
-</div>
+        </div>
 
-</div>
 
+        <!-- GALLERY LIST -->
+        <div class="gallery-box">
 
-<!-- PHOTO PREVIEW -->
+            <h2>📷 Gallery Photos</h2>
 
-<div
-class="preview"
-id="previewBox"
->
+            <div
+                id="galleryGrid"
+                class="gallery-grid">
+            </div>
 
-<p>
-<b>Photo Preview</b>
-</p>
+        </div>
 
-<br>
+    </div>
 
-<img
-id="previewImage"
-src=""
-alt="Photo Preview"
->
 
-</div>
+    <script>
 
+        /* =========================================
+           GALLERY DATA
+        ========================================= */
 
-<br>
+        let galleryData =
+            JSON.parse(localStorage.getItem("fpoGallery")) || [];
 
 
-<button
-type="button"
-class="add-btn"
-onclick="addPhoto()"
->
+        /* =========================================
+           DISPLAY GALLERY
+        ========================================= */
 
-➕ Add Photo
+        function displayGallery() {
 
-</button>
+            const galleryGrid =
+                document.getElementById("galleryGrid");
 
+            galleryGrid.innerHTML = "";
 
-</div>
 
+            /* No Photo */
+            if (galleryData.length === 0) {
 
-<!-- PHOTO LIST -->
+                galleryGrid.innerHTML = `
+                    <div class="empty-message">
+                        🖼️ अभी Gallery में कोई फोटो नहीं है।
+                    </div>
+                `;
 
-<div class="box">
+                return;
+            }
 
-<h2>
-🖼️ Gallery Photo List
-</h2>
 
+            /* Show Photos */
+            galleryData.forEach(function(photo, index) {
 
-<div
-class="gallery"
-id="galleryContainer"
->
-</div>
+                const item =
+                    document.createElement("div");
 
+                item.className = "gallery-item";
 
-<div
-class="empty"
-id="emptyGallery"
-style="display:none;"
->
 
-📸 अभी Gallery में कोई फोटो नहीं है।
+                item.innerHTML = `
 
-</div>
+                    <img
+                        src="${photo.url}"
+                        alt="${photo.title}"
+                        onerror="this.src='https://via.placeholder.com/500x300?text=Image+Not+Found'"
+                    >
 
+                    <div class="gallery-info">
 
-</div>
+                        <h3>
+                            ${photo.title}
+                        </h3>
 
+                        <button
+                            class="delete-btn"
+                            onclick="deletePhoto(${index})">
 
-<!-- NAVIGATION -->
+                            🗑️ Delete Photo
 
-<div class="buttons">
+                        </button>
 
-<a href="admin-dashboard.html">
-📊 Admin Dashboard
-</a>
+                    </div>
 
-<a href="gallery.html">
-🖼️ View Gallery
-</a>
+                `;
 
-<a href="index.html">
-🏠 Home Page
-</a>
 
-</div>
+                galleryGrid.appendChild(item);
 
+            });
 
-</div>
+        }
 
 
-<!-- FOOTER -->
+        /* =========================================
+           ADD PHOTO
+        ========================================= */
 
-<footer>
+        document
+            .getElementById("galleryForm")
+            .addEventListener("submit", function(event) {
 
-<h3>
-🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-</h3>
+                event.preventDefault();
 
-<h3>
-Bundelkhand Organic Farmer Producer Company Limited
-</h3>
 
-<p>
-Empowering Farmers • Promoting Organic Agriculture
-</p>
+                const title =
+                    document
+                    .getElementById("photoTitle")
+                    .value
+                    .trim();
 
-<p>
-© 2026 All Rights Reserved
-</p>
 
-</footer>
+                const url =
+                    document
+                    .getElementById("photoUrl")
+                    .value
+                    .trim();
 
 
-<script>
+                if (!title || !url) {
 
-/* =====================================
-   LOAD OLD GALLERY
-===================================== */
+                    showMessage(
+                        "कृपया Photo Title और Photo URL दोनों भरें।",
+                        "error"
+                    );
 
-let gallery =
-JSON.parse(localStorage.getItem("gallery")) || [];
+                    return;
+                }
 
 
-/* =====================================
-   PHOTO PREVIEW
-===================================== */
+                /* New Photo Object */
 
-function previewPhoto(){
+                const newPhoto = {
 
-let file =
-document.getElementById("photoFile").files[0];
+                    id: Date.now(),
 
-let previewBox =
-document.getElementById("previewBox");
+                    title: title,
 
-let previewImage =
-document.getElementById("previewImage");
+                    url: url
 
+                };
 
-if(!file){
 
-previewBox.style.display="none";
+                /* Add */
 
-return;
+                galleryData.push(newPhoto);
 
-}
 
+                /* Save */
 
-if(!file.type.startsWith("image/")){
+                localStorage.setItem(
+                    "fpoGallery",
+                    JSON.stringify(galleryData)
+                );
 
-alert("⚠️ कृपया केवल Image File चुनें।");
 
-document.getElementById("photoFile").value="";
+                /* Reset Form */
 
-previewBox.style.display="none";
+                document
+                    .getElementById("galleryForm")
+                    .reset();
 
-return;
 
-}
+                /* Refresh */
 
+                displayGallery();
 
-let reader =
-new FileReader();
 
+                showMessage(
+                    "✅ Photo successfully added!",
+                    "success"
+                );
 
-reader.onload=function(event){
+            });
 
-previewImage.src =
-event.target.result;
 
-previewBox.style.display =
-"block";
+        /* =========================================
+           DELETE PHOTO
+        ========================================= */
 
-};
+        function deletePhoto(index) {
 
+            const photo =
+                galleryData[index];
 
-reader.readAsDataURL(file);
 
-}
+            if (!photo) {
 
+                return;
 
-/* =====================================
-   ADD PHOTO
-===================================== */
+            }
 
-function addPhoto(){
 
-let title =
-document.getElementById("photoTitle").value.trim();
+            const confirmDelete =
+                confirm(
+                    "क्या आप यह फोटो Delete करना चाहते हैं?\n\n" +
+                    photo.title
+                );
 
-let description =
-document.getElementById("photoDescription").value.trim();
 
-let file =
-document.getElementById("photoFile").files[0];
+            if (!confirmDelete) {
 
+                return;
 
-if(title===""){
+            }
 
-alert("⚠️ कृपया Photo Title लिखें।");
 
-return;
+            /* Delete */
 
-}
+            galleryData.splice(index, 1);
 
 
-if(!file){
+            /* Save Updated Data */
 
-alert("⚠️ कृपया पहले Photo चुनें।");
+            localStorage.setItem(
+                "fpoGallery",
+                JSON.stringify(galleryData)
+            );
 
-return;
 
-}
+            /* Refresh Gallery */
 
+            displayGallery();
 
-if(!file.type.startsWith("image/")){
 
-alert("⚠️ केवल Image File चुनें।");
+            showMessage(
+                "🗑️ Photo successfully deleted!",
+                "success"
+            );
 
-return;
+        }
 
-}
 
+        /* =========================================
+           MESSAGE
+        ========================================= */
 
-let reader =
-new FileReader();
+        function showMessage(text, type) {
 
+            const message =
+                document.getElementById("message");
 
-reader.onload=function(event){
 
-let newPhoto={
+            message.textContent = text;
 
-title:title,
+            message.className = type;
 
-description:
-description ||
-"Bundelkhand Organic Farmer Producer Company Limited",
+            message.style.display = "block";
 
-image:event.target.result,
 
-date:new Date().toLocaleDateString("en-IN")
+            setTimeout(function() {
 
-};
+                message.style.display = "none";
 
+            }, 3000);
 
-gallery.push(newPhoto);
+        }
 
 
-try{
+        /* =========================================
+           LOAD GALLERY
+        ========================================= */
 
-localStorage.setItem(
-"gallery",
-JSON.stringify(gallery)
-);
+        displayGallery();
 
-}
-
-catch(error){
-
-alert(
-"⚠️ फोटो बहुत बड़ी है। कृपया छोटी फोटो चुनें।"
-);
-
-return;
-
-}
-
-
-/* CLEAR FORM */
-
-document.getElementById(
-"photoTitle"
-).value="";
-
-
-document.getElementById(
-"photoDescription"
-).value="";
-
-
-document.getElementById(
-"photoFile"
-).value="";
-
-
-document.getElementById(
-"previewBox"
-).style.display="none";
-
-
-displayGallery();
-
-
-alert("✅ Photo Successfully Added!");
-
-};
-
-
-reader.readAsDataURL(file);
-
-}
-
-
-/* =====================================
-   DISPLAY GALLERY
-===================================== */
-
-function displayGallery(){
-
-let container =
-document.getElementById(
-"galleryContainer"
-);
-
-let empty =
-document.getElementById(
-"emptyGallery"
-);
-
-
-container.innerHTML="";
-
-
-if(gallery.length===0){
-
-empty.style.display="block";
-
-return;
-
-}
-
-
-empty.style.display="none";
-
-
-gallery.forEach(
-function(item,index){
-
-container.innerHTML += `
-
-<div class="gallery-card">
-
-<img
-src="${item.image}"
-alt="${item.title}"
->
-
-<div class="gallery-content">
-
-<h3>
-🌾 ${item.title}
-</h3>
-
-<p>
-${item.description}
-</p>
-
-<div class="gallery-date">
-📅 ${item.date || ""}
-</div>
-
-<button
-type="button"
-class="delete-btn"
-onclick="deletePhoto(${index})"
->
-
-🗑️ Delete Photo
-
-</button>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-}
-
-
-/* =====================================
-   DELETE PHOTO
-===================================== */
-
-function deletePhoto(index){
-
-let answer =
-confirm(
-"⚠️ क्या आप इस Photo को Delete करना चाहते हैं?"
-);
-
-
-if(answer){
-
-gallery.splice(index,1);
-
-
-localStorage.setItem(
-"gallery",
-JSON.stringify(gallery)
-);
-
-
-displayGallery();
-
-
-alert(
-"🗑️ Photo Successfully Deleted!"
-);
-
-}
-
-}
-
-
-/* =====================================
-   LOAD GALLERY ON PAGE
-===================================== */
-
-displayGallery();
-
-</script>
-
+    </script>
 
 </body>
-
 </html>
+```
