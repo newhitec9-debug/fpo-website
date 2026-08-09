@@ -13,161 +13,279 @@
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-background:#f4fff4;
+    background:#f4fff4;
+    color:#333;
 }
 
-/* Header */
+/* ================= HEADER ================= */
 
 header{
-background:#1B5E20;
-color:white;
-padding:25px;
-text-align:center;
+    background:#1B5E20;
+    color:white;
+    padding:25px 15px;
+    text-align:center;
 }
 
 header h1{
-font-size:30px;
-margin-bottom:8px;
+    font-size:30px;
+    margin-bottom:8px;
 }
 
-/* Navigation */
+header p{
+    font-size:16px;
+}
+
+/* ================= NAVIGATION ================= */
 
 nav{
-background:#2E7D32;
-padding:15px;
-text-align:center;
+    background:#2E7D32;
+    padding:14px 10px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 nav a{
-color:white;
-text-decoration:none;
-margin:0 12px;
-font-weight:bold;
+    color:white;
+    text-decoration:none;
+    margin:0 9px;
+    font-weight:bold;
+    display:inline-block;
 }
 
 nav a:hover{
-text-decoration:underline;
+    color:#FFD54F;
 }
 
-/* Container */
+/* ================= CART ================= */
+
+.cart-area{
+    background:#fff;
+    max-width:1100px;
+    margin:20px auto 0;
+    padding:12px 20px;
+    border-radius:10px;
+    box-shadow:0 0 8px #ccc;
+    text-align:right;
+}
+
+.cart-btn{
+    display:inline-block;
+    background:#FF8F00;
+    color:white;
+    padding:10px 18px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.cart-btn:hover{
+    background:#EF6C00;
+}
+
+/* ================= CONTAINER ================= */
 
 .container{
-max-width:1100px;
-margin:30px auto;
-padding:20px;
+    max-width:1100px;
+    margin:25px auto;
+    padding:20px;
 }
 
-/* Search */
+/* ================= SEARCH ================= */
 
 .search-box{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px #ccc;
-margin-bottom:25px;
-text-align:center;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px #ccc;
+    margin-bottom:25px;
+    text-align:center;
 }
 
 #search{
-width:80%;
-padding:14px;
-font-size:17px;
-border:1px solid #ccc;
-border-radius:5px;
+    width:80%;
+    padding:14px;
+    font-size:17px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    outline:none;
 }
 
-/* Products */
+#search:focus{
+    border-color:#2E7D32;
+}
+
+/* ================= PRODUCT GRID ================= */
 
 .products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+    gap:22px;
 }
 
-/* Product Card */
+/* ================= PRODUCT CARD ================= */
 
 .product-card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px #ccc;
-text-align:center;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 10px #ccc;
+    text-align:center;
+    transition:0.3s;
+    border-top:4px solid #2E7D32;
+}
+
+.product-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 5px 18px #aaa;
+}
+
+.product-icon{
+    font-size:50px;
+    margin-bottom:10px;
 }
 
 .product-card h2{
-color:#2E7D32;
-margin-bottom:12px;
+    color:#2E7D32;
+    margin-bottom:12px;
+    font-size:22px;
 }
 
 .product-card p{
-margin:8px 0;
+    margin:8px 0;
+}
+
+.category{
+    color:#555;
 }
 
 .price{
-font-size:20px;
-font-weight:bold;
-color:#D84315;
+    font-size:22px;
+    font-weight:bold;
+    color:#D84315;
 }
 
 .stock{
-color:#2E7D32;
-font-weight:bold;
+    color:#2E7D32;
+    font-weight:bold;
+}
+
+/* ================= BUTTONS ================= */
+
+.button-group{
+    margin-top:15px;
+}
+
+.cart-btn-small{
+    display:inline-block;
+    background:#FF8F00;
+    color:white;
+    padding:10px 14px;
+    text-decoration:none;
+    border-radius:5px;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+    margin:3px;
+}
+
+.cart-btn-small:hover{
+    background:#EF6C00;
 }
 
 .order-btn{
-display:inline-block;
-margin-top:15px;
-background:#2E7D32;
-color:white;
-padding:10px 20px;
-text-decoration:none;
-border-radius:5px;
+    display:inline-block;
+    background:#2E7D32;
+    color:white;
+    padding:10px 14px;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+    margin:3px;
 }
 
 .order-btn:hover{
-background:#1B5E20;
+    background:#1B5E20;
 }
 
-/* No Product */
+/* ================= NO PRODUCT ================= */
 
 .no-product{
-background:white;
-padding:30px;
-text-align:center;
-border-radius:10px;
-box-shadow:0 0 10px #ccc;
-display:none;
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 0 10px #ccc;
+    display:none;
 }
 
-/* Footer */
+.no-product h2{
+    color:#2E7D32;
+    margin-bottom:10px;
+}
+
+/* ================= MESSAGE ================= */
+
+.message{
+    position:fixed;
+    top:80px;
+    right:20px;
+    background:#2E7D32;
+    color:white;
+    padding:15px 20px;
+    border-radius:8px;
+    box-shadow:0 3px 10px #777;
+    display:none;
+    z-index:2000;
+}
+
+/* ================= FOOTER ================= */
 
 footer{
-background:#2E7D32;
-color:white;
-text-align:center;
-padding:15px;
-margin-top:40px;
+    background:#2E7D32;
+    color:white;
+    text-align:center;
+    padding:18px 10px;
+    margin-top:40px;
 }
 
-/* Mobile */
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
-#search{
-width:100%;
-}
+    header h1{
+        font-size:22px;
+    }
 
-nav a{
-display:inline-block;
-margin:5px;
-}
+    nav a{
+        margin:5px 3px;
+        font-size:14px;
+    }
+
+    #search{
+        width:100%;
+    }
+
+    .cart-area{
+        margin:15px 10px 0;
+    }
+
+    .container{
+        padding:15px;
+    }
+
+    .product-card{
+        padding:18px;
+    }
 
 }
 
@@ -175,11 +293,10 @@ margin:5px;
 
 </head>
 
-
 <body>
 
 
-<!-- Header -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -194,45 +311,57 @@ Organic Products Directly From Farmers
 </header>
 
 
-<!-- Navigation -->
+<!-- ================= NAVIGATION ================= -->
 
 <nav>
 
-<a href="index.html">
-🏠 Home
-</a>
+<a href="index.html">🏠 Home</a>
 
-<a href="about.html">
-🌿 About
-</a>
+<a href="about.html">🌿 About</a>
 
-<a href="products.html">
-🛒 Products
-</a>
+<a href="products.html">🛒 Products</a>
 
-<a href="farmers.html">
-👨‍🌾 Kisan Corner
-</a>
+<a href="farmers.html">👨‍🌾 Kisan Corner</a>
 
-<a href="membership.html">
-📝 Join FPO
-</a>
+<a href="membership.html">📝 Join FPO</a>
 
-<a href="bulk-order.html">
-📦 Bulk Order
-</a>
+<a href="bulk-order.html">📦 Bulk Order</a>
 
-<a href="contact.html">
-📞 Contact
-</a>
+<a href="contact.html">📞 Contact</a>
 
 </nav>
 
 
+<!-- ================= CART AREA ================= -->
+
+<div class="cart-area">
+
+<a href="cart.html" class="cart-btn">
+
+🛒 Cart
+
+<span id="cartCount">0</span>
+
+</a>
+
+</div>
+
+
+<!-- ================= MESSAGE ================= -->
+
+<div class="message" id="message">
+
+✅ Product added to cart!
+
+</div>
+
+
+<!-- ================= MAIN CONTAINER ================= -->
+
 <div class="container">
 
 
-<!-- Search -->
+<!-- ================= SEARCH ================= -->
 
 <div class="search-box">
 
@@ -246,7 +375,7 @@ onkeyup="searchProduct()"
 </div>
 
 
-<!-- Product Area -->
+<!-- ================= PRODUCT AREA ================= -->
 
 <div
 class="products"
@@ -254,6 +383,8 @@ id="productsContainer"
 >
 </div>
 
+
+<!-- ================= NO PRODUCT ================= -->
 
 <div
 class="no-product"
@@ -274,133 +405,343 @@ id="noProduct"
 </div>
 
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
 © 2026 Bundelkhand Organic Farmer Producer Company Limited
+
+<br>
+
+🌾 Empowering Farmers • Promoting Organic Agriculture
 
 </footer>
 
 
 <script>
 
-
-// Load Products From Admin
+/* =====================================================
+   LOAD PRODUCTS FROM ADMIN
+   ===================================================== */
 
 let products =
 JSON.parse(localStorage.getItem("products")) || [];
 
 
-// Display Products
+/* =====================================================
+   LOAD CART
+   ===================================================== */
+
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+
+/* =====================================================
+   DISPLAY PRODUCTS
+   ===================================================== */
 
 displayProducts();
 
 
+/* =====================================================
+   UPDATE CART COUNT
+   ===================================================== */
+
+updateCartCount();
+
+
+function updateCartCount(){
+
+    let totalQuantity = 0;
+
+    cart.forEach(function(item){
+
+        totalQuantity += Number(item.quantity) || 0;
+
+    });
+
+    document.getElementById("cartCount").textContent =
+    totalQuantity;
+
+}
+
+
+/* =====================================================
+   DISPLAY PRODUCT CARDS
+   ===================================================== */
+
 function displayProducts(){
 
-let container =
-document.getElementById("productsContainer");
+    let container =
+    document.getElementById("productsContainer");
 
-let noProduct =
-document.getElementById("noProduct");
-
-
-container.innerHTML = "";
+    let noProduct =
+    document.getElementById("noProduct");
 
 
-if(products.length === 0){
+    container.innerHTML = "";
 
-noProduct.style.display = "block";
 
-return;
+    if(products.length === 0){
+
+        noProduct.style.display = "block";
+
+        return;
+
+    }
+
+
+    noProduct.style.display = "none";
+
+
+    products.forEach(function(product,index){
+
+        let stock =
+        Number(product.stock) || 0;
+
+
+        let stockText =
+        stock > 0
+        ? "📦 Stock: " + stock
+        : "❌ Out of Stock";
+
+
+        let buttonDisabled =
+        stock <= 0
+        ? "disabled"
+        : "";
+
+
+        container.innerHTML += `
+
+        <div
+        class="product-card"
+        data-name="${product.name || ""}"
+        data-category="${product.category || ""}"
+        >
+
+            <div class="product-icon">
+                🌾
+            </div>
+
+
+            <h2>
+                ${product.name || "Product"}
+            </h2>
+
+
+            <p class="category">
+                <b>Category:</b>
+                ${product.category || "Organic Product"}
+            </p>
+
+
+            <p class="price">
+                ₹ ${product.price || 0}
+            </p>
+
+
+            <p class="stock">
+                ${stockText}
+            </p>
+
+
+            <div class="button-group">
+
+
+                <button
+                class="cart-btn-small"
+                onclick="addToCart(${index})"
+                ${buttonDisabled}
+                >
+
+                🛒 Add To Cart
+
+                </button>
+
+
+                <a
+                href="bulk-order.html"
+                class="order-btn"
+                >
+
+                📦 Order
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
 
 }
 
 
-noProduct.style.display = "none";
+/* =====================================================
+   ADD PRODUCT TO CART
+   ===================================================== */
+
+function addToCart(index){
+
+    let product = products[index];
 
 
-products.forEach(function(product){
+    if(!product){
 
-container.innerHTML += `
+        return;
 
-<div class="product-card">
+    }
 
-<h2>
-🌾 ${product.name}
-</h2>
 
-<p>
-<b>Category:</b> ${product.category}
-</p>
+    let stock =
+    Number(product.stock) || 0;
 
-<p class="price">
-₹ ${product.price}
-</p>
 
-<p class="stock">
-📦 Stock: ${product.stock}
-</p>
+    if(stock <= 0){
 
-<a
-href="bulk-order.html"
-class="order-btn"
->
+        showMessage("❌ Product is out of stock!");
 
-🛒 Order Product
+        return;
 
-</a>
+    }
 
-</div>
 
-`;
+    let existing =
+    cart.find(function(item){
 
-});
+        return item.name === product.name;
+
+    });
+
+
+    if(existing){
+
+        if(existing.quantity < stock){
+
+            existing.quantity++;
+
+        }
+        else{
+
+            showMessage(
+            "⚠️ Available stock limit reached!"
+            );
+
+            return;
+
+        }
+
+    }
+
+    else{
+
+        cart.push({
+
+            name: product.name,
+
+            category: product.category,
+
+            price: Number(product.price) || 0,
+
+            quantity: 1,
+
+            stock: stock
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+
+    updateCartCount();
+
+
+    showMessage(
+        "✅ " + product.name +
+        " cart में जोड़ दिया गया!"
+    );
 
 }
 
 
-// Search Product
+/* =====================================================
+   SEARCH PRODUCT
+   ===================================================== */
 
 function searchProduct(){
 
-let search =
-document.getElementById("search")
-.value
-.toLowerCase();
+    let search =
+    document.getElementById("search")
+    .value
+    .toLowerCase()
+    .trim();
 
 
-let cards =
-document.querySelectorAll(".product-card");
+    let cards =
+    document.querySelectorAll(".product-card");
 
 
-let found = false;
+    let found = false;
 
 
-cards.forEach(function(card){
+    cards.forEach(function(card){
 
-let text =
-card.textContent.toLowerCase();
+        let text =
+        card.textContent.toLowerCase();
 
 
-if(text.includes(search)){
+        if(text.includes(search)){
 
-card.style.display = "block";
+            card.style.display = "block";
 
-found = true;
+            found = true;
+
+        }
+
+        else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    document.getElementById("noProduct").style.display =
+    found ? "none" : "block";
 
 }
 
-else{
 
-card.style.display = "none";
+/* =====================================================
+   SHOW MESSAGE
+   ===================================================== */
 
-}
+function showMessage(text){
 
-});
+    let message =
+    document.getElementById("message");
 
 
-document.getElementById("noProduct").style.display =
-found ? "none" : "block";
+    message.textContent = text;
+
+    message.style.display = "block";
+
+
+    setTimeout(function(){
+
+        message.style.display = "none";
+
+    },2500);
 
 }
 
