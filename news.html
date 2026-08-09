@@ -13,67 +13,75 @@ content="width=device-width, initial-scale=1.0">
 Agriculture News | Bundelkhand Organic FPO
 </title>
 
+
 <style>
 
+/* ==============================
+   BASIC
+============================== */
+
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
+
 }
+
 
 body{
+
 background:#f4fff4;
 color:#333;
+
 }
 
 
-/* HEADER */
+/* ==============================
+   HEADER
+============================== */
 
 header{
 
 background:#1B5E20;
-
 color:white;
-
 padding:25px;
-
 text-align:center;
 
 }
 
+
 header h1{
 
 font-size:28px;
-
 margin-bottom:8px;
 
 }
 
 
-/* NAVIGATION */
+/* ==============================
+   NAVIGATION
+============================== */
 
 nav{
 
 background:#2E7D32;
-
 padding:15px;
-
 text-align:center;
 
 }
 
+
 nav a{
 
 color:white;
-
 text-decoration:none;
-
 margin:0 10px;
-
 font-weight:bold;
 
 }
+
 
 nav a:hover{
 
@@ -82,38 +90,39 @@ text-decoration:underline;
 }
 
 
-/* CONTAINER */
+/* ==============================
+   CONTAINER
+============================== */
 
 .container{
 
 max-width:1100px;
-
 margin:30px auto;
-
 padding:20px;
 
 }
 
 
-/* TITLE */
+/* ==============================
+   PAGE TITLE
+============================== */
 
 .page-title{
 
 text-align:center;
-
 margin-bottom:30px;
 
 }
 
+
 .page-title h2{
 
 color:#1B5E20;
-
 font-size:30px;
-
 margin-bottom:8px;
 
 }
+
 
 .page-title p{
 
@@ -122,38 +131,35 @@ color:#666;
 }
 
 
-/* SEARCH */
+/* ==============================
+   SEARCH
+============================== */
 
 .search-box{
 
 background:white;
-
 padding:20px;
-
 border-radius:10px;
-
 box-shadow:0 0 10px #ccc;
-
 margin-bottom:25px;
 
 }
 
+
 #search{
 
 width:100%;
-
 padding:13px;
-
 font-size:16px;
-
 border:1px solid #ccc;
-
 border-radius:5px;
 
 }
 
 
-/* NEWS GRID */
+/* ==============================
+   NEWS GRID
+============================== */
 
 .news-list{
 
@@ -167,14 +173,14 @@ gap:20px;
 }
 
 
-/* NEWS CARD */
+/* ==============================
+   NEWS CARD
+============================== */
 
 .news-card{
 
 background:white;
-
 padding:22px;
-
 border-radius:10px;
 
 box-shadow:0 0 10px #ccc;
@@ -183,15 +189,19 @@ border-left:5px solid #2E7D32;
 
 }
 
+
 .news-card h3{
 
 color:#2E7D32;
 
 font-size:21px;
 
+line-height:1.5;
+
 margin-bottom:12px;
 
 }
+
 
 .news-card p{
 
@@ -200,6 +210,7 @@ line-height:1.7;
 margin-bottom:15px;
 
 }
+
 
 .news-date{
 
@@ -214,7 +225,9 @@ margin-bottom:15px;
 }
 
 
-/* READ MORE */
+/* ==============================
+   READ MORE
+============================== */
 
 .read-more{
 
@@ -234,6 +247,7 @@ font-weight:bold;
 
 }
 
+
 .read-more:hover{
 
 background:#1B5E20;
@@ -241,7 +255,9 @@ background:#1B5E20;
 }
 
 
-/* EMPTY */
+/* ==============================
+   NO NEWS
+============================== */
 
 .no-news{
 
@@ -260,7 +276,9 @@ color:#777;
 }
 
 
-/* FOOTER */
+/* ==============================
+   FOOTER
+============================== */
 
 footer{
 
@@ -277,7 +295,9 @@ margin-top:40px;
 }
 
 
-/* MOBILE */
+/* ==============================
+   MOBILE
+============================== */
 
 @media(max-width:600px){
 
@@ -289,9 +309,17 @@ margin:5px;
 
 }
 
+
 .container{
 
 padding:10px;
+
+}
+
+
+.page-title h2{
+
+font-size:25px;
 
 }
 
@@ -305,7 +333,9 @@ padding:10px;
 <body>
 
 
-<!-- HEADER -->
+<!-- ==============================
+     HEADER
+============================== -->
 
 <header>
 
@@ -324,86 +354,135 @@ Agriculture News Portal
 </header>
 
 
-<!-- NAVIGATION -->
+<!-- ==============================
+     NAVIGATION
+============================== -->
 
 <nav>
 
 <a href="index.html">
+
 🏠 Home
+
 </a>
+
 
 <a href="about.html">
+
 🌿 About
+
 </a>
+
 
 <a href="products.html">
+
 🛒 Products
+
 </a>
+
 
 <a href="farmers.html">
+
 👨‍🌾 Kisan Corner
+
 </a>
+
 
 <a href="membership.html">
+
 📝 Membership
+
 </a>
+
 
 <a href="news.html">
+
 📰 Agriculture News
+
 </a>
+
 
 <a href="bulk-order.html">
+
 📦 Bulk Order
+
 </a>
+
 
 <a href="gallery.html">
+
 🖼 Gallery
+
 </a>
 
+
 <a href="contact.html">
+
 📞 Contact
+
 </a>
 
 </nav>
 
 
-<!-- CONTENT -->
+<!-- ==============================
+     MAIN
+============================== -->
 
 <div class="container">
 
 
+<!-- PAGE TITLE -->
+
 <div class="page-title">
 
 <h2>
+
 📰 Agriculture News
+
 </h2>
 
+
 <p>
+
 किसानों और कृषि से जुड़ी महत्वपूर्ण खबरें
+
 </p>
 
 </div>
 
 
-<!-- SEARCH -->
+<!-- ==============================
+     SEARCH
+============================== -->
 
 <div class="search-box">
 
 <input
+
 type="text"
+
 id="search"
+
 placeholder="🔍 Search Agriculture News..."
+
 onkeyup="searchNews()"
+
 >
 
 </div>
 
 
-<!-- NEWS -->
+<!-- ==============================
+     NEWS LIST
+============================== -->
 
 <div
+
 class="news-list"
+
 id="newsList"
+
 >
 
 </div>
@@ -412,7 +491,9 @@ id="newsList"
 </div>
 
 
-<!-- FOOTER -->
+<!-- ==============================
+     FOOTER
+============================== -->
 
 <footer>
 
@@ -427,37 +508,61 @@ id="newsList"
 
 <script>
 
-/* ==================================
-   LOAD NEWS
-================================== */
+
+/* =================================
+   LOAD NEWS FROM LOCAL STORAGE
+================================= */
 
 let agricultureNews =
 
 JSON.parse(
-localStorage.getItem("agricultureNews")
+
+localStorage.getItem(
+"agricultureNews"
+)
+
 ) || [];
 
 
-/* ==================================
+/* =================================
    DISPLAY NEWS
-================================== */
+================================= */
 
 function displayNews(){
 
 let container =
-document.getElementById("newsList");
+
+document.getElementById(
+"newsList"
+);
 
 
-container.innerHTML="";
+container.innerHTML = "";
 
 
-if(agricultureNews.length===0){
+/* NO NEWS */
 
-container.innerHTML=`
+if(
+
+agricultureNews.length === 0
+
+){
+
+container.innerHTML = `
 
 <div class="no-news">
 
+<h3>
+
 📰 अभी कोई Agriculture News उपलब्ध नहीं है।
+
+</h3>
+
+<p>
+
+Admin Panel से News Add करें।
+
+</p>
 
 </div>
 
@@ -468,13 +573,16 @@ return;
 }
 
 
-agricultureNews.forEach(function(news,index){
+/* DISPLAY ALL NEWS */
+
+agricultureNews.forEach(
+
+function(news,index){
 
 container.innerHTML += `
 
-<div
-class="news-card"
->
+<div class="news-card">
+
 
 <h3>
 
@@ -482,11 +590,13 @@ class="news-card"
 
 </h3>
 
+
 <p>
 
 ${news.description}
 
 </p>
+
 
 <div class="news-date">
 
@@ -494,55 +604,34 @@ ${news.description}
 
 </div>
 
+
 <a
-href="#"
+
+href="news-details.html?id=${index}"
+
 class="read-more"
-onclick="readNews(${index}); return false;"
+
 >
 
 👁️ Read More
 
 </a>
 
+
 </div>
 
 `;
 
-});
-
 }
-
-
-/* ==================================
-   READ MORE
-================================== */
-
-function readNews(index){
-
-let news =
-agricultureNews[index];
-
-
-alert(
-
-"📰 " +
-news.title +
-"\n\n" +
-
-news.description +
-"\n\n" +
-
-"📅 " +
-news.date
 
 );
 
 }
 
 
-/* ==================================
-   SEARCH
-================================== */
+/* =================================
+   SEARCH NEWS
+================================= */
 
 function searchNews(){
 
@@ -560,29 +649,109 @@ document.querySelectorAll(
 );
 
 
-cards.forEach(function(card){
+let found = false;
+
+
+cards.forEach(
+
+function(card){
 
 let text =
+
 card.textContent.toLowerCase();
 
 
 if(
+
 text.includes(search)
+
 ){
 
-card.style.display="block";
+card.style.display = "block";
+
+found = true;
 
 }
 
 else{
 
-card.style.display="none";
+card.style.display = "none";
 
 }
 
-});
+}
+
+);
+
+
+/* SEARCH RESULT */
+
+if(
+
+!found && search !== ""
+
+){
+
+let existing =
+
+document.getElementById(
+"searchMessage"
+);
+
+
+if(!existing){
+
+let message =
+document.createElement(
+"div"
+);
+
+
+message.id =
+"searchMessage";
+
+message.className =
+"no-news";
+
+message.innerHTML = `
+
+📰 कोई News नहीं मिली।
+
+`;
+
+document
+.getElementById(
+"newsList"
+)
+.appendChild(message);
 
 }
+
+}
+
+else{
+
+let message =
+
+document.getElementById(
+"searchMessage"
+);
+
+
+if(message){
+
+message.remove();
+
+}
+
+}
+
+}
+
+
+/* =================================
+   START
+================================= */
 
 displayNews();
 
