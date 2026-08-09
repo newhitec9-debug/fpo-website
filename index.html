@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="hi">
 
@@ -10,7 +9,7 @@
 content="width=device-width, initial-scale=1.0">
 
 <title>
-Bundelkhand Organic Farmer Producer Company Limited
+बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
 </title>
 
 <style>
@@ -20,15 +19,31 @@ Bundelkhand Organic Farmer Producer Company Limited
 ========================= */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-background:#f5fff5;
-color:#333;
+    background:#f4fff4;
+    color:#333;
+}
+
+
+/* =========================
+   TOP GREEN LINE
+========================= */
+
+.top-line{
+    height:7px;
+    background:linear-gradient(
+        90deg,
+        #1B5E20,
+        #43A047,
+        #66BB6A,
+        #1B5E20
+    );
 }
 
 
@@ -36,129 +51,152 @@ color:#333;
    HEADER
 ========================= */
 
-header{
+.main-header{
 
-background:linear-gradient(
-135deg,
-#1B5E20,
-#388E3C,
-#66BB6A
-);
+    background:linear-gradient(
+        135deg,
+        #fff8e1,
+        #ffffff
+    );
 
-color:white;
+    min-height:155px;
 
-padding:20px;
+    display:flex;
 
-text-align:center;
+    align-items:center;
 
-}
+    justify-content:center;
 
-.header-main{
+    gap:25px;
 
-display:flex;
+    padding:25px 35px;
 
-align-items:center;
+    border-bottom:3px solid #43A047;
 
-justify-content:center;
-
-gap:18px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.15);
 
 }
 
-.logo{
 
-width:90px;
+/* LOGO */
 
-height:90px;
+.company-logo{
 
-border-radius:50%;
+    width:90px;
 
-background:
-linear-gradient(
-135deg,
-#FFF176,
-#FFD600
-);
+    height:90px;
 
-border:5px solid white;
+    background:#FFD600;
 
-display:flex;
+    border:4px solid #2E7D32;
 
-align-items:center;
+    border-radius:50%;
 
-justify-content:center;
+    display:flex;
 
-font-size:48px;
+    align-items:center;
 
-box-shadow:
-0 4px 12px rgba(0,0,0,.35);
+    justify-content:center;
 
-}
+    font-size:48px;
 
-.header-text h1{
+    box-shadow:0 4px 10px #999;
 
-font-size:30px;
-
-margin-bottom:8px;
+    flex-shrink:0;
 
 }
 
-.header-text p{
 
-font-size:17px;
+/* COMPANY NAME */
+
+.company-name{
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+
+.company-name h1{
+
+    color:#1B5E20;
+
+    font-size:34px;
+
+    margin-bottom:8px;
+
+    font-weight:bold;
+
+}
+
+
+.company-name p{
+
+    color:#E65100;
+
+    font-size:17px;
+
+    font-weight:bold;
 
 }
 
 
 /* =========================
-   LOGIN BAR
+   LOGIN BUTTONS
 ========================= */
 
-.login-bar{
+.login-buttons{
 
-background:#FFF8E1;
+    display:flex;
 
-padding:12px;
+    gap:12px;
 
-text-align:right;
-
-border-bottom:1px solid #ddd;
+    align-items:center;
 
 }
 
-.login-btn{
 
-display:inline-block;
+.login-buttons a{
 
-padding:10px 18px;
+    color:white;
 
-margin-left:7px;
+    text-decoration:none;
 
-border-radius:6px;
+    padding:13px 18px;
 
-text-decoration:none;
+    border-radius:7px;
 
-font-weight:bold;
+    font-weight:bold;
 
-color:white;
+    white-space:nowrap;
 
-background:#F57C00;
+    box-shadow:0 3px 7px #999;
 
-box-shadow:0 2px 5px #bbb;
-
-}
-
-.admin-btn{
-
-background:#6A1B9A;
+    transition:0.3s;
 
 }
 
-.login-btn:hover{
 
-transform:translateY(-2px);
+.farmer-login{
 
-opacity:.9;
+    background:#F57C00;
+
+}
+
+
+.admin-login{
+
+    background:#6A1B9A;
+
+}
+
+
+.login-buttons a:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 5px 10px #777;
 
 }
 
@@ -169,43 +207,48 @@ opacity:.9;
 
 nav{
 
-background:
-linear-gradient(
-90deg,
-#1B5E20,
-#2E7D32,
-#43A047
-);
+    background:#2E7D32;
 
-padding:13px;
+    padding:13px;
 
-text-align:center;
+    text-align:center;
+
+    box-shadow:0 2px 5px #999;
 
 }
+
 
 nav a{
 
-color:white;
+    display:inline-block;
 
-text-decoration:none;
+    color:white;
 
-font-weight:bold;
+    text-decoration:none;
 
-display:inline-block;
+    margin:4px 7px;
 
-padding:8px 10px;
+    padding:9px 12px;
 
-margin:3px;
+    border-radius:5px;
 
-border-radius:5px;
+    font-weight:bold;
+
+    transition:0.3s;
 
 }
 
+
 nav a:hover{
 
-background:#FFD600;
+    background:#1B5E20;
 
-color:#333;
+}
+
+
+nav a.active{
+
+    background:#F57C00;
 
 }
 
@@ -216,128 +259,116 @@ color:#333;
 
 .hero{
 
-background:
-linear-gradient(
-rgba(0,80,0,.60),
-rgba(0,100,0,.60)
-),
-url("images/farm.jpg.JPG");
+    min-height:420px;
 
-background-size:cover;
+    display:flex;
 
-background-position:center;
+    align-items:center;
 
-min-height:470px;
+    justify-content:center;
 
-display:flex;
+    text-align:center;
 
-align-items:center;
+    padding:60px 20px;
 
-justify-content:center;
+    background:
 
-text-align:center;
+    linear-gradient(
+        rgba(27,94,32,0.78),
+        rgba(46,125,50,0.70)
+    ),
 
-color:white;
+    url("images/farm.jpg");
 
-padding:30px;
+    background-size:cover;
+
+    background-position:center;
 
 }
+
 
 .hero-content{
 
-max-width:850px;
+    max-width:850px;
+
+    color:white;
 
 }
+
 
 .hero h2{
 
-font-size:43px;
+    font-size:42px;
 
-margin-bottom:15px;
+    margin-bottom:20px;
 
-text-shadow:2px 2px 5px #000;
+    text-shadow:2px 2px 5px #333;
 
 }
+
 
 .hero h3{
 
-font-size:27px;
+    font-size:27px;
 
-color:#FFF176;
-
-margin-bottom:18px;
+    margin-bottom:15px;
 
 }
+
 
 .hero p{
 
-font-size:19px;
+    font-size:19px;
 
-line-height:1.7;
+    line-height:1.7;
 
-margin-bottom:25px;
-
-}
-
-
-/* =========================
-   HERO BUTTONS
-========================= */
-
-.hero-btn{
-
-display:inline-block;
-
-padding:14px 28px;
-
-margin:6px;
-
-border-radius:7px;
-
-text-decoration:none;
-
-font-size:17px;
-
-font-weight:bold;
-
-box-shadow:0 3px 7px #333;
-
-}
-
-.shop{
-
-background:#FFD600;
-
-color:#333;
-
-}
-
-.join{
-
-background:#FF8F00;
-
-color:white;
-
-}
-
-.hero-btn:hover{
-
-transform:scale(1.05);
+    margin-bottom:25px;
 
 }
 
 
-/* =========================
-   CONTAINER
-========================= */
+/* HERO BUTTONS */
 
-.container{
+.hero-buttons a{
 
-max-width:1150px;
+    display:inline-block;
 
-margin:40px auto;
+    padding:13px 25px;
 
-padding:20px;
+    margin:6px;
+
+    border-radius:7px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    color:white;
+
+    box-shadow:0 3px 8px #333;
+
+}
+
+
+.shop-btn{
+
+    background:#F57C00;
+
+}
+
+
+.join-btn{
+
+    background:#8E24AA;
+
+}
+
+
+.hero-buttons a:hover{
+
+    opacity:0.9;
+
+    transform:translateY(-2px);
 
 }
 
@@ -346,111 +377,131 @@ padding:20px;
    SECTION
 ========================= */
 
+.section{
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+    padding:20px;
+
+}
+
+
 .section-title{
 
-text-align:center;
+    text-align:center;
 
-margin-bottom:28px;
+    color:#1B5E20;
 
-}
+    font-size:30px;
 
-.section-title h2{
-
-font-size:31px;
-
-color:#1B5E20;
-
-margin-bottom:8px;
+    margin-bottom:10px;
 
 }
 
-.section-title p{
 
-color:#666;
+.section-subtitle{
 
-font-size:17px;
+    text-align:center;
+
+    color:#666;
+
+    margin-bottom:30px;
+
+    font-size:17px;
 
 }
 
 
 /* =========================
-   FEATURES
+   FPO CARDS
 ========================= */
 
-.features{
+.fpo-cards{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:
-repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
 
-gap:22px;
-
-}
-
-.feature{
-
-background:white;
-
-padding:28px 20px;
-
-text-align:center;
-
-border-radius:12px;
-
-box-shadow:
-0 4px 12px rgba(0,0,0,.12);
-
-border-top:5px solid #43A047;
-
-transition:.3s;
+    gap:20px;
 
 }
 
-.feature:hover{
 
-transform:translateY(-6px);
+.fpo-card{
 
-box-shadow:
-0 8px 18px rgba(0,0,0,.18);
+    background:white;
 
-}
+    padding:25px;
 
-.feature:nth-child(2){
+    text-align:center;
 
-border-top-color:#FF9800;
+    border-radius:12px;
 
-}
+    box-shadow:0 3px 12px #ccc;
 
-.feature:nth-child(3){
+    border-top:5px solid #2E7D32;
 
-border-top-color:#1976D2;
+    transition:0.3s;
 
 }
 
-.feature:nth-child(4){
 
-border-top-color:#8E24AA;
+.fpo-card:hover{
 
-}
+    transform:translateY(-5px);
 
-.feature .icon{
-
-font-size:48px;
+    box-shadow:0 7px 18px #bbb;
 
 }
 
-.feature h3{
 
-margin:12px 0;
+.fpo-card:nth-child(2){
 
-color:#2E7D32;
+    border-top-color:#66BB6A;
 
 }
 
-.feature p{
 
-line-height:1.6;
+.fpo-card:nth-child(3){
+
+    border-top-color:#F57C00;
+
+}
+
+
+.fpo-card:nth-child(4){
+
+    border-top-color:#8E24AA;
+
+}
+
+
+.fpo-icon{
+
+    font-size:45px;
+
+    margin-bottom:12px;
+
+}
+
+
+.fpo-card h3{
+
+    color:#2E7D32;
+
+    margin-bottom:10px;
+
+}
+
+
+.fpo-card p{
+
+    line-height:1.6;
+
+    color:#555;
 
 }
 
@@ -459,78 +510,101 @@ line-height:1.6;
    NEWS
 ========================= */
 
-.news-section{
+.news-container{
 
-margin-top:50px;
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
 
 }
+
 
 .news-card{
 
-background:white;
+    background:white;
 
-padding:25px;
+    padding:22px;
 
-border-radius:12px;
+    border-radius:10px;
 
-box-shadow:
-0 4px 12px rgba(0,0,0,.12);
+    box-shadow:0 3px 10px #ccc;
 
-border-left:6px solid #FF9800;
-
-margin-bottom:20px;
+    border-left:5px solid #2E7D32;
 
 }
+
 
 .news-card h3{
 
-color:#2E7D32;
+    color:#2E7D32;
 
-margin-bottom:12px;
+    margin-bottom:10px;
 
-font-size:22px;
+    line-height:1.5;
 
 }
+
 
 .news-card p{
 
-line-height:1.7;
+    line-height:1.6;
 
-margin-bottom:10px;
+    margin-bottom:12px;
 
 }
+
 
 .news-date{
 
-color:#777;
+    color:#777;
 
-font-weight:bold;
+    font-size:14px;
 
-margin-bottom:15px;
+    margin-bottom:15px;
 
 }
+
 
 .read-more{
 
-display:inline-block;
+    display:inline-block;
 
-background:#2E7D32;
+    background:#2E7D32;
 
-color:white;
+    color:white;
 
-padding:10px 18px;
+    text-decoration:none;
 
-border-radius:5px;
+    padding:9px 16px;
 
-text-decoration:none;
+    border-radius:5px;
 
-font-weight:bold;
+    font-weight:bold;
 
 }
 
+
 .read-more:hover{
 
-background:#1B5E20;
+    background:#1B5E20;
+
+}
+
+
+.no-news{
+
+    text-align:center;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    box-shadow:0 3px 10px #ccc;
 
 }
 
@@ -541,64 +615,44 @@ background:#1B5E20;
 
 .quick-links{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:
-repeat(auto-fit,minmax(190px,1fr));
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
 
-gap:15px;
+    gap:15px;
 
 }
+
 
 .quick-links a{
 
-padding:18px;
+    background:white;
 
-text-align:center;
+    color:#2E7D32;
 
-border-radius:8px;
+    text-decoration:none;
 
-text-decoration:none;
+    text-align:center;
 
-color:white;
+    padding:18px;
 
-font-weight:bold;
+    border-radius:8px;
 
-background:#2E7D32;
+    box-shadow:0 3px 8px #ccc;
 
-box-shadow:0 3px 8px #ccc;
+    font-weight:bold;
 
-}
-
-.quick-links a:nth-child(2){
-
-background:#F57C00;
+    border-bottom:4px solid #2E7D32;
 
 }
 
-.quick-links a:nth-child(3){
-
-background:#1976D2;
-
-}
-
-.quick-links a:nth-child(4){
-
-background:#8E24AA;
-
-}
-
-.quick-links a:nth-child(5){
-
-background:#00897B;
-
-}
 
 .quick-links a:hover{
 
-transform:translateY(-3px);
+    background:#2E7D32;
 
-opacity:.9;
+    color:white;
 
 }
 
@@ -609,28 +663,78 @@ opacity:.9;
 
 footer{
 
-background:
-linear-gradient(
-135deg,
-#1B5E20,
-#2E7D32
-);
+    background:#1B5E20;
 
-color:white;
+    color:white;
 
-text-align:center;
+    padding:35px 20px;
 
-padding:28px;
-
-margin-top:45px;
+    margin-top:40px;
 
 }
 
-footer .footer-logo{
 
-font-size:38px;
+.footer-container{
 
-margin-bottom:8px;
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+
+footer h3{
+
+    color:#FFD600;
+
+    margin-bottom:12px;
+
+}
+
+
+footer p{
+
+    line-height:1.7;
+
+}
+
+
+footer a{
+
+    color:white;
+
+    text-decoration:none;
+
+    display:block;
+
+    margin:7px 0;
+
+}
+
+
+footer a:hover{
+
+    color:#FFD600;
+
+}
+
+
+.copyright{
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,0.3);
+
+    margin-top:25px;
+
+    padding-top:20px;
 
 }
 
@@ -639,128 +743,110 @@ margin-bottom:8px;
    MOBILE
 ========================= */
 
-@media(max-width:700px){
+@media(max-width:900px){
 
-.header-main{
+    .main-header{
 
-flex-direction:column;
+        flex-direction:column;
 
-}
+        text-align:center;
 
-.logo{
+        padding:25px 15px;
 
-width:75px;
+    }
 
-height:75px;
 
-font-size:40px;
+    .company-name h1{
 
-}
+        font-size:27px;
 
-.header-text h1{
+    }
 
-font-size:22px;
 
-}
+    .company-name p{
 
-.header-text p{
+        font-size:15px;
 
-font-size:14px;
+    }
 
-}
 
-.login-bar{
+    .login-buttons{
 
-text-align:center;
+        flex-wrap:wrap;
 
-}
+        justify-content:center;
 
-nav a{
+    }
 
-font-size:13px;
 
-padding:7px;
+    .hero h2{
 
-}
+        font-size:32px;
 
-.hero{
+    }
 
-min-height:440px;
 
-}
+    .hero h3{
 
-.hero h2{
+        font-size:23px;
 
-font-size:29px;
-
-}
-
-.hero h3{
-
-font-size:21px;
-
-}
-
-.hero p{
-
-font-size:16px;
-
-}
-
-.container{
-
-padding:12px;
-
-}
+    }
 
 }
 
 
-/* =========================
-   TOP HOME BUTTON
-========================= */
+@media(max-width:600px){
 
-.home-top{
+    nav a{
 
-position:fixed;
+        font-size:14px;
 
-right:18px;
+        padding:8px 7px;
 
-bottom:18px;
+        margin:2px;
 
-width:48px;
+    }
 
-height:48px;
 
-background:#FFD600;
+    .company-logo{
 
-color:#333;
+        width:70px;
 
-border-radius:50%;
+        height:70px;
 
-display:flex;
+        font-size:36px;
 
-align-items:center;
+    }
 
-justify-content:center;
 
-text-decoration:none;
+    .company-name h1{
 
-font-size:23px;
+        font-size:21px;
 
-font-weight:bold;
+    }
 
-box-shadow:0 3px 10px #777;
 
-z-index:999;
+    .hero{
 
-}
+        min-height:380px;
 
-.home-top:hover{
+        padding:40px 15px;
 
-background:#FF9800;
+    }
 
-color:white;
+
+    .hero h2{
+
+        font-size:27px;
+
+    }
+
+
+    .hero p{
+
+        font-size:16px;
+
+    }
 
 }
 
@@ -773,61 +859,57 @@ color:white;
 
 
 <!-- =========================
-     HEADER
+     TOP LINE
 ========================= -->
 
-<header>
-
-<div class="header-main">
-
-<div class="logo">
-
-🌾
-
-</div>
-
-<div class="header-text">
-
-<h1>
-Bundelkhand Organic Farmer Producer Company Limited
-</h1>
-
-<p>
-Healthy Farmers • Healthy Food • Healthy Future
-</p>
-
-</div>
-
-</div>
-
-</header>
+<div class="top-line"></div>
 
 
 <!-- =========================
-     LOGIN
+     HEADER
 ========================= -->
 
-<div class="login-bar">
+<header class="main-header">
 
-<a
-href="login.html"
-class="login-btn"
->
 
-🔐 Farmer Login
+    <div class="company-logo">
+        🌾
+    </div>
 
-</a>
 
-<a
-href="login.html"
-class="login-btn admin-btn"
->
+    <div class="company-name">
 
-👨‍💼 Admin Login
+        <h1>
+            बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+        </h1>
 
-</a>
+        <p>
+            स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+        </p>
 
-</div>
+    </div>
+
+
+    <div class="login-buttons">
+
+        <a
+        href="login.html"
+        class="farmer-login"
+        >
+            👨‍🌾 किसान लॉगिन
+        </a>
+
+
+        <a
+        href="login.html"
+        class="admin-login"
+        >
+            👨‍💼 एडमिन लॉगिन
+        </a>
+
+    </div>
+
+</header>
 
 
 <!-- =========================
@@ -836,37 +918,48 @@ class="login-btn admin-btn"
 
 <nav>
 
-<a href="index.html">
+<a
+href="index.html"
+class="active"
+>
 🏠 Home
 </a>
+
 
 <a href="about.html">
 🌿 About
 </a>
 
+
 <a href="products.html">
 🛒 Products
 </a>
+
 
 <a href="farmers.html">
 👨‍🌾 Kisan Corner
 </a>
 
+
 <a href="membership.html">
 📝 Join FPO
 </a>
+
 
 <a href="news.html">
 📰 Agriculture News
 </a>
 
+
 <a href="bulk-order.html">
 📦 Bulk Order
 </a>
 
+
 <a href="gallery.html">
 🖼️ Gallery
 </a>
+
 
 <a href="contact.html">
 📞 Contact
@@ -881,15 +974,19 @@ class="login-btn admin-btn"
 
 <section class="hero">
 
+
 <div class="hero-content">
 
+
 <h2>
-Healthy Farmers • Healthy Food • Healthy Future
+🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
 </h2>
+
 
 <h3>
 From Farmers To Your Home
 </h3>
+
 
 <p>
 
@@ -897,7 +994,7 @@ From Farmers To Your Home
 शुद्ध एवं गुणवत्तापूर्ण कृषि उत्पाद
 सीधे आपके घर तक पहुँचाने के लिए प्रतिबद्ध हैं।
 
-<br><br>
+<br>
 
 We deliver fresh and quality organic
 products directly from farmers to consumers.
@@ -905,24 +1002,26 @@ products directly from farmers to consumers.
 </p>
 
 
+<div class="hero-buttons">
+
+
 <a
 href="products.html"
-class="hero-btn shop"
+class="shop-btn"
 >
-
 🛒 Shop Now
-
 </a>
 
 
 <a
 href="membership.html"
-class="hero-btn join"
+class="join-btn"
 >
-
 👨‍🌾 Join FPO
-
 </a>
+
+
+</div>
 
 </div>
 
@@ -933,27 +1032,27 @@ class="hero-btn join"
      OUR FPO
 ========================= -->
 
-<div class="container">
+<section class="section">
 
-<div class="section-title">
 
-<h2>
-🌾 Our FPO
+<h2 class="section-title">
+🌾 हमारा FPO
 </h2>
 
-<p>
+
+<p class="section-subtitle">
+
 किसानों के विकास और जैविक कृषि को बढ़ावा देने की हमारी पहल
+
 </p>
 
-</div>
+
+<div class="fpo-cards">
 
 
-<div class="features">
+<div class="fpo-card">
 
-
-<div class="feature">
-
-<div class="icon">
+<div class="fpo-icon">
 👨‍🌾
 </div>
 
@@ -968,9 +1067,9 @@ Farmer Empowerment
 </div>
 
 
-<div class="feature">
+<div class="fpo-card">
 
-<div class="icon">
+<div class="fpo-icon">
 🌱
 </div>
 
@@ -985,9 +1084,9 @@ Organic Agriculture
 </div>
 
 
-<div class="feature">
+<div class="fpo-card">
 
-<div class="icon">
+<div class="fpo-icon">
 🛒
 </div>
 
@@ -1002,9 +1101,9 @@ Direct Marketing
 </div>
 
 
-<div class="feature">
+<div class="fpo-card">
 
-<div class="icon">
+<div class="fpo-icon">
 📈
 </div>
 
@@ -1018,29 +1117,37 @@ Better Income
 
 </div>
 
+
 </div>
+
+</section>
 
 
 <!-- =========================
      AGRICULTURE NEWS
 ========================= -->
 
-<section class="news-section">
+<section class="section">
 
-<div class="section-title">
 
-<h2>
+<h2 class="section-title">
 📰 Agriculture News
 </h2>
 
-<p>
+
+<p class="section-subtitle">
+
 किसानों और कृषि से जुड़ी महत्वपूर्ण खबरें
+
 </p>
 
+
+<div
+class="news-container"
+id="newsContainer"
+>
 </div>
 
-
-<div id="newsContainer"></div>
 
 </section>
 
@@ -1049,40 +1156,50 @@ Better Income
      QUICK LINKS
 ========================= -->
 
-<div class="section-title">
+<section class="section">
 
-<h2>
+
+<h2 class="section-title">
 🔗 Quick Links
 </h2>
 
-</div>
-
 
 <div class="quick-links">
+
 
 <a href="products.html">
 🛒 Our Products
 </a>
 
+
 <a href="membership.html">
 📝 Join FPO
 </a>
+
 
 <a href="farmers.html">
 👨‍🌾 Kisan Corner
 </a>
 
+
 <a href="news.html">
 📰 All Agriculture News
 </a>
+
 
 <a href="bulk-order.html">
 📦 Bulk Order
 </a>
 
-</div>
+
+<a href="contact.html">
+📞 Contact Us
+</a>
+
 
 </div>
+
+</section>
 
 
 <!-- =========================
@@ -1091,47 +1208,133 @@ Better Income
 
 <footer>
 
-<div class="footer-logo">
-🌾
+
+<div class="footer-container">
+
+
+<div>
+
+<h3>
+🌾 Bundelkhand Organic FPO
+</h3>
+
+<p>
+
+बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+
+</p>
+
+<p>
+
+किसानों के साथ • किसानों के लिए
+
+</p>
+
 </div>
 
+
+<div>
+
+<h3>
+🔗 Important Links
+</h3>
+
+<a href="index.html">
+🏠 Home
+</a>
+
+<a href="about.html">
+🌿 About
+</a>
+
+<a href="products.html">
+🛒 Products
+</a>
+
+<a href="membership.html">
+📝 Join FPO
+</a>
+
+<a href="news.html">
+📰 Agriculture News
+</a>
+
+</div>
+
+
+<div>
+
+<h3>
+👨‍🌾 Farmer Services
+</h3>
+
+<a href="farmers.html">
+👨‍🌾 Kisan Corner
+</a>
+
+<a href="membership.html">
+📝 FPO Membership
+</a>
+
+<a href="bulk-order.html">
+📦 Bulk Order
+</a>
+
+<a href="contact.html">
+📞 Contact
+</a>
+
+</div>
+
+
+<div>
+
+<h3>
+📞 Contact
+</h3>
+
 <p>
-<b>
-Bundelkhand Organic Farmer Producer Company Limited
-</b>
+🌾 Bundelkhand Organic FPO
 </p>
 
 <p>
+📍 Mahoba, Uttar Pradesh
+</p>
+
+<p>
+🌱 Empowering Farmers
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Bundelkhand Organic Farmer Producer Company Limited
+
+<br>
+
 Empowering Farmers • Promoting Organic Agriculture
-</p>
 
-<p>
-© 2026 All Rights Reserved
-</p>
+</div>
+
 
 </footer>
 
 
 <!-- =========================
-     FLOATING HOME BUTTON
-========================= -->
-
-<a
-href="index.html"
-class="home-top"
-title="Home Page"
->
-
-🏠
-
-</a>
-
-
-<!-- =========================
-     NEWS SCRIPT
+     JAVASCRIPT
 ========================= -->
 
 <script>
+
+
+/* =========================
+   LOAD AGRICULTURE NEWS
+========================= */
 
 let news =
 
@@ -1141,20 +1344,62 @@ localStorage.getItem("agricultureNews")
 
 
 let newsContainer =
-document.getElementById("newsContainer");
+document.getElementById(
+"newsContainer"
+);
 
 
-if(news.length > 0){
+/* =========================
+   DEFAULT NEWS
+========================= */
+
+if(news.length === 0){
+
+news = [
+
+{
+
+title:
+"मोदी की ने किसान आय दुगनी करने का लिया निर्णय",
+
+description:
+"खेती को व्यापार से जोड़ा जाएगा पशु मेले लगाए जाएंगे",
+
+date:
+"2026-08-08"
+
+}
+
+];
+
+}
+
+
+/* =========================
+   DISPLAY NEWS
+========================= */
+
+if(news.length === 0){
+
+newsContainer.innerHTML = `
+
+<div class="no-news">
+
+<h3>
+📰 अभी कोई Agriculture News उपलब्ध नहीं है।
+</h3>
+
+</div>
+
+`;
+
+}
+
+else{
 
 newsContainer.innerHTML = "";
 
-news
-.slice()
-.reverse()
-.forEach(function(item,index){
-
-let originalIndex =
-news.length - 1 - index;
+news.forEach(function(item,index){
 
 newsContainer.innerHTML += `
 
@@ -1169,11 +1414,13 @@ ${item.description}
 </p>
 
 <div class="news-date">
+
 📅 ${item.date}
+
 </div>
 
 <a
-href="news-details.html?id=${originalIndex}"
+href="news-details.html?id=${index}"
 class="read-more"
 >
 
@@ -1189,34 +1436,10 @@ class="read-more"
 
 }
 
-else{
 
-newsContainer.innerHTML = `
-
-<div class="news-card">
-
-<h3>
-🌾 Agriculture News
-</h3>
-
-<p>
-अभी कोई कृषि समाचार उपलब्ध नहीं है।
-</p>
-
-<a
-href="news.html"
-class="read-more"
->
-
-📰 View All News
-
-</a>
-
-</div>
-
-`;
-
-}
+/* =========================
+   END
+========================= */
 
 </script>
 
@@ -1224,4 +1447,3 @@ class="read-more"
 </body>
 
 </html>
-```
