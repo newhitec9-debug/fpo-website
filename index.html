@@ -1,21 +1,35 @@
 ```html
-<!-- =====================================
-     AGRICULTURE NEWS
-===================================== -->
+<!-- =========================================
+     AGRICULTURE NEWS SECTION
+========================================= -->
 
 <section class="agriculture-news">
 
     <div class="news-container">
 
-        <h2>📰 Agriculture News</h2>
+        <div class="news-heading">
 
-        <p class="news-subtitle">
-            किसानों और कृषि से जुड़ी महत्वपूर्ण खबरें
-        </p>
+            <h2>📰 Agriculture News</h2>
 
-        <div id="homeNewsList" class="news-list">
+            <p>
+                किसानों और कृषि से जुड़ी महत्वपूर्ण खबरें
+            </p>
 
-            <!-- News JavaScript से यहाँ आएगी -->
+        </div>
+
+
+        <div
+            id="homeNewsList"
+            class="home-news-list"
+        >
+        </div>
+
+
+        <div class="all-news-button">
+
+            <a href="news.html">
+                📰 View All News
+            </a>
 
         </div>
 
@@ -25,6 +39,10 @@
 
 
 <style>
+
+/* =========================================
+   NEWS SECTION
+========================================= */
 
 .agriculture-news{
 
@@ -42,9 +60,15 @@
 
 }
 
-.agriculture-news h2{
+.news-heading{
 
     text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.news-heading h2{
 
     color:#1B5E20;
 
@@ -54,17 +78,16 @@
 
 }
 
-.news-subtitle{
-
-    text-align:center;
+.news-heading p{
 
     color:#666;
 
-    margin-bottom:30px;
-
 }
 
-.news-list{
+
+/* NEWS GRID */
+
+.home-news-list{
 
     display:grid;
 
@@ -75,7 +98,10 @@
 
 }
 
-.news-card{
+
+/* NEWS CARD */
+
+.home-news-card{
 
     background:white;
 
@@ -89,17 +115,19 @@
 
 }
 
-.news-card h3{
+.home-news-card h3{
 
     color:#2E7D32;
 
-    margin-bottom:12px;
-
     font-size:20px;
+
+    line-height:1.5;
+
+    margin-bottom:12px;
 
 }
 
-.news-card p{
+.home-news-card p{
 
     line-height:1.6;
 
@@ -107,7 +135,7 @@
 
 }
 
-.news-date{
+.home-news-date{
 
     color:#777;
 
@@ -115,19 +143,105 @@
 
     font-weight:bold;
 
+    margin-bottom:15px;
+
 }
 
-.no-news{
+
+/* READ MORE */
+
+.home-read-more{
+
+    display:inline-block;
+
+    background:#2E7D32;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:5px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+.home-read-more:hover{
+
+    background:#1B5E20;
+
+}
+
+
+/* VIEW ALL */
+
+.all-news-button{
 
     text-align:center;
+
+    margin-top:30px;
+
+}
+
+.all-news-button a{
+
+    display:inline-block;
+
+    background:#1B5E20;
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:5px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+.all-news-button a:hover{
+
+    background:#2E7D32;
+
+}
+
+
+/* NO NEWS */
+
+.home-no-news{
 
     background:white;
 
     padding:25px;
 
+    text-align:center;
+
     border-radius:10px;
 
     color:#777;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .agriculture-news{
+
+        padding:35px 15px;
+
+    }
+
+    .news-heading h2{
+
+        font-size:25px;
+
+    }
 
 }
 
@@ -136,14 +250,18 @@
 
 <script>
 
-/* =====================================
-   LOAD AGRICULTURE NEWS
-===================================== */
+/* =========================================
+   LOAD NEWS FROM ADMIN
+========================================= */
 
-let agricultureNews =
+let homeAgricultureNews =
 
 JSON.parse(
-    localStorage.getItem("agricultureNews")
+
+    localStorage.getItem(
+        "agricultureNews"
+    )
+
 ) || [];
 
 
@@ -154,15 +272,19 @@ document.getElementById(
 );
 
 
-/* =====================================
+/* =========================================
    DISPLAY NEWS
-===================================== */
+========================================= */
 
-if(agricultureNews.length === 0){
+if(
+
+    homeAgricultureNews.length === 0
+
+){
 
     homeNewsList.innerHTML = `
 
-        <div class="no-news">
+        <div class="home-no-news">
 
             📰 अभी कोई Agriculture News उपलब्ध नहीं है।
 
@@ -174,31 +296,78 @@ if(agricultureNews.length === 0){
 
 else{
 
-    agricultureNews.forEach(function(news){
 
-        homeNewsList.innerHTML += `
+    /*
+       केवल Latest 3 News Home Page पर
+    */
 
-            <div class="news-card">
+    let latestNews =
 
-                <h3>
-                    🌾 ${news.title}
-                </h3>
+        homeAgricultureNews
+        .slice()
+        .reverse()
+        .slice(0,3);
 
-                <p>
-                    ${news.description}
-                </p>
 
-                <div class="news-date">
+    latestNews.forEach(
 
-                    📅 ${news.date}
+        function(news){
+
+            /*
+               Original News का index
+               निकालना जरूरी है
+            */
+
+            let originalIndex =
+
+                homeAgricultureNews
+                .indexOf(news);
+
+
+            homeNewsList.innerHTML += `
+
+                <div class="home-news-card">
+
+                    <h3>
+
+                        🌾 ${news.title}
+
+                    </h3>
+
+
+                    <p>
+
+                        ${news.description}
+
+                    </p>
+
+
+                    <div class="home-news-date">
+
+                        📅 ${news.date}
+
+                    </div>
+
+
+                    <a
+
+                        href="news-details.html?id=${originalIndex}"
+
+                        class="home-read-more"
+
+                    >
+
+                        👁️ Read More
+
+                    </a>
 
                 </div>
 
-            </div>
+            `;
 
-        `;
+        }
 
-    });
+    );
 
 }
 
