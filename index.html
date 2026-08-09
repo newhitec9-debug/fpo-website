@@ -1,269 +1,206 @@
-<!DOCTYPE html>
-<html lang="en">
+```html
+<!-- =====================================
+     AGRICULTURE NEWS
+===================================== -->
 
-<head>
+<section class="agriculture-news">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="news-container">
 
-<title>
-Bundelkhand Organic Farmer Producer Company Limited
-</title>
+        <h2>📰 Agriculture News</h2>
 
-<link rel="stylesheet" href="css/style.css">
+        <p class="news-subtitle">
+            किसानों और कृषि से जुड़ी महत्वपूर्ण खबरें
+        </p>
 
-</head>
+        <div id="homeNewsList" class="news-list">
 
+            <!-- News JavaScript से यहाँ आएगी -->
 
-<body>
+        </div>
 
-
-<!-- HEADER -->
-
-<header class="top-header">
-
-<div class="logo">
-
-<div class="logo-left">
-
-<img src="images/logo.png.png" alt="FPO Logo">
-
-
-<div class="logo-text">
-
-<h1>
-Bundelkhand Organic Farmer Producer Company Limited
-</h1>
-
-<p>
-Healthy Farmers • Healthy Food • Healthy Future
-</p>
-
-</div>
-
-
-</div>
-
-
-<a href="login.html" class="login-btn">
-Login
-</a>
-
-
-</div>
-
-</header>
-
-
-
-<!-- NAVIGATION -->
-
-<nav>
-
-<a href="index.html">Home</a>
-
-<a href="about.html">About</a>
-
-<a href="products.html">Products</a>
-
-<a href="farmers.html">Kisan Corner</a>
-
-<a href="membership.html">Membership</a>
-
-<a href="bulk-order.html">Bulk Order</a>
-
-<a href="gallery.html">Gallery</a>
-
-<a href="contact.html">Contact</a>
-
-</nav>
-
-
-
-
-<!-- HERO SECTION -->
-
-<section class="hero">
-
-
-<h1>
-Healthy Farmers • Healthy Food • Healthy Future
-</h1>
-
-
-<h2>
-From Farmers To Your Home
-</h2>
-
-
-<p>
-
-हम किसानों द्वारा उगाए गए शुद्ध जैविक उत्पाद सीधे आपके घर तक पहुँचाते हैं।
-
-<br><br>
-
-We deliver fresh organic products directly from farmers.
-
-</p>
-
-
-
-<a href="products.html">
-
-<button>
-🛒 Shop Now
-</button>
-
-</a>
-
-
-<a href="membership.html">
-
-<button>
-👨‍🌾 Join FPO
-</button>
-
-</a>
-
+    </div>
 
 </section>
 
 
+<style>
 
+.agriculture-news{
 
-<!-- FEATURED PRODUCTS -->
+    background:#f4fff4;
 
+    padding:50px 20px;
 
-<section class="products">
+}
 
+.news-container{
 
-<h2>
-🌾 Featured Products
-</h2>
+    max-width:1100px;
 
+    margin:auto;
 
+}
 
-<div class="product-container">
+.agriculture-news h2{
 
+    text-align:center;
 
-<div class="card">
+    color:#1B5E20;
 
-<h3>
-🌾 Organic Wheat
-</h3>
+    font-size:30px;
 
-<p>
-100% Natural Wheat
-</p>
+    margin-bottom:8px;
 
-<button>
-Buy Now
-</button>
+}
 
-</div>
+.news-subtitle{
 
+    text-align:center;
 
+    color:#666;
 
+    margin-bottom:30px;
 
-<div class="card">
+}
 
-<h3>
-🌱 Organic Chana
-</h3>
+.news-list{
 
-<p>
-Chemical Free Gram
-</p>
+    display:grid;
 
-<button>
-Buy Now
-</button>
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
 
-</div>
+    gap:20px;
 
+}
 
+.news-card{
 
+    background:white;
 
-<div class="card">
+    padding:22px;
 
-<h3>
-🌼 Organic Mustard
-</h3>
+    border-radius:10px;
 
-<p>
-Pure Organic Mustard
-</p>
+    box-shadow:0 0 10px #ccc;
 
-<button>
-Buy Now
-</button>
+    border-left:5px solid #2E7D32;
 
-</div>
+}
 
+.news-card h3{
 
+    color:#2E7D32;
 
-</div>
+    margin-bottom:12px;
 
+    font-size:20px;
 
-</section>
+}
 
+.news-card p{
 
+    line-height:1.6;
 
+    margin-bottom:12px;
 
+}
 
-<!-- ABOUT SHORT SECTION -->
+.news-date{
 
+    color:#777;
 
-<section class="about">
+    font-size:14px;
 
+    font-weight:bold;
 
-<h2>
-🌿 About Our FPO
-</h2>
+}
 
+.no-news{
 
-<p>
+    text-align:center;
 
-Bundelkhand Organic Farmer Producer Company Limited किसानों को संगठित कर
-जैविक खेती, बेहतर बाजार और उचित मूल्य उपलब्ध कराने के लिए कार्य कर रही है।
+    background:white;
 
-</p>
+    padding:25px;
 
+    border-radius:10px;
 
-</section>
+    color:#777;
 
+}
 
+</style>
 
 
+<script>
 
-<!-- FOOTER -->
+/* =====================================
+   LOAD AGRICULTURE NEWS
+===================================== */
 
+let agricultureNews =
 
-<footer>
+JSON.parse(
+    localStorage.getItem("agricultureNews")
+) || [];
 
 
-<p>
+let homeNewsList =
 
-© 2026 Bundelkhand Organic Farmer Producer Company Limited
+document.getElementById(
+    "homeNewsList"
+);
 
-</p>
 
+/* =====================================
+   DISPLAY NEWS
+===================================== */
 
-<p>
+if(agricultureNews.length === 0){
 
-Belatal Road, Bansphadiya, Srinagar, Mahoba, Uttar Pradesh
+    homeNewsList.innerHTML = `
 
-</p>
+        <div class="no-news">
 
+            📰 अभी कोई Agriculture News उपलब्ध नहीं है।
 
-</footer>
+        </div>
 
+    `;
 
+}
 
+else{
 
-<script src="script.js"></script>
+    agricultureNews.forEach(function(news){
 
+        homeNewsList.innerHTML += `
 
-</body>
+            <div class="news-card">
 
-</html>
+                <h3>
+                    🌾 ${news.title}
+                </h3>
+
+                <p>
+                    ${news.description}
+                </p>
+
+                <div class="news-date">
+
+                    📅 ${news.date}
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+</script>
+```
