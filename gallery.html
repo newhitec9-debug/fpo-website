@@ -1,1 +1,476 @@
+<!DOCTYPE html>
+<html lang="hi">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | Bundelkhand Organic FPO</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+}
+
+body{
+    background:#f4fff4;
+    color:#333;
+}
+
+/* TOP LINE */
+
+.top-line{
+    height:7px;
+    background:#1b5e20;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#fffde7,#f1f8e9);
+    padding:22px 15px;
+    text-align:center;
+    border-bottom:3px solid #ff9800;
+}
+
+header h1{
+    color:#1b5e20;
+    font-size:28px;
+    line-height:1.5;
+}
+
+header h2{
+    color:#2e7d32;
+    font-size:21px;
+    margin-top:5px;
+}
+
+header p{
+    color:#e65100;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+/* NAVIGATION */
+
+nav{
+    background:#2e7d32;
+    padding:14px 8px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    margin:0 7px;
+    padding:8px 6px;
+    display:inline-block;
+    border-radius:5px;
+}
+
+nav a:hover{
+    background:#ef6c00;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1200px;
+    margin:35px auto;
+    padding:20px;
+}
+
+/* TITLE */
+
+.title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.title h2{
+    color:#1b5e20;
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.title p{
+    color:#555;
+    font-size:17px;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+/* GALLERY CARD */
+
+.gallery-card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 3px 12px #ccc;
+    transition:0.3s;
+}
+
+.gallery-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 6px 18px #aaa;
+}
+
+.gallery-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+}
+
+.gallery-content{
+    padding:18px;
+    text-align:center;
+}
+
+.gallery-content h3{
+    color:#2e7d32;
+    margin-bottom:8px;
+}
+
+.gallery-content p{
+    color:#666;
+    line-height:1.6;
+}
+
+/* EMPTY */
+
+.empty{
+    background:white;
+    padding:40px;
+    text-align:center;
+    border-radius:12px;
+    box-shadow:0 3px 12px #ccc;
+}
+
+.empty h2{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
+
+/* HOME BUTTON */
+
+.home-button{
+    text-align:center;
+    margin-top:35px;
+}
+
+.home-button a{
+    display:inline-block;
+    background:#2e7d32;
+    color:white;
+    text-decoration:none;
+    padding:13px 25px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+.home-button a:hover{
+    background:#1b5e20;
+}
+
+/* FOOTER */
+
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:22px 15px;
+    margin-top:40px;
+}
+
+footer h3{
+    margin-bottom:7px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:21px;
+    }
+
+    header h2{
+        font-size:17px;
+    }
+
+    nav a{
+        font-size:14px;
+        margin:3px;
+    }
+
+    .container{
+        padding:12px;
+    }
+
+    .title h2{
+        font-size:26px;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-card img{
+        height:220px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="top-line"></div>
+
+
+<!-- HEADER -->
+
+<header>
+
+<h1>
+बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+</h1>
+
+<h2>
+Bundelkhand Organic Farmer Producer Company Limited
+</h2>
+
+<p>
+🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="index.html">
+🏠 Home
+</a>
+
+<a href="about.html">
+🌿 About
+</a>
+
+<a href="products.html">
+🛒 Products
+</a>
+
+<a href="farmers.html">
+👨‍🌾 Kisan Corner
+</a>
+
+<a href="membership.html">
+📝 Join FPO
+</a>
+
+<a href="news.html">
+📰 Agriculture News
+</a>
+
+<a href="bulk-order.html">
+📦 Bulk Order
+</a>
+
+<a href="gallery.html">
+🖼️ Gallery
+</a>
+
+<a href="contact.html">
+📞 Contact
+</a>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+
+<div class="title">
+
+<h2>
+🖼️ FPO Gallery
+</h2>
+
+<p>
+हमारे किसान, कृषि कार्य और FPO की गतिविधियों की झलक
+</p>
+
+<p>
+A glimpse of our farmers, agricultural activities and FPO initiatives.
+</p>
+
+</div>
+
+
+<!-- GALLERY -->
+
+<div
+class="gallery"
+id="galleryContainer"
+>
+</div>
+
+
+<!-- EMPTY -->
+
+<div
+class="empty"
+id="emptyGallery"
+style="display:none;"
+>
+
+<h2>
+📸 Gallery में अभी कोई फोटो नहीं है
+</h2>
+
+<p>
+Admin Panel से फोटो जोड़ने के बाद यहाँ दिखाई देंगी।
+</p>
+
+</div>
+
+
+<!-- HOME -->
+
+<div class="home-button">
+
+<a href="index.html">
+🏠 Home Page
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3>
+🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+</h3>
+
+<h3>
+Bundelkhand Organic Farmer Producer Company Limited
+</h3>
+
+<p>
+Empowering Farmers • Promoting Organic Agriculture
+</p>
+
+<p>
+© 2026 All Rights Reserved
+</p>
+
+</footer>
+
+
+<script>
+
+/* =====================================
+   LOAD GALLERY FROM ADMIN
+===================================== */
+
+let gallery =
+JSON.parse(localStorage.getItem("gallery")) || [];
+
+
+let container =
+document.getElementById("galleryContainer");
+
+let empty =
+document.getElementById("emptyGallery");
+
+
+/* =====================================
+   DISPLAY GALLERY
+===================================== */
+
+function displayGallery(){
+
+container.innerHTML = "";
+
+
+if(gallery.length === 0){
+
+empty.style.display = "block";
+
+return;
+
+}
+
+
+empty.style.display = "none";
+
+
+gallery.forEach(function(item){
+
+container.innerHTML += `
+
+<div class="gallery-card">
+
+<img
+src="${item.image}"
+alt="${item.title || 'FPO Gallery'}"
+>
+
+<div class="gallery-content">
+
+<h3>
+🌾 ${item.title || "FPO Activity"}
+</h3>
+
+<p>
+${item.description || "Bundelkhand Organic Farmer Producer Company Limited"}
+</p>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+displayGallery();
+
+</script>
+
+
+</body>
+
+</html>
