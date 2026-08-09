@@ -51,6 +51,9 @@ transition:0.3s;
 
 }
 
+
+/* LOGO */
+
 .sidebar-logo{
 
 text-align:center;
@@ -171,9 +174,7 @@ min-height:100vh;
 }
 
 
-/* ==============================
-   TOP HEADER
-============================== */
+/* TOP HEADER */
 
 .top-header{
 
@@ -206,7 +207,7 @@ font-weight:bold;
 }
 
 
-/* MENU BUTTON */
+/* MOBILE MENU BUTTON */
 
 .menu-btn{
 
@@ -290,7 +291,6 @@ gap:20px;
 
 }
 
-
 .card{
 
 background:white;
@@ -356,6 +356,9 @@ color:#F57C00;
 color:#2E7D32;
 
 }
+
+
+/* BUTTON */
 
 .card a{
 
@@ -529,14 +532,14 @@ padding:20px;
 
 (function(){
 
-    const user =
-    localStorage.getItem("user");
+const user =
+localStorage.getItem("user");
 
-    if(user !== "admin"){
+if(user !== "admin"){
 
-        window.location.replace("login.html");
+window.location.replace("login.html");
 
-    }
+}
 
 })();
 
@@ -553,6 +556,8 @@ id="sidebar"
 >
 
 
+<!-- LOGO -->
+
 <div class="sidebar-logo">
 
 <h2>
@@ -566,6 +571,8 @@ Admin Control Panel
 </div>
 
 
+<!-- MENU -->
+
 <div class="menu">
 
 
@@ -573,75 +580,124 @@ Admin Control Panel
 href="admin-dashboard.html"
 class="active"
 >
-🏠 Dashboard
+
+👨‍💼 Dashboard
+
 </a>
 
+
+<!-- HOME PAGE -->
+
+<a
+href="index.html"
+>
+
+🏠 Home Page
+
+</a>
+
+
+<!-- FARMERS -->
 
 <a
 href="farmers-list.html"
 >
+
 👨‍🌾 Farmers
+
 </a>
 
+
+<!-- MEMBERSHIP -->
 
 <a
 href="membership-requests.html"
 >
+
 📝 Membership Requests
+
 </a>
 
+
+<!-- PRODUCTS -->
 
 <a
 href="manage-products.html"
 >
+
 📦 Manage Products
+
 </a>
 
+
+<!-- ORDERS -->
 
 <a
 href="orders.html"
 >
+
 🛒 Orders
+
 </a>
 
+
+<!-- NEWS -->
 
 <a
 href="admin-news.html"
 >
+
 📰 Agriculture News
+
 </a>
 
+
+<!-- GALLERY -->
 
 <a
 href="gallery.html"
 >
+
 🖼️ Gallery
+
 </a>
 
+
+<!-- REPORTS -->
 
 <a
 href="#"
 >
+
 📊 Reports
+
 </a>
 
+
+<!-- SETTINGS -->
 
 <a
 href="#"
 >
+
 ⚙️ Settings
+
 </a>
 
 
 </div>
 
 
+<!-- LOGOUT -->
+
 <div class="sidebar-logout">
 
 <button
 onclick="logout()"
 >
+
 🚪 Logout
+
 </button>
 
 </div>
@@ -650,9 +706,7 @@ onclick="logout()"
 </aside>
 
 
-<!-- =================================
-     MOBILE OVERLAY
-================================= -->
+<!-- MOBILE OVERLAY -->
 
 <div
 class="overlay"
@@ -662,11 +716,13 @@ onclick="closeSidebar()"
 
 
 <!-- =================================
-     MAIN
+     MAIN AREA
 ================================= -->
 
 <div class="main">
 
+
+<!-- HEADER -->
 
 <header class="top-header">
 
@@ -675,7 +731,9 @@ onclick="closeSidebar()"
 class="menu-btn"
 onclick="toggleSidebar()"
 >
+
 ☰
+
 </button>
 
 
@@ -685,12 +743,16 @@ onclick="toggleSidebar()"
 
 
 <div class="admin-name">
+
 Welcome Admin 👋
+
 </div>
 
 
 </header>
 
+
+<!-- CONTENT -->
 
 <div class="container">
 
@@ -716,14 +778,12 @@ Agriculture News और Website को Manage कर सकते हैं।
 </div>
 
 
-<!-- ==============================
-     DASHBOARD CARDS
-============================== -->
+<!-- DASHBOARD CARDS -->
 
 <div class="cards">
 
 
-<!-- FARMERS -->
+<!-- TOTAL FARMERS -->
 
 <div class="card">
 
@@ -739,11 +799,15 @@ Approved Registered Farmers
 class="count approved"
 id="totalFarmers"
 >
+
 0
+
 </div>
 
 <a href="farmers-list.html">
+
 Open
+
 </a>
 
 </div>
@@ -765,11 +829,15 @@ Pending Membership Applications
 class="count pending"
 id="totalMembership"
 >
+
 0
+
 </div>
 
 <a href="membership-requests.html">
+
 Open
+
 </a>
 
 </div>
@@ -791,11 +859,15 @@ Open
 class="count"
 id="totalProducts"
 >
+
 0
+
 </div>
 
 <a href="manage-products.html">
+
 Open
+
 </a>
 
 </div>
@@ -823,6 +895,7 @@ Customer Orders देखें।
 
 </div>
 
+
 <div class="count pending">
 
 🆕 New Orders:
@@ -833,8 +906,11 @@ Customer Orders देखें।
 
 </div>
 
+
 <a href="orders.html">
+
 Open
+
 </a>
 
 </div>
@@ -853,7 +929,9 @@ Open
 </p>
 
 <a href="admin-news.html">
+
 Open
+
 </a>
 
 </div>
@@ -872,7 +950,9 @@ Open
 </p>
 
 <a href="gallery.html">
+
 Open
+
 </a>
 
 </div>
@@ -891,7 +971,9 @@ FPO Reports और Statistics।
 </p>
 
 <a href="#">
+
 Open
+
 </a>
 
 </div>
@@ -910,14 +992,15 @@ Website Settings।
 </p>
 
 <a href="#">
+
 Open
+
 </a>
 
 </div>
 
 
 </div>
-
 
 </div>
 
@@ -938,12 +1021,16 @@ Open
 </div>
 
 
+<!-- =================================
+     JAVASCRIPT
+================================= -->
+
 <script>
 
 
-/* ======================================
+/* ==============================
    PRODUCTS COUNT
-====================================== */
+============================== */
 
 let products =
 
@@ -959,9 +1046,9 @@ document.getElementById(
 products.length;
 
 
-/* ======================================
-   ORDERS
-====================================== */
+/* ==============================
+   ORDERS COUNT
+============================== */
 
 let orders =
 
@@ -977,9 +1064,9 @@ document.getElementById(
 orders.length;
 
 
-/* ======================================
+/* ==============================
    NEW ORDERS
-====================================== */
+============================== */
 
 let newOrders =
 
@@ -987,7 +1074,8 @@ orders.filter(function(order){
 
 return (
 (order.status || "New")
-=== "New"
+===
+"New"
 );
 
 }).length;
@@ -1000,9 +1088,9 @@ document.getElementById(
 newOrders;
 
 
-/* ======================================
+/* ==============================
    MEMBERS
-====================================== */
+============================== */
 
 let members =
 
@@ -1050,9 +1138,9 @@ document.getElementById(
 pendingMembers;
 
 
-/* ======================================
+/* ==============================
    MOBILE SIDEBAR
-====================================== */
+============================== */
 
 function toggleSidebar(){
 
@@ -1080,45 +1168,49 @@ document.getElementById(
 }
 
 
-/* ======================================
+/* ==============================
    LOGOUT
-====================================== */
+============================== */
 
 function logout(){
 
-    // Remove Admin Login
-    localStorage.removeItem("user");
+localStorage.removeItem("user");
 
-    // Remove dashboard from browser history
-    window.location.replace("login.html");
+/*
+   Logout के बाद Login Page पर जाएँ
+*/
+
+window.location.replace("login.html");
 
 }
 
 
-/* ======================================
-   BACK BUTTON PROTECTION
-====================================== */
+/* ==============================
+   BACK BUTTON SECURITY
+============================== */
 
 window.addEventListener(
 "pageshow",
 function(event){
 
-    if(event.persisted){
+if(event.persisted){
 
-        if(
-        localStorage.getItem("user")
-        !== "admin"
-        ){
+if(
+localStorage.getItem("user")
+!==
+"admin"
+){
 
-            window.location.replace(
-            "login.html"
-            );
+window.location.replace(
+"login.html"
+);
 
-        }
+}
 
-    }
+}
 
 });
+
 
 </script>
 
@@ -1127,3 +1219,4 @@ function(event){
 
 </html>
 ```
+
