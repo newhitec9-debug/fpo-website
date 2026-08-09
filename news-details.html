@@ -1,0 +1,494 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+News Details | Bundelkhand Organic FPO
+</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4fff4;
+color:#333;
+}
+
+/* HEADER */
+
+header{
+
+background:#1B5E20;
+
+color:white;
+
+padding:25px;
+
+text-align:center;
+
+}
+
+header h1{
+
+font-size:28px;
+
+margin-bottom:8px;
+
+}
+
+
+/* NAV */
+
+nav{
+
+background:#2E7D32;
+
+padding:15px;
+
+text-align:center;
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+margin:0 10px;
+
+font-weight:bold;
+
+}
+
+nav a:hover{
+
+text-decoration:underline;
+
+}
+
+
+/* CONTAINER */
+
+.container{
+
+max-width:900px;
+
+margin:35px auto;
+
+padding:20px;
+
+}
+
+
+/* NEWS DETAIL */
+
+.news-detail{
+
+background:white;
+
+padding:30px;
+
+border-radius:12px;
+
+box-shadow:0 0 12px #ccc;
+
+}
+
+.news-detail h2{
+
+color:#1B5E20;
+
+font-size:30px;
+
+line-height:1.4;
+
+margin-bottom:15px;
+
+}
+
+.news-date{
+
+color:#777;
+
+font-weight:bold;
+
+margin-bottom:25px;
+
+}
+
+.news-description{
+
+font-size:18px;
+
+line-height:1.9;
+
+white-space:pre-line;
+
+}
+
+
+/* BUTTONS */
+
+.buttons{
+
+margin-top:30px;
+
+}
+
+.btn{
+
+display:inline-block;
+
+background:#2E7D32;
+
+color:white;
+
+padding:12px 20px;
+
+border-radius:5px;
+
+text-decoration:none;
+
+margin:5px;
+
+font-weight:bold;
+
+}
+
+.btn:hover{
+
+background:#1B5E20;
+
+}
+
+
+/* ERROR */
+
+.error{
+
+text-align:center;
+
+background:white;
+
+padding:30px;
+
+border-radius:10px;
+
+box-shadow:0 0 10px #ccc;
+
+color:#777;
+
+}
+
+
+/* FOOTER */
+
+footer{
+
+background:#2E7D32;
+
+color:white;
+
+text-align:center;
+
+padding:18px;
+
+margin-top:40px;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+nav a{
+
+display:inline-block;
+
+margin:5px;
+
+}
+
+.container{
+
+padding:10px;
+
+}
+
+.news-detail{
+
+padding:20px;
+
+}
+
+.news-detail h2{
+
+font-size:24px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<h1>
+🌾 Bundelkhand Organic Farmer Producer Company Limited
+</h1>
+
+<p>
+Agriculture News
+</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="index.html">
+🏠 Home
+</a>
+
+<a href="about.html">
+🌿 About
+</a>
+
+<a href="products.html">
+🛒 Products
+</a>
+
+<a href="farmers.html">
+👨‍🌾 Kisan Corner
+</a>
+
+<a href="membership.html">
+📝 Membership
+</a>
+
+<a href="news.html">
+📰 Agriculture News
+</a>
+
+<a href="bulk-order.html">
+📦 Bulk Order
+</a>
+
+<a href="gallery.html">
+🖼 Gallery
+</a>
+
+<a href="contact.html">
+📞 Contact
+</a>
+
+</nav>
+
+
+<!-- NEWS DETAIL -->
+
+<div class="container">
+
+<div
+id="newsDetail"
+>
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 Bundelkhand Organic Farmer Producer Company Limited
+
+<br>
+
+🌾 Empowering Farmers • Promoting Organic Agriculture
+
+</footer>
+
+
+<script>
+
+/* =====================================
+   GET NEWS ID
+===================================== */
+
+const urlParams =
+new URLSearchParams(
+window.location.search
+);
+
+const newsId =
+parseInt(
+urlParams.get("id")
+);
+
+
+/* =====================================
+   LOAD NEWS
+===================================== */
+
+const agricultureNews =
+
+JSON.parse(
+localStorage.getItem("agricultureNews")
+) || [];
+
+
+const newsDetail =
+
+document.getElementById(
+"newsDetail"
+);
+
+
+/* =====================================
+   CHECK NEWS
+===================================== */
+
+if(
+
+isNaN(newsId) ||
+
+!agricultureNews[newsId]
+
+){
+
+newsDetail.innerHTML = `
+
+<div class="error">
+
+<h2>
+📰 News Not Found
+</h2>
+
+<p>
+यह News उपलब्ध नहीं है।
+</p>
+
+<div class="buttons">
+
+<a
+href="news.html"
+class="btn"
+>
+
+📰 Back To News
+
+</a>
+
+<a
+href="index.html"
+class="btn"
+>
+
+🏠 Home Page
+
+</a>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+else{
+
+
+let news =
+agricultureNews[newsId];
+
+
+newsDetail.innerHTML = `
+
+<div class="news-detail">
+
+<h2>
+
+🌾 ${news.title}
+
+</h2>
+
+
+<div class="news-date">
+
+📅 ${news.date}
+
+</div>
+
+
+<div class="news-description">
+
+${news.description}
+
+</div>
+
+
+<div class="buttons">
+
+<a
+href="news.html"
+class="btn"
+>
+
+📰 Back To News
+
+</a>
+
+
+<a
+href="index.html"
+class="btn"
+>
+
+🏠 Home Page
+
+</a>
+
+</div>
+
+
+</div>
+
+`;
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+```
