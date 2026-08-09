@@ -1,0 +1,671 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shopping Cart | Bundelkhand Organic FPO</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4fff4;
+    color:#333;
+}
+
+/* HEADER */
+
+header{
+    background:#1B5E20;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+header h1{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+/* NAVIGATION */
+
+nav{
+    background:#2E7D32;
+    padding:14px 10px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 9px;
+    font-weight:bold;
+    display:inline-block;
+}
+
+nav a:hover{
+    color:#FFD54F;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1000px;
+    margin:30px auto;
+    padding:20px;
+}
+
+/* TITLE */
+
+.page-title{
+    text-align:center;
+    color:#2E7D32;
+    margin-bottom:25px;
+}
+
+/* CART */
+
+.cart-box{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 10px #ccc;
+}
+
+/* CART ITEM */
+
+.cart-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    border-bottom:1px solid #ddd;
+    padding:20px 5px;
+}
+
+.product-info{
+    flex:1;
+}
+
+.product-info h2{
+    color:#2E7D32;
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.product-info p{
+    margin:5px 0;
+}
+
+/* QUANTITY */
+
+.quantity-box{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.quantity-box button{
+    border:none;
+    background:#2E7D32;
+    color:white;
+    width:32px;
+    height:32px;
+    border-radius:5px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.quantity-box button:hover{
+    background:#1B5E20;
+}
+
+.quantity{
+    font-weight:bold;
+    min-width:25px;
+    text-align:center;
+}
+
+/* SUBTOTAL */
+
+.subtotal{
+    font-weight:bold;
+    color:#D84315;
+    min-width:100px;
+    text-align:right;
+}
+
+/* REMOVE */
+
+.remove-btn{
+    background:#D32F2F;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.remove-btn:hover{
+    background:#B71C1C;
+}
+
+/* TOTAL */
+
+.total-box{
+    text-align:right;
+    padding:25px 5px 10px;
+}
+
+.total-box h2{
+    color:#D84315;
+    margin-bottom:15px;
+}
+
+/* BUTTONS */
+
+.buttons{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    margin-top:20px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 20px;
+    border-radius:6px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
+}
+
+.shop-btn{
+    background:#2E7D32;
+}
+
+.shop-btn:hover{
+    background:#1B5E20;
+}
+
+.checkout-btn{
+    background:#FF8F00;
+}
+
+.checkout-btn:hover{
+    background:#EF6C00;
+}
+
+/* EMPTY CART */
+
+.empty-cart{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.empty-cart h2{
+    color:#2E7D32;
+    margin-bottom:15px;
+}
+
+.empty-cart p{
+    margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#2E7D32;
+    color:white;
+    text-align:center;
+    padding:18px 10px;
+    margin-top:40px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .cart-item{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .subtotal{
+        text-align:left;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        text-align:center;
+    }
+
+    header h1{
+        font-size:22px;
+    }
+
+    nav a{
+        font-size:14px;
+        margin:5px 3px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<h1>
+🌾 Bundelkhand Organic Farmer Producer Company Limited
+</h1>
+
+<p>
+Organic Products Directly From Farmers
+</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="about.html">🌿 About</a>
+
+<a href="products.html">🛒 Products</a>
+
+<a href="farmers.html">👨‍🌾 Kisan Corner</a>
+
+<a href="membership.html">📝 Join FPO</a>
+
+<a href="bulk-order.html">📦 Bulk Order</a>
+
+<a href="contact.html">📞 Contact</a>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+<h1 class="page-title">
+🛒 Your Shopping Cart
+</h1>
+
+
+<div class="cart-box" id="cartContainer">
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 Bundelkhand Organic Farmer Producer Company Limited
+
+<br>
+
+🌾 Empowering Farmers • Promoting Organic Agriculture
+
+</footer>
+
+
+<script>
+
+/* ==========================================
+   LOAD CART
+========================================== */
+
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+
+/* ==========================================
+   DISPLAY CART
+========================================== */
+
+displayCart();
+
+
+function displayCart(){
+
+    let container =
+    document.getElementById("cartContainer");
+
+
+    container.innerHTML = "";
+
+
+    /* EMPTY CART */
+
+    if(cart.length === 0){
+
+        container.innerHTML = `
+
+        <div class="empty-cart">
+
+            <h2>
+            🛒 Your Cart Is Empty
+            </h2>
+
+            <p>
+            अभी आपके Cart में कोई Product नहीं है।
+            </p>
+
+            <a
+            href="products.html"
+            class="btn shop-btn"
+            >
+
+            🛒 Continue Shopping
+
+            </a>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    /* CART ITEMS */
+
+    cart.forEach(function(item,index){
+
+        let price =
+        Number(item.price) || 0;
+
+        let quantity =
+        Number(item.quantity) || 1;
+
+        let subtotal =
+        price * quantity;
+
+
+        container.innerHTML += `
+
+        <div class="cart-item">
+
+
+            <div class="product-info">
+
+                <h2>
+                🌾 ${item.name}
+                </h2>
+
+                <p>
+                <b>Category:</b>
+                ${item.category || "Organic Product"}
+                </p>
+
+                <p>
+                Price: ₹${price}
+                </p>
+
+            </div>
+
+
+            <div class="quantity-box">
+
+                <button
+                onclick="decreaseQuantity(${index})"
+                >
+                −
+                </button>
+
+
+                <span class="quantity">
+                ${quantity}
+                </span>
+
+
+                <button
+                onclick="increaseQuantity(${index})"
+                >
+                +
+                </button>
+
+            </div>
+
+
+            <div class="subtotal">
+
+                ₹${subtotal}
+
+            </div>
+
+
+            <button
+            class="remove-btn"
+            onclick="removeItem(${index})"
+            >
+
+            Remove
+
+            </button>
+
+
+        </div>
+
+        `;
+
+    });
+
+
+    /* TOTAL */
+
+    let total = 0;
+
+
+    cart.forEach(function(item){
+
+        total +=
+        (Number(item.price) || 0) *
+        (Number(item.quantity) || 1);
+
+    });
+
+
+    container.innerHTML += `
+
+    <div class="total-box">
+
+        <h2>
+        Total Amount: ₹${total}
+        </h2>
+
+
+        <p>
+        Products: ${cart.length}
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+            href="products.html"
+            class="btn shop-btn"
+            >
+
+            🛒 Continue Shopping
+
+            </a>
+
+
+            <a
+            href="checkout.html"
+            class="btn checkout-btn"
+            onclick="saveOrderTotal()"
+            >
+
+            📦 Proceed to Order
+
+            </a>
+
+        </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* ==========================================
+   INCREASE QUANTITY
+========================================== */
+
+function increaseQuantity(index){
+
+    let item = cart[index];
+
+
+    let stock =
+    Number(item.stock) || 0;
+
+
+    if(item.quantity < stock){
+
+        item.quantity++;
+
+        saveCart();
+
+    }
+
+    else{
+
+        alert(
+        "⚠️ Available stock limit reached!"
+        );
+
+    }
+
+}
+
+
+/* ==========================================
+   DECREASE QUANTITY
+========================================== */
+
+function decreaseQuantity(index){
+
+    if(cart[index].quantity > 1){
+
+        cart[index].quantity--;
+
+        saveCart();
+
+    }
+
+}
+
+
+/* ==========================================
+   REMOVE ITEM
+========================================== */
+
+function removeItem(index){
+
+    let name =
+    cart[index].name;
+
+
+    let confirmRemove =
+    confirm(
+    "क्या आप " +
+    name +
+    " को Cart से हटाना चाहते हैं?"
+    );
+
+
+    if(confirmRemove){
+
+        cart.splice(index,1);
+
+        saveCart();
+
+    }
+
+}
+
+
+/* ==========================================
+   SAVE CART
+========================================== */
+
+function saveCart(){
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    displayCart();
+
+}
+
+
+/* ==========================================
+   SAVE TOTAL FOR CHECKOUT
+========================================== */
+
+function saveOrderTotal(){
+
+    let total = 0;
+
+
+    cart.forEach(function(item){
+
+        total +=
+        (Number(item.price) || 0) *
+        (Number(item.quantity) || 1);
+
+    });
+
+
+    localStorage.setItem(
+        "orderTotal",
+        total
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+```
