@@ -6,11 +6,18 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>Admin Dashboard | Bundelkhand Organic FPO</title>
+<title>
+Admin Dashboard | Bundelkhand Organic FPO
+</title>
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 *{
 margin:0;
@@ -25,227 +32,150 @@ color:#333;
 }
 
 
-/* ==============================
-   SIDEBAR
-============================== */
+/* =========================
+   HEADER
+========================= */
 
-.sidebar{
+header{
 
-position:fixed;
-
-left:0;
-top:0;
-
-width:250px;
-height:100vh;
-
-background:#1B5E20;
+background:
+linear-gradient(
+135deg,
+#1B5E20,
+#2E7D32,
+#43A047
+);
 
 color:white;
 
-z-index:1000;
-
-overflow-y:auto;
-
-transition:0.3s;
+padding:22px;
 
 }
 
-
-/* LOGO */
-
-.sidebar-logo{
-
-text-align:center;
-
-padding:20px 12px;
-
-border-bottom:1px solid rgba(255,255,255,0.2);
-
-}
-
-.sidebar-logo h2{
-
-font-size:20px;
-
-line-height:1.4;
-
-}
-
-.sidebar-logo p{
-
-font-size:13px;
-
-margin-top:6px;
-
-color:#dcedc8;
-
-}
-
-
-/* MENU */
-
-.menu{
-
-padding:15px 10px;
-
-}
-
-.menu a{
-
-display:block;
-
-color:white;
-
-text-decoration:none;
-
-padding:13px 15px;
-
-margin:5px 0;
-
-border-radius:6px;
-
-font-weight:bold;
-
-}
-
-.menu a:hover{
-
-background:#2E7D32;
-
-}
-
-.menu a.active{
-
-background:#388E3C;
-
-}
-
-
-/* LOGOUT */
-
-.sidebar-logout{
-
-padding:15px;
-
-border-top:1px solid rgba(255,255,255,0.2);
-
-}
-
-.sidebar-logout button{
-
-width:100%;
-
-background:#D32F2F;
-
-color:white;
-
-border:none;
-
-padding:12px;
-
-border-radius:6px;
-
-font-size:15px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-}
-
-.sidebar-logout button:hover{
-
-background:#B71C1C;
-
-}
-
-
-/* ==============================
-   MAIN
-============================== */
-
-.main{
-
-margin-left:250px;
-
-min-height:100vh;
-
-}
-
-
-/* TOP HEADER */
-
-.top-header{
-
-background:#2E7D32;
-
-color:white;
-
-padding:18px 25px;
+.header-main{
 
 display:flex;
 
 align-items:center;
 
-justify-content:space-between;
+justify-content:center;
 
-box-shadow:0 2px 5px #aaa;
-
-}
-
-.top-header h1{
-
-font-size:25px;
+gap:18px;
 
 }
 
-.admin-name{
+.logo{
+
+width:75px;
+
+height:75px;
+
+border-radius:50%;
+
+background:#FFD600;
+
+border:4px solid white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:40px;
+
+box-shadow:0 3px 10px #333;
+
+}
+
+header h1{
+
+font-size:28px;
+
+margin-bottom:6px;
+
+}
+
+header p{
+
+font-size:15px;
+
+}
+
+
+/* =========================
+   TOP NAV
+========================= */
+
+.top-nav{
+
+background:#FFF8E1;
+
+padding:12px;
+
+text-align:center;
+
+border-bottom:1px solid #ddd;
+
+}
+
+.top-nav a{
+
+display:inline-block;
+
+text-decoration:none;
+
+padding:10px 18px;
+
+margin:4px;
+
+border-radius:6px;
 
 font-weight:bold;
 
+color:white;
+
+background:#2E7D32;
+
 }
 
-
-/* MOBILE MENU BUTTON */
-
-.menu-btn{
-
-display:none;
+.top-nav a:hover{
 
 background:#1B5E20;
 
-color:white;
+}
 
-border:none;
+.home-btn{
 
-padding:8px 12px;
+background:#F57C00 !important;
 
-border-radius:5px;
+}
 
-font-size:20px;
+.logout-btn{
 
-cursor:pointer;
+background:#D32F2F !important;
 
 }
 
 
-/* ==============================
-   CONTENT
-============================== */
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
 
 max-width:1200px;
 
-margin:auto;
+margin:30px auto;
 
-padding:25px;
+padding:20px;
 
 }
 
 
-/* WELCOME */
+/* =========================
+   WELCOME
+========================= */
 
 .welcome{
 
@@ -253,11 +183,13 @@ background:white;
 
 padding:25px;
 
-border-radius:10px;
+border-radius:12px;
 
-box-shadow:0 0 10px #ccc;
+box-shadow:0 3px 12px #ccc;
 
-margin-bottom:25px;
+margin-bottom:30px;
+
+border-left:6px solid #43A047;
 
 }
 
@@ -269,23 +201,17 @@ margin-bottom:10px;
 
 }
 
-.welcome p{
 
-line-height:1.7;
-
-}
-
-
-/* ==============================
-   CARDS
-============================== */
+/* =========================
+   DASHBOARD CARDS
+========================= */
 
 .cards{
 
 display:grid;
 
 grid-template-columns:
-repeat(auto-fit,minmax(230px,1fr));
+repeat(auto-fit,minmax(240px,1fr));
 
 gap:20px;
 
@@ -299,19 +225,71 @@ padding:25px;
 
 text-align:center;
 
-border-radius:10px;
+border-radius:12px;
 
-box-shadow:0 0 10px #ccc;
+box-shadow:0 3px 12px #ccc;
 
-transition:0.2s;
+border-top:5px solid #2E7D32;
+
+transition:.3s;
 
 }
 
 .card:hover{
 
-transform:translateY(-3px);
+transform:translateY(-5px);
 
-box-shadow:0 5px 15px #bbb;
+box-shadow:0 7px 18px #bbb;
+
+}
+
+.card:nth-child(2){
+
+border-top-color:#FF9800;
+
+}
+
+.card:nth-child(3){
+
+border-top-color:#1976D2;
+
+}
+
+.card:nth-child(4){
+
+border-top-color:#8E24AA;
+
+}
+
+.card:nth-child(5){
+
+border-top-color:#00897B;
+
+}
+
+.card:nth-child(6){
+
+border-top-color:#F57C00;
+
+}
+
+.card:nth-child(7){
+
+border-top-color:#5E35B1;
+
+}
+
+.card:nth-child(8){
+
+border-top-color:#C62828;
+
+}
+
+.icon{
+
+font-size:42px;
+
+margin-bottom:10px;
 
 }
 
@@ -319,29 +297,31 @@ box-shadow:0 5px 15px #bbb;
 
 color:#2E7D32;
 
-font-size:21px;
+margin-bottom:8px;
 
-margin-bottom:10px;
+font-size:21px;
 
 }
 
 .card p{
 
-margin-bottom:15px;
+color:#666;
 
-color:#555;
+margin-bottom:12px;
+
+line-height:1.5;
 
 }
 
 .count{
 
-font-size:25px;
+font-size:26px;
 
 font-weight:bold;
 
 color:#1565C0;
 
-margin:10px 0;
+margin:12px;
 
 }
 
@@ -357,9 +337,6 @@ color:#2E7D32;
 
 }
 
-
-/* BUTTON */
-
 .card a{
 
 display:inline-block;
@@ -368,11 +345,11 @@ background:#2E7D32;
 
 color:white;
 
-padding:10px 22px;
-
-text-decoration:none;
+padding:10px 24px;
 
 border-radius:5px;
+
+text-decoration:none;
 
 font-weight:bold;
 
@@ -385,126 +362,62 @@ background:#1B5E20;
 }
 
 
-/* ==============================
+/* =========================
    FOOTER
-============================== */
+========================= */
 
 footer{
 
-background:#2E7D32;
+background:#1B5E20;
 
 color:white;
 
 text-align:center;
 
-padding:15px;
+padding:25px;
 
 margin-top:40px;
 
-line-height:1.7;
+}
+
+footer p{
+
+margin:6px;
 
 }
 
 
-/* ==============================
-   OVERLAY
-============================== */
-
-.overlay{
-
-display:none;
-
-position:fixed;
-
-left:0;
-top:0;
-
-width:100%;
-height:100%;
-
-background:rgba(0,0,0,0.5);
-
-z-index:900;
-
-}
-
-
-/* ==============================
+/* =========================
    MOBILE
-============================== */
+========================= */
 
-@media(max-width:800px){
+@media(max-width:700px){
 
-.sidebar{
+.header-main{
 
-left:-250px;
+flex-direction:column;
 
-}
-
-.sidebar.show{
-
-left:0;
+text-align:center;
 
 }
 
-.main{
+header h1{
 
-margin-left:0;
-
-}
-
-.menu-btn{
-
-display:block;
-
-}
-
-.overlay.show{
-
-display:block;
-
-}
-
-.top-header{
-
-padding:15px;
-
-}
-
-.top-header h1{
-
-font-size:19px;
-
-}
-
-.admin-name{
-
-font-size:13px;
+font-size:22px;
 
 }
 
 .container{
 
-padding:15px;
+padding:10px;
 
 }
 
-}
+.top-nav a{
 
+font-size:14px;
 
-/* SMALL MOBILE */
-
-@media(max-width:500px){
-
-.admin-name{
-
-display:none;
-
-}
-
-.top-header h1{
-
-font-size:17px;
+padding:9px 12px;
 
 }
 
@@ -524,72 +437,59 @@ padding:20px;
 <body>
 
 
-<!-- =================================
-     ADMIN SECURITY CHECK
-================================= -->
+<!-- =========================
+     LOGIN SECURITY
+========================= -->
 
 <script>
 
-(function(){
-
-const user =
-localStorage.getItem("user");
-
-if(user !== "admin"){
+if(localStorage.getItem("user") !== "admin"){
 
 window.location.replace("login.html");
 
 }
 
-})();
-
 </script>
 
 
-<!-- =================================
-     SIDEBAR
-================================= -->
+<!-- =========================
+     HEADER
+========================= -->
 
-<aside
-class="sidebar"
-id="sidebar"
->
+<header>
 
+<div class="header-main">
 
-<!-- LOGO -->
+<div class="logo">
+🌾
+</div>
 
-<div class="sidebar-logo">
+<div>
 
-<h2>
-🌾 Bundelkhand Organic FPO
-</h2>
+<h1>
+👨‍💼 Admin Dashboard
+</h1>
 
 <p>
-Admin Control Panel
+Bundelkhand Organic Farmer Producer Company Limited
 </p>
 
 </div>
 
+</div>
 
-<!-- MENU -->
-
-<div class="menu">
-
-
-<a
-href="admin-dashboard.html"
-class="active"
->
-
-👨‍💼 Dashboard
-
-</a>
+</header>
 
 
-<!-- HOME PAGE -->
+<!-- =========================
+     TOP NAVIGATION
+========================= -->
+
+<div class="top-nav">
 
 <a
 href="index.html"
+class="home-btn"
 >
 
 🏠 Home Page
@@ -597,198 +497,70 @@ href="index.html"
 </a>
 
 
-<!-- FARMERS -->
-
 <a
-href="farmers-list.html"
+href="admin-dashboard.html"
 >
 
-👨‍🌾 Farmers
+📊 Dashboard
 
 </a>
 
 
-<!-- MEMBERSHIP -->
-
 <a
-href="membership-requests.html"
->
-
-📝 Membership Requests
-
-</a>
-
-
-<!-- PRODUCTS -->
-
-<a
-href="manage-products.html"
->
-
-📦 Manage Products
-
-</a>
-
-
-<!-- ORDERS -->
-
-<a
-href="orders.html"
->
-
-🛒 Orders
-
-</a>
-
-
-<!-- NEWS -->
-
-<a
-href="admin-news.html"
->
-
-📰 Agriculture News
-
-</a>
-
-
-<!-- GALLERY -->
-
-<a
-href="gallery.html"
->
-
-🖼️ Gallery
-
-</a>
-
-
-<!-- REPORTS -->
-
-<a
-href="#"
->
-
-📊 Reports
-
-</a>
-
-
-<!-- SETTINGS -->
-
-<a
-href="#"
->
-
-⚙️ Settings
-
-</a>
-
-
-</div>
-
-
-<!-- LOGOUT -->
-
-<div class="sidebar-logout">
-
-<button
+href="javascript:void(0)"
+class="logout-btn"
 onclick="logout()"
 >
 
 🚪 Logout
 
-</button>
+</a>
 
 </div>
 
 
-</aside>
-
-
-<!-- MOBILE OVERLAY -->
-
-<div
-class="overlay"
-id="overlay"
-onclick="closeSidebar()"
-></div>
-
-
-<!-- =================================
-     MAIN AREA
-================================= -->
-
-<div class="main">
-
-
-<!-- HEADER -->
-
-<header class="top-header">
-
-
-<button
-class="menu-btn"
-onclick="toggleSidebar()"
->
-
-☰
-
-</button>
-
-
-<h1>
-👨‍💼 Admin Dashboard
-</h1>
-
-
-<div class="admin-name">
-
-Welcome Admin 👋
-
-</div>
-
-
-</header>
-
-
-<!-- CONTENT -->
+<!-- =========================
+     MAIN
+========================= -->
 
 <div class="container">
 
 
-<!-- WELCOME -->
-
 <div class="welcome">
 
 <h2>
-🌾 Welcome Admin
+Welcome Admin 👋
 </h2>
 
 <p>
 
-यह Bundelkhand Organic Farmer Producer Company Limited
-का Admin Control Panel है।
-
-यहाँ से आप Farmers, Membership, Products, Orders,
-Agriculture News और Website को Manage कर सकते हैं।
+यह आपका FPO Administration Panel है।
+यहाँ से आप Farmers, Membership, Products,
+Orders, Agriculture News और Website Content
+को Manage कर सकते हैं।
 
 </p>
 
 </div>
 
 
-<!-- DASHBOARD CARDS -->
+<!-- =========================
+     CARDS
+========================= -->
 
 <div class="cards">
 
 
-<!-- TOTAL FARMERS -->
+<!-- FARMERS -->
 
 <div class="card">
 
+<div class="icon">
+👥
+</div>
+
 <h2>
-👥 Total Farmers
+Total Farmers
 </h2>
 
 <p>
@@ -799,15 +571,11 @@ Approved Registered Farmers
 class="count approved"
 id="totalFarmers"
 >
-
 0
-
 </div>
 
 <a href="farmers-list.html">
-
 Open
-
 </a>
 
 </div>
@@ -817,8 +585,12 @@ Open
 
 <div class="card">
 
+<div class="icon">
+📝
+</div>
+
 <h2>
-📝 Membership Requests
+Membership Requests
 </h2>
 
 <p>
@@ -829,15 +601,11 @@ Pending Membership Applications
 class="count pending"
 id="totalMembership"
 >
-
 0
-
 </div>
 
 <a href="membership-requests.html">
-
 Open
-
 </a>
 
 </div>
@@ -847,27 +615,27 @@ Open
 
 <div class="card">
 
+<div class="icon">
+📦
+</div>
+
 <h2>
-📦 Products
+Products
 </h2>
 
 <p>
-उत्पाद जोड़ें और Manage करें।
+Add, Edit और Delete Products
 </p>
 
 <div
 class="count"
 id="totalProducts"
 >
-
 0
-
 </div>
 
 <a href="manage-products.html">
-
 Open
-
 </a>
 
 </div>
@@ -877,40 +645,34 @@ Open
 
 <div class="card">
 
+<div class="icon">
+🛒
+</div>
+
 <h2>
-🛒 Orders
+Orders
 </h2>
 
 <p>
-Customer Orders देखें।
+Customer Orders Manage करें
 </p>
 
-<div class="count">
-
-📦 Total Orders:
-
-<span id="totalOrders">
+<div
+class="count"
+id="totalOrders"
+>
 0
-</span>
-
 </div>
 
-
-<div class="count pending">
-
-🆕 New Orders:
-
-<span id="newOrders">
+<div
+class="count pending"
+id="pendingOrders"
+>
 0
-</span>
-
 </div>
-
 
 <a href="orders.html">
-
 Open
-
 </a>
 
 </div>
@@ -920,18 +682,20 @@ Open
 
 <div class="card">
 
+<div class="icon">
+📰
+</div>
+
 <h2>
-📰 Agriculture News
+Agriculture News
 </h2>
 
 <p>
-कृषि समाचार जोड़ें और Manage करें।
+कृषि समाचार Add / Edit / Delete करें
 </p>
 
 <a href="admin-news.html">
-
 Open
-
 </a>
 
 </div>
@@ -941,18 +705,20 @@ Open
 
 <div class="card">
 
+<div class="icon">
+🖼️
+</div>
+
 <h2>
-🖼️ Gallery
+Gallery
 </h2>
 
 <p>
-नई फोटो Manage करें।
+Website Gallery Manage करें
 </p>
 
 <a href="gallery.html">
-
 Open
-
 </a>
 
 </div>
@@ -962,18 +728,20 @@ Open
 
 <div class="card">
 
+<div class="icon">
+📊
+</div>
+
 <h2>
-📊 Reports
+Reports
 </h2>
 
 <p>
-FPO Reports और Statistics।
+FPO Statistics और Reports
 </p>
 
 <a href="#">
-
 Open
-
 </a>
 
 </div>
@@ -983,18 +751,20 @@ Open
 
 <div class="card">
 
+<div class="icon">
+⚙️
+</div>
+
 <h2>
-⚙️ Settings
+Settings
 </h2>
 
 <p>
-Website Settings।
+Website Settings Manage करें
 </p>
 
 <a href="#">
-
 Open
-
 </a>
 
 </div>
@@ -1005,32 +775,37 @@ Open
 </div>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-© 2026 Bundelkhand Organic Farmer Producer Company Limited
+<p>
+🌾 Bundelkhand Organic Farmer Producer Company Limited
+</p>
 
-<br>
+<p>
+Empowering Farmers • Promoting Organic Agriculture
+</p>
 
-🌾 Empowering Farmers • Promoting Organic Agriculture
+<p>
+© 2026 All Rights Reserved
+</p>
 
 </footer>
 
 
-</div>
-
-
-<!-- =================================
+<!-- =========================
      JAVASCRIPT
-================================= -->
+========================= -->
 
 <script>
 
 
-/* ==============================
-   PRODUCTS COUNT
-============================== */
+/* =========================
+   PRODUCTS
+========================= */
 
 let products =
 
@@ -1042,13 +817,12 @@ localStorage.getItem("products")
 document.getElementById(
 "totalProducts"
 ).textContent =
-
 products.length;
 
 
-/* ==============================
-   ORDERS COUNT
-============================== */
+/* =========================
+   ORDERS
+========================= */
 
 let orders =
 
@@ -1060,37 +834,35 @@ localStorage.getItem("orders")
 document.getElementById(
 "totalOrders"
 ).textContent =
-
 orders.length;
 
 
-/* ==============================
-   NEW ORDERS
-============================== */
+/* =========================
+   PENDING ORDERS
+========================= */
 
-let newOrders =
+let pendingOrders =
 
 orders.filter(function(order){
 
 return (
-(order.status || "New")
-===
-"New"
+order.status === "Pending" ||
+order.status === "New" ||
+!order.status
 );
 
 }).length;
 
 
 document.getElementById(
-"newOrders"
+"pendingOrders"
 ).textContent =
+"🟡 Pending: " + pendingOrders;
 
-newOrders;
 
-
-/* ==============================
+/* =========================
    MEMBERS
-============================== */
+========================= */
 
 let members =
 
@@ -1099,7 +871,9 @@ localStorage.getItem("members")
 ) || [];
 
 
-/* APPROVED FARMERS */
+/* =========================
+   APPROVED FARMERS
+========================= */
 
 let approvedFarmers =
 
@@ -1113,11 +887,12 @@ return member.status === "Approved";
 document.getElementById(
 "totalFarmers"
 ).textContent =
-
 approvedFarmers;
 
 
-/* PENDING MEMBERS */
+/* =========================
+   PENDING MEMBERS
+========================= */
 
 let pendingMembers =
 
@@ -1134,83 +909,25 @@ member.status === "Pending"
 document.getElementById(
 "totalMembership"
 ).textContent =
-
 pendingMembers;
 
 
-/* ==============================
-   MOBILE SIDEBAR
-============================== */
-
-function toggleSidebar(){
-
-document.getElementById(
-"sidebar"
-).classList.toggle("show");
-
-document.getElementById(
-"overlay"
-).classList.toggle("show");
-
-}
-
-
-function closeSidebar(){
-
-document.getElementById(
-"sidebar"
-).classList.remove("show");
-
-document.getElementById(
-"overlay"
-).classList.remove("show");
-
-}
-
-
-/* ==============================
+/* =========================
    LOGOUT
-============================== */
+========================= */
 
 function logout(){
 
 localStorage.removeItem("user");
 
 /*
-   Logout के बाद Login Page पर जाएँ
+   Browser history में Dashboard
+   वापस न आने देने के लिए
 */
 
-window.location.replace("login.html");
+window.location.replace("index.html");
 
 }
-
-
-/* ==============================
-   BACK BUTTON SECURITY
-============================== */
-
-window.addEventListener(
-"pageshow",
-function(event){
-
-if(event.persisted){
-
-if(
-localStorage.getItem("user")
-!==
-"admin"
-){
-
-window.location.replace(
-"login.html"
-);
-
-}
-
-}
-
-});
-
 
 </script>
 
@@ -1219,4 +936,3 @@ window.location.replace(
 
 </html>
 ```
-
