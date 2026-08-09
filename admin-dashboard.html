@@ -21,143 +21,496 @@ font-family:Arial,sans-serif;
 
 body{
 background:#f4fff4;
+color:#333;
 }
 
-/* HEADER */
+/* =================================
+   SIDEBAR
+================================= */
 
-header{
+.sidebar{
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:250px;
+height:100vh;
+
 background:#1B5E20;
+
 color:white;
-padding:25px;
+
+padding-top:20px;
+
+z-index:1000;
+
+transition:0.3s;
+
+overflow-y:auto;
+
+}
+
+.sidebar-logo{
+
 text-align:center;
+
+padding:10px 15px 25px;
+
+border-bottom:1px solid rgba(255,255,255,0.2);
+
 }
 
-header h1{
-font-size:30px;
-margin-bottom:8px;
+.sidebar-logo h2{
+
+font-size:20px;
+
+line-height:1.4;
+
 }
 
-/* CONTAINER */
+.sidebar-logo p{
 
-.container{
-max-width:1200px;
-margin:30px auto;
-padding:20px;
+font-size:12px;
+
+margin-top:5px;
+
 }
 
-/* WELCOME */
 
-.welcome{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 0 10px #ccc;
-margin-bottom:30px;
+/* MENU */
+
+.menu{
+
+padding:15px 10px;
+
 }
 
-.welcome h2{
-color:#2E7D32;
-margin-bottom:10px;
-}
+.menu a{
 
-/* CARDS */
+display:block;
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:25px;
-text-align:center;
-border-radius:10px;
-box-shadow:0 0 10px #ccc;
-}
-
-.card h2{
-color:#2E7D32;
-margin-bottom:10px;
-}
-
-.card p{
-margin-bottom:15px;
-}
-
-.count{
-font-size:24px;
-font-weight:bold;
-color:#1565C0;
-margin:10px 0;
-}
-
-.pending{
-color:#F57C00;
-}
-
-.approved{
-color:#2E7D32;
-}
-
-.card a{
-display:inline-block;
-background:#2E7D32;
 color:white;
-padding:12px 25px;
+
 text-decoration:none;
-border-radius:5px;
+
+padding:14px 15px;
+
+margin:5px 0;
+
+border-radius:6px;
+
+font-weight:bold;
+
+transition:0.2s;
+
 }
 
-.card a:hover{
-background:#1B5E20;
+.menu a:hover{
+
+background:#2E7D32;
+
 }
+
+.menu a.active{
+
+background:#2E7D32;
+
+}
+
 
 /* LOGOUT */
 
-.logout{
-text-align:center;
-margin-top:40px;
-}
+.sidebar-logout{
 
-.logout button{
-background:#D32F2F;
-color:white;
-padding:12px 30px;
-border:none;
-border-radius:5px;
-cursor:pointer;
-font-size:16px;
-}
-
-.logout button:hover{
-background:#B71C1C;
-}
-
-/* FOOTER */
-
-footer{
-background:#2E7D32;
-color:white;
-text-align:center;
 padding:15px;
-margin-top:40px;
+
+border-top:1px solid rgba(255,255,255,0.2);
+
+margin-top:10px;
+
 }
 
-/* MOBILE */
+.sidebar-logout button{
 
-@media(max-width:600px){
+width:100%;
+
+background:#D32F2F;
+
+color:white;
+
+border:none;
+
+padding:12px;
+
+border-radius:6px;
+
+font-size:15px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+.sidebar-logout button:hover{
+
+background:#B71C1C;
+
+}
+
+
+/* =================================
+   MAIN
+================================= */
+
+.main{
+
+margin-left:250px;
+
+min-height:100vh;
+
+}
+
+
+/* =================================
+   TOP HEADER
+================================= */
+
+.top-header{
+
+background:#2E7D32;
+
+color:white;
+
+padding:18px 25px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+box-shadow:0 2px 5px #aaa;
+
+}
+
+.top-header h1{
+
+font-size:24px;
+
+}
+
+.admin-name{
+
+font-weight:bold;
+
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.menu-btn{
+
+display:none;
+
+background:#1B5E20;
+
+color:white;
+
+border:none;
+
+padding:9px 12px;
+
+font-size:20px;
+
+border-radius:5px;
+
+cursor:pointer;
+
+}
+
+
+/* =================================
+   CONTAINER
+================================= */
 
 .container{
-padding:10px;
+
+max-width:1200px;
+
+margin:0 auto;
+
+padding:25px;
+
 }
 
-header h1{
-font-size:24px;
+
+/* =================================
+   WELCOME
+================================= */
+
+.welcome{
+
+background:white;
+
+padding:25px;
+
+border-radius:10px;
+
+box-shadow:0 0 10px #ccc;
+
+margin-bottom:25px;
+
+}
+
+.welcome h2{
+
+color:#2E7D32;
+
+margin-bottom:10px;
+
+}
+
+
+/* =================================
+   DASHBOARD CARDS
+================================= */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(230px,1fr));
+
+gap:20px;
+
+}
+
+
+.card{
+
+background:white;
+
+padding:25px;
+
+text-align:center;
+
+border-radius:10px;
+
+box-shadow:0 0 10px #ccc;
+
+transition:0.2s;
+
+}
+
+.card:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 5px 15px #bbb;
+
+}
+
+.card h2{
+
+color:#2E7D32;
+
+margin-bottom:10px;
+
+font-size:21px;
+
+}
+
+.card p{
+
+margin-bottom:15px;
+
+color:#555;
+
+}
+
+.count{
+
+font-size:25px;
+
+font-weight:bold;
+
+color:#1565C0;
+
+margin:10px 0;
+
+}
+
+.pending{
+
+color:#F57C00;
+
+}
+
+.approved{
+
+color:#2E7D32;
+
+}
+
+
+/* CARD BUTTON */
+
+.card a{
+
+display:inline-block;
+
+background:#2E7D32;
+
+color:white;
+
+padding:10px 22px;
+
+text-decoration:none;
+
+border-radius:5px;
+
+font-weight:bold;
+
+}
+
+.card a:hover{
+
+background:#1B5E20;
+
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+footer{
+
+background:#2E7D32;
+
+color:white;
+
+text-align:center;
+
+padding:15px;
+
+margin-top:40px;
+
+}
+
+
+/* =================================
+   MOBILE OVERLAY
+================================= */
+
+.overlay{
+
+display:none;
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.5);
+
+z-index:900;
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media(max-width:800px){
+
+.sidebar{
+
+left:-250px;
+
+}
+
+.sidebar.show{
+
+left:0;
+
+}
+
+.main{
+
+margin-left:0;
+
+}
+
+.menu-btn{
+
+display:block;
+
+}
+
+.top-header{
+
+padding:15px;
+
+}
+
+.top-header h1{
+
+font-size:19px;
+
+}
+
+.admin-name{
+
+font-size:13px;
+
+}
+
+.overlay.show{
+
+display:block;
+
+}
+
+.container{
+
+padding:15px;
+
+}
+
+}
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media(max-width:500px){
+
+.top-header h1{
+
+font-size:17px;
+
+}
+
+.admin-name{
+
+display:none;
+
 }
 
 .card{
+
 padding:20px;
+
 }
 
 }
@@ -170,11 +523,13 @@ padding:20px;
 <body>
 
 
-<!-- ADMIN LOGIN CHECK -->
+<!-- =================================
+     ADMIN LOGIN CHECK
+================================= -->
 
 <script>
 
-if(localStorage.getItem("user")!="admin"){
+if(localStorage.getItem("user") !== "admin"){
 
 window.location.href="login.html";
 
@@ -183,20 +538,182 @@ window.location.href="login.html";
 </script>
 
 
-<!-- HEADER -->
+<!-- =================================
+     SIDEBAR
+================================= -->
 
-<header>
+<aside
+class="sidebar"
+id="sidebar"
+>
+
+
+<div class="sidebar-logo">
+
+<h2>
+🌾 Bundelkhand Organic FPO
+</h2>
+
+<p>
+Admin Control Panel
+</p>
+
+</div>
+
+
+<div class="menu">
+
+
+<a
+href="admin-dashboard.html"
+class="active"
+>
+
+🏠 Dashboard
+
+</a>
+
+
+<a
+href="farmers-list.html"
+>
+
+👨‍🌾 Farmers
+
+</a>
+
+
+<a
+href="membership-requests.html"
+>
+
+📝 Membership Requests
+
+</a>
+
+
+<a
+href="manage-products.html"
+>
+
+📦 Manage Products
+
+</a>
+
+
+<a
+href="orders.html"
+>
+
+🛒 Orders
+
+</a>
+
+
+<a
+href="admin-news.html"
+>
+
+📰 Agriculture News
+
+</a>
+
+
+<a
+href="gallery.html"
+>
+
+🖼️ Gallery
+
+</a>
+
+
+<a
+href="#"
+>
+
+📊 Reports
+
+</a>
+
+
+<a
+href="#"
+>
+
+⚙️ Settings
+
+</a>
+
+
+</div>
+
+
+<div class="sidebar-logout">
+
+<button
+onclick="logout()"
+>
+
+🚪 Logout
+
+</button>
+
+</div>
+
+
+</aside>
+
+
+<!-- =================================
+     OVERLAY
+================================= -->
+
+<div
+class="overlay"
+id="overlay"
+onclick="closeSidebar()"
+></div>
+
+
+<!-- =================================
+     MAIN
+================================= -->
+
+<div class="main">
+
+
+<!-- TOP HEADER -->
+
+<header class="top-header">
+
+
+<button
+class="menu-btn"
+onclick="toggleSidebar()"
+>
+
+☰
+
+</button>
+
 
 <h1>
 👨‍💼 Admin Dashboard
 </h1>
 
-<p>
-Bundelkhand Organic Farmer Producer Company Limited
-</p>
+
+<div class="admin-name">
+
+Welcome Admin 👋
+
+</div>
+
 
 </header>
 
+
+<!-- CONTENT -->
 
 <div class="container">
 
@@ -206,11 +723,15 @@ Bundelkhand Organic Farmer Producer Company Limited
 <div class="welcome">
 
 <h2>
-Welcome Admin 👋
+🌾 Welcome Admin
 </h2>
 
 <p>
-यह Admin Panel है। यहाँ से आप FPO Members, Products, Orders और Website को Manage कर सकते हैं।
+
+यह Bundelkhand Organic Farmer Producer Company Limited का
+Admin Control Panel है। यहाँ से आप Farmers, Products,
+Orders, News और Website को Manage कर सकते हैं।
+
 </p>
 
 </div>
@@ -221,7 +742,7 @@ Welcome Admin 👋
 <div class="cards">
 
 
-<!-- TOTAL FARMERS -->
+<!-- FARMERS -->
 
 <div class="card">
 
@@ -235,18 +756,21 @@ Approved Registered Farmers
 
 <div
 class="count approved"
-id="totalFarmers">
+id="totalFarmers"
+>
 0
 </div>
 
-<a href="membership-requests.html">
+<a href="farmers-list.html">
+
 Open
+
 </a>
 
 </div>
 
 
-<!-- MEMBERSHIP REQUESTS -->
+<!-- MEMBERSHIP -->
 
 <div class="card">
 
@@ -260,12 +784,15 @@ Pending Membership Applications
 
 <div
 class="count pending"
-id="totalMembership">
+id="totalMembership"
+>
 0
 </div>
 
-<a href="farmers-list.html">
+<a href="membership-requests.html">
+
 Open
+
 </a>
 
 </div>
@@ -280,17 +807,20 @@ Open
 </h2>
 
 <p>
-उत्पाद जोड़ें और Edit करें।
+उत्पाद जोड़ें और Manage करें।
 </p>
 
 <div
 class="count"
-id="totalProducts">
+id="totalProducts"
+>
 0
 </div>
 
 <a href="manage-products.html">
+
 Open
+
 </a>
 
 </div>
@@ -305,35 +835,41 @@ Open
 </h2>
 
 <p>
-Customer और Bulk Orders देखें।
+Customer Orders देखें।
 </p>
 
 <div class="count">
 
 📦 Total Orders:
+
 <span id="totalOrders">
 0
 </span>
 
 </div>
 
+
 <div class="count pending">
 
-🟡 Pending Orders:
+🟡 New Orders:
+
 <span id="pendingOrders">
 0
 </span>
 
 </div>
 
+
 <a href="orders.html">
+
 Open
+
 </a>
 
 </div>
 
 
-<!-- AGRICULTURE NEWS -->
+<!-- NEWS -->
 
 <div class="card">
 
@@ -342,11 +878,13 @@ Open
 </h2>
 
 <p>
-कृषि समाचार जोड़ें।
+कृषि समाचार जोड़ें और Manage करें।
 </p>
 
-<a href="#">
+<a href="admin-news.html">
+
 Open
+
 </a>
 
 </div>
@@ -357,7 +895,7 @@ Open
 <div class="card">
 
 <h2>
-🖼 Gallery
+🖼️ Gallery
 </h2>
 
 <p>
@@ -365,7 +903,9 @@ Open
 </p>
 
 <a href="gallery.html">
+
 Open
+
 </a>
 
 </div>
@@ -380,11 +920,13 @@ Open
 </h2>
 
 <p>
-FPO रिपोर्ट और Statistics।
+FPO Reports और Statistics।
 </p>
 
 <a href="#">
+
 Open
+
 </a>
 
 </div>
@@ -403,24 +945,13 @@ Website Settings।
 </p>
 
 <a href="#">
+
 Open
+
 </a>
 
 </div>
 
-
-</div>
-
-
-<!-- LOGOUT -->
-
-<div class="logout">
-
-<button onclick="logout()">
-
-Logout
-
-</button>
 
 </div>
 
@@ -434,65 +965,95 @@ Logout
 
 © 2026 Bundelkhand Organic Farmer Producer Company Limited
 
+<br>
+
+🌾 Empowering Farmers • Promoting Organic Agriculture
+
 </footer>
+
+
+</div>
 
 
 <script>
 
 
-// ======================================
-// PRODUCTS COUNT
-// ======================================
+/* ======================================
+   PRODUCTS COUNT
+====================================== */
 
 let products =
-JSON.parse(localStorage.getItem("products")) || [];
+
+JSON.parse(
+localStorage.getItem("products")
+) || [];
 
 
-document.getElementById("totalProducts").textContent =
+document.getElementById(
+"totalProducts"
+).textContent =
+
 products.length;
 
 
-// ======================================
-// ORDERS COUNT
-// ======================================
+/* ======================================
+   ORDERS COUNT
+====================================== */
 
 let orders =
-JSON.parse(localStorage.getItem("orders")) || [];
+
+JSON.parse(
+localStorage.getItem("orders")
+) || [];
 
 
-document.getElementById("totalOrders").textContent =
+document.getElementById(
+"totalOrders"
+).textContent =
+
 orders.length;
 
 
-// ======================================
-// PENDING ORDERS
-// ======================================
+/* ======================================
+   NEW ORDERS
+====================================== */
 
-let pendingOrders =
+let newOrders =
+
 orders.filter(function(order){
 
-return (order.status || "Pending") === "Pending";
+return (
+(order.status || "New")
+=== "New"
+);
 
 }).length;
 
 
-document.getElementById("pendingOrders").textContent =
-pendingOrders;
+document.getElementById(
+"pendingOrders"
+).textContent =
+
+newOrders;
 
 
-// ======================================
-// MEMBERSHIP DATA
-// ======================================
+/* ======================================
+   MEMBERSHIP DATA
+====================================== */
 
 let members =
-JSON.parse(localStorage.getItem("members")) || [];
+
+JSON.parse(
+localStorage.getItem("members")
+) || [];
 
 
-// ======================================
-// APPROVED FARMERS
-// ======================================
+/* ======================================
+   APPROVED FARMERS
+====================================== */
 
 let approvedFarmers =
+
 members.filter(function(member){
 
 return member.status === "Approved";
@@ -500,36 +1061,82 @@ return member.status === "Approved";
 }).length;
 
 
-document.getElementById("totalFarmers").textContent =
+document.getElementById(
+"totalFarmers"
+).textContent =
+
 approvedFarmers;
 
 
-// ======================================
-// PENDING MEMBERSHIP REQUESTS
-// ======================================
+/* ======================================
+   PENDING MEMBERSHIP
+====================================== */
 
 let pendingMembers =
+
 members.filter(function(member){
 
-return !member.status ||
-member.status === "Pending";
+return (
+!member.status ||
+member.status === "Pending"
+);
 
 }).length;
 
 
-document.getElementById("totalMembership").textContent =
+document.getElementById(
+"totalMembership"
+).textContent =
+
 pendingMembers;
 
 
-// ======================================
-// LOGOUT
-// ======================================
+/* ======================================
+   SIDEBAR OPEN
+====================================== */
+
+function toggleSidebar(){
+
+document.getElementById(
+"sidebar"
+).classList.toggle("show");
+
+
+document.getElementById(
+"overlay"
+).classList.toggle("show");
+
+}
+
+
+/* ======================================
+   SIDEBAR CLOSE
+====================================== */
+
+function closeSidebar(){
+
+document.getElementById(
+"sidebar"
+).classList.remove("show");
+
+
+document.getElementById(
+"overlay"
+).classList.remove("show");
+
+}
+
+
+/* ======================================
+   LOGOUT
+====================================== */
 
 function logout(){
 
 localStorage.removeItem("user");
 
-window.location.href="login.html";
+window.location.href =
+"login.html";
 
 }
 
