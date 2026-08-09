@@ -7,220 +7,253 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Manage Gallery | Bundelkhand Organic FPO</title>
+<title>Gallery Management | Bundelkhand Organic FPO</title>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,"Noto Sans Devanagari",sans-serif;
 }
 
 body{
-    background:#f4fff4;
-    color:#333;
+background:#f4fff4;
+color:#333;
 }
 
 /* HEADER */
 
 header{
-    background:#1b5e20;
-    color:white;
-    text-align:center;
-    padding:25px 15px;
+background:linear-gradient(135deg,#1b5e20,#2e7d32);
+color:white;
+text-align:center;
+padding:25px 15px;
 }
 
 header h1{
-    font-size:28px;
-    margin-bottom:8px;
+font-size:28px;
+margin-bottom:8px;
 }
 
 header p{
-    font-size:16px;
+font-size:16px;
 }
 
 /* CONTAINER */
 
 .container{
-    max-width:1200px;
-    margin:30px auto;
-    padding:20px;
+max-width:1100px;
+margin:30px auto;
+padding:20px;
 }
 
 /* BOX */
 
 .box{
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 3px 12px #ccc;
-    margin-bottom:30px;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 3px 12px #ccc;
+margin-bottom:30px;
 }
 
 .box h2{
-    color:#2e7d32;
-    margin-bottom:20px;
+color:#2e7d32;
+margin-bottom:20px;
 }
 
 /* FORM */
 
 .form-group{
-    margin-bottom:15px;
+margin-bottom:18px;
 }
 
 .form-group label{
-    display:block;
-    font-weight:bold;
-    margin-bottom:7px;
-    color:#333;
+display:block;
+font-weight:bold;
+margin-bottom:7px;
+color:#333;
 }
 
 .form-group input,
 .form-group textarea{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    font-size:16px;
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:16px;
 }
 
 .form-group textarea{
-    min-height:100px;
-    resize:vertical;
+min-height:100px;
+resize:vertical;
 }
 
+/* FILE */
+
+.file-box{
+background:#f1f8e9;
+padding:15px;
+border-radius:8px;
+border:2px dashed #66bb6a;
+}
+
+.file-box input{
+border:none;
+padding:8px 0;
+background:transparent;
+}
+
+/* BUTTON */
+
 .add-btn{
-    background:#2e7d32;
-    color:white;
-    border:none;
-    padding:13px 25px;
-    border-radius:6px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
+background:#2e7d32;
+color:white;
+border:none;
+padding:13px 28px;
+border-radius:6px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
 }
 
 .add-btn:hover{
-    background:#1b5e20;
+background:#1b5e20;
+}
+
+/* PREVIEW */
+
+.preview{
+margin-top:15px;
+display:none;
+}
+
+.preview img{
+width:250px;
+max-width:100%;
+height:160px;
+object-fit:cover;
+border-radius:8px;
+border:2px solid #ddd;
 }
 
 /* GALLERY */
 
 .gallery{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
 }
 
 .gallery-card{
-    background:white;
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 3px 10px #ccc;
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 3px 10px #ccc;
 }
 
 .gallery-card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-    display:block;
+width:100%;
+height:200px;
+object-fit:cover;
+display:block;
 }
 
 .gallery-content{
-    padding:15px;
+padding:15px;
 }
 
 .gallery-content h3{
-    color:#2e7d32;
-    margin-bottom:8px;
+color:#2e7d32;
+margin-bottom:8px;
 }
 
 .gallery-content p{
-    color:#555;
-    line-height:1.5;
-    margin-bottom:12px;
+color:#555;
+line-height:1.5;
+margin-bottom:12px;
 }
 
 .delete-btn{
-    background:#d32f2f;
-    color:white;
-    border:none;
-    padding:9px 15px;
-    border-radius:5px;
-    cursor:pointer;
-    font-weight:bold;
+background:#d32f2f;
+color:white;
+border:none;
+padding:9px 15px;
+border-radius:5px;
+cursor:pointer;
+font-weight:bold;
 }
 
 .delete-btn:hover{
-    background:#b71c1c;
+background:#b71c1c;
 }
 
 /* EMPTY */
 
 .empty{
-    text-align:center;
-    padding:30px;
-    color:#777;
+text-align:center;
+padding:30px;
+color:#777;
 }
 
-/* BACK BUTTON */
+/* BUTTONS */
 
 .buttons{
-    text-align:center;
-    margin-top:25px;
+text-align:center;
+margin-top:25px;
 }
 
 .buttons a{
-    display:inline-block;
-    text-decoration:none;
-    color:white;
-    background:#1b5e20;
-    padding:12px 22px;
-    border-radius:6px;
-    margin:5px;
-    font-weight:bold;
+display:inline-block;
+text-decoration:none;
+color:white;
+background:#1b5e20;
+padding:12px 22px;
+border-radius:6px;
+margin:5px;
+font-weight:bold;
 }
 
 .buttons a:hover{
-    background:#2e7d32;
+background:#2e7d32;
 }
 
 /* FOOTER */
 
 footer{
-    background:#1b5e20;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
+background:#1b5e20;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
 }
 
 footer h3{
-    margin-bottom:7px;
+margin-bottom:7px;
 }
 
 /* MOBILE */
 
 @media(max-width:600px){
 
-    header h1{
-        font-size:22px;
-    }
+header h1{
+font-size:22px;
+}
 
-    .container{
-        padding:10px;
-    }
+.container{
+padding:10px;
+}
 
-    .box{
-        padding:18px;
-    }
+.box{
+padding:18px;
+}
 
-    .gallery{
-        grid-template-columns:1fr;
-    }
+.gallery{
+grid-template-columns:1fr;
+}
 
 }
 
@@ -247,8 +280,6 @@ Bundelkhand Organic Farmer Producer Company Limited
 </header>
 
 
-<!-- MAIN -->
-
 <div class="container">
 
 
@@ -270,7 +301,7 @@ Photo Title
 <input
 type="text"
 id="photoTitle"
-placeholder="उदाहरण: किसान प्रशिक्षण कार्यक्रम"
+placeholder="उदाहरण: किसान FPO की श्रीनगर में शुरुआत"
 >
 
 </div>
@@ -293,19 +324,48 @@ placeholder="फोटो के बारे में जानकारी �
 <div class="form-group">
 
 <label>
-Photo URL
+📸 Choose Photo
 </label>
 
+<div class="file-box">
+
 <input
-type="text"
-id="photoUrl"
-placeholder="https://example.com/photo.jpg"
+type="file"
+id="photoFile"
+accept="image/*"
+onchange="previewPhoto()"
+>
+
+</div>
+
+</div>
+
+
+<!-- PREVIEW -->
+
+<div
+class="preview"
+id="previewBox"
+>
+
+<p>
+<b>Photo Preview:</b>
+</p>
+
+<img
+id="previewImage"
+src=""
+alt="Preview"
 >
 
 </div>
 
 
+<br>
+
+
 <button
+type="button"
 class="add-btn"
 onclick="addPhoto()"
 >
@@ -318,7 +378,7 @@ onclick="addPhoto()"
 </div>
 
 
-<!-- PHOTO LIST -->
+<!-- GALLERY LIST -->
 
 <div class="box">
 
@@ -404,6 +464,174 @@ JSON.parse(localStorage.getItem("gallery")) || [];
 
 
 /* =====================================
+   PREVIEW PHOTO
+===================================== */
+
+function previewPhoto(){
+
+let file =
+document.getElementById("photoFile").files[0];
+
+let previewBox =
+document.getElementById("previewBox");
+
+let previewImage =
+document.getElementById("previewImage");
+
+
+if(!file){
+
+previewBox.style.display="none";
+
+return;
+
+}
+
+
+if(!file.type.startsWith("image/")){
+
+alert("⚠️ कृपया केवल Image File चुनें।");
+
+document.getElementById("photoFile").value="";
+
+previewBox.style.display="none";
+
+return;
+
+}
+
+
+let reader =
+new FileReader();
+
+
+reader.onload=function(e){
+
+previewImage.src=e.target.result;
+
+previewBox.style.display="block";
+
+};
+
+
+reader.readAsDataURL(file);
+
+}
+
+
+/* =====================================
+   ADD PHOTO
+===================================== */
+
+function addPhoto(){
+
+let title =
+document.getElementById("photoTitle").value.trim();
+
+let description =
+document.getElementById("photoDescription").value.trim();
+
+let file =
+document.getElementById("photoFile").files[0];
+
+
+if(title===""){
+
+alert("⚠️ कृपया Photo Title लिखें।");
+
+return;
+
+}
+
+
+if(!file){
+
+alert("⚠️ कृपया पहले Photo चुनें।");
+
+return;
+
+}
+
+
+if(!file.type.startsWith("image/")){
+
+alert("⚠️ केवल Image File चुनें।");
+
+return;
+
+}
+
+
+/* FILE READER */
+
+let reader =
+new FileReader();
+
+
+reader.onload=function(e){
+
+let newPhoto={
+
+title:title,
+
+description:
+description || "Bundelkhand Organic Farmer Producer Company Limited",
+
+image:e.target.result,
+
+date:new Date().toLocaleDateString("en-IN")
+
+};
+
+
+gallery.push(newPhoto);
+
+
+try{
+
+localStorage.setItem(
+"gallery",
+JSON.stringify(gallery)
+);
+
+}
+
+catch(error){
+
+alert(
+"⚠️ फोटो बहुत बड़ी है। कृपया छोटी फोटो चुनें।"
+);
+
+return;
+
+}
+
+
+/* CLEAR FORM */
+
+document.getElementById("photoTitle").value="";
+
+document.getElementById("photoDescription").value="";
+
+document.getElementById("photoFile").value="";
+
+document.getElementById("previewBox").style.display="none";
+
+
+displayGallery();
+
+
+alert("✅ Photo Successfully Added!");
+
+};
+
+
+reader.readAsDataURL(file);
+
+}
+
+
+/* =====================================
    DISPLAY GALLERY
 ===================================== */
 
@@ -416,19 +644,19 @@ let empty =
 document.getElementById("emptyGallery");
 
 
-container.innerHTML = "";
+container.innerHTML="";
 
 
-if(gallery.length === 0){
+if(gallery.length===0){
 
-empty.style.display = "block";
+empty.style.display="block";
 
 return;
 
 }
 
 
-empty.style.display = "none";
+empty.style.display="none";
 
 
 gallery.forEach(function(item,index){
@@ -440,7 +668,6 @@ container.innerHTML += `
 <img
 src="${item.image}"
 alt="${item.title}"
-onerror="this.src='https://via.placeholder.com/500x300?text=Image+Not+Found'"
 >
 
 <div class="gallery-content">
@@ -469,80 +696,6 @@ onclick="deletePhoto(${index})"
 `;
 
 });
-
-}
-
-
-/* =====================================
-   ADD PHOTO
-===================================== */
-
-function addPhoto(){
-
-let title =
-document.getElementById("photoTitle").value.trim();
-
-let description =
-document.getElementById("photoDescription").value.trim();
-
-let image =
-document.getElementById("photoUrl").value.trim();
-
-
-if(title === ""){
-
-alert("⚠️ कृपया Photo Title लिखें।");
-
-return;
-
-}
-
-
-if(image === ""){
-
-alert("⚠️ कृपया Photo URL डालें।");
-
-return;
-
-}
-
-
-let newPhoto = {
-
-title:title,
-
-description:
-description || "Bundelkhand Organic Farmer Producer Company Limited",
-
-image:image,
-
-date:new Date().toLocaleDateString("en-IN")
-
-};
-
-
-gallery.push(newPhoto);
-
-
-localStorage.setItem(
-"gallery",
-JSON.stringify(gallery)
-);
-
-
-/* CLEAR FORM */
-
-document.getElementById("photoTitle").value = "";
-
-document.getElementById("photoDescription").value = "";
-
-document.getElementById("photoUrl").value = "";
-
-
-displayGallery();
-
-
-alert("✅ Photo Successfully Added!");
 
 }
 
