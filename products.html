@@ -1,751 +1,817 @@
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>Products | Bundelkhand Organic FPO</title>
+    <title>
+        Products | Bundelkhand Organic Farmer Producer Company Limited
+    </title>
 
-<style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+    <style>
 
-body{
-    background:#f4fff4;
-    color:#333;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* ================= HEADER ================= */
 
-header{
-    background:#1B5E20;
-    color:white;
-    padding:25px 15px;
-    text-align:center;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f8f4;
+            color: #222;
+        }
 
-header h1{
-    font-size:30px;
-    margin-bottom:8px;
-}
 
-header p{
-    font-size:16px;
-}
+        /* =========================
+           HEADER
+        ========================= */
 
-/* ================= NAVIGATION ================= */
+        header {
+            background: #166534;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
 
-nav{
-    background:#2E7D32;
-    padding:14px 10px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 9px;
-    font-weight:bold;
-    display:inline-block;
-}
+        header h1 {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
 
-nav a:hover{
-    color:#FFD54F;
-}
 
-/* ================= CART ================= */
+        header p {
+            margin: 5px;
+        }
 
-.cart-area{
-    background:#fff;
-    max-width:1100px;
-    margin:20px auto 0;
-    padding:12px 20px;
-    border-radius:10px;
-    box-shadow:0 0 8px #ccc;
-    text-align:right;
-}
 
-.cart-btn{
-    display:inline-block;
-    background:#FF8F00;
-    color:white;
-    padding:10px 18px;
-    border-radius:6px;
-    text-decoration:none;
-    font-weight:bold;
-}
+        /* =========================
+           NAVIGATION
+        ========================= */
 
-.cart-btn:hover{
-    background:#EF6C00;
-}
+        nav {
+            background: white;
+            padding: 15px;
+            text-align: center;
 
-/* ================= CONTAINER ================= */
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.10);
+        }
 
-.container{
-    max-width:1100px;
-    margin:25px auto;
-    padding:20px;
-}
 
-/* ================= SEARCH ================= */
+        nav a {
+            display: inline-block;
 
-.search-box{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 0 10px #ccc;
-    margin-bottom:25px;
-    text-align:center;
-}
+            text-decoration: none;
 
-#search{
-    width:80%;
-    padding:14px;
-    font-size:17px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    outline:none;
-}
+            color: #166534;
 
-#search:focus{
-    border-color:#2E7D32;
-}
+            font-weight: bold;
 
-/* ================= PRODUCT GRID ================= */
+            margin: 6px 10px;
+        }
 
-.products{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(240px,1fr));
-    gap:22px;
-}
 
-/* ================= PRODUCT CARD ================= */
+        nav a:hover {
+            color: #16a34a;
+        }
 
-.product-card{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 0 10px #ccc;
-    text-align:center;
-    transition:0.3s;
-    border-top:4px solid #2E7D32;
-}
 
-.product-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 5px 18px #aaa;
-}
+        /* =========================
+           MAIN
+        ========================= */
 
-.product-icon{
-    font-size:50px;
-    margin-bottom:10px;
-}
+        .container {
+            width: 94%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
 
-.product-card h2{
-    color:#2E7D32;
-    margin-bottom:12px;
-    font-size:22px;
-}
 
-.product-card p{
-    margin:8px 0;
-}
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-.category{
-    color:#555;
-}
 
-.price{
-    font-size:22px;
-    font-weight:bold;
-    color:#D84315;
-}
+        .page-title h2 {
+            color: #166534;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
 
-.stock{
-    color:#2E7D32;
-    font-weight:bold;
-}
 
-/* ================= BUTTONS ================= */
+        .page-title p {
+            color: #555;
+            line-height: 1.6;
+        }
 
-.button-group{
-    margin-top:15px;
-}
 
-.cart-btn-small{
-    display:inline-block;
-    background:#FF8F00;
-    color:white;
-    padding:10px 14px;
-    text-decoration:none;
-    border-radius:5px;
-    border:none;
-    cursor:pointer;
-    font-weight:bold;
-    margin:3px;
-}
+        /* =========================
+           PRODUCTS GRID
+        ========================= */
 
-.cart-btn-small:hover{
-    background:#EF6C00;
-}
+        .products-grid {
 
-.order-btn{
-    display:inline-block;
-    background:#2E7D32;
-    color:white;
-    padding:10px 14px;
-    text-decoration:none;
-    border-radius:5px;
-    font-weight:bold;
-    margin:3px;
-}
+            display: grid;
 
-.order-btn:hover{
-    background:#1B5E20;
-}
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
 
-/* ================= NO PRODUCT ================= */
+            gap: 25px;
 
-.no-product{
-    background:white;
-    padding:30px;
-    text-align:center;
-    border-radius:10px;
-    box-shadow:0 0 10px #ccc;
-    display:none;
-}
+        }
 
-.no-product h2{
-    color:#2E7D32;
-    margin-bottom:10px;
-}
 
-/* ================= MESSAGE ================= */
+        /* =========================
+           PRODUCT CARD
+        ========================= */
 
-.message{
-    position:fixed;
-    top:80px;
-    right:20px;
-    background:#2E7D32;
-    color:white;
-    padding:15px 20px;
-    border-radius:8px;
-    box-shadow:0 3px 10px #777;
-    display:none;
-    z-index:2000;
-}
+        .product-card {
 
-/* ================= FOOTER ================= */
+            background: white;
 
-footer{
-    background:#2E7D32;
-    color:white;
-    text-align:center;
-    padding:18px 10px;
-    margin-top:40px;
-}
+            border-radius: 12px;
 
-/* ================= MOBILE ================= */
+            overflow: hidden;
 
-@media(max-width:600px){
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.10);
 
-    header h1{
-        font-size:22px;
-    }
+            transition: 0.3s;
 
-    nav a{
-        margin:5px 3px;
-        font-size:14px;
-    }
+        }
 
-    #search{
-        width:100%;
-    }
 
-    .cart-area{
-        margin:15px 10px 0;
-    }
+        .product-card:hover {
 
-    .container{
-        padding:15px;
-    }
+            transform: translateY(-5px);
 
-    .product-card{
-        padding:18px;
-    }
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.15);
 
-}
+        }
 
-</style>
+
+        .product-card img {
+
+            width: 100%;
+
+            height: 210px;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+        .product-content {
+
+            padding: 18px;
+
+        }
+
+
+        .product-content h3 {
+
+            color: #166534;
+
+            font-size: 20px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .category {
+
+            display: inline-block;
+
+            background: #dcfce7;
+
+            color: #166534;
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            font-size: 13px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .description {
+
+            color: #666;
+
+            line-height: 1.5;
+
+            font-size: 14px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .price {
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            color: #15803d;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        /* =========================
+           BUY BUTTON
+        ========================= */
+
+        .buy-btn {
+
+            display: block;
+
+            width: 100%;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            background: #16a34a;
+
+            color: white;
+
+            padding: 12px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            border: none;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+        }
+
+
+        .buy-btn:hover {
+
+            background: #15803d;
+
+        }
+
+
+        /* =========================
+           BULK ORDER
+        ========================= */
+
+        .bulk-box {
+
+            margin-top: 40px;
+
+            background: white;
+
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 3px 12px rgba(0,0,0,0.08);
+
+        }
+
+
+        .bulk-box h2 {
+
+            color: #166534;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .bulk-box p {
+
+            color: #555;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .bulk-btn {
+
+            display: inline-block;
+
+            background: #2563eb;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 12px 22px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            margin-top: 50px;
+
+            background: #166534;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+        }
+
+
+        footer h3 {
+
+            margin-bottom: 8px;
+
+        }
+
+
+        footer p {
+
+            margin: 5px 0;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 21px;
+            }
+
+            .page-title h2 {
+                font-size: 25px;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px;
+            }
+
+        }
+
+    </style>
 
 </head>
+
 
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
-<h1>
-🌾 Bundelkhand Organic Farmer Producer Company Limited
-</h1>
+    <h1>
+        🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+    </h1>
 
-<p>
-Organic Products Directly From Farmers
-</p>
+    <p>
+        Bundelkhand Organic Farmer Producer Company Limited
+    </p>
+
+    <p>
+        स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+    </p>
 
 </header>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
-<a href="index.html">🏠 Home</a>
+    <a href="index.html">
+        🏠 Home
+    </a>
 
-<a href="about.html">🌿 About</a>
+    <a href="about.html">
+        🌿 About
+    </a>
 
-<a href="products.html">🛒 Products</a>
+    <a href="products.html">
+        🛒 Products
+    </a>
 
-<a href="farmers.html">👨‍🌾 Kisan Corner</a>
+    <a href="farmers.html">
+        👨‍🌾 Kisan Corner
+    </a>
 
-<a href="membership.html">📝 Join FPO</a>
+    <a href="membership.html">
+        📝 Join FPO
+    </a>
 
-<a href="bulk-order.html">📦 Bulk Order</a>
+    <a href="news.html">
+        📰 Agriculture News
+    </a>
 
-<a href="contact.html">📞 Contact</a>
+    <a href="bulk-order.html">
+        📦 Bulk Order
+    </a>
+
+    <a href="gallery.html">
+        🖼️ Gallery
+    </a>
+
+    <a href="contact.html">
+        📞 Contact
+    </a>
 
 </nav>
 
 
-<!-- ================= CART AREA ================= -->
-
-<div class="cart-area">
-
-<a href="cart.html" class="cart-btn">
-
-🛒 Cart
-
-<span id="cartCount">0</span>
-
-</a>
-
-</div>
-
-
-<!-- ================= MESSAGE ================= -->
-
-<div class="message" id="message">
-
-✅ Product added to cart!
-
-</div>
-
-
-<!-- ================= MAIN CONTAINER ================= -->
+<!-- =========================
+     MAIN
+========================= -->
 
 <div class="container">
 
 
-<!-- ================= SEARCH ================= -->
+    <div class="page-title">
 
-<div class="search-box">
+        <h2>
+            🛒 हमारे कृषि उत्पाद
+        </h2>
 
-<input
-type="text"
-id="search"
-placeholder="🔍 Search Organic Product..."
-onkeyup="searchProduct()"
->
+        <p>
+            किसानों द्वारा उत्पादित गुणवत्तापूर्ण
+            कृषि एवं जैविक उत्पाद
+        </p>
 
-</div>
+        <p>
+            Quality agricultural and organic products
+            directly from farmers.
+        </p>
 
+    </div>
 
-<!-- ================= PRODUCT AREA ================= -->
 
-<div
-class="products"
-id="productsContainer"
->
-</div>
+    <!-- =========================
+         PRODUCTS
+    ========================= -->
 
+    <div class="products-grid">
 
-<!-- ================= NO PRODUCT ================= -->
 
-<div
-class="no-product"
-id="noProduct"
->
+        <!-- PRODUCT 1 -->
 
-<h2>
-🌾 No Product Found
-</h2>
+        <div class="product-card">
 
-<p>
-अभी इस नाम का कोई Product उपलब्ध नहीं है।
-</p>
+            <img
+                src="images/wheat.jpg"
+                alt="Organic Wheat"
+                onerror="
+                this.src='https://via.placeholder.com/500x350?text=Organic+Wheat'
+                "
+            >
 
-</div>
+            <div class="product-content">
 
+                <span class="category">
+                    🌾 अनाज
+                </span>
 
-</div>
+                <h3>
+                    Organic Wheat
+                </h3>
 
+                <p class="description">
+                    शुद्ध एवं गुणवत्तापूर्ण जैविक गेहूँ।
+                </p>
 
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-© 2026 Bundelkhand Organic Farmer Producer Company Limited
-
-<br>
-
-🌾 Empowering Farmers • Promoting Organic Agriculture
-
-</footer>
-
-
-<script>
-
-/* =====================================================
-   LOAD PRODUCTS FROM ADMIN
-   ===================================================== */
-
-let products =
-JSON.parse(localStorage.getItem("products")) || [];
-
-
-/* =====================================================
-   LOAD CART
-   ===================================================== */
-
-let cart =
-JSON.parse(localStorage.getItem("cart")) || [];
-
-
-/* =====================================================
-   DISPLAY PRODUCTS
-   ===================================================== */
-
-displayProducts();
-
-
-/* =====================================================
-   UPDATE CART COUNT
-   ===================================================== */
-
-updateCartCount();
-
-
-function updateCartCount(){
-
-    let totalQuantity = 0;
-
-    cart.forEach(function(item){
-
-        totalQuantity += Number(item.quantity) || 0;
-
-    });
-
-    document.getElementById("cartCount").textContent =
-    totalQuantity;
-
-}
-
-
-/* =====================================================
-   DISPLAY PRODUCT CARDS
-   ===================================================== */
-
-function displayProducts(){
-
-    let container =
-    document.getElementById("productsContainer");
-
-    let noProduct =
-    document.getElementById("noProduct");
-
-
-    container.innerHTML = "";
-
-
-    if(products.length === 0){
-
-        noProduct.style.display = "block";
-
-        return;
-
-    }
-
-
-    noProduct.style.display = "none";
-
-
-    products.forEach(function(product,index){
-
-        let stock =
-        Number(product.stock) || 0;
-
-
-        let stockText =
-        stock > 0
-        ? "📦 Stock: " + stock
-        : "❌ Out of Stock";
-
-
-        let buttonDisabled =
-        stock <= 0
-        ? "disabled"
-        : "";
-
-
-        container.innerHTML += `
-
-        <div
-        class="product-card"
-        data-name="${product.name || ""}"
-        data-category="${product.category || ""}"
-        >
-
-            <div class="product-icon">
-                🌾
-            </div>
-
-
-            <h2>
-                ${product.name || "Product"}
-            </h2>
-
-
-            <p class="category">
-                <b>Category:</b>
-                ${product.category || "Organic Product"}
-            </p>
-
-
-            <p class="price">
-                ₹ ${product.price || 0}
-            </p>
-
-
-            <p class="stock">
-                ${stockText}
-            </p>
-
-
-            <div class="button-group">
-
-
-                <button
-                class="cart-btn-small"
-                onclick="addToCart(${index})"
-                ${buttonDisabled}
-                >
-
-                🛒 Add To Cart
-
-                </button>
-
+                <div class="price">
+                    ₹40 / Kg
+                </div>
 
                 <a
-                href="bulk-order.html"
-                class="order-btn"
-                >
+                    href="payment.html?product=Organic%20Wheat&price=40"
+                    class="buy-btn">
 
-                📦 Order
+                    🛒 Buy Now
 
                 </a>
-
 
             </div>
 
         </div>
 
-        `;
 
-    });
+        <!-- PRODUCT 2 -->
 
-}
+        <div class="product-card">
 
+            <img
+                src="images/chana.jpg"
+                alt="Organic Chickpea"
+                onerror="
+                this.src='https://via.placeholder.com/500x350?text=Organic+Chickpea'
+                "
+            >
 
-/* =====================================================
-   ADD PRODUCT TO CART
-   ===================================================== */
+            <div class="product-content">
 
-function addToCart(index){
+                <span class="category">
+                    🌱 दाल
+                </span>
 
-    let product = products[index];
+                <h3>
+                    Organic Chickpea
+                </h3>
 
+                <p class="description">
+                    साफ एवं उच्च गुणवत्ता वाला देशी चना।
+                </p>
 
-    if(!product){
+                <div class="price">
+                    ₹80 / Kg
+                </div>
 
-        return;
+                <a
+                    href="payment.html?product=Organic%20Chickpea&price=80"
+                    class="buy-btn">
 
-    }
+                    🛒 Buy Now
 
+                </a>
 
-    let stock =
-    Number(product.stock) || 0;
+            </div>
 
+        </div>
 
-    if(stock <= 0){
 
-        showMessage("❌ Product is out of stock!");
+        <!-- PRODUCT 3 -->
 
-        return;
+        <div class="product-card">
 
-    }
+            <img
+                src="images/mustard.jpg"
+                alt="Organic Mustard"
+                onerror="
+                this.src='https://via.placeholder.com/500x350?text=Organic+Mustard'
+                "
+            >
 
+            <div class="product-content">
 
-    let existing =
-    cart.find(function(item){
+                <span class="category">
+                    🌱 तिलहन
+                </span>
 
-        return item.name === product.name;
+                <h3>
+                    Organic Mustard
+                </h3>
 
-    });
+                <p class="description">
+                    शुद्ध एवं प्राकृतिक सरसों।
+                </p>
 
+                <div class="price">
+                    ₹70 / Kg
+                </div>
 
-    if(existing){
+                <a
+                    href="payment.html?product=Organic%20Mustard&price=70"
+                    class="buy-btn">
 
-        if(existing.quantity < stock){
+                    🛒 Buy Now
 
-            existing.quantity++;
+                </a>
 
-        }
-        else{
+            </div>
 
-            showMessage(
-            "⚠️ Available stock limit reached!"
-            );
+        </div>
 
-            return;
 
-        }
+        <!-- PRODUCT 4 -->
 
-    }
+        <div class="product-card">
 
-    else{
+            <img
+                src="images/sesame.jpg"
+                alt="Organic Sesame"
+                onerror="
+                this.src='https://via.placeholder.com/500x350?text=Organic+Sesame'
+                "
+            >
 
-        cart.push({
+            <div class="product-content">
 
-            name: product.name,
+                <span class="category">
+                    🌱 तिलहन
+                </span>
 
-            category: product.category,
+                <h3>
+                    Organic Sesame
+                </h3>
 
-            price: Number(product.price) || 0,
+                <p class="description">
+                    बुंदेलखंड का उच्च गुणवत्ता वाला तिल।
+                </p>
 
-            quantity: 1,
+                <div class="price">
+                    ₹150 / Kg
+                </div>
 
-            stock: stock
+                <a
+                    href="payment.html?product=Organic%20Sesame&price=150"
+                    class="buy-btn">
 
-        });
+                    🛒 Buy Now
 
-    }
+                </a>
 
+            </div>
 
-    localStorage.setItem(
-        "cart",
-        JSON.stringify(cart)
-    );
+        </div>
 
 
-    updateCartCount();
+        <!-- PRODUCT 5 -->
 
+        <div class="product-card">
 
-    showMessage(
-        "✅ " + product.name +
-        " cart में जोड़ दिया गया!"
-    );
+            <img
+                src="images/peanut.jpg"
+                alt="Organic Peanut"
+                onerror="
+                this.src='https://via.placeholder.com/500x350?text=Organic+Peanut'
+                "
+            >
 
-}
+            <div class="product-content">
 
+                <span class="category">
+                    🥜 तिलहन
+                </span>
 
-/* =====================================================
-   SEARCH PRODUCT
-   ===================================================== */
+                <h3>
+                    Organic Peanut
+                </h3>
 
-function searchProduct(){
+                <p class="description">
+                    प्राकृतिक एवं गुणवत्तापूर्ण मूंगफली।
+                </p>
 
-    let search =
-    document.getElementById("search")
-    .value
-    .toLowerCase()
-    .trim();
+                <div class="price">
+                    ₹100 / Kg
+                </div>
 
+                <a
+                    href="payment.html?product=Organic%20Peanut&price=100"
+                    class="buy-btn">
 
-    let cards =
-    document.querySelectorAll(".product-card");
+                    🛒 Buy Now
 
+                </a>
 
-    let found = false;
+            </div>
 
+        </div>
 
-    cards.forEach(function(card){
 
-        let text =
-        card.textContent.toLowerCase();
+        <!-- PRODUCT 6 -->
 
+        <div class="product-card">
 
-        if(text.includes(search)){
+            <img
+                src="images/arhar.jpg"
+                alt="Organic Pigeon Pea"
+                onerror="
+                this.src='https://via.placeholder.com/500x350?text=Organic+Pigeon+Pea'
+                "
+            >
 
-            card.style.display = "block";
+            <div class="product-content">
 
-            found = true;
+                <span class="category">
+                    🌱 दाल
+                </span>
 
-        }
+                <h3>
+                    Organic Pigeon Pea
+                </h3>
 
-        else{
+                <p class="description">
+                    उच्च गुणवत्ता की अरहर दाल।
+                </p>
 
-            card.style.display = "none";
+                <div class="price">
+                    ₹120 / Kg
+                </div>
 
-        }
+                <a
+                    href="payment.html?product=Organic%20Pigeon%20Pea&price=120"
+                    class="buy-btn">
 
-    });
+                    🛒 Buy Now
 
+                </a>
 
-    document.getElementById("noProduct").style.display =
-    found ? "none" : "block";
+            </div>
 
-}
+        </div>
 
 
-/* =====================================================
-   SHOW MESSAGE
-   ===================================================== */
+    </div>
 
-function showMessage(text){
 
-    let message =
-    document.getElementById("message");
+    <!-- =========================
+         BULK ORDER
+    ========================= -->
 
+    <div class="bulk-box">
 
-    message.textContent = text;
+        <h2>
+            📦 Bulk Order
+        </h2>
 
-    message.style.display = "block";
+        <p>
+            अधिक मात्रा में उत्पाद खरीदने के लिए
+            Bulk Order Inquiry भेजें।
+        </p>
 
+        <a
+            href="bulk-order.html"
+            class="bulk-btn">
 
-    setTimeout(function(){
+            📦 Bulk Order करें
 
-        message.style.display = "none";
+        </a>
 
-    },2500);
+    </div>
 
-}
 
-</script>
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h3>
+        🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+    </h3>
+
+    <p>
+        Bundelkhand Organic Farmer Producer Company Limited
+    </p>
+
+    <p>
+        Empowering Farmers • Promoting Organic Agriculture
+    </p>
+
+    <p>
+        © 2026 All Rights Reserved
+    </p>
+
+</footer>
 
 
 </body>
