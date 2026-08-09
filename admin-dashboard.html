@@ -24,9 +24,10 @@ background:#f4fff4;
 color:#333;
 }
 
-/* =================================
+
+/* ==============================
    SIDEBAR
-================================= */
+============================== */
 
 .sidebar{
 
@@ -42,13 +43,11 @@ background:#1B5E20;
 
 color:white;
 
-padding-top:20px;
-
 z-index:1000;
 
-transition:0.3s;
-
 overflow-y:auto;
+
+transition:0.3s;
 
 }
 
@@ -56,7 +55,7 @@ overflow-y:auto;
 
 text-align:center;
 
-padding:10px 15px 25px;
+padding:20px 12px;
 
 border-bottom:1px solid rgba(255,255,255,0.2);
 
@@ -72,9 +71,11 @@ line-height:1.4;
 
 .sidebar-logo p{
 
-font-size:12px;
+font-size:13px;
 
-margin-top:5px;
+margin-top:6px;
+
+color:#dcedc8;
 
 }
 
@@ -95,15 +96,13 @@ color:white;
 
 text-decoration:none;
 
-padding:14px 15px;
+padding:13px 15px;
 
 margin:5px 0;
 
 border-radius:6px;
 
 font-weight:bold;
-
-transition:0.2s;
 
 }
 
@@ -115,7 +114,7 @@ background:#2E7D32;
 
 .menu a.active{
 
-background:#2E7D32;
+background:#388E3C;
 
 }
 
@@ -127,8 +126,6 @@ background:#2E7D32;
 padding:15px;
 
 border-top:1px solid rgba(255,255,255,0.2);
-
-margin-top:10px;
 
 }
 
@@ -161,9 +158,9 @@ background:#B71C1C;
 }
 
 
-/* =================================
+/* ==============================
    MAIN
-================================= */
+============================== */
 
 .main{
 
@@ -174,9 +171,9 @@ min-height:100vh;
 }
 
 
-/* =================================
+/* ==============================
    TOP HEADER
-================================= */
+============================== */
 
 .top-header{
 
@@ -188,9 +185,9 @@ padding:18px 25px;
 
 display:flex;
 
-justify-content:space-between;
-
 align-items:center;
+
+justify-content:space-between;
 
 box-shadow:0 2px 5px #aaa;
 
@@ -198,7 +195,7 @@ box-shadow:0 2px 5px #aaa;
 
 .top-header h1{
 
-font-size:24px;
+font-size:25px;
 
 }
 
@@ -209,7 +206,7 @@ font-weight:bold;
 }
 
 
-/* MOBILE MENU BUTTON */
+/* MENU BUTTON */
 
 .menu-btn{
 
@@ -221,35 +218,33 @@ color:white;
 
 border:none;
 
-padding:9px 12px;
-
-font-size:20px;
+padding:8px 12px;
 
 border-radius:5px;
+
+font-size:20px;
 
 cursor:pointer;
 
 }
 
 
-/* =================================
-   CONTAINER
-================================= */
+/* ==============================
+   CONTENT
+============================== */
 
 .container{
 
 max-width:1200px;
 
-margin:0 auto;
+margin:auto;
 
 padding:25px;
 
 }
 
 
-/* =================================
-   WELCOME
-================================= */
+/* WELCOME */
 
 .welcome{
 
@@ -273,10 +268,16 @@ margin-bottom:10px;
 
 }
 
+.welcome p{
 
-/* =================================
-   DASHBOARD CARDS
-================================= */
+line-height:1.7;
+
+}
+
+
+/* ==============================
+   CARDS
+============================== */
 
 .cards{
 
@@ -318,9 +319,9 @@ box-shadow:0 5px 15px #bbb;
 
 color:#2E7D32;
 
-margin-bottom:10px;
-
 font-size:21px;
+
+margin-bottom:10px;
 
 }
 
@@ -356,9 +357,6 @@ color:#2E7D32;
 
 }
 
-
-/* CARD BUTTON */
-
 .card a{
 
 display:inline-block;
@@ -384,9 +382,9 @@ background:#1B5E20;
 }
 
 
-/* =================================
+/* ==============================
    FOOTER
-================================= */
+============================== */
 
 footer{
 
@@ -400,12 +398,14 @@ padding:15px;
 
 margin-top:40px;
 
+line-height:1.7;
+
 }
 
 
-/* =================================
-   MOBILE OVERLAY
-================================= */
+/* ==============================
+   OVERLAY
+============================== */
 
 .overlay{
 
@@ -413,8 +413,8 @@ display:none;
 
 position:fixed;
 
-top:0;
 left:0;
+top:0;
 
 width:100%;
 height:100%;
@@ -426,9 +426,9 @@ z-index:900;
 }
 
 
-/* =================================
+/* ==============================
    MOBILE
-================================= */
+============================== */
 
 @media(max-width:800px){
 
@@ -456,6 +456,12 @@ display:block;
 
 }
 
+.overlay.show{
+
+display:block;
+
+}
+
 .top-header{
 
 padding:15px;
@@ -474,12 +480,6 @@ font-size:13px;
 
 }
 
-.overlay.show{
-
-display:block;
-
-}
-
 .container{
 
 padding:15px;
@@ -489,21 +489,19 @@ padding:15px;
 }
 
 
-/* =================================
-   SMALL MOBILE
-================================= */
+/* SMALL MOBILE */
 
 @media(max-width:500px){
-
-.top-header h1{
-
-font-size:17px;
-
-}
 
 .admin-name{
 
 display:none;
+
+}
+
+.top-header h1{
+
+font-size:17px;
 
 }
 
@@ -524,16 +522,23 @@ padding:20px;
 
 
 <!-- =================================
-     ADMIN LOGIN CHECK
+     ADMIN SECURITY CHECK
 ================================= -->
 
 <script>
 
-if(localStorage.getItem("user") !== "admin"){
+(function(){
 
-window.location.href="login.html";
+    const user =
+    localStorage.getItem("user");
 
-}
+    if(user !== "admin"){
+
+        window.location.replace("login.html");
+
+    }
+
+})();
 
 </script>
 
@@ -568,81 +573,63 @@ Admin Control Panel
 href="admin-dashboard.html"
 class="active"
 >
-
 🏠 Dashboard
-
 </a>
 
 
 <a
 href="farmers-list.html"
 >
-
 👨‍🌾 Farmers
-
 </a>
 
 
 <a
 href="membership-requests.html"
 >
-
 📝 Membership Requests
-
 </a>
 
 
 <a
 href="manage-products.html"
 >
-
 📦 Manage Products
-
 </a>
 
 
 <a
 href="orders.html"
 >
-
 🛒 Orders
-
 </a>
 
 
 <a
 href="admin-news.html"
 >
-
 📰 Agriculture News
-
 </a>
 
 
 <a
 href="gallery.html"
 >
-
 🖼️ Gallery
-
 </a>
 
 
 <a
 href="#"
 >
-
 📊 Reports
-
 </a>
 
 
 <a
 href="#"
 >
-
 ⚙️ Settings
-
 </a>
 
 
@@ -654,9 +641,7 @@ href="#"
 <button
 onclick="logout()"
 >
-
 🚪 Logout
-
 </button>
 
 </div>
@@ -666,7 +651,7 @@ onclick="logout()"
 
 
 <!-- =================================
-     OVERLAY
+     MOBILE OVERLAY
 ================================= -->
 
 <div
@@ -683,8 +668,6 @@ onclick="closeSidebar()"
 <div class="main">
 
 
-<!-- TOP HEADER -->
-
 <header class="top-header">
 
 
@@ -692,9 +675,7 @@ onclick="closeSidebar()"
 class="menu-btn"
 onclick="toggleSidebar()"
 >
-
 ☰
-
 </button>
 
 
@@ -704,16 +685,12 @@ onclick="toggleSidebar()"
 
 
 <div class="admin-name">
-
 Welcome Admin 👋
-
 </div>
 
 
 </header>
 
-
-<!-- CONTENT -->
 
 <div class="container">
 
@@ -728,16 +705,20 @@ Welcome Admin 👋
 
 <p>
 
-यह Bundelkhand Organic Farmer Producer Company Limited का
-Admin Control Panel है। यहाँ से आप Farmers, Products,
-Orders, News और Website को Manage कर सकते हैं।
+यह Bundelkhand Organic Farmer Producer Company Limited
+का Admin Control Panel है।
+
+यहाँ से आप Farmers, Membership, Products, Orders,
+Agriculture News और Website को Manage कर सकते हैं।
 
 </p>
 
 </div>
 
 
-<!-- CARDS -->
+<!-- ==============================
+     DASHBOARD CARDS
+============================== -->
 
 <div class="cards">
 
@@ -762,9 +743,7 @@ id="totalFarmers"
 </div>
 
 <a href="farmers-list.html">
-
 Open
-
 </a>
 
 </div>
@@ -790,9 +769,7 @@ id="totalMembership"
 </div>
 
 <a href="membership-requests.html">
-
 Open
-
 </a>
 
 </div>
@@ -818,9 +795,7 @@ id="totalProducts"
 </div>
 
 <a href="manage-products.html">
-
 Open
-
 </a>
 
 </div>
@@ -848,22 +823,18 @@ Customer Orders देखें।
 
 </div>
 
-
 <div class="count pending">
 
-🟡 New Orders:
+🆕 New Orders:
 
-<span id="pendingOrders">
+<span id="newOrders">
 0
 </span>
 
 </div>
 
-
 <a href="orders.html">
-
 Open
-
 </a>
 
 </div>
@@ -882,9 +853,7 @@ Open
 </p>
 
 <a href="admin-news.html">
-
 Open
-
 </a>
 
 </div>
@@ -903,9 +872,7 @@ Open
 </p>
 
 <a href="gallery.html">
-
 Open
-
 </a>
 
 </div>
@@ -924,9 +891,7 @@ FPO Reports और Statistics।
 </p>
 
 <a href="#">
-
 Open
-
 </a>
 
 </div>
@@ -945,9 +910,7 @@ Website Settings।
 </p>
 
 <a href="#">
-
 Open
-
 </a>
 
 </div>
@@ -997,7 +960,7 @@ products.length;
 
 
 /* ======================================
-   ORDERS COUNT
+   ORDERS
 ====================================== */
 
 let orders =
@@ -1031,14 +994,14 @@ return (
 
 
 document.getElementById(
-"pendingOrders"
+"newOrders"
 ).textContent =
 
 newOrders;
 
 
 /* ======================================
-   MEMBERSHIP DATA
+   MEMBERS
 ====================================== */
 
 let members =
@@ -1048,9 +1011,7 @@ localStorage.getItem("members")
 ) || [];
 
 
-/* ======================================
-   APPROVED FARMERS
-====================================== */
+/* APPROVED FARMERS */
 
 let approvedFarmers =
 
@@ -1068,9 +1029,7 @@ document.getElementById(
 approvedFarmers;
 
 
-/* ======================================
-   PENDING MEMBERSHIP
-====================================== */
+/* PENDING MEMBERS */
 
 let pendingMembers =
 
@@ -1092,7 +1051,7 @@ pendingMembers;
 
 
 /* ======================================
-   SIDEBAR OPEN
+   MOBILE SIDEBAR
 ====================================== */
 
 function toggleSidebar(){
@@ -1101,7 +1060,6 @@ document.getElementById(
 "sidebar"
 ).classList.toggle("show");
 
-
 document.getElementById(
 "overlay"
 ).classList.toggle("show");
@@ -1109,16 +1067,11 @@ document.getElementById(
 }
 
 
-/* ======================================
-   SIDEBAR CLOSE
-====================================== */
-
 function closeSidebar(){
 
 document.getElementById(
 "sidebar"
 ).classList.remove("show");
-
 
 document.getElementById(
 "overlay"
@@ -1133,12 +1086,39 @@ document.getElementById(
 
 function logout(){
 
-localStorage.removeItem("user");
+    // Remove Admin Login
+    localStorage.removeItem("user");
 
-window.location.href =
-"login.html";
+    // Remove dashboard from browser history
+    window.location.replace("login.html");
 
 }
+
+
+/* ======================================
+   BACK BUTTON PROTECTION
+====================================== */
+
+window.addEventListener(
+"pageshow",
+function(event){
+
+    if(event.persisted){
+
+        if(
+        localStorage.getItem("user")
+        !== "admin"
+        ){
+
+            window.location.replace(
+            "login.html"
+            );
+
+        }
+
+    }
+
+});
 
 </script>
 
