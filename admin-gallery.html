@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Admin Gallery | Bundelkhand Organic Farmer Producer Company Limited</title>
@@ -35,6 +38,10 @@ header h1{
 header h2{
     font-size:21px;
     margin-bottom:8px;
+}
+
+header p{
+    font-size:16px;
 }
 
 nav{
@@ -72,6 +79,7 @@ nav a:hover{
 .title h2{
     color:#1b5e20;
     font-size:30px;
+    margin-bottom:8px;
 }
 
 .form-box{
@@ -108,13 +116,24 @@ textarea{
     resize:vertical;
 }
 
-button{
-    border:none;
+/* FILE INPUT */
+
+input[type="file"]{
+    background:#f8fff8;
     cursor:pointer;
-    padding:12px 20px;
-    border-radius:6px;
-    font-weight:bold;
-    font-size:16px;
+}
+
+.preview{
+    margin-top:15px;
+    display:none;
+    text-align:center;
+}
+
+.preview img{
+    max-width:300px;
+    max-height:220px;
+    border-radius:10px;
+    border:2px solid #ddd;
 }
 
 .add-btn{
@@ -129,7 +148,10 @@ button{
 
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(270px,1fr)
+    );
     gap:25px;
 }
 
@@ -144,6 +166,7 @@ button{
     width:100%;
     height:210px;
     object-fit:cover;
+    display:block;
 }
 
 .card-content{
@@ -178,6 +201,11 @@ button{
     box-shadow:0 3px 10px #ccc;
 }
 
+.empty h3{
+    color:#1b5e20;
+    margin-bottom:10px;
+}
+
 .home-btn{
     display:inline-block;
     background:#1565c0;
@@ -194,6 +222,10 @@ footer{
     text-align:center;
     padding:25px;
     margin-top:40px;
+}
+
+footer h3{
+    margin-bottom:8px;
 }
 
 @media(max-width:600px){
@@ -213,9 +245,13 @@ footer{
 }
 
 </style>
+
 </head>
 
 <body>
+
+
+<!-- HEADER -->
 
 <header>
 
@@ -234,37 +270,51 @@ Bundelkhand Organic Farmer Producer Company Limited
 </header>
 
 
+<!-- NAVIGATION -->
+
 <nav>
 
-<a href="admin-dashboard.html">📊 Dashboard</a>
+<a href="admin-dashboard.html">
+📊 Dashboard
+</a>
 
-<a href="index.html">🏠 Home</a>
+<a href="index.html">
+🏠 Home
+</a>
 
-<a href="gallery.html">🖼️ View Gallery</a>
-
-<a href="admin-gallery.html">⚙️ Gallery Management</a>
+<a href="gallery.html">
+🖼️ View Gallery
+</a>
 
 </nav>
 
 
 <div class="container">
 
+
+<!-- TITLE -->
+
 <div class="title">
 
-<h2>🖼️ Gallery Management</h2>
+<h2>
+🖼️ Gallery Management
+</h2>
 
 <p>
-Admin Panel से Gallery Photo Add और Delete करें
+Computer से Photo चुनकर Gallery में Add करें
 </p>
 
 </div>
 
 
-<!-- ADD PHOTO -->
+<!-- ADD PHOTO FORM -->
 
 <div class="form-box">
 
-<h3>➕ Add Gallery Photo</h3>
+<h3>
+➕ Add Gallery Photo
+</h3>
+
 
 <label>
 Photo Title
@@ -288,21 +338,39 @@ placeholder="फोटो के बारे में जानकारी �
 
 
 <label>
-Photo URL
+📁 Choose Photo
 </label>
 
 <input
-type="text"
-id="photoURL"
-placeholder="https://example.com/photo.jpg"
+type="file"
+id="photoFile"
+accept="image/*"
 >
+
+
+<!-- PHOTO PREVIEW -->
+
+<div
+class="preview"
+id="previewBox"
+>
+
+<img
+id="previewImage"
+alt="Photo Preview"
+>
+
+</div>
 
 
 <button
+type="button"
 class="add-btn"
 onclick="addPhoto()"
 >
+
 ➕ Add Photo
+
 </button>
 
 </div>
@@ -310,9 +378,14 @@ onclick="addPhoto()"
 
 <!-- GALLERY LIST -->
 
-<h2 style="color:#1b5e20;margin-bottom:20px;">
-🖼️ Gallery Photos
+<h2
+style="color:#1b5e20;margin-bottom:20px;"
+>
+
+🖼️ Added Gallery Photos
+
 </h2>
+
 
 <div
 class="gallery"
@@ -320,6 +393,8 @@ id="galleryList"
 >
 </div>
 
+
+<!-- EMPTY -->
 
 <div
 class="empty"
@@ -332,25 +407,34 @@ style="display:none;"
 </h3>
 
 <p>
-ऊपर से Photo Add करें।
+ऊपर से अपने Computer से Photo चुनें।
 </p>
 
 </div>
 
 
-<div style="text-align:center;">
+<!-- PUBLIC GALLERY -->
+
+<div
+style="text-align:center;"
+>
 
 <a
 href="gallery.html"
 class="home-btn"
 >
+
 🖼️ View Public Gallery
+
 </a>
 
 </div>
 
+
 </div>
 
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -363,6 +447,10 @@ Bundelkhand Organic Farmer Producer Company Limited
 </p>
 
 <p>
+Empowering Farmers • Promoting Organic Agriculture
+</p>
+
+<p>
 © 2026 All Rights Reserved
 </p>
 
@@ -371,49 +459,134 @@ Bundelkhand Organic Farmer Producer Company Limited
 
 <script>
 
-/* =====================================
+/* ==========================================
    GALLERY DATA
-===================================== */
+========================================== */
 
 let gallery =
-JSON.parse(localStorage.getItem("gallery")) || [];
+JSON.parse(
+localStorage.getItem("gallery")
+) || [];
 
 
-/* =====================================
+/* ==========================================
+   SELECT PHOTO
+========================================== */
+
+document
+.getElementById("photoFile")
+.addEventListener(
+"change",
+function(){
+
+let file = this.files[0];
+
+if(!file){
+    return;
+}
+
+if(!file.type.startsWith("image/")){
+
+    alert("कृपया केवल Image File चुनें।");
+
+    this.value="";
+
+    return;
+}
+
+
+/* PREVIEW */
+
+let reader =
+new FileReader();
+
+reader.onload =
+function(event){
+
+document
+.getElementById("previewImage")
+.src =
+event.target.result;
+
+document
+.getElementById("previewBox")
+.style.display =
+"block";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+
+/* ==========================================
    ADD PHOTO
-===================================== */
+========================================== */
 
 function addPhoto(){
 
 let title =
-document.getElementById("photoTitle").value.trim();
+document
+.getElementById("photoTitle")
+.value
+.trim();
 
 let description =
-document.getElementById("photoDescription").value.trim();
+document
+.getElementById("photoDescription")
+.value
+.trim();
 
-let image =
-document.getElementById("photoURL").value.trim();
+let file =
+document
+.getElementById("photoFile")
+.files[0];
 
 
 if(title === ""){
 
-alert("कृपया Photo Title लिखें।");
+alert(
+"कृपया Photo Title लिखें।"
+);
 
 return;
 
 }
 
 
-if(image === ""){
+if(!file){
 
-alert("कृपया Photo URL डालें।");
+alert(
+"कृपया पहले Computer से Photo चुनें।"
+);
 
 return;
 
 }
 
 
-/* NEW PHOTO */
+/* CHECK IMAGE */
+
+if(!file.type.startsWith("image/")){
+
+alert(
+"कृपया केवल Image File चुनें।"
+);
+
+return;
+
+}
+
+
+/* FILE READER */
+
+let reader =
+new FileReader();
+
+
+reader.onload =
+function(event){
 
 let newPhoto = {
 
@@ -423,14 +596,15 @@ title:title,
 
 description:description,
 
-image:image,
+image:event.target.result,
 
-date:new Date().toLocaleDateString("en-IN")
+date:new Date()
+.toLocaleDateString("en-IN")
 
 };
 
 
-/* ADD TO ARRAY */
+/* ADD */
 
 gallery.push(newPhoto);
 
@@ -445,11 +619,22 @@ JSON.stringify(gallery)
 
 /* CLEAR FORM */
 
-document.getElementById("photoTitle").value="";
+document
+.getElementById("photoTitle")
+.value="";
 
-document.getElementById("photoDescription").value="";
+document
+.getElementById("photoDescription")
+.value="";
 
-document.getElementById("photoURL").value="";
+document
+.getElementById("photoFile")
+.value="";
+
+
+document
+.getElementById("previewBox")
+.style.display="none";
 
 
 /* REFRESH */
@@ -457,22 +642,34 @@ document.getElementById("photoURL").value="";
 displayGallery();
 
 
-alert("✅ Photo सफलतापूर्वक Add हो गई।");
+alert(
+"✅ Photo सफलतापूर्वक Gallery में Add हो गई।"
+);
+
+};
+
+
+/* READ FILE */
+
+reader.readAsDataURL(file);
 
 }
 
 
-/* =====================================
-   DISPLAY PHOTOS
-===================================== */
+/* ==========================================
+   DISPLAY GALLERY
+========================================== */
 
 function displayGallery(){
 
 let container =
-document.getElementById("galleryList");
+document
+.getElementById("galleryList");
 
 let empty =
-document.getElementById("emptyMessage");
+document
+.getElementById("emptyMessage");
+
 
 container.innerHTML="";
 
@@ -489,7 +686,8 @@ return;
 empty.style.display="none";
 
 
-gallery.forEach(function(photo,index){
+gallery.forEach(
+function(photo,index){
 
 container.innerHTML += `
 
@@ -498,7 +696,6 @@ container.innerHTML += `
 <img
 src="${photo.image}"
 alt="${photo.title}"
-onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'"
 >
 
 <div class="card-content">
@@ -508,7 +705,7 @@ onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'"
 </h3>
 
 <p>
-${photo.description}
+${photo.description || ""}
 </p>
 
 <p>
@@ -519,7 +716,9 @@ ${photo.description}
 class="delete-btn"
 onclick="deletePhoto(${index})"
 >
+
 🗑️ Delete
+
 </button>
 
 </div>
@@ -533,39 +732,56 @@ onclick="deletePhoto(${index})"
 }
 
 
-/* =====================================
+/* ==========================================
    DELETE PHOTO
-===================================== */
+========================================== */
 
 function deletePhoto(index){
 
-if(
-confirm("क्या आप यह Photo Delete करना चाहते हैं?")
-){
+let confirmDelete =
+confirm(
+"क्या आप यह Photo Delete करना चाहते हैं?"
+);
 
-gallery.splice(index,1);
+
+if(!confirmDelete){
+
+return;
+
+}
+
+
+gallery.splice(
+index,
+1
+);
+
 
 localStorage.setItem(
 "gallery",
 JSON.stringify(gallery)
 );
 
+
 displayGallery();
 
-alert("🗑️ Photo Delete हो गई।");
+
+alert(
+"🗑️ Photo Delete हो गई।"
+);
 
 }
 
-}
 
-
-/* =====================================
+/* ==========================================
    START
-===================================== */
+========================================== */
 
 displayGallery();
 
 </script>
 
+
 </body>
+
 </html>
