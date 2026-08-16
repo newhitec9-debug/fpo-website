@@ -1,64 +1,51 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="hi">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Checkout | Bundelkhand Organic FPO</title>
 
 <style>
-
 *{
-    margin:0;
-    padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f4fff4;
-    color:#333;
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f7f4;
+    color:#222;
 }
 
-/* HEADER */
-
 header{
-    background:#1B5E20;
+    background:#176b35;
     color:white;
+    padding:20px;
     text-align:center;
-    padding:25px 15px;
 }
 
 header h1{
-    font-size:30px;
-    margin-bottom:8px;
+    margin:0 0 5px;
+    font-size:28px;
 }
 
-/* NAVIGATION */
+header p{
+    margin:5px 0;
+}
 
 nav{
-    background:#2E7D32;
-    padding:14px 10px;
+    background:#0f4f28;
+    padding:12px;
     text-align:center;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin:0 9px;
+    margin:0 8px;
     font-weight:bold;
-    display:inline-block;
 }
-
-nav a:hover{
-    color:#FFD54F;
-}
-
-/* MAIN */
 
 .container{
     max-width:1000px;
@@ -66,824 +53,584 @@ nav a:hover{
     padding:20px;
 }
 
-/* TITLE */
-
-.page-title{
-    text-align:center;
-    color:#2E7D32;
-    margin-bottom:25px;
-}
-
-/* GRID */
-
-.checkout-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-}
-
-/* BOX */
-
-.box{
+.card{
     background:white;
     padding:25px;
     border-radius:12px;
-    box-shadow:0 0 10px #ccc;
-}
-
-.box h2{
-    color:#2E7D32;
+    box-shadow:0 3px 12px rgba(0,0,0,.10);
     margin-bottom:20px;
-    border-bottom:2px solid #2E7D32;
-    padding-bottom:10px;
 }
 
-/* FORM */
-
-.form-group{
-    margin-bottom:17px;
+h2{
+    color:#176b35;
 }
 
-.form-group label{
-    display:block;
-    font-weight:bold;
-    margin-bottom:7px;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select{
+input,
+textarea,
+select{
     width:100%;
     padding:12px;
+    margin:7px 0 15px;
     border:1px solid #ccc;
-    border-radius:6px;
+    border-radius:7px;
     font-size:16px;
-    outline:none;
 }
 
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus{
-    border-color:#2E7D32;
-}
-
-.form-group textarea{
-    min-height:100px;
-    resize:vertical;
-}
-
-/* ORDER ITEMS */
-
-.order-item{
-    border-bottom:1px solid #ddd;
-    padding:12px 0;
-}
-
-.order-item:last-child{
-    border-bottom:none;
-}
-
-.order-item h3{
-    color:#2E7D32;
-    margin-bottom:5px;
-}
-
-.order-item p{
-    margin:4px 0;
-}
-
-.item-total{
-    color:#D84315;
+label{
     font-weight:bold;
 }
 
-/* TOTAL */
+.product-row{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:12px 0;
+    border-bottom:1px solid #ddd;
+}
 
 .total{
-    background:#f1f8e9;
-    padding:15px;
-    margin-top:15px;
-    border-radius:7px;
+    font-size:22px;
+    font-weight:bold;
+    color:#176b35;
     text-align:right;
+    margin-top:20px;
 }
 
-.total h2{
-    color:#D84315;
-}
-
-/* PAYMENT */
-
-.payment-option{
-    background:#f9f9f9;
-    padding:12px;
-    margin:8px 0;
-    border-radius:6px;
-    border:1px solid #ddd;
-}
-
-.payment-option label{
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.payment-option input{
-    margin-right:8px;
-}
-
-/* BUTTON */
-
-.place-order{
-    width:100%;
-    background:#2E7D32;
-    color:white;
-    padding:15px;
+button{
     border:none;
+    padding:13px 22px;
     border-radius:7px;
-    font-size:18px;
-    font-weight:bold;
     cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.place-btn{
+    background:#176b35;
+    color:white;
+    width:100%;
     margin-top:15px;
 }
 
-.place-order:hover{
-    background:#1B5E20;
+.place-btn:hover{
+    background:#0f4f28;
 }
 
-/* SUCCESS */
+.clear-btn{
+    background:#777;
+    color:white;
+}
 
 .success{
     display:none;
-    background:#E8F5E9;
-    border:2px solid #2E7D32;
-    color:#1B5E20;
-    padding:25px;
-    border-radius:10px;
     text-align:center;
-    margin-top:25px;
+    background:white;
+    padding:40px 20px;
+    border-radius:15px;
+    box-shadow:0 3px 15px rgba(0,0,0,.12);
 }
 
-.success h2{
-    margin-bottom:10px;
+.success h1{
+    color:#198754;
 }
 
-/* EMPTY */
+.order-id{
+    display:inline-block;
+    background:#e8f5e9;
+    color:#176b35;
+    padding:12px 20px;
+    border-radius:8px;
+    font-size:22px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.continue-btn{
+    display:inline-block;
+    background:#176b35;
+    color:white;
+    text-decoration:none;
+    padding:13px 25px;
+    border-radius:7px;
+    margin-top:15px;
+}
 
 .empty{
     text-align:center;
+    padding:30px;
     background:white;
-    padding:40px;
     border-radius:12px;
-    box-shadow:0 0 10px #ccc;
 }
 
-.empty h2{
-    color:#D84315;
-    margin-bottom:15px;
-}
-
-.shop-btn{
-    display:inline-block;
-    margin-top:20px;
-    background:#2E7D32;
-    color:white;
-    padding:12px 20px;
-    border-radius:6px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* FOOTER */
-
-footer{
-    background:#2E7D32;
-    color:white;
-    text-align:center;
-    padding:18px 10px;
-    margin-top:40px;
-}
-
-/* MOBILE */
-
-@media(max-width:750px){
-
-    .checkout-grid{
-        grid-template-columns:1fr;
-    }
-
+@media(max-width:600px){
     header h1{
-        font-size:22px;
+        font-size:21px;
     }
 
     nav a{
+        display:inline-block;
+        margin:5px;
         font-size:14px;
-        margin:5px 3px;
     }
 
-    .container{
-        padding:15px;
+    .product-row{
+        flex-direction:column;
     }
-
 }
-
 </style>
-
 </head>
 
 <body>
 
-
-<!-- HEADER -->
-
 <header>
-
-<h1>
-🌾 Bundelkhand Organic Farmer Producer Company Limited
-</h1>
-
-<p>
-Organic Products Directly From Farmers
-</p>
-
+    <h1>🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड</h1>
+    <p>Bundelkhand Organic Farmer Producer Company Limited</p>
+    <p>🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य</p>
 </header>
 
-
-<!-- NAVIGATION -->
-
 <nav>
-
-<a href="index.html">🏠 Home</a>
-
-<a href="about.html">🌿 About</a>
-
-<a href="products.html">🛒 Products</a>
-
-<a href="farmers.html">👨‍🌾 Kisan Corner</a>
-
-<a href="membership.html">📝 Join FPO</a>
-
-<a href="bulk-order.html">📦 Bulk Order</a>
-
-<a href="contact.html">📞 Contact</a>
-
+    <a href="index.html">🏠 Home</a>
+    <a href="products.html">🛒 Products</a>
+    <a href="cart.html">🛒 Cart</a>
 </nav>
-
-
-<!-- MAIN -->
 
 <div class="container">
 
-<h1 class="page-title">
-📦 Checkout / Place Order
-</h1>
+    <!-- CHECKOUT SECTION -->
+    <div id="checkoutSection">
+
+        <div class="card">
+            <h2>🛒 Checkout / ऑर्डर करें</h2>
+
+            <h3>📦 आपका Order</h3>
+
+            <div id="orderItems"></div>
+
+            <div class="total">
+                Total: ₹<span id="totalAmount">0</span>
+            </div>
+        </div>
 
 
-<!-- CHECKOUT AREA -->
+        <div class="card">
 
-<div id="checkoutArea">
+            <h2>👤 Customer Details</h2>
 
-<div class="checkout-grid">
+            <form id="checkoutForm">
 
+                <label>नाम *</label>
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="अपना नाम लिखें"
+                    required
+                >
 
-<!-- CUSTOMER DETAILS -->
+                <label>मोबाइल नंबर *</label>
+                <input
+                    type="tel"
+                    id="customerMobile"
+                    placeholder="10 अंकों का मोबाइल नंबर"
+                    maxlength="10"
+                    required
+                >
 
-<div class="box">
+                <label>पूरा पता *</label>
+                <textarea
+                    id="customerAddress"
+                    rows="4"
+                    placeholder="गांव, पोस्ट, तहसील, जिला, पिन कोड"
+                    required
+                ></textarea>
 
-<h2>
-👤 Customer Details
-</h2>
+                <label>Payment Method *</label>
 
+                <select id="paymentMethod" required>
+                    <option value="">-- Select Payment Method --</option>
+                    <option value="Cash on Delivery">
+                        Cash on Delivery
+                    </option>
+                    <option value="UPI">
+                        UPI
+                    </option>
+                </select>
 
-<form id="orderForm">
+                <button
+                    type="submit"
+                    class="place-btn"
+                >
+                    ✅ Place Order
+                </button>
 
+            </form>
 
-<div class="form-group">
+        </div>
 
-<label>
-Full Name *
-</label>
-
-<input
-type="text"
-id="customerName"
-placeholder="अपना पूरा नाम लिखें"
-required
->
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Mobile Number *
-</label>
-
-<input
-type="tel"
-id="customerMobile"
-placeholder="10 Digit Mobile Number"
-pattern="[0-9]{10}"
-maxlength="10"
-required
->
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Village / Town *
-</label>
-
-<input
-type="text"
-id="customerVillage"
-placeholder="गाँव / शहर"
-required
->
-
-</div>
+    </div>
 
 
-<div class="form-group">
+    <!-- SUCCESS SECTION -->
 
-<label>
-District *
-</label>
+    <div id="successSection" class="success">
 
-<input
-type="text"
-id="customerDistrict"
-placeholder="जिला"
-required
->
+        <h1>🎉 Order Successfully Placed!</h1>
 
-</div>
+        <p>
+            आपका Order सफलतापूर्वक दर्ज हो गया है।
+        </p>
 
+        <p>
+            आपका Order ID:
+        </p>
 
-<div class="form-group">
+        <div class="order-id" id="successOrderId">
+            FPO00000000
+        </div>
 
-<label>
-State *
-</label>
+        <p>
+            कृपया Order ID सुरक्षित रखें।
+        </p>
 
-<input
-type="text"
-id="customerState"
-value="Uttar Pradesh"
-required
->
+        <p>
+            📱 FPO आपके Order की जानकारी देखकर आपसे संपर्क करेगा।
+        </p>
 
-</div>
+        <a
+            href="products.html"
+            class="continue-btn"
+        >
+            🛒 Continue Shopping
+        </a>
 
-
-<div class="form-group">
-
-<label>
-Complete Address *
-</label>
-
-<textarea
-id="customerAddress"
-placeholder="पूरा पता लिखें"
-required
-></textarea>
+    </div>
 
 </div>
-
-
-<h2>
-💳 Payment Method
-</h2>
-
-
-<div class="payment-option">
-
-<label>
-
-<input
-type="radio"
-name="payment"
-value="Cash on Delivery"
-checked
->
-
-Cash on Delivery
-
-</label>
-
-</div>
-
-
-<div class="payment-option">
-
-<label>
-
-<input
-type="radio"
-name="payment"
-value="UPI"
->
-
-UPI Payment
-
-</label>
-
-</div>
-
-
-<div class="payment-option">
-
-<label>
-
-<input
-type="radio"
-name="payment"
-value="Bank Transfer"
->
-
-Bank Transfer
-
-</label>
-
-</div>
-
-
-<button
-type="submit"
-class="place-order"
->
-
-✅ Place Order
-
-</button>
-
-
-</form>
-
-</div>
-
-
-<!-- ORDER SUMMARY -->
-
-<div class="box">
-
-<h2>
-🛒 Order Summary
-</h2>
-
-
-<div id="orderItems">
-
-</div>
-
-
-<div class="total">
-
-<h2>
-Total: ₹<span id="orderTotal">0</span>
-</h2>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- SUCCESS MESSAGE -->
-
-<div
-class="success"
-id="successBox"
->
-
-<h2>
-🎉 Order Successfully Placed!
-</h2>
-
-<p>
-आपका Order सफलतापूर्वक दर्ज हो गया है।
-</p>
-
-<p>
-<strong>
-Order ID:
-<span id="orderId"></span>
-</strong>
-</p>
-
-<p>
-कृपया Order ID सुरक्षित रखें।
-</p>
-
-<br>
-
-<a
-href="products.html"
-class="shop-btn"
->
-
-🛒 Continue Shopping
-
-</a>
-
-</div>
-
-
-</div>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-© 2026 Bundelkhand Organic Farmer Producer Company Limited
-
-<br>
-
-🌾 Empowering Farmers • Promoting Organic Agriculture
-
-</footer>
 
 
 <script>
 
-/* ==========================================
-   LOAD CART
-========================================== */
+/* =========================================
+   GET CART DATA
+========================================= */
 
-let cart =
-JSON.parse(localStorage.getItem("cart")) || [];
-
-
-/* ==========================================
-   DISPLAY ORDER SUMMARY
-========================================== */
-
-displayOrder();
+let cart = JSON.parse(
+    localStorage.getItem("fpoCart")
+) || [];
 
 
-function displayOrder(){
+/* =========================================
+   ELEMENTS
+========================================= */
 
-    let container =
+const orderItems =
     document.getElementById("orderItems");
 
-    let total = 0;
+const totalAmount =
+    document.getElementById("totalAmount");
+
+const checkoutForm =
+    document.getElementById("checkoutForm");
+
+const checkoutSection =
+    document.getElementById("checkoutSection");
+
+const successSection =
+    document.getElementById("successSection");
+
+const successOrderId =
+    document.getElementById("successOrderId");
 
 
-    container.innerHTML = "";
+/* =========================================
+   SHOW CART
+========================================= */
 
-
-    /* EMPTY CART */
+function showCart(){
 
     if(cart.length === 0){
 
-        document.getElementById("checkoutArea")
-        .innerHTML = `
+        orderItems.innerHTML = `
+            <div class="empty">
+                <h3>🛒 Cart खाली है</h3>
 
-        <div class="empty">
+                <p>
+                    कृपया पहले Products से सामान चुनें।
+                </p>
 
-            <h2>
-            🛒 Your Cart Is Empty
-            </h2>
-
-            <p>
-            Order करने के लिए पहले Product को Cart में जोड़ें।
-            </p>
-
-            <a
-            href="products.html"
-            class="shop-btn"
-            >
-
-            🛒 Go To Products
-
-            </a>
-
-        </div>
-
+                <a
+                    href="products.html"
+                    class="continue-btn"
+                >
+                    🛒 View Products
+                </a>
+            </div>
         `;
 
-        return;
+        checkoutForm.style.display = "none";
 
+        totalAmount.innerText = "0";
+
+        return;
     }
 
 
-    /* PRODUCTS */
+    let total = 0;
 
-    cart.forEach(function(item){
+    orderItems.innerHTML = "";
 
-        let price =
-        Number(item.price) || 0;
 
-        let quantity =
-        Number(item.quantity) || 1;
+    cart.forEach((item, index) => {
 
-        let subtotal =
-        price * quantity;
+        const price =
+            Number(item.price) || 0;
 
+        const quantity =
+            Number(item.quantity) || 1;
+
+        const subtotal =
+            price * quantity;
 
         total += subtotal;
 
 
-        container.innerHTML += `
+        orderItems.innerHTML += `
 
-        <div class="order-item">
+            <div class="product-row">
 
-            <h3>
-            🌾 ${item.name}
-            </h3>
+                <div>
+                    <strong>
+                        ${item.name || "Product"}
+                    </strong>
 
-            <p>
-            Category:
-            ${item.category || "Organic Product"}
-            </p>
+                    <br>
 
-            <p>
-            Quantity:
-            <strong>${quantity}</strong>
-            </p>
+                    ₹${price} × ${quantity}
+                </div>
 
-            <p>
-            Price:
-            ₹${price}
-            </p>
+                <div>
+                    <strong>
+                        ₹${subtotal}
+                    </strong>
+                </div>
 
-            <p class="item-total">
-            Subtotal: ₹${subtotal}
-            </p>
-
-        </div>
+            </div>
 
         `;
 
     });
 
 
-    document.getElementById("orderTotal")
-    .textContent = total;
-
+    totalAmount.innerText =
+        total.toLocaleString("en-IN");
 }
 
 
-/* ==========================================
+/* =========================================
+   ORDER ID
+========================================= */
+
+function generateOrderId(){
+
+    const random =
+        Math.floor(
+            10000000 +
+            Math.random() * 90000000
+        );
+
+    return "FPO" + random;
+}
+
+
+/* =========================================
    PLACE ORDER
-========================================== */
+========================================= */
 
-document.getElementById("orderForm")
-.addEventListener("submit",function(event){
+checkoutForm.addEventListener(
+    "submit",
+    function(event){
 
-    event.preventDefault();
+        event.preventDefault();
 
 
-    /* CUSTOMER DETAILS */
+        if(cart.length === 0){
 
-    let name =
-    document.getElementById("customerName")
-    .value.trim();
+            alert(
+                "आपका Cart खाली है।"
+            );
 
+            return;
+        }
 
-    let mobile =
-    document.getElementById("customerMobile")
-    .value.trim();
 
+        const name =
+            document
+            .getElementById("customerName")
+            .value
+            .trim();
 
-    let village =
-    document.getElementById("customerVillage")
-    .value.trim();
 
+        const mobile =
+            document
+            .getElementById("customerMobile")
+            .value
+            .trim();
 
-    let district =
-    document.getElementById("customerDistrict")
-    .value.trim();
 
+        const address =
+            document
+            .getElementById("customerAddress")
+            .value
+            .trim();
 
-    let state =
-    document.getElementById("customerState")
-    .value.trim();
 
+        const payment =
+            document
+            .getElementById("paymentMethod")
+            .value;
 
-    let address =
-    document.getElementById("customerAddress")
-    .value.trim();
 
+        /* MOBILE VALIDATION */
 
-    let payment =
-    document.querySelector(
-    'input[name="payment"]:checked'
-    ).value;
+        if(!/^[0-9]{10}$/.test(mobile)){
 
+            alert(
+                "कृपया सही 10 अंकों का मोबाइल नंबर डालें।"
+            );
 
-    /* TOTAL */
+            return;
+        }
 
-    let total = 0;
 
+        /* TOTAL */
 
-    cart.forEach(function(item){
+        let total = 0;
 
-        total +=
-        (Number(item.price) || 0) *
-        (Number(item.quantity) || 1);
+        cart.forEach(item => {
 
-    });
+            total +=
+                (Number(item.price) || 0) *
+                (Number(item.quantity) || 1);
 
+        });
 
-    /* ORDER ID */
 
-    let orderId =
-    "FPO" +
-    Date.now().toString().slice(-8);
+        /* ORDER ID */
 
+        const orderId =
+            generateOrderId();
 
-    /* ORDER OBJECT */
 
-    let order = {
+        /* DATE */
 
-        orderId: orderId,
+        const now =
+            new Date();
 
-        customerName: name,
 
-        mobile: mobile,
+        const orderDate =
+            now.toLocaleDateString(
+                "en-IN"
+            );
 
-        village: village,
 
-        district: district,
+        const orderTime =
+            now.toLocaleTimeString(
+                "en-IN"
+            );
 
-        state: state,
 
-        address: address,
+        /* ORDER OBJECT */
 
-        payment: payment,
+        const order = {
 
-        products: cart,
+            id: orderId,
 
-        total: total,
+            customerName: name,
 
-        status: "New",
+            customerMobile: mobile,
 
-        date: new Date().toLocaleString("en-IN")
+            customerAddress: address,
 
-    };
+            paymentMethod: payment,
 
+            products: cart,
 
-    /* LOAD OLD ORDERS */
+            total: total,
 
-    let orders =
-    JSON.parse(
-    localStorage.getItem("orders")
-    ) || [];
+            status: "New",
 
+            date: orderDate,
 
-    /* ADD NEW ORDER */
+            time: orderTime
 
-    orders.push(order);
+        };
 
 
-    /* SAVE ORDERS */
+        /* =================================
+           SAVE ORDER FOR ADMIN
+        ================================= */
 
-    localStorage.setItem(
-        "orders",
-        JSON.stringify(orders)
-    );
+        let orders =
+            JSON.parse(
+                localStorage.getItem(
+                    "fpoOrders"
+                )
+            ) || [];
 
 
-    /* SAVE LAST ORDER */
+        orders.push(order);
 
-    localStorage.setItem(
-        "lastOrder",
-        JSON.stringify(order)
-    );
 
+        localStorage.setItem(
+            "fpoOrders",
+            JSON.stringify(orders)
+        );
 
-    /* CLEAR CART */
 
-    localStorage.removeItem("cart");
+        /* =================================
+           CLEAR CART
+        ================================= */
 
+        localStorage.removeItem(
+            "fpoCart"
+        );
 
-    /* SHOW SUCCESS */
 
-    document.getElementById("checkoutArea")
-    .style.display = "none";
+        /* =================================
+           SHOW SUCCESS
+        ================================= */
 
+        successOrderId.innerText =
+            orderId;
 
-    document.getElementById("successBox")
-    .style.display = "block";
 
+        checkoutSection.style.display =
+            "none";
 
-    document.getElementById("orderId")
-    .textContent = orderId;
 
-});
+        successSection.style.display =
+            "block";
+
+
+        /* =================================
+           SCROLL TOP
+        ================================= */
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+);
+
+
+/* =========================================
+   INITIAL LOAD
+========================================= */
+
+showCart();
 
 </script>
 
-
 </body>
-
 </html>
-```
