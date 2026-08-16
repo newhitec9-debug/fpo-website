@@ -4,88 +4,70 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Manage Products | Bundelkhand Organic FPO</title>
+<title>Manage Products - FPO Admin</title>
 
 <style>
-
 *{
     box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f4fff4;
-    color:#333;
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f7f5;
+    color:#222;
 }
 
-/* HEADER */
-
 header{
-    background:#1B5E20;
+    background:#146b35;
     color:white;
+    padding:20px;
     text-align:center;
-    padding:25px 15px;
 }
 
 header h1{
-    font-size:28px;
-    margin-bottom:8px;
+    margin:0 0 8px;
+    font-size:26px;
 }
 
 header p{
-    font-size:16px;
+    margin:0;
+    font-size:15px;
 }
 
-/* NAV */
-
 nav{
-    background:#2E7D32;
-    padding:14px;
+    background:white;
+    padding:12px;
     text-align:center;
+    box-shadow:0 2px 6px rgba(0,0,0,.12);
 }
 
 nav a{
+    display:inline-block;
+    margin:5px;
+    padding:10px 15px;
+    background:#146b35;
     color:white;
     text-decoration:none;
-    font-weight:bold;
-    margin:0 8px;
+    border-radius:6px;
 }
-
-nav a:hover{
-    color:#FFD54F;
-}
-
-/* CONTAINER */
 
 .container{
     max-width:1200px;
-    margin:30px auto;
-    padding:15px;
+    margin:25px auto;
+    padding:0 15px;
 }
 
-/* TITLE */
-
-.page-title{
-    text-align:center;
-    color:#1B5E20;
-    margin-bottom:25px;
-}
-
-/* FORM */
-
-.form-box{
+.card{
     background:white;
-    padding:25px;
+    padding:22px;
+    margin-bottom:25px;
     border-radius:12px;
-    box-shadow:0 2px 10px #ccc;
-    margin-bottom:30px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
-.form-box h2{
-    color:#2E7D32;
-    margin-bottom:20px;
+h2{
+    color:#146b35;
 }
 
 .form-grid{
@@ -94,26 +76,23 @@ nav a:hover{
     gap:15px;
 }
 
-.form-group{
-    display:flex;
-    flex-direction:column;
-}
-
-.form-group label{
+label{
     font-weight:bold;
+    display:block;
     margin-bottom:6px;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea{
+input,
+select,
+textarea{
+    width:100%;
     padding:11px;
-    border:1px solid #bbb;
+    border:1px solid #ccc;
     border-radius:6px;
     font-size:15px;
 }
 
-.form-group textarea{
+textarea{
     min-height:90px;
     resize:vertical;
 }
@@ -122,105 +101,56 @@ nav a:hover{
     grid-column:1 / -1;
 }
 
-/* BUTTONS */
-
-.button-row{
-    margin-top:20px;
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    border:none;
-    padding:12px 18px;
+button{
+    border:0;
+    padding:10px 16px;
     border-radius:6px;
-    color:white;
-    font-weight:bold;
     cursor:pointer;
     font-size:15px;
-}
-
-.add-btn{
-    background:#2E7D32;
-}
-
-.add-btn:hover{
-    background:#1B5E20;
-}
-
-.update-btn{
-    background:#1565C0;
-}
-
-.update-btn:hover{
-    background:#0D47A1;
-}
-
-.cancel-btn{
-    background:#757575;
-}
-
-.cancel-btn:hover{
-    background:#424242;
-}
-
-.clear-btn{
-    background:#D32F2F;
-}
-
-.clear-btn:hover{
-    background:#B71C1C;
-}
-
-/* STATS */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-    margin-bottom:30px;
-}
-
-.stat{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    text-align:center;
-    box-shadow:0 2px 8px #ccc;
-}
-
-.stat h2{
-    color:#2E7D32;
-    font-size:30px;
-}
-
-.stat p{
     font-weight:bold;
-    margin-top:5px;
 }
 
-/* PRODUCT LIST */
-
-.list-title{
-    color:#1B5E20;
-    margin-bottom:20px;
+.btn-add{
+    background:#198754;
+    color:white;
 }
 
-.products-grid{
+.btn-update{
+    background:#ff9800;
+    color:white;
+}
+
+.btn-clear{
+    background:#777;
+    color:white;
+}
+
+.btn-edit{
+    background:#0d6efd;
+    color:white;
+    margin-right:5px;
+}
+
+.btn-delete{
+    background:#dc3545;
+    color:white;
+}
+
+.product-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
-.product-card{
+.product{
     background:white;
-    border-radius:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
     padding:18px;
-    box-shadow:0 2px 10px #ccc;
+    box-shadow:0 2px 7px rgba(0,0,0,.08);
 }
 
-.product-card img{
+.product img{
     width:100%;
     height:180px;
     object-fit:cover;
@@ -228,460 +158,241 @@ nav a:hover{
     margin-bottom:12px;
 }
 
-.product-category{
+.product h3{
+    margin:5px 0;
+    color:#146b35;
+}
+
+.category{
     color:#777;
-    font-weight:bold;
-    margin-bottom:8px;
-}
-
-.product-card h3{
-    color:#2E7D32;
-    font-size:21px;
-    margin-bottom:10px;
-}
-
-.product-card p{
-    margin:7px 0;
+    font-size:14px;
 }
 
 .price{
-    color:#D84315;
     font-size:20px;
     font-weight:bold;
+    color:#d35400;
+    margin:10px 0;
 }
 
-.status{
-    display:inline-block;
-    padding:5px 9px;
-    border-radius:5px;
-    font-weight:bold;
-    margin-top:5px;
+.stock{
+    color:#333;
+    margin-bottom:10px;
 }
 
 .available{
-    background:#C8E6C9;
-    color:#1B5E20;
+    color:green;
+    font-weight:bold;
 }
 
-.outstock{
-    background:#FFCDD2;
-    color:#B71C1C;
+.out{
+    color:red;
+    font-weight:bold;
 }
 
-/* CARD BUTTONS */
-
-.card-buttons{
-    display:flex;
-    gap:8px;
+.actions{
     margin-top:15px;
 }
 
-.edit-btn{
-    background:#1565C0;
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-bottom:25px;
 }
 
-.delete-btn{
-    background:#D32F2F;
-}
-
-.card-buttons button{
-    flex:1;
-    border:none;
-    padding:10px;
-    color:white;
-    border-radius:5px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* FOOTER */
-
-footer{
-    background:#2E7D32;
-    color:white;
-    text-align:center;
+.stat{
+    background:white;
     padding:20px;
-    margin-top:40px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
 
-/* MOBILE */
+.stat h3{
+    font-size:28px;
+    margin:5px;
+    color:#146b35;
+}
+
+#editTitle{
+    display:none;
+    color:#e67e22;
+}
 
 @media(max-width:800px){
-
     .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-grid{
         grid-template-columns:1fr;
     }
 
     .stats{
         grid-template-columns:1fr;
     }
-
-    .products-grid{
-        grid-template-columns:1fr;
-    }
-
-    .full{
-        grid-column:auto;
-    }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
-
-<h1>
-🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-</h1>
-
-<p>
-Bundelkhand Organic Farmer Producer Company Limited
-</p>
-
-<p>
-🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
-</p>
-
+    <h1>🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड</h1>
+    <p>Bundelkhand Organic Farmer Producer Company Limited</p>
+    <p>🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य</p>
 </header>
 
-
-<!-- NAVIGATION -->
-
 <nav>
-
-<a href="admin-dashboard.html">📊 Dashboard</a>
-
-<a href="index.html">🏠 Home</a>
-
-<a href="products.html">🛒 View Products</a>
-
-<a href="admin-gallery.html">🖼️ Gallery</a>
-
+    <a href="admin-dashboard.html">📊 Dashboard</a>
+    <a href="index.html">🏠 Home</a>
+    <a href="products.html">🛒 View Products</a>
+    <a href="admin-gallery.html">🖼️ Gallery</a>
 </nav>
-
 
 <div class="container">
 
-<h1 class="page-title">
-📦 Manage Products
-</h1>
+<!-- FORM -->
 
-<p style="text-align:center;margin-bottom:25px;">
-FPO के सभी कृषि उत्पादों को Add, Edit और Delete करें
-</p>
+<div class="card">
 
+<h2 id="addTitle">➕ Add New Product</h2>
+<h2 id="editTitle">✏️ Edit Product</h2>
 
-<!-- ================= FORM ================= -->
-
-<div class="form-box">
-
-<h2 id="formTitle">
-➕ Add New Product
-</h2>
-
+<form id="productForm">
 
 <div class="form-grid">
 
-<div class="form-group">
-
-<label>
-Product Name *
-</label>
-
-<input
-type="text"
-id="productName"
-placeholder="जैसे गेहूँ"
->
-
+<div>
+<label>Product Name *</label>
+<input type="text" id="productName" required>
 </div>
 
+<div>
+<label>Category *</label>
 
-<div class="form-group">
-
-<label>
-Category *
-</label>
-
-<select id="productCategory">
-
-<option value="">
--- Select Category --
-</option>
-
-<option value="Cereals">
-🌾 Cereals / अनाज
-</option>
-
-<option value="Pulses">
-🫘 Pulses / दालें
-</option>
-
-<option value="Oil Seeds">
-🌻 Oil Seeds / तिलहन
-</option>
-
-<option value="Organic Products">
-🌱 Organic Products / जैविक उत्पाद
-</option>
-
+<select id="category" required>
+<option value="">-- Select Category --</option>
+<option value="Cereals">🌾 Cereals / अनाज</option>
+<option value="Pulses">🫘 Pulses / दालें</option>
+<option value="Oil Seeds">🌻 Oil Seeds / तिलहन</option>
+<option value="Organic Products">🌱 Organic Products / जैविक उत्पाद</option>
 </select>
 
 </div>
 
-
-<div class="form-group">
-
-<label>
-Price per Kg (₹) *
-</label>
-
-<input
-type="number"
-id="productPrice"
-placeholder="40"
-min="0"
->
-
+<div>
+<label>Price per Kg (₹) *</label>
+<input type="number" id="price" min="0" required>
 </div>
 
-
-<div class="form-group">
-
-<label>
-Stock Quantity *
-</label>
-
-<input
-type="number"
-id="productStock"
-placeholder="1000"
-min="0"
->
-
+<div>
+<label>Stock Quantity *</label>
+<input type="number" id="stock" min="0" required>
 </div>
 
+<div>
+<label>Unit *</label>
 
-<div class="form-group">
-
-<label>
-Unit *
-</label>
-
-<select id="productUnit">
-
-<option value="Kg">
-Kg
-</option>
-
-<option value="Gram">
-Gram
-</option>
-
-<option value="Packet">
-Packet
-</option>
-
+<select id="unit">
+<option value="Kg">Kg</option>
+<option value="Gram">Gram</option>
+<option value="Packet">Packet</option>
 </select>
 
 </div>
 
+<div>
+<label>Product Status *</label>
 
-<div class="form-group">
-
-<label>
-Product Status *
-</label>
-
-<select id="productStatus">
-
-<option value="Available">
-✅ Available
-</option>
-
-<option value="Out of Stock">
-❌ Out of Stock
-</option>
-
+<select id="status">
+<option value="Available">✅ Available</option>
+<option value="Out of Stock">❌ Out of Stock</option>
 </select>
 
 </div>
 
-
-<div class="form-group full">
-
-<label>
-📝 Product Description *
-</label>
-
-<textarea
-id="productDescription"
-placeholder="Product के बारे में जानकारी लिखें..."
-></textarea>
-
+<div class="full">
+<label>📝 Product Description</label>
+<textarea id="description"></textarea>
 </div>
 
-
-<div class="form-group full">
-
-<label>
-🖼️ Product Photo
-</label>
-
-<input
-type="text"
-id="productImage"
-placeholder="जैसे images/wheat.jpg"
->
-
+<div class="full">
+<label>🖼️ Product Photo</label>
+<input type="text" id="image" placeholder="जैसे: wheat.jpg">
 </div>
 
 </div>
 
+<br>
 
-<div class="button-row">
-
-<button
-class="btn add-btn"
-id="addButton"
-onclick="addProduct()"
->
+<button type="submit" class="btn-add" id="saveButton">
 ➕ Add Product
 </button>
 
-
-<button
-class="btn update-btn"
-id="updateButton"
-onclick="updateProduct()"
-style="display:none;"
->
-💾 Update Product
+<button type="button" class="btn-clear" onclick="clearForm()">
+🗑️ Clear Form
 </button>
 
-
-<button
-class="btn cancel-btn"
-id="cancelButton"
-onclick="cancelEdit()"
-style="display:none;"
->
-❌ Cancel
-</button>
-
-
-<button
-class="btn clear-btn"
-onclick="clearAllProducts()"
->
-🗑️ Clear All Products
-</button>
-
-</div>
+</form>
 
 </div>
 
 
-<!-- ================= STATS ================= -->
+<!-- STATS -->
 
 <div class="stats">
 
 <div class="stat">
-
-<h2 id="totalProducts">
-0
-</h2>
-
-<p>
-Total Products
-</p>
-
+<h3 id="totalProducts">0</h3>
+<div>Total Products</div>
 </div>
-
 
 <div class="stat">
-
-<h2 id="totalStock">
-0
-</h2>
-
-<p>
-Total Stock
-</p>
-
+<h3 id="totalStock">0</h3>
+<div>Total Stock</div>
 </div>
-
 
 <div class="stat">
-
-<h2 id="availableProducts">
-0
-</h2>
-
-<p>
-Available Products
-</p>
-
+<h3 id="availableProducts">0</h3>
+<div>Available Products</div>
 </div>
 
 </div>
 
 
-<!-- ================= PRODUCT LIST ================= -->
+<!-- PRODUCT LIST -->
 
-<h2 class="list-title">
-🌾 Product List
-</h2>
+<div class="card">
 
+<h2>🌾 Product List</h2>
 
-<div
-class="products-grid"
-id="productList"
->
+<div id="productList" class="product-grid"></div>
 
 </div>
 
 </div>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-© 2026 Bundelkhand Organic Farmer Producer Company Limited
-
-<br>
-
-🌾 Empowering Farmers • Promoting Organic Agriculture
-
-</footer>
 
 
 <script>
 
-/* ==================================================
-   DEFAULT 11 PRODUCTS
-================================================== */
-
 const defaultProducts = [
 
 {
+id:1,
 name:"गेहूँ",
 category:"Cereals",
 price:40,
 stock:1000,
 unit:"Kg",
 status:"Available",
-description:"Bundelkhand क्षेत्र के किसानों से प्राप्त गुणवत्तापूर्ण गेहूँ। साफ-सुथरा, प्राकृतिक एवं दैनिक उपयोग के लिए उपयुक्त। किसानों से सीधे उपभोक्ताओं तक।",
-image:"images/wheat.jpg"
+description:"Bundelkhand क्षेत्र के किसानों से प्राप्त गुणवत्तापूर्ण गेहूँ। साफ-सुथरा, प्राकृतिक एवं दैनिक उपयोग के लिए उपयुक्त।",
+image:"wheat.jpg"
 },
 
 {
+id:2,
 name:"चना दाल",
 category:"Pulses",
 price:110,
@@ -689,10 +400,11 @@ stock:1000,
 unit:"Kg",
 status:"Available",
 description:"स्वच्छ एवं गुणवत्तापूर्ण चना दाल। प्रोटीन से भरपूर और स्वादिष्ट। FPO के माध्यम से किसानों से सीधे उपलब्ध।",
-image:"images/chana-dal.jpg"
+image:"chana-dal.jpg"
 },
 
 {
+id:3,
 name:"मटर दाल",
 category:"Pulses",
 price:100,
@@ -700,10 +412,11 @@ stock:1000,
 unit:"Kg",
 status:"Available",
 description:"गुणवत्तापूर्ण मटर दाल, अच्छी तरह साफ एवं पैक की गई। घर के दैनिक भोजन के लिए उपयुक्त।",
-image:"images/matar-dal.jpg"
+image:"matar-dal.jpg"
 },
 
 {
+id:4,
 name:"मसूर दाल",
 category:"Pulses",
 price:100,
@@ -711,10 +424,11 @@ stock:1000,
 unit:"Kg",
 status:"Available",
 description:"स्वच्छ और गुणवत्तापूर्ण मसूर दाल। पौष्टिक, स्वादिष्ट और दैनिक भोजन के लिए उपयुक्त।",
-image:"images/masoor-dal.jpg"
+image:"masoor-dal.jpg"
 },
 
 {
+id:5,
 name:"अरहर / तुअर दाल",
 category:"Pulses",
 price:140,
@@ -722,10 +436,11 @@ stock:1000,
 unit:"Kg",
 status:"Available",
 description:"उत्तम गुणवत्ता की अरहर / तुअर दाल। स्वादिष्ट एवं पौष्टिक। किसानों से सीधे FPO के माध्यम से उपलब्ध।",
-image:"images/arhar-dal.jpg"
+image:"arhar-dal.jpg"
 },
 
 {
+id:6,
 name:"उड़द दाल",
 category:"Pulses",
 price:140,
@@ -733,10 +448,11 @@ stock:1000,
 unit:"Kg",
 status:"Available",
 description:"गुणवत्तापूर्ण उड़द दाल। दाल, इडली, डोसा और अन्य व्यंजनों के लिए उपयुक्त।",
-image:"images/urad-dal.jpg"
+image:"urad-dal.jpg"
 },
 
 {
+id:7,
 name:"दलिया",
 category:"Cereals",
 price:70,
@@ -744,10 +460,11 @@ stock:1000,
 unit:"Kg",
 status:"Available",
 description:"गुणवत्तापूर्ण गेहूँ से तैयार दलिया। पौष्टिक नाश्ते और दैनिक भोजन के लिए उपयुक्त।",
-image:"images/daliya.jpg"
+image:"daliya.jpg"
 },
 
 {
+id:8,
 name:"बेसन",
 category:"Organic Products",
 price:120,
@@ -755,10 +472,11 @@ stock:1000,
 unit:"Kg",
 status:"Available",
 description:"उत्तम गुणवत्ता वाले चने से तैयार बेसन। पकौड़ी, चीला, कढ़ी एवं अन्य व्यंजनों के लिए उपयुक्त।",
-image:"images/besan.jpg"
+image:"besan.jpg"
 },
 
 {
+id:9,
 name:"सरसों",
 category:"Oil Seeds",
 price:80,
@@ -766,10 +484,11 @@ stock:1000,
 unit:"Kg",
 status:"Available",
 description:"Bundelkhand के किसानों से प्राप्त गुणवत्तापूर्ण सरसों। तेल उत्पादन एवं अन्य उपयोग के लिए उपयुक्त।",
-image:"images/mustard.jpg"
+image:"mustard.jpg"
 },
 
 {
+id:10,
 name:"मूंगफली",
 category:"Oil Seeds",
 price:130,
@@ -777,10 +496,11 @@ stock:1000,
 unit:"Kg",
 status:"Available",
 description:"चयनित एवं गुणवत्तापूर्ण मूंगफली। खाने और तेल उत्पादन दोनों के लिए उपयुक्त।",
-image:"images/groundnut.jpg"
+image:"groundnut.jpg"
 },
 
 {
+id:11,
 name:"तिल",
 category:"Oil Seeds",
 price:180,
@@ -788,43 +508,17 @@ stock:1000,
 unit:"Kg",
 status:"Available",
 description:"किसानों से प्राप्त गुणवत्तापूर्ण तिल। खाद्य उपयोग एवं तेल उत्पादन के लिए उपयुक्त।",
-image:"images/sesame.jpg"
+image:"sesame.jpg"
 }
 
 ];
 
 
-/* ==================================================
-   LOAD PRODUCTS
-================================================== */
-
 let products =
-JSON.parse(localStorage.getItem("fpoProducts"));
+JSON.parse(localStorage.getItem("fpoProducts")) || defaultProducts;
 
+let editId = null;
 
-/* ==================================================
-   FIRST TIME LOAD
-================================================== */
-
-if(!products || !Array.isArray(products) || products.length === 0){
-
-products = defaultProducts;
-
-saveProducts();
-
-}
-
-
-/* ==================================================
-   EDIT INDEX
-================================================== */
-
-let editIndex = -1;
-
-
-/* ==================================================
-   SAVE PRODUCTS
-================================================== */
 
 function saveProducts(){
 
@@ -836,100 +530,86 @@ JSON.stringify(products)
 }
 
 
-/* ==================================================
-   DISPLAY PRODUCTS
-================================================== */
-
-function displayProducts(){
+function renderProducts(){
 
 const list =
 document.getElementById("productList");
 
-list.innerHTML = "";
+list.innerHTML="";
 
+let totalStock=0;
+let available=0;
 
-products.forEach(function(product,index){
+products.forEach(product=>{
 
-let statusClass =
-product.status === "Available"
-? "available"
-: "outstock";
+totalStock += Number(product.stock);
 
-
-let categoryIcon = "🌾";
-
-if(product.category === "Pulses"){
-categoryIcon = "🫘";
+if(product.status==="Available"){
+available++;
 }
 
-if(product.category === "Oil Seeds"){
-categoryIcon = "🌻";
-}
+const imagePath =
+product.image
+?
+"images/"+product.image
+:
+"images/wheat.jpg";
 
-if(product.category === "Organic Products"){
-categoryIcon = "🌱";
-}
+const categoryIcon =
+product.category==="Cereals"
+?"🌾"
+:
+product.category==="Pulses"
+?"🫘"
+:
+product.category==="Oil Seeds"
+?"🌻"
+:"🌱";
 
 
 list.innerHTML += `
 
-<div class="product-card">
+<div class="product">
 
-<img
-src="${product.image || "images/wheat.jpg"}"
+<img src="${imagePath}"
 alt="${product.name}"
-onerror="this.src='images/wheat.jpg'"
->
+onerror="this.src='images/wheat.jpg'">
 
-
-<div class="product-category">
-
+<div class="category">
 ${categoryIcon} ${product.category}
+</div>
+
+<h3>${product.name}</h3>
+
+<p>${product.description || ""}</p>
+
+<div class="price">
+💰 ₹${product.price} / ${product.unit}
+</div>
+
+<div class="stock">
+📦 Stock: ${product.stock} ${product.unit}
+</div>
+
+<div class="${product.status==="Available" ? "available":"out"}">
+
+${product.status==="Available"
+?"✅ Available"
+:"❌ Out of Stock"}
 
 </div>
 
-
-<h3>
-${product.name}
-</h3>
-
-
-<p>
-${product.description}
-</p>
-
-
-<p class="price">
-💰 ₹${product.price} / ${product.unit}
-</p>
-
-
-<p>
-📦 Stock: ${product.stock} ${product.unit}
-</p>
-
-
-<span class="status ${statusClass}">
-${product.status === "Available"
-? "✅ Available"
-: "❌ Out of Stock"}
-</span>
-
-
-<div class="card-buttons">
+<div class="actions">
 
 <button
-class="edit-btn"
-onclick="editProduct(${index})"
->
+class="btn-edit"
+onclick="editProduct(${product.id})">
 ✏️ Edit
 </button>
 
-
 <button
-class="delete-btn"
-onclick="deleteProduct(${index})"
->
+class="btn-delete"
+onclick="deleteProduct(${product.id})">
 🗑️ Delete
 </button>
 
@@ -942,169 +622,143 @@ onclick="deleteProduct(${index})"
 });
 
 
-updateStats();
+document.getElementById("totalProducts")
+.innerText=products.length;
+
+document.getElementById("totalStock")
+.innerText=totalStock+" Kg";
+
+document.getElementById("availableProducts")
+.innerText=available;
 
 }
 
 
-/* ==================================================
-   STATS
-================================================== */
+document.getElementById("productForm")
+.addEventListener("submit",function(e){
 
-function updateStats(){
+e.preventDefault();
 
-document.getElementById("totalProducts").innerText =
-products.length;
+const productData={
 
+name:document.getElementById("productName").value.trim(),
 
-let stock = 0;
+category:document.getElementById("category").value,
 
-products.forEach(function(product){
+price:Number(document.getElementById("price").value),
 
-stock += Number(product.stock) || 0;
+stock:Number(document.getElementById("stock").value),
 
-});
+unit:document.getElementById("unit").value,
 
+status:document.getElementById("status").value,
 
-document.getElementById("totalStock").innerText =
-stock + " Kg";
+description:document.getElementById("description").value.trim(),
 
+image:document.getElementById("image").value.trim()
 
-let available = products.filter(function(product){
-
-return product.status === "Available";
-
-}).length;
+};
 
 
-document.getElementById("availableProducts").innerText =
-available;
+if(editId !== null){
 
-}
+const index =
+products.findIndex(p=>p.id===editId);
 
+if(index !== -1){
 
-/* ==================================================
-   ADD PRODUCT
-================================================== */
+products[index]={
+...products[index],
+...productData
+};
 
-function addProduct(){
-
-let name =
-document.getElementById("productName").value.trim();
-
-let category =
-document.getElementById("productCategory").value;
-
-let price =
-Number(document.getElementById("productPrice").value);
-
-let stock =
-Number(document.getElementById("productStock").value);
-
-let unit =
-document.getElementById("productUnit").value;
-
-let status =
-document.getElementById("productStatus").value;
-
-let description =
-document.getElementById("productDescription").value.trim();
-
-let image =
-document.getElementById("productImage").value.trim();
-
-
-if(!name || !category || !price || !stock || !description){
-
-alert("⚠️ कृपया सभी जरूरी जानकारी भरें।");
-
-return;
+alert("✅ Product successfully updated!");
 
 }
 
+editId=null;
 
-if(!image){
+document.getElementById("saveButton")
+.innerText="➕ Add Product";
 
-image = "images/wheat.jpg";
+document.getElementById("saveButton")
+.className="btn-add";
+
+document.getElementById("addTitle")
+.style.display="block";
+
+document.getElementById("editTitle")
+.style.display="none";
 
 }
 
+else{
 
-products.push({
+productData.id =
+Date.now();
 
-name:name,
-category:category,
-price:price,
-stock:stock,
-unit:unit,
-status:status,
-description:description,
-image:image
+products.push(productData);
 
-});
+alert("✅ New product added!");
+
+}
 
 
 saveProducts();
 
-displayProducts();
-
 clearForm();
 
+renderProducts();
 
-alert("✅ Product सफलतापूर्वक Add हो गया।");
-
-}
-
-
-/* ==================================================
-   EDIT PRODUCT
-================================================== */
-
-function editProduct(index){
-
-editIndex = index;
-
-let product =
-products[index];
+});
 
 
-document.getElementById("productName").value =
-product.name;
+function editProduct(id){
 
-document.getElementById("productCategory").value =
-product.category;
+const product =
+products.find(p=>p.id===id);
 
-document.getElementById("productPrice").value =
-product.price;
-
-document.getElementById("productStock").value =
-product.stock;
-
-document.getElementById("productUnit").value =
-product.unit;
-
-document.getElementById("productStatus").value =
-product.status;
-
-document.getElementById("productDescription").value =
-product.description;
-
-document.getElementById("productImage").value =
-product.image || "";
+if(!product) return;
 
 
-document.getElementById("formTitle").innerText =
-"✏️ Edit Product";
+editId=id;
+
+document.getElementById("productName")
+.value=product.name;
+
+document.getElementById("category")
+.value=product.category;
+
+document.getElementById("price")
+.value=product.price;
+
+document.getElementById("stock")
+.value=product.stock;
+
+document.getElementById("unit")
+.value=product.unit;
+
+document.getElementById("status")
+.value=product.status;
+
+document.getElementById("description")
+.value=product.description || "";
+
+document.getElementById("image")
+.value=product.image || "";
 
 
-document.getElementById("addButton").style.display =
-"none";
+document.getElementById("addTitle")
+.style.display="none";
 
-document.getElementById("updateButton").style.display =
-"inline-block";
+document.getElementById("editTitle")
+.style.display="block";
 
-document.getElementById("cancelButton").style.display =
-"inline-block";
+document.getElementById("saveButton")
+.innerText="💾 Update Product";
+
+document.getElementById("saveButton")
+.className="btn-update";
 
 
 window.scrollTo({
@@ -1115,217 +769,57 @@ behavior:"smooth"
 }
 
 
-/* ==================================================
-   UPDATE PRODUCT
-================================================== */
+function deleteProduct(id){
 
-function updateProduct(){
+const product =
+products.find(p=>p.id===id);
 
-if(editIndex === -1){
-
-alert("⚠️ पहले Product select करें।");
-
-return;
-
-}
+if(!product) return;
 
 
-let name =
-document.getElementById("productName").value.trim();
+const confirmDelete =
+confirm(
+`क्या आप "${product.name}" को Delete करना चाहते हैं?`
+);
 
-let category =
-document.getElementById("productCategory").value;
-
-let price =
-Number(document.getElementById("productPrice").value);
-
-let stock =
-Number(document.getElementById("productStock").value);
-
-let unit =
-document.getElementById("productUnit").value;
-
-let status =
-document.getElementById("productStatus").value;
-
-let description =
-document.getElementById("productDescription").value.trim();
-
-let image =
-document.getElementById("productImage").value.trim();
+if(!confirmDelete) return;
 
 
-if(!name || !category || !price || !stock || !description){
-
-alert("⚠️ कृपया सभी जरूरी जानकारी भरें।");
-
-return;
-
-}
-
-
-if(!image){
-
-image =
-products[editIndex].image || "images/wheat.jpg";
-
-}
-
-
-products[editIndex] = {
-
-name:name,
-category:category,
-price:price,
-stock:stock,
-unit:unit,
-status:status,
-description:description,
-image:image
-
-};
-
+products =
+products.filter(p=>p.id!==id);
 
 saveProducts();
 
-displayProducts();
+renderProducts();
 
-cancelEdit();
-
-
-alert("✅ Product सफलतापूर्वक Update हो गया।");
+alert("🗑️ Product deleted successfully!");
 
 }
 
-
-/* ==================================================
-   CANCEL EDIT
-================================================== */
-
-function cancelEdit(){
-
-editIndex = -1;
-
-
-clearForm();
-
-
-document.getElementById("formTitle").innerText =
-"➕ Add New Product";
-
-
-document.getElementById("addButton").style.display =
-"inline-block";
-
-document.getElementById("updateButton").style.display =
-"none";
-
-document.getElementById("cancelButton").style.display =
-"none";
-
-}
-
-
-/* ==================================================
-   CLEAR FORM
-================================================== */
 
 function clearForm(){
 
-document.getElementById("productName").value = "";
+document.getElementById("productForm")
+.reset();
 
-document.getElementById("productCategory").value = "";
+editId=null;
 
-document.getElementById("productPrice").value = "";
+document.getElementById("addTitle")
+.style.display="block";
 
-document.getElementById("productStock").value = "";
+document.getElementById("editTitle")
+.style.display="none";
 
-document.getElementById("productUnit").value = "Kg";
+document.getElementById("saveButton")
+.innerText="➕ Add Product";
 
-document.getElementById("productStatus").value = "Available";
-
-document.getElementById("productDescription").value = "";
-
-document.getElementById("productImage").value = "";
-
-}
-
-
-/* ==================================================
-   DELETE PRODUCT
-================================================== */
-
-function deleteProduct(index){
-
-let product =
-products[index];
-
-
-let confirmDelete =
-confirm(
-"क्या आप '" +
-product.name +
-"' को Delete करना चाहते हैं?"
-);
-
-
-if(!confirmDelete){
-
-return;
+document.getElementById("saveButton")
+.className="btn-add";
 
 }
 
 
-products.splice(index,1);
-
-saveProducts();
-
-displayProducts();
-
-
-alert("🗑️ Product Delete हो गया।");
-
-}
-
-
-/* ==================================================
-   CLEAR ALL PRODUCTS
-================================================== */
-
-function clearAllProducts(){
-
-let confirmClear =
-confirm(
-"⚠️ क्या आप सभी Products Delete करना चाहते हैं?"
-);
-
-
-if(!confirmClear){
-
-return;
-
-}
-
-
-products = [];
-
-saveProducts();
-
-displayProducts();
-
-cancelEdit();
-
-
-alert("🗑️ सभी Products Delete हो गए।");
-
-}
-
-
-/* ==================================================
-   INITIAL DISPLAY
-================================================== */
-
-displayProducts();
+renderProducts();
 
 </script>
 
