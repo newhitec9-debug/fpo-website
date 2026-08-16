@@ -776,7 +776,10 @@ function buyProductNow(product, quantity){
             buyNowProduct
         )
     );
-
+sessionStorage.setItem(
+    "checkoutMode",
+    "buyNow"
+);
 
     var total =
         buyNowProduct.price *
