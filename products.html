@@ -1,779 +1,609 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FPO Products | Bundelkhand Organic Farmer Producer Company Limited</title>
+<title>Products | Bundelkhand Organic Farmer Producer Company Limited</title>
 
 <style>
-
 *{
     box-sizing:border-box;
-    margin:0;
-    padding:0;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f4f8f3;
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f8f4;
     color:#222;
 }
 
-/* HEADER */
-
 header{
-    background:linear-gradient(135deg,#176b2c,#2e8b3c);
+    background:#176b2c;
     color:white;
+    padding:18px 15px;
     text-align:center;
-    padding:25px 15px;
 }
 
 header h1{
-    font-size:28px;
-    margin-bottom:8px;
+    margin:0;
+    font-size:26px;
 }
 
 header p{
-    font-size:17px;
-    margin:5px 0;
+    margin:6px 0 0;
+    font-size:15px;
 }
 
-/* NAV */
-
 nav{
-    background:white;
-    padding:12px 8px;
+    background:#0d4f20;
+    padding:10px;
     text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,0.12);
-    position:sticky;
-    top:0;
-    z-index:1000;
 }
 
 nav a{
-    display:inline-block;
+    color:white;
     text-decoration:none;
-    color:#176b2c;
+    margin:0 10px;
     font-weight:bold;
-    margin:4px;
-    padding:9px 11px;
-    border-radius:7px;
 }
 
-nav a:hover{
-    background:#e8f5e9;
+.cart-bar{
+    background:white;
+    padding:12px;
+    text-align:right;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
+    position:sticky;
+    top:0;
+    z-index:10;
 }
 
-/* CART */
-
-.cart-link{
-    background:#ffd600 !important;
-    color:#222 !important;
-    border:2px solid #e0b800;
-    border-radius:30px !important;
-    padding:11px 19px !important;
-    font-size:16px !important;
-    font-weight:bold !important;
+.cart-btn{
+    display:inline-block;
+    background:#ff9800;
+    color:white;
+    padding:10px 18px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
 }
-
-/* MAIN */
 
 .container{
-    width:94%;
     max-width:1200px;
-    margin:30px auto;
+    margin:25px auto;
+    padding:0 15px;
 }
-
-/* TITLE */
 
 .page-title{
     text-align:center;
+    color:#176b2c;
     margin-bottom:25px;
 }
 
-.page-title h2{
-    color:#176b2c;
-    font-size:30px;
-    margin-bottom:10px;
-}
-
-.page-title p{
-    color:#555;
-    margin:6px 0;
-}
-
-/* FILTER */
-
-.filters{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-bottom:30px;
-}
-
-.filter-btn{
-    background:white;
-    color:#176b2c;
-    border:2px solid #176b2c;
-    padding:10px 18px;
-    border-radius:25px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.filter-btn:hover,
-.filter-btn.active{
-    background:#176b2c;
-    color:white;
-}
-
-/* GRID */
-
 .products-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
 }
-
-/* CARD */
 
 .product-card{
     background:white;
-    border-radius:14px;
+    border-radius:12px;
     overflow:hidden;
-    box-shadow:0 4px 14px rgba(0,0,0,0.12);
-    display:flex;
-    flex-direction:column;
+    box-shadow:0 3px 10px rgba(0,0,0,.12);
+    padding-bottom:18px;
+    transition:.2s;
 }
 
 .product-card:hover{
     transform:translateY(-3px);
 }
 
-/* IMAGE */
-
 .product-image{
     width:100%;
-    height:220px;
+    height:190px;
     object-fit:cover;
-    display:block;
     background:#eee;
 }
 
-/* CONTENT */
-
-.product-content{
-    padding:18px;
+.no-image{
+    height:190px;
     display:flex;
-    flex-direction:column;
-    flex:1;
+    align-items:center;
+    justify-content:center;
+    background:#e8f5e9;
+    font-size:55px;
 }
 
-.category{
-    color:#176b2c;
-    font-weight:bold;
-    font-size:14px;
-    margin-bottom:8px;
+.product-info{
+    padding:15px;
 }
 
 .product-name{
-    font-size:23px;
-    margin-bottom:10px;
+    font-size:20px;
+    font-weight:bold;
+    color:#176b2c;
+    margin-bottom:8px;
 }
 
-.description{
-    color:#555;
-    font-size:14px;
-    line-height:1.6;
-    min-height:70px;
-}
-
-.price{
-    color:#d35400;
+.product-price{
     font-size:22px;
     font-weight:bold;
-    margin-top:14px;
+    color:#d84315;
+    margin:8px 0;
 }
 
-.status{
-    margin-top:8px;
-    font-weight:bold;
+.product-stock{
+    color:#555;
+    margin-bottom:12px;
 }
 
-.available{
-    color:#188038;
-}
-
-.out-stock{
-    color:#d93025;
-}
-
-/* BUTTONS */
-
-.buttons{
+.qty-box{
     display:flex;
-    gap:10px;
-    margin-top:18px;
+    align-items:center;
+    gap:8px;
+    margin-bottom:12px;
+}
+
+.qty-box button{
+    width:35px;
+    height:35px;
+    border:1px solid #ccc;
+    background:#eee;
+    cursor:pointer;
+    font-size:18px;
+    border-radius:5px;
+}
+
+.qty-box input{
+    width:55px;
+    height:35px;
+    text-align:center;
+    border:1px solid #ccc;
+    border-radius:5px;
 }
 
 .btn{
-    flex:1;
+    width:100%;
+    padding:11px;
     border:none;
-    padding:14px 8px;
-    border-radius:9px;
+    border-radius:6px;
     cursor:pointer;
-    font-weight:bold;
     font-size:15px;
+    font-weight:bold;
+    margin-top:7px;
 }
 
-/* ADD CART */
-
-.add-cart{
-    background:#ffd600;
-    color:#222;
-    border:2px solid #e0b800;
-}
-
-.add-cart:hover{
-    background:#ffca00;
-}
-
-/* BUY NOW */
-
-.buy-now{
-    background:#ff9800;
-    color:white;
-    border:2px solid #e68900;
-}
-
-.buy-now:hover{
-    background:#f57c00;
-}
-
-.btn:disabled{
-    background:#aaa !important;
-    border-color:#999 !important;
-    cursor:not-allowed;
-}
-
-/* EMPTY */
-
-.no-products{
-    grid-column:1/-1;
-    background:white;
-    padding:50px;
-    text-align:center;
-    border-radius:14px;
-}
-
-/* FOOTER */
-
-footer{
-    margin-top:45px;
+.add-btn{
     background:#176b2c;
     color:white;
+}
+
+.buy-btn{
+    background:#ff6f00;
+    color:white;
+}
+
+.btn:hover{
+    opacity:.9;
+}
+
+.out-stock{
+    background:#999 !important;
+    cursor:not-allowed !important;
+}
+
+.message{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#176b2c;
+    color:white;
+    padding:14px 20px;
+    border-radius:7px;
+    display:none;
+    z-index:100;
+}
+
+footer{
+    margin-top:40px;
+    background:#0d4f20;
+    color:white;
     text-align:center;
-    padding:25px 15px;
-    line-height:1.8;
+    padding:20px;
 }
-
-/* TABLET */
-
-@media(max-width:900px){
-
-    .products-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-    header h1{
-        font-size:22px;
-    }
-
-    header p{
-        font-size:14px;
-    }
-
-    .products-grid{
-        grid-template-columns:1fr;
-    }
-
-    .buttons{
-        flex-direction:column;
-    }
-
-    .btn{
-        width:100%;
-        padding:15px;
-    }
-
-    nav a{
-        font-size:13px;
-        padding:7px 8px;
-    }
-
-}
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- HEADER -->
-
 <header>
-
-<h1>
-🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-</h1>
-
-<p>
-Bundelkhand Organic Farmer Producer Company Limited
-</p>
-
-<p>
-🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
-</p>
-
+    <h1>🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड</h1>
+    <p>Bundelkhand Organic Farmer Producer Company Limited</p>
 </header>
 
-
-<!-- NAVIGATION -->
-
 <nav>
-
-<a href="index.html">🏠 Home</a>
-
-<a href="about.html">🌿 About</a>
-
-<a href="products.html">🛒 Products</a>
-
-<a href="farmers.html">👨‍🌾 Kisan Corner</a>
-
-<a href="membership.html">📝 Join FPO</a>
-
-<a href="news.html">📰 Agriculture News</a>
-
-<a href="bulk-order.html">📦 Bulk Order</a>
-
-<a href="gallery.html">🖼️ Gallery</a>
-
-<a href="contact.html">📞 Contact</a>
-
-<a href="cart.html" class="cart-link">
-
-🛒 Cart:
-<span id="cartCount">0</span>
-
-</a>
-
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">🌿 About</a>
+    <a href="products.html">🛒 Products</a>
+    <a href="farmers.html">👨‍🌾 Farmers</a>
+    <a href="membership.html">🤝 Membership</a>
+    <a href="contact.html">📞 Contact</a>
 </nav>
 
-
-<!-- MAIN -->
+<div class="cart-bar">
+    <a href="cart.html" class="cart-btn">
+        🛒 Cart (<span id="cartCount">0</span>)
+    </a>
+</div>
 
 <div class="container">
 
+    <h2 class="page-title">🌾 हमारे उत्पाद</h2>
 
-<div class="page-title">
-
-<h2>
-🛒 FPO Products
-</h2>
-
-<p>
-किसानों से सीधे आपके घर तक गुणवत्तापूर्ण कृषि उत्पाद
-</p>
-
-<p>
-Quality agricultural products directly from farmers to consumers.
-</p>
+    <div id="productsGrid" class="products-grid"></div>
 
 </div>
 
-
-<!-- FILTER -->
-
-<div class="filters">
-
-<button
-type="button"
-class="filter-btn active"
-onclick="showCategory('all')">
-
-🌾 All
-
-</button>
-
-
-<button
-type="button"
-class="filter-btn"
-onclick="showCategory('cereals')">
-
-🌾 अनाज
-
-</button>
-
-
-<button
-type="button"
-class="filter-btn"
-onclick="showCategory('pulses')">
-
-🫘 दालें
-
-</button>
-
-
-<button
-type="button"
-class="filter-btn"
-onclick="showCategory('oilseeds')">
-
-🌻 तिलहन
-
-</button>
-
-
-<button
-type="button"
-class="filter-btn"
-onclick="showCategory('organic')">
-
-🌱 जैविक उत्पाद
-
-</button>
-
-</div>
-
-
-<!-- PRODUCTS -->
-
-<div
-id="productsGrid"
-class="products-grid">
-
-</div>
-
-
-</div>
-
-
-<!-- FOOTER -->
+<div id="message" class="message"></div>
 
 <footer>
-
-<h3>
-🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-</h3>
-
-<p>
-Bundelkhand Organic Farmer Producer Company Limited
-</p>
-
-<p>
-Empowering Farmers • Promoting Organic Agriculture
-</p>
-
-<p>
-© 2026 All Rights Reserved
-</p>
-
+    <p>© 2026 Bundelkhand Organic Farmer Producer Company Limited</p>
+    <p>🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य</p>
 </footer>
 
 
 <script>
 
 /* =====================================================
-   PRODUCT DATA
-===================================================== */
-
-var defaultProducts = [
-
-{
-id:"wheat",
-name:"गेहूँ",
-category:"cereals",
-categoryName:"🌾 Cereals / अनाज",
-price:50,
-stock:900,
-unit:"Kg",
-status:"available",
-description:"Bundelkhand क्षेत्र के किसानों से प्राप्त गुणवत्तापूर्ण गेहूँ। साफ-सुथरा और दैनिक उपयोग के लिए उपयुक्त।",
-image:"images/wheat.jpg"
-},
-
-{
-id:"chana-dal",
-name:"चना दाल",
-category:"pulses",
-categoryName:"🫘 Pulses / दालें",
-price:110,
-stock:1000,
-unit:"Kg",
-status:"available",
-description:"स्वच्छ एवं गुणवत्तापूर्ण चना दाल। प्रोटीन से भरपूर और स्वादिष्ट।",
-image:"images/chana-dal.jpg"
-},
-
-{
-id:"matar-dal",
-name:"मटर दाल",
-category:"pulses",
-categoryName:"🫘 Pulses / दालें",
-price:100,
-stock:1000,
-unit:"Kg",
-status:"available",
-description:"गुणवत्तापूर्ण मटर दाल। अच्छी तरह साफ एवं पैक की गई।",
-image:"images/matar-dal.jpg"
-},
-
-{
-id:"masoor-dal",
-name:"मसूर दाल",
-category:"pulses",
-categoryName:"🫘 Pulses / दालें",
-price:99,
-stock:1000,
-unit:"Kg",
-status:"available",
-description:"स्वच्छ और गुणवत्तापूर्ण मसूर दाल।",
-image:"images/masoor-dal.jpg"
-},
-
-{
-id:"arhar-dal",
-name:"अरहर / तुअर दाल",
-category:"pulses",
-categoryName:"🫘 Pulses / दालें",
-price:140,
-stock:1000,
-unit:"Kg",
-status:"available",
-description:"उत्तम गुणवत्ता की अरहर / तुअर दाल। स्वादिष्ट एवं पौष्टिक।",
-image:"images/arhar-dal.jpg"
-},
-
-{
-id:"urad-dal",
-name:"उड़द दाल",
-category:"pulses",
-categoryName:"🫘 Pulses / दालें",
-price:140,
-stock:1000,
-unit:"Kg",
-status:"available",
-description:"गुणवत्तापूर्ण उड़द दाल। दाल, इडली और डोसा के लिए उपयुक्त।",
-image:"images/urad-dal.jpg"
-},
-
-{
-id:"daliya",
-name:"दलिया",
-category:"cereals",
-categoryName:"🌾 Cereals / अनाज",
-price:70,
-stock:1000,
-unit:"Kg",
-status:"available",
-description:"गुणवत्तापूर्ण गेहूँ से तैयार दलिया।",
-image:"images/daliya.jpg"
-},
-
-{
-id:"besan",
-name:"बेसन",
-category:"organic",
-categoryName:"🌱 Organic Products / जैविक उत्पाद",
-price:120,
-stock:1000,
-unit:"Kg",
-status:"available",
-description:"उत्तम गुणवत्ता वाले चने से तैयार बेसन।",
-image:"images/besan.jpg"
-},
-
-{
-id:"mustard",
-name:"सरसों",
-category:"oilseeds",
-categoryName:"🌻 Oil Seeds / तिलहन",
-price:80,
-stock:1000,
-unit:"Kg",
-status:"available",
-description:"Bundelkhand के किसानों से प्राप्त गुणवत्तापूर्ण सरसों।",
-image:"images/mustard.jpg"
-},
-
-{
-id:"groundnut",
-name:"मूंगफली",
-category:"oilseeds",
-categoryName:"🌻 Oil Seeds / तिलहन",
-price:130,
-stock:100,
-unit:"Kg",
-status:"available",
-description:"चयनित एवं गुणवत्तापूर्ण मूंगफली।",
-image:"images/groundnut.jpg"
-},
-
-{
-id:"sesame",
-name:"तिल",
-category:"oilseeds",
-categoryName:"🌻 Oil Seeds / तिलहन",
-price:180,
-stock:1000,
-unit:"Kg",
-status:"available",
-description:"किसानों से प्राप्त गुणवत्तापूर्ण तिल।",
-image:"images/sesame.jpg"
-}
-
-];
-
-
-/* =====================================================
-   GET PRODUCTS
+   PRODUCTS
 ===================================================== */
 
 function getProducts(){
 
-try{
+    var products = JSON.parse(
+        localStorage.getItem("products") || "[]"
+    );
 
-var saved =
-localStorage.getItem("fpoProducts");
-
-if(saved){
-
-var data =
-JSON.parse(saved);
-
-if(
-Array.isArray(data) &&
-data.length > 0
-){
-
-return data;
-
-}
-
-}
-
-}
-catch(error){
-
-console.log(error);
-
-}
-
-return defaultProducts;
-
+    return Array.isArray(products) ? products : [];
 }
 
 
 /* =====================================================
-   GET CART
+   CART
 ===================================================== */
 
 function getCart(){
 
-try{
+    try{
 
-var saved =
-localStorage.getItem("cart");
+        var cart = JSON.parse(
+            localStorage.getItem("cart") || "[]"
+        );
 
-if(!saved){
+        return Array.isArray(cart) ? cart : [];
 
-return [];
+    }catch(e){
 
+        return [];
+
+    }
 }
 
-var cart =
-JSON.parse(saved);
-
-if(Array.isArray(cart)){
-
-return cart;
-
-}
-
-}
-catch(error){
-
-console.log(error);
-
-}
-
-return [];
-
-}
-
-
-/* =====================================================
-   SAVE CART
-===================================================== */
 
 function saveCart(cart){
 
-localStorage.setItem(
-"cart",
-JSON.stringify(cart)
-);
-
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
 }
 
 
 /* =====================================================
-   UPDATE CART COUNT
+   CART COUNT
 ===================================================== */
 
 function updateCartCount(){
 
-var cart =
-getCart();
+    var cart = getCart();
 
-var total = 0;
+    var total = 0;
 
-for(
-var i = 0;
-i < cart.length;
-i++
-){
+    for(var i=0; i<cart.length; i++){
 
-total +=
-Number(cart[i].quantity) || 0;
+        total += Number(cart[i].quantity || 0);
 
+    }
+
+    document.getElementById("cartCount").textContent = total;
 }
 
-var count =
-document.getElementById(
-"cartCount"
-);
 
-if(count){
+/* =====================================================
+   MESSAGE
+===================================================== */
 
-count.innerHTML =
-total;
+function showMessage(text){
 
+    var message =
+        document.getElementById("message");
+
+    message.textContent = text;
+
+    message.style.display = "block";
+
+    setTimeout(function(){
+
+        message.style.display = "none";
+
+    },2000);
 }
+
+
+/* =====================================================
+   DISPLAY PRODUCTS
+===================================================== */
+
+function displayProducts(){
+
+    var products = getProducts();
+
+    var grid =
+        document.getElementById("productsGrid");
+
+    grid.innerHTML = "";
+
+
+    if(products.length === 0){
+
+        grid.innerHTML =
+            "<p>❌ कोई Product उपलब्ध नहीं है।";
+
+        return;
+
+    }
+
+
+    for(var i=0; i<products.length; i++){
+
+        var product = products[i];
+
+        var id = product.id;
+
+        var name =
+            product.name || "Product";
+
+        var price =
+            Number(product.price) || 0;
+
+        var stock =
+            Number(product.stock) || 0;
+
+        var status =
+            String(product.status || "Available");
+
+
+        var image =
+            product.image || "";
+
+
+        var card =
+            document.createElement("div");
+
+        card.className =
+            "product-card";
+
+
+        /* IMAGE */
+
+        if(image){
+
+            card.innerHTML +=
+                '<img class="product-image" src="' +
+                image +
+                '" alt="' +
+                name +
+                '">';
+
+        }else{
+
+            card.innerHTML +=
+                '<div class="no-image">🌾</div>';
+
+        }
+
+
+        /* INFO */
+
+        var info =
+            document.createElement("div");
+
+        info.className =
+            "product-info";
+
+
+        info.innerHTML =
+
+            '<div class="product-name">' +
+            name +
+            '</div>' +
+
+            '<div class="product-price">' +
+            '₹' + price +
+            '</div>' +
+
+            '<div class="product-stock">' +
+            'Stock: ' + stock +
+            '</div>';
+
+
+        /* QUANTITY */
+
+        var qtyBox =
+            document.createElement("div");
+
+        qtyBox.className =
+            "qty-box";
+
+
+        var minus =
+            document.createElement("button");
+
+        minus.textContent = "−";
+
+
+        var input =
+            document.createElement("input");
+
+        input.type = "number";
+
+        input.value = "1";
+
+        input.min = "1";
+
+        input.max =
+            stock > 0 ? stock : 1;
+
+
+        var plus =
+            document.createElement("button");
+
+        plus.textContent = "+";
+
+
+        minus.onclick = function(){
+
+            var value =
+                Number(input.value) || 1;
+
+            if(value > 1){
+
+                input.value = value - 1;
+
+            }
+
+        };
+
+
+        plus.onclick = function(){
+
+            var value =
+                Number(input.value) || 1;
+
+            if(value < stock){
+
+                input.value = value + 1;
+
+            }
+
+        };
+
+
+        qtyBox.appendChild(minus);
+
+        qtyBox.appendChild(input);
+
+        qtyBox.appendChild(plus);
+
+
+        info.appendChild(qtyBox);
+
+
+        /* ADD TO CART */
+
+        var addButton =
+            document.createElement("button");
+
+        addButton.className =
+            "btn add-btn";
+
+        addButton.textContent =
+            "🛒 Add to Cart";
+
+
+        /* BUY NOW */
+
+        var buyButton =
+            document.createElement("button");
+
+        buyButton.className =
+            "btn buy-btn";
+
+        buyButton.textContent =
+            "⚡ Buy Now";
+
+
+        /* PRODUCT AVAILABLE */
+
+        var available =
+            status.toLowerCase() === "available" &&
+            stock > 0;
+
+
+        if(!available){
+
+            addButton.disabled = true;
+
+            buyButton.disabled = true;
+
+            addButton.classList.add(
+                "out-stock"
+            );
+
+            buyButton.classList.add(
+                "out-stock"
+            );
+
+            addButton.textContent =
+                "❌ उपलब्ध नहीं";
+
+            buyButton.textContent =
+                "❌ उपलब्ध नहीं";
+
+        }
+
+
+        /* ADD CART CLICK */
+
+        addButton.onclick = function(){
+
+            var quantity =
+                Number(input.value) || 1;
+
+            addToCart(
+                product,
+                quantity
+            );
+
+        };
+
+
+        /* BUY NOW CLICK */
+
+        buyButton.onclick = function(){
+
+            var quantity =
+                Number(input.value) || 1;
+
+            buyProductNow(
+                product,
+                quantity
+            );
+
+        };
+
+
+        info.appendChild(addButton);
+
+        info.appendChild(buyButton);
+
+
+        card.appendChild(info);
+
+        grid.appendChild(card);
+
+    }
 
 }
 
@@ -782,126 +612,73 @@ total;
    ADD TO CART
 ===================================================== */
 
-function addProductToCart(id){
+function addToCart(product, quantity){
 
-var products =
-getProducts();
-
-
-var product = null;
+    var cart = getCart();
 
 
-for(
-var i = 0;
-i < products.length;
-i++
-){
-
-if(
-String(products[i].id) ===
-String(id)
-){
-
-product =
-products[i];
-
-break;
-
-}
-
-}
+    var productId =
+        product.id;
 
 
-if(!product){
-
-alert(
-"❌ Product नहीं मिला।"
-);
-
-return;
-
-}
+    var found = null;
 
 
-if(
-product.status !== "available" ||
-Number(product.stock) <= 0
-){
+    for(var i=0; i<cart.length; i++){
 
-alert(
-"❌ यह Product अभी उपलब्ध नहीं है।"
-);
+        if(
+            String(cart[i].id) ===
+            String(productId)
+        ){
 
-return;
+            found = cart[i];
 
-}
+            break;
 
+        }
 
-var cart =
-getCart();
+    }
 
 
-var found = null;
+    if(found){
+
+        found.quantity =
+            Number(found.quantity || 0) +
+            Number(quantity);
+
+    }else{
+
+        cart.push({
+
+            id: String(productId),
+
+            name:
+                product.name,
+
+            price:
+                Number(product.price) || 0,
+
+            quantity:
+                Number(quantity),
+
+            unit:
+                product.unit || "Kg",
+
+            image:
+                product.image || ""
+
+        });
+
+    }
 
 
-for(
-var j = 0;
-j < cart.length;
-j++
-){
+    saveCart(cart);
 
-if(
-String(cart[j].id) ===
-String(product.id)
-){
+    updateCartCount();
 
-found =
-cart[j];
-
-break;
-
-}
-
-}
-
-
-if(found){
-
-found.quantity =
-Number(found.quantity || 0) + 1;
-
-}
-else{
-
-cart.push({
-
-id:String(product.id),
-
-name:product.name,
-
-price:Number(product.price) || 0,
-
-quantity:1,
-
-unit:product.unit || "Kg",
-
-image:product.image || ""
-
-});
-
-}
-
-
-saveCart(cart);
-
-updateCartCount();
-
-
-alert(
-"✅ " +
-product.name +
-" Cart में Add हो गया।"
-);
+    showMessage(
+        "✅ Product Cart में Add हो गया"
+    );
 
 }
 
@@ -910,394 +687,118 @@ product.name +
    BUY NOW
 ===================================================== */
 
-function buyProductNow(id){
+function buyProductNow(product, quantity){
 
-var products =
-getProducts();
+    if(!product){
 
+        alert(
+            "❌ Product नहीं मिला।"
+        );
 
-var product = null;
+        return;
 
+    }
 
-for(
-var i = 0;
-i < products.length;
-i++
-){
 
-if(
-String(products[i].id) ===
-String(id)
-){
+    var status =
+        String(
+            product.status || "Available"
+        ).toLowerCase();
 
-product =
-products[i];
 
-break;
+    var stock =
+        Number(product.stock) || 0;
 
-}
 
-}
+    if(
+        status !== "available" ||
+        stock <= 0
+    ){
 
+        alert(
+            "❌ यह Product अभी उपलब्ध नहीं है।"
+        );
 
-if(!product){
+        return;
 
-alert(
-"❌ Product नहीं मिला।"
-);
+    }
 
-return;
 
-}
+    quantity =
+        Number(quantity) || 1;
 
 
-if(
-product.status !== "available" ||
-Number(product.stock) <= 0
-){
+    if(quantity > stock){
 
-alert(
-"❌ यह Product अभी उपलब्ध नहीं है।"
-);
+        alert(
+            "❌ इतनी Quantity उपलब्ध नहीं है।"
+        );
 
-return;
+        return;
 
-}
+    }
 
 
-var cart =
-getCart();
+    /*
+       IMPORTANT:
+       Buy Now में Cart को नहीं बदलना है।
+       केवल selected product save करना है।
+    */
 
+    var buyNowProduct = {
 
-var found = null;
+        id:
+            String(
+                product.id
+            ),
 
+        name:
+            product.name,
 
-for(
-var j = 0;
-j < cart.length;
-j++
-){
+        price:
+            Number(product.price) || 0,
 
-if(
-String(cart[j].id) ===
-String(product.id)
-){
+        quantity:
+            quantity,
 
-found =
-cart[j];
+        unit:
+            product.unit || "Kg",
 
-break;
+        image:
+            product.image || ""
 
-}
+    };
 
-}
 
+    localStorage.setItem(
+        "buyNowProduct",
+        JSON.stringify(
+            buyNowProduct
+        )
+    );
 
-if(found){
 
-found.quantity =
-Number(found.quantity || 0) + 1;
+    var total =
+        buyNowProduct.price *
+        buyNowProduct.quantity;
 
-}
-else{
 
-cart.push({
+    localStorage.setItem(
+        "orderTotal",
+        String(total)
+    );
 
-id:String(product.id),
 
-name:product.name,
+    console.log(
+        "✅ Buy Now:",
+        buyNowProduct
+    );
 
-price:Number(product.price) || 0,
 
-quantity:1,
+    /* GO CHECKOUT */
 
-unit:product.unit || "Kg",
-
-image:product.image || ""
-
-});
-
-}
-
-
-saveCart(cart);
-
-updateCartCount();
-
-
-/* GO TO CHECKOUT */
-
-window.location.href =
-"checkout.html";
-
-}
-
-
-/* =====================================================
-   DISPLAY PRODUCTS
-===================================================== */
-
-function displayProducts(category){
-
-var grid =
-document.getElementById(
-"productsGrid"
-);
-
-
-if(!grid){
-
-return;
-
-}
-
-
-var products =
-getProducts();
-
-
-var list = [];
-
-
-for(
-var i = 0;
-i < products.length;
-i++
-){
-
-if(
-category === "all" ||
-products[i].category === category
-){
-
-list.push(
-products[i]
-);
-
-}
-
-}
-
-
-grid.innerHTML = "";
-
-
-if(list.length === 0){
-
-grid.innerHTML = `
-
-<div class="no-products">
-
-<h3>
-❌ कोई Product उपलब्ध नहीं है।
-</h3>
-
-<p>
-कृपया दूसरी Category चुनें।
-</p>
-
-</div>
-
-`;
-
-return;
-
-}
-
-
-for(
-var p = 0;
-p < list.length;
-p++
-){
-
-var product =
-list[p];
-
-
-var available =
-product.status === "available" &&
-Number(product.stock) > 0;
-
-
-var card =
-document.createElement(
-"div"
-);
-
-
-card.className =
-"product-card";
-
-
-var image =
-product.image ||
-"images/wheat.jpg";
-
-
-var safeId =
-String(product.id)
-.replace(/'/g,"");
-
-
-card.innerHTML = `
-
-<img
-
-class="product-image"
-
-src="${image}"
-
-alt="${product.name}"
-
-onerror="this.src='images/wheat.jpg'"
-
->
-
-
-<div class="product-content">
-
-
-<div class="category">
-
-${product.categoryName || ""}
-
-</div>
-
-
-<h3 class="product-name">
-
-${product.name}
-
-</h3>
-
-
-<div class="description">
-
-${product.description || ""}
-
-</div>
-
-
-<div class="price">
-
-💰 ₹${Number(product.price || 0).toLocaleString("en-IN")}
-
-/
-
-${product.unit || "Kg"}
-
-</div>
-
-
-<div class="status ${
-available
-? "available"
-: "out-stock"
-}">
-
-${
-available
-? "✅ Available"
-: "❌ Out of Stock"
-}
-
-</div>
-
-
-<div class="buttons">
-
-
-<button
-
-type="button"
-
-class="btn add-cart"
-
-onclick="addProductToCart('${safeId}')"
-
-${available ? "" : "disabled"}
-
->
-
-🛒 Add to Cart
-
-</button>
-
-
-<button
-
-type="button"
-
-class="btn buy-now"
-
-onclick="buyProductNow('${safeId}')"
-
-${available ? "" : "disabled"}
-
->
-
-⚡ Buy Now
-
-</button>
-
-
-</div>
-
-
-</div>
-
-`;
-
-
-grid.appendChild(card);
-
-}
-
-}
-
-
-/* =====================================================
-   CATEGORY FILTER
-===================================================== */
-
-function showCategory(category){
-
-var buttons =
-document.querySelectorAll(
-".filter-btn"
-);
-
-
-for(
-var i = 0;
-i < buttons.length;
-i++
-){
-
-buttons[i].classList.remove(
-"active"
-);
-
-}
-
-
-var clicked =
-event.target;
-
-
-if(clicked){
-
-clicked.classList.add(
-"active"
-);
-
-}
-
-
-displayProducts(
-category
-);
+    window.location.href =
+        "checkout.html";
 
 }
 
@@ -1306,33 +807,11 @@ category
    PAGE LOAD
 ===================================================== */
 
-document.addEventListener(
-"DOMContentLoaded",
-function(){
-
-displayProducts(
-"all"
-);
+displayProducts();
 
 updateCartCount();
-
-});
-
-
-/* =====================================================
-   PAGE SHOW
-===================================================== */
-
-window.addEventListener(
-"pageshow",
-function(){
-
-updateCartCount();
-
-});
 
 </script>
 
 </body>
-
 </html>
