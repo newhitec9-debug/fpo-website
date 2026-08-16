@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,17 +16,17 @@
 }
 
 body{
-    background:#f1f8f2;
+    background:#f4fff4;
     color:#333;
 }
 
 /* HEADER */
 
 header{
-    background:#1b5e20;
+    background:#1B5E20;
     color:white;
     text-align:center;
-    padding:22px 15px;
+    padding:25px 15px;
 }
 
 header h1{
@@ -42,7 +41,7 @@ header p{
 /* NAV */
 
 nav{
-    background:#2e7d32;
+    background:#2E7D32;
     padding:14px;
     text-align:center;
 }
@@ -51,19 +50,18 @@ nav a{
     color:white;
     text-decoration:none;
     font-weight:bold;
-    margin:5px 10px;
-    display:inline-block;
+    margin:0 8px;
 }
 
 nav a:hover{
-    color:#ffeb3b;
+    color:#FFD54F;
 }
 
 /* CONTAINER */
 
 .container{
     max-width:1200px;
-    margin:25px auto;
+    margin:30px auto;
     padding:15px;
 }
 
@@ -71,13 +69,8 @@ nav a:hover{
 
 .page-title{
     text-align:center;
-    color:#1b5e20;
+    color:#1B5E20;
     margin-bottom:25px;
-}
-
-.page-title h2{
-    font-size:30px;
-    margin-bottom:8px;
 }
 
 /* FORM */
@@ -91,7 +84,7 @@ nav a:hover{
 }
 
 .form-box h2{
-    color:#2e7d32;
+    color:#2E7D32;
     margin-bottom:20px;
 }
 
@@ -106,13 +99,9 @@ nav a:hover{
     flex-direction:column;
 }
 
-.form-group.full{
-    grid-column:1 / -1;
-}
-
 .form-group label{
     font-weight:bold;
-    margin-bottom:7px;
+    margin-bottom:6px;
 }
 
 .form-group input,
@@ -125,20 +114,17 @@ nav a:hover{
 }
 
 .form-group textarea{
-    min-height:100px;
+    min-height:90px;
     resize:vertical;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-    outline:none;
-    border-color:#2e7d32;
+.full{
+    grid-column:1 / -1;
 }
 
 /* BUTTONS */
 
-.button-area{
+.button-row{
     margin-top:20px;
     display:flex;
     gap:10px;
@@ -149,38 +135,42 @@ nav a:hover{
     border:none;
     padding:12px 18px;
     border-radius:6px;
-    cursor:pointer;
     color:white;
     font-weight:bold;
+    cursor:pointer;
     font-size:15px;
 }
 
 .add-btn{
-    background:#2e7d32;
+    background:#2E7D32;
 }
 
 .add-btn:hover{
-    background:#1b5e20;
+    background:#1B5E20;
 }
 
 .update-btn{
-    background:#1565c0;
+    background:#1565C0;
 }
 
 .update-btn:hover{
-    background:#0d47a1;
+    background:#0D47A1;
 }
 
 .cancel-btn{
     background:#757575;
 }
 
-.delete-all-btn{
-    background:#c62828;
+.cancel-btn:hover{
+    background:#424242;
 }
 
-.delete-all-btn:hover{
-    background:#b71c1c;
+.clear-btn{
+    background:#D32F2F;
+}
+
+.clear-btn:hover{
+    background:#B71C1C;
 }
 
 /* STATS */
@@ -192,28 +182,28 @@ nav a:hover{
     margin-bottom:30px;
 }
 
-.stat-box{
+.stat{
     background:white;
     padding:20px;
-    text-align:center;
     border-radius:10px;
+    text-align:center;
     box-shadow:0 2px 8px #ccc;
 }
 
-.stat-box h3{
+.stat h2{
+    color:#2E7D32;
     font-size:30px;
-    color:#2e7d32;
-    margin-bottom:5px;
 }
 
-.stat-box p{
+.stat p{
     font-weight:bold;
+    margin-top:5px;
 }
 
 /* PRODUCT LIST */
 
 .list-title{
-    color:#1b5e20;
+    color:#1B5E20;
     margin-bottom:20px;
 }
 
@@ -223,109 +213,91 @@ nav a:hover{
     gap:20px;
 }
 
-/* PRODUCT CARD */
-
 .product-card{
     background:white;
     border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 2px 10px #ccc;
-    transition:0.2s;
-}
-
-.product-card:hover{
-    transform:translateY(-3px);
-}
-
-.product-image{
-    width:100%;
-    height:210px;
-    object-fit:cover;
-    display:block;
-}
-
-.product-content{
     padding:18px;
+    box-shadow:0 2px 10px #ccc;
 }
 
-.category{
-    color:#2e7d32;
-    font-size:14px;
-    font-weight:bold;
-    margin-bottom:8px;
-}
-
-.product-content h3{
-    color:#1b5e20;
-    font-size:22px;
-    margin-bottom:10px;
-}
-
-.description{
-    font-size:14px;
-    line-height:1.5;
-    color:#555;
+.product-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:8px;
     margin-bottom:12px;
 }
 
-.price{
-    color:#d84315;
-    font-size:19px;
+.product-category{
+    color:#777;
     font-weight:bold;
     margin-bottom:8px;
 }
 
-.stock{
-    margin-bottom:8px;
+.product-card h3{
+    color:#2E7D32;
+    font-size:21px;
+    margin-bottom:10px;
+}
+
+.product-card p{
+    margin:7px 0;
+}
+
+.price{
+    color:#D84315;
+    font-size:20px;
     font-weight:bold;
+}
+
+.status{
+    display:inline-block;
+    padding:5px 9px;
+    border-radius:5px;
+    font-weight:bold;
+    margin-top:5px;
 }
 
 .available{
-    color:#2e7d32;
+    background:#C8E6C9;
+    color:#1B5E20;
 }
 
-.out{
-    color:#c62828;
+.outstock{
+    background:#FFCDD2;
+    color:#B71C1C;
 }
 
-.product-actions{
+/* CARD BUTTONS */
+
+.card-buttons{
     display:flex;
     gap:8px;
     margin-top:15px;
 }
 
 .edit-btn{
-    background:#1565c0;
-    flex:1;
-}
-
-.edit-btn:hover{
-    background:#0d47a1;
+    background:#1565C0;
 }
 
 .delete-btn{
-    background:#c62828;
+    background:#D32F2F;
+}
+
+.card-buttons button{
     flex:1;
-}
-
-.delete-btn:hover{
-    background:#b71c1c;
-}
-
-/* EMPTY */
-
-.empty{
-    background:white;
-    padding:40px;
-    text-align:center;
-    border-radius:10px;
-    box-shadow:0 2px 8px #ccc;
+    border:none;
+    padding:10px;
+    color:white;
+    border-radius:5px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 /* FOOTER */
 
 footer{
-    background:#2e7d32;
+    background:#2E7D32;
     color:white;
     text-align:center;
     padding:20px;
@@ -334,22 +306,10 @@ footer{
 
 /* MOBILE */
 
-@media(max-width:900px){
-
-    .products-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:650px){
+@media(max-width:800px){
 
     .form-grid{
         grid-template-columns:1fr;
-    }
-
-    .form-group.full{
-        grid-column:auto;
     }
 
     .stats{
@@ -360,18 +320,16 @@ footer{
         grid-template-columns:1fr;
     }
 
-    header h1{
-        font-size:21px;
+    .full{
+        grid-column:auto;
     }
 
 }
 
 </style>
-
 </head>
 
 <body>
-
 
 <!-- HEADER -->
 
@@ -396,44 +354,29 @@ Bundelkhand Organic Farmer Producer Company Limited
 
 <nav>
 
-<a href="admin-dashboard.html">
-📊 Dashboard
-</a>
+<a href="admin-dashboard.html">📊 Dashboard</a>
 
-<a href="index.html">
-🏠 Home
-</a>
+<a href="index.html">🏠 Home</a>
 
-<a href="products.html">
-🛒 View Products
-</a>
+<a href="products.html">🛒 View Products</a>
 
-<a href="admin-gallery.html">
-🖼️ Gallery
-</a>
+<a href="admin-gallery.html">🖼️ Gallery</a>
 
 </nav>
 
 
 <div class="container">
 
-
-<!-- TITLE -->
-
-<div class="page-title">
-
-<h2>
+<h1 class="page-title">
 📦 Manage Products
-</h2>
+</h1>
 
-<p>
+<p style="text-align:center;margin-bottom:25px;">
 FPO के सभी कृषि उत्पादों को Add, Edit और Delete करें
 </p>
 
-</div>
 
-
-<!-- ADD / EDIT FORM -->
+<!-- ================= FORM ================= -->
 
 <div class="form-box">
 
@@ -441,8 +384,8 @@ FPO के सभी कृषि उत्पादों को Add, Edit औ�
 ➕ Add New Product
 </h2>
 
-<div class="form-grid">
 
+<div class="form-grid">
 
 <div class="form-group">
 
@@ -573,7 +516,7 @@ Product Status *
 <div class="form-group full">
 
 <label>
-Product Description *
+📝 Product Description *
 </label>
 
 <textarea
@@ -593,16 +536,15 @@ placeholder="Product के बारे में जानकारी लि�
 <input
 type="text"
 id="productImage"
-placeholder="images/wheat.jpg"
+placeholder="जैसे images/wheat.jpg"
 >
 
 </div>
 
-
 </div>
 
 
-<div class="button-area">
+<div class="button-row">
 
 <button
 class="btn add-btn"
@@ -634,7 +576,7 @@ style="display:none;"
 
 
 <button
-class="btn delete-all-btn"
+class="btn clear-btn"
 onclick="clearAllProducts()"
 >
 🗑️ Clear All Products
@@ -645,16 +587,15 @@ onclick="clearAllProducts()"
 </div>
 
 
-<!-- STATISTICS -->
+<!-- ================= STATS ================= -->
 
 <div class="stats">
 
+<div class="stat">
 
-<div class="stat-box">
-
-<h3 id="totalProducts">
+<h2 id="totalProducts">
 0
-</h3>
+</h2>
 
 <p>
 Total Products
@@ -663,11 +604,11 @@ Total Products
 </div>
 
 
-<div class="stat-box">
+<div class="stat">
 
-<h3 id="totalStock">
-0 Kg
-</h3>
+<h2 id="totalStock">
+0
+</h2>
 
 <p>
 Total Stock
@@ -676,11 +617,11 @@ Total Stock
 </div>
 
 
-<div class="stat-box">
+<div class="stat">
 
-<h3 id="availableProducts">
+<h2 id="availableProducts">
 0
-</h3>
+</h2>
 
 <p>
 Available Products
@@ -691,7 +632,7 @@ Available Products
 </div>
 
 
-<!-- PRODUCT LIST -->
+<!-- ================= PRODUCT LIST ================= -->
 
 <h2 class="list-title">
 🌾 Product List
@@ -705,7 +646,6 @@ id="productList"
 
 </div>
 
-
 </div>
 
 
@@ -713,45 +653,35 @@ id="productList"
 
 <footer>
 
-🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+© 2026 Bundelkhand Organic Farmer Producer Company Limited
 
 <br>
 
-Bundelkhand Organic Farmer Producer Company Limited
-
-<br><br>
-
-Empowering Farmers • Promoting Organic Agriculture
-
-<br>
-
-© 2026 All Rights Reserved
+🌾 Empowering Farmers • Promoting Organic Agriculture
 
 </footer>
 
 
 <script>
 
-/* =====================================================
+/* ==================================================
    DEFAULT 11 PRODUCTS
-===================================================== */
+================================================== */
 
 const defaultProducts = [
 
 {
-id:1,
 name:"गेहूँ",
 category:"Cereals",
 price:40,
 stock:1000,
 unit:"Kg",
 status:"Available",
-description:"Bundelkhand क्षेत्र के किसानों से प्राप्त गुणवत्तापूर्ण गेहूँ। साफ-सुथरा, प्राकृतिक एवं दैनिक उपयोग के लिए उपयुक्त।",
+description:"Bundelkhand क्षेत्र के किसानों से प्राप्त गुणवत्तापूर्ण गेहूँ। साफ-सुथरा, प्राकृतिक एवं दैनिक उपयोग के लिए उपयुक्त। किसानों से सीधे उपभोक्ताओं तक।",
 image:"images/wheat.jpg"
 },
 
 {
-id:2,
 name:"चना दाल",
 category:"Pulses",
 price:110,
@@ -763,7 +693,6 @@ image:"images/chana-dal.jpg"
 },
 
 {
-id:3,
 name:"मटर दाल",
 category:"Pulses",
 price:100,
@@ -775,7 +704,6 @@ image:"images/matar-dal.jpg"
 },
 
 {
-id:4,
 name:"मसूर दाल",
 category:"Pulses",
 price:100,
@@ -787,7 +715,6 @@ image:"images/masoor-dal.jpg"
 },
 
 {
-id:5,
 name:"अरहर / तुअर दाल",
 category:"Pulses",
 price:140,
@@ -799,7 +726,6 @@ image:"images/arhar-dal.jpg"
 },
 
 {
-id:6,
 name:"उड़द दाल",
 category:"Pulses",
 price:140,
@@ -811,7 +737,6 @@ image:"images/urad-dal.jpg"
 },
 
 {
-id:7,
 name:"दलिया",
 category:"Cereals",
 price:70,
@@ -823,7 +748,6 @@ image:"images/daliya.jpg"
 },
 
 {
-id:8,
 name:"बेसन",
 category:"Organic Products",
 price:120,
@@ -835,7 +759,6 @@ image:"images/besan.jpg"
 },
 
 {
-id:9,
 name:"सरसों",
 category:"Oil Seeds",
 price:80,
@@ -847,7 +770,6 @@ image:"images/mustard.jpg"
 },
 
 {
-id:10,
 name:"मूंगफली",
 category:"Oil Seeds",
 price:130,
@@ -859,7 +781,6 @@ image:"images/groundnut.jpg"
 },
 
 {
-id:11,
 name:"तिल",
 category:"Oil Seeds",
 price:180,
@@ -873,635 +794,540 @@ image:"images/sesame.jpg"
 ];
 
 
-/* =====================================================
+/* ==================================================
    LOAD PRODUCTS
-===================================================== */
+================================================== */
 
 let products =
 JSON.parse(localStorage.getItem("fpoProducts"));
 
 
+/* ==================================================
+   FIRST TIME LOAD
+================================================== */
+
 if(!products || !Array.isArray(products) || products.length === 0){
 
-    products = defaultProducts;
+products = defaultProducts;
 
-    saveProducts();
+saveProducts();
 
 }
 
 
-/* =====================================================
+/* ==================================================
    EDIT INDEX
-===================================================== */
+================================================== */
 
 let editIndex = -1;
 
 
-/* =====================================================
+/* ==================================================
    SAVE PRODUCTS
-===================================================== */
+================================================== */
 
 function saveProducts(){
 
-    localStorage.setItem(
-        "fpoProducts",
-        JSON.stringify(products)
-    );
+localStorage.setItem(
+"fpoProducts",
+JSON.stringify(products)
+);
 
 }
 
 
-/* =====================================================
+/* ==================================================
    DISPLAY PRODUCTS
-===================================================== */
+================================================== */
 
 function displayProducts(){
 
-    const list =
-    document.getElementById("productList");
+const list =
+document.getElementById("productList");
 
-    list.innerHTML = "";
-
-
-    if(products.length === 0){
-
-        list.innerHTML = `
-
-        <div class="empty">
-
-            <h2>
-            📦 कोई Product उपलब्ध नहीं है
-            </h2>
-
-            <p>
-            ऊपर से नया Product Add करें।
-            </p>
-
-        </div>
-
-        `;
-
-        updateStats();
-
-        return;
-
-    }
+list.innerHTML = "";
 
 
-    products.forEach(function(product,index){
+products.forEach(function(product,index){
 
-        let categoryIcon = "🌾";
-
-        if(product.category === "Pulses"){
-            categoryIcon = "🫘";
-        }
-
-        if(product.category === "Oil Seeds"){
-            categoryIcon = "🌻";
-        }
-
-        if(product.category === "Organic Products"){
-            categoryIcon = "🌱";
-        }
+let statusClass =
+product.status === "Available"
+? "available"
+: "outstock";
 
 
-        let statusClass =
-        product.status === "Available"
-        ? "available"
-        : "out";
+let categoryIcon = "🌾";
+
+if(product.category === "Pulses"){
+categoryIcon = "🫘";
+}
+
+if(product.category === "Oil Seeds"){
+categoryIcon = "🌻";
+}
+
+if(product.category === "Organic Products"){
+categoryIcon = "🌱";
+}
 
 
-        list.innerHTML += `
+list.innerHTML += `
 
-        <div class="product-card">
+<div class="product-card">
 
-            <img
-            class="product-image"
-            src="${product.image}"
-            alt="${product.name}"
-            onerror="this.src='images/wheat.jpg'"
-            >
-
-            <div class="product-content">
-
-                <div class="category">
-
-                    ${categoryIcon}
-                    ${product.category}
-
-                </div>
+<img
+src="${product.image || "images/wheat.jpg"}"
+alt="${product.name}"
+onerror="this.src='images/wheat.jpg'"
+>
 
 
-                <h3>
-                    ${product.name}
-                </h3>
+<div class="product-category">
+
+${categoryIcon} ${product.category}
+
+</div>
 
 
-                <p class="description">
-
-                    ${product.description}
-
-                </p>
+<h3>
+${product.name}
+</h3>
 
 
-                <div class="price">
-
-                    💰 ₹${product.price} / ${product.unit}
-
-                </div>
+<p>
+${product.description}
+</p>
 
 
-                <div class="stock">
-
-                    📦 Stock:
-                    ${product.stock}
-                    ${product.unit}
-
-                </div>
+<p class="price">
+💰 ₹${product.price} / ${product.unit}
+</p>
 
 
-                <div class="${statusClass}">
-
-                    ${
-                        product.status === "Available"
-                        ? "✅ Available"
-                        : "❌ Out of Stock"
-                    }
-
-                </div>
+<p>
+📦 Stock: ${product.stock} ${product.unit}
+</p>
 
 
-                <div class="product-actions">
-
-                    <button
-                    class="btn edit-btn"
-                    onclick="editProduct(${index})"
-                    >
-                    ✏️ Edit
-                    </button>
+<span class="status ${statusClass}">
+${product.status === "Available"
+? "✅ Available"
+: "❌ Out of Stock"}
+</span>
 
 
-                    <button
-                    class="btn delete-btn"
-                    onclick="deleteProduct(${index})"
-                    >
-                    🗑️ Delete
-                    </button>
+<div class="card-buttons">
 
-                </div>
-
-            </div>
-
-        </div>
-
-        `;
-
-    });
+<button
+class="edit-btn"
+onclick="editProduct(${index})"
+>
+✏️ Edit
+</button>
 
 
-    updateStats();
+<button
+class="delete-btn"
+onclick="deleteProduct(${index})"
+>
+🗑️ Delete
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+
+updateStats();
 
 }
 
 
-/* =====================================================
-   UPDATE STATS
-===================================================== */
+/* ==================================================
+   STATS
+================================================== */
 
 function updateStats(){
 
-    document.getElementById("totalProducts").innerText =
-    products.length;
+document.getElementById("totalProducts").innerText =
+products.length;
 
 
-    let totalStock = 0;
+let stock = 0;
 
-    products.forEach(function(product){
+products.forEach(function(product){
 
-        totalStock +=
-        Number(product.stock) || 0;
+stock += Number(product.stock) || 0;
 
-    });
-
-
-    document.getElementById("totalStock").innerText =
-    totalStock + " Kg";
+});
 
 
-    let available = products.filter(function(product){
-
-        return product.status === "Available";
-
-    }).length;
+document.getElementById("totalStock").innerText =
+stock + " Kg";
 
 
-    document.getElementById("availableProducts").innerText =
-    available;
+let available = products.filter(function(product){
+
+return product.status === "Available";
+
+}).length;
+
+
+document.getElementById("availableProducts").innerText =
+available;
 
 }
 
 
-/* =====================================================
+/* ==================================================
    ADD PRODUCT
-===================================================== */
+================================================== */
 
 function addProduct(){
 
-    let name =
-    document.getElementById("productName").value.trim();
+let name =
+document.getElementById("productName").value.trim();
+
+let category =
+document.getElementById("productCategory").value;
+
+let price =
+Number(document.getElementById("productPrice").value);
+
+let stock =
+Number(document.getElementById("productStock").value);
+
+let unit =
+document.getElementById("productUnit").value;
+
+let status =
+document.getElementById("productStatus").value;
+
+let description =
+document.getElementById("productDescription").value.trim();
+
+let image =
+document.getElementById("productImage").value.trim();
 
 
-    let category =
-    document.getElementById("productCategory").value;
+if(!name || !category || !price || !stock || !description){
 
+alert("⚠️ कृपया सभी जरूरी जानकारी भरें।");
 
-    let price =
-    Number(document.getElementById("productPrice").value);
-
-
-    let stock =
-    Number(document.getElementById("productStock").value);
-
-
-    let unit =
-    document.getElementById("productUnit").value;
-
-
-    let status =
-    document.getElementById("productStatus").value;
-
-
-    let description =
-    document.getElementById("productDescription").value.trim();
-
-
-    let image =
-    document.getElementById("productImage").value.trim();
-
-
-    if(
-        !name ||
-        !category ||
-        price < 0 ||
-        stock < 0 ||
-        !description
-    ){
-
-        alert(
-        "⚠️ कृपया सभी आवश्यक जानकारी भरें।"
-        );
-
-        return;
-
-    }
-
-
-    let newProduct = {
-
-        id:Date.now(),
-
-        name:name,
-
-        category:category,
-
-        price:price,
-
-        stock:stock,
-
-        unit:unit,
-
-        status:status,
-
-        description:description,
-
-        image:image || "images/wheat.jpg"
-
-    };
-
-
-    products.push(newProduct);
-
-    saveProducts();
-
-    clearForm();
-
-    displayProducts();
-
-
-    alert(
-    "✅ Product सफलतापूर्वक Add हो गया!"
-    );
+return;
 
 }
 
 
-/* =====================================================
+if(!image){
+
+image = "images/wheat.jpg";
+
+}
+
+
+products.push({
+
+name:name,
+category:category,
+price:price,
+stock:stock,
+unit:unit,
+status:status,
+description:description,
+image:image
+
+});
+
+
+saveProducts();
+
+displayProducts();
+
+clearForm();
+
+
+alert("✅ Product सफलतापूर्वक Add हो गया।");
+
+}
+
+
+/* ==================================================
    EDIT PRODUCT
-===================================================== */
+================================================== */
 
 function editProduct(index){
 
-    let product = products[index];
+editIndex = index;
 
-    editIndex = index;
-
-
-    document.getElementById("productName").value =
-    product.name;
+let product =
+products[index];
 
 
-    document.getElementById("productCategory").value =
-    product.category;
+document.getElementById("productName").value =
+product.name;
+
+document.getElementById("productCategory").value =
+product.category;
+
+document.getElementById("productPrice").value =
+product.price;
+
+document.getElementById("productStock").value =
+product.stock;
+
+document.getElementById("productUnit").value =
+product.unit;
+
+document.getElementById("productStatus").value =
+product.status;
+
+document.getElementById("productDescription").value =
+product.description;
+
+document.getElementById("productImage").value =
+product.image || "";
 
 
-    document.getElementById("productPrice").value =
-    product.price;
+document.getElementById("formTitle").innerText =
+"✏️ Edit Product";
 
 
-    document.getElementById("productStock").value =
-    product.stock;
+document.getElementById("addButton").style.display =
+"none";
+
+document.getElementById("updateButton").style.display =
+"inline-block";
+
+document.getElementById("cancelButton").style.display =
+"inline-block";
 
 
-    document.getElementById("productUnit").value =
-    product.unit;
-
-
-    document.getElementById("productStatus").value =
-    product.status;
-
-
-    document.getElementById("productDescription").value =
-    product.description;
-
-
-    document.getElementById("productImage").value =
-    product.image;
-
-
-    document.getElementById("formTitle").innerHTML =
-    "✏️ Edit Product";
-
-
-    document.getElementById("addButton").style.display =
-    "none";
-
-
-    document.getElementById("updateButton").style.display =
-    "inline-block";
-
-
-    document.getElementById("cancelButton").style.display =
-    "inline-block";
-
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
 
-/* =====================================================
+/* ==================================================
    UPDATE PRODUCT
-===================================================== */
+================================================== */
 
 function updateProduct(){
 
-    if(editIndex === -1){
+if(editIndex === -1){
 
-        return;
+alert("⚠️ पहले Product select करें।");
 
-    }
-
-
-    let name =
-    document.getElementById("productName").value.trim();
-
-
-    let category =
-    document.getElementById("productCategory").value;
-
-
-    let price =
-    Number(document.getElementById("productPrice").value);
-
-
-    let stock =
-    Number(document.getElementById("productStock").value);
-
-
-    let unit =
-    document.getElementById("productUnit").value;
-
-
-    let status =
-    document.getElementById("productStatus").value;
-
-
-    let description =
-    document.getElementById("productDescription").value.trim();
-
-
-    let image =
-    document.getElementById("productImage").value.trim();
-
-
-    if(
-        !name ||
-        !category ||
-        price < 0 ||
-        stock < 0 ||
-        !description
-    ){
-
-        alert(
-        "⚠️ कृपया सभी आवश्यक जानकारी भरें।"
-        );
-
-        return;
-
-    }
-
-
-    products[editIndex] = {
-
-        ...products[editIndex],
-
-        name:name,
-
-        category:category,
-
-        price:price,
-
-        stock:stock,
-
-        unit:unit,
-
-        status:status,
-
-        description:description,
-
-        image:image || products[editIndex].image
-
-    };
-
-
-    saveProducts();
-
-    clearForm();
-
-    displayProducts();
-
-
-    alert(
-    "✅ Product सफलतापूर्वक Update हो गया!"
-    );
+return;
 
 }
 
 
-/* =====================================================
-   DELETE PRODUCT
-===================================================== */
+let name =
+document.getElementById("productName").value.trim();
 
-function deleteProduct(index){
+let category =
+document.getElementById("productCategory").value;
 
-    let productName =
-    products[index].name;
+let price =
+Number(document.getElementById("productPrice").value);
 
+let stock =
+Number(document.getElementById("productStock").value);
 
-    let confirmDelete =
-    confirm(
-    "क्या आप '" +
-    productName +
-    "' को Delete करना चाहते हैं?"
-    );
+let unit =
+document.getElementById("productUnit").value;
 
+let status =
+document.getElementById("productStatus").value;
 
-    if(!confirmDelete){
+let description =
+document.getElementById("productDescription").value.trim();
 
-        return;
-
-    }
-
-
-    products.splice(index,1);
-
-    saveProducts();
-
-    displayProducts();
+let image =
+document.getElementById("productImage").value.trim();
 
 
-    alert(
-    "🗑️ Product Delete हो गया!"
-    );
+if(!name || !category || !price || !stock || !description){
+
+alert("⚠️ कृपया सभी जरूरी जानकारी भरें।");
+
+return;
 
 }
 
 
-/* =====================================================
-   CLEAR ALL
-===================================================== */
+if(!image){
 
-function clearAllProducts(){
-
-    if(products.length === 0){
-
-        alert(
-        "अभी कोई Product नहीं है।"
-        );
-
-        return;
-
-    }
-
-
-    let confirmClear =
-    confirm(
-    "⚠️ क्या आप सभी Products Delete करना चाहते हैं?"
-    );
-
-
-    if(!confirmClear){
-
-        return;
-
-    }
-
-
-    products = [];
-
-    saveProducts();
-
-    displayProducts();
+image =
+products[editIndex].image || "images/wheat.jpg";
 
 }
 
 
-/* =====================================================
-   CLEAR FORM
-===================================================== */
+products[editIndex] = {
 
-function clearForm(){
+name:name,
+category:category,
+price:price,
+stock:stock,
+unit:unit,
+status:status,
+description:description,
+image:image
 
-    document.getElementById("productName").value = "";
-
-    document.getElementById("productCategory").value = "";
-
-    document.getElementById("productPrice").value = "";
-
-    document.getElementById("productStock").value = "";
-
-    document.getElementById("productUnit").value = "Kg";
-
-    document.getElementById("productStatus").value = "Available";
-
-    document.getElementById("productDescription").value = "";
-
-    document.getElementById("productImage").value = "";
+};
 
 
-    editIndex = -1;
+saveProducts();
+
+displayProducts();
+
+cancelEdit();
 
 
-    document.getElementById("formTitle").innerHTML =
-    "➕ Add New Product";
-
-
-    document.getElementById("addButton").style.display =
-    "inline-block";
-
-
-    document.getElementById("updateButton").style.display =
-    "none";
-
-
-    document.getElementById("cancelButton").style.display =
-    "none";
+alert("✅ Product सफलतापूर्वक Update हो गया।");
 
 }
 
 
-/* =====================================================
+/* ==================================================
    CANCEL EDIT
-===================================================== */
+================================================== */
 
 function cancelEdit(){
 
-    clearForm();
+editIndex = -1;
+
+
+clearForm();
+
+
+document.getElementById("formTitle").innerText =
+"➕ Add New Product";
+
+
+document.getElementById("addButton").style.display =
+"inline-block";
+
+document.getElementById("updateButton").style.display =
+"none";
+
+document.getElementById("cancelButton").style.display =
+"none";
 
 }
 
 
-/* =====================================================
-   START
-===================================================== */
+/* ==================================================
+   CLEAR FORM
+================================================== */
+
+function clearForm(){
+
+document.getElementById("productName").value = "";
+
+document.getElementById("productCategory").value = "";
+
+document.getElementById("productPrice").value = "";
+
+document.getElementById("productStock").value = "";
+
+document.getElementById("productUnit").value = "Kg";
+
+document.getElementById("productStatus").value = "Available";
+
+document.getElementById("productDescription").value = "";
+
+document.getElementById("productImage").value = "";
+
+}
+
+
+/* ==================================================
+   DELETE PRODUCT
+================================================== */
+
+function deleteProduct(index){
+
+let product =
+products[index];
+
+
+let confirmDelete =
+confirm(
+"क्या आप '" +
+product.name +
+"' को Delete करना चाहते हैं?"
+);
+
+
+if(!confirmDelete){
+
+return;
+
+}
+
+
+products.splice(index,1);
+
+saveProducts();
+
+displayProducts();
+
+
+alert("🗑️ Product Delete हो गया।");
+
+}
+
+
+/* ==================================================
+   CLEAR ALL PRODUCTS
+================================================== */
+
+function clearAllProducts(){
+
+let confirmClear =
+confirm(
+"⚠️ क्या आप सभी Products Delete करना चाहते हैं?"
+);
+
+
+if(!confirmClear){
+
+return;
+
+}
+
+
+products = [];
+
+saveProducts();
+
+displayProducts();
+
+cancelEdit();
+
+
+alert("🗑️ सभी Products Delete हो गए।");
+
+}
+
+
+/* ==================================================
+   INITIAL DISPLAY
+================================================== */
 
 displayProducts();
 
 </script>
 
 </body>
-
 </html>
