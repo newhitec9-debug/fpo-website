@@ -525,7 +525,11 @@ function displayCart(){
 
 
             <a
-            <a href="checkout.html?mode=cart">
+            <a href="checkout.html?mode=cart"
+   onclick="sessionStorage.setItem('checkoutMode','cart')"
+   class="...">
+    📦 Proceed to Order
+</a>
             class="btn checkout-btn"
             onclick="saveOrderTotal()"
             >
