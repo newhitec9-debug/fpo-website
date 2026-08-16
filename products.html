@@ -4,9 +4,10 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FPO Products | Bundelkhand Organic Farmer Producer Company</title>
+<title>Products | Bundelkhand Organic FPO</title>
 
 <style>
 
@@ -32,12 +33,12 @@ header{
 }
 
 header h1{
-    font-size:28px;
+    font-size:30px;
     margin-bottom:8px;
 }
 
 header p{
-    margin:5px;
+    font-size:17px;
 }
 
 /* NAV */
@@ -51,7 +52,7 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    margin:5px 9px;
+    margin:5px 8px;
     font-weight:bold;
     display:inline-block;
 }
@@ -63,12 +64,21 @@ nav a:hover{
 /* CART */
 
 .cart-link{
+    display:inline-block;
     background:#FF8F00;
-    padding:9px 15px;
-    border-radius:6px;
+    color:white;
+    padding:9px 16px;
+    border-radius:20px;
+    text-decoration:none;
+    font-weight:bold;
+    margin-top:5px;
 }
 
-/* CONTAINER */
+.cart-link:hover{
+    background:#EF6C00;
+}
+
+/* MAIN */
 
 .container{
     max-width:1200px;
@@ -76,13 +86,11 @@ nav a:hover{
     padding:20px;
 }
 
-/* TITLE */
-
 .page-title{
     text-align:center;
     color:#2E7D32;
-    margin-bottom:10px;
     font-size:32px;
+    margin-bottom:10px;
 }
 
 .subtitle{
@@ -102,12 +110,12 @@ nav a:hover{
     border:none;
     background:white;
     color:#2E7D32;
-    padding:10px 16px;
+    border:2px solid #2E7D32;
+    padding:10px 18px;
     margin:5px;
-    border-radius:20px;
+    border-radius:25px;
     cursor:pointer;
     font-weight:bold;
-    box-shadow:0 2px 6px #ccc;
 }
 
 .filter-btn:hover,
@@ -116,7 +124,7 @@ nav a:hover{
     color:white;
 }
 
-/* PRODUCTS */
+/* PRODUCTS GRID */
 
 .products-grid{
     display:grid;
@@ -124,18 +132,21 @@ nav a:hover{
     gap:25px;
 }
 
-/* CARD */
+/* PRODUCT CARD */
 
 .product-card{
     background:white;
-    border-radius:12px;
+    border-radius:15px;
     overflow:hidden;
-    box-shadow:0 3px 12px #ccc;
+    box-shadow:0 3px 12px rgba(0,0,0,0.15);
     transition:0.3s;
+    display:flex;
+    flex-direction:column;
 }
 
 .product-card:hover{
     transform:translateY(-5px);
+    box-shadow:0 7px 18px rgba(0,0,0,0.20);
 }
 
 /* IMAGE */
@@ -144,63 +155,72 @@ nav a:hover{
     width:100%;
     height:220px;
     object-fit:cover;
-    display:block;
+    background:#eeeeee;
 }
 
-/* CONTENT */
+/* PRODUCT CONTENT */
 
 .product-content{
-    padding:18px;
+    padding:20px;
+    flex:1;
 }
 
 .category{
     color:#2E7D32;
     font-weight:bold;
+    font-size:14px;
     margin-bottom:8px;
 }
 
 .product-content h2{
     color:#1B5E20;
-    margin-bottom:10px;
     font-size:23px;
+    margin-bottom:10px;
 }
 
 .description{
-    line-height:1.5;
-    min-height:70px;
     color:#555;
+    line-height:1.6;
+    font-size:15px;
+    min-height:72px;
 }
-
-/* PRICE */
 
 .price{
     color:#D84315;
-    font-size:23px;
+    font-size:21px;
     font-weight:bold;
-    margin:12px 0;
+    margin-top:15px;
 }
 
 .stock{
-    margin:7px 0;
+    margin-top:8px;
     font-weight:bold;
+}
+
+.available{
+    color:#2E7D32;
+}
+
+.out-stock{
+    color:#D32F2F;
 }
 
 /* BUTTONS */
 
 .product-buttons{
     display:flex;
-    gap:8px;
-    margin-top:15px;
+    gap:10px;
+    margin-top:18px;
 }
 
 .btn{
-    flex:1;
     border:none;
-    padding:11px 8px;
-    border-radius:6px;
+    padding:11px 12px;
+    border-radius:7px;
+    cursor:pointer;
     color:white;
     font-weight:bold;
-    cursor:pointer;
+    flex:1;
 }
 
 .cart-btn{
@@ -219,18 +239,19 @@ nav a:hover{
     background:#EF6C00;
 }
 
-.disabled-btn{
+.btn:disabled{
     background:#999;
     cursor:not-allowed;
 }
 
-/* EMPTY */
+/* CART COUNT */
 
-.no-products{
-    text-align:center;
+.cart-count{
     background:white;
-    padding:40px;
-    border-radius:10px;
+    color:#FF8F00;
+    padding:2px 7px;
+    border-radius:12px;
+    margin-left:4px;
 }
 
 /* FOOTER */
@@ -239,7 +260,7 @@ footer{
     background:#2E7D32;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:20px 10px;
     margin-top:40px;
 }
 
@@ -255,10 +276,6 @@ footer{
 
 @media(max-width:600px){
 
-    .products-grid{
-        grid-template-columns:1fr;
-    }
-
     header h1{
         font-size:22px;
     }
@@ -267,8 +284,17 @@ footer{
         font-size:26px;
     }
 
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-image{
+        height:230px;
+    }
+
     nav a{
         font-size:14px;
+        margin:4px;
     }
 
 }
@@ -276,7 +302,6 @@ footer{
 </style>
 
 </head>
-
 
 <body>
 
@@ -296,6 +321,15 @@ Bundelkhand Organic Farmer Producer Company Limited
 <p>
 🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
 </p>
+
+<br>
+
+<a href="cart.html" class="cart-link">
+
+🛒 Cart:
+<span id="cartCount" class="cart-count">0</span>
+
+</a>
 
 </header>
 
@@ -322,10 +356,6 @@ Bundelkhand Organic Farmer Producer Company Limited
 
 <a href="contact.html">📞 Contact</a>
 
-<a href="cart.html" class="cart-link">
-🛒 Cart: <span id="cartCount">0</span>
-</a>
-
 </nav>
 
 
@@ -338,9 +368,13 @@ Bundelkhand Organic Farmer Producer Company Limited
 </h1>
 
 <p class="subtitle">
+
 किसानों से सीधे आपके घर तक गुणवत्तापूर्ण कृषि उत्पाद
+
 <br>
+
 Quality agricultural products directly from farmers to consumers.
+
 </p>
 
 
@@ -350,7 +384,7 @@ Quality agricultural products directly from farmers to consumers.
 
 <button
 class="filter-btn active"
-onclick="filterProducts('All',this)">
+onclick="filterProducts('all',this)">
 🌾 All
 </button>
 
@@ -383,9 +417,8 @@ onclick="filterProducts('Organic Products',this)">
 
 <!-- PRODUCTS -->
 
-<div
-class="products-grid"
-id="productsContainer">
+<div class="products-grid" id="productsContainer">
+
 </div>
 
 </div>
@@ -395,538 +428,501 @@ id="productsContainer">
 
 <footer>
 
-© 2026 Bundelkhand Organic Farmer Producer Company Limited
+🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
 
 <br>
 
-🌾 Empowering Farmers • Promoting Organic Agriculture
+Bundelkhand Organic Farmer Producer Company Limited
+
+<br><br>
+
+Empowering Farmers • Promoting Organic Agriculture
+
+<br>
+
+© 2026 All Rights Reserved
 
 </footer>
 
 
 <script>
 
-/* =====================================
-   PRODUCT DATA
-===================================== */
-
-/*
-   सबसे जरूरी:
-   यह page अब manage-products.html
-   के localStorage "products" से data लेगा.
-*/
-
-let products =
-JSON.parse(localStorage.getItem("products")) || [];
-
-
-/* =====================================
-   CART
-===================================== */
-
-let cart =
-JSON.parse(localStorage.getItem("cart")) || [];
-
-
-/* =====================================
+/* ==========================================
    DEFAULT PRODUCTS
-===================================== */
+========================================== */
 
-if(products.length === 0){
-
-products = [
+const defaultProducts = [
 
 {
 name:"गेहूँ",
 category:"Cereals",
+categoryHindi:"🌾 Cereals / अनाज",
 price:40,
 stock:1000,
 unit:"Kg",
-status:"Available",
-description:"Bundelkhand क्षेत्र के किसानों से प्राप्त गुणवत्तापूर्ण गेहूँ। साफ-सुथरा, प्राकृतिक एवं दैनिक उपयोग के लिए उपयुक्त।",
-image:"images/wheat.jpg"
+image:"images/wheat.jpg",
+description:"Bundelkhand क्षेत्र के किसानों से प्राप्त गुणवत्तापूर्ण गेहूँ। साफ-सुथरा, प्राकृतिक एवं दैनिक उपयोग के लिए उपयुक्त। किसानों से सीधे उपभोक्ताओं तक।"
 },
 
 {
 name:"चना दाल",
 category:"Pulses",
+categoryHindi:"🫘 Pulses / दालें",
 price:110,
 stock:1000,
 unit:"Kg",
-status:"Available",
-description:"स्वच्छ एवं गुणवत्तापूर्ण चना दाल। प्रोटीन से भरपूर और स्वादिष्ट।",
-image:"images/chana-dal.jpg"
+image:"images/chana-dal.jpg",
+description:"स्वच्छ एवं गुणवत्तापूर्ण चना दाल। प्रोटीन से भरपूर और स्वादिष्ट। FPO के माध्यम से किसानों से सीधे उपलब्ध।"
 },
 
 {
 name:"मटर दाल",
 category:"Pulses",
+categoryHindi:"🫘 Pulses / दालें",
 price:100,
 stock:1000,
 unit:"Kg",
-status:"Available",
-description:"गुणवत्तापूर्ण मटर दाल, अच्छी तरह साफ एवं पैक की गई।",
-image:"images/matar-dal.jpg"
+image:"images/matar-dal.jpg",
+description:"गुणवत्तापूर्ण मटर दाल, अच्छी तरह साफ एवं पैक की गई। घर के दैनिक भोजन के लिए उपयुक्त।"
 },
 
 {
 name:"मसूर दाल",
 category:"Pulses",
+categoryHindi:"🫘 Pulses / दालें",
 price:100,
 stock:1000,
 unit:"Kg",
-status:"Available",
-description:"स्वच्छ और गुणवत्तापूर्ण मसूर दाल। पौष्टिक, स्वादिष्ट और दैनिक भोजन के लिए उपयुक्त।",
-image:"images/masoor-dal.jpg"
+image:"images/masoor-dal.jpg",
+description:"स्वच्छ और गुणवत्तापूर्ण मसूर दाल। पौष्टिक, स्वादिष्ट और दैनिक भोजन के लिए उपयुक्त।"
 },
 
 {
 name:"अरहर / तुअर दाल",
 category:"Pulses",
+categoryHindi:"🫘 Pulses / दालें",
 price:140,
 stock:1000,
 unit:"Kg",
-status:"Available",
-description:"उत्तम गुणवत्ता की अरहर / तुअर दाल। स्वादिष्ट एवं पौष्टिक।",
-image:"images/arhar-dal.jpg"
+image:"images/arhar-dal.jpg",
+description:"उत्तम गुणवत्ता की अरहर / तुअर दाल। स्वादिष्ट एवं पौष्टिक। किसानों से सीधे FPO के माध्यम से उपलब्ध।"
 },
 
 {
 name:"उड़द दाल",
 category:"Pulses",
+categoryHindi:"🫘 Pulses / दालें",
 price:140,
 stock:1000,
 unit:"Kg",
-status:"Available",
-description:"गुणवत्तापूर्ण उड़द दाल। दाल, इडली, डोसा और अन्य व्यंजनों के लिए उपयुक्त।",
-image:"images/urad-dal.jpg"
+image:"images/urad-dal.jpg",
+description:"गुणवत्तापूर्ण उड़द दाल। दाल, इडली, डोसा और अन्य व्यंजनों के लिए उपयुक्त।"
 },
 
 {
 name:"दलिया",
 category:"Cereals",
+categoryHindi:"🌾 Cereals / अनाज",
 price:70,
 stock:1000,
 unit:"Kg",
-status:"Available",
-description:"गुणवत्तापूर्ण गेहूँ से तैयार दलिया। पौष्टिक नाश्ते और दैनिक भोजन के लिए उपयुक्त।",
-image:"images/daliya.jpg"
+image:"images/daliya.jpg",
+description:"गुणवत्तापूर्ण गेहूँ से तैयार दलिया। पौष्टिक नाश्ते और दैनिक भोजन के लिए उपयुक्त।"
 },
 
 {
 name:"बेसन",
 category:"Organic Products",
+categoryHindi:"🌱 Organic Products / जैविक उत्पाद",
 price:120,
 stock:1000,
 unit:"Kg",
-status:"Available",
-description:"उत्तम गुणवत्ता वाले चने से तैयार बेसन। पकौड़ी, चीला, कढ़ी एवं अन्य व्यंजनों के लिए उपयुक्त।",
-image:"images/besan.jpg"
+image:"images/besan.jpg",
+description:"उत्तम गुणवत्ता वाले चने से तैयार बेसन। पकौड़ी, चीला, कढ़ी एवं अन्य व्यंजनों के लिए उपयुक्त।"
 },
 
 {
 name:"सरसों",
 category:"Oil Seeds",
+categoryHindi:"🌻 Oil Seeds / तिलहन",
 price:80,
 stock:1000,
 unit:"Kg",
-status:"Available",
-description:"Bundelkhand के किसानों से प्राप्त गुणवत्तापूर्ण सरसों। तेल उत्पादन एवं अन्य उपयोग के लिए उपयुक्त।",
-image:"images/mustard.jpg"
+image:"images/mustard.jpg",
+description:"Bundelkhand के किसानों से प्राप्त गुणवत्तापूर्ण सरसों। तेल उत्पादन एवं अन्य उपयोग के लिए उपयुक्त।"
 },
 
 {
 name:"मूंगफली",
 category:"Oil Seeds",
+categoryHindi:"🌻 Oil Seeds / तिलहन",
 price:130,
 stock:1000,
 unit:"Kg",
-status:"Available",
-description:"चयनित एवं गुणवत्तापूर्ण मूंगफली। खाने और तेल उत्पादन दोनों के लिए उपयुक्त।",
-image:"images/groundnut.jpg"
+image:"images/groundnut.jpg",
+description:"चयनित एवं गुणवत्तापूर्ण मूंगफली। खाने और तेल उत्पादन दोनों के लिए उपयुक्त।"
 },
 
 {
 name:"तिल",
 category:"Oil Seeds",
+categoryHindi:"🌻 Oil Seeds / तिलहन",
 price:180,
 stock:1000,
 unit:"Kg",
-status:"Available",
-description:"किसानों से प्राप्त गुणवत्तापूर्ण तिल। खाद्य उपयोग एवं तेल उत्पादन के लिए उपयुक्त।",
-image:"images/sesame.jpg"
+image:"images/sesame.jpg",
+description:"किसानों से प्राप्त गुणवत्तापूर्ण तिल। खाद्य उपयोग एवं तेल उत्पादन के लिए उपयुक्त।"
 }
 
 ];
 
-localStorage.setItem(
-"products",
-JSON.stringify(products)
-);
 
-}
+/* ==========================================
+   LOAD ADMIN PRODUCTS
+========================================== */
+
+let savedProducts =
+JSON.parse(localStorage.getItem("products")) || [];
 
 
-/* =====================================
+/*
+   यदि Admin में products मौजूद हैं,
+   तो वही products दिखेंगे।
+   अन्यथा ऊपर के 11 default products दिखेंगे।
+*/
+
+let products =
+savedProducts.length > 0
+? savedProducts
+: defaultProducts;
+
+
+/* ==========================================
    DISPLAY PRODUCTS
-===================================== */
+========================================== */
 
-function displayProducts(category="All"){
+function displayProducts(list){
 
-let container =
-document.getElementById("productsContainer");
+    const container =
+    document.getElementById("productsContainer");
 
-container.innerHTML="";
+    container.innerHTML = "";
 
+    list.forEach(function(product,index){
 
-let filteredProducts =
-category === "All"
-? products
-: products.filter(
-p => p.category === category
-);
+        let price =
+        Number(product.price) || 0;
 
+        let stock =
+        Number(product.stock) || 0;
 
-if(filteredProducts.length === 0){
+        let image =
+        product.image || "";
 
-container.innerHTML = `
+        let category =
+        product.category || "Organic Products";
 
-<div class="no-products">
+        let categoryHindi =
+        product.categoryHindi || "🌱 Organic Products / जैविक उत्पाद";
 
-<h2>❌ कोई Product उपलब्ध नहीं है</h2>
+        let description =
+        product.description || "गुणवत्तापूर्ण कृषि उत्पाद किसानों से सीधे उपलब्ध।";
 
-<p>
-इस Category में अभी कोई Product नहीं है।
-</p>
-
-</div>
-
-`;
-
-return;
-
-}
+        let available =
+        stock > 0;
 
 
-filteredProducts.forEach(function(product){
+        container.innerHTML += `
 
-let realIndex =
-products.indexOf(product);
+        <div
+        class="product-card"
+        data-category="${category}"
+        >
 
-
-let icon =
-product.category === "Cereals"
-? "🌾"
-: product.category === "Pulses"
-? "🫘"
-: product.category === "Oil Seeds"
-? "🌻"
-: "🌱";
-
-
-let image =
-product.image ||
-"images/wheat.jpg";
+            <img
+            src="${image}"
+            alt="${product.name}"
+            class="product-image"
+            onerror="this.src='https://via.placeholder.com/600x400?text=Product+Image'"
+            >
 
 
-let isAvailable =
-product.status === "Available"
-&& Number(product.stock) > 0;
+            <div class="product-content">
+
+                <div class="category">
+                    ${categoryHindi}
+                </div>
+
+                <h2>
+                    ${product.name}
+                </h2>
+
+                <p class="description">
+                    ${description}
+                </p>
+
+                <div class="price">
+                    💰 ₹${price} / ${product.unit || "Kg"}
+                </div>
+
+                <div class="stock ${
+                    available ? "available" : "out-stock"
+                }">
+
+                    📦 Stock: ${stock} ${product.unit || "Kg"}
+
+                    <br>
+
+                    ${
+                        available
+                        ? "✅ Available"
+                        : "❌ Out of Stock"
+                    }
+
+                </div>
 
 
-container.innerHTML += `
+                <div class="product-buttons">
 
-<div class="product-card">
+                    <button
+                    class="btn cart-btn"
+                    onclick="addToCart(${index})"
+                    ${available ? "" : "disabled"}
+                    >
 
-<img
-class="product-image"
-src="${image}"
-alt="${product.name}"
-onerror="this.src='images/wheat.jpg'"
->
+                    🛒 Add to Cart
 
-
-<div class="product-content">
-
-<div class="category">
-
-${icon}
-${product.category}
-
-</div>
+                    </button>
 
 
-<h2>
-${product.name}
-</h2>
+                    <button
+                    class="btn buy-btn"
+                    onclick="buyNow(${index})"
+                    ${available ? "" : "disabled"}
+                    >
 
+                    ⚡ Buy Now
 
-<p class="description">
-${product.description || ""}
-</p>
+                    </button>
 
+                </div>
 
-<div class="price">
+            </div>
 
-💰 ₹${product.price} / ${product.unit}
+        </div>
 
-</div>
+        `;
 
-
-<div class="stock">
-
-📦 Stock:
-${Number(product.stock).toLocaleString('en-IN')}
-${product.unit}
-
-</div>
-
-
-<div>
-
-${isAvailable
-? "✅ Available"
-: "❌ Out of Stock"}
-
-</div>
-
-
-<div class="product-buttons">
-
-${
-isAvailable
-
-?
-
-`
-
-<button
-class="btn cart-btn"
-onclick="addToCart(${realIndex})">
-🛒 Add to Cart
-</button>
-
-<button
-class="btn buy-btn"
-onclick="buyNow(${realIndex})">
-⚡ Buy Now
-</button>
-
-`
-
-:
-
-`
-
-<button
-class="btn disabled-btn"
-disabled>
-❌ Out of Stock
-</button>
-
-`
+    });
 
 }
 
-</div>
 
-</div>
-
-</div>
-
-`;
-
-});
-
-}
-
-
-/* =====================================
+/* ==========================================
    ADD TO CART
-===================================== */
+========================================== */
 
 function addToCart(index){
 
-let product =
-products[index];
+    let product = products[index];
+
+    let cart =
+    JSON.parse(localStorage.getItem("cart")) || [];
 
 
-let existing =
-cart.find(
-item => item.name === product.name
-);
+    let existing =
+    cart.find(item => item.name === product.name);
 
 
-if(existing){
+    if(existing){
 
-if(
-Number(existing.quantity)
-<
-Number(product.stock)
-){
+        existing.quantity =
+        Number(existing.quantity || 1) + 1;
 
-existing.quantity++;
+    }else{
 
-}
+        cart.push({
 
-else{
+            name:product.name,
 
-alert("⚠️ Available stock limit reached!");
+            category:product.categoryHindi ||
+                     product.category ||
+                     "Organic Product",
 
-return;
+            price:Number(product.price) || 0,
 
-}
+            quantity:1,
 
-}
+            stock:Number(product.stock) || 0,
 
-else{
+            image:product.image || ""
 
-cart.push({
+        });
 
-name:product.name,
-
-category:product.category,
-
-price:Number(product.price),
-
-stock:Number(product.stock),
-
-quantity:1,
-
-unit:product.unit,
-
-image:product.image
-
-});
-
-}
+    }
 
 
-localStorage.setItem(
-"cart",
-JSON.stringify(cart)
-);
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
 
 
-updateCartCount();
+    updateCartCount();
 
 
-alert(
-"✅ " +
-product.name +
-" Cart में Add हो गया!"
-);
+    alert(
+        "✅ " +
+        product.name +
+        " Cart में जोड़ दिया गया।"
+    );
 
 }
 
 
-/* =====================================
+/* ==========================================
    BUY NOW
-===================================== */
+========================================== */
 
 function buyNow(index){
 
-let product =
-products[index];
+    let product = products[index];
+
+    let cart = [
+
+        {
+
+            name:product.name,
+
+            category:product.categoryHindi ||
+                     product.category ||
+                     "Organic Product",
+
+            price:Number(product.price) || 0,
+
+            quantity:1,
+
+            stock:Number(product.stock) || 0,
+
+            image:product.image || ""
+
+        }
+
+    ];
 
 
-let buyItem = {
-
-name:product.name,
-
-category:product.category,
-
-price:Number(product.price),
-
-stock:Number(product.stock),
-
-quantity:1,
-
-unit:product.unit,
-
-image:product.image
-
-};
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
 
 
-localStorage.setItem(
-"cart",
-JSON.stringify([buyItem])
-);
-
-
-window.location.href =
-"checkout.html";
+    window.location.href =
+    "checkout.html";
 
 }
 
 
-/* =====================================
+/* ==========================================
    CART COUNT
-===================================== */
+========================================== */
 
 function updateCartCount(){
 
-let count =
-cart.reduce(
-(sum,item) =>
-sum + Number(item.quantity || 0),
-0
-);
+    let cart =
+    JSON.parse(localStorage.getItem("cart")) || [];
 
-document.getElementById(
-"cartCount"
-).innerText = count;
+
+    let totalQuantity = 0;
+
+
+    cart.forEach(function(item){
+
+        totalQuantity +=
+        Number(item.quantity) || 1;
+
+    });
+
+
+    document.getElementById(
+        "cartCount"
+    ).textContent = totalQuantity;
 
 }
 
 
-/* =====================================
-   FILTER
-===================================== */
+/* ==========================================
+   FILTER PRODUCTS
+========================================== */
 
 function filterProducts(category,button){
 
-document
-.querySelectorAll(".filter-btn")
-.forEach(
-btn => btn.classList.remove("active")
-);
+    document
+    .querySelectorAll(".filter-btn")
+    .forEach(function(btn){
 
-button.classList.add("active");
+        btn.classList.remove("active");
 
-displayProducts(category);
+    });
+
+
+    button.classList.add("active");
+
+
+    if(category === "all"){
+
+        displayProducts(products);
+
+        return;
+
+    }
+
+
+    let filtered =
+    products.filter(function(product){
+
+        return product.category === category;
+
+    });
+
+
+    displayProducts(filtered);
 
 }
 
 
-/* =====================================
-   START
-===================================== */
+/* ==========================================
+   INITIAL LOAD
+========================================== */
 
-displayProducts();
+displayProducts(products);
 
 updateCartCount();
 
 
-/* =====================================
-   AUTO REFRESH
-   Admin change के बाद page
-   data फिर से पढ़ सके
-===================================== */
+/* ==========================================
+   UPDATE IF ADMIN CHANGES PRODUCTS
+========================================== */
 
 window.addEventListener(
-"storage",
-function(){
+    "storage",
+    function(event){
 
-products =
-JSON.parse(
-localStorage.getItem("products")
-) || [];
+        if(event.key === "products"){
 
-displayProducts();
+            savedProducts =
+            JSON.parse(localStorage.getItem("products")) || [];
 
-}
+            products =
+            savedProducts.length > 0
+            ? savedProducts
+            : defaultProducts;
+
+            displayProducts(products);
+
+        }
+
+    }
 );
 
 </script>
