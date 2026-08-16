@@ -36,14 +36,14 @@ header h1{
 
 header p{
     font-size:17px;
-    margin:4px 0;
+    margin:5px 0;
 }
 
 /* ================= NAVIGATION ================= */
 
 nav{
     background:white;
-    padding:14px 10px;
+    padding:12px 8px;
     text-align:center;
     box-shadow:0 2px 8px rgba(0,0,0,0.12);
     position:sticky;
@@ -56,32 +56,29 @@ nav a{
     text-decoration:none;
     color:#176b2c;
     font-weight:bold;
-    margin:5px 7px;
+    margin:4px;
     padding:9px 11px;
     border-radius:7px;
-    transition:0.2s;
 }
 
 nav a:hover{
     background:#e8f5e9;
 }
 
-/* ================= BIG YELLOW CART ================= */
+/* ================= CART ================= */
 
 .cart-link{
     background:#ffd600 !important;
     color:#222 !important;
     border:2px solid #e0b800;
     border-radius:30px !important;
-    padding:12px 20px !important;
-    font-size:17px !important;
-    font-weight:800 !important;
-    box-shadow:0 3px 8px rgba(0,0,0,0.20);
+    padding:11px 19px !important;
+    font-size:16px !important;
+    box-shadow:0 3px 8px rgba(0,0,0,0.18);
 }
 
 .cart-link:hover{
     background:#ffca00 !important;
-    transform:scale(1.04);
 }
 
 /* ================= CONTAINER ================= */
@@ -102,27 +99,25 @@ nav a:hover{
 .page-title h2{
     color:#176b2c;
     font-size:30px;
-    margin-bottom:8px;
+    margin-bottom:10px;
 }
 
 .page-title p{
     color:#555;
-    font-size:16px;
-    margin:5px 0;
+    margin:6px 0;
 }
 
-/* ================= FILTERS ================= */
+/* ================= FILTER ================= */
 
 .filters{
     display:flex;
-    flex-wrap:wrap;
     justify-content:center;
+    flex-wrap:wrap;
     gap:10px;
     margin-bottom:30px;
 }
 
 .filter-btn{
-    border:none;
     background:white;
     color:#176b2c;
     border:2px solid #176b2c;
@@ -130,7 +125,6 @@ nav a:hover{
     border-radius:25px;
     cursor:pointer;
     font-weight:bold;
-    font-size:14px;
 }
 
 .filter-btn:hover,
@@ -154,9 +148,9 @@ nav a:hover{
     border-radius:14px;
     overflow:hidden;
     box-shadow:0 4px 14px rgba(0,0,0,0.12);
-    transition:0.25s;
     display:flex;
     flex-direction:column;
+    transition:0.25s;
 }
 
 .product-card:hover{
@@ -164,16 +158,16 @@ nav a:hover{
     box-shadow:0 7px 20px rgba(0,0,0,0.18);
 }
 
-/* ================= PRODUCT IMAGE ================= */
+/* ================= IMAGE ================= */
 
 .product-image{
     width:100%;
     height:220px;
     object-fit:cover;
-    background:#eee;
+    background:#eeeeee;
 }
 
-/* ================= PRODUCT CONTENT ================= */
+/* ================= CONTENT ================= */
 
 .product-content{
     padding:18px;
@@ -191,14 +185,13 @@ nav a:hover{
 
 .product-name{
     font-size:23px;
-    color:#222;
     margin-bottom:10px;
 }
 
 .description{
     color:#555;
-    line-height:1.6;
     font-size:14px;
+    line-height:1.6;
     min-height:70px;
 }
 
@@ -212,7 +205,6 @@ nav a:hover{
 .status{
     margin-top:8px;
     font-weight:bold;
-    font-size:15px;
 }
 
 .available{
@@ -223,15 +215,13 @@ nav a:hover{
     color:#d93025;
 }
 
-/* ================= BUTTON AREA ================= */
+/* ================= BUTTONS ================= */
 
 .buttons{
     display:flex;
     gap:10px;
     margin-top:18px;
 }
-
-/* ================= BIG BUTTONS ================= */
 
 .btn{
     flex:1;
@@ -241,43 +231,32 @@ nav a:hover{
     cursor:pointer;
     font-weight:bold;
     font-size:15px;
-    transition:0.2s;
 }
-
-/* YELLOW CART */
 
 .add-cart{
     background:#ffd600;
     color:#222;
     border:2px solid #e0b800;
-    box-shadow:0 3px 7px rgba(0,0,0,0.15);
 }
-
-/* ORANGE BUY NOW */
 
 .buy-now{
     background:#ff9800;
     color:white;
     border:2px solid #e68900;
-    box-shadow:0 3px 7px rgba(0,0,0,0.15);
 }
 
 .add-cart:hover{
     background:#ffca00;
-    transform:scale(1.03);
 }
 
 .buy-now:hover{
     background:#f57c00;
-    transform:scale(1.03);
 }
 
 .btn:disabled{
     background:#aaa !important;
     border-color:#999 !important;
-    color:white !important;
     cursor:not-allowed;
-    transform:none;
 }
 
 /* ================= FOOTER ================= */
@@ -307,6 +286,10 @@ footer{
         font-size:22px;
     }
 
+    header p{
+        font-size:14px;
+    }
+
     .products-grid{
         grid-template-columns:1fr;
     }
@@ -317,13 +300,7 @@ footer{
 
     nav a{
         font-size:13px;
-        margin:3px;
-    }
-
-    .cart-link{
-        display:inline-block;
-        font-size:16px !important;
-        padding:12px 18px !important;
+        padding:7px 8px;
     }
 
     .buttons{
@@ -333,7 +310,6 @@ footer{
     .btn{
         width:100%;
         padding:15px;
-        font-size:16px;
     }
 
 }
@@ -384,13 +360,9 @@ footer{
 
     <a href="contact.html">📞 Contact</a>
 
-    <!-- BIG YELLOW CART -->
-
     <a href="cart.html" class="cart-link">
-
         🛒 Cart:
         <span id="cartCount">0</span>
-
     </a>
 
 </nav>
@@ -415,42 +387,32 @@ footer{
     </div>
 
 
-    <!-- ================= FILTER BUTTONS ================= -->
+    <!-- ================= FILTER ================= -->
 
     <div class="filters">
 
-        <button
-            class="filter-btn active"
-            onclick="filterProducts('all',this)"
-        >
+        <button class="filter-btn active"
+                data-category="all">
             🌾 All
         </button>
 
-        <button
-            class="filter-btn"
-            onclick="filterProducts('cereals',this)"
-        >
+        <button class="filter-btn"
+                data-category="cereals">
             🌾 अनाज
         </button>
 
-        <button
-            class="filter-btn"
-            onclick="filterProducts('pulses',this)"
-        >
+        <button class="filter-btn"
+                data-category="pulses">
             🫘 दालें
         </button>
 
-        <button
-            class="filter-btn"
-            onclick="filterProducts('oilseeds',this)"
-        >
+        <button class="filter-btn"
+                data-category="oilseeds">
             🌻 तिलहन
         </button>
 
-        <button
-            class="filter-btn"
-            onclick="filterProducts('organic',this)"
-        >
+        <button class="filter-btn"
+                data-category="organic">
             🌱 जैविक उत्पाद
         </button>
 
@@ -459,10 +421,9 @@ footer{
 
     <!-- ================= PRODUCTS ================= -->
 
-    <div
-        id="productsGrid"
-        class="products-grid"
-    ></div>
+    <div id="productsGrid"
+         class="products-grid">
+    </div>
 
 </div>
 
@@ -645,7 +606,7 @@ const defaultProducts = [
 
 
 /* =====================================================
-   GET PRODUCTS FROM ADMIN
+   GET PRODUCTS
 ===================================================== */
 
 function getProducts(){
@@ -657,22 +618,17 @@ function getProducts(){
 
         try{
 
-            const data =
-                JSON.parse(saved);
+            const data = JSON.parse(saved);
 
-            if(
-                Array.isArray(data) &&
-                data.length > 0
-            ){
+            if(Array.isArray(data) && data.length > 0){
 
                 return data;
 
             }
 
-        }
-        catch(error){
+        }catch(error){
 
-            console.log(error);
+            console.log("Product data error:",error);
 
         }
 
@@ -684,24 +640,28 @@ function getProducts(){
 
 
 /* =====================================================
-   CART
+   GET CART
 ===================================================== */
 
 function getCart(){
 
     try{
 
+        const saved =
+            localStorage.getItem("cart");
+
+        if(!saved){
+            return [];
+        }
+
         const cart =
-            JSON.parse(
-                localStorage.getItem("cart")
-            );
+            JSON.parse(saved);
 
         return Array.isArray(cart)
             ? cart
             : [];
 
-    }
-    catch(error){
+    }catch(error){
 
         return [];
 
@@ -725,7 +685,7 @@ function saveCart(cart){
 
 
 /* =====================================================
-   UPDATE CART COUNT
+   CART COUNT
 ===================================================== */
 
 function updateCartCount(){
@@ -747,8 +707,7 @@ function updateCartCount(){
 
     if(count){
 
-        count.textContent =
-            total;
+        count.textContent = total;
 
     }
 
@@ -761,69 +720,55 @@ function updateCartCount(){
 
 function addToCart(product){
 
-    try{
+    let cart =
+        getCart();
 
-        let cart =
-            getCart();
+    const existing =
+        cart.find(function(item){
 
-        const index =
-            cart.findIndex(function(item){
+            return String(item.id) ===
+                   String(product.id);
 
-                return String(item.id) ===
-                       String(product.id);
-
-            });
+        });
 
 
-        if(index !== -1){
+    if(existing){
 
-            cart[index].quantity =
-                Number(cart[index].quantity || 1) + 1;
-
-        }
-        else{
-
-            cart.push({
-
-                id:product.id,
-
-                name:product.name,
-
-                price:Number(product.price),
-
-                quantity:1,
-
-                unit:product.unit || "Kg",
-
-                image:product.image || ""
-
-            });
-
-        }
-
-
-        saveCart(cart);
-
-        updateCartCount();
-
-
-        alert(
-            "✅ " +
-            product.name +
-            " Cart में सफलतापूर्वक Add हो गया।"
-        );
-
+        existing.quantity =
+            Number(existing.quantity || 0) + 1;
 
     }
-    catch(error){
+    else{
 
-        console.error(error);
+        cart.push({
 
-        alert(
-            "Cart में Product Add नहीं हो पाया।"
-        );
+            id:product.id,
+
+            name:product.name,
+
+            price:Number(product.price) || 0,
+
+            quantity:1,
+
+            unit:product.unit || "Kg",
+
+            image:product.image || ""
+
+        });
 
     }
+
+
+    saveCart(cart);
+
+    updateCartCount();
+
+
+    alert(
+        "✅ " +
+        product.name +
+        " Cart में सफलतापूर्वक Add हो गया।"
+    );
 
 }
 
@@ -834,69 +779,52 @@ function addToCart(product){
 
 function buyNow(product){
 
-    try{
+    let cart =
+        getCart();
 
-        let cart =
-            getCart();
+    const existing =
+        cart.find(function(item){
 
+            return String(item.id) ===
+                   String(product.id);
 
-        const index =
-            cart.findIndex(function(item){
-
-                return String(item.id) ===
-                       String(product.id);
-
-            });
+        });
 
 
-        if(index !== -1){
+    if(existing){
 
-            cart[index].quantity =
-                Number(cart[index].quantity || 1) + 1;
-
-        }
-        else{
-
-            cart.push({
-
-                id:product.id,
-
-                name:product.name,
-
-                price:Number(product.price),
-
-                quantity:1,
-
-                unit:product.unit || "Kg",
-
-                image:product.image || ""
-
-            });
-
-        }
-
-
-        saveCart(cart);
-
-        updateCartCount();
-
-
-        /* सीधे Checkout */
-
-        window.location.href =
-            "checkout.html";
-
+        existing.quantity =
+            Number(existing.quantity || 0) + 1;
 
     }
-    catch(error){
+    else{
 
-        console.error(error);
+        cart.push({
 
-        alert(
-            "Buy Now में समस्या हुई।"
-        );
+            id:product.id,
+
+            name:product.name,
+
+            price:Number(product.price) || 0,
+
+            quantity:1,
+
+            unit:product.unit || "Kg",
+
+            image:product.image || ""
+
+        });
 
     }
+
+
+    saveCart(cart);
+
+    updateCartCount();
+
+
+    window.location.href =
+        "checkout.html";
 
 }
 
@@ -905,17 +833,21 @@ function buyNow(product){
    DISPLAY PRODUCTS
 ===================================================== */
 
-function displayProducts(category="all"){
+function displayProducts(category){
+
+    if(!category){
+        category = "all";
+    }
+
 
     const grid =
         document.getElementById(
             "productsGrid"
         );
 
+
     if(!grid){
-
         return;
-
     }
 
 
@@ -923,13 +855,13 @@ function displayProducts(category="all"){
         getProducts();
 
 
-    let filtered =
+    let filteredProducts =
         products;
 
 
     if(category !== "all"){
 
-        filtered =
+        filteredProducts =
             products.filter(function(product){
 
                 return product.category ===
@@ -943,21 +875,26 @@ function displayProducts(category="all"){
     grid.innerHTML = "";
 
 
-    if(filtered.length === 0){
+    if(filteredProducts.length === 0){
 
         grid.innerHTML = `
 
             <div style="
                 grid-column:1/-1;
-                text-align:center;
-                padding:50px;
                 background:white;
+                padding:50px 20px;
+                text-align:center;
                 border-radius:12px;
+                box-shadow:0 3px 10px rgba(0,0,0,0.10);
             ">
 
                 <h3>
-                    कोई Product उपलब्ध नहीं है।
+                    ❌ कोई Product उपलब्ध नहीं है।
                 </h3>
+
+                <p style="margin-top:10px;color:#666;">
+                    कृपया दूसरी Category चुनें।
+                </p>
 
             </div>
 
@@ -968,7 +905,7 @@ function displayProducts(category="all"){
     }
 
 
-    filtered.forEach(function(product){
+    filteredProducts.forEach(function(product){
 
         const available =
             product.status === "available" &&
@@ -977,7 +914,6 @@ function displayProducts(category="all"){
 
         const card =
             document.createElement("div");
-
 
         card.className =
             "product-card";
@@ -1005,13 +941,11 @@ function displayProducts(category="all"){
 
                 </div>
 
-
                 <h3 class="product-name">
 
                     ${product.name}
 
                 </h3>
-
 
                 <div class="description">
 
@@ -1019,14 +953,12 @@ function displayProducts(category="all"){
 
                 </div>
 
-
                 <div class="price">
 
-                    💰 ₹${Number(product.price).toLocaleString("en-IN")}
+                    💰 ₹${Number(product.price || 0).toLocaleString("en-IN")}
                     / ${product.unit || "Kg"}
 
                 </div>
-
 
                 ${
                     available
@@ -1035,9 +967,7 @@ function displayProducts(category="all"){
 
                     `
                     <div class="status available">
-
                         ✅ Available
-
                     </div>
                     `
 
@@ -1045,48 +975,28 @@ function displayProducts(category="all"){
 
                     `
                     <div class="status out-stock">
-
                         ❌ Out of Stock
-
                     </div>
                     `
                 }
 
-
                 <div class="buttons">
-
 
                     <button
                         type="button"
                         class="btn add-cart"
-                        ${
-                            !available
-                            ? "disabled"
-                            : ""
-                        }
-                        data-action="cart"
+                        ${available ? "" : "disabled"}
                     >
-
                         🛒 Add to Cart
-
                     </button>
-
 
                     <button
                         type="button"
                         class="btn buy-now"
-                        ${
-                            !available
-                            ? "disabled"
-                            : ""
-                        }
-                        data-action="buy"
+                        ${available ? "" : "disabled"}
                     >
-
                         ⚡ Buy Now
-
                     </button>
-
 
                 </div>
 
@@ -1095,26 +1005,15 @@ function displayProducts(category="all"){
         `;
 
 
-        /* ================================
-           IMPORTANT:
-           Direct Event Listener
-           onclick की जगह
-        ================================= */
-
-
         const cartButton =
-            card.querySelector(
-                '[data-action="cart"]'
-            );
+            card.querySelector(".add-cart");
 
 
         const buyButton =
-            card.querySelector(
-                '[data-action="buy"]'
-            );
+            card.querySelector(".buy-now");
 
 
-        if(cartButton && available){
+        if(available){
 
             cartButton.addEventListener(
                 "click",
@@ -1125,10 +1024,6 @@ function displayProducts(category="all"){
                 }
             );
 
-        }
-
-
-        if(buyButton && available){
 
             buyButton.addEventListener(
                 "click",
@@ -1150,43 +1045,45 @@ function displayProducts(category="all"){
 
 
 /* =====================================================
-   FILTER
+   FILTER BUTTONS
 ===================================================== */
 
-function filterProducts(
-    category,
-    button
-){
+document
+.querySelectorAll(".filter-btn")
+.forEach(function(button){
 
-    document
-        .querySelectorAll(".filter-btn")
-        .forEach(function(btn){
+    button.addEventListener(
+        "click",
+        function(){
 
-            btn.classList.remove(
-                "active"
-            );
+            document
+            .querySelectorAll(".filter-btn")
+            .forEach(function(btn){
 
-        });
+                btn.classList.remove("active");
 
-
-    if(button){
-
-        button.classList.add(
-            "active"
-        );
-
-    }
+            });
 
 
-    displayProducts(
-        category
+            button.classList.add("active");
+
+
+            const category =
+                button.getAttribute(
+                    "data-category"
+                );
+
+
+            displayProducts(category);
+
+        }
     );
 
-}
+});
 
 
 /* =====================================================
-   INITIALIZE
+   PAGE LOAD
 ===================================================== */
 
 document.addEventListener(
@@ -1202,7 +1099,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   CART COUNT UPDATE WHEN PAGE RETURNS
+   PAGE SHOW
 ===================================================== */
 
 window.addEventListener(
@@ -1210,8 +1107,6 @@ window.addEventListener(
     function(){
 
         updateCartCount();
-
-        displayProducts("all");
 
     }
 );
