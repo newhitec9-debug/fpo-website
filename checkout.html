@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -20,7 +19,6 @@ body{
     color:#222;
 }
 
-/* HEADER */
 header{
     background:linear-gradient(135deg,#176b2c,#2e8b3c);
     color:white;
@@ -38,7 +36,6 @@ header p{
     font-size:16px;
 }
 
-/* NAVIGATION */
 nav{
     background:white;
     padding:14px 10px;
@@ -63,7 +60,6 @@ nav a:hover{
     background:#e8f5e9;
 }
 
-/* CART BUTTON */
 .cart-link{
     background:#ffd600;
     color:#111 !important;
@@ -73,14 +69,12 @@ nav a:hover{
     box-shadow:0 3px 8px rgba(0,0,0,.18);
 }
 
-/* CONTAINER */
 .container{
     width:94%;
     max-width:1000px;
     margin:30px auto;
 }
 
-/* CARD */
 .card{
     background:white;
     padding:25px;
@@ -98,7 +92,6 @@ h3{
     margin-bottom:15px;
 }
 
-/* ORDER ITEMS */
 .product-row{
     display:flex;
     justify-content:space-between;
@@ -129,7 +122,15 @@ h3{
     color:#d35400;
 }
 
-/* TOTAL */
+.product-image{
+    width:75px;
+    height:75px;
+    object-fit:cover;
+    border-radius:10px;
+    border:1px solid #ddd;
+    background:#f2f2f2;
+}
+
 .total-box{
     margin-top:20px;
     padding:18px;
@@ -145,7 +146,6 @@ h3{
     color:#176b2c;
 }
 
-/* FORM */
 label{
     display:block;
     font-weight:bold;
@@ -168,7 +168,6 @@ textarea{
     resize:vertical;
 }
 
-/* PLACE ORDER */
 .place-btn{
     width:100%;
     margin-top:20px;
@@ -186,7 +185,6 @@ textarea{
     background:#0f5421;
 }
 
-/* EMPTY */
 .empty{
     text-align:center;
     padding:40px 20px;
@@ -208,7 +206,6 @@ textarea{
     font-weight:bold;
 }
 
-/* SUCCESS */
 .success{
     display:none;
     background:white;
@@ -254,7 +251,6 @@ textarea{
     color:white;
 }
 
-/* FOOTER */
 footer{
     margin-top:40px;
     background:#176b2c;
@@ -264,7 +260,6 @@ footer{
     line-height:1.8;
 }
 
-/* MOBILE */
 @media(max-width:600px){
 
     header h1{
@@ -288,13 +283,13 @@ footer{
     .total{
         font-size:21px;
     }
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
 
     <h1>
@@ -311,8 +306,6 @@ footer{
 
 </header>
 
-
-<!-- NAVIGATION -->
 <nav>
 
     <a href="index.html">
@@ -332,10 +325,8 @@ footer{
 
 <div class="container">
 
-    <!-- CHECKOUT -->
     <div id="checkoutSection">
 
-        <!-- ORDER SUMMARY -->
         <div class="card">
 
             <h2>
@@ -359,7 +350,6 @@ footer{
         </div>
 
 
-        <!-- CUSTOMER DETAILS -->
         <div id="customerCard" class="card">
 
             <h2>
@@ -379,7 +369,6 @@ footer{
                     required
                 >
 
-
                 <label for="customerMobile">
                     मोबाइल नंबर *
                 </label>
@@ -393,7 +382,6 @@ footer{
                     required
                 >
 
-
                 <label for="customerAddress">
                     पूरा पता *
                 </label>
@@ -405,15 +393,11 @@ footer{
                     required
                 ></textarea>
 
-
                 <label for="paymentMethod">
                     Payment Method *
                 </label>
 
-                <select
-                    id="paymentMethod"
-                    required
-                >
+                <select id="paymentMethod" required>
 
                     <option value="">
                         -- Select Payment Method --
@@ -429,7 +413,6 @@ footer{
 
                 </select>
 
-
                 <button
                     type="submit"
                     class="place-btn"
@@ -444,11 +427,7 @@ footer{
     </div>
 
 
-    <!-- SUCCESS -->
-    <div
-        id="successSection"
-        class="success"
-    >
+    <div id="successSection" class="success">
 
         <h1>
             🎉 Order Successfully Placed!
@@ -477,7 +456,6 @@ footer{
             📱 FPO आपके Order की जानकारी देखकर आपसे संपर्क करेगा।
         </p>
 
-
         <div style="margin-top:20px;">
 
             <a
@@ -501,7 +479,6 @@ footer{
 </div>
 
 
-<!-- FOOTER -->
 <footer>
 
     <h3>
@@ -526,26 +503,21 @@ footer{
 <script>
 
 /* =====================================================
-   CART KEY
-   =====================================================
-
-   products.html में Cart इसी key में save हो रहा है:
-   localStorage → "cart"
-
+   CART
 ===================================================== */
 
 function getCart(){
 
     try{
 
-        const data =
+        var data =
             localStorage.getItem("cart");
 
         if(!data){
             return [];
         }
 
-        const cart =
+        var cart =
             JSON.parse(data);
 
         return Array.isArray(cart)
@@ -566,10 +538,55 @@ function getCart(){
 
 
 /* =====================================================
-   CART
+   BUY NOW
 ===================================================== */
 
-let cart = getCart();
+function getBuyNowProduct(){
+
+    try{
+
+        var data =
+            localStorage.getItem(
+                "buyNowProduct"
+            );
+
+        if(!data){
+            return null;
+        }
+
+        return JSON.parse(data);
+
+    }catch(error){
+
+        console.error(
+            "Buy Now Error:",
+            error
+        );
+
+        return null;
+
+    }
+
+}
+
+
+/* =====================================================
+   CHECKOUT MODE
+===================================================== */
+
+function getCheckoutMode(){
+
+    var mode =
+        sessionStorage.getItem(
+            "checkoutMode"
+        );
+
+    if(mode === "buyNow"){
+        return "buyNow";
+    }
+
+    return "cart";
+}
 
 
 /* =====================================================
@@ -618,15 +635,15 @@ const successOrderId =
 
 
 /* =====================================================
-   UPDATE CART COUNT
+   CART COUNT
 ===================================================== */
 
 function updateCartCount(){
 
-    cart =
+    var cart =
         getCart();
 
-    let count = 0;
+    var count = 0;
 
     cart.forEach(function(item){
 
@@ -644,25 +661,77 @@ function updateCartCount(){
 
 
 /* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   GET ORDER PRODUCTS
+===================================================== */
+
+function getOrderProducts(){
+
+    var mode =
+        getCheckoutMode();
+
+
+    /* BUY NOW */
+
+    if(mode === "buyNow"){
+
+        var buyNow =
+            getBuyNowProduct();
+
+        if(
+            buyNow &&
+            buyNow.name
+        ){
+
+            return [buyNow];
+
+        }
+
+        return [];
+
+    }
+
+
+    /* CART */
+
+    return getCart();
+
+}
+
+
+/* =====================================================
    SHOW ORDER
 ===================================================== */
 
-function showCart(){
+function showOrder(){
 
-    cart =
-        getCart();
+    var products =
+        getOrderProducts();
 
 
-    /* EMPTY CART */
-
-    if(cart.length === 0){
+    if(products.length === 0){
 
         orderItems.innerHTML = `
 
             <div class="empty">
 
                 <h3>
-                    🛒 Cart खाली है
+                    🛒 कोई Product नहीं मिला
                 </h3>
 
                 <p>
@@ -693,8 +762,6 @@ function showCart(){
     }
 
 
-    /* PRODUCTS */
-
     customerCard.style.display =
         "block";
 
@@ -702,23 +769,23 @@ function showCart(){
     orderItems.innerHTML =
         "";
 
-    let total =
+    var total =
         0;
 
 
-    cart.forEach(function(item){
+    products.forEach(function(item){
 
-        const price =
+        var price =
             Number(
                 item.price
             ) || 0;
 
-        const quantity =
+        var quantity =
             Number(
                 item.quantity
             ) || 1;
 
-        const subtotal =
+        var subtotal =
             price * quantity;
 
 
@@ -726,7 +793,7 @@ function showCart(){
             subtotal;
 
 
-        const row =
+        var row =
             document.createElement(
                 "div"
             );
@@ -735,7 +802,37 @@ function showCart(){
             "product-row";
 
 
+        var imageHTML = "";
+
+        if(item.image){
+
+            imageHTML = `
+
+                <img
+                    src="${escapeHTML(item.image)}"
+                    class="product-image"
+                    alt="${escapeHTML(item.name || "Product")}"
+                >
+
+            `;
+
+        }else{
+
+            imageHTML = `
+
+                <div class="product-image"
+                     style="display:flex;align-items:center;justify-content:center;font-size:35px;">
+                    🌾
+                </div>
+
+            `;
+
+        }
+
+
         row.innerHTML = `
+
+            ${imageHTML}
 
             <div class="product-info">
 
@@ -751,7 +848,9 @@ function showCart(){
                     💰 ₹${price.toLocaleString("en-IN")}
                     ×
                     ${quantity}
-                    ${item.unit || "Kg"}
+                    ${escapeHTML(
+                        item.unit || "Kg"
+                    )}
 
                 </div>
 
@@ -785,28 +884,12 @@ function showCart(){
 
 
 /* =====================================================
-   HTML SECURITY
-===================================================== */
-
-function escapeHTML(value){
-
-    return String(value)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
-
-}
-
-
-/* =====================================================
    ORDER ID
 ===================================================== */
 
 function generateOrderId(){
 
-    const number =
+    var number =
         Math.floor(
             10000000 +
             Math.random() *
@@ -829,16 +912,18 @@ checkoutForm.addEventListener(
         event.preventDefault();
 
 
-        /* GET FRESH CART */
-
-        cart =
-            getCart();
+        var mode =
+            getCheckoutMode();
 
 
-        if(cart.length === 0){
+        var products =
+            getOrderProducts();
+
+
+        if(products.length === 0){
 
             alert(
-                "🛒 आपका Cart खाली है। पहले Product चुनें।"
+                "🛒 कोई Product उपलब्ध नहीं है।"
             );
 
             return;
@@ -846,9 +931,7 @@ checkoutForm.addEventListener(
         }
 
 
-        /* CUSTOMER */
-
-        const name =
+        var name =
             document
             .getElementById(
                 "customerName"
@@ -857,7 +940,7 @@ checkoutForm.addEventListener(
             .trim();
 
 
-        const mobile =
+        var mobile =
             document
             .getElementById(
                 "customerMobile"
@@ -866,7 +949,7 @@ checkoutForm.addEventListener(
             .trim();
 
 
-        const address =
+        var address =
             document
             .getElementById(
                 "customerAddress"
@@ -875,15 +958,13 @@ checkoutForm.addEventListener(
             .trim();
 
 
-        const payment =
+        var payment =
             document
             .getElementById(
                 "paymentMethod"
             )
             .value;
 
-
-        /* MOBILE VALIDATION */
 
         if(
             !/^[0-9]{10}$/.test(
@@ -900,8 +981,6 @@ checkoutForm.addEventListener(
         }
 
 
-        /* PAYMENT VALIDATION */
-
         if(!payment){
 
             alert(
@@ -913,13 +992,11 @@ checkoutForm.addEventListener(
         }
 
 
-        /* TOTAL */
-
-        let total =
+        var total =
             0;
 
 
-        cart.forEach(function(item){
+        products.forEach(function(item){
 
             total +=
                 (
@@ -936,19 +1013,15 @@ checkoutForm.addEventListener(
         });
 
 
-        /* ORDER ID */
-
-        const orderId =
+        var orderId =
             generateOrderId();
 
 
-        /* DATE */
-
-        const now =
+        var now =
             new Date();
 
 
-        const order = {
+        var order = {
 
             id:
                 orderId,
@@ -966,10 +1039,13 @@ checkoutForm.addEventListener(
                 payment,
 
             products:
-                cart,
+                products,
 
             total:
                 total,
+
+            orderType:
+                mode,
 
             status:
                 "New",
@@ -990,11 +1066,9 @@ checkoutForm.addEventListener(
         };
 
 
-        /* =================================================
-           SAVE ORDER FOR ADMIN
-        ================================================= */
+        /* SAVE ORDERS */
 
-        let orders = [];
+        var orders = [];
 
         try{
 
@@ -1002,8 +1076,8 @@ checkoutForm.addEventListener(
                 JSON.parse(
                     localStorage.getItem(
                         "fpoOrders"
-                    )
-                ) || [];
+                    ) || "[]"
+                );
 
         }catch(error){
 
@@ -1032,10 +1106,6 @@ checkoutForm.addEventListener(
         );
 
 
-        /* =================================================
-           ALSO SAVE LAST ORDER
-        ================================================= */
-
         localStorage.setItem(
             "fpoLastOrder",
             JSON.stringify(
@@ -1045,24 +1115,39 @@ checkoutForm.addEventListener(
 
 
         /* =================================================
-           CLEAR CART
+           CLEAR ONLY CORRECT SOURCE
         ================================================= */
 
-        localStorage.removeItem(
-            "cart"
+        if(mode === "buyNow"){
+
+            /* Buy Now में Cart को नहीं छेड़ना */
+
+            localStorage.removeItem(
+                "buyNowProduct"
+            );
+
+        }else{
+
+            /* Cart Checkout */
+
+            localStorage.removeItem(
+                "cart"
+            );
+
+            localStorage.removeItem(
+                "buyNowProduct"
+            );
+
+        }
+
+
+        sessionStorage.removeItem(
+            "checkoutMode"
         );
 
 
-        /* UPDATE */
-
-        cart = [];
-
         updateCartCount();
 
-
-        /* =================================================
-           SUCCESS SCREEN
-        ================================================= */
 
         successOrderId.textContent =
             orderId;
@@ -1077,8 +1162,11 @@ checkoutForm.addEventListener(
 
 
         window.scrollTo({
+
             top:0,
+
             behavior:"smooth"
+
         });
 
     }
@@ -1089,7 +1177,7 @@ checkoutForm.addEventListener(
    INITIAL LOAD
 ===================================================== */
 
-showCart();
+showOrder();
 
 updateCartCount();
 
@@ -1097,4 +1185,3 @@ updateCartCount();
 
 </body>
 </html>
-```
