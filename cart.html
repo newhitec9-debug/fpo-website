@@ -1,6 +1,5 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 
 <head>
 
@@ -24,7 +23,7 @@ body{
     color:#333;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
     background:#1B5E20;
@@ -38,7 +37,11 @@ header h1{
     margin-bottom:8px;
 }
 
-/* NAVIGATION */
+header p{
+    font-size:16px;
+}
+
+/* ================= NAVIGATION ================= */
 
 nav{
     background:#2E7D32;
@@ -49,16 +52,17 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    margin:0 9px;
+    margin:0 8px;
     font-weight:bold;
     display:inline-block;
+    padding:5px;
 }
 
 nav a:hover{
     color:#FFD54F;
 }
 
-/* CONTAINER */
+/* ================= CONTAINER ================= */
 
 .container{
     max-width:1000px;
@@ -66,7 +70,7 @@ nav a:hover{
     padding:20px;
 }
 
-/* TITLE */
+/* ================= TITLE ================= */
 
 .page-title{
     text-align:center;
@@ -74,7 +78,7 @@ nav a:hover{
     margin-bottom:25px;
 }
 
-/* CART */
+/* ================= CART BOX ================= */
 
 .cart-box{
     background:white;
@@ -83,7 +87,7 @@ nav a:hover{
     box-shadow:0 0 10px #ccc;
 }
 
-/* CART ITEM */
+/* ================= CART ITEM ================= */
 
 .cart-item{
     display:flex;
@@ -108,7 +112,7 @@ nav a:hover{
     margin:5px 0;
 }
 
-/* QUANTITY */
+/* ================= QUANTITY ================= */
 
 .quantity-box{
     display:flex;
@@ -120,10 +124,10 @@ nav a:hover{
     border:none;
     background:#2E7D32;
     color:white;
-    width:32px;
-    height:32px;
+    width:34px;
+    height:34px;
     border-radius:5px;
-    font-size:18px;
+    font-size:20px;
     cursor:pointer;
 }
 
@@ -133,26 +137,28 @@ nav a:hover{
 
 .quantity{
     font-weight:bold;
-    min-width:25px;
+    min-width:30px;
     text-align:center;
+    font-size:18px;
 }
 
-/* SUBTOTAL */
+/* ================= SUBTOTAL ================= */
 
 .subtotal{
     font-weight:bold;
     color:#D84315;
     min-width:100px;
     text-align:right;
+    font-size:18px;
 }
 
-/* REMOVE */
+/* ================= REMOVE ================= */
 
 .remove-btn{
     background:#D32F2F;
     color:white;
     border:none;
-    padding:8px 12px;
+    padding:9px 13px;
     border-radius:5px;
     cursor:pointer;
 }
@@ -161,7 +167,7 @@ nav a:hover{
     background:#B71C1C;
 }
 
-/* TOTAL */
+/* ================= TOTAL ================= */
 
 .total-box{
     text-align:right;
@@ -170,10 +176,15 @@ nav a:hover{
 
 .total-box h2{
     color:#D84315;
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 
-/* BUTTONS */
+.total-box p{
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+/* ================= BUTTONS ================= */
 
 .buttons{
     display:flex;
@@ -191,6 +202,7 @@ nav a:hover{
     font-weight:bold;
     border:none;
     cursor:pointer;
+    text-align:center;
 }
 
 .shop-btn{
@@ -209,7 +221,7 @@ nav a:hover{
     background:#EF6C00;
 }
 
-/* EMPTY CART */
+/* ================= EMPTY CART ================= */
 
 .empty-cart{
     text-align:center;
@@ -225,17 +237,18 @@ nav a:hover{
     margin-bottom:20px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     background:#2E7D32;
     color:white;
     text-align:center;
-    padding:18px 10px;
+    padding:20px 10px;
     margin-top:40px;
+    line-height:1.8;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
@@ -246,6 +259,7 @@ footer{
 
     .subtotal{
         text-align:left;
+        min-width:auto;
     }
 
     .buttons{
@@ -253,7 +267,7 @@ footer{
     }
 
     .btn{
-        text-align:center;
+        width:100%;
     }
 
     header h1{
@@ -262,7 +276,7 @@ footer{
 
     nav a{
         font-size:14px;
-        margin:5px 3px;
+        margin:4px 2px;
     }
 
 }
@@ -271,96 +285,153 @@ footer{
 
 </head>
 
+
 <body>
 
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
-<h1>
-🌾 Bundelkhand Organic Farmer Producer Company Limited
-</h1>
+    <h1>
+        🌾 Bundelkhand Organic Farmer Producer Company Limited
+    </h1>
 
-<p>
-Organic Products Directly From Farmers
-</p>
+    <p>
+        Organic Products Directly From Farmers
+    </p>
 
 </header>
 
 
-<!-- NAVIGATION -->
+<!-- ================= NAVIGATION ================= -->
 
 <nav>
 
-<a href="index.html">🏠 Home</a>
+    <a href="index.html">
+        🏠 Home
+    </a>
 
-<a href="about.html">🌿 About</a>
+    <a href="about.html">
+        🌿 About
+    </a>
 
-<a href="products.html">🛒 Products</a>
+    <a href="products.html">
+        🛒 Products
+    </a>
 
-<a href="farmers.html">👨‍🌾 Kisan Corner</a>
+    <a href="farmers.html">
+        👨‍🌾 Kisan Corner
+    </a>
 
-<a href="membership.html">📝 Join FPO</a>
+    <a href="membership.html">
+        📝 Join FPO
+    </a>
 
-<a href="bulk-order.html">📦 Bulk Order</a>
+    <a href="bulk-order.html">
+        📦 Bulk Order
+    </a>
 
-<a href="contact.html">📞 Contact</a>
+    <a href="contact.html">
+        📞 Contact
+    </a>
 
 </nav>
 
 
-<!-- MAIN -->
+<!-- ================= MAIN ================= -->
 
 <div class="container">
 
-<h1 class="page-title">
-🛒 Your Shopping Cart
-</h1>
+    <h1 class="page-title">
+        🛒 Your Shopping Cart
+    </h1>
 
 
-<div class="cart-box" id="cartContainer">
+    <div
+        class="cart-box"
+        id="cartContainer"
+    ></div>
 
 </div>
 
 
-</div>
-
-
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-© 2026 Bundelkhand Organic Farmer Producer Company Limited
+    © 2026 Bundelkhand Organic Farmer Producer Company Limited
 
-<br>
+    <br>
 
-🌾 Empowering Farmers • Promoting Organic Agriculture
+    🌾 Empowering Farmers • Promoting Organic Agriculture
 
 </footer>
 
 
 <script>
 
-/* ==========================================
-   LOAD CART
-========================================== */
+/* =====================================================
+   CART DATA
+===================================================== */
+
+function getCart(){
+
+    try{
+
+        const data =
+            localStorage.getItem("cart");
+
+        if(!data){
+
+            return [];
+
+        }
+
+        const parsed =
+            JSON.parse(data);
+
+        if(Array.isArray(parsed)){
+
+            return parsed;
+
+        }
+
+        return [];
+
+    }
+    catch(error){
+
+        console.error(
+            "Cart Error:",
+            error
+        );
+
+        return [];
+
+    }
+
+}
+
+
+/* =====================================================
+   CART
+===================================================== */
 
 let cart =
-JSON.parse(localStorage.getItem("cart")) || [];
+    getCart();
 
 
-/* ==========================================
+/* =====================================================
    DISPLAY CART
-========================================== */
-
-displayCart();
-
+===================================================== */
 
 function displayCart(){
 
-    let container =
-    document.getElementById("cartContainer");
+    const container =
+        document.getElementById(
+            "cartContainer"
+        );
 
 
     container.innerHTML = "";
@@ -372,26 +443,24 @@ function displayCart(){
 
         container.innerHTML = `
 
-        <div class="empty-cart">
+            <div class="empty-cart">
 
-            <h2>
-            🛒 Your Cart Is Empty
-            </h2>
+                <h2>
+                    🛒 Your Cart Is Empty
+                </h2>
 
-            <p>
-            अभी आपके Cart में कोई Product नहीं है।
-            </p>
+                <p>
+                    अभी आपके Cart में कोई Product नहीं है।
+                </p>
 
-            <a
-            href="products.html"
-            class="btn shop-btn"
-            >
+                <a
+                    href="products.html"
+                    class="btn shop-btn"
+                >
+                    🛒 Continue Shopping
+                </a>
 
-            🛒 Continue Shopping
-
-            </a>
-
-        </div>
+            </div>
 
         `;
 
@@ -402,221 +471,322 @@ function displayCart(){
 
     /* CART ITEMS */
 
-    cart.forEach(function(item,index){
+    cart.forEach(
+        function(item,index){
 
-        let price =
-        Number(item.price) || 0;
-
-        let quantity =
-        Number(item.quantity) || 1;
-
-        let subtotal =
-        price * quantity;
+            const price =
+                Number(
+                    item.price
+                ) || 0;
 
 
-        container.innerHTML += `
-
-        <div class="cart-item">
-
-
-            <div class="product-info">
-
-                <h2>
-                🌾 ${item.name}
-                </h2>
-
-                <p>
-                <b>Category:</b>
-                ${item.category || "Organic Product"}
-                </p>
-
-                <p>
-                Price: ₹${price}
-                </p>
-
-            </div>
+            let quantity =
+                Number(
+                    item.quantity
+                ) || 1;
 
 
-            <div class="quantity-box">
+            if(quantity < 1){
 
-                <button
-                onclick="decreaseQuantity(${index})"
-                >
-                −
-                </button>
+                quantity = 1;
+
+            }
 
 
-                <span class="quantity">
-                ${quantity}
-                </span>
+            const subtotal =
+                price * quantity;
 
 
-                <button
-                onclick="increaseQuantity(${index})"
-                >
-                +
-                </button>
-
-            </div>
+            const itemName =
+                escapeHTML(
+                    item.name ||
+                    "Product"
+                );
 
 
-            <div class="subtotal">
-
-                ₹${subtotal}
-
-            </div>
-
-
-            <button
-            class="remove-btn"
-            onclick="removeItem(${index})"
-            >
-
-            Remove
-
-            </button>
+            const category =
+                escapeHTML(
+                    item.category ||
+                    "Organic Product"
+                );
 
 
-        </div>
+            const unit =
+                escapeHTML(
+                    item.unit ||
+                    "Kg"
+                );
 
-        `;
 
-    });
+            container.innerHTML += `
+
+                <div class="cart-item">
+
+                    <div class="product-info">
+
+                        <h2>
+                            🌾 ${itemName}
+                        </h2>
+
+                        <p>
+                            <b>Category:</b>
+                            ${category}
+                        </p>
+
+                        <p>
+                            Price:
+                            ₹${price.toLocaleString("en-IN")}
+                            / ${unit}
+                        </p>
+
+                    </div>
 
 
-    /* TOTAL */
+                    <div class="quantity-box">
+
+                        <button
+                            onclick="decreaseQuantity(${index})"
+                            title="Decrease"
+                        >
+                            −
+                        </button>
+
+
+                        <span class="quantity">
+                            ${quantity}
+                        </span>
+
+
+                        <button
+                            onclick="increaseQuantity(${index})"
+                            title="Increase"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+
+                    <div class="subtotal">
+
+                        ₹${subtotal.toLocaleString("en-IN")}
+
+                    </div>
+
+
+                    <button
+                        class="remove-btn"
+                        onclick="removeItem(${index})"
+                    >
+                        Remove
+                    </button>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+    /* =================================================
+       TOTAL
+    ================================================= */
 
     let total = 0;
 
 
-    cart.forEach(function(item){
+    cart.forEach(
+        function(item){
 
-        total +=
-        (Number(item.price) || 0) *
-        (Number(item.quantity) || 1);
+            const price =
+                Number(
+                    item.price
+                ) || 0;
 
-    });
+
+            const quantity =
+                Number(
+                    item.quantity
+                ) || 1;
+
+
+            total +=
+                price * quantity;
+
+        }
+    );
 
 
     container.innerHTML += `
 
-    <div class="total-box">
+        <div class="total-box">
 
-        <h2>
-        Total Amount: ₹${total}
-        </h2>
+            <h2>
+                Total Amount:
+                ₹${total.toLocaleString("en-IN")}
+            </h2>
 
-
-        <p>
-        Products: ${cart.length}
-        </p>
-
-
-        <div class="buttons">
-
-            <a
-            href="products.html"
-            class="btn shop-btn"
-            >
-
-            🛒 Continue Shopping
-
-            </a>
+            <p>
+                Products:
+                ${cart.length}
+            </p>
 
 
-            <a
-            <a href="checkout.html?mode=cart"
-   onclick="sessionStorage.setItem('checkoutMode','cart')"
-   class="...">
-    📦 Proceed to Order
-</a>
-            class="btn checkout-btn"
-            onclick="saveOrderTotal()"
-            >
+            <div class="buttons">
 
-            📦 Proceed to Order
+                <a
+                    href="products.html"
+                    class="btn shop-btn"
+                >
+                    🛒 Continue Shopping
+                </a>
 
-            </a>
+
+                <a
+                    href="checkout.html?mode=cart"
+                    class="btn checkout-btn"
+                    onclick="prepareCartCheckout()"
+                >
+                    📦 Proceed to Order
+                </a>
+
+            </div>
 
         </div>
-
-    </div>
 
     `;
 
 }
 
 
-/* ==========================================
+/* =====================================================
    INCREASE QUANTITY
-========================================== */
+===================================================== */
 
 function increaseQuantity(index){
 
-    let item = cart[index];
+    if(!cart[index]){
 
-
-    let stock =
-    Number(item.stock) || 0;
-
-
-    if(item.quantity < stock){
-
-        item.quantity++;
-
-        saveCart();
+        return;
 
     }
 
-    else{
 
-        alert(
-        "⚠️ Available stock limit reached!"
+    const item =
+        cart[index];
+
+
+    const stock =
+        Number(
+            item.stock
         );
 
+
+    const currentQuantity =
+        Number(
+            item.quantity
+        ) || 1;
+
+
+    /* STOCK AVAILABLE */
+
+    if(
+        stock > 0 &&
+        currentQuantity >= stock
+    ){
+
+        alert(
+            "⚠️ Available stock limit reached!"
+        );
+
+        return;
+
     }
+
+
+    item.quantity =
+        currentQuantity + 1;
+
+
+    saveCart();
 
 }
 
 
-/* ==========================================
+/* =====================================================
    DECREASE QUANTITY
-========================================== */
+===================================================== */
 
 function decreaseQuantity(index){
 
-    if(cart[index].quantity > 1){
+    if(!cart[index]){
 
-        cart[index].quantity--;
+        return;
+
+    }
+
+
+    const currentQuantity =
+        Number(
+            cart[index].quantity
+        ) || 1;
+
+
+    if(currentQuantity > 1){
+
+        cart[index].quantity =
+            currentQuantity - 1;
 
         saveCart();
 
+        return;
+
     }
+
+
+    /* DON'T GO BELOW 1 */
+
+    cart[index].quantity = 1;
+
+    saveCart();
 
 }
 
 
-/* ==========================================
+/* =====================================================
    REMOVE ITEM
-========================================== */
+===================================================== */
 
 function removeItem(index){
 
-    let name =
-    cart[index].name;
+    if(!cart[index]){
+
+        return;
+
+    }
 
 
-    let confirmRemove =
-    confirm(
-    "क्या आप " +
-    name +
-    " को Cart से हटाना चाहते हैं?"
-    );
+    const name =
+        cart[index].name ||
+        "Product";
+
+
+    const confirmRemove =
+        confirm(
+            "क्या आप " +
+            name +
+            " को Cart से हटाना चाहते हैं?"
+        );
 
 
     if(confirmRemove){
 
-        cart.splice(index,1);
+        cart.splice(
+            index,
+            1
+        );
+
 
         saveCart();
 
@@ -625,9 +795,9 @@ function removeItem(index){
 }
 
 
-/* ==========================================
+/* =====================================================
    SAVE CART
-========================================== */
+===================================================== */
 
 function saveCart(){
 
@@ -636,35 +806,110 @@ function saveCart(){
         JSON.stringify(cart)
     );
 
+
     displayCart();
 
 }
 
 
-/* ==========================================
-   SAVE TOTAL FOR CHECKOUT
-========================================== */
+/* =====================================================
+   PREPARE CART CHECKOUT
+===================================================== */
 
-function saveOrderTotal(){
+function prepareCartCheckout(){
+
+    /*
+
+       IMPORTANT:
+
+       Cart checkout के लिए
+       mode = cart रहेगा।
+
+       Buy Now का product
+       Cart में नहीं मिलाया जाएगा।
+
+    */
+
+    sessionStorage.setItem(
+        "checkoutMode",
+        "cart"
+    );
+
+
+    /* SAVE TOTAL */
 
     let total = 0;
 
 
-    cart.forEach(function(item){
+    cart.forEach(
+        function(item){
 
-        total +=
-        (Number(item.price) || 0) *
-        (Number(item.quantity) || 1);
+            total +=
+                (
+                    Number(
+                        item.price
+                    ) || 0
+                )
+                *
+                (
+                    Number(
+                        item.quantity
+                    ) || 1
+                );
 
-    });
+        }
+    );
 
 
     localStorage.setItem(
         "orderTotal",
-        total
+        String(total)
     );
 
 }
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value){
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+displayCart();
 
 </script>
 
@@ -672,4 +917,3 @@ function saveOrderTotal(){
 </body>
 
 </html>
-```
