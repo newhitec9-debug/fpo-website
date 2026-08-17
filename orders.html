@@ -15,38 +15,38 @@
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:linear-gradient(135deg,#eef7ee,#f8fbff);
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg,#e8f5e9,#f3f8ff,#fff8e1);
     color:#222;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
-    background:linear-gradient(135deg,#075e22,#1b8a3b,#38a169);
+    background:linear-gradient(135deg,#075e20,#159447,#0d7a38);
     color:white;
-    padding:28px 15px;
     text-align:center;
+    padding:28px 15px;
     box-shadow:0 4px 15px rgba(0,0,0,.2);
 }
 
 header h1{
-    font-size:28px;
+    font-size:29px;
     margin-bottom:8px;
 }
 
 header p{
     font-size:16px;
-    margin:5px;
+    margin:5px 0;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 
 nav{
     background:white;
     padding:14px;
     text-align:center;
-    box-shadow:0 3px 12px rgba(0,0,0,.12);
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
     position:sticky;
     top:0;
     z-index:100;
@@ -55,51 +55,39 @@ nav{
 nav a{
     display:inline-block;
     text-decoration:none;
-    margin:5px;
-    padding:10px 16px;
-    border-radius:25px;
+    color:#075e20;
     font-weight:bold;
-    color:white;
-    background:#176b2c;
-    transition:.2s;
+    margin:4px;
+    padding:10px 15px;
+    border-radius:8px;
+    transition:.3s;
 }
 
 nav a:hover{
+    background:#e8f5e9;
     transform:translateY(-2px);
-    opacity:.9;
 }
 
-nav a.products{
-    background:#f39c12;
-}
-
-nav a.website{
-    background:#2980b9;
-}
-
-/* CONTAINER */
+/* ================= MAIN ================= */
 
 .container{
-    width:96%;
-    max-width:1500px;
+    width:94%;
+    max-width:1250px;
     margin:30px auto;
 }
 
-.title-box{
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    margin-bottom:22px;
-    box-shadow:0 5px 18px rgba(0,0,0,.1);
-    border-left:7px solid #176b2c;
+.page-title{
+    text-align:center;
+    margin-bottom:25px;
 }
 
-.title-box h2{
-    color:#176b2c;
+.page-title h2{
+    color:#075e20;
+    font-size:28px;
     margin-bottom:8px;
 }
 
-/* STAT CARDS */
+/* ================= STATS ================= */
 
 .stats{
     display:grid;
@@ -108,24 +96,17 @@ nav a.website{
     margin-bottom:25px;
 }
 
-.stat{
+.stat-card{
+    padding:22px;
+    border-radius:16px;
     color:white;
-    padding:24px;
-    border-radius:18px;
-    position:relative;
-    overflow:hidden;
-    box-shadow:0 6px 18px rgba(0,0,0,.15);
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.3s;
 }
 
-.stat::after{
-    content:"";
-    position:absolute;
-    width:100px;
-    height:100px;
-    border-radius:50%;
-    background:rgba(255,255,255,.12);
-    right:-25px;
-    top:-25px;
+.stat-card:hover{
+    transform:translateY(-5px);
 }
 
 .stat-icon{
@@ -133,306 +114,391 @@ nav a.website{
     margin-bottom:8px;
 }
 
-.stat h3{
-    font-size:16px;
+.stat-title{
+    font-size:15px;
     margin-bottom:8px;
+    font-weight:bold;
 }
 
 .stat-number{
-    font-size:30px;
+    font-size:28px;
     font-weight:bold;
 }
 
-.total{
-    background:linear-gradient(135deg,#176b2c,#27ae60);
+.total-card{
+    background:linear-gradient(135deg,#1976d2,#42a5f5);
 }
 
-.new{
-    background:linear-gradient(135deg,#1565c0,#42a5f5);
+.new-card{
+    background:linear-gradient(135deg,#f57c00,#ffb300);
 }
 
-.confirmed{
+.confirmed-card{
+    background:linear-gradient(135deg,#2e7d32,#66bb6a);
+}
+
+.sales-card{
     background:linear-gradient(135deg,#6a1b9a,#ab47bc);
 }
 
-.sales{
-    background:linear-gradient(135deg,#e65100,#ff9800);
-}
+/* ================= FILTER ================= */
 
-/* FILTER */
-
-.toolbar{
+.control-box{
     background:white;
     padding:18px;
-    border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,.1);
-    margin-bottom:20px;
+    border-radius:14px;
+    box-shadow:0 3px 12px rgba(0,0,0,.12);
+    margin-bottom:25px;
     display:flex;
-    gap:12px;
     align-items:center;
-    flex-wrap:wrap;
-}
-
-.toolbar label{
-    font-weight:bold;
-    color:#176b2c;
-}
-
-select{
-    padding:11px 15px;
-    border:2px solid #ddd;
-    border-radius:9px;
-    font-size:15px;
-    min-width:190px;
-}
-
-.refresh{
-    border:none;
-    padding:11px 18px;
-    border-radius:9px;
-    background:#176b2c;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.refresh:hover{
-    background:#0d501f;
-}
-
-/* ORDER AREA */
-
-.order-title{
-    background:#176b2c;
-    color:white;
-    padding:15px 20px;
-    border-radius:14px 14px 0 0;
-    font-size:20px;
-    font-weight:bold;
-}
-
-.orders-area{
-    background:white;
-    padding:20px;
-    border-radius:0 0 14px 14px;
-    box-shadow:0 5px 18px rgba(0,0,0,.1);
-}
-
-/* ORDER CARD */
-
-.order-card{
-    border:2px solid #e5e5e5;
-    border-radius:15px;
-    margin-bottom:20px;
-    overflow:hidden;
-    background:#fff;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
-}
-
-.order-card:hover{
-    box-shadow:0 7px 22px rgba(0,0,0,.14);
-}
-
-/* ORDER HEADER */
-
-.order-header{
-    display:flex;
     justify-content:space-between;
-    align-items:center;
-    padding:15px 18px;
-    background:linear-gradient(90deg,#f0fff4,#ffffff);
-    border-bottom:1px solid #ddd;
     gap:15px;
     flex-wrap:wrap;
 }
 
+.filter-area{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.filter-area label{
+    font-weight:bold;
+    color:#075e20;
+}
+
+#statusFilter{
+    padding:11px 15px;
+    border:2px solid #159447;
+    border-radius:8px;
+    font-size:15px;
+    min-width:210px;
+    background:white;
+}
+
+.refresh-btn{
+    border:none;
+    padding:11px 18px;
+    border-radius:8px;
+    background:#1769aa;
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.refresh-btn:hover{
+    background:#0d47a1;
+}
+
+/* ================= ORDER GRID ================= */
+
+.order-list-title{
+    color:#075e20;
+    margin-bottom:18px;
+    font-size:22px;
+}
+
+.orders-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+/* ================= ORDER CARD ================= */
+
+.order-card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.13);
+    border-left:7px solid #159447;
+    transition:.3s;
+}
+
+.order-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+}
+
+/* Status Border */
+
+.order-card.status-new{
+    border-left-color:#ff9800;
+}
+
+.order-card.status-confirmed{
+    border-left-color:#2e7d32;
+}
+
+.order-card.status-processing{
+    border-left-color:#1565c0;
+}
+
+.order-card.status-shipped{
+    border-left-color:#6a1b9a;
+}
+
+.order-card.status-delivered{
+    border-left-color:#00897b;
+}
+
+.order-card.status-cancelled{
+    border-left-color:#d32f2f;
+}
+
+/* ================= ORDER HEADER ================= */
+
+.order-header{
+    padding:18px;
+    color:white;
+    background:linear-gradient(135deg,#075e20,#159447);
+}
+
+.order-header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
 .order-id{
-    font-size:18px;
-    font-weight:bold;
-    color:#176b2c;
-}
-
-.customer{
+    font-size:19px;
     font-weight:bold;
 }
 
-.date{
-    color:#666;
+.customer-name{
+    margin-top:7px;
+    font-size:17px;
+}
+
+.order-date{
+    margin-top:7px;
     font-size:14px;
 }
 
-/* BODY */
+/* ================= STATUS ================= */
 
-.order-body{
+.status-box{
+    margin-top:12px;
+}
+
+.status-select{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+    background:white;
+}
+
+.status-new{
+    background:#fff3cd;
+}
+
+.status-confirmed{
+    background:#d4edda;
+}
+
+.status-processing{
+    background:#cfe2ff;
+}
+
+.status-shipped{
+    background:#e8d7f8;
+}
+
+.status-delivered{
+    background:#d1f2eb;
+}
+
+.status-cancelled{
+    background:#f8d7da;
+}
+
+/* ================= CUSTOMER INFO ================= */
+
+.customer-info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    padding:18px;
+    background:#f8faf8;
+}
+
+.info-box{
+    background:white;
+    padding:11px;
+    border-radius:9px;
+    border:1px solid #e0e0e0;
+}
+
+.info-label{
+    display:block;
+    font-size:12px;
+    color:#777;
+    margin-bottom:4px;
+    font-weight:bold;
+}
+
+.info-value{
+    font-size:14px;
+    font-weight:bold;
+    word-break:break-word;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
     padding:18px;
 }
 
-.customer-box{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-    margin-bottom:18px;
+.products h4{
+    color:#075e20;
+    margin-bottom:12px;
+    font-size:17px;
 }
 
-.info{
-    background:#f8f9fa;
-    padding:12px;
+.product-item{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    padding:11px;
+    margin-bottom:8px;
     border-radius:9px;
-    border-left:4px solid #176b2c;
+    background:#f1f8e9;
+    border:1px solid #dcedc8;
 }
 
-.info strong{
-    display:block;
-    color:#176b2c;
-    margin-bottom:5px;
-}
-
-/* PRODUCTS */
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:12px;
-}
-
-.product{
-    background:linear-gradient(135deg,#fffdf0,#fff);
-    border:1px solid #ffe082;
-    border-radius:10px;
-    padding:13px;
+.product-left{
+    flex:1;
 }
 
 .product-name{
     font-weight:bold;
     color:#176b2c;
-    margin-bottom:6px;
 }
 
 .product-price{
+    font-size:13px;
     color:#555;
+    margin-top:4px;
 }
 
 .product-subtotal{
-    color:#e65100;
     font-weight:bold;
-    margin-top:5px;
+    color:#d35400;
+    white-space:nowrap;
 }
 
-/* FOOTER */
+/* ================= TOTAL ================= */
 
-.order-footer{
-    padding:15px 18px;
-    background:#f8f9fa;
-    border-top:1px solid #ddd;
+.total-area{
+    margin:0 18px 18px;
+    padding:15px;
+    border-radius:10px;
+    background:linear-gradient(135deg,#fff8d6,#fff3b0);
+    border:2px solid #ffd600;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    flex-wrap:wrap;
-    gap:12px;
 }
 
-.order-total{
-    font-size:22px;
+.total-label{
     font-weight:bold;
-    color:#e65100;
+    color:#555;
 }
 
-.payment{
-    background:#e8f5e9;
-    color:#176b2c;
-    padding:8px 12px;
-    border-radius:20px;
+.total-price{
+    font-size:24px;
     font-weight:bold;
+    color:#075e20;
 }
 
-/* STATUS */
-
-.status-box{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    flex-wrap:wrap;
-}
-
-.status-select{
-    min-width:180px;
-    padding:9px;
-    border-radius:8px;
-    border:2px solid #ccc;
-    font-weight:bold;
-}
-
-/* BUTTONS */
+/* ================= ACTIONS ================= */
 
 .actions{
+    padding:15px 18px;
+    border-top:1px solid #eee;
     display:flex;
-    gap:8px;
-    flex-wrap:wrap;
+    gap:10px;
 }
 
-.view-btn,
-.delete-btn{
+.action-btn{
+    flex:1;
+    padding:11px;
     border:none;
-    padding:9px 14px;
     border-radius:8px;
-    color:white;
     font-weight:bold;
     cursor:pointer;
+    font-size:14px;
 }
 
 .view-btn{
-    background:#2980b9;
+    background:#2196f3;
+    color:white;
+}
+
+.view-btn:hover{
+    background:#1565c0;
 }
 
 .delete-btn{
-    background:#e74c3c;
+    background:#ef5350;
+    color:white;
 }
 
-.view-btn:hover,
 .delete-btn:hover{
-    opacity:.85;
+    background:#c62828;
 }
 
-/* EMPTY */
+/* ================= EMPTY ================= */
 
 .empty{
-    text-align:center;
+    background:white;
     padding:50px 20px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
 }
 
 .empty-icon{
-    font-size:65px;
+    font-size:55px;
     margin-bottom:15px;
 }
 
 .empty h3{
-    color:#777;
-    margin-bottom:8px;
+    color:#d35400;
+    margin-bottom:10px;
 }
 
-/* MODAL */
+/* ================= MODAL ================= */
 
 .modal{
     display:none;
     position:fixed;
     inset:0;
     background:rgba(0,0,0,.65);
-    z-index:999;
+    z-index:1000;
     padding:20px;
     overflow:auto;
 }
 
-.modal-box{
+.modal-content{
     max-width:700px;
     margin:40px auto;
     background:white;
     border-radius:18px;
     overflow:hidden;
-    box-shadow:0 10px 35px rgba(0,0,0,.3);
+    box-shadow:0 10px 40px rgba(0,0,0,.4);
 }
 
-.modal-head{
-    background:linear-gradient(135deg,#176b2c,#38a169);
+.modal-header{
+    background:linear-gradient(135deg,#075e20,#159447);
     color:white;
     padding:20px;
     display:flex;
@@ -440,14 +506,19 @@ select{
     align-items:center;
 }
 
-.close{
-    border:none;
+.modal-header h3{
+    font-size:20px;
+}
+
+.close-btn{
     background:white;
-    color:#176b2c;
+    color:#d32f2f;
+    border:none;
     width:35px;
     height:35px;
     border-radius:50%;
     font-size:20px;
+    font-weight:bold;
     cursor:pointer;
 }
 
@@ -455,29 +526,65 @@ select{
     padding:22px;
 }
 
-.detail{
-    background:#f7f7f7;
+.modal-section{
+    margin-bottom:20px;
+}
+
+.modal-section h4{
+    color:#075e20;
+    margin-bottom:10px;
+    border-bottom:2px solid #e8f5e9;
+    padding-bottom:7px;
+}
+
+.modal-row{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:8px 0;
+    border-bottom:1px solid #eee;
+}
+
+.modal-row span:first-child{
+    color:#666;
+    font-weight:bold;
+}
+
+.modal-products{
+    background:#f7faf7;
     padding:12px;
-    margin-bottom:9px;
-    border-radius:8px;
+    border-radius:10px;
 }
 
-.detail strong{
-    color:#176b2c;
+.modal-product{
+    padding:8px 0;
+    border-bottom:1px solid #ddd;
 }
 
-/* FOOTER */
+.modal-total{
+    margin-top:15px;
+    padding:15px;
+    background:#fff8d6;
+    border:2px solid #ffd600;
+    border-radius:10px;
+    text-align:right;
+    font-size:22px;
+    font-weight:bold;
+    color:#075e20;
+}
+
+/* ================= FOOTER ================= */
 
 footer{
     margin-top:40px;
-    background:#075e22;
+    background:#075e20;
     color:white;
     text-align:center;
-    padding:28px 15px;
+    padding:25px 15px;
     line-height:1.8;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:900px){
 
@@ -485,8 +592,8 @@ footer{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .customer-box{
-        grid-template-columns:1fr 1fr;
+    .orders-grid{
+        grid-template-columns:1fr;
     }
 
 }
@@ -497,30 +604,56 @@ footer{
         font-size:21px;
     }
 
+    nav a{
+        font-size:13px;
+        padding:8px 10px;
+    }
+
     .stats{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .stat-card{
+        padding:15px 8px;
+    }
+
+    .stat-icon{
+        font-size:27px;
+    }
+
+    .stat-number{
+        font-size:22px;
+    }
+
+    .customer-info{
         grid-template-columns:1fr;
     }
 
-    .customer-box{
-        grid-template-columns:1fr;
-    }
-
-    .order-header{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .order-footer{
-        align-items:flex-start;
+    .product-item{
         flex-direction:column;
     }
 
-    .toolbar{
+    .product-subtotal{
+        text-align:right;
+    }
+
+    .total-area{
+        flex-direction:column;
+        gap:8px;
+        align-items:flex-end;
+    }
+
+    .control-box{
         align-items:stretch;
     }
 
-    select,
-    .refresh{
+    .filter-area{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    #statusFilter{
         width:100%;
     }
 
@@ -531,189 +664,263 @@ footer{
 
 <body>
 
-<!-- HEADER -->
-
 <header>
 
-<h1>🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड</h1>
+    <h1>
+        🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+    </h1>
 
-<p>Bundelkhand Organic Farmer Producer Company Limited</p>
+    <p>
+        Bundelkhand Organic Farmer Producer Company Limited
+    </p>
 
-<p>🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य</p>
+    <p>
+        🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+    </p>
 
 </header>
 
 
-<!-- NAVIGATION -->
-
 <nav>
 
-<a href="admin-dashboard.html">
-🏠 Admin Dashboard
-</a>
+    <a href="admin-dashboard.html">
+        🏠 Admin Dashboard
+    </a>
 
-<a href="manage-products.html" class="products">
-🌾 Manage Products
-</a>
+    <a href="manage-products.html">
+        🌾 Manage Products
+    </a>
 
-<a href="products.html" class="website">
-🛒 View Website
-</a>
+    <a href="products.html">
+        🛒 View Website
+    </a>
 
 </nav>
 
 
 <div class="container">
 
-<!-- TITLE -->
+    <div class="page-title">
 
-<div class="title-box">
+        <h2>
+            📦 Customer Orders
+        </h2>
 
-<h2>📦 Customer Orders</h2>
+        <p>
+            सभी Customer Orders यहां दिखाई देंगे।
+        </p>
 
-<p>सभी Customer Orders यहां दिखाई देंगे।</p>
+    </div>
+
+
+    <!-- ================= STATS ================= -->
+
+    <div class="stats">
+
+        <div class="stat-card total-card">
+
+            <div class="stat-icon">
+                📦
+            </div>
+
+            <div class="stat-title">
+                Total Orders
+            </div>
+
+            <div
+                class="stat-number"
+                id="totalOrders"
+            >
+                0
+            </div>
+
+        </div>
+
+
+        <div class="stat-card new-card">
+
+            <div class="stat-icon">
+                🆕
+            </div>
+
+            <div class="stat-title">
+                New Orders
+            </div>
+
+            <div
+                class="stat-number"
+                id="newOrders"
+            >
+                0
+            </div>
+
+        </div>
+
+
+        <div class="stat-card confirmed-card">
+
+            <div class="stat-icon">
+                ✅
+            </div>
+
+            <div class="stat-title">
+                Confirmed
+            </div>
+
+            <div
+                class="stat-number"
+                id="confirmedOrders"
+            >
+                0
+            </div>
+
+        </div>
+
+
+        <div class="stat-card sales-card">
+
+            <div class="stat-icon">
+                💰
+            </div>
+
+            <div class="stat-title">
+                Total Sales
+            </div>
+
+            <div
+                class="stat-number"
+                id="totalSales"
+            >
+                ₹0
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FILTER ================= -->
+
+    <div class="control-box">
+
+        <div class="filter-area">
+
+            <label for="statusFilter">
+                🔎 Filter Status:
+            </label>
+
+            <select id="statusFilter">
+
+                <option value="all">
+                    सभी Status
+                </option>
+
+                <option value="New">
+                    🆕 New
+                </option>
+
+                <option value="Confirmed">
+                    ✅ Confirmed
+                </option>
+
+                <option value="Processing">
+                    ⚙️ Processing
+                </option>
+
+                <option value="Shipped">
+                    🚚 Shipped
+                </option>
+
+                <option value="Delivered">
+                    📦 Delivered
+                </option>
+
+                <option value="Cancelled">
+                    ❌ Cancelled
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            class="refresh-btn"
+            onclick="loadOrders()"
+        >
+            🔄 Refresh Orders
+        </button>
+
+    </div>
+
+
+    <h3 class="order-list-title">
+        📋 Customer Order List
+    </h3>
+
+
+    <!-- ================= ORDERS ================= -->
+
+    <div
+        id="ordersContainer"
+        class="orders-grid"
+    ></div>
 
 </div>
 
 
-<!-- STATISTICS -->
+<!-- ================= VIEW MODAL ================= -->
 
-<div class="stats">
+<div
+    id="viewModal"
+    class="modal"
+    onclick="closeModalOutside(event)"
+>
 
-<div class="stat total">
+    <div class="modal-content">
 
-<div class="stat-icon">📦</div>
+        <div class="modal-header">
 
-<h3>Total Orders</h3>
+            <h3>
+                🧾 Order Details
+            </h3>
 
-<div class="stat-number" id="totalOrders">
-0
-</div>
+            <button
+                class="close-btn"
+                onclick="closeModal()"
+            >
+                ×
+            </button>
 
-</div>
+        </div>
 
+        <div
+            id="modalBody"
+            class="modal-body"
+        ></div>
 
-<div class="stat new">
-
-<div class="stat-icon">🆕</div>
-
-<h3>New Orders</h3>
-
-<div class="stat-number" id="newOrders">
-0
-</div>
-
-</div>
-
-
-<div class="stat confirmed">
-
-<div class="stat-icon">✅</div>
-
-<h3>Confirmed</h3>
-
-<div class="stat-number" id="confirmedOrders">
-0
-</div>
+    </div>
 
 </div>
 
-
-<div class="stat sales">
-
-<div class="stat-icon">💰</div>
-
-<h3>Total Sales</h3>
-
-<div class="stat-number">
-₹<span id="totalSales">0</span>
-</div>
-
-</div>
-
-</div>
-
-
-<!-- FILTER -->
-
-<div class="toolbar">
-
-<label>🔎 Filter Status:</label>
-
-<select id="statusFilter" onchange="renderOrders()">
-
-<option value="all">सभी Status</option>
-
-<option value="New">🆕 New</option>
-
-<option value="Confirmed">✅ Confirmed</option>
-
-<option value="Processing">⚙️ Processing</option>
-
-<option value="Shipped">🚚 Shipped</option>
-
-<option value="Delivered">📦 Delivered</option>
-
-<option value="Cancelled">❌ Cancelled</option>
-
-</select>
-
-<button class="refresh" onclick="loadOrders()">
-🔄 Refresh Orders
-</button>
-
-</div>
-
-
-<!-- ORDERS -->
-
-<div class="order-title">
-
-📋 Customer Order List
-
-</div>
-
-<div class="orders-area">
-
-<div id="ordersList"></div>
-
-</div>
-
-</div>
-
-
-<!-- MODAL -->
-
-<div class="modal" id="viewModal">
-
-<div class="modal-box">
-
-<div class="modal-head">
-
-<h2>📦 Order Details</h2>
-
-<button class="close" onclick="closeModal()">×</button>
-
-</div>
-
-<div class="modal-body" id="modalBody"></div>
-
-</div>
-
-</div>
-
-
-<!-- FOOTER -->
 
 <footer>
 
-<h3>🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड</h3>
+    <h3>
+        🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+    </h3>
 
-<p>Bundelkhand Organic Farmer Producer Company Limited</p>
+    <p>
+        Bundelkhand Organic Farmer Producer Company Limited
+    </p>
 
-<p>Empowering Farmers • Promoting Organic Agriculture</p>
+    <p>
+        Empowering Farmers • Promoting Organic Agriculture
+    </p>
 
-<p>© 2026 All Rights Reserved</p>
+    <p>
+        © 2026 All Rights Reserved
+    </p>
 
 </footer>
 
@@ -721,55 +928,47 @@ footer{
 <script>
 
 /* =====================================================
-   GLOBAL ORDERS
+   ORDERS MANAGEMENT
 ===================================================== */
 
-var orders = [];
 
+/* ================= GET ORDERS ================= */
 
-/* =====================================================
-   LOAD ORDERS
-===================================================== */
-
-function loadOrders(){
+function getOrders(){
 
     try{
 
         var data =
             localStorage.getItem("fpoOrders");
 
-        if(data){
-
-            orders = JSON.parse(data);
-
-            if(!Array.isArray(orders)){
-                orders = [];
-            }
-
-        }else{
-
-            orders = [];
-
+        if(!data){
+            return [];
         }
+
+        var orders =
+            JSON.parse(data);
+
+        return Array.isArray(orders)
+            ? orders
+            : [];
 
     }catch(error){
 
-        console.error(error);
+        console.error(
+            "Orders Error:",
+            error
+        );
 
-        orders = [];
+        return [];
 
     }
-
-    renderOrders();
 
 }
 
 
-/* =====================================================
-   SAVE ORDERS
-===================================================== */
+/* ================= SAVE ORDERS ================= */
 
-function saveOrders(){
+function saveOrders(orders){
 
     localStorage.setItem(
         "fpoOrders",
@@ -779,39 +978,23 @@ function saveOrders(){
 }
 
 
-/* =====================================================
-   ESCAPE HTML
-===================================================== */
+/* ================= ESCAPE ================= */
 
 function escapeHTML(value){
 
     return String(value ?? "")
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
 }
 
 
-/* =====================================================
-   FORMAT MONEY
-===================================================== */
+/* ================= STATUS ICON ================= */
 
-function money(value){
-
-    return Number(value || 0)
-        .toLocaleString("en-IN");
-
-}
-
-
-/* =====================================================
-   STATUS ICON
-===================================================== */
-
-function statusIcon(status){
+function getStatusIcon(status){
 
     var icons = {
 
@@ -834,91 +1017,90 @@ function statusIcon(status){
 }
 
 
-/* =====================================================
-   STATUS COLOR
-===================================================== */
+/* ================= STATUS CLASS ================= */
 
-function statusColor(status){
+function getStatusClass(status){
 
-    var colors = {
-
-        "New":"#1565c0",
-
-        "Confirmed":"#6a1b9a",
-
-        "Processing":"#ef6c00",
-
-        "Shipped":"#00838f",
-
-        "Delivered":"#2e7d32",
-
-        "Cancelled":"#c62828"
-
-    };
-
-    return colors[status] || "#1565c0";
+    return String(
+        status || "New"
+    )
+    .toLowerCase();
 
 }
 
 
-/* =====================================================
-   RENDER ORDERS
-===================================================== */
+/* ================= LOAD ORDERS ================= */
 
-function renderOrders(){
+function loadOrders(){
 
-    var list =
-        document.getElementById(
-            "ordersList"
-        );
+    var orders =
+        getOrders();
 
-    var filter =
-        document.getElementById(
-            "statusFilter"
-        ).value;
+    updateStats(
+        orders
+    );
+
+    renderOrders(
+        orders
+    );
+
+}
 
 
-    /* STATISTICS */
+/* ================= UPDATE STATS ================= */
 
-    var totalCount =
+function updateStats(orders){
+
+    var total =
         orders.length;
 
     var newCount =
-        orders.filter(function(order){
+        0;
 
-            return (
-                order.status === "New" ||
-                !order.status
-            );
-
-        }).length;
-
-
-    var confirmedCount =
-        orders.filter(function(order){
-
-            return order.status === "Confirmed";
-
-        }).length;
-
+    var confirmed =
+        0;
 
     var sales =
-        orders.reduce(function(sum,order){
+        0;
 
-            if(order.status === "Cancelled"){
-                return sum;
-            }
 
-            return sum +
-                Number(order.total || 0);
+    orders.forEach(function(order){
 
-        },0);
+        var status =
+            order.status || "New";
+
+
+        if(status === "New"){
+            newCount++;
+        }
+
+
+        if(status === "Confirmed"){
+            confirmed++;
+        }
+
+
+        /*
+         * Cancelled orders को
+         * Sales में शामिल नहीं किया जाएगा
+         */
+
+        if(status !== "Cancelled"){
+
+            sales +=
+                Number(
+                    order.total
+                ) || 0;
+
+        }
+
+    });
 
 
     document.getElementById(
         "totalOrders"
     ).textContent =
-        totalCount;
+        total;
 
 
     document.getElementById(
@@ -930,49 +1112,72 @@ function renderOrders(){
     document.getElementById(
         "confirmedOrders"
     ).textContent =
-        confirmedCount;
+        confirmed;
 
 
     document.getElementById(
         "totalSales"
     ).textContent =
-        money(sales);
+        "₹" +
+        sales.toLocaleString(
+            "en-IN"
+        );
+
+}
 
 
-    /* FILTER */
+/* ================= RENDER ORDERS ================= */
+
+function renderOrders(orders){
+
+    var container =
+        document.getElementById(
+            "ordersContainer"
+        );
+
+
+    var filter =
+        document.getElementById(
+            "statusFilter"
+        ).value;
+
 
     var filtered =
-        orders.filter(function(order){
+        orders.filter(
+            function(order){
 
-            if(filter === "all"){
-                return true;
+                if(filter === "all"){
+                    return true;
+                }
+
+                return (
+                    order.status ||
+                    "New"
+                ) === filter;
+
             }
-
-            var status =
-                order.status || "New";
-
-            return status === filter;
-
-        });
+        );
 
 
     if(filtered.length === 0){
 
-        list.innerHTML = `
+        container.innerHTML = `
 
-        <div class="empty">
+            <div class="empty">
 
-            <div class="empty-icon">📭</div>
+                <div class="empty-icon">
+                    📦
+                </div>
 
-            <h3>
-                कोई Order नहीं मिला
-            </h3>
+                <h3>
+                    कोई Order नहीं मिला
+                </h3>
 
-            <p>
-                इस Status में अभी कोई Customer Order उपलब्ध नहीं है।
-            </p>
+                <p>
+                    चुने गए Status में कोई Customer Order उपलब्ध नहीं है।
+                </p>
 
-        </div>
+            </div>
 
         `;
 
@@ -981,154 +1186,313 @@ function renderOrders(){
     }
 
 
-    list.innerHTML = "";
+    container.innerHTML = "";
+
+
+    /*
+     * Latest order पहले
+     */
+
+    filtered.sort(function(a,b){
+
+        return (
+            new Date(
+                b.createdAt ||
+                0
+            ) -
+            new Date(
+                a.createdAt ||
+                0
+            )
+        );
+
+    });
 
 
     filtered.forEach(function(order){
 
-        var realIndex =
-            orders.indexOf(order);
+        container.appendChild(
+            createOrderCard(
+                order
+            )
+        );
+
+    });
+
+}
 
 
-        var status =
-            order.status || "New";
+/* ================= CREATE CARD ================= */
+
+function createOrderCard(order){
+
+    var card =
+        document.createElement(
+            "div"
+        );
 
 
-        var products =
-            Array.isArray(order.products)
-            ? order.products
-            : [];
+    var status =
+        order.status ||
+        "New";
 
 
-        var productHTML = "";
+    var statusClass =
+        getStatusClass(
+            status
+        );
 
 
-        products.forEach(function(item){
-
-            var price =
-                Number(item.price || 0);
-
-            var qty =
-                Number(item.quantity || 1);
-
-            var subtotal =
-                price * qty;
+    card.className =
+        "order-card status-" +
+        statusClass;
 
 
-            productHTML += `
+    var products =
+        Array.isArray(
+            order.products
+        )
+        ? order.products
+        : [];
 
-            <div class="product">
 
-                <div class="product-name">
+    var productsHTML =
+        "";
 
-                    🌾 ${escapeHTML(
-                        item.name || "Product"
-                    )}
 
-                    × ${qty}
+    products.forEach(function(item){
 
-                </div>
+        var price =
+            Number(
+                item.price
+            ) || 0;
 
-                <div class="product-price">
+        var quantity =
+            Number(
+                item.quantity
+            ) || 1;
 
-                    ₹${money(price)}
-                    × ${qty}
-                    ${escapeHTML(
-                        item.unit || "Kg"
-                    )}
+        var subtotal =
+            price *
+            quantity;
+
+
+        productsHTML += `
+
+            <div class="product-item">
+
+                <div class="product-left">
+
+                    <div class="product-name">
+
+                        🌾 ${escapeHTML(
+                            item.name ||
+                            "Product"
+                        )}
+                        × ${quantity}
+
+                    </div>
+
+                    <div class="product-price">
+
+                        ₹${price.toLocaleString("en-IN")}
+                        × ${quantity}
+                        ${escapeHTML(
+                            item.unit ||
+                            "Kg"
+                        )}
+
+                    </div>
 
                 </div>
 
                 <div class="product-subtotal">
 
-                    Subtotal: ₹${money(subtotal)}
+                    ₹${subtotal.toLocaleString("en-IN")}
 
                 </div>
 
             </div>
 
-            `;
+        `;
 
-        });
-
-
-        if(!productHTML){
-
-            productHTML = `
-
-            <div class="product">
-
-                कोई Product जानकारी नहीं है।
-
-            </div>
-
-            `;
-
-        }
+    });
 
 
-        var dateText =
-            order.date || "";
-
-        var timeText =
-            order.time || "";
-
-
-        var card =
-            document.createElement("div");
-
-        card.className =
-            "order-card";
-
-
-        card.innerHTML = `
+    card.innerHTML = `
 
         <div class="order-header">
 
-            <div>
+            <div class="order-header-top">
 
-                <div class="order-id">
+                <div>
 
-                    🧾 ${escapeHTML(
-                        order.id || "N/A"
-                    )}
+                    <div class="order-id">
 
-                </div>
+                        🧾 ${escapeHTML(
+                            order.id ||
+                            "FPO00000000"
+                        )}
 
-                <div class="customer">
+                    </div>
 
-                    👤 ${escapeHTML(
-                        order.customerName || "Customer"
-                    )}
+                    <div class="customer-name">
+
+                        👤 ${escapeHTML(
+                            order.customerName ||
+                            "Customer"
+                        )}
+
+                    </div>
+
+                    <div class="order-date">
+
+                        📅 ${escapeHTML(
+                            order.date ||
+                            ""
+                        )}
+
+                        &nbsp;
+
+                        🕐 ${escapeHTML(
+                            order.time ||
+                            ""
+                        )}
+
+                    </div>
 
                 </div>
 
             </div>
 
 
-            <div class="date">
+            <div class="status-box">
 
-                📅 ${escapeHTML(dateText)}
+                <select
+                    class="status-select status-${statusClass}"
+                    onchange="changeStatus(
+                        '${escapeHTML(order.id)}',
+                        this.value
+                    )"
+                >
 
-                <br>
+                    <option
+                        value="New"
+                        ${status === "New" ? "selected" : ""}
+                    >
+                        🆕 New
+                    </option>
 
-                🕐 ${escapeHTML(timeText)}
+                    <option
+                        value="Confirmed"
+                        ${status === "Confirmed" ? "selected" : ""}
+                    >
+                        ✅ Confirmed
+                    </option>
+
+                    <option
+                        value="Processing"
+                        ${status === "Processing" ? "selected" : ""}
+                    >
+                        ⚙️ Processing
+                    </option>
+
+                    <option
+                        value="Shipped"
+                        ${status === "Shipped" ? "selected" : ""}
+                    >
+                        🚚 Shipped
+                    </option>
+
+                    <option
+                        value="Delivered"
+                        ${status === "Delivered" ? "selected" : ""}
+                    >
+                        📦 Delivered
+                    </option>
+
+                    <option
+                        value="Cancelled"
+                        ${status === "Cancelled" ? "selected" : ""}
+                    >
+                        ❌ Cancelled
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="customer-info">
+
+            <div class="info-box">
+
+                <span class="info-label">
+                    📱 Mobile
+                </span>
+
+                <span class="info-value">
+
+                    ${escapeHTML(
+                        order.customerMobile ||
+                        "N/A"
+                    )}
+
+                </span>
 
             </div>
 
 
-            <div>
+            <div class="info-box">
 
-                <span style="
-                    background:${statusColor(status)};
-                    color:white;
-                    padding:8px 13px;
-                    border-radius:20px;
-                    font-weight:bold;
-                ">
+                <span class="info-label">
+                    📍 Address
+                </span>
 
-                    ${statusIcon(status)}
-                    ${escapeHTML(status)}
+                <span class="info-value">
+
+                    ${escapeHTML(
+                        order.customerAddress ||
+                        "N/A"
+                    )}
+
+                </span>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span class="info-label">
+                    💳 Payment
+                </span>
+
+                <span class="info-value">
+
+                    ${escapeHTML(
+                        order.paymentMethod ||
+                        "N/A"
+                    )}
+
+                </span>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span class="info-label">
+                    📌 Order Type
+                </span>
+
+                <span class="info-value">
+
+                    ${escapeHTML(
+                        order.orderType ||
+                        "cart"
+                    )}
 
                 </span>
 
@@ -1137,272 +1501,200 @@ function renderOrders(){
         </div>
 
 
-        <div class="order-body">
+        <div class="products">
 
-            <div class="customer-box">
+            <h4>
+                🌾 Ordered Products
+            </h4>
 
-                <div class="info">
-
-                    <strong>📱 Mobile</strong>
-
-                    ${escapeHTML(
-                        order.customerMobile || "N/A"
-                    )}
-
-                </div>
-
-
-                <div class="info">
-
-                    <strong>📍 Address</strong>
-
-                    ${escapeHTML(
-                        order.customerAddress || "N/A"
-                    )}
-
-                </div>
-
-
-                <div class="info">
-
-                    <strong>💳 Payment</strong>
-
-                    ${escapeHTML(
-                        order.paymentMethod || "N/A"
-                    )}
-
-                </div>
-
-            </div>
-
-
-            <div class="products">
-
-                ${productHTML}
-
-            </div>
+            ${productsHTML || "<p>No products found.</p>"}
 
         </div>
 
 
-        <div class="order-footer">
+        <div class="total-area">
 
-            <div class="order-total">
+            <span class="total-label">
+                💰 Total Amount
+            </span>
 
-                💰 Total:
-                ₹${money(order.total)}
+            <span class="total-price">
 
-            </div>
+                ₹${(
+                    Number(
+                        order.total
+                    ) || 0
+                ).toLocaleString("en-IN")}
 
-
-            <div class="payment">
-
-                ${order.paymentMethod === "UPI"
-                    ? "📱 UPI"
-                    : "💵 Cash on Delivery"}
-
-            </div>
-
-
-            <div class="status-box">
-
-                <select
-                    class="status-select"
-                    onchange="changeStatus(${realIndex},this.value)"
-                >
-
-                    <option value="New"
-                        ${status==="New"?"selected":""}>
-                        🆕 New
-                    </option>
-
-                    <option value="Confirmed"
-                        ${status==="Confirmed"?"selected":""}>
-                        ✅ Confirmed
-                    </option>
-
-                    <option value="Processing"
-                        ${status==="Processing"?"selected":""}>
-                        ⚙️ Processing
-                    </option>
-
-                    <option value="Shipped"
-                        ${status==="Shipped"?"selected":""}>
-                        🚚 Shipped
-                    </option>
-
-                    <option value="Delivered"
-                        ${status==="Delivered"?"selected":""}>
-                        📦 Delivered
-                    </option>
-
-                    <option value="Cancelled"
-                        ${status==="Cancelled"?"selected":""}>
-                        ❌ Cancelled
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="actions">
-
-                <button
-                    class="view-btn"
-                    onclick="viewOrder(${realIndex})"
-                >
-                    👁️ View
-                </button>
-
-
-                <button
-                    class="delete-btn"
-                    onclick="deleteOrder(${realIndex})"
-                >
-                    🗑️ Delete
-                </button>
-
-            </div>
+            </span>
 
         </div>
 
-        `;
+
+        <div class="actions">
+
+            <button
+                class="action-btn view-btn"
+                onclick="viewOrder('${escapeHTML(order.id)}')"
+            >
+                👁️ View
+            </button>
+
+            <button
+                class="action-btn delete-btn"
+                onclick="deleteOrder('${escapeHTML(order.id)}')"
+            >
+                🗑️ Delete
+            </button>
+
+        </div>
+
+    `;
 
 
-        list.appendChild(card);
+    return card;
+
+}
+
+
+/* ================= CHANGE STATUS ================= */
+
+function changeStatus(
+    orderId,
+    newStatus
+){
+
+    var orders =
+        getOrders();
+
+
+    var found =
+        false;
+
+
+    orders.forEach(function(order){
+
+        if(
+            String(order.id) ===
+            String(orderId)
+        ){
+
+            order.status =
+                newStatus;
+
+            found =
+                true;
+
+        }
 
     });
 
-}
 
+    if(found){
 
-/* =====================================================
-   CHANGE STATUS
-===================================================== */
-
-function changeStatus(index,newStatus){
-
-    if(!orders[index]){
-        return;
-    }
-
-
-    orders[index].status =
-        newStatus;
-
-
-    saveOrders();
-
-    renderOrders();
-
-}
-
-
-/* =====================================================
-   DELETE ORDER
-===================================================== */
-
-function deleteOrder(index){
-
-    if(!orders[index]){
-        return;
-    }
-
-
-    var id =
-        orders[index].id || "";
-
-
-    var ok =
-        confirm(
-            "क्या आप Order " +
-            id +
-            " को Delete करना चाहते हैं?"
+        saveOrders(
+            orders
         );
 
 
-    if(!ok){
-        return;
+        loadOrders();
+
     }
-
-
-    orders.splice(
-        index,
-        1
-    );
-
-
-    saveOrders();
-
-    renderOrders();
 
 }
 
 
-/* =====================================================
-   VIEW ORDER
-===================================================== */
+/* ================= VIEW ORDER ================= */
 
-function viewOrder(index){
+function viewOrder(orderId){
+
+    var orders =
+        getOrders();
+
 
     var order =
-        orders[index];
+        orders.find(
+            function(item){
+
+                return String(
+                    item.id
+                ) === String(
+                    orderId
+                );
+
+            }
+        );
 
 
     if(!order){
+
+        alert(
+            "Order नहीं मिला।"
+        );
+
         return;
+
     }
 
 
     var products =
-        Array.isArray(order.products)
+        Array.isArray(
+            order.products
+        )
         ? order.products
         : [];
 
 
-    var productsHTML = "";
+    var productsHTML =
+        "";
 
 
     products.forEach(function(item){
 
         var price =
-            Number(item.price || 0);
+            Number(
+                item.price
+            ) || 0;
 
-        var qty =
-            Number(item.quantity || 1);
+        var quantity =
+            Number(
+                item.quantity
+            ) || 1;
 
         var subtotal =
-            price * qty;
+            price *
+            quantity;
 
 
         productsHTML += `
 
-        <div class="detail">
+            <div class="modal-product">
 
-            🌾 <strong>
+                <strong>
+
+                    🌾 ${escapeHTML(
+                        item.name ||
+                        "Product"
+                    )}
+
+                </strong>
+
+                <br>
+
+                ₹${price.toLocaleString("en-IN")}
+                × ${quantity}
                 ${escapeHTML(
-                    item.name || "Product"
+                    item.unit ||
+                    "Kg"
                 )}
-            </strong>
 
-            × ${qty}
+                =
 
-            <br>
+                <strong>
+                    ₹${subtotal.toLocaleString("en-IN")}
+                </strong>
 
-            ₹${money(price)}
-            × ${qty}
-            ${escapeHTML(
-                item.unit || "Kg"
-            )}
-
-            <br>
-
-            <strong>
-                Subtotal: ₹${money(subtotal)}
-            </strong>
-
-        </div>
+            </div>
 
         `;
 
@@ -1413,107 +1705,163 @@ function viewOrder(index){
         "modalBody"
     ).innerHTML = `
 
-        <div class="detail">
+        <div class="modal-section">
 
-            <strong>🧾 Order ID:</strong><br>
+            <h4>
+                🧾 Order Information
+            </h4>
 
-            ${escapeHTML(order.id)}
+            <div class="modal-row">
+
+                <span>
+                    Order ID
+                </span>
+
+                <strong>
+                    ${escapeHTML(
+                        order.id
+                    )}
+                </strong>
+
+            </div>
+
+            <div class="modal-row">
+
+                <span>
+                    Customer
+                </span>
+
+                <strong>
+                    ${escapeHTML(
+                        order.customerName ||
+                        "N/A"
+                    )}
+                </strong>
+
+            </div>
+
+            <div class="modal-row">
+
+                <span>
+                    Date / Time
+                </span>
+
+                <strong>
+                    ${escapeHTML(
+                        order.date ||
+                        ""
+                    )}
+                    /
+                    ${escapeHTML(
+                        order.time ||
+                        ""
+                    )}
+                </strong>
+
+            </div>
+
+            <div class="modal-row">
+
+                <span>
+                    Status
+                </span>
+
+                <strong>
+                    ${getStatusIcon(
+                        order.status ||
+                        "New"
+                    )}
+                    ${escapeHTML(
+                        order.status ||
+                        "New"
+                    )}
+                </strong>
+
+            </div>
 
         </div>
 
 
-        <div class="detail">
+        <div class="modal-section">
 
-            <strong>👤 Customer:</strong><br>
+            <h4>
+                👤 Customer Information
+            </h4>
 
-            ${escapeHTML(
-                order.customerName
-            )}
+            <div class="modal-row">
+
+                <span>
+                    📱 Mobile
+                </span>
+
+                <strong>
+                    ${escapeHTML(
+                        order.customerMobile ||
+                        "N/A"
+                    )}
+                </strong>
+
+            </div>
+
+            <div class="modal-row">
+
+                <span>
+                    📍 Address
+                </span>
+
+                <strong>
+                    ${escapeHTML(
+                        order.customerAddress ||
+                        "N/A"
+                    )}
+                </strong>
+
+            </div>
+
+            <div class="modal-row">
+
+                <span>
+                    💳 Payment
+                </span>
+
+                <strong>
+                    ${escapeHTML(
+                        order.paymentMethod ||
+                        "N/A"
+                    )}
+                </strong>
+
+            </div>
 
         </div>
 
 
-        <div class="detail">
+        <div class="modal-section">
 
-            <strong>📱 Mobile:</strong><br>
+            <h4>
+                🌾 Products
+            </h4>
 
-            ${escapeHTML(
-                order.customerMobile
-            )}
+            <div class="modal-products">
 
-        </div>
+                ${
+                    productsHTML ||
+                    "No products found."
+                }
 
-
-        <div class="detail">
-
-            <strong>📍 Address:</strong><br>
-
-            ${escapeHTML(
-                order.customerAddress
-            )}
+            </div>
 
         </div>
 
 
-        <div class="detail">
-
-            <strong>💳 Payment:</strong><br>
-
-            ${escapeHTML(
-                order.paymentMethod
-            )}
-
-        </div>
-
-
-        <h3 style="
-            color:#176b2c;
-            margin:18px 0 10px;
-        ">
-
-            🌾 Products
-
-        </h3>
-
-
-        ${productsHTML}
-
-
-        <div class="detail"
-             style="
-                font-size:22px;
-                color:#e65100;
-                font-weight:bold;
-             ">
+        <div class="modal-total">
 
             💰 Total:
-            ₹${money(order.total)}
-
-        </div>
-
-
-        <div class="detail">
-
-            <strong>📅 Date:</strong>
-
-            ${escapeHTML(order.date)}
-
-            <br>
-
-            <strong>🕐 Time:</strong>
-
-            ${escapeHTML(order.time)}
-
-        </div>
-
-
-        <div class="detail">
-
-            <strong>Status:</strong>
-
-            ${statusIcon(order.status || "New")}
-
-            ${escapeHTML(order.status || "New")}
+            ₹${(
+                Number(
+                    order.total
+                ) || 0
+            ).toLocaleString("en-IN")}
 
         </div>
 
@@ -1528,9 +1876,7 @@ function viewOrder(index){
 }
 
 
-/* =====================================================
-   CLOSE MODAL
-===================================================== */
+/* ================= CLOSE MODAL ================= */
 
 function closeModal(){
 
@@ -1542,30 +1888,132 @@ function closeModal(){
 }
 
 
-/* =====================================================
-   CLICK OUTSIDE MODAL
-===================================================== */
+function closeModalOutside(event){
 
-window.onclick =
-function(event){
-
-    var modal =
-        document.getElementById(
-            "viewModal"
-        );
-
-    if(event.target === modal){
+    if(
+        event.target.id ===
+        "viewModal"
+    ){
 
         closeModal();
 
     }
 
-};
+}
 
 
-/* =====================================================
-   INITIAL LOAD
-===================================================== */
+/* ================= DELETE ORDER ================= */
+
+function deleteOrder(orderId){
+
+    var orders =
+        getOrders();
+
+
+    var order =
+        orders.find(
+            function(item){
+
+                return String(
+                    item.id
+                ) === String(
+                    orderId
+                );
+
+            }
+        );
+
+
+    if(!order){
+
+        alert(
+            "Order नहीं मिला।"
+        );
+
+        return;
+
+    }
+
+
+    var confirmDelete =
+        confirm(
+
+            "क्या आप Order " +
+            orderId +
+            " को Delete करना चाहते हैं?"
+
+        );
+
+
+    if(!confirmDelete){
+
+        return;
+
+    }
+
+
+    var newOrders =
+        orders.filter(
+            function(item){
+
+                return String(
+                    item.id
+                ) !== String(
+                    orderId
+                );
+
+            }
+        );
+
+
+    saveOrders(
+        newOrders
+    );
+
+
+    loadOrders();
+
+
+    alert(
+        "✅ Order सफलतापूर्वक Delete हो गया।"
+    );
+
+}
+
+
+/* ================= FILTER EVENT ================= */
+
+document.getElementById(
+    "statusFilter"
+).addEventListener(
+    "change",
+    function(){
+
+        loadOrders();
+
+    }
+);
+
+
+/* ================= ESC KEY ================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Escape"
+        ){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+/* ================= INITIAL LOAD ================= */
 
 loadOrders();
 
