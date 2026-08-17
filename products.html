@@ -4,9 +4,12 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Products | Bundelkhand Organic Farmer Producer Company Limited</title>
+<title>
+Products | Bundelkhand Organic Farmer Producer Company Limited
+</title>
 
 <style>
 
@@ -20,8 +23,6 @@ body{
     background:#f4f8f4;
     color:#222;
 }
-
-/* HEADER */
 
 header{
     background:#176b2c;
@@ -40,8 +41,6 @@ header p{
     font-size:15px;
 }
 
-/* NAV */
-
 nav{
     background:#0d4f20;
     padding:10px;
@@ -58,8 +57,6 @@ nav a{
 nav a:hover{
     color:#FFD54F;
 }
-
-/* CART BAR */
 
 .cart-bar{
     background:white;
@@ -81,8 +78,6 @@ nav a:hover{
     font-weight:bold;
 }
 
-/* CONTAINER */
-
 .container{
     max-width:1200px;
     margin:25px auto;
@@ -95,16 +90,12 @@ nav a:hover{
     margin-bottom:25px;
 }
 
-/* PRODUCT GRID */
-
 .products-grid{
     display:grid;
     grid-template-columns:
         repeat(auto-fit,minmax(240px,1fr));
     gap:20px;
 }
-
-/* PRODUCT CARD */
 
 .product-card{
     background:white;
@@ -118,8 +109,6 @@ nav a:hover{
 .product-card:hover{
     transform:translateY(-3px);
 }
-
-/* IMAGE */
 
 .product-image{
     width:100%;
@@ -136,8 +125,6 @@ nav a:hover{
     background:#e8f5e9;
     font-size:55px;
 }
-
-/* INFO */
 
 .product-info{
     padding:15px;
@@ -162,8 +149,6 @@ nav a:hover{
     margin-bottom:12px;
 }
 
-/* QUANTITY */
-
 .qty-box{
     display:flex;
     align-items:center;
@@ -181,20 +166,13 @@ nav a:hover{
     border-radius:5px;
 }
 
-.qty-box button:hover{
-    background:#ddd;
-}
-
 .qty-box input{
-    width:60px;
+    width:55px;
     height:35px;
     text-align:center;
     border:1px solid #ccc;
     border-radius:5px;
-    font-size:16px;
 }
-
-/* BUTTON */
 
 .btn{
     width:100%;
@@ -226,8 +204,6 @@ nav a:hover{
     cursor:not-allowed !important;
 }
 
-/* MESSAGE */
-
 .message{
     position:fixed;
     right:20px;
@@ -238,10 +214,7 @@ nav a:hover{
     border-radius:7px;
     display:none;
     z-index:100;
-    box-shadow:0 3px 10px rgba(0,0,0,.25);
 }
-
-/* FOOTER */
 
 footer{
     margin-top:40px;
@@ -251,8 +224,6 @@ footer{
     padding:20px;
 }
 
-/* MOBILE */
-
 @media(max-width:700px){
 
     header h1{
@@ -260,13 +231,8 @@ footer{
     }
 
     nav a{
-        display:inline-block;
-        margin:5px 4px;
         font-size:14px;
-    }
-
-    .cart-bar{
-        text-align:center;
+        margin:5px 3px;
     }
 
 }
@@ -279,9 +245,7 @@ footer{
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- HEADER -->
 
 <header>
 
@@ -296,9 +260,7 @@ footer{
 </header>
 
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<!-- NAVIGATION -->
 
 <nav>
 
@@ -329,16 +291,11 @@ footer{
 </nav>
 
 
-<!-- =====================================================
-     CART
-===================================================== -->
+<!-- CART -->
 
 <div class="cart-bar">
 
-    <a
-        href="cart.html"
-        class="cart-btn"
-    >
+    <a href="cart.html" class="cart-btn">
 
         🛒 Cart
         (<span id="cartCount">0</span>)
@@ -348,9 +305,7 @@ footer{
 </div>
 
 
-<!-- =====================================================
-     PRODUCTS
-===================================================== -->
+<!-- PRODUCTS -->
 
 <div class="container">
 
@@ -391,6 +346,7 @@ footer{
 
 <script>
 
+
 /* =====================================================
    GET PRODUCTS
 ===================================================== */
@@ -399,15 +355,10 @@ function getProducts(){
 
     try{
 
-        var data =
-            localStorage.getItem("products");
-
-        if(!data){
-            return [];
-        }
-
         var products =
-            JSON.parse(data);
+            JSON.parse(
+                localStorage.getItem("products") || "[]"
+            );
 
         return Array.isArray(products)
             ? products
@@ -435,15 +386,10 @@ function getCart(){
 
     try{
 
-        var data =
-            localStorage.getItem("cart");
-
-        if(!data){
-            return [];
-        }
-
         var cart =
-            JSON.parse(data);
+            JSON.parse(
+                localStorage.getItem("cart") || "[]"
+            );
 
         return Array.isArray(cart)
             ? cart
@@ -478,39 +424,6 @@ function saveCart(cart){
 
 
 /* =====================================================
-   PRODUCT ID
-=====================================================
-
-   अगर किसी पुराने product का ID undefined है,
-   तो नाम के आधार पर सुरक्षित ID बनाई जाएगी।
-
-===================================================== */
-
-function getSafeProductId(product){
-
-    if(
-        product.id !== undefined &&
-        product.id !== null &&
-        String(product.id).trim() !== "" &&
-        String(product.id) !== "undefined"
-    ){
-
-        return String(product.id);
-
-    }
-
-
-    return "product_" +
-        String(product.name || "unknown")
-        .trim()
-        .toLowerCase()
-        .replace(/\s+/g,"_")
-        .replace(/[^\w\u0900-\u097F_-]/g,"");
-
-}
-
-
-/* =====================================================
    CART COUNT
 ===================================================== */
 
@@ -519,8 +432,8 @@ function updateCartCount(){
     var cart =
         getCart();
 
-    var total = 0;
-
+    var total =
+        0;
 
     cart.forEach(function(item){
 
@@ -528,7 +441,6 @@ function updateCartCount(){
             Number(item.quantity) || 0;
 
     });
-
 
     document.getElementById(
         "cartCount"
@@ -548,14 +460,11 @@ function showMessage(text){
             "message"
         );
 
-
     message.textContent =
         text;
 
-
     message.style.display =
         "block";
-
 
     setTimeout(function(){
 
@@ -576,53 +485,53 @@ function displayProducts(){
     var products =
         getProducts();
 
-
     var grid =
         document.getElementById(
             "productsGrid"
         );
-
 
     grid.innerHTML = "";
 
 
     if(products.length === 0){
 
-        grid.innerHTML =
-
-            "<p>❌ कोई Product उपलब्ध नहीं है।</p>";
+        grid.innerHTML = `
+            <p>
+                ❌ कोई Product उपलब्ध नहीं है।
+            </p>
+        `;
 
         return;
 
     }
 
 
+    /* =================================================
+       IMPORTANT:
+       forEach() इस्तेमाल किया गया है ताकि
+       हर Product का अपना product और input रहे।
+    ================================================= */
+
     products.forEach(function(product){
 
-        /* PRODUCT DATA */
-
-        var productId =
-            getSafeProductId(
-                product
+        var id =
+            String(
+                product.id
             );
-
 
         var name =
             product.name ||
             "Product";
-
 
         var price =
             Number(
                 product.price
             ) || 0;
 
-
         var stock =
             Number(
                 product.stock
             ) || 0;
-
 
         var status =
             String(
@@ -630,10 +539,10 @@ function displayProducts(){
                 "Available"
             );
 
-
         var image =
             product.image ||
             "";
+
 
 
         /* CARD */
@@ -700,8 +609,6 @@ function displayProducts(){
             "product-info";
 
 
-        /* NAME */
-
         var nameDiv =
             document.createElement(
                 "div"
@@ -713,8 +620,10 @@ function displayProducts(){
         nameDiv.textContent =
             name;
 
+        info.appendChild(
+            nameDiv
+        );
 
-        /* PRICE */
 
         var priceDiv =
             document.createElement(
@@ -726,10 +635,16 @@ function displayProducts(){
 
         priceDiv.textContent =
             "₹" +
-            price;
+            price.toLocaleString(
+                "en-IN"
+            ) +
+            " / " +
+            (product.unit || "Kg");
 
+        info.appendChild(
+            priceDiv
+        );
 
-        /* STOCK */
 
         var stockDiv =
             document.createElement(
@@ -742,6 +657,10 @@ function displayProducts(){
         stockDiv.textContent =
             "Stock: " +
             stock;
+
+        info.appendChild(
+            stockDiv
+        );
 
 
         /* =================================================
@@ -777,10 +696,10 @@ function displayProducts(){
         input.type =
             "number";
 
-        input.min =
+        input.value =
             "1";
 
-        input.value =
+        input.min =
             "1";
 
         input.max =
@@ -803,15 +722,13 @@ function displayProducts(){
 
         /* MINUS */
 
-        minus.addEventListener(
-            "click",
+        minus.onclick =
             function(){
 
                 var value =
                     Number(
                         input.value
                     ) || 1;
-
 
                 if(value > 1){
 
@@ -820,14 +737,12 @@ function displayProducts(){
 
                 }
 
-            }
-        );
+            };
 
 
         /* PLUS */
 
-        plus.addEventListener(
-            "click",
+        plus.onclick =
             function(){
 
                 var value =
@@ -835,24 +750,14 @@ function displayProducts(){
                         input.value
                     ) || 1;
 
-
-                if(
-                    value < stock
-                ){
+                if(value < stock){
 
                     input.value =
                         value + 1;
 
-                }else{
-
-                    alert(
-                        "⚠️ Available stock limit reached!"
-                    );
-
                 }
 
-            }
-        );
+            };
 
 
         qtyBox.appendChild(
@@ -867,9 +772,13 @@ function displayProducts(){
             plus
         );
 
+        info.appendChild(
+            qtyBox
+        );
+
 
         /* =================================================
-           BUTTONS
+           ADD TO CART BUTTON
         ================================================= */
 
         var addButton =
@@ -886,6 +795,10 @@ function displayProducts(){
         addButton.textContent =
             "🛒 Add to Cart";
 
+
+        /* =================================================
+           BUY NOW BUTTON
+        ================================================= */
 
         var buyButton =
             document.createElement(
@@ -906,7 +819,7 @@ function displayProducts(){
 
         var available =
             status.toLowerCase() ===
-            "available" &&
+                "available" &&
             stock > 0;
 
 
@@ -937,10 +850,10 @@ function displayProducts(){
 
         /* =================================================
            ADD TO CART
+           यही मुख्य FIX है
         ================================================= */
 
-        addButton.addEventListener(
-            "click",
+        addButton.onclick =
             function(){
 
                 var quantity =
@@ -953,6 +866,8 @@ function displayProducts(){
 
                     quantity = 1;
 
+                    input.value = 1;
+
                 }
 
 
@@ -962,6 +877,9 @@ function displayProducts(){
                         "❌ इतनी Quantity उपलब्ध नहीं है।"
                     );
 
+                    input.value =
+                        stock;
+
                     return;
 
                 }
@@ -969,20 +887,17 @@ function displayProducts(){
 
                 addToCart(
                     product,
-                    productId,
                     quantity
                 );
 
-            }
-        );
+            };
 
 
         /* =================================================
            BUY NOW
         ================================================= */
 
-        buyButton.addEventListener(
-            "click",
+        buyButton.onclick =
             function(){
 
                 var quantity =
@@ -1011,31 +926,11 @@ function displayProducts(){
 
                 buyProductNow(
                     product,
-                    productId,
                     quantity
                 );
 
-            }
-        );
+            };
 
-
-        /* ADD ELEMENTS */
-
-        info.appendChild(
-            nameDiv
-        );
-
-        info.appendChild(
-            priceDiv
-        );
-
-        info.appendChild(
-            stockDiv
-        );
-
-        info.appendChild(
-            qtyBox
-        );
 
         info.appendChild(
             addButton
@@ -1049,7 +944,6 @@ function displayProducts(){
         card.appendChild(
             info
         );
-
 
         grid.appendChild(
             card
@@ -1066,7 +960,6 @@ function displayProducts(){
 
 function addToCart(
     product,
-    productId,
     quantity
 ){
 
@@ -1074,11 +967,17 @@ function addToCart(
         getCart();
 
 
+    var productId =
+        String(
+            product.id
+        );
+
+
     var found =
         null;
 
 
-    /* FIND SAME PRODUCT */
+    /* SAME PRODUCT SEARCH */
 
     for(
         var i = 0;
@@ -1087,12 +986,8 @@ function addToCart(
     ){
 
         if(
-            String(
-                cart[i].id
-            ) ===
-            String(
-                productId
-            )
+            String(cart[i].id) ===
+            productId
         ){
 
             found =
@@ -1105,22 +1000,45 @@ function addToCart(
     }
 
 
-    /* SAME PRODUCT */
+    /* EXISTING PRODUCT */
 
     if(found){
 
-        found.quantity =
-            (
-                Number(
-                    found.quantity
-                ) || 0
-            ) +
+        var oldQuantity =
             Number(
-                quantity
+                found.quantity
+            ) || 0;
+
+        var newQuantity =
+            oldQuantity +
+            Number(quantity);
+
+
+        var stock =
+            Number(
+                product.stock
+            ) || 0;
+
+
+        if(
+            stock > 0 &&
+            newQuantity > stock
+        ){
+
+            alert(
+                "❌ उपलब्ध Stock से अधिक Quantity नहीं जोड़ सकते।"
             );
 
+            return;
 
-        /* UPDATE DATA */
+        }
+
+
+        found.quantity =
+            newQuantity;
+
+
+        /* Update product information */
 
         found.name =
             product.name;
@@ -1148,12 +1066,14 @@ function addToCart(
         cart.push({
 
             id:
-                String(
-                    productId
-                ),
+                productId,
 
             name:
                 product.name,
+
+            category:
+                product.category ||
+                "Organic Product",
 
             price:
                 Number(
@@ -1163,7 +1083,12 @@ function addToCart(
             quantity:
                 Number(
                     quantity
-                ),
+                ) || 1,
+
+            stock:
+                Number(
+                    product.stock
+                ) || 0,
 
             unit:
                 product.unit ||
@@ -1171,36 +1096,17 @@ function addToCart(
 
             image:
                 product.image ||
-                "",
-
-            category:
-                product.category ||
-                "Organic Product",
-
-            stock:
-                Number(
-                    product.stock
-                ) || 0
+                ""
 
         });
 
     }
 
 
+    /* SAVE */
+
     saveCart(
         cart
-    );
-
-
-    /* BUY NOW OLD DATA CLEAR */
-
-    localStorage.removeItem(
-        "buyNowProduct"
-    );
-
-
-    sessionStorage.removeItem(
-        "checkoutMode"
     );
 
 
@@ -1215,7 +1121,7 @@ function addToCart(
 
 
     console.log(
-        "CART UPDATED:",
+        "CART:",
         cart
     );
 
@@ -1228,7 +1134,6 @@ function addToCart(
 
 function buyProductNow(
     product,
-    productId,
     quantity
 ){
 
@@ -1270,6 +1175,12 @@ function buyProductNow(
     }
 
 
+    quantity =
+        Number(
+            quantity
+        ) || 1;
+
+
     if(
         quantity > stock
     ){
@@ -1284,18 +1195,23 @@ function buyProductNow(
 
 
     /* =================================================
-       BUY NOW PRODUCT
+       BUY NOW केवल चुना हुआ Product रखेगा।
+       CART को बिल्कुल नहीं बदलेगा।
     ================================================= */
 
     var buyNowProduct = {
 
         id:
             String(
-                productId
+                product.id
             ),
 
         name:
             product.name,
+
+        category:
+            product.category ||
+            "Organic Product",
 
         price:
             Number(
@@ -1303,9 +1219,10 @@ function buyProductNow(
             ) || 0,
 
         quantity:
-            Number(
-                quantity
-            ),
+            quantity,
+
+        stock:
+            stock,
 
         unit:
             product.unit ||
@@ -1313,19 +1230,10 @@ function buyProductNow(
 
         image:
             product.image ||
-            "",
-
-        category:
-            product.category ||
-            "Organic Product",
-
-        stock:
-            stock
+            ""
 
     };
 
-
-    /* SAVE BUY NOW */
 
     localStorage.setItem(
         "buyNowProduct",
@@ -1335,15 +1243,11 @@ function buyProductNow(
     );
 
 
-    /* IMPORTANT */
-
     sessionStorage.setItem(
         "checkoutMode",
         "buyNow"
     );
 
-
-    /* TOTAL */
 
     var total =
         buyNowProduct.price *
@@ -1352,19 +1256,15 @@ function buyProductNow(
 
     localStorage.setItem(
         "orderTotal",
-        String(
-            total
-        )
+        String(total)
     );
 
 
     console.log(
-        "✅ BUY NOW PRODUCT:",
+        "BUY NOW:",
         buyNowProduct
     );
 
-
-    /* GO CHECKOUT */
 
     window.location.href =
         "checkout.html";
@@ -1381,6 +1281,7 @@ displayProducts();
 updateCartCount();
 
 </script>
+
 
 </body>
 
