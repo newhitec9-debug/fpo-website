@@ -4,68 +4,72 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Customer Orders | Bundelkhand Organic FPO</title>
+<title>Orders Management | Bundelkhand Organic FPO</title>
 
 <style>
-
 *{
     box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:linear-gradient(135deg,#e8f5e9,#fff8e1,#e3f2fd);
-    color:#222;
+    font-family:Arial, "Noto Sans Devanagari", sans-serif;
+    background:linear-gradient(135deg,#eef8f0,#f5f9ff,#fff8ed);
+    color:#263238;
 }
 
-/* ================= HEADER ================= */
-
+/* HEADER */
 .header{
-    background:linear-gradient(135deg,#087f23,#16a34a,#22c55e);
+    background:linear-gradient(135deg,#087f23,#16a34a,#059669);
     color:white;
     padding:25px 15px;
     text-align:center;
-    box-shadow:0 4px 15px rgba(0,0,0,.2);
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
 }
 
 .header h1{
-    margin:0;
-    font-size:30px;
+    font-size:28px;
+    margin-bottom:7px;
 }
 
 .header h2{
-    margin:8px 0;
-    font-size:21px;
+    font-size:20px;
+    font-weight:500;
 }
 
-.header p{
-    margin:5px 0 0;
+.tagline{
+    margin-top:10px;
     font-size:16px;
-    font-weight:bold;
 }
 
-/* ================= NAVIGATION ================= */
-
+/* NAVIGATION */
 .nav{
     background:white;
-    padding:15px;
-    text-align:center;
-    box-shadow:0 3px 10px rgba(0,0,0,.12);
-    position:sticky;
-    top:0;
-    z-index:100;
+    padding:14px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
 .nav a{
-    display:inline-block;
     text-decoration:none;
-    color:white;
     padding:11px 18px;
-    margin:5px;
     border-radius:25px;
+    color:white;
     font-weight:bold;
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
     transition:.3s;
+}
+
+.nav a:nth-child(2){
+    background:linear-gradient(135deg,#f59e0b,#ea580c);
+}
+
+.nav a:nth-child(3){
+    background:linear-gradient(135deg,#16a34a,#15803d);
 }
 
 .nav a:hover{
@@ -73,44 +77,27 @@ body{
     box-shadow:0 5px 12px rgba(0,0,0,.2);
 }
 
-.home{
-    background:#2563eb;
-}
-
-.products{
-    background:#16a34a;
-}
-
-.website{
-    background:#f59e0b;
-}
-
-/* ================= MAIN ================= */
-
+/* MAIN */
 .container{
     width:95%;
     max-width:1400px;
     margin:25px auto;
 }
 
-.title-box{
-    text-align:center;
-    margin-bottom:25px;
+.page-title{
+    background:white;
+    padding:22px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    margin-bottom:20px;
 }
 
-.title-box h2{
-    color:#166534;
-    font-size:30px;
+.page-title h2{
+    color:#087f23;
     margin-bottom:8px;
 }
 
-.title-box p{
-    color:#555;
-    font-size:17px;
-}
-
-/* ================= STAT CARDS ================= */
-
+/* STAT CARDS */
 .stats{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -118,135 +105,114 @@ body{
     margin-bottom:25px;
 }
 
-.stat-card{
-    background:white;
-    border-radius:18px;
+.stat{
     padding:22px;
+    border-radius:20px;
+    color:white;
     text-align:center;
-    box-shadow:0 5px 18px rgba(0,0,0,.12);
-    border-top:6px solid;
-    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
-.stat-card:hover{
-    transform:translateY(-5px);
+.stat .icon{
+    font-size:35px;
+    margin-bottom:8px;
 }
 
-.stat-icon{
-    font-size:38px;
+.stat h3{
+    font-size:17px;
+    margin-bottom:8px;
 }
 
-.stat-title{
-    font-size:16px;
-    font-weight:bold;
-    color:#555;
-    margin-top:8px;
-}
-
-.stat-value{
+.stat strong{
     font-size:30px;
-    font-weight:bold;
-    margin-top:8px;
 }
 
 .total{
-    border-color:#2563eb;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
 }
 
 .new{
-    border-color:#f59e0b;
+    background:linear-gradient(135deg,#f59e0b,#f97316);
 }
 
 .confirmed{
-    border-color:#16a34a;
+    background:linear-gradient(135deg,#16a34a,#059669);
 }
 
 .sales{
-    border-color:#9333ea;
+    background:linear-gradient(135deg,#7c3aed,#9333ea);
 }
 
-/* ================= FILTER ================= */
-
+/* FILTER */
 .filter-box{
     background:white;
     padding:18px;
-    border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,.1);
+    border-radius:18px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    margin-bottom:25px;
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    gap:15px;
+    gap:12px;
     flex-wrap:wrap;
-    margin-bottom:25px;
 }
 
 .filter-box label{
     font-weight:bold;
-    color:#166534;
-    font-size:17px;
 }
 
-#statusFilter{
-    padding:12px 15px;
+select{
+    padding:11px 15px;
     border:2px solid #16a34a;
     border-radius:10px;
-    font-size:16px;
-    min-width:220px;
+    font-size:15px;
     background:white;
 }
 
-.refresh-btn{
-    background:#2563eb;
-    color:white;
+.refresh{
     border:none;
-    padding:12px 20px;
+    padding:11px 18px;
     border-radius:10px;
-    font-size:16px;
+    background:linear-gradient(135deg,#0ea5e9,#2563eb);
+    color:white;
     font-weight:bold;
     cursor:pointer;
 }
 
-.refresh-btn:hover{
-    background:#1d4ed8;
-}
-
-/* ================= ORDER LIST ================= */
-
+/* ORDER LIST */
 .list-title{
-    color:#166534;
-    margin-bottom:18px;
-    font-size:24px;
+    color:#087f23;
+    margin-bottom:15px;
+    font-size:22px;
 }
 
-.orders-container{
+.orders{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:22px;
+    gap:20px;
 }
 
-/* ================= ORDER CARD ================= */
-
+/* ORDER CARD */
 .order-card{
     background:white;
-    border-radius:20px;
+    border-radius:22px;
     overflow:hidden;
-    box-shadow:0 6px 20px rgba(0,0,0,.13);
-    border:1px solid #ddd;
+    box-shadow:0 7px 25px rgba(0,0,0,.10);
+    border:1px solid #e5e7eb;
     transition:.3s;
 }
 
 .order-card:hover{
     transform:translateY(-4px);
-    box-shadow:0 10px 25px rgba(0,0,0,.18);
+    box-shadow:0 12px 30px rgba(0,0,0,.16);
 }
 
-.order-header{
+.order-head{
     padding:18px;
-    color:white;
-    background:linear-gradient(135deg,#166534,#22c55e);
+    background:linear-gradient(135deg,#ecfdf5,#eff6ff);
+    border-bottom:1px solid #e5e7eb;
 }
 
-.order-header-top{
+.order-top{
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -254,261 +220,234 @@ body{
 }
 
 .order-id{
-    font-size:20px;
+    color:#1d4ed8;
+    font-size:19px;
     font-weight:bold;
 }
 
-.status-badge{
-    padding:7px 12px;
+.customer{
+    font-size:17px;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+.date{
+    margin-top:7px;
+    color:#64748b;
+}
+
+/* STATUS */
+.status{
+    display:inline-block;
+    padding:8px 13px;
     border-radius:20px;
     font-weight:bold;
     font-size:13px;
-    background:white;
-    color:#166534;
 }
 
-.order-info{
+.status-New{
+    background:#fff7ed;
+    color:#ea580c;
+}
+
+.status-Confirmed{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.status-Processing{
+    background:#dbeafe;
+    color:#1d4ed8;
+}
+
+.status-Shipped{
+    background:#ede9fe;
+    color:#7c3aed;
+}
+
+.status-Delivered{
+    background:#d1fae5;
+    color:#047857;
+}
+
+.status-Cancelled{
+    background:#fee2e2;
+    color:#dc2626;
+}
+
+/* CUSTOMER INFO */
+.info{
     padding:18px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
 }
 
-.customer-box{
-    background:#f0fdf4;
-    border-left:5px solid #16a34a;
-    padding:13px;
-    border-radius:10px;
-    margin-bottom:15px;
-}
-
-.customer-name{
-    font-size:20px;
-    font-weight:bold;
-    color:#166534;
-    margin-bottom:8px;
-}
-
-.info-row{
-    margin:6px 0;
-    font-size:15px;
-}
-
-/* ================= PRODUCTS ================= */
-
-.products-title{
-    font-size:18px;
-    font-weight:bold;
-    color:#92400e;
-    margin:15px 0 10px;
-}
-
-.product-item{
-    background:linear-gradient(135deg,#fff7ed,#fffbeb);
-    border:1px solid #fed7aa;
+.info-box{
+    background:#f8fafc;
+    padding:12px;
     border-radius:12px;
-    padding:13px;
-    margin-bottom:10px;
+}
+
+.info-box b{
+    display:block;
+    color:#475569;
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.info-box span{
+    font-weight:bold;
+}
+
+/* PRODUCTS */
+.products{
+    padding:0 18px 18px;
+}
+
+.products h4{
+    color:#087f23;
+    margin-bottom:12px;
+    font-size:17px;
+}
+
+.product{
+    background:#f8fafc;
+    border-left:5px solid #16a34a;
+    padding:12px;
+    margin-bottom:9px;
+    border-radius:10px;
 }
 
 .product-name{
     font-weight:bold;
-    color:#166534;
-    font-size:17px;
+    font-size:16px;
 }
 
-.product-details{
-    display:flex;
-    justify-content:space-between;
-    margin-top:6px;
-    color:#555;
+.product-price{
+    color:#475569;
+    margin-top:5px;
 }
 
 .subtotal{
-    text-align:right;
+    color:#15803d;
     font-weight:bold;
-    color:#92400e;
-    margin-top:6px;
+    margin-top:4px;
 }
 
-/* ================= TOTAL ================= */
-
+/* TOTAL */
 .total-box{
-    margin-top:15px;
+    margin:0 18px 18px;
     padding:15px;
-    border-radius:12px;
-    background:linear-gradient(135deg,#f3e8ff,#ede9fe);
-    border:2px solid #a855f7;
+    border-radius:14px;
+    background:linear-gradient(135deg,#ecfdf5,#dcfce7);
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
-.total-label{
-    font-weight:bold;
+.total-box span{
     font-size:18px;
+    font-weight:bold;
 }
 
 .total-amount{
     font-size:25px;
+    color:#15803d;
     font-weight:bold;
-    color:#7e22ce;
 }
 
-/* ================= STATUS ================= */
-
-.status-section{
-    margin-top:18px;
-    background:#f8fafc;
-    padding:15px;
-    border-radius:12px;
+/* STATUS CHANGE */
+.status-change{
+    padding:0 18px 18px;
 }
 
-.status-section label{
-    font-weight:bold;
+.status-change label{
     display:block;
-    margin-bottom:8px;
-    color:#374151;
-}
-
-.order-status{
-    width:100%;
-    padding:11px;
-    border:2px solid #94a3b8;
-    border-radius:9px;
-    font-size:15px;
+    font-size:13px;
     font-weight:bold;
-    background:white;
-    cursor:pointer;
+    margin-bottom:6px;
 }
 
-.order-status:focus{
-    border-color:#16a34a;
-    outline:none;
+.status-change select{
+    width:100%;
+    border-color:#cbd5e1;
 }
 
-/* ================= ACTIONS ================= */
-
+/* ACTIONS */
 .actions{
+    padding:15px 18px;
+    border-top:1px solid #e5e7eb;
     display:flex;
     gap:10px;
-    margin-top:15px;
 }
 
 .view-btn,
 .delete-btn{
     flex:1;
-    padding:12px;
     border:none;
+    padding:11px;
     border-radius:10px;
     color:white;
     font-weight:bold;
-    font-size:15px;
     cursor:pointer;
 }
 
 .view-btn{
-    background:#2563eb;
-}
-
-.view-btn:hover{
-    background:#1d4ed8;
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
 }
 
 .delete-btn{
-    background:#dc2626;
+    background:linear-gradient(135deg,#ef4444,#dc2626);
 }
 
-.delete-btn:hover{
-    background:#b91c1c;
+.view-btn:hover,
+.delete-btn:hover,
+.refresh:hover{
+    opacity:.9;
 }
 
-/* ================= EMPTY ================= */
-
+/* EMPTY */
 .empty{
     background:white;
-    padding:50px 20px;
+    padding:50px;
     text-align:center;
-    border-radius:18px;
-    box-shadow:0 5px 18px rgba(0,0,0,.1);
-}
-
-.empty-icon{
-    font-size:60px;
-}
-
-.empty h3{
-    color:#166534;
-}
-
-/* ================= MODAL ================= */
-
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.65);
-    z-index:999;
-    padding:20px;
-    overflow:auto;
-}
-
-.modal-content{
-    background:white;
-    max-width:700px;
-    margin:40px auto;
     border-radius:20px;
-    padding:25px;
-    box-shadow:0 10px 40px rgba(0,0,0,.3);
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    font-size:20px;
 }
 
-.modal-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:2px solid #ddd;
-    padding-bottom:12px;
-}
-
-.close{
-    font-size:30px;
-    cursor:pointer;
-    color:#dc2626;
-    font-weight:bold;
-}
-
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 .footer{
-    margin-top:40px;
-    background:#14532d;
+    margin-top:35px;
+    background:linear-gradient(135deg,#064e3b,#087f23);
     color:white;
     text-align:center;
-    padding:25px 15px;
+    padding:25px;
 }
 
 .footer h3{
-    margin:0 0 8px;
+    margin-bottom:7px;
 }
 
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:1000px){
-
+/* RESPONSIVE */
+@media(max-width:900px){
     .stats{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .orders-container{
+    .orders{
         grid-template-columns:1fr;
     }
 }
 
 @media(max-width:600px){
-
     .header h1{
-        font-size:22px;
+        font-size:21px;
     }
 
     .header h2{
-        font-size:17px;
+        font-size:16px;
     }
 
     .stats{
@@ -516,587 +455,349 @@ body{
         gap:10px;
     }
 
-    .stat-card{
+    .stat{
         padding:15px 8px;
     }
 
-    .stat-icon{
-        font-size:28px;
-    }
-
-    .stat-value{
+    .stat strong{
         font-size:23px;
     }
 
-    .filter-box{
-        align-items:stretch;
-        flex-direction:column;
+    .info{
+        grid-template-columns:1fr;
     }
 
-    #statusFilter,
-    .refresh-btn{
-        width:100%;
-    }
-
-    .order-header-top{
+    .order-top{
         flex-direction:column;
         align-items:flex-start;
     }
 
-    .product-details{
-        flex-direction:column;
-        gap:3px;
+    .nav a{
+        width:100%;
+        text-align:center;
     }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
+<!-- HEADER -->
 <header class="header">
-
     <h1>🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड</h1>
-
     <h2>Bundelkhand Organic Farmer Producer Company Limited</h2>
-
-    <p>🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य</p>
-
+    <div class="tagline">🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य</div>
 </header>
 
-
-<!-- ================= NAVIGATION ================= -->
-
+<!-- NAVIGATION -->
 <nav class="nav">
-
-    <a class="home"
-       href="admin-dashboard.html">
-       🏠 Admin Dashboard
-    </a>
-
-    <a class="products"
-       href="manage-products.html">
-       🌾 Manage Products
-    </a>
-
-    <a class="website"
-       href="products.html">
-       🛒 View Website
-    </a>
-
+    <a href="admin-dashboard.html">🏠 Admin Dashboard</a>
+    <a href="manage-products.html">🌾 Manage Products</a>
+    <a href="products.html">🛒 View Website</a>
 </nav>
-
-
-<!-- ================= MAIN ================= -->
 
 <main class="container">
 
-    <div class="title-box">
-
+    <section class="page-title">
         <h2>📦 Customer Orders</h2>
-
         <p>सभी Customer Orders यहां दिखाई देंगे।</p>
+    </section>
 
-    </div>
-
-
-    <!-- ================= STATISTICS ================= -->
-
+    <!-- STATISTICS -->
     <section class="stats">
 
-        <div class="stat-card total">
-
-            <div class="stat-icon">📦</div>
-
-            <div class="stat-title">
-                Total Orders
-            </div>
-
-            <div class="stat-value" id="totalOrders">
-                0
-            </div>
-
+        <div class="stat total">
+            <div class="icon">📦</div>
+            <h3>Total Orders</h3>
+            <strong id="totalOrders">0</strong>
         </div>
 
-
-        <div class="stat-card new">
-
-            <div class="stat-icon">🆕</div>
-
-            <div class="stat-title">
-                New Orders
-            </div>
-
-            <div class="stat-value" id="newOrders">
-                0
-            </div>
-
+        <div class="stat new">
+            <div class="icon">🆕</div>
+            <h3>New Orders</h3>
+            <strong id="newOrders">0</strong>
         </div>
 
-
-        <div class="stat-card confirmed">
-
-            <div class="stat-icon">✅</div>
-
-            <div class="stat-title">
-                Confirmed
-            </div>
-
-            <div class="stat-value" id="confirmedOrders">
-                0
-            </div>
-
+        <div class="stat confirmed">
+            <div class="icon">✅</div>
+            <h3>Confirmed</h3>
+            <strong id="confirmedOrders">0</strong>
         </div>
 
-
-        <div class="stat-card sales">
-
-            <div class="stat-icon">💰</div>
-
-            <div class="stat-title">
-                Total Sales
-            </div>
-
-            <div class="stat-value" id="totalSales">
-                ₹0
-            </div>
-
+        <div class="stat sales">
+            <div class="icon">💰</div>
+            <h3>Total Sales</h3>
+            <strong id="totalSales">₹0</strong>
         </div>
 
     </section>
 
-
-    <!-- ================= FILTER ================= -->
-
+    <!-- FILTER -->
     <section class="filter-box">
 
-        <div>
+        <label>🔎 Filter Status:</label>
 
-            <label for="statusFilter">
-                🔎 Filter Status:
-            </label>
+        <select id="statusFilter" onchange="displayOrders()">
+            <option value="all">सभी Status</option>
+            <option value="New">🆕 New</option>
+            <option value="Confirmed">✅ Confirmed</option>
+            <option value="Processing">⚙️ Processing</option>
+            <option value="Shipped">🚚 Shipped</option>
+            <option value="Delivered">📦 Delivered</option>
+            <option value="Cancelled">❌ Cancelled</option>
+        </select>
 
-            <select id="statusFilter"
-                    onchange="renderOrders()">
-
-                <option value="all">
-                    सभी Status
-                </option>
-
-                <option value="New">
-                    🆕 New
-                </option>
-
-                <option value="Confirmed">
-                    ✅ Confirmed
-                </option>
-
-                <option value="Processing">
-                    ⚙️ Processing
-                </option>
-
-                <option value="Shipped">
-                    🚚 Shipped
-                </option>
-
-                <option value="Delivered">
-                    📦 Delivered
-                </option>
-
-                <option value="Cancelled">
-                    ❌ Cancelled
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <button class="refresh-btn"
-                onclick="loadOrders()">
-
+        <button class="refresh" onclick="loadOrders()">
             🔄 Refresh Orders
-
         </button>
 
     </section>
 
+    <h2 class="list-title">📋 Customer Order List</h2>
 
-    <h3 class="list-title">
-        📋 Customer Order List
-    </h3>
-
-
-    <!-- ================= ORDERS ================= -->
-
-    <div id="ordersContainer"
-         class="orders-container">
-    </div>
+    <div id="ordersContainer" class="orders"></div>
 
 </main>
 
-
-<!-- ================= VIEW MODAL ================= -->
-
-<div id="viewModal"
-     class="modal">
-
-    <div class="modal-content">
-
-        <div class="modal-header">
-
-            <h2>
-                🧾 Order Details
-            </h2>
-
-            <span class="close"
-                  onclick="closeModal()">
-                ×
-            </span>
-
-        </div>
-
-        <div id="modalBody"></div>
-
-    </div>
-
-</div>
-
-
-<!-- ================= FOOTER ================= -->
-
+<!-- FOOTER -->
 <footer class="footer">
-
-    <h3>
-        🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-    </h3>
-
-    <div>
-        Bundelkhand Organic Farmer Producer Company Limited
-    </div>
-
-    <p>
-        Empowering Farmers • Promoting Organic Agriculture
-    </p>
-
-    <p>
-        © 2026 All Rights Reserved
-    </p>
-
+    <h3>🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड</h3>
+    <p>Bundelkhand Organic Farmer Producer Company Limited</p>
+    <p>Empowering Farmers • Promoting Organic Agriculture</p>
+    <br>
+    <p>© 2026 All Rights Reserved</p>
 </footer>
 
 
 <script>
 
-/* =====================================================
-   ORDERS MANAGEMENT
-===================================================== */
+/* =========================================
+   ORDERS DATA
+========================================= */
 
 let orders = [];
 
 
-/* =====================================================
+/* =========================================
    LOAD ORDERS
-===================================================== */
+========================================= */
 
 function loadOrders(){
 
     try{
 
-        const savedOrders =
-            localStorage.getItem("orders");
+        const savedOrders = localStorage.getItem("orders");
 
         if(savedOrders){
 
             orders = JSON.parse(savedOrders);
 
+            if(!Array.isArray(orders)){
+                orders = [];
+            }
+
         }else{
-
             orders = [];
-
         }
 
     }catch(error){
 
-        console.error(
-            "Orders loading error:",
-            error
-        );
+        console.error("Orders Load Error:",error);
 
         orders = [];
-
     }
 
-    renderOrders();
-
+    updateStatistics();
+    displayOrders();
 }
 
 
-/* =====================================================
+/* =========================================
    SAVE ORDERS
-===================================================== */
+========================================= */
 
 function saveOrders(){
 
-    localStorage.setItem(
-        "orders",
-        JSON.stringify(orders)
+    localStorage.setItem("orders",JSON.stringify(orders));
+
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+function updateStatistics(){
+
+    const total = orders.length;
+
+    const newCount = orders.filter(
+        o => getStatus(o) === "New"
+    ).length;
+
+    const confirmedCount = orders.filter(
+        o => getStatus(o) === "Confirmed"
+    ).length;
+
+    /*
+       Cancelled orders को sales में शामिल नहीं करेंगे
+    */
+
+    const sales = orders.reduce((sum,o)=>{
+
+        const status = getStatus(o);
+
+        if(status === "Cancelled"){
+            return sum;
+        }
+
+        return sum + getTotal(o);
+
+    },0);
+
+    document.getElementById("totalOrders").textContent = total;
+
+    document.getElementById("newOrders").textContent = newCount;
+
+    document.getElementById("confirmedOrders").textContent =
+        confirmedCount;
+
+    document.getElementById("totalSales").textContent =
+        "₹" + sales.toLocaleString("en-IN");
+}
+
+
+/* =========================================
+   GET STATUS
+========================================= */
+
+function getStatus(order){
+
+    return order.status ||
+           order.orderStatus ||
+           "New";
+}
+
+
+/* =========================================
+   GET TOTAL
+========================================= */
+
+function getTotal(order){
+
+    let total = Number(
+        order.total ||
+        order.totalAmount ||
+        order.grandTotal ||
+        0
     );
 
-}
-
-
-/* =====================================================
-   STATUS ICON
-===================================================== */
-
-function statusIcon(status){
-
-    switch(status){
-
-        case "New":
-            return "🆕";
-
-        case "Confirmed":
-            return "✅";
-
-        case "Processing":
-            return "⚙️";
-
-        case "Shipped":
-            return "🚚";
-
-        case "Delivered":
-            return "📦";
-
-        case "Cancelled":
-            return "❌";
-
-        default:
-            return "🆕";
-
-    }
-
-}
-
-
-/* =====================================================
-   STATUS COLOR
-===================================================== */
-
-function statusColor(status){
-
-    switch(status){
-
-        case "New":
-            return "#f59e0b";
-
-        case "Confirmed":
-            return "#16a34a";
-
-        case "Processing":
-            return "#2563eb";
-
-        case "Shipped":
-            return "#7c3aed";
-
-        case "Delivered":
-            return "#059669";
-
-        case "Cancelled":
-            return "#dc2626";
-
-        default:
-            return "#64748b";
-
-    }
-
-}
-
-
-/* =====================================================
-   GET ORDER STATUS
-===================================================== */
-
-function getOrderStatus(order){
-
-    if(!order.status){
-
-        order.status = "New";
-
-    }
-
-    return order.status;
-
-}
-
-
-/* =====================================================
-   GET ORDER TOTAL
-===================================================== */
-
-function getOrderTotal(order){
-
-    if(order.total !== undefined){
-
-        return Number(order.total) || 0;
-
-    }
-
-    if(order.totalAmount !== undefined){
-
-        return Number(order.totalAmount) || 0;
-
-    }
-
-    if(order.amount !== undefined){
-
-        return Number(order.amount) || 0;
-
+    if(total){
+        return total;
     }
 
     if(Array.isArray(order.items)){
 
-        return order.items.reduce(
-            (sum,item)=>{
+        return order.items.reduce((sum,item)=>{
 
-                const price =
-                    Number(item.price) || 0;
+            const price = Number(
+                item.price ||
+                item.productPrice ||
+                0
+            );
 
-                const quantity =
-                    Number(
-                        item.quantity ||
-                        item.qty ||
-                        1
-                    );
+            const qty = Number(
+                item.quantity ||
+                item.qty ||
+                1
+            );
 
-                return sum + (price * quantity);
+            return sum + price * qty;
 
-            },
-            0
-        );
+        },0);
 
     }
 
     return 0;
-
 }
 
 
-/* =====================================================
-   GET CUSTOMER NAME
-===================================================== */
+/* =========================================
+   GET CUSTOMER
+========================================= */
 
-function getCustomerName(order){
+function getCustomer(order){
 
-    return (
-        order.customerName ||
-        order.name ||
-        order.customer ||
-        "Customer"
-    );
-
+    return order.customerName ||
+           order.name ||
+           order.customer ||
+           "Customer";
 }
 
 
-/* =====================================================
+/* =========================================
    GET MOBILE
-===================================================== */
+========================================= */
 
 function getMobile(order){
 
-    return (
-        order.mobile ||
-        order.phone ||
-        order.contact ||
-        "Not Available"
-    );
-
+    return order.mobile ||
+           order.phone ||
+           order.contact ||
+           "Not Available";
 }
 
 
-/* =====================================================
+/* =========================================
    GET ADDRESS
-===================================================== */
+========================================= */
 
 function getAddress(order){
 
-    return (
-        order.address ||
-        order.customerAddress ||
-        order.location ||
-        "Not Available"
-    );
-
+    return order.address ||
+           order.customerAddress ||
+           "Address Not Available";
 }
 
 
-/* =====================================================
+/* =========================================
    GET PAYMENT
-===================================================== */
+========================================= */
 
 function getPayment(order){
 
-    return (
-        order.payment ||
-        order.paymentMethod ||
-        "Not Available"
-    );
-
+    return order.paymentMethod ||
+           order.payment ||
+           "Cash on Delivery";
 }
 
 
-/* =====================================================
+/* =========================================
    GET DATE
-===================================================== */
+========================================= */
 
 function getDate(order){
 
-    return (
-        order.date ||
-        order.orderDate ||
-        order.createdAt ||
-        "Not Available"
-    );
+    return order.date ||
+           order.orderDate ||
+           order.createdAt ||
+           "";
 
 }
 
 
-/* =====================================================
-   GET ORDER ID
-===================================================== */
+/* =========================================
+   GET ITEMS
+========================================= */
 
-function getOrderId(order,index){
-
-    return (
-        order.orderId ||
-        order.id ||
-        "FPO" +
-        String(Date.now()).slice(-8) +
-        index
-    );
-
-}
-
-
-/* =====================================================
-   GET PRODUCTS
-===================================================== */
-
-function getProducts(order){
+function getItems(order){
 
     if(Array.isArray(order.items)){
-
         return order.items;
-
     }
 
     if(Array.isArray(order.products)){
-
         return order.products;
-
     }
 
     return [];
@@ -1104,686 +805,519 @@ function getProducts(order){
 }
 
 
-/* =====================================================
-   RENDER ORDERS
-===================================================== */
+/* =========================================
+   STATUS ICON
+========================================= */
 
-function renderOrders(){
+function statusIcon(status){
 
-    const container =
-        document.getElementById(
-            "ordersContainer"
-        );
+    const icons = {
 
-    const filter =
-        document.getElementById(
-            "statusFilter"
-        ).value;
+        New:"🆕",
 
+        Confirmed:"✅",
 
-    /* ---------- Statistics ---------- */
+        Processing:"⚙️",
 
-    document.getElementById(
-        "totalOrders"
-    ).textContent = orders.length;
+        Shipped:"🚚",
 
+        Delivered:"📦",
 
-    const newCount =
-        orders.filter(
-            order =>
-            getOrderStatus(order) === "New"
-        ).length;
+        Cancelled:"❌"
 
+    };
 
-    const confirmedCount =
-        orders.filter(
-            order =>
-            getOrderStatus(order) === "Confirmed"
-        ).length;
-
-
-    document.getElementById(
-        "newOrders"
-    ).textContent = newCount;
-
-
-    document.getElementById(
-        "confirmedOrders"
-    ).textContent = confirmedCount;
-
-
-    /*
-       Cancelled orders are not counted
-       in Total Sales.
-    */
-
-    const sales =
-        orders.reduce(
-            (sum,order)=>{
-
-                if(
-                    getOrderStatus(order)
-                    === "Cancelled"
-                ){
-
-                    return sum;
-
-                }
-
-                return sum + getOrderTotal(order);
-
-            },
-            0
-        );
-
-
-    document.getElementById(
-        "totalSales"
-    ).textContent =
-        "₹" +
-        sales.toLocaleString("en-IN");
-
-
-    /* ---------- Filter ---------- */
-
-    let filteredOrders = orders;
-
-    if(filter !== "all"){
-
-        filteredOrders =
-            orders.filter(
-                order =>
-                getOrderStatus(order)
-                === filter
-            );
-
-    }
-
-
-    /* ---------- Empty ---------- */
-
-    if(filteredOrders.length === 0){
-
-        container.innerHTML = `
-
-            <div class="empty">
-
-                <div class="empty-icon">
-                    📦
-                </div>
-
-                <h3>
-                    कोई Order नहीं मिला
-                </h3>
-
-                <p>
-                    इस Status के लिए कोई Customer Order उपलब्ध नहीं है।
-                </p>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    /* ---------- Cards ---------- */
-
-    container.innerHTML =
-        filteredOrders
-        .map(
-            (order,index)=>
-            createOrderCard(
-                order,
-                orders.indexOf(order)
-            )
-        )
-        .join("");
-
+    return icons[status] || "🆕";
 }
 
 
-/* =====================================================
-   CREATE ORDER CARD
-===================================================== */
+/* =========================================
+   DISPLAY ORDERS
+========================================= */
 
-function createOrderCard(order,index){
+function displayOrders(){
 
-    const status =
-        getOrderStatus(order);
+    const container =
+        document.getElementById("ordersContainer");
 
-    const orderId =
-        getOrderId(order,index);
+    const filter =
+        document.getElementById("statusFilter").value;
 
-    const customer =
-        getCustomerName(order);
+    let filtered = orders;
 
-    const mobile =
-        getMobile(order);
+    if(filter !== "all"){
 
-    const address =
-        getAddress(order);
-
-    const payment =
-        getPayment(order);
-
-    const date =
-        getDate(order);
-
-    const total =
-        getOrderTotal(order);
-
-    const products =
-        getProducts(order);
-
-
-    let productHTML = "";
-
-
-    if(products.length){
-
-        productHTML =
-            products.map(
-                item => {
-
-                    const name =
-                        item.name ||
-                        item.product ||
-                        item.title ||
-                        "Product";
-
-                    const price =
-                        Number(item.price) || 0;
-
-                    const quantity =
-                        Number(
-                            item.quantity ||
-                            item.qty ||
-                            1
-                        );
-
-                    const subtotal =
-                        price * quantity;
-
-
-                    return `
-
-                        <div class="product-item">
-
-                            <div class="product-name">
-                                🌾 ${escapeHTML(name)}
-                                × ${quantity}
-                            </div>
-
-                            <div class="product-details">
-
-                                <span>
-                                    ₹${price.toLocaleString("en-IN")}
-                                    × ${quantity} Kg
-                                </span>
-
-                                <strong>
-                                    ₹${subtotal.toLocaleString("en-IN")}
-                                </strong>
-
-                            </div>
-
-                            <div class="subtotal">
-                                Subtotal:
-                                ₹${subtotal.toLocaleString("en-IN")}
-                            </div>
-
-                        </div>
-
-                    `;
-
-                }
-            ).join("");
-
-    }else{
-
-        productHTML = `
-
-            <div class="product-item">
-
-                <div class="product-name">
-                    🌾 Product information available नहीं है
-                </div>
-
-            </div>
-
-        `;
+        filtered = orders.filter(
+            o => getStatus(o) === filter
+        );
 
     }
 
+    if(filtered.length === 0){
 
-    return `
+        container.innerHTML = `
+            <div class="empty">
+                📭
+                <br><br>
+                <strong>कोई Order नहीं मिला</strong>
+                <br><br>
+                इस Status के कोई Customer Orders उपलब्ध नहीं हैं।
+            </div>
+        `;
+
+        return;
+    }
+
+
+    container.innerHTML = filtered.map((order,index)=>{
+
+        const status = getStatus(order);
+
+        const items = getItems(order);
+
+        const total = getTotal(order);
+
+        const orderId =
+            order.orderId ||
+            order.id ||
+            ("FPO" + Date.now());
+
+        const customer =
+            getCustomer(order);
+
+        const mobile =
+            getMobile(order);
+
+        const address =
+            getAddress(order);
+
+        const payment =
+            getPayment(order);
+
+        const date =
+            getDate(order);
+
+
+        let productsHTML = "";
+
+        if(items.length > 0){
+
+            productsHTML = items.map(item=>{
+
+                const name =
+                    item.name ||
+                    item.productName ||
+                    "Product";
+
+                const price =
+                    Number(
+                        item.price ||
+                        item.productPrice ||
+                        0
+                    );
+
+                const qty =
+                    Number(
+                        item.quantity ||
+                        item.qty ||
+                        1
+                    );
+
+                const subtotal =
+                    price * qty;
+
+                return `
+
+                    <div class="product">
+
+                        <div class="product-name">
+                            🌾 ${escapeHTML(name)}
+                            × ${qty}
+                        </div>
+
+                        <div class="product-price">
+                            ₹${price.toLocaleString("en-IN")}
+                            × ${qty} Kg
+                        </div>
+
+                        <div class="subtotal">
+                            Subtotal:
+                            ₹${subtotal.toLocaleString("en-IN")}
+                        </div>
+
+                    </div>
+
+                `;
+
+            }).join("");
+
+        }else{
+
+            productsHTML = `
+                <div class="product">
+                    🌾 Product information available नहीं है
+                </div>
+            `;
+
+        }
+
+
+        return `
 
         <div class="order-card">
 
-            <div class="order-header"
-                 style="background:linear-gradient(135deg,
-                 ${statusColor(status)},
-                 #166534);">
+            <div class="order-head">
 
-                <div class="order-header-top">
+                <div class="order-top">
 
-                    <div class="order-id">
-                        🧾 ${escapeHTML(orderId)}
+                    <div>
+
+                        <div class="order-id">
+                            🧾 ${escapeHTML(String(orderId))}
+                        </div>
+
+                        <div class="customer">
+                            👤 ${escapeHTML(String(customer))}
+                        </div>
+
+                        <div class="date">
+                            📅 ${escapeHTML(String(date))}
+                        </div>
+
                     </div>
 
-                    <div class="status-badge"
-                         style="color:${statusColor(status)}">
-
+                    <span class="status status-${status}">
                         ${statusIcon(status)}
-                        ${escapeHTML(status)}
-
-                    </div>
+                        ${status}
+                    </span>
 
                 </div>
 
             </div>
 
 
-            <div class="order-info">
+            <div class="info">
 
-                <div class="customer-box">
-
-                    <div class="customer-name">
-
-                        👤 ${escapeHTML(customer)}
-
-                    </div>
-
-                    <div class="info-row">
-                        📅 <strong>Date:</strong>
-                        ${escapeHTML(String(date))}
-                    </div>
-
-                    <div class="info-row">
-                        📱 <strong>Mobile:</strong>
-                        ${escapeHTML(String(mobile))}
-                    </div>
-
-                    <div class="info-row">
-                        📍 <strong>Address:</strong>
-                        ${escapeHTML(String(address))}
-                    </div>
-
-                    <div class="info-row">
-                        💳 <strong>Payment:</strong>
-                        ${escapeHTML(String(payment))}
-                    </div>
-
+                <div class="info-box">
+                    <b>📱 Mobile</b>
+                    <span>${escapeHTML(String(mobile))}</span>
                 </div>
 
-
-                <div class="products-title">
-                    🌾 Ordered Products
+                <div class="info-box">
+                    <b>📍 Address</b>
+                    <span>${escapeHTML(String(address))}</span>
                 </div>
 
-                ${productHTML}
-
-
-                <div class="total-box">
-
-                    <div class="total-label">
-                        💰 Total Amount
-                    </div>
-
-                    <div class="total-amount">
-                        ₹${total.toLocaleString("en-IN")}
-                    </div>
-
+                <div class="info-box">
+                    <b>💳 Payment</b>
+                    <span>${escapeHTML(String(payment))}</span>
                 </div>
 
-
-                <div class="status-section">
-
-                    <label>
-                        📌 Order Status
-                    </label>
-
-                    <select
-                        class="order-status"
-                        onchange="changeStatus(${index},this.value)"
-                        style="
-                        border-color:${statusColor(status)};
-                        color:${statusColor(status)};
-                        ">
-
-                        <option value="New"
-                            ${status === "New" ? "selected" : ""}>
-                            🆕 New
-                        </option>
-
-                        <option value="Confirmed"
-                            ${status === "Confirmed" ? "selected" : ""}>
-                            ✅ Confirmed
-                        </option>
-
-                        <option value="Processing"
-                            ${status === "Processing" ? "selected" : ""}>
-                            ⚙️ Processing
-                        </option>
-
-                        <option value="Shipped"
-                            ${status === "Shipped" ? "selected" : ""}>
-                            🚚 Shipped
-                        </option>
-
-                        <option value="Delivered"
-                            ${status === "Delivered" ? "selected" : ""}>
-                            📦 Delivered
-                        </option>
-
-                        <option value="Cancelled"
-                            ${status === "Cancelled" ? "selected" : ""}>
-                            ❌ Cancelled
-                        </option>
-
-                    </select>
-
+                <div class="info-box">
+                    <b>📌 Order Type</b>
+                    <span>${escapeHTML(String(order.orderType || "cart"))}</span>
                 </div>
 
+            </div>
 
-                <div class="actions">
 
-                    <button
-                        class="view-btn"
-                        onclick="viewOrder(${index})">
+            <div class="products">
 
-                        👁️ View
+                <h4>🌾 Ordered Products</h4>
 
-                    </button>
+                ${productsHTML}
 
-                    <button
-                        class="delete-btn"
-                        onclick="deleteOrder(${index})">
+            </div>
 
-                        🗑️ Delete
 
-                    </button>
+            <div class="total-box">
 
-                </div>
+                <span>💰 Total Amount</span>
+
+                <span class="total-amount">
+                    ₹${total.toLocaleString("en-IN")}
+                </span>
+
+            </div>
+
+
+            <div class="status-change">
+
+                <label>📌 Order Status बदलें</label>
+
+                <select onchange="changeStatus('${escapeJS(String(orderId))}',this.value)">
+
+                    <option value="New"
+                        ${status==="New" ? "selected":""}>
+                        🆕 New
+                    </option>
+
+                    <option value="Confirmed"
+                        ${status==="Confirmed" ? "selected":""}>
+                        ✅ Confirmed
+                    </option>
+
+                    <option value="Processing"
+                        ${status==="Processing" ? "selected":""}>
+                        ⚙️ Processing
+                    </option>
+
+                    <option value="Shipped"
+                        ${status==="Shipped" ? "selected":""}>
+                        🚚 Shipped
+                    </option>
+
+                    <option value="Delivered"
+                        ${status==="Delivered" ? "selected":""}>
+                        📦 Delivered
+                    </option>
+
+                    <option value="Cancelled"
+                        ${status==="Cancelled" ? "selected":""}>
+                        ❌ Cancelled
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="actions">
+
+                <button
+                    class="view-btn"
+                    onclick="viewOrder('${escapeJS(String(orderId))}')">
+                    👁️ View
+                </button>
+
+                <button
+                    class="delete-btn"
+                    onclick="deleteOrder('${escapeJS(String(orderId))}')">
+                    🗑️ Delete
+                </button>
 
             </div>
 
         </div>
 
-    `;
+        `;
+
+    }).join("");
 
 }
 
 
-/* =====================================================
+/* =========================================
    CHANGE STATUS
-===================================================== */
+========================================= */
 
-function changeStatus(index,newStatus){
+function changeStatus(orderId,newStatus){
 
-    if(!orders[index]){
+    const index = orders.findIndex(o => {
+
+        const id =
+            o.orderId ||
+            o.id;
+
+        return String(id) === String(orderId);
+
+    });
+
+    if(index === -1){
+
+        alert("Order नहीं मिला।");
         return;
+
     }
 
-    orders[index].status =
-        newStatus;
+    orders[index].status = newStatus;
+
+    /*
+       पुराने orderStatus को भी update
+       कर रहे हैं ताकि दूसरे pages में
+       compatibility बनी रहे।
+    */
+
+    orders[index].orderStatus = newStatus;
 
     saveOrders();
 
-    renderOrders();
+    updateStatistics();
 
-}
-
-
-/* =====================================================
-   DELETE ORDER
-===================================================== */
-
-function deleteOrder(index){
-
-    if(!orders[index]){
-        return;
-    }
-
-    const orderId =
-        getOrderId(
-            orders[index],
-            index
-        );
-
-
-    const confirmDelete =
-        confirm(
-            "क्या आप Order " +
-            orderId +
-            " को Delete करना चाहते हैं?"
-        );
-
-
-    if(!confirmDelete){
-
-        return;
-
-    }
-
-
-    orders.splice(index,1);
-
-    saveOrders();
-
-    renderOrders();
+    displayOrders();
 
     alert(
-        "✅ Order सफलतापूर्वक Delete हो गया।"
+        "Order Status सफलतापूर्वक बदल दिया गया:\n\n" +
+        statusIcon(newStatus) +
+        " " +
+        newStatus
     );
 
 }
 
 
-/* =====================================================
+/* =========================================
    VIEW ORDER
-===================================================== */
+========================================= */
 
-function viewOrder(index){
+function viewOrder(orderId){
 
-    const order =
-        orders[index];
+    const order = orders.find(o=>{
+
+        const id =
+            o.orderId ||
+            o.id;
+
+        return String(id) === String(orderId);
+
+    });
 
     if(!order){
+
+        alert("Order नहीं मिला।");
         return;
+
     }
 
+    const items = getItems(order);
 
-    const orderId =
-        getOrderId(
-            order,
-            index
-        );
+    let products = "";
 
-    const customer =
-        getCustomerName(order);
-
-    const mobile =
-        getMobile(order);
-
-    const address =
-        getAddress(order);
-
-    const payment =
-        getPayment(order);
-
-    const date =
-        getDate(order);
-
-    const status =
-        getOrderStatus(order);
-
-    const total =
-        getOrderTotal(order);
-
-    const products =
-        getProducts(order);
-
-
-    let productsHTML = "";
-
-
-    products.forEach(item => {
+    items.forEach(item=>{
 
         const name =
             item.name ||
-            item.product ||
-            item.title ||
+            item.productName ||
             "Product";
 
         const price =
-            Number(item.price) || 0;
+            Number(
+                item.price ||
+                item.productPrice ||
+                0
+            );
 
-        const quantity =
+        const qty =
             Number(
                 item.quantity ||
                 item.qty ||
                 1
             );
 
-        const subtotal =
-            price * quantity;
-
-
-        productsHTML += `
-
-            <div class="product-item">
-
-                <div class="product-name">
-                    🌾 ${escapeHTML(name)}
-                    × ${quantity}
-                </div>
-
-                <div class="product-details">
-
-                    <span>
-                        ₹${price.toLocaleString("en-IN")}
-                        × ${quantity} Kg
-                    </span>
-
-                    <strong>
-                        ₹${subtotal.toLocaleString("en-IN")}
-                    </strong>
-
-                </div>
-
-            </div>
-
-        `;
+        products +=
+            `${name} × ${qty} = ₹${price * qty}\n`;
 
     });
 
+    alert(
 
-    document.getElementById(
-        "modalBody"
-    ).innerHTML = `
+        "📦 ORDER DETAILS\n\n" +
 
-        <h3 style="color:#166534;">
-            🧾 ${escapeHTML(orderId)}
-        </h3>
+        "Order ID: " +
+        (order.orderId || order.id) +
 
-        <p>
-            <strong>👤 Customer:</strong>
-            ${escapeHTML(customer)}
-        </p>
+        "\nCustomer: " +
+        getCustomer(order) +
 
-        <p>
-            <strong>📱 Mobile:</strong>
-            ${escapeHTML(String(mobile))}
-        </p>
+        "\nMobile: " +
+        getMobile(order) +
 
-        <p>
-            <strong>📍 Address:</strong>
-            ${escapeHTML(String(address))}
-        </p>
+        "\nAddress: " +
+        getAddress(order) +
 
-        <p>
-            <strong>💳 Payment:</strong>
-            ${escapeHTML(String(payment))}
-        </p>
+        "\nPayment: " +
+        getPayment(order) +
 
-        <p>
-            <strong>📅 Date:</strong>
-            ${escapeHTML(String(date))}
-        </p>
+        "\nStatus: " +
+        getStatus(order) +
 
-        <p>
-            <strong>📌 Status:</strong>
-            ${statusIcon(status)}
-            ${escapeHTML(status)}
-        </p>
+        "\n\n🌾 PRODUCTS\n" +
 
-        <hr>
+        products +
 
-        <h3>
-            🌾 Ordered Products
-        </h3>
+        "\n💰 TOTAL: ₹" +
+        getTotal(order).toLocaleString("en-IN")
 
-        ${productsHTML}
-
-        <div class="total-box">
-
-            <div class="total-label">
-                💰 Total Amount
-            </div>
-
-            <div class="total-amount">
-                ₹${total.toLocaleString("en-IN")}
-            </div>
-
-        </div>
-
-    `;
-
-
-    document.getElementById(
-        "viewModal"
-    ).style.display = "block";
+    );
 
 }
 
 
-/* =====================================================
-   CLOSE MODAL
-===================================================== */
+/* =========================================
+   DELETE ORDER
+========================================= */
 
-function closeModal(){
+function deleteOrder(orderId){
 
-    document.getElementById(
-        "viewModal"
-    ).style.display = "none";
+    const order =
+        orders.find(o=>{
 
-}
+            const id =
+                o.orderId ||
+                o.id;
+
+            return String(id) === String(orderId);
+
+        });
 
 
-window.onclick =
-function(event){
+    if(!order){
 
-    const modal =
-        document.getElementById(
-            "viewModal"
-        );
-
-    if(event.target === modal){
-
-        closeModal();
+        alert("Order नहीं मिला।");
+        return;
 
     }
 
-};
+
+    const customer =
+        getCustomer(order);
 
 
-/* =====================================================
-   ESCAPE HTML
-===================================================== */
+    const confirmDelete =
+        confirm(
+
+            "क्या आप यह Order Delete करना चाहते हैं?\n\n" +
+
+            "Order ID: " +
+            orderId +
+
+            "\nCustomer: " +
+            customer +
+
+            "\n\nयह action वापस नहीं किया जा सकता।"
+
+        );
+
+
+    if(!confirmDelete){
+        return;
+    }
+
+
+    orders =
+        orders.filter(o=>{
+
+            const id =
+                o.orderId ||
+                o.id;
+
+            return String(id) !== String(orderId);
+
+        });
+
+
+    saveOrders();
+
+    updateStatistics();
+
+    displayOrders();
+
+}
+
+
+/* =========================================
+   SECURITY HELPERS
+========================================= */
 
 function escapeHTML(value){
 
@@ -1797,11 +1331,24 @@ function escapeHTML(value){
 }
 
 
-/* =====================================================
-   START
-===================================================== */
+function escapeJS(value){
 
-loadOrders();
+    return String(value)
+        .replace(/\\/g,"\\\\")
+        .replace(/'/g,"\\'")
+        .replace(/"/g,'\\"');
+
+}
+
+
+/* =========================================
+   START
+========================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadOrders
+);
 
 </script>
 
