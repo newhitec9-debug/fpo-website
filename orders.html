@@ -2,7 +2,9 @@
 <html lang="hi">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Orders Management | Bundelkhand Organic FPO</title>
@@ -37,7 +39,7 @@ body{
 .logo{
     padding:20px 10px;
     text-align:center;
-    border-bottom:1px solid rgba(255,255,255,.2);
+    border-bottom:1px solid rgba(255,255,255,0.2);
 }
 
 .logo h2{
@@ -87,16 +89,11 @@ body{
 
 .header h1{
     font-size:26px;
+    margin-bottom:5px;
 }
-
-.header p{
-    margin-top:5px;
-}
-
-/* ================= CONTAINER ================= */
 
 .container{
-    max-width:1500px;
+    max-width:1400px;
     margin:auto;
     padding:25px;
 }
@@ -183,15 +180,13 @@ table{
 th{
     background:#2E7D32;
     color:white;
-    padding:12px;
-    border:1px solid #ddd;
+    padding:13px 10px;
     white-space:nowrap;
 }
 
 td{
-    padding:12px;
+    padding:12px 10px;
     border-bottom:1px solid #ddd;
-    border-right:1px solid #eee;
     text-align:center;
     vertical-align:top;
 }
@@ -200,19 +195,19 @@ tr:hover{
     background:#f1f8e9;
 }
 
-/* ================= PRODUCT LIST ================= */
+/* ================= PRODUCTS ================= */
 
-.product-list{
+.products-box{
     text-align:left;
-    min-width:230px;
+    min-width:250px;
 }
 
 .product-row{
     background:#f8fff8;
-    border:1px solid #e0e0e0;
+    border:1px solid #d8ead8;
     border-radius:6px;
     padding:8px;
-    margin-bottom:6px;
+    margin-bottom:7px;
 }
 
 .product-name{
@@ -229,7 +224,16 @@ tr:hover{
 .product-subtotal{
     color:#D84315;
     font-weight:bold;
-    margin-top:3px;
+    font-size:14px;
+}
+
+/* ================= TOTAL ================= */
+
+.order-total{
+    font-size:18px;
+    font-weight:bold;
+    color:#D84315;
+    white-space:nowrap;
 }
 
 /* ================= STATUS ================= */
@@ -240,7 +244,6 @@ tr:hover{
     border:1px solid #ccc;
     font-weight:bold;
     cursor:pointer;
-    min-width:145px;
 }
 
 .status-new{
@@ -307,13 +310,13 @@ tr:hover{
     top:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,.65);
+    background:rgba(0,0,0,0.65);
 }
 
 .modal-content{
     background:white;
     width:92%;
-    max-width:750px;
+    max-width:700px;
     margin:40px auto;
     padding:25px;
     border-radius:10px;
@@ -351,10 +354,11 @@ tr:hover{
 }
 
 .modal-total{
-    font-size:23px;
+    font-size:22px;
     font-weight:bold;
     color:#D84315;
-    margin-top:20px;
+    margin-top:15px;
+    text-align:right;
 }
 
 /* ================= EMPTY ================= */
@@ -378,10 +382,6 @@ tr:hover{
     border-radius:5px;
 }
 
-.back:hover{
-    background:#2E7D32;
-}
-
 /* ================= MOBILE ================= */
 
 @media(max-width:800px){
@@ -399,6 +399,7 @@ tr:hover{
     .menu a{
         display:inline-block;
         margin:3px;
+        padding:10px;
     }
 
     .container{
@@ -406,25 +407,20 @@ tr:hover{
     }
 
     .header{
-        padding:18px 15px;
+        padding:18px;
     }
 
     .header h1{
         font-size:22px;
     }
 
-    .box{
-        padding:15px;
-    }
-
 }
 
 </style>
+
 </head>
 
-
 <body>
-
 
 <!-- ================= ADMIN SECURITY ================= -->
 
@@ -450,7 +446,6 @@ if(localStorage.getItem("user") !== "admin"){
         <p>Admin Control Panel</p>
 
     </div>
-
 
     <div class="menu">
 
@@ -495,7 +490,6 @@ if(localStorage.getItem("user") !== "admin"){
 
 <div class="main">
 
-
     <div class="header">
 
         <h1>🛒 Orders Management</h1>
@@ -514,15 +508,13 @@ if(localStorage.getItem("user") !== "admin"){
 
         <div class="stats">
 
-
             <div class="stat-card">
 
                 <h3>📦 Total Orders</h3>
 
                 <div
                     class="stat-number"
-                    id="totalOrders"
-                >
+                    id="totalOrders">
                     0
                 </div>
 
@@ -535,8 +527,7 @@ if(localStorage.getItem("user") !== "admin"){
 
                 <div
                     class="stat-number stat-new"
-                    id="newOrders"
-                >
+                    id="newOrders">
                     0
                 </div>
 
@@ -549,8 +540,7 @@ if(localStorage.getItem("user") !== "admin"){
 
                 <div
                     class="stat-number stat-confirmed"
-                    id="confirmedOrders"
-                >
+                    id="confirmedOrders">
                     0
                 </div>
 
@@ -563,13 +553,11 @@ if(localStorage.getItem("user") !== "admin"){
 
                 <div
                     class="stat-number stat-sales"
-                    id="totalSales"
-                >
+                    id="totalSales">
                     ₹0
                 </div>
 
             </div>
-
 
         </div>
 
@@ -577,7 +565,6 @@ if(localStorage.getItem("user") !== "admin"){
         <!-- ================= ORDERS ================= -->
 
         <div class="box">
-
 
             <h2>📦 Customer Orders</h2>
 
@@ -623,25 +610,20 @@ if(localStorage.getItem("user") !== "admin"){
                     </thead>
 
 
-                    <tbody id="orderList">
-
-                    </tbody>
+                    <tbody id="orderList"></tbody>
 
                 </table>
 
             </div>
-
 
         </div>
 
 
         <a
             href="admin-dashboard.html"
-            class="back"
-        >
+            class="back">
             ⬅ Back To Dashboard
         </a>
-
 
     </div>
 
@@ -652,22 +634,17 @@ if(localStorage.getItem("user") !== "admin"){
 
 <div
     id="orderModal"
-    class="modal"
->
+    class="modal">
 
     <div class="modal-content">
 
-
         <span
             class="close"
-            onclick="closeModal()"
-        >
+            onclick="closeModal()">
             &times;
         </span>
 
-
         <div id="orderDetails"></div>
-
 
     </div>
 
@@ -676,18 +653,12 @@ if(localStorage.getItem("user") !== "admin"){
 
 <script>
 
-
 /* =====================================================
-   IMPORTANT:
-   NEW CHECKOUT SYSTEM SAVES ORDERS IN fpoOrders
+   LOAD CORRECT ORDERS
+   IMPORTANT: CURRENT CHECKOUT USES fpoOrders
 ===================================================== */
 
 let orders = [];
-
-
-/* =====================================================
-   LOAD ORDERS
-===================================================== */
 
 function loadOrders(){
 
@@ -699,11 +670,10 @@ function loadOrders(){
             ) || [];
 
     }
-
     catch(error){
 
         console.error(
-            "fpoOrders JSON Error:",
+            "Order data error:",
             error
         );
 
@@ -715,19 +685,134 @@ function loadOrders(){
 
 
 /* =====================================================
-   GET PRODUCT ARRAY
+   SAVE ORDERS
+===================================================== */
+
+function saveOrders(){
+
+    localStorage.setItem(
+        "fpoOrders",
+        JSON.stringify(orders)
+    );
+
+}
+
+
+/* =====================================================
+   GET ORDER ID
+===================================================== */
+
+function getOrderId(order){
+
+    return (
+        order.id ||
+        order.orderId ||
+        "N/A"
+    );
+
+}
+
+
+/* =====================================================
+   GET CUSTOMER NAME
+===================================================== */
+
+function getCustomerName(order){
+
+    return (
+        order.customerName ||
+        order.name ||
+        order.customer ||
+        "Customer"
+    );
+
+}
+
+
+/* =====================================================
+   GET MOBILE
+===================================================== */
+
+function getMobile(order){
+
+    return (
+        order.mobile ||
+        order.phone ||
+        order.mobileNumber ||
+        "N/A"
+    );
+
+}
+
+
+/* =====================================================
+   GET ADDRESS
+===================================================== */
+
+function getAddress(order){
+
+    return (
+        order.address ||
+        order.fullAddress ||
+        "N/A"
+    );
+
+}
+
+
+/* =====================================================
+   GET PAYMENT
+===================================================== */
+
+function getPayment(order){
+
+    return (
+        order.paymentMethod ||
+        order.payment ||
+        "Cash on Delivery"
+    );
+
+}
+
+
+/* =====================================================
+   GET DATE
+===================================================== */
+
+function getDate(order){
+
+    if(order.date){
+
+        return order.date;
+
+    }
+
+    if(order.createdAt){
+
+        try{
+
+            return new Date(
+                order.createdAt
+            ).toLocaleString("en-IN");
+
+        }
+        catch(e){}
+
+    }
+
+    return "N/A";
+
+}
+
+
+/* =====================================================
+   GET PRODUCTS
 ===================================================== */
 
 function getProducts(order){
 
-    /*
-       New System:
-       order.products
-    */
-
     if(
-        Array.isArray(order.products)
-        &&
+        Array.isArray(order.products) &&
         order.products.length > 0
     ){
 
@@ -736,14 +821,8 @@ function getProducts(order){
     }
 
 
-    /*
-       Some checkout systems:
-       order.items
-    */
-
     if(
-        Array.isArray(order.items)
-        &&
+        Array.isArray(order.items) &&
         order.items.length > 0
     ){
 
@@ -752,22 +831,14 @@ function getProducts(order){
     }
 
 
-    /*
-       Old single product
-    */
-
     if(order.product){
 
         return [
 
             {
-
                 name:order.product,
-
-                price:Number(order.price)||0,
-
-                quantity:Number(order.quantity)||1
-
+                price:order.price || 0,
+                quantity:order.quantity || 1
             }
 
         ];
@@ -784,16 +855,15 @@ function getProducts(order){
    PRODUCT HTML
 ===================================================== */
 
-function createProductsHTML(order){
+function makeProductsHTML(order){
 
     let products =
         getProducts(order);
 
-
     if(products.length === 0){
 
         return `
-            <div class="product-list">
+            <div class="product-row">
                 ⚠️ Product information unavailable
             </div>
         `;
@@ -801,24 +871,33 @@ function createProductsHTML(order){
     }
 
 
-    let html =
-        `<div class="product-list">`;
+    let html = "";
 
 
-    products.forEach(function(product){
+    products.forEach(function(item){
 
         let name =
-            product.name ||
-            product.productName ||
+            item.name ||
+            item.productName ||
+            item.title ||
             "Product";
 
 
         let price =
-            Number(product.price) || 0;
+            Number(
+                item.price
+            ) || 0;
 
 
         let quantity =
-            Number(product.quantity) || 1;
+            Number(
+                item.quantity
+            ) || 1;
+
+
+        let unit =
+            item.unit ||
+            "Kg";
 
 
         let subtotal =
@@ -836,13 +915,11 @@ function createProductsHTML(order){
 
                 </div>
 
-
                 <div class="product-price">
 
-                    ₹${price} × ${quantity} Kg
+                    ₹${price} × ${quantity} ${unit}
 
                 </div>
-
 
                 <div class="product-subtotal">
 
@@ -857,32 +934,23 @@ function createProductsHTML(order){
     });
 
 
-    html += `</div>`;
-
-
     return html;
 
 }
 
 
 /* =====================================================
-   CALCULATE ORDER TOTAL
+   CALCULATE TOTAL
 ===================================================== */
 
-function calculateOrderTotal(order){
-
-    /*
-       First priority:
-       saved order total
-    */
+function calculateTotal(order){
 
     let savedTotal =
         Number(order.total);
 
 
     if(
-        !isNaN(savedTotal)
-        &&
+        !isNaN(savedTotal) &&
         savedTotal > 0
     ){
 
@@ -891,10 +959,6 @@ function calculateOrderTotal(order){
     }
 
 
-    /*
-       Calculate from products
-    */
-
     let products =
         getProducts(order);
 
@@ -902,14 +966,13 @@ function calculateOrderTotal(order){
     let total = 0;
 
 
-    products.forEach(function(product){
+    products.forEach(function(item){
 
         let price =
-            Number(product.price) || 0;
-
+            Number(item.price) || 0;
 
         let quantity =
-            Number(product.quantity) || 1;
+            Number(item.quantity) || 1;
 
 
         total +=
@@ -929,11 +992,10 @@ function calculateOrderTotal(order){
 
 function displayOrders(){
 
-    loadOrders();
-
-
     let list =
-        document.getElementById("orderList");
+        document.getElementById(
+            "orderList"
+        );
 
 
     list.innerHTML = "";
@@ -947,8 +1009,7 @@ function displayOrders(){
 
                 <td
                     colspan="10"
-                    class="empty"
-                >
+                    class="empty">
 
                     📦 अभी कोई Order प्राप्त नहीं हुआ है।
 
@@ -958,7 +1019,6 @@ function displayOrders(){
 
         `;
 
-
         updateStatistics();
 
         return;
@@ -966,109 +1026,49 @@ function displayOrders(){
     }
 
 
-    /*
-       Latest Order First
-    */
-
     orders.forEach(function(order,index){
 
-        let originalIndex =
-            index;
+        let orderId =
+            getOrderId(order);
 
-
-        /*
-           STATUS
-        */
-
-        let status =
-            order.status || "New";
-
-
-        /*
-           CUSTOMER
-        */
 
         let customer =
-            order.customerName ||
-            order.name ||
-            "Customer";
+            getCustomerName(order);
 
-
-        /*
-           MOBILE
-        */
 
         let mobile =
-            order.mobile ||
-            order.phone ||
-            "N/A";
+            getMobile(order);
 
-
-        /*
-           ORDER ID
-        */
-
-        let orderId =
-            order.orderId ||
-            order.id ||
-            "N/A";
-
-
-        /*
-           PAYMENT
-        */
 
         let payment =
-            order.paymentMethod ||
-            order.payment ||
-            "Cash on Delivery";
+            getPayment(order);
 
-
-        /*
-           DATE
-        */
 
         let date =
-            order.date ||
-            order.createdAt ||
-            "N/A";
+            getDate(order);
 
-
-        /*
-           TOTAL
-        */
 
         let total =
-            calculateOrderTotal(order);
+            calculateTotal(order);
 
 
-        /*
-           STATUS CLASS
-        */
+        let status =
+            order.status ||
+            "New";
+
 
         let statusClass =
             status
-                .toLowerCase()
-                .replace(/\s+/g,"-");
-
-
-        /*
-           PRODUCTS
-        */
-
-        let productsHTML =
-            createProductsHTML(order);
+            .toLowerCase()
+            .replace(/\s+/g,"-");
 
 
         list.innerHTML += `
 
             <tr>
 
-
                 <td>
-
                     ${index + 1}
-
                 </td>
 
 
@@ -1097,22 +1097,20 @@ function displayOrders(){
                 </td>
 
 
-                <td>
+                <td class="products-box">
 
-                    ${productsHTML}
+                    ${makeProductsHTML(order)}
 
                 </td>
 
 
                 <td>
 
-                    <strong
-                        style="color:#D84315;font-size:18px"
-                    >
+                    <span class="order-total">
 
                         ₹${total}
 
-                    </strong>
+                    </span>
 
                 </td>
 
@@ -1126,7 +1124,7 @@ function displayOrders(){
 
                 <td>
 
-                    ${formatDate(date)}
+                    ${escapeHTML(date)}
 
                 </td>
 
@@ -1135,13 +1133,12 @@ function displayOrders(){
 
                     <select
                         class="status status-${statusClass}"
-                        onchange="updateStatus(${originalIndex},this.value)"
+                        onchange="updateStatus(${index},this.value)"
                     >
-
 
                         <option
                             value="New"
-                            ${status === "New" ? "selected" : ""}
+                            ${status==="New" ? "selected" : ""}
                         >
                             🆕 New
                         </option>
@@ -1149,7 +1146,7 @@ function displayOrders(){
 
                         <option
                             value="Confirmed"
-                            ${status === "Confirmed" ? "selected" : ""}
+                            ${status==="Confirmed" ? "selected" : ""}
                         >
                             ✅ Confirmed
                         </option>
@@ -1157,7 +1154,7 @@ function displayOrders(){
 
                         <option
                             value="Processing"
-                            ${status === "Processing" ? "selected" : ""}
+                            ${status==="Processing" ? "selected" : ""}
                         >
                             ⚙️ Processing
                         </option>
@@ -1165,7 +1162,7 @@ function displayOrders(){
 
                         <option
                             value="Shipped"
-                            ${status === "Shipped" ? "selected" : ""}
+                            ${status==="Shipped" ? "selected" : ""}
                         >
                             🚚 Shipped
                         </option>
@@ -1173,7 +1170,7 @@ function displayOrders(){
 
                         <option
                             value="Delivered"
-                            ${status === "Delivered" ? "selected" : ""}
+                            ${status==="Delivered" ? "selected" : ""}
                         >
                             📦 Delivered
                         </option>
@@ -1181,11 +1178,10 @@ function displayOrders(){
 
                         <option
                             value="Cancelled"
-                            ${status === "Cancelled" ? "selected" : ""}
+                            ${status==="Cancelled" ? "selected" : ""}
                         >
                             ❌ Cancelled
                         </option>
-
 
                     </select>
 
@@ -1196,21 +1192,22 @@ function displayOrders(){
 
                     <button
                         class="view-btn"
-                        onclick="viewOrder(${originalIndex})"
-                    >
+                        onclick="viewOrder(${index})">
+
                         👁️ View
+
                     </button>
 
 
                     <button
                         class="delete-btn"
-                        onclick="deleteOrder(${originalIndex})"
-                    >
+                        onclick="deleteOrder(${index})">
+
                         🗑️ Delete
+
                     </button>
 
                 </td>
-
 
             </tr>
 
@@ -1238,7 +1235,8 @@ function updateStatistics(){
         orders.filter(function(order){
 
             return (
-                order.status || "New"
+                order.status ||
+                "New"
             ) === "New";
 
         }).length;
@@ -1248,7 +1246,8 @@ function updateStatistics(){
         orders.filter(function(order){
 
             return (
-                order.status || "New"
+                order.status ||
+                "New"
             ) === "Confirmed";
 
         }).length;
@@ -1260,7 +1259,7 @@ function updateStatistics(){
     orders.forEach(function(order){
 
         sales +=
-            calculateOrderTotal(order);
+            calculateTotal(order);
 
     });
 
@@ -1298,9 +1297,7 @@ function updateStatistics(){
 function updateStatus(index,status){
 
     if(!orders[index]){
-
         return;
-
     }
 
 
@@ -1308,18 +1305,10 @@ function updateStatus(index,status){
         status;
 
 
-    localStorage.setItem(
-        "fpoOrders",
-        JSON.stringify(orders)
-    );
+    saveOrders();
 
 
     displayOrders();
-
-
-    alert(
-        "✅ Order Status Updated: " + status
-    );
 
 }
 
@@ -1331,43 +1320,44 @@ function updateStatus(index,status){
 function deleteOrder(index){
 
     if(!orders[index]){
-
         return;
-
     }
 
 
     let orderId =
-        orders[index].orderId ||
-        orders[index].id ||
-        "this Order";
+        getOrderId(
+            orders[index]
+        );
 
 
-    if(
+    let confirmDelete =
         confirm(
             "⚠️ क्या आप Order " +
             orderId +
             " को Delete करना चाहते हैं?"
-        )
-    ){
-
-        orders.splice(index,1);
-
-
-        localStorage.setItem(
-            "fpoOrders",
-            JSON.stringify(orders)
         );
 
 
-        displayOrders();
-
-
-        alert(
-            "🗑️ Order Successfully Deleted!"
-        );
-
+    if(!confirmDelete){
+        return;
     }
+
+
+    orders.splice(
+        index,
+        1
+    );
+
+
+    saveOrders();
+
+
+    displayOrders();
+
+
+    alert(
+        "🗑️ Order Successfully Deleted!"
+    );
 
 }
 
@@ -1383,46 +1373,32 @@ function viewOrder(index){
 
 
     if(!order){
-
         return;
-
     }
 
 
     let orderId =
-        order.orderId ||
-        order.id ||
-        "N/A";
+        getOrderId(order);
 
 
     let customer =
-        order.customerName ||
-        order.name ||
-        "Customer";
+        getCustomerName(order);
 
 
     let mobile =
-        order.mobile ||
-        order.phone ||
-        "N/A";
+        getMobile(order);
 
 
     let address =
-        order.address ||
-        order.fullAddress ||
-        "N/A";
+        getAddress(order);
 
 
     let payment =
-        order.paymentMethod ||
-        order.payment ||
-        "Cash on Delivery";
+        getPayment(order);
 
 
     let date =
-        order.date ||
-        order.createdAt ||
-        "N/A";
+        getDate(order);
 
 
     let status =
@@ -1431,7 +1407,11 @@ function viewOrder(index){
 
 
     let total =
-        calculateOrderTotal(order);
+        calculateTotal(order);
+
+
+    let products =
+        getProducts(order);
 
 
     let html = `
@@ -1475,7 +1455,7 @@ function viewOrder(index){
 
             <p>
                 <b>Date:</b>
-                ${formatDate(date)}
+                ${escapeHTML(date)}
             </p>
 
 
@@ -1488,14 +1468,10 @@ function viewOrder(index){
 
 
         <h3>
-            🛒 Ordered Products
+            🛒 Products
         </h3>
 
     `;
-
-
-    let products =
-        getProducts(order);
 
 
     if(products.length === 0){
@@ -1511,56 +1487,71 @@ function viewOrder(index){
         `;
 
     }
+    else{
+
+        products.forEach(function(item){
+
+            let name =
+                item.name ||
+                item.productName ||
+                item.title ||
+                "Product";
 
 
-    products.forEach(function(product){
-
-        let name =
-            product.name ||
-            product.productName ||
-            "Product";
+            let price =
+                Number(item.price) || 0;
 
 
-        let price =
-            Number(product.price) || 0;
+            let quantity =
+                Number(item.quantity) || 1;
 
 
-        let quantity =
-            Number(product.quantity) || 1;
+            let unit =
+                item.unit ||
+                "Kg";
 
 
-        let subtotal =
-            price * quantity;
+            let subtotal =
+                price * quantity;
 
 
-        html += `
+            html += `
 
-            <div class="modal-product">
+                <div class="modal-product">
 
-                🌾 <b>
-                    ${escapeHTML(name)}
-                </b>
+                    🌾
+                    <b>
+                        ${escapeHTML(name)}
+                    </b>
 
-                <br><br>
+                    <br><br>
 
-                Quantity:
-                <b>${quantity} Kg</b>
+                    Quantity:
+                    <b>
+                        ${quantity} ${unit}
+                    </b>
 
-                <br>
+                    <br>
 
-                Price:
-                <b>₹${price} / Kg</b>
+                    Price:
+                    <b>
+                        ₹${price}
+                    </b>
 
-                <br>
+                    <br>
 
-                Subtotal:
-                <b>₹${subtotal}</b>
+                    Subtotal:
+                    <b>
+                        ₹${subtotal}
+                    </b>
 
-            </div>
+                </div>
 
-        `;
+            `;
 
-    });
+        });
+
+    }
 
 
     html += `
@@ -1603,10 +1594,6 @@ function closeModal(){
 }
 
 
-/* =====================================================
-   CLICK OUTSIDE MODAL
-===================================================== */
-
 window.onclick =
 function(event){
 
@@ -1626,15 +1613,15 @@ function(event){
 
 
 /* =====================================================
-   SEARCH ORDERS
+   SEARCH
 ===================================================== */
 
 function searchOrders(){
 
     let search =
-        document
-        .getElementById("search")
-        .value
+        document.getElementById(
+            "search"
+        ).value
         .toLowerCase()
         .trim();
 
@@ -1648,15 +1635,17 @@ function searchOrders(){
     rows.forEach(function(row){
 
         let text =
-            row.textContent.toLowerCase();
+            row.textContent
+            .toLowerCase();
 
 
-        if(text.includes(search)){
+        if(
+            text.includes(search)
+        ){
 
             row.style.display = "";
 
         }
-
         else{
 
             row.style.display = "none";
@@ -1669,80 +1658,29 @@ function searchOrders(){
 
 
 /* =====================================================
-   DATE FORMAT
-===================================================== */
-
-function formatDate(value){
-
-    if(!value){
-
-        return "N/A";
-
-    }
-
-
-    /*
-       If already formatted text
-    */
-
-    if(
-        typeof value === "string"
-        &&
-        value.includes("/")
-    ){
-
-        return escapeHTML(value)
-            .replace(",", "<br>");
-
-    }
-
-
-    /*
-       Try Date
-    */
-
-    let d =
-        new Date(value);
-
-
-    if(!isNaN(d.getTime())){
-
-        return d.toLocaleDateString(
-            "en-IN"
-        )
-        +
-        "<br>"
-        +
-        d.toLocaleTimeString(
-            "en-IN",
-            {
-                hour:"2-digit",
-                minute:"2-digit",
-                second:"2-digit"
-            }
-        );
-
-    }
-
-
-    return escapeHTML(
-        String(value)
-    );
-
-}
-
-
-/* =====================================================
    SECURITY / HTML ESCAPE
 ===================================================== */
 
 function escapeHTML(value){
 
+    if(value === null ||
+       value === undefined){
+
+        return "";
+
+    }
+
+
     return String(value)
+
         .replace(/&/g,"&amp;")
+
         .replace(/</g,"&lt;")
+
         .replace(/>/g,"&gt;")
+
         .replace(/"/g,"&quot;")
+
         .replace(/'/g,"&#039;");
 
 }
@@ -1750,14 +1688,18 @@ function escapeHTML(value){
 
 /* =====================================================
    AUTO REFRESH
-   अगर नया order localStorage में आए
+   New checkout orders will appear automatically
 ===================================================== */
 
 window.addEventListener(
     "storage",
     function(event){
 
-        if(event.key === "fpoOrders"){
+        if(
+            event.key === "fpoOrders"
+        ){
+
+            loadOrders();
 
             displayOrders();
 
@@ -1771,9 +1713,12 @@ window.addEventListener(
    START
 ===================================================== */
 
+loadOrders();
+
 displayOrders();
 
 </script>
 
 </body>
+
 </html>
