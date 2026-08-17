@@ -4,493 +4,406 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Customer Orders - FPO</title>
+<title>Customer Orders - FPO Admin</title>
 
 <style>
-
 *{
     box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-    margin:0;
     font-family:Arial, "Noto Sans Devanagari", sans-serif;
     background:linear-gradient(135deg,#e8f5e9,#fff8e1,#e3f2fd);
-    color:#263238;
+    color:#222;
 }
 
 /* HEADER */
-
 .header{
-    background:linear-gradient(135deg,#087f23,#0b5e20);
+    background:linear-gradient(135deg,#087f23,#16a34a,#65a30d);
     color:white;
     padding:25px 15px;
     text-align:center;
-    box-shadow:0 4px 15px rgba(0,0,0,.25);
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
 }
 
 .header h1{
-    margin:0;
     font-size:28px;
+    margin-bottom:6px;
 }
 
-.header h2{
-    margin:8px 0;
-    font-size:20px;
-    font-weight:normal;
+.header p{
+    font-size:17px;
 }
 
-.tagline{
-    font-size:16px;
-    margin-top:10px;
-}
-
-/* NAVIGATION */
-
+/* NAV */
 .nav{
     background:white;
-    padding:15px;
+    padding:14px;
     text-align:center;
-    box-shadow:0 2px 10px rgba(0,0,0,.12);
+    box-shadow:0 3px 12px rgba(0,0,0,.1);
 }
 
 .nav a{
     display:inline-block;
     text-decoration:none;
-    margin:5px;
-    padding:11px 18px;
-    border-radius:25px;
     color:white;
+    padding:10px 18px;
+    margin:4px;
+    border-radius:25px;
     font-weight:bold;
-    transition:.3s;
-}
-
-.nav a:hover{
-    transform:translateY(-2px);
-    opacity:.9;
 }
 
 .dashboard{
-    background:#1976d2;
+    background:#2563eb;
 }
 
 .products{
-    background:#2e7d32;
+    background:#16a34a;
 }
 
 .website{
-    background:#ef6c00;
+    background:#f97316;
 }
 
 /* MAIN */
-
 .container{
     max-width:1250px;
-    margin:25px auto;
-    padding:0 15px;
+    margin:auto;
+    padding:25px 15px;
 }
 
-.page-title{
+.title{
     text-align:center;
-    color:#1b5e20;
+    color:#166534;
+    margin-bottom:8px;
     font-size:30px;
-    margin-bottom:5px;
 }
 
 .subtitle{
     text-align:center;
-    color:#666;
+    color:#555;
     margin-bottom:25px;
 }
 
-/* STAT CARDS */
-
-.stats{
+/* SUMMARY CARDS */
+.summary{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:18px;
     margin-bottom:25px;
 }
 
-.stat{
+.summary-card{
+    color:white;
     padding:22px;
     border-radius:18px;
-    color:white;
     text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.18);
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
-.stat .icon{
+.summary-card .icon{
     font-size:35px;
 }
 
-.stat h3{
-    margin:8px 0;
-    font-size:18px;
+.summary-card h3{
+    margin:7px 0;
 }
 
-.stat strong{
-    font-size:30px;
+.summary-card strong{
+    font-size:28px;
 }
 
-.blue{
-    background:linear-gradient(135deg,#1976d2,#42a5f5);
+.total{
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
 }
 
-.orange{
-    background:linear-gradient(135deg,#ef6c00,#ffb300);
+.new{
+    background:linear-gradient(135deg,#f59e0b,#f97316);
 }
 
-.green{
-    background:linear-gradient(135deg,#2e7d32,#66bb6a);
+.confirmed{
+    background:linear-gradient(135deg,#16a34a,#22c55e);
 }
 
-.purple{
-    background:linear-gradient(135deg,#6a1b9a,#ab47bc);
+.sales{
+    background:linear-gradient(135deg,#7c3aed,#db2777);
 }
 
 /* FILTER */
-
 .filter-box{
     background:white;
     padding:18px;
     border-radius:15px;
-    box-shadow:0 3px 12px rgba(0,0,0,.12);
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
     margin-bottom:25px;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    flex-wrap:wrap;
 }
 
 .filter-box label{
     font-weight:bold;
 }
 
-#statusFilter{
+select{
     padding:11px 15px;
-    border:2px solid #2e7d32;
+    border:2px solid #16a34a;
     border-radius:10px;
+    margin:8px;
     font-size:15px;
-    min-width:220px;
+    background:white;
 }
 
 .refresh{
-    padding:11px 18px;
-    border:0;
-    border-radius:10px;
-    background:#1565c0;
+    background:#2563eb;
     color:white;
-    font-weight:bold;
+    border:none;
+    padding:11px 18px;
+    border-radius:10px;
     cursor:pointer;
+    font-weight:bold;
 }
 
-/* ORDERS */
+.refresh:hover{
+    background:#1d4ed8;
+}
 
+/* ORDER LIST */
 .list-title{
-    color:#1b5e20;
+    color:#166534;
     margin-bottom:15px;
 }
 
-.orders{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:22px;
-}
-
 /* ORDER CARD */
-
 .order-card{
     background:white;
     border-radius:20px;
+    margin-bottom:25px;
     overflow:hidden;
-    box-shadow:0 6px 20px rgba(0,0,0,.15);
-    border:1px solid #ddd;
-    transition:.3s;
+    box-shadow:0 8px 25px rgba(0,0,0,.13);
+    border-left:7px solid #16a34a;
 }
 
-.order-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
-}
-
-/* CARD HEADER */
-
-.order-header{
+.order-head{
     padding:18px;
     color:white;
-    background:linear-gradient(135deg,#00695c,#26a69a);
     display:flex;
     justify-content:space-between;
     align-items:center;
+    flex-wrap:wrap;
     gap:10px;
 }
 
+.confirmed-head{
+    background:linear-gradient(135deg,#15803d,#22c55e);
+}
+
+.processing-head{
+    background:linear-gradient(135deg,#d97706,#f59e0b);
+}
+
+.delivered-head{
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+}
+
 .order-id{
-    font-size:20px;
+    font-size:21px;
     font-weight:bold;
 }
 
-.status{
-    padding:7px 12px;
-    border-radius:20px;
+.status-badge{
     background:white;
+    color:#222;
+    padding:8px 14px;
+    border-radius:20px;
     font-weight:bold;
-    font-size:13px;
 }
 
-/* STATUS COLORS */
-
-.status-new{
-    color:#1565c0;
-}
-
-.status-confirmed{
-    color:#2e7d32;
-}
-
-.status-processing{
-    color:#ef6c00;
-}
-
-.status-shipped{
-    color:#6a1b9a;
-}
-
-.status-delivered{
-    color:#00838f;
-}
-
-.status-cancelled{
-    color:#c62828;
-}
-
-/* CUSTOMER */
-
+/* CUSTOMER INFO */
 .customer{
     padding:18px;
-    background:#f8fff8;
-}
-
-.customer-name{
-    font-size:20px;
-    font-weight:bold;
-    color:#1b5e20;
-    margin-bottom:12px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    background:#f8fafc;
 }
 
 .info{
-    margin:7px 0;
-    line-height:1.5;
+    padding:10px;
+    border-radius:10px;
+    background:white;
+    border:1px solid #e5e7eb;
+}
+
+.info b{
+    color:#166534;
 }
 
 /* PRODUCTS */
-
-.product-section{
+.products-box{
     padding:18px;
 }
 
-.product-title{
-    font-size:18px;
-    font-weight:bold;
-    color:#e65100;
+.products-box h3{
+    color:#166534;
     margin-bottom:12px;
 }
 
 .product{
-    background:#fff8e1;
-    border-left:5px solid #ff9800;
-    padding:12px;
-    margin:9px 0;
-    border-radius:10px;
+    background:linear-gradient(90deg,#f0fdf4,#fff);
+    border:1px solid #bbf7d0;
+    border-radius:12px;
+    padding:14px;
+    margin-bottom:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .product-name{
     font-weight:bold;
-    color:#5d4037;
+    color:#166534;
 }
 
 .product-price{
-    margin-top:5px;
-    color:#555;
+    font-weight:bold;
 }
 
 .subtotal{
-    text-align:right;
-    font-weight:bold;
-    color:#e65100;
+    color:#555;
+    font-size:14px;
 }
 
 /* TOTAL */
-
 .total-box{
-    margin:0 18px 18px;
-    padding:15px;
-    border-radius:12px;
-    background:linear-gradient(135deg,#e8f5e9,#c8e6c9);
+    padding:18px;
+    background:#fff7ed;
+    border-top:2px dashed #fb923c;
     display:flex;
     justify-content:space-between;
-    font-size:20px;
+    align-items:center;
+}
+
+.total-amount{
+    font-size:25px;
+    color:#c2410c;
     font-weight:bold;
-    color:#1b5e20;
-}
-
-/* STATUS CHANGE */
-
-.status-change{
-    padding:18px;
-    background:#f5f5f5;
-    border-top:1px solid #ddd;
-}
-
-.status-change label{
-    font-weight:bold;
-    display:block;
-    margin-bottom:8px;
-}
-
-.order-status{
-    width:100%;
-    padding:11px;
-    border:2px solid #1976d2;
-    border-radius:10px;
-    font-size:15px;
-    background:white;
 }
 
 /* ACTIONS */
-
 .actions{
-    padding:15px 18px 20px;
+    padding:15px 18px;
     display:flex;
+    flex-wrap:wrap;
     gap:10px;
+    background:#f8fafc;
 }
 
-.view-btn,
-.delete-btn{
-    flex:1;
-    border:0;
-    padding:12px;
-    border-radius:10px;
-    font-weight:bold;
+.actions button{
+    border:none;
+    padding:10px 16px;
+    border-radius:9px;
     cursor:pointer;
+    color:white;
+    font-weight:bold;
 }
 
-.view-btn{
-    background:#1976d2;
-    color:white;
+.view{
+    background:#2563eb;
 }
 
-.delete-btn{
-    background:#d32f2f;
-    color:white;
+.delete{
+    background:#dc2626;
+}
+
+.actions button:hover{
+    opacity:.85;
+}
+
+/* STATUS CHANGE */
+.status-change{
+    padding:15px 18px;
+    background:#ecfdf5;
+    border-top:1px solid #bbf7d0;
+}
+
+.status-change select{
+    margin:8px 0 0 0;
 }
 
 /* FOOTER */
-
 .footer{
-    margin-top:40px;
-    background:#1b5e20;
+    margin-top:35px;
+    padding:25px;
+    text-align:center;
+    background:#166534;
     color:white;
-    text-align:center;
-    padding:25px 15px;
 }
 
-.footer h3{
-    margin:0 0 8px;
-}
-
-/* EMPTY */
-
-.empty{
-    background:white;
-    padding:40px;
-    text-align:center;
-    border-radius:15px;
-    box-shadow:0 3px 12px rgba(0,0,0,.1);
+.footer strong{
+    font-size:18px;
 }
 
 /* MOBILE */
+@media(max-width:800px){
 
-@media(max-width:900px){
-
-    .stats{
+    .summary{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .orders{
+    .customer{
         grid-template-columns:1fr;
+    }
+
+    .order-head{
+        flex-direction:column;
+        align-items:flex-start;
     }
 }
 
-@media(max-width:600px){
+@media(max-width:500px){
+
+    .summary{
+        grid-template-columns:1fr;
+    }
 
     .header h1{
         font-size:22px;
     }
 
-    .header h2{
-        font-size:17px;
-    }
-
-    .stats{
-        grid-template-columns:1fr 1fr;
-        gap:10px;
-    }
-
-    .stat{
-        padding:15px 8px;
-    }
-
-    .stat strong{
+    .title{
         font-size:24px;
     }
 
-    .filter-box{
+    .product{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:7px;
+    }
+
+    .total-box{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+    }
+
+    .nav a{
         display:block;
     }
-
-    #statusFilter,
-    .refresh{
-        width:100%;
-        margin-top:8px;
-    }
-
-    .order-header{
-        display:block;
-    }
-
-    .status{
-        display:inline-block;
-        margin-top:10px;
-    }
-
 }
-
 </style>
 </head>
 
 <body>
 
 <!-- HEADER -->
-
 <div class="header">
-
     <h1>🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड</h1>
-
-    <h2>Bundelkhand Organic Farmer Producer Company Limited</h2>
-
-    <div class="tagline">
-        🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
-    </div>
-
+    <p>Bundelkhand Organic Farmer Producer Company Limited</p>
+    <p>🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य</p>
 </div>
 
-
 <!-- NAVIGATION -->
-
 <div class="nav">
-
     <a class="dashboard"
        href="admin-dashboard.html">
        🏠 Admin Dashboard
@@ -505,792 +418,603 @@ body{
        href="products.html">
        🛒 View Website
     </a>
-
 </div>
-
-
-<!-- MAIN -->
 
 <div class="container">
 
-    <h1 class="page-title">
-        📦 Customer Orders
-    </h1>
+<h1 class="title">📦 Customer Orders</h1>
 
-    <div class="subtitle">
-        सभी Customer Orders यहां दिखाई देंगे।
+<p class="subtitle">
+    सभी Customer Orders यहां दिखाई देंगे।
+</p>
+
+<!-- SUMMARY -->
+<div class="summary">
+
+    <div class="summary-card total">
+        <div class="icon">📦</div>
+        <h3>Total Orders</h3>
+        <strong id="totalOrders">3</strong>
     </div>
 
+    <div class="summary-card new">
+        <div class="icon">🆕</div>
+        <h3>New Orders</h3>
+        <strong id="newOrders">0</strong>
+    </div>
 
-    <!-- STATISTICS -->
+    <div class="summary-card confirmed">
+        <div class="icon">✅</div>
+        <h3>Confirmed</h3>
+        <strong id="confirmedOrders">1</strong>
+    </div>
 
-    <div class="stats">
+    <div class="summary-card sales">
+        <div class="icon">💰</div>
+        <h3>Total Sales</h3>
+        <strong id="totalSales">₹8,440</strong>
+    </div>
 
-        <div class="stat blue">
-            <div class="icon">📦</div>
-            <h3>Total Orders</h3>
-            <strong id="totalOrders">0</strong>
+</div>
+
+<!-- FILTER -->
+<div class="filter-box">
+
+    <label>🔎 Filter Status:</label>
+
+    <select id="statusFilter" onchange="filterOrders()">
+        <option value="all">सभी Status</option>
+        <option value="New">🆕 New</option>
+        <option value="Confirmed">✅ Confirmed</option>
+        <option value="Processing">⚙️ Processing</option>
+        <option value="Shipped">🚚 Shipped</option>
+        <option value="Delivered">📦 Delivered</option>
+        <option value="Cancelled">❌ Cancelled</option>
+    </select>
+
+    <button class="refresh" onclick="location.reload()">
+        🔄 Refresh Orders
+    </button>
+
+</div>
+
+<h2 class="list-title">📋 Customer Order List</h2>
+
+<!-- ORDER 1 -->
+<div class="order-card" data-status="Confirmed">
+
+    <div class="order-head confirmed-head">
+
+        <div>
+            <div class="order-id">🧾 FPO49387924</div>
+            <div>👤 Ragani yadav</div>
         </div>
 
-        <div class="stat orange">
-            <div class="icon">🆕</div>
-            <h3>New Orders</h3>
-            <strong id="newOrders">0</strong>
-        </div>
-
-        <div class="stat green">
-            <div class="icon">✅</div>
-            <h3>Confirmed</h3>
-            <strong id="confirmedOrders">0</strong>
-        </div>
-
-        <div class="stat purple">
-            <div class="icon">💰</div>
-            <h3>Total Sales</h3>
-            <strong id="totalSales">₹0</strong>
+        <div class="status-badge">
+            ✅ Confirmed
         </div>
 
     </div>
 
+    <div class="customer">
 
-    <!-- FILTER -->
+        <div class="info">
+            📅 <b>Date:</b><br>
+            9/8/2026, 9:53:07 am
+        </div>
 
-    <div class="filter-box">
+        <div class="info">
+            📱 <b>Mobile:</b><br>
+            9876567876
+        </div>
 
-        <label for="statusFilter">
-            🔎 Filter Status:
-        </label>
+        <div class="info">
+            📍 <b>Address:</b><br>
+            village post pawa
+        </div>
 
-        <select id="statusFilter" onchange="displayOrders()">
+        <div class="info">
+            💳 <b>Payment:</b><br>
+            Cash on Delivery
+        </div>
 
-            <option value="all">
-                सभी Status
-            </option>
+        <div class="info">
+            📌 <b>Order Type:</b><br>
+            cart
+        </div>
 
-            <option value="New">
-                🆕 New
-            </option>
+    </div>
 
-            <option value="Confirmed">
-                ✅ Confirmed
-            </option>
+    <div class="products-box">
 
-            <option value="Processing">
-                ⚙️ Processing
-            </option>
+        <h3>🌾 Ordered Products</h3>
 
-            <option value="Shipped">
-                🚚 Shipped
-            </option>
+        <div class="product">
+            <div>
+                <div class="product-name">
+                    🌾 groun nut × 1
+                </div>
+                <div class="subtotal">
+                    ₹2,800 × 1 Kg
+                </div>
+            </div>
 
-            <option value="Delivered">
-                📦 Delivered
-            </option>
+            <div class="product-price">
+                ₹2,800
+            </div>
+        </div>
 
-            <option value="Cancelled">
-                ❌ Cancelled
-            </option>
+        <div class="product">
+            <div>
+                <div class="product-name">
+                    🌾 sarso × 1
+                </div>
+                <div class="subtotal">
+                    ₹2,800 × 1 Kg
+                </div>
+            </div>
+
+            <div class="product-price">
+                ₹2,800
+            </div>
+        </div>
+
+    </div>
+
+    <div class="total-box">
+
+        <div>
+            💰 <b>Total Amount</b>
+        </div>
+
+        <div class="total-amount">
+            ₹5,600
+        </div>
+
+    </div>
+
+    <div class="status-change">
+
+        <b>📌 Order Status बदलें</b>
+
+        <br>
+
+        <select onchange="changeStatus(this,'FPO49387924')">
+
+            <option>🆕 New</option>
+            <option selected>✅ Confirmed</option>
+            <option>⚙️ Processing</option>
+            <option>🚚 Shipped</option>
+            <option>📦 Delivered</option>
+            <option>❌ Cancelled</option>
 
         </select>
 
-        <button class="refresh" onclick="loadOrders()">
-            🔄 Refresh Orders
+    </div>
+
+    <div class="actions">
+
+        <button class="view"
+        onclick="viewOrder('FPO49387924')">
+            👁️ View
+        </button>
+
+        <button class="delete"
+        onclick="deleteOrder('FPO49387924',this)">
+            🗑️ Delete
         </button>
 
     </div>
 
+</div>
 
-    <h2 class="list-title">
-        📋 Customer Order List
-    </h2>
 
-    <div id="ordersContainer" class="orders"></div>
+<!-- ORDER 2 -->
+<div class="order-card" data-status="Processing">
+
+    <div class="order-head processing-head">
+
+        <div>
+            <div class="order-id">🧾 FPO81204868</div>
+            <div>👤 raja singh</div>
+        </div>
+
+        <div class="status-badge">
+            ⚙️ Processing
+        </div>
+
+    </div>
+
+    <div class="customer">
+
+        <div class="info">
+            📅 <b>Date:</b><br>
+            9/8/2026, 6:43:24 pm
+        </div>
+
+        <div class="info">
+            📱 <b>Mobile:</b><br>
+            9450852050
+        </div>
+
+        <div class="info">
+            📍 <b>Address:</b><br>
+            village post srinagar
+        </div>
+
+        <div class="info">
+            💳 <b>Payment:</b><br>
+            UPI
+        </div>
+
+        <div class="info">
+            📌 <b>Order Type:</b><br>
+            cart
+        </div>
+
+    </div>
+
+    <div class="products-box">
+
+        <h3>🌾 Ordered Products</h3>
+
+        <div class="product">
+
+            <div>
+                <div class="product-name">
+                    🌾 sarso × 1
+                </div>
+
+                <div class="subtotal">
+                    ₹2,800 × 1 Kg
+                </div>
+            </div>
+
+            <div class="product-price">
+                ₹2,800
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="total-box">
+
+        <div>
+            💰 <b>Total Amount</b>
+        </div>
+
+        <div class="total-amount">
+            ₹2,800
+        </div>
+
+    </div>
+
+    <div class="status-change">
+
+        <b>📌 Order Status बदलें</b>
+
+        <br>
+
+        <select onchange="changeStatus(this,'FPO81204868')">
+
+            <option>🆕 New</option>
+            <option>✅ Confirmed</option>
+            <option selected>⚙️ Processing</option>
+            <option>🚚 Shipped</option>
+            <option>📦 Delivered</option>
+            <option>❌ Cancelled</option>
+
+        </select>
+
+    </div>
+
+    <div class="actions">
+
+        <button class="view"
+        onclick="viewOrder('FPO81204868')">
+            👁️ View
+        </button>
+
+        <button class="delete"
+        onclick="deleteOrder('FPO81204868',this)">
+            🗑️ Delete
+        </button>
+
+    </div>
 
 </div>
 
 
-<!-- FOOTER -->
+<!-- ORDER 3 -->
+<div class="order-card" data-status="Delivered">
 
+    <div class="order-head delivered-head">
+
+        <div>
+
+            <div class="order-id">
+                🧾 FPO78252027
+            </div>
+
+            <div>
+                👤 Ishant
+            </div>
+
+        </div>
+
+        <div class="status-badge">
+            📦 Delivered
+        </div>
+
+    </div>
+
+    <div class="customer">
+
+        <div class="info">
+            📅 <b>Date:</b><br>
+            16/8/2026, 4:34:12 pm
+        </div>
+
+        <div class="info">
+            📱 <b>Mobile:</b><br>
+            9621406934
+        </div>
+
+        <div class="info">
+            📍 <b>Address:</b><br>
+            charkhari mahoba up
+        </div>
+
+        <div class="info">
+            💳 <b>Payment:</b><br>
+            Cash on Delivery
+        </div>
+
+        <div class="info">
+            📌 <b>Order Type:</b><br>
+            cart
+        </div>
+
+    </div>
+
+    <div class="products-box">
+
+        <h3>🌾 Ordered Products</h3>
+
+        <div class="product">
+
+            <div>
+
+                <div class="product-name">
+                    🌾 गेहूँ × 1
+                </div>
+
+                <div class="subtotal">
+                    ₹40 × 1 Kg
+                </div>
+
+            </div>
+
+            <div class="product-price">
+                ₹40
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="total-box">
+
+        <div>
+            💰 <b>Total Amount</b>
+        </div>
+
+        <div class="total-amount">
+            ₹40
+        </div>
+
+    </div>
+
+    <div class="status-change">
+
+        <b>📌 Order Status बदलें</b>
+
+        <br>
+
+        <select onchange="changeStatus(this,'FPO78252027')">
+
+            <option>🆕 New</option>
+            <option>✅ Confirmed</option>
+            <option>⚙️ Processing</option>
+            <option>🚚 Shipped</option>
+            <option selected>📦 Delivered</option>
+            <option>❌ Cancelled</option>
+
+        </select>
+
+    </div>
+
+    <div class="actions">
+
+        <button class="view"
+        onclick="viewOrder('FPO78252027')">
+            👁️ View
+        </button>
+
+        <button class="delete"
+        onclick="deleteOrder('FPO78252027',this)">
+            🗑️ Delete
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
 <div class="footer">
 
-    <h3>
+    <strong>
         🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-    </h3>
+    </strong>
 
-    <div>
-        Bundelkhand Organic Farmer Producer Company Limited
-    </div>
+    <br><br>
 
-    <p>
-        Empowering Farmers • Promoting Organic Agriculture
-    </p>
+    Bundelkhand Organic Farmer Producer Company Limited
 
-    <div>
-        © 2026 All Rights Reserved
-    </div>
+    <br>
+
+    Empowering Farmers • Promoting Organic Agriculture
+
+    <br><br>
+
+    © 2026 All Rights Reserved
 
 </div>
 
 
 <script>
 
-/* ==============================
-   LOAD ORDERS
-============================== */
+/* STATUS FILTER */
 
-function loadOrders(){
+function filterOrders(){
 
-    let orders = JSON.parse(
-        localStorage.getItem("orders") || "[]"
-    );
+    const filter =
+        document.getElementById("statusFilter").value;
 
-    /*
-      अगर आपके checkout में orders की जगह
-      customerOrders save होता है तो उसे भी पढ़ेंगे
-    */
-
-    if(orders.length === 0){
-
-        orders = JSON.parse(
-            localStorage.getItem("customerOrders") || "[]"
-        );
-
-    }
-
-    localStorage.setItem(
-        "orders",
-        JSON.stringify(orders)
-    );
-
-    updateStats(orders);
-
-    displayOrders();
-
-}
-
-
-/* ==============================
-   STATISTICS
-============================== */
-
-function updateStats(orders){
-
-    let newCount = orders.filter(
-        o => normalizeStatus(o.status) === "New"
-    ).length;
-
-    let confirmedCount = orders.filter(
-        o => normalizeStatus(o.status) === "Confirmed"
-    ).length;
-
-    let sales = 0;
+    const orders =
+        document.querySelectorAll(".order-card");
 
     orders.forEach(order => {
 
-        let status = normalizeStatus(order.status);
+        if(filter === "all" ||
+           order.dataset.status === filter){
 
-        /*
-          Cancelled orders को sales में शामिल नहीं करेंगे
-        */
+            order.style.display = "block";
 
-        if(status !== "Cancelled"){
+        }else{
 
-            sales += Number(
-                order.total ||
-                order.totalAmount ||
-                order.amount ||
-                0
-            );
+            order.style.display = "none";
 
         }
 
     });
 
-    document.getElementById("totalOrders").innerText =
-        orders.length;
-
-    document.getElementById("newOrders").innerText =
-        newCount;
-
-    document.getElementById("confirmedOrders").innerText =
-        confirmedCount;
-
-    document.getElementById("totalSales").innerText =
-        "₹" + sales.toLocaleString("en-IN");
-
 }
 
 
-/* ==============================
-   STATUS NORMALIZE
-============================== */
+/* CHANGE STATUS */
 
-function normalizeStatus(status){
+function changeStatus(select, orderId){
 
-    if(!status){
-        return "New";
-    }
+    let value = select.value;
 
-    status = String(status).trim();
+    let status = value
+        .replace("🆕 ","")
+        .replace("✅ ","")
+        .replace("⚙️ ","")
+        .replace("🚚 ","")
+        .replace("📦 ","")
+        .replace("❌ ","");
 
-    if(status === "new") return "New";
-    if(status === "NEW") return "New";
+    const order =
+        select.closest(".order-card");
 
-    if(status === "confirmed") return "Confirmed";
-    if(status === "CONFIRMED") return "Confirmed";
+    order.dataset.status = status;
 
-    if(status === "processing") return "Processing";
-    if(status === "PROCESSING") return "Processing";
+    const badge =
+        order.querySelector(".status-badge");
 
-    if(status === "shipped") return "Shipped";
-    if(status === "SHIPPED") return "Shipped";
-
-    if(status === "delivered") return "Delivered";
-    if(status === "DELIVERED") return "Delivered";
-
-    if(status === "cancelled") return "Cancelled";
-    if(status === "CANCELLED") return "Cancelled";
-
-    return status;
-
-}
-
-
-/* ==============================
-   STATUS ICON
-============================== */
-
-function statusIcon(status){
-
-    if(status === "New") return "🆕";
-    if(status === "Confirmed") return "✅";
-    if(status === "Processing") return "⚙️";
-    if(status === "Shipped") return "🚚";
-    if(status === "Delivered") return "📦";
-    if(status === "Cancelled") return "❌";
-
-    return "📌";
-
-}
-
-
-/* ==============================
-   STATUS CLASS
-============================== */
-
-function statusClass(status){
-
-    return "status-" +
-        status.toLowerCase();
-
-}
-
-
-/* ==============================
-   DISPLAY ORDERS
-============================== */
-
-function displayOrders(){
-
-    let orders = JSON.parse(
-        localStorage.getItem("orders") || "[]"
-    );
-
-    let filter =
-        document.getElementById("statusFilter").value;
-
-    if(filter !== "all"){
-
-        orders = orders.filter(
-            order =>
-            normalizeStatus(order.status) === filter
-        );
-
-    }
-
-    let container =
-        document.getElementById("ordersContainer");
-
-    container.innerHTML = "";
-
-
-    if(orders.length === 0){
-
-        container.innerHTML = `
-            <div class="empty">
-                <div style="font-size:50px;">📦</div>
-                <h2>कोई Order नहीं मिला</h2>
-                <p>इस Status में कोई Customer Order उपलब्ध नहीं है।</p>
-            </div>
-        `;
-
-        return;
-
-    }
-
-
-    orders.forEach((order,index)=>{
-
-        let status =
-            normalizeStatus(order.status);
-
-        let orderId =
-            order.orderId ||
-            order.id ||
-            "FPO" + Math.floor(
-                10000000 + Math.random()*90000000
-            );
-
-        let customer =
-            order.customerName ||
-            order.name ||
-            order.customer ||
-            "Customer";
-
-        let mobile =
-            order.mobile ||
-            order.phone ||
-            order.mobileNumber ||
-            "";
-
-        let address =
-            order.address ||
-            order.location ||
-            "";
-
-        let payment =
-            order.paymentMethod ||
-            order.payment ||
-            "Cash on Delivery";
-
-        let date =
-            order.date ||
-            order.createdAt ||
-            new Date().toLocaleString("en-IN");
-
-
-        let products =
-            order.products ||
-            order.items ||
-            order.cart ||
-            [];
-
-
-        let total =
-            Number(
-                order.total ||
-                order.totalAmount ||
-                order.amount ||
-                0
-            );
-
-
-        /*
-          Product HTML
-        */
-
-        let productsHTML = "";
-
-
-        if(Array.isArray(products)){
-
-            products.forEach(product => {
-
-                let name =
-                    product.name ||
-                    product.productName ||
-                    "Product";
-
-                let price =
-                    Number(
-                        product.price ||
-                        product.amount ||
-                        0
-                    );
-
-                let quantity =
-                    Number(
-                        product.quantity ||
-                        product.qty ||
-                        1
-                    );
-
-                let subtotal =
-                    price * quantity;
-
-                productsHTML += `
-
-                    <div class="product">
-
-                        <div class="product-name">
-                            🌾 ${name} × ${quantity}
-                        </div>
-
-                        <div class="product-price">
-                            ₹${price.toLocaleString("en-IN")}
-                            × ${quantity} Kg
-                        </div>
-
-                        <div class="subtotal">
-                            Subtotal:
-                            ₹${subtotal.toLocaleString("en-IN")}
-                        </div>
-
-                    </div>
-
-                `;
-
-            });
-
-        }
-
-
-        let card = document.createElement("div");
-
-        card.className = "order-card";
-
-        card.innerHTML = `
-
-            <!-- ORDER HEADER -->
-
-            <div class="order-header">
-
-                <div class="order-id">
-                    🧾 ${orderId}
-                </div>
-
-                <div class="status ${statusClass(status)}">
-                    ${statusIcon(status)}
-                    ${status}
-                </div>
-
-            </div>
-
-
-            <!-- CUSTOMER -->
-
-            <div class="customer">
-
-                <div class="customer-name">
-                    👤 ${customer}
-                </div>
-
-                <div class="info">
-                    📅 <b>Date:</b> ${date}
-                </div>
-
-                <div class="info">
-                    📱 <b>Mobile:</b> ${mobile}
-                </div>
-
-                <div class="info">
-                    📍 <b>Address:</b> ${address}
-                </div>
-
-                <div class="info">
-                    💳 <b>Payment:</b> ${payment}
-                </div>
-
-                <div class="info">
-                    📌 <b>Order Type:</b>
-                    ${order.orderType || "cart"}
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCTS -->
-
-            <div class="product-section">
-
-                <div class="product-title">
-                    🌾 Ordered Products
-                </div>
-
-                ${productsHTML}
-
-            </div>
-
-
-            <!-- TOTAL -->
-
-            <div class="total-box">
-
-                <span>💰 Total Amount</span>
-
-                <span>
-                    ₹${total.toLocaleString("en-IN")}
-                </span>
-
-            </div>
-
-
-            <!-- STATUS CHANGE -->
-
-            <div class="status-change">
-
-                <label>
-                    📌 Order Status बदलें
-                </label>
-
-                <select
-                    class="order-status"
-                    onchange="changeStatus(${index}, this.value)"
-                >
-
-                    <option value="New"
-                        ${status==="New" ? "selected":""}>
-                        🆕 New
-                    </option>
-
-                    <option value="Confirmed"
-                        ${status==="Confirmed" ? "selected":""}>
-                        ✅ Confirmed
-                    </option>
-
-                    <option value="Processing"
-                        ${status==="Processing" ? "selected":""}>
-                        ⚙️ Processing
-                    </option>
-
-                    <option value="Shipped"
-                        ${status==="Shipped" ? "selected":""}>
-                        🚚 Shipped
-                    </option>
-
-                    <option value="Delivered"
-                        ${status==="Delivered" ? "selected":""}>
-                        📦 Delivered
-                    </option>
-
-                    <option value="Cancelled"
-                        ${status==="Cancelled" ? "selected":""}>
-                        ❌ Cancelled
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <!-- ACTIONS -->
-
-            <div class="actions">
-
-                <button
-                    class="view-btn"
-                    onclick="viewOrder('${orderId}')">
-
-                    👁️ View
-
-                </button>
-
-                <button
-                    class="delete-btn"
-                    onclick="deleteOrder(${index})">
-
-                    🗑️ Delete
-
-                </button>
-
-            </div>
-
-        `;
-
-
-        container.appendChild(card);
-
-    });
-
-}
-
-
-/* ==============================
-   CHANGE STATUS
-============================== */
-
-function changeStatus(index,newStatus){
-
-    let orders = JSON.parse(
-        localStorage.getItem("orders") || "[]"
-    );
-
-    if(!orders[index]){
-        return;
-    }
-
-    orders[index].status = newStatus;
-
-    localStorage.setItem(
-        "orders",
-        JSON.stringify(orders)
-    );
-
-    updateStats(orders);
-
-    displayOrders();
+    badge.textContent = value;
 
     alert(
-        "✅ Order Status सफलतापूर्वक बदल दिया गया: " +
-        newStatus
+        "Order " +
+        orderId +
+        " का Status बदलकर " +
+        status +
+        " कर दिया गया है।"
     );
 
 }
 
 
-/* ==============================
-   DELETE ORDER
-============================== */
+/* VIEW ORDER */
 
-function deleteOrder(index){
+function viewOrder(orderId){
 
-    let orders = JSON.parse(
-        localStorage.getItem("orders") || "[]"
+    alert(
+        "📦 Order Details\n\n" +
+        "Order ID: " + orderId
     );
 
-    if(!orders[index]){
-        return;
-    }
-
-    let orderId =
-        orders[index].orderId ||
-        orders[index].id ||
-        "Order";
+}
 
 
-    let confirmDelete =
+/* DELETE ORDER */
+
+function deleteOrder(orderId, button){
+
+    const confirmDelete =
         confirm(
-            "क्या आप " +
+            "क्या आप Order " +
             orderId +
             " को Delete करना चाहते हैं?"
         );
 
+    if(confirmDelete){
 
-    if(!confirmDelete){
-        return;
+        const order =
+            button.closest(".order-card");
+
+        order.remove();
+
+        updateSummary();
+
+        alert(
+            "Order " +
+            orderId +
+            " Delete कर दिया गया है।"
+        );
+
     }
-
-
-    orders.splice(index,1);
-
-    localStorage.setItem(
-        "orders",
-        JSON.stringify(orders)
-    );
-
-    updateStats(orders);
-
-    displayOrders();
 
 }
 
 
-/* ==============================
-   VIEW ORDER
-============================== */
+/* UPDATE SUMMARY */
 
-function viewOrder(orderId){
+function updateSummary(){
 
-    let orders = JSON.parse(
-        localStorage.getItem("orders") || "[]"
-    );
+    const orders =
+        document.querySelectorAll(".order-card");
 
-    let order = orders.find(o =>
-        String(
-            o.orderId ||
-            o.id
-        ) === String(orderId)
-    );
+    document.getElementById("totalOrders")
+        .textContent = orders.length;
 
+    let newCount = 0;
+    let confirmedCount = 0;
 
-    if(!order){
+    orders.forEach(order => {
 
-        alert("Order details नहीं मिले।");
+        if(order.dataset.status === "New"){
+            newCount++;
+        }
 
-        return;
+        if(order.dataset.status === "Confirmed"){
+            confirmedCount++;
+        }
 
-    }
+    });
 
+    document.getElementById("newOrders")
+        .textContent = newCount;
 
-    let products =
-        order.products ||
-        order.items ||
-        [];
-
-
-    let productText = "";
-
-
-    if(Array.isArray(products)){
-
-        products.forEach(p => {
-
-            productText +=
-                "\n🌾 " +
-                (p.name || p.productName) +
-                " × " +
-                (p.quantity || 1);
-
-        });
-
-    }
-
-
-    alert(
-
-        "🧾 ORDER DETAILS\n\n" +
-
-        "Order ID: " +
-        orderId +
-
-        "\nCustomer: " +
-        (order.customerName ||
-         order.name ||
-         order.customer ||
-         "") +
-
-        "\nMobile: " +
-        (order.mobile ||
-         order.phone ||
-         "") +
-
-        "\nAddress: " +
-        (order.address ||
-         order.location ||
-         "") +
-
-        "\nPayment: " +
-        (order.paymentMethod ||
-         order.payment ||
-         "") +
-
-        "\nStatus: " +
-        normalizeStatus(order.status) +
-
-        "\nTotal: ₹" +
-        Number(
-            order.total ||
-            order.totalAmount ||
-            0
-        ).toLocaleString("en-IN") +
-
-        "\n\nPRODUCTS:" +
-
-        productText
-
-    );
+    document.getElementById("confirmedOrders")
+        .textContent = confirmedCount;
 
 }
-
-
-/* ==============================
-   START
-============================== */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    loadOrders
-);
 
 </script>
 
