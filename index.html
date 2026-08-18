@@ -2,8 +2,11 @@
 <html lang="hi">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>
 Bundelkhand Organic Farmer Producer Company Limited
@@ -19,6 +22,7 @@ Bundelkhand Organic Farmer Producer Company Limited
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
 html{
@@ -26,9 +30,8 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f3fff4;
-    color:#222;
+    background:#f4fff4;
+    color:#333;
     line-height:1.6;
 }
 
@@ -38,28 +41,23 @@ body{
 ===================================================== */
 
 .top-bar{
-    background:#075b27;
+    background:#075c25;
     color:white;
-    padding:8px 5%;
+    font-size:12px;
+    padding:5px 30px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:15px;
-    font-size:14px;
-    flex-wrap:wrap;
 }
 
 .top-left,
 .top-right{
     display:flex;
     gap:18px;
-    align-items:center;
-    flex-wrap:wrap;
 }
 
-.top-bar a{
-    color:white;
-    text-decoration:none;
+.top-bar span{
+    white-space:nowrap;
 }
 
 
@@ -68,59 +66,68 @@ body{
 ===================================================== */
 
 .main-header{
-    background:linear-gradient(135deg,#ffffff,#efffea);
-    border-bottom:4px solid #f5a400;
-    padding:15px 4%;
+    background:#f7fff2;
+    border-bottom:3px solid #F6A800;
 }
 
 .header-inner{
-    max-width:1400px;
+    max-width:1200px;
     margin:auto;
+    min-height:140px;
+    padding:10px 20px;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:25px;
+    gap:20px;
 }
 
-.brand{
+
+/* =====================================================
+   LOGO + COMPANY NAME
+===================================================== */
+
+.brand-section{
     display:flex;
     align-items:center;
     gap:18px;
     min-width:0;
 }
 
-.logo{
+.fpo-logo{
     width:105px;
     height:105px;
     object-fit:contain;
-    border-radius:50%;
     background:white;
-    border:4px solid #198754;
-    box-shadow:0 4px 12px rgba(0,0,0,.20);
+    border-radius:50%;
     flex-shrink:0;
 }
 
-.company-name h1{
-    color:#146b2d;
-    font-size:31px;
-    line-height:1.25;
-    margin-bottom:4px;
+.brand-text{
+    min-width:0;
 }
 
-.company-name h2{
-    color:#185f2b;
-    font-size:22px;
+.brand-text h1{
+    color:#2E6B2F;
+    font-size:27px;
+    line-height:1.25;
+    margin-bottom:3px;
+}
+
+.brand-text h2{
+    color:#2E6B2F;
+    font-size:20px;
     line-height:1.3;
+    margin-bottom:8px;
 }
 
 .tagline{
     display:inline-block;
-    margin-top:8px;
-    background:linear-gradient(90deg,#f5a400,#ff7b00);
+    background:#F57C00;
     color:white;
-    padding:5px 18px;
-    border-radius:25px;
+    padding:5px 16px;
+    border-radius:20px;
+    font-size:13px;
     font-weight:bold;
 }
 
@@ -129,35 +136,34 @@ body{
    LOGIN BUTTONS
 ===================================================== */
 
-.login-area{
+.login-buttons{
     display:flex;
     gap:10px;
-    flex-wrap:wrap;
-    justify-content:center;
+    flex-shrink:0;
 }
 
 .login-btn{
     display:inline-block;
     text-decoration:none;
     color:white;
-    padding:13px 20px;
-    border-radius:9px;
     font-weight:bold;
-    box-shadow:0 4px 10px rgba(0,0,0,.20);
+    padding:12px 18px;
+    border-radius:8px;
+    box-shadow:0 3px 8px rgba(0,0,0,.25);
     transition:.3s;
 }
 
 .farmer-login{
-    background:#f57c00;
+    background:#F57C00;
 }
 
 .admin-login{
-    background:#7b1fa2;
+    background:#7B1FA2;
 }
 
 .login-btn:hover{
     transform:translateY(-2px);
-    opacity:.92;
+    box-shadow:0 5px 12px rgba(0,0,0,.3);
 }
 
 
@@ -166,15 +172,12 @@ body{
 ===================================================== */
 
 .navbar{
-    background:linear-gradient(90deg,#176b2c,#25863a);
-    border-bottom:3px solid #f5a400;
-    position:sticky;
-    top:0;
-    z-index:1000;
+    background:#24752f;
+    border-bottom:2px solid #F6A800;
 }
 
 .nav-inner{
-    max-width:1400px;
+    max-width:1200px;
     margin:auto;
 
     display:flex;
@@ -186,44 +189,43 @@ body{
 .navbar a{
     color:white;
     text-decoration:none;
-    padding:14px 17px;
+    padding:12px 15px;
     font-weight:bold;
-    display:block;
+    font-size:14px;
     transition:.3s;
 }
 
-.navbar a:hover,
+.navbar a:hover{
+    background:#F57C00;
+}
+
 .navbar a.active{
-    background:#f57c00;
-    color:white;
+    background:#F57C00;
 }
 
 
 /* =====================================================
-   HERO
+   HERO SECTION
 ===================================================== */
 
 .hero{
-    min-height:470px;
+    min-height:375px;
 
     background:
     linear-gradient(
-        rgba(17,105,39,.72),
-        rgba(34,130,54,.68)
-    ),
-    url("images/farm.jpg");
+        rgba(39,125,52,.78),
+        rgba(76,160,86,.78)
+    );
 
-    background-size:cover;
-    background-position:center;
+    color:white;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
     text-align:center;
-    color:white;
 
-    padding:60px 20px;
+    padding:50px 20px;
 }
 
 .hero-content{
@@ -231,50 +233,48 @@ body{
 }
 
 .hero h1{
-    font-size:45px;
-    line-height:1.25;
-    margin-bottom:15px;
-    text-shadow:0 3px 6px rgba(0,0,0,.4);
+    font-size:36px;
+    margin-bottom:12px;
+    text-shadow:0 2px 4px rgba(0,0,0,.5);
 }
 
 .hero h2{
-    color:#ffe600;
-    font-size:30px;
-    margin-bottom:18px;
+    color:#FFF200;
+    font-size:25px;
+    margin-bottom:16px;
 }
 
 .hero p{
-    font-size:19px;
-    margin-bottom:8px;
+    font-size:17px;
+    margin-bottom:6px;
 }
 
 .hero-buttons{
-    margin-top:28px;
+    margin-top:25px;
     display:flex;
     justify-content:center;
-    gap:15px;
+    gap:14px;
     flex-wrap:wrap;
 }
 
 .hero-btn{
     display:inline-block;
-    padding:14px 30px;
-    border-radius:30px;
     text-decoration:none;
     color:white;
-    font-size:18px;
     font-weight:bold;
-    box-shadow:0 5px 12px rgba(0,0,0,.3);
+    padding:13px 28px;
+    border-radius:25px;
     transition:.3s;
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
 }
 
 .shop-btn{
-    background:#ff8c00;
+    background:#FF9800;
 }
 
 .join-btn{
-    background:#16863a;
-    border:2px solid white;
+    background:#159447;
+    border:1px solid white;
 }
 
 .hero-btn:hover{
@@ -283,172 +283,164 @@ body{
 
 
 /* =====================================================
-   QUICK LINKS
+   QUICK CARDS
 ===================================================== */
 
 .quick-section{
-    max-width:1350px;
-    margin:-45px auto 30px;
+    max-width:1100px;
+    margin:-38px auto 40px;
+    padding:0 15px;
     position:relative;
     z-index:5;
-    padding:0 15px;
 }
 
 .quick-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+    grid-template-columns:
+    repeat(4,1fr);
+    gap:12px;
 }
 
 .quick-card{
     background:white;
-    border-radius:12px;
+    min-height:150px;
     padding:22px 15px;
     text-align:center;
-    text-decoration:none;
-    color:#222;
-
-    box-shadow:0 5px 18px rgba(0,0,0,.15);
-    border-top:5px solid #198754;
-
+    border-radius:8px;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    border-top:5px solid #2E7D32;
     transition:.3s;
 }
 
 .quick-card:nth-child(2){
-    border-color:#f5a400;
+    border-top-color:#F57C00;
 }
 
 .quick-card:nth-child(3){
-    border-color:#1976d2;
+    border-top-color:#1976D2;
 }
 
 .quick-card:nth-child(4){
-    border-color:#8e24aa;
+    border-top-color:#8E24AA;
 }
 
 .quick-card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-5px);
 }
 
 .quick-icon{
-    width:55px;
-    height:55px;
-    margin:auto;
-    border-radius:50%;
+    width:48px;
+    height:48px;
+    margin:0 auto 10px;
+
     display:flex;
     align-items:center;
     justify-content:center;
 
-    background:#e8f5e9;
-    color:#16863a;
+    border-radius:50%;
 
-    font-size:24px;
+    background:#E8F5E9;
+    color:#2E7D32;
+
+    font-size:22px;
     font-weight:bold;
 }
 
 .quick-card h3{
-    margin-top:10px;
-    color:#176b2c;
+    color:#2E7D32;
+    margin-bottom:6px;
+}
+
+.quick-card p{
+    font-size:13px;
+    color:#666;
 }
 
 
 /* =====================================================
-   SECTION
+   COMMON SECTION
 ===================================================== */
 
 .section{
-    max-width:1250px;
+    max-width:1100px;
     margin:45px auto;
     padding:0 20px;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:28px;
 }
 
 .section-title h2{
-    color:#176b2c;
-    font-size:32px;
+    color:#2E7D32;
+    font-size:29px;
+    margin-bottom:6px;
 }
 
 .section-title p{
     color:#666;
-    margin-top:5px;
 }
 
 
 /* =====================================================
-   ABOUT
+   FPO SECTION
 ===================================================== */
 
-.about-box{
-    background:white;
-    border-radius:15px;
-    padding:35px;
-    box-shadow:0 4px 16px rgba(0,0,0,.10);
-    border-left:6px solid #198754;
-    text-align:center;
-}
-
-.about-box h3{
-    color:#176b2c;
-    font-size:26px;
-    margin-bottom:15px;
-}
-
-.about-box p{
-    font-size:17px;
-    margin-bottom:10px;
-}
-
-
-/* =====================================================
-   FEATURES
-===================================================== */
-
-.feature-grid{
+.fpo-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
+    grid-template-columns:
+    repeat(4,1fr);
+    gap:18px;
 }
 
-.feature-card{
+.fpo-card{
     background:white;
-    padding:28px 20px;
-    border-radius:14px;
+    padding:25px 18px;
+    border-radius:10px;
     text-align:center;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.10);
-
-    border-top:5px solid #198754;
+    box-shadow:0 3px 12px #ccc;
+    border-bottom:5px solid #2E7D32;
 }
 
-.feature-card:nth-child(2){
-    border-color:#f5a400;
+.fpo-card:nth-child(2){
+    border-bottom-color:#F57C00;
 }
 
-.feature-card:nth-child(3){
-    border-color:#1976d2;
+.fpo-card:nth-child(3){
+    border-bottom-color:#1976D2;
 }
 
-.feature-card:nth-child(4){
-    border-color:#8e24aa;
+.fpo-card:nth-child(4){
+    border-bottom-color:#8E24AA;
 }
 
-.feature-card h3{
-    color:#176b2c;
-    margin:12px 0 8px;
-}
+.fpo-card .number{
+    width:55px;
+    height:55px;
+    margin:0 auto 12px;
 
-.feature-card p{
-    color:#555;
-}
+    border-radius:50%;
 
-.feature-number{
-    font-size:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+    font-size:20px;
     font-weight:bold;
-    color:#198754;
+}
+
+.fpo-card h3{
+    color:#2E7D32;
+    margin-bottom:8px;
+}
+
+.fpo-card p{
+    font-size:14px;
+    color:#555;
 }
 
 
@@ -457,68 +449,60 @@ body{
 ===================================================== */
 
 .news-section{
-    background:#eaf8ec;
-    padding:45px 0;
+    background:#ecfaed;
+    padding:45px 20px;
 }
 
 .news-container{
-    max-width:1250px;
+    max-width:1100px;
     margin:auto;
-    padding:0 20px;
 }
 
 .news-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:
+    repeat(3,1fr);
     gap:20px;
 }
 
 .news-card{
     background:white;
     padding:22px;
-    border-radius:12px;
-
-    box-shadow:0 4px 14px rgba(0,0,0,.10);
-
-    border-left:5px solid #198754;
+    border-radius:10px;
+    box-shadow:0 3px 12px #ccc;
+    border-left:5px solid #2E7D32;
 }
 
 .news-card h3{
-    color:#176b2c;
+    color:#2E7D32;
+    font-size:19px;
     margin-bottom:10px;
-    font-size:20px;
 }
 
 .news-card p{
     color:#555;
+    font-size:14px;
     margin-bottom:12px;
 }
 
 .news-date{
     color:#777;
-    font-size:14px;
+    font-size:13px;
     margin-bottom:15px;
 }
 
 .read-more{
     display:inline-block;
-    background:#198754;
+    background:#2E7D32;
     color:white;
     text-decoration:none;
-    padding:9px 16px;
-    border-radius:6px;
+    padding:8px 16px;
+    border-radius:5px;
     font-weight:bold;
 }
 
 .read-more:hover{
-    background:#126b3b;
-}
-
-.no-news{
-    background:white;
-    padding:30px;
-    text-align:center;
-    border-radius:10px;
+    background:#1B5E20;
 }
 
 
@@ -527,33 +511,40 @@ body{
 ===================================================== */
 
 .cta{
-    max-width:1150px;
-    margin:50px auto;
-    padding:45px 25px;
-
-    border-radius:18px;
+    max-width:1000px;
+    margin:45px auto;
+    padding:40px 20px;
 
     background:
     linear-gradient(
         135deg,
-        #176b2c,
-        #2e9b48
+        #1B5E20,
+        #43A047
     );
 
     color:white;
     text-align:center;
-
-    box-shadow:0 5px 18px rgba(0,0,0,.15);
+    border-radius:12px;
+    box-shadow:0 4px 15px #bbb;
 }
 
 .cta h2{
-    font-size:32px;
+    font-size:28px;
     margin-bottom:10px;
 }
 
 .cta p{
-    font-size:18px;
-    margin-bottom:22px;
+    margin-bottom:20px;
+}
+
+.cta a{
+    display:inline-block;
+    background:#F57C00;
+    color:white;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:25px;
+    font-weight:bold;
 }
 
 
@@ -562,60 +553,28 @@ body{
 ===================================================== */
 
 footer{
-    background:#075b27;
+    background:#075c25;
     color:white;
-    margin-top:50px;
-}
-
-.footer-main{
-    max-width:1300px;
-    margin:auto;
-    padding:40px 25px;
-
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:30px;
-}
-
-.footer-brand{
-    display:flex;
-    gap:15px;
-    align-items:flex-start;
+    text-align:center;
+    padding:30px 20px;
 }
 
 .footer-logo{
     width:75px;
     height:75px;
-    border-radius:50%;
+    object-fit:contain;
     background:white;
-    padding:4px;
+    border-radius:50%;
+    margin-bottom:10px;
 }
 
-.footer h3{
-    margin-bottom:12px;
-    color:#ffe082;
+footer h3{
+    margin-bottom:5px;
 }
 
-.footer p{
-    color:#eee;
-}
-
-.footer a{
-    display:block;
-    color:#eee;
-    text-decoration:none;
-    margin:6px 0;
-}
-
-.footer a:hover{
-    color:#ffd54f;
-}
-
-.footer-bottom{
-    background:#04451e;
-    text-align:center;
-    padding:15px;
-    border-top:2px solid #f5a400;
+footer p{
+    margin:4px;
+    font-size:14px;
 }
 
 
@@ -623,84 +582,101 @@ footer{
    MOBILE
 ===================================================== */
 
-@media(max-width:1000px){
+@media(max-width:900px){
 
     .header-inner{
         flex-direction:column;
         text-align:center;
     }
 
-    .brand{
+    .brand-section{
+        flex-direction:column;
+    }
+
+    .login-buttons{
         justify-content:center;
     }
 
     .quick-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+        repeat(2,1fr);
     }
 
-    .feature-grid{
-        grid-template-columns:repeat(2,1fr);
+    .fpo-grid{
+        grid-template-columns:
+        repeat(2,1fr);
     }
 
     .news-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .footer-main{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+        repeat(2,1fr);
     }
 
 }
 
 
-@media(max-width:650px){
+@media(max-width:600px){
 
     .top-bar{
-        justify-content:center;
+        flex-direction:column;
+        gap:3px;
         text-align:center;
     }
 
-    .brand{
-        flex-direction:column;
+    .top-left,
+    .top-right{
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:8px;
     }
 
-    .logo{
+    .fpo-logo{
         width:90px;
         height:90px;
     }
 
-    .company-name h1{
-        font-size:23px;
+    .brand-text h1{
+        font-size:21px;
     }
 
-    .company-name h2{
-        font-size:17px;
+    .brand-text h2{
+        font-size:16px;
     }
 
     .tagline{
+        font-size:11px;
+    }
+
+    .login-buttons{
+        width:100%;
+    }
+
+    .login-btn{
+        flex:1;
+        padding:10px 8px;
         font-size:13px;
     }
 
     .navbar a{
-        padding:10px 11px;
-        font-size:14px;
+        padding:9px 10px;
+        font-size:13px;
     }
 
     .hero{
-        min-height:430px;
+        min-height:350px;
         padding:45px 15px;
     }
 
     .hero h1{
-        font-size:30px;
+        font-size:27px;
     }
 
     .hero h2{
-        font-size:22px;
+        font-size:21px;
     }
 
     .hero p{
-        font-size:16px;
+        font-size:14px;
     }
 
     .quick-section{
@@ -708,34 +684,25 @@ footer{
     }
 
     .quick-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr;
     }
 
-    .feature-grid,
+    .fpo-grid{
+        grid-template-columns:1fr;
+    }
+
     .news-grid{
         grid-template-columns:1fr;
     }
 
     .section-title h2{
-        font-size:26px;
-    }
-
-    .about-box{
-        padding:25px 18px;
-    }
-
-    .footer-main{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-
-    .footer-brand{
-        justify-content:center;
+        font-size:24px;
     }
 
 }
 
 </style>
+
 </head>
 
 
@@ -769,16 +736,16 @@ footer{
 
 <div class="header-inner">
 
-    <div class="brand">
+
+    <div class="brand-section">
 
         <img
             src="images/fpo-logo.png"
-            class="logo"
+            class="fpo-logo"
             alt="Bundelkhand Organic FPO Logo"
-            onerror="this.style.display='none';"
         >
 
-        <div class="company-name">
+        <div class="brand-text">
 
             <h1>
                 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
@@ -797,7 +764,7 @@ footer{
     </div>
 
 
-    <div class="login-area">
+    <div class="login-buttons">
 
         <a
             href="login.html"
@@ -815,6 +782,7 @@ footer{
 
     </div>
 
+
 </div>
 
 </header>
@@ -828,23 +796,41 @@ footer{
 
 <div class="nav-inner">
 
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html" class="active">
+        Home
+    </a>
 
-    <a href="about.html">About</a>
+    <a href="about.html">
+        About
+    </a>
 
-    <a href="products.html">Products</a>
+    <a href="products.html">
+        Products
+    </a>
 
-    <a href="farmers.html">Kisan Corner</a>
+    <a href="farmers.html">
+        Kisan Corner
+    </a>
 
-    <a href="membership.html">Join FPO</a>
+    <a href="membership.html">
+        Join FPO
+    </a>
 
-    <a href="news.html">Agriculture News</a>
+    <a href="news.html">
+        Agriculture News
+    </a>
 
-    <a href="bulk-order.html">Bulk Order</a>
+    <a href="bulk-order.html">
+        Bulk Order
+    </a>
 
-    <a href="gallery.html">Gallery</a>
+    <a href="gallery.html">
+        Gallery
+    </a>
 
-    <a href="contact.html">Contact</a>
+    <a href="contact.html">
+        Contact
+    </a>
 
 </div>
 
@@ -902,55 +888,81 @@ footer{
 
 
 <!-- =====================================================
-     QUICK LINKS
+     QUICK CARDS
 ===================================================== -->
 
 <section class="quick-section">
 
 <div class="quick-grid">
 
-    <a href="about.html" class="quick-card">
 
-        <div class="quick-icon">A</div>
+    <div class="quick-card">
 
-        <h3>About Us</h3>
+        <div class="quick-icon">
+            A
+        </div>
 
-        <p>हमारे बारे में</p>
+        <h3>
+            About Us
+        </h3>
 
-    </a>
+        <p>
+            हमारे FPO के बारे में जानें।
+        </p>
 
-
-    <a href="products.html" class="quick-card">
-
-        <div class="quick-icon">P</div>
-
-        <h3>Products</h3>
-
-        <p>हमारे कृषि उत्पाद</p>
-
-    </a>
+    </div>
 
 
-    <a href="farmers.html" class="quick-card">
+    <div class="quick-card">
 
-        <div class="quick-icon">F</div>
+        <div class="quick-icon">
+            P
+        </div>
 
-        <h3>Kisan Corner</h3>
+        <h3>
+            Products
+        </h3>
 
-        <p>किसान सूचना केंद्र</p>
+        <p>
+            किसानों के गुणवत्तापूर्ण उत्पाद देखें।
+        </p>
 
-    </a>
+    </div>
 
 
-    <a href="membership.html" class="quick-card">
+    <div class="quick-card">
 
-        <div class="quick-icon">M</div>
+        <div class="quick-icon">
+            F
+        </div>
 
-        <h3>Join FPO</h3>
+        <h3>
+            Kisan Corner
+        </h3>
 
-        <p>FPO सदस्यता</p>
+        <p>
+            किसानों के लिए महत्वपूर्ण जानकारी।
+        </p>
 
-    </a>
+    </div>
+
+
+    <div class="quick-card">
+
+        <div class="quick-icon">
+            M
+        </div>
+
+        <h3>
+            Join FPO
+        </h3>
+
+        <p>
+            FPO Membership के लिए आवेदन करें।
+        </p>
+
+    </div>
+
 
 </div>
 
@@ -958,14 +970,16 @@ footer{
 
 
 <!-- =====================================================
-     ABOUT FPO
+     OUR FPO
 ===================================================== -->
 
 <section class="section">
 
 <div class="section-title">
 
-    <h2>Our FPO</h2>
+    <h2>
+        Our FPO
+    </h2>
 
     <p>
         किसानों के विकास और कृषि को बढ़ावा देने की हमारी पहल
@@ -974,54 +988,14 @@ footer{
 </div>
 
 
-<div class="about-box">
-
-    <h3>
-        Bundelkhand Organic Farmer Producer Company Limited
-    </h3>
-
-    <p>
-        बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-        किसानों को संगठित करने, उनकी आय बढ़ाने तथा
-        कृषि उत्पादों को बेहतर बाजार उपलब्ध कराने की दिशा में कार्य करती है।
-    </p>
-
-    <p>
-        Our initiative works to organize farmers,
-        improve their income and connect agricultural
-        products with better markets.
-    </p>
-
-</div>
-
-</section>
+<div class="fpo-grid">
 
 
-<!-- =====================================================
-     FEATURES
-===================================================== -->
+    <div class="fpo-card">
 
-<section class="section">
-
-<div class="section-title">
-
-    <h2>
-        FPO की प्रमुख विशेषताएँ
-    </h2>
-
-    <p>
-        किसानों और उपभोक्ताओं के लिए हमारी सेवाएँ
-    </p>
-
-</div>
-
-
-<div class="feature-grid">
-
-
-    <div class="feature-card">
-
-        <div class="feature-number">01</div>
+        <div class="number">
+            01
+        </div>
 
         <h3>
             Farmer Empowerment
@@ -1035,9 +1009,11 @@ footer{
     </div>
 
 
-    <div class="feature-card">
+    <div class="fpo-card">
 
-        <div class="feature-number">02</div>
+        <div class="number">
+            02
+        </div>
 
         <h3>
             Organic Agriculture
@@ -1050,32 +1026,37 @@ footer{
     </div>
 
 
-    <div class="feature-card">
+    <div class="fpo-card">
 
-        <div class="feature-number">03</div>
+        <div class="number">
+            03
+        </div>
 
         <h3>
             Direct Marketing
         </h3>
 
         <p>
-            किसानों से सीधे उपभोक्ताओं तक कृषि उत्पाद पहुँचाना।
+            किसानों से सीधे उपभोक्ताओं तक
+            कृषि उत्पाद पहुँचाना।
         </p>
 
     </div>
 
 
-    <div class="feature-card">
+    <div class="fpo-card">
 
-        <div class="feature-number">04</div>
+        <div class="number">
+            04
+        </div>
 
         <h3>
             Better Income
         </h3>
 
         <p>
-            किसानों को बेहतर बाजार से जोड़कर
-            आय बढ़ाने का प्रयास।
+            किसानों की आय बढ़ाने के लिए बेहतर
+            बाजार से जोड़ना।
         </p>
 
     </div>
@@ -1109,9 +1090,8 @@ footer{
 
 <div
     class="news-grid"
-    id="newsList"
->
-</div>
+    id="newsGrid"
+></div>
 
 </div>
 
@@ -1125,18 +1105,15 @@ footer{
 <section class="cta">
 
     <h2>
-        FPO से जुड़ें और कृषि विकास का हिस्सा बनें
+        किसानों के साथ जुड़ें और आगे बढ़ें
     </h2>
 
     <p>
-        किसानों की सामूहिक शक्ति से बेहतर बाजार,
-        बेहतर अवसर और बेहतर भविष्य की ओर।
+        Become a member of Bundelkhand Organic
+        Farmer Producer Company Limited.
     </p>
 
-    <a
-        href="membership.html"
-        class="hero-btn join-btn"
-    >
+    <a href="membership.html">
         Join FPO
     </a>
 
@@ -1149,96 +1126,31 @@ footer{
 
 <footer>
 
-<div class="footer-main">
+    <img
+        src="images/fpo-logo.png"
+        class="footer-logo"
+        alt="FPO Logo"
+    >
 
+    <h3>
+        बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+    </h3>
 
-    <div>
+    <p>
+        Bundelkhand Organic Farmer Producer Company Limited
+    </p>
 
-        <div class="footer-brand">
+    <p>
+        Empowering Farmers • Promoting Organic Agriculture
+    </p>
 
-            <img
-                src="images/fpo-logo.png"
-                class="footer-logo"
-                alt="FPO Logo"
-            >
+    <p>
+        किसानों को सशक्त बनाना • कृषि को बढ़ावा देना
+    </p>
 
-            <div>
-
-                <h3>
-                    बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-                </h3>
-
-                <p>
-                    Bundelkhand Organic Farmer Producer Company Limited
-                </p>
-
-                <p>
-                    Empowering Farmers • Promoting Organic Agriculture
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div>
-
-        <h3>Quick Links</h3>
-
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="products.html">Products</a>
-        <a href="farmers.html">Kisan Corner</a>
-
-    </div>
-
-
-    <div>
-
-        <h3>FPO Services</h3>
-
-        <a href="membership.html">Join FPO</a>
-        <a href="news.html">Agriculture News</a>
-        <a href="bulk-order.html">Bulk Order</a>
-        <a href="gallery.html">Gallery</a>
-
-    </div>
-
-
-    <div>
-
-        <h3>Contact</h3>
-
-        <p>
-            Belatal Road, Bansphadiya
-        </p>
-
-        <p>
-            Srinagar, Mahoba
-        </p>
-
-        <p>
-            Uttar Pradesh - 210433
-        </p>
-
-        <p>
-            Mobile: +91 8090040580
-        </p>
-
-    </div>
-
-
-</div>
-
-
-<div class="footer-bottom">
-
-    © 2026 Bundelkhand Organic Farmer Producer Company Limited.
-    All Rights Reserved.
-
-</div>
+    <p>
+        © 2026 All Rights Reserved
+    </p>
 
 </footer>
 
@@ -1250,109 +1162,88 @@ footer{
 <script>
 
 /* =====================================================
-   LOAD AGRICULTURE NEWS
+   AGRICULTURE NEWS
 ===================================================== */
 
 function loadNews(){
 
-    const newsList =
-        document.getElementById("newsList");
+    let news =
+        JSON.parse(
+            localStorage.getItem("agricultureNews")
+        ) || [];
 
-    let agricultureNews = [];
+    let container =
+        document.getElementById("newsGrid");
 
-    try{
-
-        agricultureNews =
-            JSON.parse(
-                localStorage.getItem("agricultureNews")
-            ) || [];
-
-    }catch(error){
-
-        agricultureNews = [];
-
-    }
+    container.innerHTML = "";
 
 
-    newsList.innerHTML = "";
+    if(news.length === 0){
 
+        container.innerHTML = `
 
-    if(
-        !Array.isArray(agricultureNews) ||
-        agricultureNews.length === 0
-    ){
-
-        newsList.innerHTML = `
-
-            <div
-                class="no-news"
-                style="grid-column:1/-1;"
-            >
+            <div class="news-card">
 
                 <h3>
-                    अभी कोई Agriculture News उपलब्ध नहीं है।
+                    Agriculture News
                 </h3>
 
                 <p>
-                    Admin Panel से News Add करें।
+                    अभी कोई Agriculture News उपलब्ध नहीं है।
                 </p>
+
+                <a
+                    href="news.html"
+                    class="read-more"
+                >
+                    View News
+                </a>
 
             </div>
 
         `;
 
         return;
-
     }
 
 
-    /*
-       Latest News First
-    */
+    /* केवल latest 3 news */
 
-    const latestNews =
-        agricultureNews.slice().reverse().slice(0,6);
+    let latestNews =
+        news.slice().reverse().slice(0,3);
 
 
-    latestNews.forEach(function(news,index){
+    latestNews.forEach(function(item){
 
-        const originalIndex =
-            agricultureNews.indexOf(news);
+        let originalIndex =
+            news.indexOf(item);
 
+        container.innerHTML += `
 
-        const card =
-            document.createElement("div");
+            <div class="news-card">
 
-        card.className =
-            "news-card";
+                <h3>
+                    ${escapeHTML(item.title || "Agriculture News")}
+                </h3>
 
+                <p>
+                    ${escapeHTML(item.description || "")}
+                </p>
 
-        card.innerHTML = `
+                <div class="news-date">
+                    ${escapeHTML(item.date || "")}
+                </div>
 
-            <h3>
-                ${escapeHTML(news.title || "Agriculture News")}
-            </h3>
+                <a
+                    href="news-details.html?id=${originalIndex}"
+                    class="read-more"
+                >
+                    Read More
+                </a>
 
-            <p>
-                ${escapeHTML(news.description || "")}
-            </p>
-
-            <div class="news-date">
-                Date:
-                ${escapeHTML(news.date || "")}
             </div>
 
-            <a
-                href="news-details.html?id=${originalIndex}"
-                class="read-more"
-            >
-                Read More
-            </a>
-
         `;
-
-
-        newsList.appendChild(card);
 
     });
 
@@ -1360,13 +1251,12 @@ function loadNews(){
 
 
 /* =====================================================
-   SECURITY / HTML ESCAPE
+   SAFE TEXT
 ===================================================== */
 
 function escapeHTML(value){
 
     return String(value)
-
         .replace(/&/g,"&amp;")
         .replace(/</g,"&lt;")
         .replace(/>/g,"&gt;")
@@ -1382,27 +1272,9 @@ function escapeHTML(value){
 
 loadNews();
 
-
-/* =====================================================
-   UPDATE NEWS IF LOCAL STORAGE CHANGES
-===================================================== */
-
-window.addEventListener(
-    "storage",
-    function(event){
-
-        if(
-            event.key === "agricultureNews"
-        ){
-
-            loadNews();
-
-        }
-
-    }
-);
-
 </script>
 
+
 </body>
+
 </html>
