@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Products | Bundelkhand Organic Farmer Producer Company Limited</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+Products | Bundelkhand Organic Farmer Producer Company Limited
+</title>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
@@ -239,12 +246,21 @@ nav a.active{
     margin:8px 0;
 }
 
-.product-stock{
-    background:#f0f8ef;
-    color:#444;
-    padding:7px 10px;
+/* ================= AVAILABILITY ================= */
+
+.product-availability{
+    background:#e8f5e9;
+    color:#2e7d32;
+    padding:8px 10px;
     border-radius:6px;
     margin-bottom:13px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.product-unavailable{
+    background:#ffebee;
+    color:#c62828;
 }
 
 /* ================= QUANTITY ================= */
@@ -413,6 +429,7 @@ footer p{
     .page-banner p{
         font-size:15px;
     }
+
 }
 
 @media(max-width:480px){
@@ -433,11 +450,16 @@ footer p{
     .products-grid{
         grid-template-columns:1fr;
     }
+
 }
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- ================= HEADER ================= -->
 
@@ -454,6 +476,7 @@ footer p{
             >
 
         </div>
+
 
         <div class="company-info">
 
@@ -604,7 +627,10 @@ function getProducts(){
 
     }catch(error){
 
-        console.error("Products Error:",error);
+        console.error(
+            "Products Error:",
+            error
+        );
 
         return [];
 
@@ -631,7 +657,10 @@ function getCart(){
 
     }catch(error){
 
-        console.error("Cart Error:",error);
+        console.error(
+            "Cart Error:",
+            error
+        );
 
         return [];
 
@@ -683,9 +712,8 @@ function updateCartCount(){
 
 function showMessage(text){
 
-    var message = document.getElementById(
-        "message"
-    );
+    var message =
+        document.getElementById("message");
 
     message.textContent = text;
 
@@ -708,9 +736,8 @@ function displayProducts(){
 
     var products = getProducts();
 
-    var grid = document.getElementById(
-        "productsGrid"
-    );
+    var grid =
+        document.getElementById("productsGrid");
 
     grid.innerHTML = "";
 
@@ -718,9 +745,11 @@ function displayProducts(){
     if(products.length === 0){
 
         grid.innerHTML = `
+
             <div class="empty-products">
                 कोई Product उपलब्ध नहीं है।
             </div>
+
         `;
 
         return;
@@ -734,37 +763,47 @@ function displayProducts(){
             product.id || Date.now()
         );
 
-        var name = product.name || "Product";
+        var name =
+            product.name || "Product";
 
-        var price = Number(
-            product.price
-        ) || 0;
+        var price =
+            Number(product.price) || 0;
 
-        var stock = Number(
-            product.stock
-        ) || 0;
+        /*
+          Stock अभी भी JavaScript में रखा गया है।
+          Customer को इसकी quantity दिखाई नहीं जाएगी।
+        */
 
-        var status = String(
-            product.status || "Available"
-        );
+        var stock =
+            Number(product.stock) || 0;
 
-        var image = product.image || "";
+        var status =
+            String(
+                product.status || "Available"
+            );
+
+        var image =
+            product.image || "";
 
 
         /* ================= CARD ================= */
 
-        var card = document.createElement("div");
+        var card =
+            document.createElement("div");
 
-        card.className = "product-card";
+        card.className =
+            "product-card";
 
 
         /* ================= IMAGE ================= */
 
         if(image){
 
-            var img = document.createElement("img");
+            var img =
+                document.createElement("img");
 
-            img.className = "product-image";
+            img.className =
+                "product-image";
 
             img.src = image;
 
@@ -772,14 +811,17 @@ function displayProducts(){
 
             img.onerror = function(){
 
-                this.style.display = "none";
+                this.style.display =
+                    "none";
 
                 var fallback =
                     document.createElement("div");
 
-                fallback.className = "no-image";
+                fallback.className =
+                    "no-image";
 
-                fallback.textContent = "🌾";
+                fallback.textContent =
+                    "FPO";
 
                 this.parentNode.insertBefore(
                     fallback,
@@ -795,9 +837,11 @@ function displayProducts(){
             var noImage =
                 document.createElement("div");
 
-            noImage.className = "no-image";
+            noImage.className =
+                "no-image";
 
-            noImage.textContent = "🌾";
+            noImage.textContent =
+                "FPO";
 
             card.appendChild(noImage);
 
@@ -809,7 +853,8 @@ function displayProducts(){
         var info =
             document.createElement("div");
 
-        info.className = "product-info";
+        info.className =
+            "product-info";
 
 
         /* PRODUCT NAME */
@@ -817,9 +862,11 @@ function displayProducts(){
         var nameDiv =
             document.createElement("div");
 
-        nameDiv.className = "product-name";
+        nameDiv.className =
+            "product-name";
 
-        nameDiv.textContent = name;
+        nameDiv.textContent =
+            name;
 
         info.appendChild(nameDiv);
 
@@ -829,7 +876,8 @@ function displayProducts(){
         var priceDiv =
             document.createElement("div");
 
-        priceDiv.className = "product-price";
+        priceDiv.className =
+            "product-price";
 
         priceDiv.textContent =
             "₹" +
@@ -840,17 +888,40 @@ function displayProducts(){
         info.appendChild(priceDiv);
 
 
-        /* STOCK */
+        /* ================= AVAILABILITY ================= */
 
-        var stockDiv =
+        var availabilityDiv =
             document.createElement("div");
 
-        stockDiv.className = "product-stock";
+        availabilityDiv.className =
+            "product-availability";
 
-        stockDiv.textContent =
-            "उपलब्ध Stock: " + stock;
 
-        info.appendChild(stockDiv);
+        var available =
+            status.toLowerCase() === "available" &&
+            stock > 0;
+
+
+        if(available){
+
+            availabilityDiv.textContent =
+                "Available";
+
+        }else{
+
+            availabilityDiv.textContent =
+                "Out of Stock";
+
+            availabilityDiv.classList.add(
+                "product-unavailable"
+            );
+
+        }
+
+
+        info.appendChild(
+            availabilityDiv
+        );
 
 
         /* ================= QUANTITY ================= */
@@ -858,7 +929,8 @@ function displayProducts(){
         var qtyBox =
             document.createElement("div");
 
-        qtyBox.className = "qty-box";
+        qtyBox.className =
+            "qty-box";
 
 
         var minus =
@@ -879,7 +951,9 @@ function displayProducts(){
         input.min = "1";
 
         input.max =
-            stock > 0 ? stock : 1;
+            stock > 0
+                ? stock
+                : 1;
 
 
         var plus =
@@ -899,7 +973,8 @@ function displayProducts(){
 
             if(value > 1){
 
-                input.value = value - 1;
+                input.value =
+                    value - 1;
 
             }
 
@@ -915,7 +990,8 @@ function displayProducts(){
 
             if(value < stock){
 
-                input.value = value + 1;
+                input.value =
+                    value + 1;
 
             }
 
@@ -961,16 +1037,13 @@ function displayProducts(){
 
         /* AVAILABLE CHECK */
 
-        var available =
-            status.toLowerCase() === "available" &&
-            stock > 0;
-
-
         if(!available){
 
-            addButton.disabled = true;
+            addButton.disabled =
+                true;
 
-            buyButton.disabled = true;
+            buyButton.disabled =
+                true;
 
             addButton.classList.add(
                 "out-stock"
@@ -981,93 +1054,110 @@ function displayProducts(){
             );
 
             addButton.textContent =
-                "उपलब्ध नहीं";
+                "Out of Stock";
 
             buyButton.textContent =
-                "उपलब्ध नहीं";
+                "Out of Stock";
+
+            input.disabled = true;
+
+            minus.disabled = true;
+
+            plus.disabled = true;
 
         }
 
 
         /* ================= ADD TO CART ================= */
 
-        addButton.onclick = function(){
+        addButton.onclick =
+            function(){
 
-            var quantity =
-                Number(input.value) || 1;
-
-
-            if(quantity < 1){
-
-                quantity = 1;
-
-                input.value = 1;
-
-            }
+                var quantity =
+                    Number(input.value) || 1;
 
 
-            if(quantity > stock){
+                if(quantity < 1){
 
-                alert(
-                    "उपलब्ध Stock से अधिक Quantity नहीं जोड़ सकते।"
+                    quantity = 1;
+
+                    input.value = 1;
+
+                }
+
+
+                if(quantity > stock){
+
+                    alert(
+                        "उपलब्ध Product Quantity से अधिक मात्रा नहीं जोड़ सकते।"
+                    );
+
+                    input.value =
+                        stock;
+
+                    return;
+
+                }
+
+
+                addToCart(
+                    product,
+                    quantity
                 );
 
-                input.value = stock;
-
-                return;
-
-            }
-
-
-            addToCart(
-                product,
-                quantity
-            );
-
-        };
+            };
 
 
         /* ================= BUY NOW ================= */
 
-        buyButton.onclick = function(){
+        buyButton.onclick =
+            function(){
 
-            var quantity =
-                Number(input.value) || 1;
-
-
-            if(quantity < 1){
-
-                quantity = 1;
-
-            }
+                var quantity =
+                    Number(input.value) || 1;
 
 
-            if(quantity > stock){
+                if(quantity < 1){
 
-                alert(
-                    "उपलब्ध Stock से अधिक Quantity नहीं है।"
+                    quantity = 1;
+
+                }
+
+
+                if(quantity > stock){
+
+                    alert(
+                        "इतनी Quantity उपलब्ध नहीं है।"
+                    );
+
+                    return;
+
+                }
+
+
+                buyProductNow(
+                    product,
+                    quantity
                 );
 
-                return;
-
-            }
+            };
 
 
-            buyProductNow(
-                product,
-                quantity
-            );
+        info.appendChild(
+            addButton
+        );
 
-        };
+        info.appendChild(
+            buyButton
+        );
 
+        card.appendChild(
+            info
+        );
 
-        info.appendChild(addButton);
-
-        info.appendChild(buyButton);
-
-        card.appendChild(info);
-
-        grid.appendChild(card);
+        grid.appendChild(
+            card
+        );
 
     });
 
@@ -1078,13 +1168,16 @@ function displayProducts(){
    ADD TO CART
 ===================================================== */
 
-function addToCart(product,quantity){
+function addToCart(
+    product,
+    quantity
+){
 
-    var cart = getCart();
+    var cart =
+        getCart();
 
     var productId =
         String(product.id);
-
 
     var found = null;
 
@@ -1096,10 +1189,12 @@ function addToCart(product,quantity){
     ){
 
         if(
-            String(cart[i].id) === productId
+            String(cart[i].id) ===
+            productId
         ){
 
-            found = cart[i];
+            found =
+                cart[i];
 
             break;
 
@@ -1119,7 +1214,6 @@ function addToCart(product,quantity){
             oldQuantity +
             Number(quantity);
 
-
         var stock =
             Number(product.stock) || 0;
 
@@ -1130,7 +1224,7 @@ function addToCart(product,quantity){
         ){
 
             alert(
-                "उपलब्ध Stock से अधिक Quantity नहीं जोड़ सकते।"
+                "उपलब्ध Product Quantity से अधिक मात्रा नहीं जोड़ सकते।"
             );
 
             return;
@@ -1170,9 +1264,11 @@ function addToCart(product,quantity){
 
         cart.push({
 
-            id: productId,
+            id:
+                productId,
 
-            name: product.name,
+            name:
+                product.name,
 
             category:
                 product.category ||
@@ -1222,7 +1318,10 @@ function addToCart(product,quantity){
    BUY NOW
 ===================================================== */
 
-function buyProductNow(product,quantity){
+function buyProductNow(
+    product,
+    quantity
+){
 
     if(!product){
 
@@ -1240,7 +1339,6 @@ function buyProductNow(product,quantity){
             product.status ||
             "Available"
         ).toLowerCase();
-
 
     var stock =
         Number(product.stock) || 0;
@@ -1363,4 +1461,5 @@ document.addEventListener(
 </script>
 
 </body>
+
 </html>
