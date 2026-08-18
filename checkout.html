@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Checkout | Bundelkhand Organic Farmer Producer Company Limited</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Checkout | Bundelkhand Organic Farmer Producer Company Limited
+</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -14,10 +21,12 @@
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#f4f8f3;
     color:#222;
 }
+
+/* ================= HEADER ================= */
 
 header{
     background:linear-gradient(135deg,#176b2c,#2e8b3c);
@@ -35,6 +44,8 @@ header p{
     margin:5px 0;
     font-size:16px;
 }
+
+/* ================= NAV ================= */
 
 nav{
     background:white;
@@ -69,11 +80,15 @@ nav a:hover{
     box-shadow:0 3px 8px rgba(0,0,0,.18);
 }
 
+/* ================= CONTAINER ================= */
+
 .container{
     width:94%;
     max-width:1000px;
     margin:30px auto;
 }
+
+/* ================= CARD ================= */
 
 .card{
     background:white;
@@ -91,6 +106,8 @@ h2{
 h3{
     margin-bottom:15px;
 }
+
+/* ================= PRODUCTS ================= */
 
 .product-row{
     display:flex;
@@ -131,6 +148,8 @@ h3{
     background:#f2f2f2;
 }
 
+/* ================= TOTAL ================= */
+
 .total-box{
     margin-top:20px;
     padding:18px;
@@ -145,6 +164,8 @@ h3{
     font-weight:bold;
     color:#176b2c;
 }
+
+/* ================= FORM ================= */
 
 label{
     display:block;
@@ -185,6 +206,8 @@ textarea{
     background:#0f5421;
 }
 
+/* ================= EMPTY ================= */
+
 .empty{
     text-align:center;
     padding:40px 20px;
@@ -205,6 +228,8 @@ textarea{
     border-radius:8px;
     font-weight:bold;
 }
+
+/* ================= SUCCESS ================= */
 
 .success{
     display:none;
@@ -251,6 +276,8 @@ textarea{
     color:white;
 }
 
+/* ================= FOOTER ================= */
+
 footer{
     margin-top:40px;
     background:#176b2c;
@@ -259,6 +286,8 @@ footer{
     padding:25px 15px;
     line-height:1.8;
 }
+
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
@@ -285,10 +314,15 @@ footer{
     }
 
 }
+
 </style>
+
 </head>
 
 <body>
+
+
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -306,6 +340,9 @@ footer{
 
 </header>
 
+
+<!-- ================= NAV ================= -->
+
 <nav>
 
     <a href="index.html">
@@ -317,7 +354,8 @@ footer{
     </a>
 
     <a href="cart.html" class="cart-link">
-        🛒 Cart: <span id="cartCount">0</span>
+        🛒 Cart:
+        <span id="cartCount">0</span>
     </a>
 
 </nav>
@@ -325,159 +363,192 @@ footer{
 
 <div class="container">
 
-    <div id="checkoutSection">
 
-        <div class="card">
+<!-- ================= CHECKOUT ================= -->
 
-            <h2>
-                🛒 Checkout / ऑर्डर करें
-            </h2>
+<div id="checkoutSection">
 
-            <h3>
-                📦 आपका Order
-            </h3>
 
-            <div id="orderItems"></div>
+    <!-- ORDER PRODUCTS -->
 
-            <div class="total-box">
+    <div class="card">
 
-                <div class="total">
-                    Total: ₹<span id="totalAmount">0</span>
-                </div>
+        <h2>
+            🛒 Checkout / ऑर्डर करें
+        </h2>
+
+        <h3>
+            📦 आपका Order
+        </h3>
+
+        <div id="orderItems"></div>
+
+
+        <div class="total-box">
+
+            <div class="total">
+
+                Total:
+                ₹<span id="totalAmount">0</span>
 
             </div>
 
         </div>
 
-
-        <div id="customerCard" class="card">
-
-            <h2>
-                👤 Customer Details
-            </h2>
-
-            <form id="checkoutForm">
-
-                <label for="customerName">
-                    नाम *
-                </label>
-
-                <input
-                    type="text"
-                    id="customerName"
-                    placeholder="अपना पूरा नाम लिखें"
-                    required
-                >
-
-                <label for="customerMobile">
-                    मोबाइल नंबर *
-                </label>
-
-                <input
-                    type="tel"
-                    id="customerMobile"
-                    placeholder="10 अंकों का मोबाइल नंबर"
-                    maxlength="10"
-                    inputmode="numeric"
-                    required
-                >
-
-                <label for="customerAddress">
-                    पूरा पता *
-                </label>
-
-                <textarea
-                    id="customerAddress"
-                    rows="4"
-                    placeholder="गांव, पोस्ट, तहसील, जिला, पिन कोड"
-                    required
-                ></textarea>
-
-                <label for="paymentMethod">
-                    Payment Method *
-                </label>
-
-                <select id="paymentMethod" required>
-
-                    <option value="">
-                        -- Select Payment Method --
-                    </option>
-
-                    <option value="Cash on Delivery">
-                        💵 Cash on Delivery
-                    </option>
-
-                    <option value="UPI">
-                        📱 UPI
-                    </option>
-
-                </select>
-
-                <button
-                    type="submit"
-                    class="place-btn"
-                >
-                    ✅ Place Order
-                </button>
-
-            </form>
-
-        </div>
-
     </div>
 
 
-    <div id="successSection" class="success">
+    <!-- CUSTOMER DETAILS -->
 
-        <h1>
-            🎉 Order Successfully Placed!
-        </h1>
+    <div
+        id="customerCard"
+        class="card"
+    >
 
-        <p>
-            आपका Order सफलतापूर्वक दर्ज हो गया है।
-        </p>
+        <h2>
+            👤 Customer Details
+        </h2>
 
-        <p style="margin-top:15px;">
-            आपका Order ID:
-        </p>
 
-        <div
-            class="order-id"
-            id="successOrderId"
-        >
-            FPO00000000
-        </div>
+        <form id="checkoutForm">
 
-        <p>
-            कृपया Order ID सुरक्षित रखें।
-        </p>
 
-        <p style="margin-top:10px;">
-            📱 FPO आपके Order की जानकारी देखकर आपसे संपर्क करेगा।
-        </p>
+            <label for="customerName">
+                नाम *
+            </label>
 
-        <div style="margin-top:20px;">
-
-            <a
-                href="products.html"
-                class="continue-btn shop-btn"
+            <input
+                type="text"
+                id="customerName"
+                placeholder="अपना पूरा नाम लिखें"
+                required
             >
-                🛒 Continue Shopping
-            </a>
 
-            <a
-                href="index.html"
-                class="continue-btn home-btn"
+
+            <label for="customerMobile">
+                मोबाइल नंबर *
+            </label>
+
+            <input
+                type="tel"
+                id="customerMobile"
+                placeholder="10 अंकों का मोबाइल नंबर"
+                maxlength="10"
+                inputmode="numeric"
+                required
             >
-                🏠 Home
-            </a>
 
-        </div>
+
+            <label for="customerAddress">
+                पूरा पता *
+            </label>
+
+            <textarea
+                id="customerAddress"
+                rows="4"
+                placeholder="गांव, पोस्ट, तहसील, जिला, पिन कोड"
+                required
+            ></textarea>
+
+
+            <label for="paymentMethod">
+                Payment Method *
+            </label>
+
+            <select
+                id="paymentMethod"
+                required
+            >
+
+                <option value="">
+                    -- Select Payment Method --
+                </option>
+
+                <option value="Cash on Delivery">
+                    💵 Cash on Delivery
+                </option>
+
+                <option value="UPI">
+                    📱 UPI
+                </option>
+
+            </select>
+
+
+            <button
+                type="submit"
+                class="place-btn"
+            >
+                ✅ Place Order
+            </button>
+
+        </form>
 
     </div>
 
 </div>
 
+
+<!-- ================= SUCCESS ================= -->
+
+<div
+    id="successSection"
+    class="success"
+>
+
+    <h1>
+        🎉 Order Successfully Placed!
+    </h1>
+
+    <p>
+        आपका Order सफलतापूर्वक दर्ज हो गया है।
+    </p>
+
+    <p style="margin-top:15px;">
+        आपका Order ID:
+    </p>
+
+    <div
+        class="order-id"
+        id="successOrderId"
+    >
+        FPO00000000
+    </div>
+
+    <p>
+        कृपया Order ID सुरक्षित रखें।
+    </p>
+
+    <p style="margin-top:10px;">
+        📱 FPO आपके Order की जानकारी देखकर आपसे संपर्क करेगा।
+    </p>
+
+
+    <div style="margin-top:20px;">
+
+        <a
+            href="products.html"
+            class="continue-btn shop-btn"
+        >
+            🛒 Continue Shopping
+        </a>
+
+        <a
+            href="index.html"
+            class="continue-btn home-btn"
+        >
+            🏠 Home
+        </a>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -503,21 +574,23 @@ footer{
 <script>
 
 /* =====================================================
-   CART
+   GET CART
 ===================================================== */
 
 function getCart(){
 
     try{
 
-        var data =
+        let data =
             localStorage.getItem("cart");
 
         if(!data){
+
             return [];
+
         }
 
-        var cart =
+        let cart =
             JSON.parse(data);
 
         return Array.isArray(cart)
@@ -534,24 +607,27 @@ function getCart(){
         return [];
 
     }
+
 }
 
 
 /* =====================================================
-   BUY NOW
+   GET BUY NOW PRODUCT
 ===================================================== */
 
 function getBuyNowProduct(){
 
     try{
 
-        var data =
+        let data =
             localStorage.getItem(
                 "buyNowProduct"
             );
 
         if(!data){
+
             return null;
+
         }
 
         return JSON.parse(data);
@@ -576,16 +652,19 @@ function getBuyNowProduct(){
 
 function getCheckoutMode(){
 
-    var mode =
+    let mode =
         sessionStorage.getItem(
             "checkoutMode"
         );
 
     if(mode === "buyNow"){
+
         return "buyNow";
+
     }
 
     return "cart";
+
 }
 
 
@@ -635,15 +714,15 @@ const successOrderId =
 
 
 /* =====================================================
-   CART COUNT
+   UPDATE CART COUNT
 ===================================================== */
 
 function updateCartCount(){
 
-    var cart =
+    let cart =
         getCart();
 
-    var count = 0;
+    let count = 0;
 
     cart.forEach(function(item){
 
@@ -666,12 +745,14 @@ function updateCartCount(){
 
 function escapeHTML(value){
 
-    return String(value)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
+    return String(
+        value ?? ""
+    )
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
@@ -682,7 +763,7 @@ function escapeHTML(value){
 
 function getOrderProducts(){
 
-    var mode =
+    let mode =
         getCheckoutMode();
 
 
@@ -690,7 +771,7 @@ function getOrderProducts(){
 
     if(mode === "buyNow"){
 
-        var buyNow =
+        let buyNow =
             getBuyNowProduct();
 
         if(
@@ -720,7 +801,7 @@ function getOrderProducts(){
 
 function showOrder(){
 
-    var products =
+    let products =
         getOrderProducts();
 
 
@@ -769,23 +850,26 @@ function showOrder(){
     orderItems.innerHTML =
         "";
 
-    var total =
+
+    let total =
         0;
 
 
     products.forEach(function(item){
 
-        var price =
+        let price =
             Number(
                 item.price
             ) || 0;
 
-        var quantity =
+
+        let quantity =
             Number(
                 item.quantity
             ) || 1;
 
-        var subtotal =
+
+        let subtotal =
             price * quantity;
 
 
@@ -793,16 +877,18 @@ function showOrder(){
             subtotal;
 
 
-        var row =
+        let row =
             document.createElement(
                 "div"
             );
+
 
         row.className =
             "product-row";
 
 
-        var imageHTML = "";
+        let imageHTML = "";
+
 
         if(item.image){
 
@@ -811,7 +897,13 @@ function showOrder(){
                 <img
                     src="${escapeHTML(item.image)}"
                     class="product-image"
-                    alt="${escapeHTML(item.name || "Product")}"
+                    alt="${escapeHTML(
+                        item.name || "Product"
+                    )}"
+                    onerror="
+                        this.onerror=null;
+                        this.style.display='none';
+                    "
                 >
 
             `;
@@ -820,8 +912,15 @@ function showOrder(){
 
             imageHTML = `
 
-                <div class="product-image"
-                     style="display:flex;align-items:center;justify-content:center;font-size:35px;">
+                <div
+                    class="product-image"
+                    style="
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        font-size:35px;
+                    "
+                >
                     🌾
                 </div>
 
@@ -837,17 +936,22 @@ function showOrder(){
             <div class="product-info">
 
                 <div class="product-name">
+
                     ${escapeHTML(
                         item.name ||
                         "Product"
                     )}
+
                 </div>
 
                 <div class="product-price">
 
-                    💰 ₹${price.toLocaleString("en-IN")}
+                    ₹${price.toLocaleString("en-IN")}
+
                     ×
+
                     ${quantity}
+
                     ${escapeHTML(
                         item.unit || "Kg"
                     )}
@@ -858,7 +962,9 @@ function showOrder(){
 
             <div class="subtotal">
 
-                ₹${subtotal.toLocaleString("en-IN")}
+                ₹${subtotal.toLocaleString(
+                    "en-IN"
+                )}
 
             </div>
 
@@ -884,17 +990,17 @@ function showOrder(){
 
 
 /* =====================================================
-   ORDER ID
+   GENERATE ORDER ID
 ===================================================== */
 
 function generateOrderId(){
 
-    var number =
+    let number =
         Math.floor(
             10000000 +
-            Math.random() *
-            90000000
+            Math.random() * 90000000
         );
+
 
     return "FPO" + number;
 
@@ -912,11 +1018,11 @@ checkoutForm.addEventListener(
         event.preventDefault();
 
 
-        var mode =
+        let mode =
             getCheckoutMode();
 
 
-        var products =
+        let products =
             getOrderProducts();
 
 
@@ -931,7 +1037,7 @@ checkoutForm.addEventListener(
         }
 
 
-        var name =
+        let name =
             document
             .getElementById(
                 "customerName"
@@ -940,7 +1046,7 @@ checkoutForm.addEventListener(
             .trim();
 
 
-        var mobile =
+        let mobile =
             document
             .getElementById(
                 "customerMobile"
@@ -949,7 +1055,7 @@ checkoutForm.addEventListener(
             .trim();
 
 
-        var address =
+        let address =
             document
             .getElementById(
                 "customerAddress"
@@ -958,7 +1064,7 @@ checkoutForm.addEventListener(
             .trim();
 
 
-        var payment =
+        let payment =
             document
             .getElementById(
                 "paymentMethod"
@@ -992,38 +1098,59 @@ checkoutForm.addEventListener(
         }
 
 
-        var total =
+        /* =========================
+           TOTAL
+        ========================= */
+
+        let total =
             0;
 
 
-        products.forEach(function(item){
+        products.forEach(
+            function(item){
 
-            total +=
-                (
-                    Number(
-                        item.price
-                    ) || 0
-                ) *
-                (
-                    Number(
-                        item.quantity
-                    ) || 1
-                );
+                total +=
 
-        });
+                    (
+                        Number(
+                            item.price
+                        ) || 0
+                    )
+
+                    *
+
+                    (
+                        Number(
+                            item.quantity
+                        ) || 1
+                    );
+
+            }
+        );
 
 
-        var orderId =
+        /* =========================
+           ORDER ID
+        ========================= */
+
+        let orderId =
             generateOrderId();
 
 
-        var now =
+        let now =
             new Date();
 
 
-        var order = {
+        /* =========================
+           NEW ORDER
+        ========================= */
+
+        let newOrder = {
 
             id:
+                orderId,
+
+            orderId:
                 orderId,
 
             customerName:
@@ -1048,7 +1175,7 @@ checkoutForm.addEventListener(
                 mode,
 
             status:
-                "New",
+                "Pending",
 
             date:
                 now.toLocaleDateString(
@@ -1066,56 +1193,47 @@ checkoutForm.addEventListener(
         };
 
 
-        /* SAVE ORDERS */
+        /* =================================================
+           SAVE ORDER
+           IMPORTANT:
+           Admin orders.html reads "orders"
+        ================================================= */
 
-        var orders = [];
-
-        try{
-
-            orders =
-                JSON.parse(
-                    localStorage.getItem(
-                        "fpoOrders"
-                    ) || "[]"
-                );
-
-        }catch(error){
-
-            orders = [];
-
-        }
-
-
-        if(!Array.isArray(orders)){
-
-            orders = [];
-
-        }
+        let orders =
+            JSON.parse(
+                localStorage.getItem(
+                    "orders"
+                )
+            ) || [];
 
 
         orders.push(
-            order
+            newOrder
         );
 
 
         localStorage.setItem(
-            "fpoOrders",
+            "orders",
             JSON.stringify(
                 orders
             )
         );
 
 
+        /* =================================================
+           LAST ORDER
+        ================================================= */
+
         localStorage.setItem(
-            "fpoLastOrder",
+            "lastOrder",
             JSON.stringify(
-                order
+                newOrder
             )
         );
 
 
         /* =================================================
-           CLEAR ONLY CORRECT SOURCE
+           CLEAR CORRECT SOURCE
         ================================================= */
 
         if(mode === "buyNow"){
@@ -1148,6 +1266,10 @@ checkoutForm.addEventListener(
 
         updateCartCount();
 
+
+        /* =================================================
+           SUCCESS
+        ================================================= */
 
         successOrderId.textContent =
             orderId;
@@ -1184,4 +1306,5 @@ updateCartCount();
 </script>
 
 </body>
+
 </html>
