@@ -201,6 +201,12 @@ margin-bottom:10px;
 
 }
 
+.welcome p{
+
+line-height:1.7;
+
+}
+
 
 /* =========================
    DASHBOARD CARDS
@@ -321,13 +327,25 @@ font-weight:bold;
 
 color:#1565C0;
 
-margin:12px;
+margin:8px;
 
 }
 
 .pending{
 
 color:#F57C00;
+
+}
+
+.confirmed{
+
+color:#1976D2;
+
+}
+
+.delivered{
+
+color:#00897B;
 
 }
 
@@ -353,11 +371,70 @@ text-decoration:none;
 
 font-weight:bold;
 
+margin-top:8px;
+
 }
 
 .card a:hover{
 
 background:#1B5E20;
+
+}
+
+
+/* =========================
+   ORDERS MINI STATS
+========================= */
+
+.order-stats{
+
+display:flex;
+
+justify-content:center;
+
+gap:8px;
+
+flex-wrap:wrap;
+
+margin:8px 0;
+
+}
+
+.order-mini{
+
+padding:5px 9px;
+
+border-radius:5px;
+
+font-size:12px;
+
+font-weight:bold;
+
+background:#eee;
+
+}
+
+.order-mini.pending-mini{
+
+background:#FFF3E0;
+
+color:#F57C00;
+
+}
+
+.order-mini.confirmed-mini{
+
+background:#E3F2FD;
+
+color:#1976D2;
+
+}
+
+.order-mini.delivered-mini{
+
+background:#E0F2F1;
+
+color:#00897B;
 
 }
 
@@ -545,13 +622,13 @@ Orders, Agriculture News और Website Content
 
 
 <!-- =========================
-     CARDS
+     DASHBOARD CARDS
 ========================= -->
 
 <div class="cards">
 
 
-<!-- FARMERS -->
+<!-- ================= FARMERS ================= -->
 
 <div class="card">
 
@@ -581,7 +658,7 @@ Open
 </div>
 
 
-<!-- MEMBERSHIP -->
+<!-- ================= MEMBERSHIP ================= -->
 
 <div class="card">
 
@@ -611,7 +688,7 @@ Open
 </div>
 
 
-<!-- PRODUCTS -->
+<!-- ================= PRODUCTS ================= -->
 
 <div class="card">
 
@@ -641,7 +718,7 @@ Open
 </div>
 
 
-<!-- ORDERS -->
+<!-- ================= ORDERS ================= -->
 
 <div class="card">
 
@@ -657,6 +734,7 @@ Orders
 Customer Orders Manage करें
 </p>
 
+
 <div
 class="count"
 id="totalOrders"
@@ -664,12 +742,32 @@ id="totalOrders"
 0
 </div>
 
+
+<div class="order-stats">
+
 <div
-class="count pending"
+class="order-mini pending-mini"
 id="pendingOrders"
 >
-0
+Pending: 0
 </div>
+
+<div
+class="order-mini confirmed-mini"
+id="confirmedOrders"
+>
+Confirmed: 0
+</div>
+
+<div
+class="order-mini delivered-mini"
+id="deliveredOrders"
+>
+Delivered: 0
+</div>
+
+</div>
+
 
 <a href="orders.html">
 Open
@@ -678,7 +776,7 @@ Open
 </div>
 
 
-<!-- NEWS -->
+<!-- ================= NEWS ================= -->
 
 <div class="card">
 
@@ -701,7 +799,7 @@ Open
 </div>
 
 
-<!-- GALLERY -->
+<!-- ================= GALLERY ================= -->
 
 <div class="card">
 
@@ -717,14 +815,14 @@ Gallery
 Website Gallery Manage करें
 </p>
 
-<a href="gallery.html">
+<a href="admin-gallery.html">
 Open
 </a>
 
 </div>
 
 
-<!-- REPORTS -->
+<!-- ================= REPORTS ================= -->
 
 <div class="card">
 
@@ -747,7 +845,7 @@ Open
 </div>
 
 
-<!-- SETTINGS -->
+<!-- ================= SETTINGS ================= -->
 
 <div class="card">
 
@@ -803,32 +901,81 @@ Empowering Farmers • Promoting Organic Agriculture
 <script>
 
 
-/* =========================
+/* ==================================================
    PRODUCTS
-========================= */
+================================================== */
 
-let products =
+let products = [];
 
+
+try{
+
+products =
 JSON.parse(
 localStorage.getItem("products")
 ) || [];
+
+}catch(error){
+
+products = [];
+
+}
+
+
+/* अगर products key खाली है तो fpoProducts देखें */
+
+if(!Array.isArray(products) || products.length === 0){
+
+try{
+
+products =
+JSON.parse(
+localStorage.getItem("fpoProducts")
+) || [];
+
+}catch(error){
+
+products = [];
+
+}
+
+}
 
 
 document.getElementById(
 "totalProducts"
 ).textContent =
-products.length;
+Array.isArray(products)
+? products.length
+: 0;
 
 
-/* =========================
+/* ==================================================
    ORDERS
-========================= */
+================================================== */
 
-let orders =
+let orders = [];
 
+
+try{
+
+orders =
 JSON.parse(
 localStorage.getItem("orders")
 ) || [];
+
+}catch(error){
+
+orders = [];
+
+}
+
+
+if(!Array.isArray(orders)){
+
+orders = [];
+
+}
 
 
 document.getElementById(
@@ -837,19 +984,80 @@ document.getElementById(
 orders.length;
 
 
-/* =========================
-   PENDING ORDERS
-========================= */
+/* ==================================================
+   ORDER STATUS FUNCTION
+================================================== */
+
+function getOrderStatus(order){
+
+const status = String(
+order.status || "Pending"
+).toLowerCase();
+
+
+if(status === "confirmed"){
+
+return "Confirmed";
+
+}
+
+
+if(status === "shipped"){
+
+return "Shipped";
+
+}
+
+
+if(status === "delivered"){
+
+return "Delivered";
+
+}
+
+
+if(
+status === "cancelled" ||
+status === "canceled"
+){
+
+return "Cancelled";
+
+}
+
+
+return "Pending";
+
+}
+
+
+/* ==================================================
+   ORDER COUNTS
+================================================== */
 
 let pendingOrders =
-
 orders.filter(function(order){
 
-return (
-order.status === "Pending" ||
-order.status === "New" ||
-!order.status
-);
+return getOrderStatus(order)
+=== "Pending";
+
+}).length;
+
+
+let confirmedOrders =
+orders.filter(function(order){
+
+return getOrderStatus(order)
+=== "Confirmed";
+
+}).length;
+
+
+let deliveredOrders =
+orders.filter(function(order){
+
+return getOrderStatus(order)
+=== "Delivered";
 
 }).length;
 
@@ -857,29 +1065,60 @@ order.status === "New" ||
 document.getElementById(
 "pendingOrders"
 ).textContent =
-"🟡 Pending: " + pendingOrders;
+"Pending: " + pendingOrders;
 
 
-/* =========================
+document.getElementById(
+"confirmedOrders"
+).textContent =
+"Confirmed: " + confirmedOrders;
+
+
+document.getElementById(
+"deliveredOrders"
+).textContent =
+"Delivered: " + deliveredOrders;
+
+
+/* ==================================================
    MEMBERS
-========================= */
+================================================== */
 
-let members =
+let members = [];
 
+
+try{
+
+members =
 JSON.parse(
 localStorage.getItem("members")
 ) || [];
 
+}catch(error){
 
-/* =========================
+members = [];
+
+}
+
+
+if(!Array.isArray(members)){
+
+members = [];
+
+}
+
+
+/* ==================================================
    APPROVED FARMERS
-========================= */
+================================================== */
 
 let approvedFarmers =
-
 members.filter(function(member){
 
-return member.status === "Approved";
+return String(
+member.status || ""
+).toLowerCase()
+=== "approved";
 
 }).length;
 
@@ -890,17 +1129,22 @@ document.getElementById(
 approvedFarmers;
 
 
-/* =========================
+/* ==================================================
    PENDING MEMBERS
-========================= */
+================================================== */
 
 let pendingMembers =
-
 members.filter(function(member){
 
+const status =
+String(
+member.status || "Pending"
+).toLowerCase();
+
+
 return (
-!member.status ||
-member.status === "Pending"
+status === "pending" ||
+status === ""
 );
 
 }).length;
@@ -912,20 +1156,17 @@ document.getElementById(
 pendingMembers;
 
 
-/* =========================
+/* ==================================================
    LOGOUT
-========================= */
+================================================== */
 
 function logout(){
 
 localStorage.removeItem("user");
 
-/*
-   Browser history में Dashboard
-   वापस न आने देने के लिए
-*/
-
-window.location.replace("index.html");
+window.location.replace(
+"index.html"
+);
 
 }
 
