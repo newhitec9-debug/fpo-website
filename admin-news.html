@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="hi">
 
@@ -10,403 +9,749 @@
 content="width=device-width, initial-scale=1.0">
 
 <title>
-Agriculture News | Admin
+Agriculture News Management | Bundelkhand Organic FPO
 </title>
 
 <style>
 
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
+
+
+/* =====================================================
+   BODY
+===================================================== */
 
 body{
-background:#f4fff4;
-color:#333;
+    background:#f4fff4;
+    color:#333;
 }
 
 
-/* =========================
-SIDEBAR
-========================= */
+/* =====================================================
+   SIDEBAR
+===================================================== */
 
 .sidebar{
 
-position:fixed;
+    position:fixed;
 
-left:0;
-top:0;
+    left:0;
+    top:0;
 
-width:250px;
-height:100vh;
+    width:250px;
+    height:100vh;
 
-background:#1B5E20;
+    background:
+    linear-gradient(
+        180deg,
+        #1B5E20,
+        #2E7D32,
+        #1B5E20
+    );
 
-color:white;
+    color:white;
 
-overflow-y:auto;
+    overflow-y:auto;
+
+    box-shadow:
+        3px 0 12px rgba(0,0,0,.20);
 
 }
 
+
+/* =====================================================
+   LOGO
+===================================================== */
+
 .logo{
 
-padding:20px 10px;
+    padding:22px 12px;
 
-text-align:center;
+    text-align:center;
 
-border-bottom:1px solid
-rgba(255,255,255,0.2);
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.25);
 
 }
 
 .logo h2{
-font-size:19px;
+
+    font-size:20px;
+
+    line-height:1.4;
+
 }
 
 .logo p{
-font-size:13px;
-margin-top:5px;
-color:#dcedc8;
+
+    font-size:13px;
+
+    margin-top:6px;
+
+    color:#dcedc8;
+
 }
 
+
+/* =====================================================
+   MENU
+===================================================== */
+
 .menu{
-padding:15px 10px;
+
+    padding:15px 10px;
+
 }
+
 
 .menu a{
 
-display:block;
+    display:block;
 
-color:white;
+    color:white;
 
-text-decoration:none;
+    text-decoration:none;
 
-padding:12px 15px;
+    padding:13px 15px;
 
-margin:5px 0;
+    margin:6px 0;
 
-border-radius:6px;
+    border-radius:7px;
 
-font-weight:bold;
+    font-weight:bold;
+
+    transition:.2s;
 
 }
+
 
 .menu a:hover{
-background:#2E7D32;
+
+    background:#43A047;
+
+    transform:
+        translateX(3px);
+
 }
+
 
 .menu a.active{
-background:#388E3C;
+
+    background:
+        linear-gradient(
+            90deg,
+            #43A047,
+            #66BB6A
+        );
+
+    box-shadow:
+        0 3px 8px
+        rgba(0,0,0,.20);
+
 }
 
 
-/* =========================
-MAIN
-========================= */
+/* =====================================================
+   MAIN
+===================================================== */
 
 .main{
 
-margin-left:250px;
+    margin-left:250px;
 
-min-height:100vh;
+    min-height:100vh;
 
 }
 
+
+/* =====================================================
+   HEADER
+===================================================== */
+
 .header{
 
-background:#2E7D32;
+    background:
+    linear-gradient(
+        135deg,
+        #1B5E20,
+        #2E7D32,
+        #43A047
+    );
 
-color:white;
+    color:white;
 
-padding:20px 25px;
+    padding:23px 28px;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.15);
 
 }
 
 .header h1{
-font-size:26px;
+
+    font-size:27px;
+
 }
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
 
 .container{
 
-max-width:1200px;
+    max-width:1200px;
 
-margin:auto;
+    margin:auto;
 
-padding:25px;
+    padding:28px;
 
 }
 
 
-/* =========================
-BOX
-========================= */
+/* =====================================================
+   TOP INFO
+===================================================== */
+
+.info-card{
+
+    background:white;
+
+    padding:22px;
+
+    border-radius:12px;
+
+    margin-bottom:25px;
+
+    border-left:
+        6px solid #43A047;
+
+    box-shadow:
+        0 3px 12px #ccc;
+
+}
+
+.info-card h2{
+
+    color:#2E7D32;
+
+    margin-bottom:8px;
+
+}
+
+.info-card p{
+
+    color:#666;
+
+    line-height:1.6;
+
+}
+
+
+/* =====================================================
+   BOX
+===================================================== */
 
 .box{
 
-background:white;
+    background:white;
 
-padding:25px;
+    padding:25px;
 
-border-radius:10px;
+    border-radius:12px;
 
-box-shadow:0 0 10px #ccc;
+    box-shadow:
+        0 3px 12px #ccc;
 
-margin-bottom:25px;
+    margin-bottom:25px;
 
 }
 
 .box h2{
 
-color:#2E7D32;
+    color:#2E7D32;
 
-margin-bottom:20px;
+    margin-bottom:20px;
 
 }
 
 
-/* =========================
-FORM
-========================= */
+/* =====================================================
+   FORM
+===================================================== */
 
 .form-group{
 
-margin-bottom:15px;
+    margin-bottom:18px;
 
 }
+
 
 .form-group label{
 
-display:block;
+    display:block;
 
-font-weight:bold;
+    font-weight:bold;
 
-margin-bottom:6px;
+    margin-bottom:7px;
+
+    color:#333;
 
 }
+
 
 input,
 textarea{
 
-width:100%;
+    width:100%;
 
-padding:12px;
+    padding:13px;
 
-border:1px solid #ccc;
+    border:
+        1px solid #ccc;
 
-border-radius:5px;
+    border-radius:7px;
 
-font-size:16px;
+    font-size:16px;
+
+    transition:.2s;
 
 }
+
+
+input:focus,
+textarea:focus{
+
+    outline:none;
+
+    border-color:#43A047;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(67,160,71,.12);
+
+}
+
 
 textarea{
 
-height:120px;
+    min-height:130px;
 
-resize:vertical;
+    resize:vertical;
 
 }
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.button-row{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
 
 button{
 
-border:none;
+    border:none;
 
-cursor:pointer;
+    cursor:pointer;
 
-border-radius:5px;
+    border-radius:7px;
 
-font-weight:bold;
+    font-weight:bold;
+
+    transition:.2s;
 
 }
 
-
-/* ADD BUTTON */
 
 .add-btn{
 
-background:#2E7D32;
+    background:#2E7D32;
 
-color:white;
+    color:white;
 
-padding:12px 25px;
+    padding:12px 25px;
 
-font-size:16px;
+    font-size:16px;
 
 }
+
 
 .add-btn:hover{
 
-background:#1B5E20;
+    background:#1B5E20;
+
+    transform:
+        translateY(-1px);
 
 }
 
-
-/* CANCEL */
 
 .cancel-btn{
 
-background:#777;
+    background:#757575;
 
-color:white;
+    color:white;
 
-padding:12px 20px;
+    padding:12px 22px;
 
-margin-left:8px;
+    font-size:16px;
 
-display:none;
+    display:none;
 
 }
 
 
-/* =========================
-SEARCH
-========================= */
+.cancel-btn:hover{
+
+    background:#555;
+
+}
+
+
+/* =====================================================
+   SEARCH AREA
+===================================================== */
+
+.search-area{
+
+    background:#FFF8E1;
+
+    padding:15px;
+
+    border-radius:8px;
+
+    margin-bottom:20px;
+
+    border:
+        1px solid #FFE0B2;
+
+}
+
 
 #search{
 
-margin-bottom:20px;
+    margin:0;
 
 }
 
 
-/* =========================
-TABLE
-========================= */
+/* =====================================================
+   NEWS TABLE
+===================================================== */
 
 .table-container{
 
-overflow-x:auto;
+    width:100%;
+
+    overflow-x:auto;
 
 }
+
 
 table{
 
-width:100%;
+    width:100%;
 
-border-collapse:collapse;
+    min-width:900px;
+
+    border-collapse:collapse;
+
+}
+
+
+thead th{
+
+    background:
+    linear-gradient(
+        135deg,
+        #2E7D32,
+        #43A047
+    );
+
+    color:white;
+
+    padding:13px 10px;
+
+    text-align:center;
 
 }
 
-th{
 
-background:#2E7D32;
+tbody tr{
 
-color:white;
-
-padding:12px;
+    transition:.2s;
 
 }
+
+
+tbody tr:nth-child(even){
+
+    background:#f8fff8;
+
+}
+
+
+tbody tr:hover{
+
+    background:#FFF8E1;
+
+}
+
 
 td{
 
-padding:12px;
+    padding:13px 10px;
 
-border-bottom:1px solid #ddd;
+    border-bottom:
+        1px solid #ddd;
 
-text-align:center;
+    text-align:center;
 
-vertical-align:top;
+    vertical-align:top;
 
-}
-
-tr:hover{
-
-background:#f1f8e9;
+    line-height:1.5;
 
 }
 
 
-/* ACTION BUTTONS */
+/* =====================================================
+   NEWS TITLE
+===================================================== */
+
+.news-title{
+
+    color:#2E7D32;
+
+    font-weight:bold;
+
+}
+
+
+/* =====================================================
+   DATE
+===================================================== */
+
+.news-date{
+
+    display:inline-block;
+
+    background:#E3F2FD;
+
+    color:#1565C0;
+
+    padding:6px 10px;
+
+    border-radius:15px;
+
+    font-weight:bold;
+
+    font-size:13px;
+
+}
+
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
 
 .edit-btn{
 
-background:#1565C0;
+    background:#1565C0;
 
-color:white;
+    color:white;
 
-padding:8px 12px;
+    padding:8px 13px;
 
-margin:2px;
+    margin:2px;
 
 }
+
+
+.edit-btn:hover{
+
+    background:#0D47A1;
+
+}
+
 
 .delete-btn{
 
-background:#D32F2F;
+    background:#D32F2F;
 
-color:white;
+    color:white;
 
-padding:8px 12px;
+    padding:8px 13px;
 
-margin:2px;
+    margin:2px;
 
 }
 
-.edit-btn:hover{
-background:#0D47A1;
-}
 
 .delete-btn:hover{
-background:#B71C1C;
+
+    background:#B71C1C;
+
 }
 
 
-/* EMPTY */
+/* =====================================================
+   EMPTY
+===================================================== */
 
 .empty{
 
-text-align:center;
+    text-align:center;
 
-padding:30px;
+    padding:35px;
 
-color:#777;
+    color:#777;
+
+    font-size:16px;
 
 }
 
 
-/* =========================
-MOBILE
-========================= */
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back-btn{
+
+    display:inline-block;
+
+    background:#F57C00;
+
+    color:white;
+
+    padding:12px 24px;
+
+    text-decoration:none;
+
+    border-radius:7px;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 3px 8px #ccc;
+
+}
+
+
+.back-btn:hover{
+
+    background:#E65100;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    background:#1B5E20;
+
+    color:white;
+
+    text-align:center;
+
+    padding:22px;
+
+    margin-top:30px;
+
+}
+
+
+footer p{
+
+    margin:5px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:800px){
 
-.sidebar{
+    .sidebar{
 
-position:relative;
+        position:relative;
 
-width:100%;
+        width:100%;
 
-height:auto;
+        height:auto;
 
-}
+    }
 
-.main{
 
-margin-left:0;
+    .main{
 
-}
+        margin-left:0;
 
-.menu a{
+    }
 
-display:inline-block;
 
-margin:3px;
+    .menu{
 
-}
+        text-align:center;
 
-.container{
+    }
 
-padding:15px;
 
-}
+    .menu a{
 
-.header h1{
+        display:inline-block;
 
-font-size:21px;
+        margin:3px;
 
-}
+        padding:9px 11px;
+
+        font-size:13px;
+
+    }
+
+
+    .container{
+
+        padding:15px;
+
+    }
+
+
+    .header h1{
+
+        font-size:21px;
+
+    }
+
+
+    .box{
+
+        padding:18px;
+
+    }
 
 }
 
@@ -418,290 +763,328 @@ font-size:21px;
 <body>
 
 
-<!-- =========================
-ADMIN SECURITY
-========================= -->
+<!-- =====================================================
+     ADMIN SECURITY
+===================================================== -->
 
 <script>
 
 if(
-localStorage.getItem("user")
-!=="admin"
+    localStorage.getItem("user")
+    !== "admin"
 ){
 
-window.location.replace(
-"login.html"
-);
+    window.location.replace(
+        "login.html"
+    );
 
 }
 
 </script>
 
 
-<!-- =========================
-SIDEBAR
-========================= -->
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
 
 <div class="sidebar">
 
 
-<div class="logo">
+    <div class="logo">
 
-<h2>
-🌾 Bundelkhand Organic FPO
-</h2>
+        <h2>
+            Bundelkhand Organic FPO
+        </h2>
 
-<p>
-Admin Control Panel
-</p>
+        <p>
+            Admin Control Panel
+        </p>
 
-</div>
-
-
-<div class="menu">
+    </div>
 
 
-<a href="admin-dashboard.html">
+    <div class="menu">
 
-👨‍💼 Dashboard
-
-</a>
-
-
-<a href="index.html">
-
-🏠 Home Page
-
-</a>
+        <a
+            href="admin-dashboard.html"
+        >
+            Admin Dashboard
+        </a>
 
 
-<a href="farmers-list.html">
-
-👨‍🌾 Farmers
-
-</a>
-
-
-<a href="membership-requests.html">
-
-📝 Membership Requests
-
-</a>
+        <a
+            href="index.html"
+        >
+            Home Page
+        </a>
 
 
-<a href="manage-products.html">
-
-📦 Manage Products
-
-</a>
-
-
-<a href="orders.html">
-
-🛒 Orders
-
-</a>
+        <a
+            href="farmers-list.html"
+        >
+            Farmers
+        </a>
 
 
-<a
-href="admin-news.html"
-class="active"
->
-
-📰 Agriculture News
-
-</a>
+        <a
+            href="membership-requests.html"
+        >
+            Membership Requests
+        </a>
 
 
-<a href="gallery.html">
+        <a
+            href="manage-products.html"
+        >
+            Manage Products
+        </a>
 
-🖼️ Gallery
 
-</a>
+        <a
+            href="orders.html"
+        >
+            Orders
+        </a>
 
+
+        <a
+            href="admin-news.html"
+            class="active"
+        >
+            Agriculture News
+        </a>
+
+
+        <a
+            href="gallery.html"
+        >
+            Gallery
+        </a>
+
+    </div>
 
 </div>
 
 
-</div>
-
-
-<!-- =========================
-MAIN
-========================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <div class="main">
 
 
-<div class="header">
+    <div class="header">
 
-<h1>
-📰 Agriculture News Management
-</h1>
+        <h1>
+            Agriculture News Management
+        </h1>
 
-</div>
+    </div>
 
 
-<div class="container">
+    <div class="container">
 
 
-<!-- ADD NEWS -->
+        <!-- =================================================
+             INFO
+        ================================================= -->
 
-<div class="box">
+        <div class="info-card">
 
-<h2>
-➕ Add Agriculture News
-</h2>
+            <h2>
+                Agriculture News
+            </h2>
 
+            <p>
+                यहाँ से FPO की Agriculture News
+                Add, Edit, Search और Delete करें।
+                News automatically website के
+                Agriculture News page पर दिखाई देगी।
+            </p>
 
-<div class="form-group">
+        </div>
 
-<label>
-News Title
-</label>
 
-<input
-type="text"
-id="newsTitle"
-placeholder="जैसे: किसानों के लिए नई कृषि योजना"
->
+        <!-- =================================================
+             ADD NEWS
+        ================================================= -->
 
-</div>
+        <div class="box">
 
+            <h2>
+                Add Agriculture News
+            </h2>
 
-<div class="form-group">
 
-<label>
-News Description
-</label>
+            <div class="form-group">
 
-<textarea
-id="newsDescription"
-placeholder="News की पूरी जानकारी लिखें..."
-></textarea>
+                <label>
+                    News Title
+                </label>
 
-</div>
+                <input
+                    type="text"
+                    id="newsTitle"
+                    placeholder="जैसे: किसानों के लिए नई कृषि योजना"
+                >
 
+            </div>
 
-<div class="form-group">
 
-<label>
-News Date
-</label>
+            <div class="form-group">
 
-<input
-type="date"
-id="newsDate"
->
+                <label>
+                    News Description
+                </label>
 
-</div>
+                <textarea
+                    id="newsDescription"
+                    placeholder="News की पूरी जानकारी लिखें..."
+                ></textarea>
 
+            </div>
 
-<button
-class="add-btn"
-id="saveBtn"
-onclick="saveNews()"
->
 
-➕ Add News
+            <div class="form-group">
 
-</button>
+                <label>
+                    News Date
+                </label>
 
+                <input
+                    type="date"
+                    id="newsDate"
+                >
 
-<button
-class="cancel-btn"
-id="cancelBtn"
-onclick="cancelEdit()"
->
+            </div>
 
-❌ Cancel
 
-</button>
+            <div class="button-row">
 
+                <button
+                    class="add-btn"
+                    id="saveBtn"
+                    onclick="saveNews()"
+                >
+                    Add News
+                </button>
 
-</div>
 
+                <button
+                    class="cancel-btn"
+                    id="cancelBtn"
+                    onclick="cancelEdit()"
+                >
+                    Cancel Edit
+                </button>
 
-<!-- NEWS LIST -->
+            </div>
 
-<div class="box">
+        </div>
 
-<h2>
-📰 Agriculture News List
-</h2>
 
+        <!-- =================================================
+             NEWS LIST
+        ================================================= -->
 
-<input
-type="text"
-id="search"
-placeholder="🔍 Search News..."
-onkeyup="searchNews()"
->
+        <div class="box">
 
+            <h2>
+                Agriculture News List
+            </h2>
 
-<div class="table-container">
 
-<table>
+            <div class="search-area">
 
-<thead>
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="Search News by title, description or date..."
+                    oninput="searchNews()"
+                >
 
-<tr>
+            </div>
 
-<th>
-Sr No.
-</th>
 
-<th>
-News Title
-</th>
+            <div class="table-container">
 
-<th>
-Description
-</th>
+                <table>
 
-<th>
-Date
-</th>
+                    <thead>
 
-<th>
-Action
-</th>
+                        <tr>
 
-</tr>
+                            <th>
+                                Sr No.
+                            </th>
 
-</thead>
+                            <th>
+                                News Title
+                            </th>
 
+                            <th>
+                                Description
+                            </th>
 
-<tbody id="newsList">
+                            <th>
+                                Date
+                            </th>
 
-</tbody>
+                            <th>
+                                Action
+                            </th>
 
-</table>
+                        </tr>
 
-</div>
+                    </thead>
 
 
-</div>
+                    <tbody
+                        id="newsList"
+                    >
+                    </tbody>
 
+                </table>
 
-<a
-href="admin-dashboard.html"
-style="
-display:inline-block;
-background:#1B5E20;
-color:white;
-padding:12px 25px;
-text-decoration:none;
-border-radius:5px;
-"
->
+            </div>
 
-⬅ Back To Dashboard
+        </div>
 
-</a>
 
+        <!-- =================================================
+             BACK
+        ================================================= -->
 
-</div>
+        <a
+            href="admin-dashboard.html"
+            class="back-btn"
+        >
+            Back To Admin Dashboard
+        </a>
+
+
+    </div>
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================= -->
+
+    <footer>
+
+        <p>
+            Bundelkhand Organic Farmer Producer Company Limited
+        </p>
+
+        <p>
+            Empowering Farmers • Promoting Organic Agriculture
+        </p>
+
+        <p>
+            © 2026 All Rights Reserved
+        </p>
+
+    </footer>
 
 
 </div>
@@ -710,399 +1093,642 @@ border-radius:5px;
 <script>
 
 
-/* =========================
-LOAD NEWS
-========================= */
+/* =====================================================
+   LOAD NEWS
+===================================================== */
 
-let news =
+let news = [];
 
-JSON.parse(
-localStorage.getItem("agricultureNews")
-) || [];
+try{
+
+    let savedNews =
+        localStorage.getItem(
+            "agricultureNews"
+        );
+
+
+    news =
+        savedNews
+        ? JSON.parse(savedNews)
+        : [];
+
+
+    if(!Array.isArray(news)){
+
+        news = [];
+
+    }
+
+}
+catch(error){
+
+    console.error(
+        "News Load Error:",
+        error
+    );
+
+    news = [];
+
+}
 
 
 let editIndex = -1;
 
 
-displayNews();
+/* =====================================================
+   SAVE LOCAL STORAGE
+===================================================== */
+
+function saveToStorage(){
+
+    localStorage.setItem(
+        "agricultureNews",
+        JSON.stringify(news)
+    );
+
+}
 
 
-/* =========================
-SAVE NEWS
-========================= */
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value){
+
+    return String(
+        value ?? ""
+    )
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   SAVE / UPDATE NEWS
+===================================================== */
 
 function saveNews(){
 
-let title =
-document.getElementById(
-"newsTitle"
-).value.trim();
+    let title =
+        document.getElementById(
+            "newsTitle"
+        ).value.trim();
 
 
-let description =
-document.getElementById(
-"newsDescription"
-).value.trim();
+    let description =
+        document.getElementById(
+            "newsDescription"
+        ).value.trim();
 
 
-let date =
-document.getElementById(
-"newsDate"
-).value;
+    let date =
+        document.getElementById(
+            "newsDate"
+        ).value;
 
 
-if(!title){
+    if(!title){
 
-alert(
-"⚠️ कृपया News Title लिखें।"
-);
+        alert(
+            "Please enter News Title."
+        );
 
-return;
+        return;
+
+    }
+
+
+    if(!description){
+
+        alert(
+            "Please enter News Description."
+        );
+
+        return;
+
+    }
+
+
+    if(!date){
+
+        alert(
+            "Please select News Date."
+        );
+
+        return;
+
+    }
+
+
+    let newsData = {
+
+        title:
+            title,
+
+        description:
+            description,
+
+        date:
+            date
+
+    };
+
+
+    /* =========================
+       ADD
+    ========================= */
+
+    if(editIndex === -1){
+
+        news.push(
+            newsData
+        );
+
+
+        saveToStorage();
+
+
+        alert(
+            "Agriculture News Successfully Added!"
+        );
+
+    }
+
+
+    /* =========================
+       UPDATE
+    ========================= */
+
+    else{
+
+        if(
+            !news[editIndex]
+        ){
+
+            alert(
+                "News record नहीं मिला।"
+            );
+
+            return;
+
+        }
+
+
+        news[editIndex] =
+            newsData;
+
+
+        saveToStorage();
+
+
+        alert(
+            "Agriculture News Successfully Updated!"
+        );
+
+    }
+
+
+    cancelEdit();
+
+    displayNews();
 
 }
 
 
-if(!description){
-
-alert(
-"⚠️ कृपया News Description लिखें।"
-);
-
-return;
-
-}
-
-
-if(!date){
-
-alert(
-"⚠️ कृपया News Date चुनें।"
-);
-
-return;
-
-}
-
-
-let newsData={
-
-title:title,
-
-description:description,
-
-date:date
-
-};
-
-
-if(editIndex === -1){
-
-news.push(newsData);
-
-alert(
-"✅ Agriculture News Successfully Added!"
-);
-
-}
-
-else{
-
-news[editIndex] = newsData;
-
-alert(
-"✅ Agriculture News Successfully Updated!"
-);
-
-editIndex=-1;
-
-document.getElementById(
-"saveBtn"
-).innerHTML="➕ Add News";
-
-document.getElementById(
-"cancelBtn"
-).style.display="none";
-
-}
-
-
-localStorage.setItem(
-"agricultureNews",
-JSON.stringify(news)
-);
-
-
-clearForm();
-
-displayNews();
-
-}
-
-
-/* =========================
-DISPLAY NEWS
-========================= */
+/* =====================================================
+   DISPLAY NEWS
+===================================================== */
 
 function displayNews(){
 
-let list =
-document.getElementById(
-"newsList"
-);
+    let list =
+        document.getElementById(
+            "newsList"
+        );
 
 
-list.innerHTML="";
+    list.innerHTML =
+        "";
 
 
-if(news.length===0){
+    if(
+        news.length === 0
+    ){
 
-list.innerHTML=`
+        list.innerHTML = `
 
-<tr>
+            <tr>
 
-<td
-colspan="5"
-class="empty"
->
+                <td
+                    colspan="5"
+                    class="empty"
+                >
 
-📰 अभी कोई Agriculture News उपलब्ध नहीं है।
+                    अभी कोई Agriculture News
+                    उपलब्ध नहीं है।
 
-</td>
+                </td>
 
-</tr>
+            </tr>
 
-`;
+        `;
 
-return;
+        return;
+
+    }
+
+
+    news.forEach(
+        function(item,index){
+
+            let row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            row.innerHTML = `
+
+                <td>
+                    ${index + 1}
+                </td>
+
+
+                <td class="news-title">
+
+                    ${escapeHTML(
+                        item.title
+                    )}
+
+                </td>
+
+
+                <td>
+
+                    ${escapeHTML(
+                        item.description
+                    )}
+
+                </td>
+
+
+                <td>
+
+                    <span
+                        class="news-date"
+                    >
+
+                        ${escapeHTML(
+                            item.date
+                        )}
+
+                    </span>
+
+                </td>
+
+
+                <td>
+
+                    <button
+
+                        class="edit-btn"
+
+                        onclick="
+                            editNews(${index})
+                        "
+
+                    >
+                        Edit
+                    </button>
+
+
+                    <button
+
+                        class="delete-btn"
+
+                        onclick="
+                            deleteNews(${index})
+                        "
+
+                    >
+                        Delete
+                    </button>
+
+                </td>
+
+            `;
+
+
+            list.appendChild(
+                row
+            );
+
+        }
+    );
 
 }
 
 
-news.forEach(function(item,index){
-
-list.innerHTML += `
-
-<tr>
-
-<td>
-${index+1}
-</td>
-
-<td>
-<strong>
-${item.title}
-</strong>
-</td>
-
-<td>
-${item.description}
-</td>
-
-<td>
-${item.date}
-</td>
-
-<td>
-
-<button
-class="edit-btn"
-onclick="editNews(${index})"
->
-
-✏️ Edit
-
-</button>
-
-<button
-class="delete-btn"
-onclick="deleteNews(${index})"
->
-
-🗑️ Delete
-
-</button>
-
-</td>
-
-</tr>
-
-`;
-
-});
-
-}
-
-
-/* =========================
-EDIT
-========================= */
+/* =====================================================
+   EDIT NEWS
+===================================================== */
 
 function editNews(index){
 
-let item = news[index];
+    if(
+        !news[index]
+    ){
+
+        alert(
+            "News record नहीं मिला।"
+        );
+
+        return;
+
+    }
 
 
-document.getElementById(
-"newsTitle"
-).value=item.title;
+    let item =
+        news[index];
 
 
-document.getElementById(
-"newsDescription"
-).value=item.description;
+    document.getElementById(
+        "newsTitle"
+    ).value =
+        item.title || "";
 
 
-document.getElementById(
-"newsDate"
-).value=item.date;
+    document.getElementById(
+        "newsDescription"
+    ).value =
+        item.description || "";
 
 
-editIndex=index;
+    document.getElementById(
+        "newsDate"
+    ).value =
+        item.date || "";
 
 
-document.getElementById(
-"saveBtn"
-).innerHTML="💾 Update News";
+    editIndex =
+        index;
 
 
-document.getElementById(
-"cancelBtn"
-).style.display="inline-block";
+    document.getElementById(
+        "saveBtn"
+    ).textContent =
+        "Update News";
 
 
-window.scrollTo({
+    document.getElementById(
+        "cancelBtn"
+    ).style.display =
+        "inline-block";
 
-top:0,
 
-behavior:"smooth"
+    window.scrollTo({
 
-});
+        top:0,
+
+        behavior:"smooth"
+
+    });
 
 }
 
 
-/* =========================
-CANCEL EDIT
-========================= */
+/* =====================================================
+   CANCEL EDIT
+===================================================== */
 
 function cancelEdit(){
 
-editIndex=-1;
-
-clearForm();
-
-
-document.getElementById(
-"saveBtn"
-).innerHTML="➕ Add News";
+    editIndex =
+        -1;
 
 
-document.getElementById(
-"cancelBtn"
-).style.display="none";
+    clearForm();
+
+
+    document.getElementById(
+        "saveBtn"
+    ).textContent =
+        "Add News";
+
+
+    document.getElementById(
+        "cancelBtn"
+    ).style.display =
+        "none";
 
 }
 
 
-/* =========================
-CLEAR FORM
-========================= */
+/* =====================================================
+   CLEAR FORM
+===================================================== */
 
 function clearForm(){
 
-document.getElementById(
-"newsTitle"
-).value="";
+    document.getElementById(
+        "newsTitle"
+    ).value =
+        "";
 
 
-document.getElementById(
-"newsDescription"
-).value="";
+    document.getElementById(
+        "newsDescription"
+    ).value =
+        "";
 
 
-document.getElementById(
-"newsDate"
-).value="";
+    document.getElementById(
+        "newsDate"
+    ).value =
+        "";
 
 }
 
 
-/* =========================
-DELETE
-========================= */
+/* =====================================================
+   DELETE NEWS
+===================================================== */
 
 function deleteNews(index){
 
-if(
-confirm(
-"⚠️ क्या आप इस News को Delete करना चाहते हैं?"
-)
-){
+    if(
+        !news[index]
+    ){
 
-news.splice(index,1);
+        alert(
+            "News record नहीं मिला।"
+        );
 
+        return;
 
-localStorage.setItem(
-"agricultureNews",
-JSON.stringify(news)
-);
+    }
 
 
-displayNews();
+    let title =
+        news[index].title ||
+        "इस News";
 
 
-alert(
-"🗑️ News Successfully Deleted!"
-);
+    let confirmDelete =
+        confirm(
+
+            "क्या आप '" +
+            title +
+            "' को Delete करना चाहते हैं?"
+
+        );
+
+
+    if(!confirmDelete){
+
+        return;
+
+    }
+
+
+    news.splice(
+        index,
+        1
+    );
+
+
+    saveToStorage();
+
+
+    displayNews();
+
+
+    alert(
+        "Agriculture News Successfully Deleted!"
+    );
 
 }
 
-}
 
-
-/* =========================
-SEARCH
-========================= */
+/* =====================================================
+   SEARCH NEWS
+===================================================== */
 
 function searchNews(){
 
-let search =
-
-document.getElementById(
-"search"
-).value.toLowerCase();
-
-
-let rows =
-
-document.querySelectorAll(
-"#newsList tr"
-);
+    let search =
+        document.getElementById(
+            "search"
+        )
+        .value
+        .toLowerCase()
+        .trim();
 
 
-rows.forEach(function(row){
+    let rows =
+        document.querySelectorAll(
+            "#newsList tr"
+        );
 
-let text =
-row.textContent.toLowerCase();
+
+    let found =
+        false;
 
 
-if(
-text.includes(search)
-){
+    rows.forEach(
+        function(row){
 
-row.style.display="";
+            let text =
+                row.textContent
+                .toLowerCase();
+
+
+            if(
+                text.includes(search)
+            ){
+
+                row.style.display =
+                    "";
+
+                found =
+                    true;
+
+            }
+
+            else{
+
+                row.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+
+    let oldMessage =
+        document.getElementById(
+            "searchMessage"
+        );
+
+
+    if(oldMessage){
+
+        oldMessage.remove();
+
+    }
+
+
+    if(
+        !found &&
+        search !== ""
+    ){
+
+        let row =
+            document.createElement(
+                "tr"
+            );
+
+
+        row.id =
+            "searchMessage";
+
+
+        row.innerHTML = `
+
+            <td
+                colspan="5"
+                class="empty"
+            >
+
+                कोई Agriculture News
+                नहीं मिली।
+
+            </td>
+
+        `;
+
+
+        document.getElementById(
+            "newsList"
+        ).appendChild(
+            row
+        );
+
+    }
 
 }
 
-else{
 
-row.style.display="none";
+/* =====================================================
+   PAGE LOAD
+===================================================== */
 
-}
-
-});
-
-}
+displayNews();
 
 </script>
 
@@ -1110,4 +1736,3 @@ row.style.display="none";
 </body>
 
 </html>
-```
