@@ -1,6 +1,5 @@
-```html
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +18,11 @@ body{
     color:#222;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 .header{
     background:linear-gradient(135deg,#075e2d,#119447,#087f8c);
-    color:white;
+    color:#fff;
     text-align:center;
     padding:25px 15px;
     box-shadow:0 4px 15px rgba(0,0,0,.25);
@@ -39,15 +38,15 @@ body{
     font-size:16px;
 }
 
-/* ================= MAIN ================= */
+/* MAIN */
 
 .container{
     width:96%;
-    max-width:1450px;
+    max-width:1500px;
     margin:25px auto;
 }
 
-/* ================= TOP BUTTONS ================= */
+/* BUTTONS */
 
 .top-buttons{
     display:flex;
@@ -60,7 +59,7 @@ body{
     border:none;
     padding:12px 20px;
     border-radius:8px;
-    color:white;
+    color:#fff;
     font-weight:bold;
     font-size:15px;
     cursor:pointer;
@@ -82,7 +81,7 @@ body{
     background:linear-gradient(135deg,#1565c0,#42a5f5);
 }
 
-/* ================= STAT CARDS ================= */
+/* STATISTICS */
 
 .stats{
     display:grid;
@@ -94,7 +93,7 @@ body{
 .stat-card{
     position:relative;
     overflow:hidden;
-    color:white;
+    color:#fff;
     padding:24px;
     min-height:145px;
     border-radius:15px;
@@ -112,10 +111,11 @@ body{
 
 .stat-icon{
     position:absolute;
-    right:18px;
-    bottom:5px;
-    font-size:65px;
-    opacity:.2;
+    right:20px;
+    bottom:8px;
+    font-size:50px;
+    font-weight:bold;
+    opacity:.20;
 }
 
 .total-card{
@@ -134,10 +134,10 @@ body{
     background:linear-gradient(135deg,#6a1b9a,#ab47bc);
 }
 
-/* ================= ORDERS BOX ================= */
+/* ORDERS BOX */
 
 .orders-box{
-    background:white;
+    background:#fff;
     border-radius:15px;
     padding:25px;
     box-shadow:0 7px 20px rgba(0,0,0,.15);
@@ -153,7 +153,7 @@ body{
     font-size:24px;
 }
 
-/* ================= TABLE ================= */
+/* TABLE */
 
 .table-wrap{
     width:100%;
@@ -169,10 +169,11 @@ table{
 
 thead th{
     background:linear-gradient(135deg,#075e2d,#119447);
-    color:white;
+    color:#fff;
     padding:14px 10px;
     text-align:left;
     font-size:14px;
+    white-space:nowrap;
 }
 
 tbody td{
@@ -186,21 +187,21 @@ tbody tr:nth-child(even){
 }
 
 tbody tr:nth-child(odd){
-    background:#ffffff;
+    background:#fff;
 }
 
 tbody tr:hover{
     background:#e3f2fd;
 }
 
-/* ================= ORDER ID ================= */
+/* ORDER ID */
 
 .order-id{
     color:#1565c0;
     font-weight:bold;
 }
 
-/* ================= PRODUCT ================= */
+/* PRODUCT */
 
 .product-item{
     background:#fff8e1;
@@ -212,7 +213,7 @@ tbody tr:hover{
     min-width:150px;
 }
 
-/* ================= TOTAL ================= */
+/* TOTAL */
 
 .order-total{
     color:#7b1fa2;
@@ -220,9 +221,11 @@ tbody tr:hover{
     font-weight:bold;
 }
 
-/* ================= STATUS BUTTON ================= */
+/* STATUS */
 
-.status-box{
+.status-wrapper{
+    position:relative;
+    display:inline-block;
     min-width:140px;
 }
 
@@ -234,15 +237,13 @@ tbody tr:hover{
     font-weight:bold;
     font-size:13px;
     cursor:pointer;
-    color:white;
+    color:#fff;
     box-shadow:0 2px 5px rgba(0,0,0,.15);
 }
 
 .status-button:hover{
     opacity:.9;
 }
-
-/* Status colors */
 
 .status-pending{
     background:#f39c12;
@@ -264,13 +265,15 @@ tbody tr:hover{
     background:#dc3545;
 }
 
-/* Status menu */
+/* STATUS MENU */
 
 .status-menu{
     display:none;
     position:absolute;
-    z-index:100;
-    background:white;
+    z-index:1000;
+    top:45px;
+    left:0;
+    background:#fff;
     border:1px solid #ddd;
     border-radius:8px;
     box-shadow:0 5px 15px rgba(0,0,0,.25);
@@ -284,7 +287,7 @@ tbody tr:hover{
     padding:9px;
     margin:2px 0;
     border-radius:6px;
-    color:white;
+    color:#fff;
     font-weight:bold;
     cursor:pointer;
 }
@@ -293,18 +296,13 @@ tbody tr:hover{
     opacity:.85;
 }
 
-.status-wrapper{
-    position:relative;
-    display:inline-block;
-}
-
-/* ================= ACTION BUTTONS ================= */
+/* ACTION BUTTONS */
 
 .action-btn{
     border:none;
     padding:8px 12px;
     border-radius:6px;
-    color:white;
+    color:#fff;
     font-weight:bold;
     cursor:pointer;
     margin:2px;
@@ -322,7 +320,7 @@ tbody tr:hover{
     transform:scale(1.03);
 }
 
-/* ================= NO ORDERS ================= */
+/* NO ORDERS */
 
 .no-orders{
     display:none;
@@ -332,7 +330,7 @@ tbody tr:hover{
     color:#777;
 }
 
-/* ================= MODAL ================= */
+/* MODAL */
 
 .modal{
     display:none;
@@ -348,7 +346,7 @@ tbody tr:hover{
 }
 
 .modal-content{
-    background:white;
+    background:#fff;
     max-width:750px;
     width:95%;
     margin:40px auto;
@@ -359,7 +357,7 @@ tbody tr:hover{
 
 .modal-header{
     background:linear-gradient(135deg,#176b35,#009688);
-    color:white;
+    color:#fff;
     padding:20px;
 }
 
@@ -399,7 +397,7 @@ tbody tr:hover{
 
 .modal-total{
     background:linear-gradient(135deg,#6a1b9a,#ab47bc);
-    color:white;
+    color:#fff;
     padding:15px;
     border-radius:8px;
     font-size:22px;
@@ -408,17 +406,17 @@ tbody tr:hover{
     margin-top:15px;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
     margin-top:35px;
     background:linear-gradient(135deg,#075e2d,#087f8c);
-    color:white;
+    color:#fff;
     text-align:center;
     padding:20px;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:1000px){
 
@@ -457,14 +455,14 @@ footer{
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
 <div class="header">
 
-    <h1>📦 Orders Management</h1>
+    <h1>Orders Management</h1>
 
     <p>
-        🌾 Bundelkhand Organic Farmer Producer Company Limited
+        Bundelkhand Organic Farmer Producer Company Limited
     </p>
 
 </div>
@@ -472,7 +470,7 @@ footer{
 
 <div class="container">
 
-    <!-- ================= BUTTONS ================= -->
+    <!-- TOP BUTTONS -->
 
     <div class="top-buttons">
 
@@ -480,76 +478,76 @@ footer{
             href="admin-dashboard.html"
             class="btn dashboard-btn"
         >
-            🏠 Admin Dashboard
+            Admin Dashboard
         </a>
 
         <button
             class="btn refresh-btn"
             onclick="loadOrders()"
         >
-            🔄 Refresh Orders
+            Refresh Orders
         </button>
 
     </div>
 
 
-    <!-- ================= STATISTICS ================= -->
+    <!-- STATISTICS -->
 
     <div class="stats">
 
         <div class="stat-card total-card">
 
-            <h3>📦 Total Orders</h3>
+            <h3>Total Orders</h3>
 
             <strong id="totalOrders">0</strong>
 
-            <div class="stat-icon">📦</div>
+            <div class="stat-icon">ORD</div>
 
         </div>
 
 
         <div class="stat-card pending-card">
 
-            <h3>🕐 Pending Orders</h3>
+            <h3>Pending Orders</h3>
 
             <strong id="pendingOrders">0</strong>
 
-            <div class="stat-icon">⏳</div>
+            <div class="stat-icon">P</div>
 
         </div>
 
 
         <div class="stat-card confirmed-card">
 
-            <h3>✅ Confirmed Orders</h3>
+            <h3>Confirmed Orders</h3>
 
             <strong id="confirmedOrders">0</strong>
 
-            <div class="stat-icon">✔️</div>
+            <div class="stat-icon">OK</div>
 
         </div>
 
 
         <div class="stat-card sales-card">
 
-            <h3>💰 Total Sales</h3>
+            <h3>Total Sales</h3>
 
-            <strong id="totalSales">₹0</strong>
+            <strong id="totalSales">₹0.00</strong>
 
-            <div class="stat-icon">💰</div>
+            <div class="stat-icon">₹</div>
 
         </div>
 
     </div>
 
 
-    <!-- ================= ORDERS ================= -->
+    <!-- ALL ORDERS -->
 
     <div class="orders-box">
 
         <div class="orders-title">
 
-            <h2>📋 All Orders</h2>
+            <h2>All Orders</h2>
 
         </div>
 
@@ -589,7 +587,7 @@ footer{
             id="noOrders"
             class="no-orders"
         >
-            📭 अभी कोई Order उपलब्ध नहीं है।
+            No orders available.
         </div>
 
     </div>
@@ -597,7 +595,7 @@ footer{
 </div>
 
 
-<!-- ================= MODAL ================= -->
+<!-- ORDER DETAILS MODAL -->
 
 <div
     id="orderModal"
@@ -612,10 +610,10 @@ footer{
                 class="close"
                 onclick="closeModal()"
             >
-                ×
+                &times;
             </span>
 
-            <h2>📦 Order Details</h2>
+            <h2>Order Details</h2>
 
         </div>
 
@@ -630,11 +628,11 @@ footer{
 </div>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer>
 
-    🌾 Bundelkhand Organic Farmer Producer Company Limited
+    Bundelkhand Organic Farmer Producer Company Limited
 
     <br>
 
@@ -645,9 +643,7 @@ footer{
 
 <script>
 
-/* =========================================
-   GET ORDERS
-========================================= */
+/* GET ORDERS */
 
 function getOrders(){
 
@@ -669,7 +665,7 @@ function getOrders(){
 
     }catch(error){
 
-        console.error(error);
+        console.error("Orders Error:",error);
 
         return [];
 
@@ -678,9 +674,7 @@ function getOrders(){
 }
 
 
-/* =========================================
-   LOAD ORDERS
-========================================= */
+/* LOAD ORDERS */
 
 function loadOrders(){
 
@@ -691,9 +685,7 @@ function loadOrders(){
 }
 
 
-/* =========================================
-   NORMALIZE STATUS
-========================================= */
+/* NORMALIZE STATUS */
 
 function normalizeStatus(status){
 
@@ -702,7 +694,6 @@ function normalizeStatus(status){
         .trim()
         .toLowerCase();
 
-
     if(
         value === "confirmed" ||
         value === "confirm"
@@ -710,16 +701,13 @@ function normalizeStatus(status){
         return "Confirmed";
     }
 
-
     if(value === "shipped"){
         return "Shipped";
     }
 
-
     if(value === "delivered"){
         return "Delivered";
     }
-
 
     if(
         value === "cancelled" ||
@@ -728,15 +716,12 @@ function normalizeStatus(status){
         return "Cancelled";
     }
 
-
     return "Pending";
 
 }
 
 
-/* =========================================
-   STATUS CLASS
-========================================= */
+/* STATUS CLASS */
 
 function getStatusClass(status){
 
@@ -761,20 +746,35 @@ function getStatusClass(status){
 }
 
 
-/* =========================================
-   RENDER ORDERS
-========================================= */
+/* ESCAPE HTML */
+
+function escapeHTML(value){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* RENDER ORDERS */
 
 function renderOrders(orders){
 
     const tbody =
-        document.getElementById("ordersTableBody");
+        document.getElementById(
+            "ordersTableBody"
+        );
 
     const noOrders =
-        document.getElementById("noOrders");
+        document.getElementById(
+            "noOrders"
+        );
 
     tbody.innerHTML = "";
-
 
     let totalSales = 0;
 
@@ -857,7 +857,7 @@ function renderOrders(orders){
             );
 
 
-        /* Calculate total */
+        /* Calculate total from products */
 
         if(total === 0){
 
@@ -925,12 +925,11 @@ function renderOrders(orders){
 
                     <div class="product-item">
 
-                        🌾
                         <strong>
                             ${escapeHTML(name)}
                         </strong>
 
-                        × ${quantity}
+                        x ${quantity}
 
                         <br>
 
@@ -946,7 +945,7 @@ function renderOrders(orders){
 
         }else{
 
-            productHTML = "—";
+            productHTML = "-";
 
         }
 
@@ -955,19 +954,17 @@ function renderOrders(orders){
             getStatusClass(status);
 
 
-        /* STATUS BUTTON */
+        const statusText = {
 
-        const statusButtonText = {
+            Pending:"Pending",
 
-            Pending:"🕐 Pending",
+            Confirmed:"Confirmed",
 
-            Confirmed:"✅ Confirmed",
+            Shipped:"Shipped",
 
-            Shipped:"🚚 Shipped",
+            Delivered:"Delivered",
 
-            Delivered:"📦 Delivered",
-
-            Cancelled:"❌ Cancelled"
+            Cancelled:"Cancelled"
 
         };
 
@@ -986,45 +983,63 @@ function renderOrders(orders){
 
 
             <td>
+
                 <span class="order-id">
+
                     ${escapeHTML(orderId)}
+
                 </span>
+
             </td>
 
 
             <td>
+
                 <strong>
+
                     ${escapeHTML(customer)}
+
                 </strong>
+
             </td>
 
 
             <td>
+
                 ${escapeHTML(mobile)}
+
             </td>
 
 
             <td>
+
                 ${productHTML}
+
             </td>
 
 
             <td>
+
                 <span class="order-total">
+
                     ₹${total.toFixed(2)}
+
                 </span>
+
             </td>
 
 
             <td>
-                💳
+
                 ${escapeHTML(payment)}
+
             </td>
 
 
             <td>
-                📅
+
                 ${escapeHTML(String(date))}
+
             </td>
 
 
@@ -1037,8 +1052,9 @@ function renderOrders(orders){
                         onclick="toggleStatusMenu(${index})"
                         id="statusButton${index}"
                     >
-                        ${statusButtonText[status]}
-                        ▼
+
+                        ${statusText[status]} ▼
+
                     </button>
 
 
@@ -1051,7 +1067,7 @@ function renderOrders(orders){
                             style="background:#f39c12"
                             onclick="changeStatus(${index},'Pending')"
                         >
-                            🕐 Pending
+                            Pending
                         </button>
 
 
@@ -1059,7 +1075,7 @@ function renderOrders(orders){
                             style="background:#28a745"
                             onclick="changeStatus(${index},'Confirmed')"
                         >
-                            ✅ Confirmed
+                            Confirmed
                         </button>
 
 
@@ -1067,7 +1083,7 @@ function renderOrders(orders){
                             style="background:#1976d2"
                             onclick="changeStatus(${index},'Shipped')"
                         >
-                            🚚 Shipped
+                            Shipped
                         </button>
 
 
@@ -1075,7 +1091,7 @@ function renderOrders(orders){
                             style="background:#00838f"
                             onclick="changeStatus(${index},'Delivered')"
                         >
-                            📦 Delivered
+                            Delivered
                         </button>
 
 
@@ -1083,7 +1099,7 @@ function renderOrders(orders){
                             style="background:#dc3545"
                             onclick="changeStatus(${index},'Cancelled')"
                         >
-                            ❌ Cancelled
+                            Cancelled
                         </button>
 
                     </div>
@@ -1099,7 +1115,7 @@ function renderOrders(orders){
                     class="action-btn view-btn"
                     onclick="viewOrder(${index})"
                 >
-                    👁 View
+                    View
                 </button>
 
 
@@ -1107,7 +1123,7 @@ function renderOrders(orders){
                     class="action-btn delete-btn"
                     onclick="deleteOrder(${index})"
                 >
-                    🗑 Delete
+                    Delete
                 </button>
 
             </td>
@@ -1120,33 +1136,35 @@ function renderOrders(orders){
     });
 
 
-    /* STATISTICS */
+    /* UPDATE STATISTICS */
 
-    document.getElementById("totalOrders")
-        .textContent =
+    document.getElementById(
+        "totalOrders"
+    ).textContent =
         orders.length;
 
 
-    document.getElementById("pendingOrders")
-        .textContent =
+    document.getElementById(
+        "pendingOrders"
+    ).textContent =
         pending;
 
 
-    document.getElementById("confirmedOrders")
-        .textContent =
+    document.getElementById(
+        "confirmedOrders"
+    ).textContent =
         confirmed;
 
 
-    document.getElementById("totalSales")
-        .textContent =
+    document.getElementById(
+        "totalSales"
+    ).textContent =
         "₹" + totalSales.toFixed(2);
 
 }
 
 
-/* =========================================
-   TOGGLE STATUS MENU
-========================================= */
+/* STATUS MENU */
 
 function toggleStatusMenu(index){
 
@@ -1156,16 +1174,17 @@ function toggleStatusMenu(index){
         );
 
 
-    /* Close all menus */
+    document.querySelectorAll(
+        ".status-menu"
+    ).forEach(function(item){
 
-    document.querySelectorAll(".status-menu")
-        .forEach(function(item){
+        if(item !== menu){
 
-            if(item !== menu){
-                item.style.display = "none";
-            }
+            item.style.display = "none";
 
-        });
+        }
+
+    });
 
 
     if(menu.style.display === "block"){
@@ -1181,9 +1200,7 @@ function toggleStatusMenu(index){
 }
 
 
-/* =========================================
-   CHANGE STATUS
-========================================= */
+/* CHANGE STATUS */
 
 function changeStatus(index,newStatus){
 
@@ -1210,9 +1227,7 @@ function changeStatus(index,newStatus){
 }
 
 
-/* =========================================
-   DELETE ORDER
-========================================= */
+/* DELETE ORDER */
 
 function deleteOrder(index){
 
@@ -1232,9 +1247,9 @@ function deleteOrder(index){
 
     const confirmDelete =
         confirm(
-            "⚠️ क्या आप Order " +
+            "Are you sure you want to delete Order " +
             orderId +
-            " को Delete करना चाहते हैं?"
+            "?"
         );
 
 
@@ -1256,15 +1271,13 @@ function deleteOrder(index){
 
 
     alert(
-        "✅ Order successfully deleted."
+        "Order deleted successfully."
     );
 
 }
 
 
-/* =========================================
-   VIEW ORDER
-========================================= */
+/* VIEW ORDER */
 
 function viewOrder(index){
 
@@ -1380,7 +1393,6 @@ function viewOrder(index){
 
             <div class="detail-product">
 
-                🌾
                 <strong>
                     ${escapeHTML(name)}
                 </strong>
@@ -1409,12 +1421,13 @@ function viewOrder(index){
     });
 
 
-    document.getElementById("orderDetails")
-        .innerHTML = `
+    document.getElementById(
+        "orderDetails"
+    ).innerHTML = `
 
         <div class="detail-row">
 
-            <strong>🆔 Order ID:</strong>
+            <strong>Order ID:</strong>
 
             ${escapeHTML(String(orderId))}
 
@@ -1423,7 +1436,7 @@ function viewOrder(index){
 
         <div class="detail-row">
 
-            <strong>👤 Customer:</strong>
+            <strong>Customer:</strong>
 
             ${escapeHTML(String(customer))}
 
@@ -1432,7 +1445,7 @@ function viewOrder(index){
 
         <div class="detail-row">
 
-            <strong>📱 Mobile:</strong>
+            <strong>Mobile:</strong>
 
             ${escapeHTML(String(mobile))}
 
@@ -1441,7 +1454,7 @@ function viewOrder(index){
 
         <div class="detail-row">
 
-            <strong>📍 Address:</strong>
+            <strong>Address:</strong>
 
             ${escapeHTML(String(address))}
 
@@ -1450,7 +1463,7 @@ function viewOrder(index){
 
         <div class="detail-row">
 
-            <strong>💳 Payment:</strong>
+            <strong>Payment:</strong>
 
             ${escapeHTML(String(payment))}
 
@@ -1459,7 +1472,7 @@ function viewOrder(index){
 
         <div class="detail-row">
 
-            <strong>📅 Date:</strong>
+            <strong>Date:</strong>
 
             ${escapeHTML(String(date))}
 
@@ -1468,7 +1481,7 @@ function viewOrder(index){
 
         <div class="detail-row">
 
-            <strong>📌 Status:</strong>
+            <strong>Status:</strong>
 
             ${escapeHTML(String(status))}
 
@@ -1476,19 +1489,19 @@ function viewOrder(index){
 
 
         <h3>
-            🌾 Ordered Products
+            Ordered Products
         </h3>
 
 
         ${
             productsHTML ||
-            "<p>Product details उपलब्ध नहीं हैं।</p>"
+            "<p>Product details are not available.</p>"
         }
 
 
         <div class="modal-total">
 
-            💰 Total Amount:
+            Total Amount:
             ₹${total.toFixed(2)}
 
         </div>
@@ -1496,34 +1509,34 @@ function viewOrder(index){
     `;
 
 
-    document.getElementById("orderModal")
-        .style.display =
+    document.getElementById(
+        "orderModal"
+    ).style.display =
         "block";
 
 }
 
 
-/* =========================================
-   CLOSE MODAL
-========================================= */
+/* CLOSE MODAL */
 
 function closeModal(){
 
-    document.getElementById("orderModal")
-        .style.display =
+    document.getElementById(
+        "orderModal"
+    ).style.display =
         "none";
 
 }
 
 
-/* =========================================
-   CLOSE WHEN CLICK OUTSIDE
-========================================= */
+/* WINDOW CLICK */
 
 window.onclick = function(event){
 
     const modal =
-        document.getElementById("orderModal");
+        document.getElementById(
+            "orderModal"
+        );
 
 
     if(event.target === modal){
@@ -1533,48 +1546,26 @@ window.onclick = function(event){
     }
 
 
-    /* Close status menus */
-
     if(
-        !event.target.closest(".status-wrapper")
+        !event.target.closest(
+            ".status-wrapper"
+        )
     ){
 
-        document.querySelectorAll(".status-menu")
-            .forEach(function(menu){
+        document.querySelectorAll(
+            ".status-menu"
+        ).forEach(function(menu){
 
-                menu.style.display = "none";
+            menu.style.display = "none";
 
-            });
+        });
 
     }
 
 };
 
 
-/* =========================================
-   ESCAPE HTML
-========================================= */
-
-function escapeHTML(value){
-
-    return String(value)
-
-        .replace(/&/g,"&amp;")
-
-        .replace(/</g,"&lt;")
-
-        .replace(/>/g,"&gt;")
-
-        .replace(/"/g,"&quot;")
-
-        .replace(/'/g,"&#039;");
-
-}
-
-
-/* =========================================
-   PAGE LOAD
-========================================= */
+/* PAGE LOAD */
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -1589,4 +1580,3 @@ document.addEventListener(
 
 </body>
 </html>
-```
