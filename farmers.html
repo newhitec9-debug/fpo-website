@@ -1,424 +1,1315 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kisan Corner | Bundelkhand Organic Farmer Producer Company Limited</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="css/style.css">
+<title>
+Kisan Corner | Bundelkhand Organic Farmer Producer Company Limited
+</title>
+
+<style>
+
+/* =========================================
+   BASIC
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f3fff3;
+    color:#333;
+    line-height:1.7;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.main-header{
+    background:#f7fff3;
+    min-height:150px;
+    border-bottom:4px solid #f5a400;
+
+    display:flex;
+    align-items:center;
+
+    padding:15px 35px;
+
+    position:relative;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-box{
+    width:120px;
+    min-width:120px;
+    height:120px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-right:20px;
+}
+
+.logo-box img{
+    width:115px;
+    height:115px;
+
+    object-fit:contain;
+
+    display:block;
+}
+
+
+/* =========================================
+   COMPANY NAME
+========================================= */
+
+.company-info{
+    flex:1;
+    text-align:center;
+}
+
+.company-info h1{
+    color:#286b32;
+    font-size:30px;
+    line-height:1.3;
+    margin-bottom:4px;
+    font-weight:bold;
+}
+
+.company-info h2{
+    color:#286b32;
+    font-size:21px;
+    line-height:1.3;
+    margin-bottom:10px;
+}
+
+
+/* =========================================
+   TAGLINE
+========================================= */
+
+.tagline{
+    display:inline-block;
+
+    padding:7px 20px;
+
+    background:#f57c00;
+
+    color:white;
+
+    border-radius:22px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.20);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar{
+    background:#19752b;
+
+    border-bottom:3px solid #f5a400;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+}
+
+.navbar a{
+    color:white;
+
+    text-decoration:none;
+
+    padding:13px 16px;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+    transition:.3s;
+}
+
+.navbar a:hover{
+    background:#0d5b20;
+}
+
+.navbar a.active{
+    background:#f57c00;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.page-hero{
+    background:
+    linear-gradient(
+        rgba(40,120,55,.90),
+        rgba(80,160,90,.88)
+    );
+
+    color:white;
+
+    text-align:center;
+
+    padding:50px 20px;
+}
+
+.page-hero h1{
+    font-size:38px;
+
+    line-height:1.4;
+
+    margin-bottom:10px;
+
+    text-shadow:2px 2px 4px #333;
+}
+
+.page-hero h2{
+    color:#fff200;
+
+    font-size:23px;
+
+    margin-bottom:15px;
+}
+
+.page-hero p{
+    max-width:950px;
+
+    margin:auto;
+
+    font-size:17px;
+
+    line-height:1.9;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.section{
+    max-width:1150px;
+
+    margin:auto;
+
+    padding:40px 20px;
+}
+
+
+/* =========================================
+   INFORMATION BOX
+========================================= */
+
+.info-box{
+    background:white;
+
+    padding:28px;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.12);
+
+    border-left:6px solid #2e7d32;
+
+    margin-bottom:30px;
+}
+
+.info-box h2{
+    text-align:center;
+
+    color:#2e7d32;
+
+    margin-bottom:18px;
+
+    font-size:28px;
+}
+
+.info-box p{
+    line-height:1.9;
+
+    font-size:16px;
+}
+
+
+/* =========================================
+   CARD SECTION
+========================================= */
+
+.section-title{
+    text-align:center;
+
+    color:#2e7d32;
+
+    font-size:29px;
+
+    margin-bottom:25px;
+}
+
+.card-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.card{
+    background:white;
+
+    padding:25px 20px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    box-shadow:0 4px 14px rgba(0,0,0,.13);
+
+    border-top:5px solid #2e7d32;
+
+    transition:.3s;
+}
+
+.card:nth-child(2){
+    border-top-color:#f57c00;
+}
+
+.card:nth-child(3){
+    border-top-color:#1976d2;
+}
+
+.card:nth-child(4){
+    border-top-color:#8e24aa;
+}
+
+.card:nth-child(5){
+    border-top-color:#00897b;
+}
+
+.card:nth-child(6){
+    border-top-color:#ef6c00;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+.card h3{
+    color:#2e7d32;
+
+    font-size:20px;
+
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#555;
+
+    line-height:1.8;
+}
+
+
+/* =========================================
+   SECTION BACKGROUND
+========================================= */
+
+.colour-section{
+    background:
+    linear-gradient(
+        135deg,
+        #eaf7e8,
+        #fff8e8
+    );
+
+    padding:40px 0;
+}
+
+
+/* =========================================
+   LIST
+========================================= */
+
+.green-list{
+    max-width:850px;
+
+    margin:auto;
+}
+
+.green-list div{
+    background:white;
+
+    padding:12px 18px;
+
+    margin-bottom:10px;
+
+    border-left:5px solid #2e7d32;
+
+    border-radius:6px;
+
+    font-weight:bold;
+
+    box-shadow:0 2px 7px rgba(0,0,0,.08);
+}
+
+
+/* =========================================
+   CONTACT BOX
+========================================= */
+
+.contact-box{
+    background:white;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.12);
+
+    border-top:5px solid #1976d2;
+}
+
+.contact-box h2{
+    color:#1976d2;
+
+    margin-bottom:18px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+    background:#075b27;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px 15px;
+
+    margin-top:40px;
+}
+
+footer p{
+    margin:6px 0;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:900px){
+
+    .main-header{
+        padding:15px;
+    }
+
+    .company-info h1{
+        font-size:25px;
+    }
+
+    .company-info h2{
+        font-size:18px;
+    }
+
+    .card-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:700px){
+
+    .main-header{
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:15px 10px;
+    }
+
+    .logo-box{
+        width:105px;
+
+        min-width:105px;
+
+        height:105px;
+
+        margin:0 auto 8px;
+    }
+
+    .logo-box img{
+        width:100px;
+        height:100px;
+    }
+
+    .company-info{
+        width:100%;
+    }
+
+    .company-info h1{
+        font-size:21px;
+    }
+
+    .company-info h2{
+        font-size:16px;
+    }
+
+    .tagline{
+        font-size:12px;
+
+        padding:6px 14px;
+    }
+
+    .navbar a{
+        padding:10px 9px;
+
+        font-size:12px;
+    }
+
+    .page-hero{
+        padding:38px 15px;
+    }
+
+    .page-hero h1{
+        font-size:28px;
+    }
+
+    .page-hero h2{
+        font-size:18px;
+    }
+
+    .page-hero p{
+        font-size:15px;
+    }
+
+    .section{
+        padding:30px 12px;
+    }
+
+    .info-box{
+        padding:22px 16px;
+    }
+
+    .card-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:480px){
+
+    .company-info h1{
+        font-size:19px;
+    }
+
+    .company-info h2{
+        font-size:15px;
+    }
+
+    .navbar a{
+        padding:8px 7px;
+
+        font-size:11px;
+    }
+
+    .page-hero h1{
+        font-size:23px;
+    }
+
+}
+
+</style>
 
 </head>
 
+
 <body>
 
-<!-- Header -->
 
-<header class="top-header">
+<!-- =========================================
+     HEADER
+========================================= -->
 
-<div class="logo">
+<header class="main-header">
 
-<img src="images/logo.png" alt="FPO Logo">
+    <div class="logo-box">
 
-<div>
-<h1>Bundelkhand Organic Farmer Producer Company Limited</h1>
-<p>👨‍🌾 Kisan Information Portal</p>
-</div>
+        <img
+            src="images/fpo-logo.png.png"
+            alt="Bundelkhand Organic FPO Logo"
+        >
 
-</div>
+    </div>
+
+
+    <div class="company-info">
+
+        <h1>
+            बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+        </h1>
+
+        <h2>
+            Bundelkhand Organic Farmer Producer Company Limited
+        </h2>
+
+        <div class="tagline">
+            स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+        </div>
+
+    </div>
 
 </header>
 
-<!-- Navigation -->
 
-<nav>
+<!-- =========================================
+     NAVIGATION
+========================================= -->
 
-<a href="index.html">🏠 Home</a>
-<a href="about.html">🌿 About</a>
-<a href="products.html">🛒 Products</a>
-<a href="membership.html">📝 Join FPO</a>
-<a href="gallery.html">📷 Gallery</a>
-<a href="contact.html">📞 Contact</a>
+<nav class="navbar">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="about.html">
+        About
+    </a>
+
+    <a href="products.html">
+        Products
+    </a>
+
+    <a
+        href="farmers.html"
+        class="active"
+    >
+        Kisan Corner
+    </a>
+
+    <a href="membership.html">
+        Join FPO
+    </a>
+
+    <a href="news.html">
+        Agriculture News
+    </a>
+
+    <a href="bulk-order.html">
+        Bulk Order
+    </a>
+
+    <a href="gallery.html">
+        Gallery
+    </a>
+
+    <a href="contact.html">
+        Contact
+    </a>
 
 </nav>
 
-<!-- Hero -->
 
-<section class="hero">
+<!-- =========================================
+     HERO
+========================================= -->
 
-<h1>👨‍🌾 किसान सूचना केंद्र</h1>
+<section class="page-hero">
 
-<h2>Kisan Information Portal</h2>
+    <h1>
+        किसान सूचना केंद्र
+    </h1>
 
-<p>
+    <h2>
+        Kisan Information Portal
+    </h2>
 
-किसानों के लिए खेती, सरकारी योजनाएँ, बाजार भाव, मौसम, प्रशिक्षण,
-जैविक खेती, कृषि सलाह एवं FPO की सभी महत्वपूर्ण जानकारियाँ एक ही स्थान पर।
-
-</p>
-
-</section>
-
-<!-- Information -->
-
-<section class="about">
-
-<h2>📢 किसान सूचना केंद्र</h2>
-
-<p>
-
-Bundelkhand Organic Farmer Producer Company Limited किसानों को
-आधुनिक खेती, सरकारी योजनाओं, बाजार, जैविक कृषि एवं प्रशिक्षण से जोड़ने के लिए
-यह डिजिटल किसान सूचना पोर्टल संचालित करता है।
-
-</p>
+    <p>
+        किसानों के लिए खेती, सरकारी योजनाएँ, बाजार भाव, मौसम,
+        प्रशिक्षण, जैविक खेती, कृषि सलाह एवं FPO की सभी महत्वपूर्ण
+        जानकारियाँ एक ही स्थान पर।
+    </p>
 
 </section>
 
-<!-- Benefits -->
 
-<section class="products">
+<!-- =========================================
+     INFORMATION
+========================================= -->
 
-<h2>🌾 FPO से जुड़ने के प्रमुख लाभ</h2>
+<section class="section">
 
-<div class="product-container">
+    <div class="info-box">
 
-<div class="card">
+        <h2>
+            किसान सूचना केंद्र
+        </h2>
 
-<h3>💰 बेहतर मूल्य</h3>
+        <p>
+            Bundelkhand Organic Farmer Producer Company Limited किसानों को
+            आधुनिक खेती, सरकारी योजनाओं, बाजार, जैविक कृषि एवं प्रशिक्षण से
+            जोड़ने के लिए यह डिजिटल किसान सूचना पोर्टल संचालित करता है।
+        </p>
 
-<p>
+    </div>
 
-सामूहिक बिक्री के माध्यम से किसानों को उनकी उपज का उचित एवं बेहतर मूल्य मिलता है।
 
-</p>
+    <!-- =====================================
+         BENEFITS
+    ====================================== -->
 
-</div>
+    <h2 class="section-title">
+        FPO से जुड़ने के प्रमुख लाभ
+    </h2>
 
-<div class="card">
+    <div class="card-grid">
 
-<h3>🌱 कम लागत</h3>
+        <div class="card">
 
-<p>
+            <h3>
+                बेहतर मूल्य
+            </h3>
 
-बीज, खाद, जैविक उत्पाद एवं कृषि उपकरण सामूहिक खरीद के कारण कम कीमत पर उपलब्ध होते हैं।
+            <p>
+                सामूहिक बिक्री के माध्यम से किसानों को उनकी
+                उपज का उचित एवं बेहतर मूल्य मिलता है।
+            </p>
 
-</p>
+        </div>
 
-</div>
 
-<div class="card">
+        <div class="card">
 
-<h3>🛒 बड़ा बाजार</h3>
+            <h3>
+                कम लागत
+            </h3>
 
-<p>
+            <p>
+                बीज, खाद, जैविक उत्पाद एवं कृषि उपकरण सामूहिक
+                खरीद के कारण कम कीमत पर उपलब्ध होते हैं।
+            </p>
 
-उत्पादों को e-NAM, ONDC, सुपरमार्केट एवं बड़ी कंपनियों तक पहुँचाने में सहायता।
+        </div>
 
-</p>
 
-</div>
+        <div class="card">
 
-<div class="card">
+            <h3>
+                बड़ा बाजार
+            </h3>
 
-<h3>🏛️ सरकारी योजनाएँ</h3>
+            <p>
+                उत्पादों को e-NAM, ONDC, सुपरमार्केट एवं बड़ी
+                कंपनियों तक पहुँचाने में सहायता।
+            </p>
 
-<p>
+        </div>
 
-किसानों को केंद्र एवं राज्य सरकार की योजनाओं का लाभ प्राप्त करने में सहायता।
 
-</p>
+        <div class="card">
 
-</div>
+            <h3>
+                सरकारी योजनाएँ
+            </h3>
 
-<div class="card">
+            <p>
+                किसानों को केंद्र एवं राज्य सरकार की योजनाओं
+                का लाभ प्राप्त करने में सहायता।
+            </p>
 
-<h3>🎓 प्रशिक्षण</h3>
+        </div>
 
-<p>
 
-कृषि विशेषज्ञों द्वारा समय-समय पर आधुनिक एवं जैविक खेती का प्रशिक्षण।
+        <div class="card">
 
-</p>
+            <h3>
+                प्रशिक्षण
+            </h3>
 
-</div>
+            <p>
+                कृषि विशेषज्ञों द्वारा समय-समय पर आधुनिक एवं
+                जैविक खेती का प्रशिक्षण।
+            </p>
 
-<div class="card">
+        </div>
 
-<h3>📈 आय में वृद्धि</h3>
 
-<p>
+        <div class="card">
 
-बेहतर बाजार, कम लागत और मूल्य संवर्धन के माध्यम से किसानों की आय बढ़ाने में सहयोग।
+            <h3>
+                आय में वृद्धि
+            </h3>
 
-</p>
+            <p>
+                बेहतर बाजार, कम लागत और मूल्य संवर्धन के माध्यम
+                से किसानों की आय बढ़ाने में सहयोग।
+            </p>
 
-</div>
+        </div>
 
-</div>
-
-</section> <!-- Weather -->
-
-<section class="about">
-
-<h2>🌦️ आज का मौसम</h2>
-
-<p>
-
-✔ आज का तापमान : 32°C (उदाहरण)<br>
-✔ वर्षा की संभावना : 40%<br>
-✔ हवा की गति : 12 Km/h<br>
-✔ खेती की सलाह : सिंचाई आवश्यकता अनुसार करें एवं मौसम पूर्वानुमान देखते रहें।
-
-</p>
-
-</section>
-
-<!-- Mandi Bhav -->
-
-<section class="products">
-
-<h2>💹 आज के मंडी भाव (उदाहरण)</h2>
-
-<div class="product-container">
-
-<div class="card">
-<h3>🌾 गेहूँ</h3>
-<p>₹ 2,450 / क्विंटल</p>
-</div>
-
-<div class="card">
-<h3>🌱 चना</h3>
-<p>₹ 5,600 / क्विंटल</p>
-</div>
-
-<div class="card">
-<h3>🌼 सरसों</h3>
-<p>₹ 6,200 / क्विंटल</p>
-</div>
-
-<div class="card">
-<h3>🌿 तिल</h3>
-<p>₹ 8,900 / क्विंटल</p>
-</div>
-
-<div class="card">
-<h3>🥜 मूंगफली</h3>
-<p>₹ 5,450 / क्विंटल</p>
-</div>
-
-<div class="card">
-<h3>🌾 अरहर</h3>
-<p>₹ 7,400 / क्विंटल</p>
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<!-- MSP -->
 
-<section class="about">
+<!-- =========================================
+     WEATHER
+========================================= -->
 
-<h2>💰 न्यूनतम समर्थन मूल्य (MSP)</h2>
+<section class="colour-section">
 
-<p>
+    <div class="section">
 
-सरकार द्वारा घोषित MSP के अनुसार किसानों को उनकी उपज का न्यूनतम मूल्य सुनिश्चित किया जाता है।
-नवीनतम MSP सूची समय-समय पर अपडेट की जाएगी।
+        <div class="info-box">
 
-</p>
+            <h2>
+                आज का मौसम
+            </h2>
 
-</section>
+            <p>
 
-<!-- Government Schemes -->
+                आज का तापमान : 32°C (उदाहरण)
+                <br>
 
-<section class="products">
+                वर्षा की संभावना : 40%
+                <br>
 
-<h2>🏛️ प्रमुख सरकारी योजनाएँ</h2>
+                हवा की गति : 12 Km/h
+                <br>
 
-<div class="product-container">
+                खेती की सलाह : सिंचाई आवश्यकता अनुसार करें एवं
+                मौसम पूर्वानुमान देखते रहें।
 
-<div class="card">
-<h3>🌾 PM-KISAN</h3>
-<p>योग्य किसानों को प्रतिवर्ष ₹6000 की सहायता।</p>
-</div>
+            </p>
 
-<div class="card">
-<h3>🌱 PM Fasal Bima</h3>
-<p>फसल क्षति होने पर बीमा सुरक्षा।</p>
-</div>
+        </div>
 
-<div class="card">
-<h3>🏦 किसान क्रेडिट कार्ड (KCC)</h3>
-<p>कम ब्याज पर कृषि ऋण सुविधा।</p>
-</div>
-
-<div class="card">
-<h3>⚡ PM Kusum</h3>
-<p>सौर ऊर्जा आधारित सिंचाई सुविधा।</p>
-</div>
-
-<div class="card">
-<h3>🛒 e-NAM</h3>
-<p>राष्ट्रीय कृषि बाजार से जुड़कर बेहतर मूल्य प्राप्त करें।</p>
-</div>
-
-<div class="card">
-<h3>🌿 Soil Health Card</h3>
-<p>मिट्टी परीक्षण एवं संतुलित उर्वरक उपयोग की जानकारी।</p>
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<!-- Organic Farming -->
 
-<section class="about">
+<!-- =========================================
+     MANDI BHAV
+========================================= -->
 
-<h2>🌱 जैविक खेती की जानकारी</h2>
+<section class="section">
 
-<p>
+    <h2 class="section-title">
+        आज के मंडी भाव (उदाहरण)
+    </h2>
 
-✔ जीवामृत<br>
-✔ घनजीवामृत<br>
-✔ वर्मी कम्पोस्ट<br>
-✔ नीमास्त्र<br>
-✔ ब्रह्मास्त्र<br>
-✔ दशपर्णी अर्क<br>
-✔ प्राकृतिक कीटनाशक<br>
-✔ बीज उपचार
+    <div class="card-grid">
 
-</p>
+        <div class="card">
+            <h3>गेहूँ</h3>
+            <p>₹ 2,450 / क्विंटल</p>
+        </div>
 
-</section> <!-- Training -->
+        <div class="card">
+            <h3>चना</h3>
+            <p>₹ 5,600 / क्विंटल</p>
+        </div>
 
-<section class="products">
+        <div class="card">
+            <h3>सरसों</h3>
+            <p>₹ 6,200 / क्विंटल</p>
+        </div>
 
-<h2>🎓 कृषि प्रशिक्षण</h2>
+        <div class="card">
+            <h3>तिल</h3>
+            <p>₹ 8,900 / क्विंटल</p>
+        </div>
 
-<div class="product-container">
+        <div class="card">
+            <h3>मूंगफली</h3>
+            <p>₹ 5,450 / क्विंटल</p>
+        </div>
 
-<div class="card">
-<h3>🌱 जैविक खेती प्रशिक्षण</h3>
-<p>प्राकृतिक खेती एवं जैविक उत्पादन तकनीक सीखें।</p>
-</div>
+        <div class="card">
+            <h3>अरहर</h3>
+            <p>₹ 7,400 / क्विंटल</p>
+        </div>
 
-<div class="card">
-<h3>🚜 आधुनिक कृषि तकनीक</h3>
-<p>नई मशीनें, ड्रोन एवं आधुनिक खेती की जानकारी।</p>
-</div>
-
-<div class="card">
-<h3>💧 जल संरक्षण</h3>
-<p>ड्रिप, स्प्रिंकलर एवं वर्षा जल संरक्षण तकनीक।</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- Videos -->
-
-<section class="about">
-
-<h2>🎥 कृषि प्रशिक्षण वीडियो</h2>
-
-<p>
-
-जल्द ही यहां खेती, जैविक कृषि, FPO एवं सरकारी योजनाओं से जुड़े
-वीडियो उपलब्ध होंगे।
-
-</p>
+    </div>
 
 </section>
 
-<!-- News -->
 
-<section class="products">
+<!-- =========================================
+     MSP
+========================================= -->
 
-<h2>📰 कृषि समाचार</h2>
+<section class="colour-section">
 
-<div class="product-container">
+    <div class="section">
 
-<div class="card">
-<h3>📢 FPO News</h3>
-<p>नई योजनाएँ एवं किसानों के लिए महत्वपूर्ण घोषणाएँ।</p>
-</div>
+        <div class="info-box">
 
-<div class="card">
-<h3>🌾 Agriculture News</h3>
-<p>देशभर की कृषि से जुड़ी नवीनतम जानकारी।</p>
-</div>
+            <h2>
+                न्यूनतम समर्थन मूल्य (MSP)
+            </h2>
 
-<div class="card">
-<h3>💹 Market Update</h3>
-<p>मंडी एवं बाजार से संबंधित दैनिक अपडेट।</p>
-</div>
+            <p>
+                सरकार द्वारा घोषित MSP के अनुसार किसानों को
+                उनकी उपज का न्यूनतम मूल्य सुनिश्चित किया जाता है।
+                नवीनतम MSP सूची समय-समय पर अपडेट की जाएगी।
+            </p>
 
-</div>
+        </div>
 
-</section>
-
-<!-- Helpline -->
-
-<section class="about">
-
-<h2>📞 किसान हेल्पलाइन</h2>
-
-<p>
-
-📱 Mobile : <strong>8090040580</strong><br><br>
-
-📧 Email : <strong>bundelkhandfpo@gmail.com</strong><br><br>
-
-📍 Address : Belatal Road, Bansphadiya, Srinagar, District Mahoba, Uttar Pradesh
-
-</p>
+    </div>
 
 </section>
 
-<!-- FAQ -->
 
-<section class="products">
+<!-- =========================================
+     GOVERNMENT SCHEMES
+========================================= -->
 
-<h2>❓ अक्सर पूछे जाने वाले प्रश्न (FAQ)</h2>
+<section class="section">
 
-<div class="product-container">
+    <h2 class="section-title">
+        प्रमुख सरकारी योजनाएँ
+    </h2>
 
-<div class="card">
-<h3>FPO क्या है?</h3>
-<p>Farmer Producer Organization किसानों का सामूहिक संगठन है।</p>
-</div>
+    <div class="card-grid">
 
-<div class="card">
-<h3>सदस्य कैसे बनें?</h3>
-<p>Join FPO पेज पर जाकर Membership Form भरें।</p>
-</div>
+        <div class="card">
 
-<div class="card">
-<h3>क्या सदस्यता शुल्क है?</h3>
-<p>हाँ, वर्तमान में ₹500 Share Membership है।</p>
-</div>
+            <h3>
+                PM-KISAN
+            </h3>
 
-</div>
+            <p>
+                योग्य किसानों को प्रतिवर्ष ₹6000 की सहायता।
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                PM Fasal Bima
+            </h3>
+
+            <p>
+                फसल क्षति होने पर बीमा सुरक्षा।
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                किसान क्रेडिट कार्ड (KCC)
+            </h3>
+
+            <p>
+                कम ब्याज पर कृषि ऋण सुविधा।
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                PM Kusum
+            </h3>
+
+            <p>
+                सौर ऊर्जा आधारित सिंचाई सुविधा।
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                e-NAM
+            </h3>
+
+            <p>
+                राष्ट्रीय कृषि बाजार से जुड़कर बेहतर मूल्य प्राप्त करें।
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Soil Health Card
+            </h3>
+
+            <p>
+                मिट्टी परीक्षण एवं संतुलित उर्वरक उपयोग की जानकारी।
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- Footer -->
+
+<!-- =========================================
+     ORGANIC FARMING
+========================================= -->
+
+<section class="colour-section">
+
+    <div class="section">
+
+        <div class="info-box">
+
+            <h2>
+                जैविक खेती की जानकारी
+            </h2>
+
+            <div class="green-list">
+
+                <div>
+                    जीवामृत
+                </div>
+
+                <div>
+                    घनजीवामृत
+                </div>
+
+                <div>
+                    वर्मी कम्पोस्ट
+                </div>
+
+                <div>
+                    नीमास्त्र
+                </div>
+
+                <div>
+                    ब्रह्मास्त्र
+                </div>
+
+                <div>
+                    दशपर्णी अर्क
+                </div>
+
+                <div>
+                    प्राकृतिक कीटनाशक
+                </div>
+
+                <div>
+                    बीज उपचार
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     TRAINING
+========================================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        कृषि प्रशिक्षण
+    </h2>
+
+    <div class="card-grid">
+
+        <div class="card">
+
+            <h3>
+                जैविक खेती प्रशिक्षण
+            </h3>
+
+            <p>
+                प्राकृतिक खेती एवं जैविक उत्पादन तकनीक सीखें।
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                आधुनिक कृषि तकनीक
+            </h3>
+
+            <p>
+                नई मशीनें, ड्रोन एवं आधुनिक खेती की जानकारी।
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                जल संरक्षण
+            </h3>
+
+            <p>
+                ड्रिप, स्प्रिंकलर एवं वर्षा जल संरक्षण तकनीक।
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     VIDEOS
+========================================= -->
+
+<section class="colour-section">
+
+    <div class="section">
+
+        <div class="info-box">
+
+            <h2>
+                कृषि प्रशिक्षण वीडियो
+            </h2>
+
+            <p>
+                जल्द ही यहां खेती, जैविक कृषि, FPO एवं सरकारी योजनाओं
+                से जुड़े वीडियो उपलब्ध होंगे।
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     NEWS
+========================================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        कृषि समाचार
+    </h2>
+
+    <div class="card-grid">
+
+        <div class="card">
+
+            <h3>
+                FPO News
+            </h3>
+
+            <p>
+                नई योजनाएँ एवं किसानों के लिए महत्वपूर्ण घोषणाएँ।
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Agriculture News
+            </h3>
+
+            <p>
+                देशभर की कृषि से जुड़ी नवीनतम जानकारी।
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Market Update
+            </h3>
+
+            <p>
+                मंडी एवं बाजार से संबंधित दैनिक अपडेट।
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     HELPLINE
+========================================= -->
+
+<section class="colour-section">
+
+    <div class="section">
+
+        <div class="contact-box">
+
+            <h2>
+                किसान हेल्पलाइन
+            </h2>
+
+            <p>
+                किसान सहायता एवं संपर्क के लिए Contact page पर जाएँ।
+            </p>
+
+            <br>
+
+            <a
+                href="contact.html"
+                style="
+                display:inline-block;
+                background:#1976d2;
+                color:white;
+                padding:11px 24px;
+                border-radius:7px;
+                text-decoration:none;
+                font-weight:bold;
+                "
+            >
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FAQ
+========================================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        अक्सर पूछे जाने वाले प्रश्न (FAQ)
+    </h2>
+
+    <div class="card-grid">
+
+        <div class="card">
+
+            <h3>
+                FPO क्या है?
+            </h3>
+
+            <p>
+                Farmer Producer Organization किसानों का सामूहिक संगठन है।
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                सदस्य कैसे बनें?
+            </h3>
+
+            <p>
+                Join FPO पेज पर जाकर Membership Form भरें।
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                क्या सदस्यता शुल्क है?
+            </h3>
+
+            <p>
+                हाँ, वर्तमान में ₹500 Share Membership है।
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
 
 <footer>
 
-<p>
+    <p>
+        © 2026 Bundelkhand Organic Farmer Producer Company Limited
+    </p>
 
-© 2026 Bundelkhand Organic Farmer Producer Company Limited
-
-</p>
+    <p>
+        स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+    </p>
 
 </footer>
 
-<script src="js/script.js"></script>
 
 </body>
+
 </html>
