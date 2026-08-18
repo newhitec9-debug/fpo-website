@@ -1,12 +1,16 @@
-```html
 <!DOCTYPE html>
 <html lang="hi">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Approved Farmers | Bundelkhand Organic FPO</title>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Approved Farmers | Bundelkhand Organic FPO
+</title>
 
 <style>
 
@@ -124,27 +128,68 @@ footer{
     color:#777;
 }
 
+.count-box{
+    text-align:center;
+    margin-bottom:18px;
+    padding:12px;
+    background:#E8F5E9;
+    border-radius:7px;
+    color:#2E7D32;
+    font-weight:bold;
+}
+
 </style>
 
 </head>
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
-<h1>👨‍🌾 Approved Farmers</h1>
+<h1>
+👨‍🌾 Approved Farmers
+</h1>
 
-<p>Bundelkhand Organic Farmer Producer Company Limited</p>
+<p>
+Bundelkhand Organic Farmer Producer Company Limited
+</p>
 
 </header>
 
+
+<!-- =========================
+     MAIN
+========================= -->
 
 <div class="container">
 
 <div class="box">
 
-<h2>👥 Registered Approved Farmers</h2>
+<h2>
+👥 Registered Approved Farmers
+</h2>
 
+
+<!-- =========================
+     COUNT
+========================= -->
+
+<div
+class="count-box"
+id="farmerCount"
+>
+Approved Farmers: 0
+</div>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
 
 <input
 type="text"
@@ -155,6 +200,10 @@ onkeyup="searchFarmers()"
 >
 
 
+<!-- =========================
+     TABLE
+========================= -->
+
 <div class="table-container">
 
 <table>
@@ -162,26 +211,57 @@ onkeyup="searchFarmers()"
 <thead>
 
 <tr>
-<th>Sr No.</th>
-<th>Farmer Name</th>
-<th>Mobile</th>
-<th>Village</th>
-<th>District</th>
-<th>Main Crop</th>
-<th>Status</th>
-<th>Action</th>
+
+<th>
+Sr No.
+</th>
+
+<th>
+Farmer Name
+</th>
+
+<th>
+Mobile
+</th>
+
+<th>
+Village
+</th>
+
+<th>
+District
+</th>
+
+<th>
+Main Crop
+</th>
+
+<th>
+Status
+</th>
+
+<th>
+Action
+</th>
+
 </tr>
 
 </thead>
 
-<tbody id="farmersTable">
 
+<tbody
+id="farmersTable"
+>
 </tbody>
 
 </table>
 
 </div>
 
+
+<!-- =========================
+     BACK
+========================= -->
 
 <a
 href="admin-dashboard.html"
@@ -190,10 +270,15 @@ class="back"
 ⬅ Back to Admin Dashboard
 </a>
 
-</div>
 
 </div>
 
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -205,176 +290,522 @@ class="back"
 <script>
 
 
-// ==================================
-// LOAD APPROVED FARMERS
-// ==================================
+/* =====================================================
+   GET MEMBERS
+===================================================== */
+
+function getMembers(){
+
+    try{
+
+        let data =
+        localStorage.getItem(
+            "members"
+        );
+
+        if(!data){
+
+            return [];
+
+        }
+
+        let members =
+        JSON.parse(data);
+
+        return Array.isArray(members)
+            ? members
+            : [];
+
+    }catch(error){
+
+        console.error(
+            "Members Error:",
+            error
+        );
+
+        return [];
+
+    }
+
+}
+
+
+/* =====================================================
+   GET APPROVED FARMERS
+===================================================== */
 
 function getApprovedFarmers(){
 
     let members =
-    JSON.parse(localStorage.getItem("members")) || [];
-
-    return members.filter(function(member){
-
-        return member.status === "Approved";
-
-    });
-
-}
+    getMembers();
 
 
-// ==================================
-// DISPLAY FARMERS
-// ==================================
+    return members.filter(
+        function(member){
 
-function displayFarmers(list){
+            return String(
+                member.status || ""
+            ).toLowerCase()
+            === "approved";
 
-    let table =
-    document.getElementById("farmersTable");
-
-    table.innerHTML = "";
-
-    if(list.length === 0){
-
-        table.innerHTML =
-        `<tr>
-        <td colspan="8" class="empty">
-        अभी कोई Approved Farmer उपलब्ध नहीं है।
-        </td>
-        </tr>`;
-
-        return;
-    }
-
-
-    list.forEach(function(farmer,index){
-
-        let row =
-        document.createElement("tr");
-
-        row.innerHTML = `
-
-        <td>${index + 1}</td>
-
-        <td>${farmer.name || ""}</td>
-
-        <td>${farmer.mobile || ""}</td>
-
-        <td>${farmer.village || ""}</td>
-
-        <td>${farmer.district || ""}</td>
-
-        <td>${farmer.crop || ""}</td>
-
-        <td class="approved">
-        🟢 Approved
-        </td>
-
-        <td>
-        <button
-        class="delete-btn"
-        onclick="deleteFarmer(${index})">
-        🗑️ Delete
-        </button>
-        </td>
-
-        `;
-
-        table.appendChild(row);
-
-    });
-
-}
-
-
-// ==================================
-// SEARCH FARMERS
-// ==================================
-
-function searchFarmers(){
-
-    let search =
-    document.getElementById("search")
-    .value
-    .toLowerCase();
-
-    let farmers =
-    getApprovedFarmers();
-
-    let filtered =
-    farmers.filter(function(farmer){
-
-        return (
-            (farmer.name || "")
-            .toLowerCase()
-            .includes(search)
-        );
-
-    });
-
-    displayFarmers(filtered);
-
-}
-
-
-// ==================================
-// DELETE FARMER
-// ==================================
-
-function deleteFarmer(index){
-
-    if(!confirm(
-        "क्या आप इस Approved Farmer को Delete करना चाहते हैं?"
-    )){
-        return;
-    }
-
-    let members =
-    JSON.parse(localStorage.getItem("members")) || [];
-
-    let approved =
-    members.filter(function(member){
-
-        return member.status === "Approved";
-
-    });
-
-    let farmer =
-    approved[index];
-
-    let realIndex =
-    members.indexOf(farmer);
-
-    if(realIndex !== -1){
-
-        members.splice(realIndex,1);
-
-        localStorage.setItem(
-            "members",
-            JSON.stringify(members)
-        );
-
-    }
-
-    displayFarmers(
-        getApprovedFarmers()
+        }
     );
 
 }
 
 
-// ==================================
-// PAGE LOAD
-// ==================================
+/* =====================================================
+   UPDATE COUNT
+===================================================== */
+
+function updateFarmerCount(){
+
+    let farmers =
+    getApprovedFarmers();
+
+
+    document.getElementById(
+        "farmerCount"
+    ).textContent =
+        "Approved Farmers: "
+        + farmers.length;
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value){
+
+    return String(
+        value ?? ""
+    )
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   DISPLAY FARMERS
+===================================================== */
+
+function displayFarmers(list){
+
+    let table =
+    document.getElementById(
+        "farmersTable"
+    );
+
+
+    table.innerHTML =
+        "";
+
+
+    if(list.length === 0){
+
+        table.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="8"
+                    class="empty"
+                >
+
+                    अभी कोई Approved Farmer
+                    उपलब्ध नहीं है।
+
+                </td>
+
+            </tr>
+
+        `;
+
+        updateFarmerCount();
+
+        return;
+
+    }
+
+
+    list.forEach(
+        function(farmer){
+
+            let row =
+            document.createElement(
+                "tr"
+            );
+
+
+            /*
+               Farmer की original
+               members array में position
+               सुरक्षित रखें।
+            */
+
+            row.innerHTML = `
+
+                <td>
+                    ${farmer.displayIndex}
+                </td>
+
+                <td>
+                    ${escapeHTML(
+                        farmer.name
+                    )}
+                </td>
+
+                <td>
+                    ${escapeHTML(
+                        farmer.mobile
+                    )}
+                </td>
+
+                <td>
+                    ${escapeHTML(
+                        farmer.village
+                    )}
+                </td>
+
+                <td>
+                    ${escapeHTML(
+                        farmer.district
+                    )}
+                </td>
+
+                <td>
+                    ${escapeHTML(
+                        farmer.crop
+                    )}
+                </td>
+
+                <td class="approved">
+
+                    🟢 Approved
+
+                </td>
+
+                <td>
+
+                    <button
+
+                        class="delete-btn"
+
+                        onclick="
+                            deleteFarmerByMemberIndex(
+                                ${farmer.memberIndex}
+                            )
+                        "
+
+                    >
+
+                        🗑️ Delete
+
+                    </button>
+
+                </td>
+
+            `;
+
+
+            table.appendChild(
+                row
+            );
+
+        }
+    );
+
+
+    updateFarmerCount();
+
+}
+
+
+/* =====================================================
+   PREPARE APPROVED FARMERS
+===================================================== */
+
+function prepareApprovedFarmers(){
+
+    let members =
+    getMembers();
+
+
+    let approved = [];
+
+
+    members.forEach(
+        function(member,index){
+
+            if(
+                String(
+                    member.status || ""
+                ).toLowerCase()
+                === "approved"
+            ){
+
+                approved.push({
+
+                    ...member,
+
+                    memberIndex:index,
+
+                    displayIndex:
+                        approved.length + 1
+
+                });
+
+            }
+
+        }
+    );
+
+
+    return approved;
+
+}
+
+
+/* =====================================================
+   SEARCH FARMERS
+===================================================== */
+
+function searchFarmers(){
+
+    let search =
+    document.getElementById(
+        "search"
+    )
+    .value
+    .toLowerCase()
+    .trim();
+
+
+    let farmers =
+    prepareApprovedFarmers();
+
+
+    if(search === ""){
+
+        displayFarmers(
+            farmers
+        );
+
+        return;
+
+    }
+
+
+    let filtered =
+    farmers.filter(
+        function(farmer){
+
+            return (
+
+                String(
+                    farmer.name || ""
+                )
+                .toLowerCase()
+                .includes(search)
+
+                ||
+
+                String(
+                    farmer.mobile || ""
+                )
+                .toLowerCase()
+                .includes(search)
+
+                ||
+
+                String(
+                    farmer.village || ""
+                )
+                .toLowerCase()
+                .includes(search)
+
+                ||
+
+                String(
+                    farmer.district || ""
+                )
+                .toLowerCase()
+                .includes(search)
+
+                ||
+
+                String(
+                    farmer.crop || ""
+                )
+                .toLowerCase()
+                .includes(search)
+
+            );
+
+        }
+    );
+
+
+    /*
+       Search result की numbering
+       1, 2, 3... रखी जाएगी।
+    */
+
+    filtered =
+    filtered.map(
+        function(farmer,index){
+
+            return {
+
+                ...farmer,
+
+                displayIndex:
+                    index + 1
+
+            };
+
+        }
+    );
+
+
+    displayFarmers(
+        filtered
+    );
+
+}
+
+
+/* =====================================================
+   DELETE FARMER
+===================================================== */
+
+function deleteFarmerByMemberIndex(
+    memberIndex
+){
+
+    let members =
+    getMembers();
+
+
+    if(
+        memberIndex < 0 ||
+        memberIndex >= members.length
+    ){
+
+        alert(
+            "Farmer record नहीं मिला।"
+        );
+
+        return;
+
+    }
+
+
+    let farmer =
+    members[memberIndex];
+
+
+    if(
+        !farmer ||
+        String(
+            farmer.status || ""
+        ).toLowerCase()
+        !== "approved"
+    ){
+
+        alert(
+            "यह Approved Farmer record नहीं है।"
+        );
+
+        return;
+
+    }
+
+
+    let farmerName =
+        farmer.name ||
+        "इस Farmer";
+
+
+    let confirmation =
+    confirm(
+
+        "क्या आप '" +
+        farmerName +
+        "' को Delete करना चाहते हैं?"
+
+    );
+
+
+    if(!confirmation){
+
+        return;
+
+    }
+
+
+    /*
+       Original members array से
+       exact record delete करें।
+    */
+
+    members.splice(
+        memberIndex,
+        1
+    );
+
+
+    localStorage.setItem(
+        "members",
+        JSON.stringify(
+            members
+        )
+    );
+
+
+    alert(
+        "Farmer successfully deleted!"
+    );
+
+
+    /*
+       Search field खाली करके
+       पूरी approved list दिखाएँ।
+    */
+
+    document.getElementById(
+        "search"
+    ).value =
+        "";
+
+
+    displayFarmers(
+        prepareApprovedFarmers()
+    );
+
+}
+
+
+/* =====================================================
+   PAGE LOAD
+===================================================== */
 
 displayFarmers(
-    getApprovedFarmers()
+    prepareApprovedFarmers()
 );
+
+updateFarmerCount();
 
 
 </script>
 
+
 </body>
 
 </html>
-```
