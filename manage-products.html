@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Manage Products | Bundelkhand Organic FPO</title>
+<title>Manage Products | Bundelkhand Organic Farmer Producer Company Limited</title>
 
 <style>
-
 *{
     box-sizing:border-box;
 }
@@ -18,119 +14,130 @@
 body{
     margin:0;
     font-family:Arial,"Noto Sans Devanagari",sans-serif;
-    background:#f4f7f4;
-    color:#222;
+    background:#f1f8f3;
+    color:#263238;
 }
 
 /* HEADER */
-
-header{
-    background:linear-gradient(135deg,#0b5d2a,#198754,#36a852);
+.header{
+    background:linear-gradient(135deg,#075e2d,#16833b);
     color:white;
-    padding:22px 15px;
-    text-align:center;
+    padding:18px 25px;
 }
 
-.header-logo{
+.header-inner{
+    max-width:1250px;
+    margin:auto;
     display:flex;
     align-items:center;
-    justify-content:center;
-    gap:15px;
+    gap:18px;
 }
 
-.header-logo img{
-    width:80px;
-    height:80px;
+.logo{
+    width:85px;
+    height:85px;
     object-fit:contain;
     background:white;
     border-radius:50%;
     padding:5px;
 }
 
-header h1{
-    margin:0 0 7px;
+.header-text h1{
+    margin:0;
     font-size:27px;
 }
 
-header p{
-    margin:5px 0;
+.header-text h2{
+    margin:6px 0 0;
+    font-size:18px;
+    font-weight:normal;
 }
 
-/* NAVIGATION */
-
-nav{
-    background:white;
-    padding:12px;
-    text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,.12);
-}
-
-nav a{
+.motto{
+    margin-top:7px;
     display:inline-block;
-    text-decoration:none;
-    color:#176b35;
+    background:#ff8c00;
+    padding:7px 16px;
+    border-radius:20px;
     font-weight:bold;
-    margin:4px 6px;
-    padding:9px 13px;
-    border-radius:7px;
 }
 
-nav a:hover{
-    background:#e7f5ea;
+/* NAV */
+.nav{
+    background:#064d24;
+    border-bottom:4px solid #ff9d00;
 }
 
-/* CONTAINER */
+.nav-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+    padding:8px 10px;
+}
 
+.nav a{
+    color:white;
+    text-decoration:none;
+    padding:11px 16px;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.nav a:hover{
+    background:#ff8c00;
+}
+
+/* MAIN */
 .container{
-    width:95%;
     max-width:1250px;
     margin:25px auto;
+    padding:0 15px;
 }
 
 /* FIREBASE STATUS */
-
 .firebase-status{
-    background:white;
-    border-left:6px solid #198754;
-    padding:15px 18px;
-    margin-bottom:20px;
+    padding:13px 18px;
     border-radius:8px;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    margin-bottom:20px;
+    font-weight:bold;
+    background:#fff3cd;
+    color:#856404;
+    border:1px solid #ffe69c;
 }
 
-.firebase-status strong{
-    color:#198754;
+.firebase-status.success{
+    background:#d1e7dd;
+    color:#0f5132;
+    border-color:#badbcc;
 }
 
-.status-error{
-    border-left-color:#dc3545;
-}
-
-.status-error strong{
-    color:#dc3545;
+.firebase-status.error{
+    background:#f8d7da;
+    color:#842029;
+    border-color:#f5c2c7;
 }
 
 /* CARD */
-
 .card{
     background:white;
-    padding:25px;
     border-radius:12px;
-    margin-bottom:25px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    padding:22px;
+    margin-bottom:22px;
+    box-shadow:0 4px 15px rgba(0,0,0,.10);
 }
 
 .card h2{
-    color:#176b35;
     margin-top:0;
+    color:#176b35;
 }
 
 /* FORM */
-
 .form-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    gap:16px;
 }
 
 .form-group{
@@ -144,1780 +151,1347 @@ nav a:hover{
 
 label{
     font-weight:bold;
-    margin-bottom:7px;
+    margin-bottom:6px;
+    color:#245d35;
 }
 
 input,
 select,
 textarea{
     width:100%;
-    padding:11px;
-    border:1px solid #ccc;
+    padding:12px;
+    border:1px solid #c9d5cb;
     border-radius:7px;
     font-size:15px;
-}
-
-textarea{
-    min-height:100px;
-    resize:vertical;
+    background:#fff;
 }
 
 input:focus,
 select:focus,
 textarea:focus{
     outline:none;
-    border-color:#176b35;
-    box-shadow:0 0 0 2px rgba(23,107,53,.12);
+    border-color:#16833b;
+    box-shadow:0 0 0 2px rgba(22,131,59,.12);
 }
 
-/* PHOTO */
-
-.photo-help{
-    background:#fff8df;
-    border:1px solid #f0d66b;
-    padding:12px;
-    border-radius:7px;
-    margin-top:8px;
-    line-height:1.6;
-}
-
-.preview{
-    margin-top:12px;
-}
-
-.preview img{
-    width:150px;
-    height:110px;
-    object-fit:cover;
-    border-radius:8px;
-    border:2px solid #ddd;
+textarea{
+    min-height:90px;
+    resize:vertical;
 }
 
 /* BUTTONS */
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:18px;
+}
 
 button{
     border:0;
     border-radius:7px;
     padding:11px 18px;
+    color:white;
+    font-weight:bold;
     cursor:pointer;
-    font-size:15px;
-    font-weight:bold;
-}
-
-button:hover{
-    opacity:.9;
-    transform:translateY(-1px);
-}
-
-.button-row{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-top:18px;
-}
-
-.btn-add{
-    background:#198754;
-    color:white;
-}
-
-.btn-update{
-    background:#0d6efd;
-    color:white;
-}
-
-.btn-clear{
-    background:#6c757d;
-    color:white;
-}
-
-.btn-delete-all{
-    background:#dc3545;
-    color:white;
-}
-
-.btn-edit{
-    background:#ffc107;
-    color:#111;
-}
-
-.btn-delete{
-    background:#dc3545;
-    color:white;
-}
-
-/* STATISTICS */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-    margin-bottom:25px;
-}
-
-.stat{
-    background:white;
-    text-align:center;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-}
-
-.stat-number{
-    font-size:30px;
-    font-weight:bold;
-    color:#176b35;
-}
-
-/* PRODUCT GRID */
-
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.product-card{
-    background:white;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 3px 12px rgba(0,0,0,.1);
-    display:flex;
-    flex-direction:column;
-}
-
-.product-card img{
-    width:100%;
-    height:210px;
-    object-fit:cover;
-    background:#eee;
-}
-
-.product-content{
-    padding:18px;
-    flex:1;
-}
-
-.category{
-    color:#176b35;
-    font-weight:bold;
     font-size:14px;
 }
 
-.product-content h3{
-    margin:8px 0;
-    font-size:21px;
+.btn-green{
+    background:#198754;
 }
 
-.description{
-    color:#555;
-    line-height:1.5;
-    min-height:65px;
+.btn-green:hover{
+    background:#146c43;
 }
 
-.price{
-    font-size:20px;
-    color:#d35400;
-    font-weight:bold;
-    margin-top:12px;
+.btn-orange{
+    background:#f58200;
 }
 
-.stock{
-    margin:8px 0;
-    font-weight:bold;
+.btn-orange:hover{
+    background:#d96f00;
 }
 
-.available{
-    color:#198754;
+.btn-blue{
+    background:#0d6efd;
 }
 
-.out{
-    color:#dc3545;
+.btn-blue:hover{
+    background:#0b5ed7;
 }
 
-.product-id{
-    display:inline-block;
+.btn-red{
+    background:#dc3545;
+}
+
+.btn-red:hover{
+    background:#bb2d3b;
+}
+
+.btn-gray{
+    background:#6c757d;
+}
+
+.btn-purple{
+    background:#6f42c1;
+}
+
+/* STATS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-bottom:22px;
+}
+
+.stat{
+    color:white;
+    padding:22px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
+
+.stat:nth-child(1){
+    background:linear-gradient(135deg,#198754,#20a464);
+}
+
+.stat:nth-child(2){
+    background:linear-gradient(135deg,#f58200,#ffad33);
+}
+
+.stat:nth-child(3){
+    background:linear-gradient(135deg,#0d6efd,#3989ff);
+}
+
+.stat h3{
+    margin:0;
+    font-size:17px;
+}
+
+.stat strong{
+    display:block;
+    font-size:32px;
     margin-top:8px;
-    padding:4px 7px;
-    background:#eef5ff;
-    color:#176b35;
-    border-radius:5px;
-    font-size:11px;
+}
+
+/* SEARCH */
+.search-box{
+    margin-bottom:18px;
+}
+
+.search-box input{
+    max-width:500px;
+}
+
+/* TABLE */
+.table-wrapper{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:1050px;
+}
+
+th{
+    background:#176b35;
+    color:white;
+    padding:12px 8px;
+    text-align:left;
+}
+
+td{
+    padding:10px 8px;
+    border-bottom:1px solid #ddd;
+    vertical-align:middle;
+}
+
+tr:hover{
+    background:#f4faf5;
+}
+
+.product-image{
+    width:70px;
+    height:55px;
+    object-fit:cover;
+    border-radius:7px;
+    border:1px solid #ddd;
+    background:#f5f5f5;
+}
+
+.status{
+    display:inline-block;
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:12px;
     font-weight:bold;
 }
 
-.actions{
+.status.available{
+    background:#d1e7dd;
+    color:#0f5132;
+}
+
+.status.out{
+    background:#f8d7da;
+    color:#842029;
+}
+
+.action-buttons{
     display:flex;
-    gap:8px;
-    padding:15px;
-    border-top:1px solid #eee;
+    flex-wrap:wrap;
+    gap:5px;
 }
 
-.actions button{
-    flex:1;
-}
-
-/* EDIT */
-
-.edit-mode{
-    background:#fff8db;
-    border:2px solid #ffc107;
-}
-
-.edit-title{
-    color:#b77900 !important;
+.action-buttons button{
+    padding:7px 10px;
+    font-size:12px;
 }
 
 /* EMPTY */
-
-.empty-products{
+.empty{
     text-align:center;
-    padding:45px 20px;
-    color:#777;
-    background:#fafafa;
-    border-radius:10px;
+    padding:35px;
+    color:#666;
 }
 
 /* LOADING */
-
 .loading{
     text-align:center;
     padding:30px;
-    font-size:18px;
+    font-weight:bold;
     color:#176b35;
 }
 
 /* FOOTER */
-
 footer{
-    background:#176b35;
+    background:#075e2d;
     color:white;
     text-align:center;
-    padding:25px;
-    margin-top:40px;
-}
-
-footer p{
-    margin:6px;
+    padding:20px;
+    margin-top:35px;
 }
 
 /* MOBILE */
+@media(max-width:800px){
 
-@media(max-width:900px){
-
-    .product-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:650px){
-
-    .header-logo{
+    .header-inner{
         flex-direction:column;
+        text-align:center;
     }
 
-    header h1{
-        font-size:21px;
+    .header-text h1{
+        font-size:22px;
     }
 
-    .form-grid,
-    .stats,
-    .product-grid{
+    .header-text h2{
+        font-size:16px;
+    }
+
+    .form-grid{
         grid-template-columns:1fr;
     }
 
-    .actions{
-        flex-direction:column;
+    .form-group.full{
+        grid-column:auto;
     }
 
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .nav-inner{
+        justify-content:center;
+    }
+
+    .nav a{
+        padding:9px 11px;
+        font-size:13px;
+    }
 }
-
 </style>
-
 </head>
-
 
 <body>
 
+<!-- HEADER -->
 
-<header>
+<header class="header">
 
-<div class="header-logo">
+    <div class="header-inner">
 
-<img
-src="images/fpo-logo.png.png"
-alt="FPO Logo"
-onerror="this.onerror=null;this.src='images/logo.png.png';"
->
+        <img
+            class="logo"
+            src="images/fpo-logo.png.png"
+            alt="Bundelkhand Organic FPO Logo"
+            onerror="this.onerror=null;this.src='images/logo.png.png';"
+        >
 
-<div>
+        <div class="header-text">
 
-<h1>
-बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-</h1>
+            <h1>बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड</h1>
 
-<p>
-Bundelkhand Organic Farmer Producer Company Limited
-</p>
+            <h2>Bundelkhand Organic Farmer Producer Company Limited</h2>
 
-<p>
-स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
-</p>
+            <div class="motto">
+                स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </header>
 
 
-<nav>
+<!-- NAVIGATION -->
 
-<a href="admin-dashboard.html">
-Dashboard
-</a>
+<nav class="nav">
 
-<a href="index.html">
-Home
-</a>
+    <div class="nav-inner">
 
-<a href="products.html">
-View Products
-</a>
+        <a href="admin-dashboard.html">Dashboard</a>
 
-<a href="orders.html">
-Orders
-</a>
+        <a href="index.html">Home</a>
 
-<a href="admin-gallery.html">
-Gallery
-</a>
+        <a href="products.html">View Products</a>
+
+        <a href="orders.html">Orders</a>
+
+        <a href="admin-gallery.html">Gallery</a>
+
+        <a href="admin-news.html">Agriculture News</a>
+
+    </div>
 
 </nav>
 
 
-<div class="container">
+<main class="container">
 
 
-<div
-id="firebaseStatus"
-class="firebase-status"
->
+    <!-- FIREBASE STATUS -->
 
-<strong>Firebase:</strong>
+    <div id="firebaseStatus" class="firebase-status">
+        Firebase से connection बनाया जा रहा है...
+    </div>
 
-<span id="statusText">
-Connecting...
-</span>
 
-</div>
+    <!-- ADD / EDIT PRODUCT -->
 
+    <section class="card">
 
-<!-- PRODUCT FORM -->
+        <h2 id="formTitle">Add New Product</h2>
 
-<div
-class="card"
-id="productFormCard"
->
+        <form id="productForm">
 
-<h2 id="formTitle">
-Add New Product
-</h2>
+            <input type="hidden" id="editingId">
 
+            <div class="form-grid">
 
-<form id="productForm">
+                <div class="form-group">
 
+                    <label for="productName">
+                        Product Name *
+                    </label>
 
-<input
-type="hidden"
-id="editId"
-value=""
->
+                    <input
+                        type="text"
+                        id="productName"
+                        placeholder="उदाहरण: गेहूँ"
+                        required
+                    >
 
+                </div>
 
-<div class="form-grid">
 
+                <div class="form-group">
 
-<div class="form-group">
+                    <label for="category">
+                        Category *
+                    </label>
 
-<label>
-Product Name *
-</label>
+                    <select id="category" required>
 
-<input
-type="text"
-id="productName"
-required
->
+                        <option value="">
+                            -- Select Category --
+                        </option>
 
-</div>
+                        <option value="Cereals">
+                            Cereals / अनाज
+                        </option>
 
+                        <option value="Pulses">
+                            Pulses / दालें
+                        </option>
 
-<div class="form-group">
+                        <option value="Oil Seeds">
+                            Oil Seeds / तिलहन
+                        </option>
 
-<label>
-Category *
-</label>
+                        <option value="Organic Products">
+                            Organic Products / जैविक उत्पाद
+                        </option>
 
-<select
-id="category"
-required
->
+                    </select>
 
-<option value="">
--- Select Category --
-</option>
+                </div>
 
-<option value="Cereals">
-Cereals / अनाज
-</option>
 
-<option value="Pulses">
-Pulses / दालें
-</option>
+                <div class="form-group">
 
-<option value="Oil Seeds">
-Oil Seeds / तिलहन
-</option>
+                    <label for="price">
+                        Price per Kg *
+                    </label>
 
-<option value="Organic Products">
-Organic Products / जैविक उत्पाद
-</option>
+                    <input
+                        type="number"
+                        id="price"
+                        min="0"
+                        step="0.01"
+                        placeholder="50"
+                        required
+                    >
 
-</select>
+                </div>
 
-</div>
 
+                <div class="form-group">
 
-<div class="form-group">
+                    <label for="stock">
+                        Stock Quantity *
+                    </label>
 
-<label>
-Price per Kg *
-</label>
+                    <input
+                        type="number"
+                        id="stock"
+                        min="0"
+                        step="1"
+                        placeholder="100"
+                        required
+                    >
 
-<input
-type="number"
-id="price"
-min="0"
-step="0.01"
-required
->
+                </div>
 
-</div>
 
+                <div class="form-group">
 
-<div class="form-group">
+                    <label for="unit">
+                        Unit *
+                    </label>
 
-<label>
-Stock Quantity *
-</label>
+                    <select id="unit" required>
 
-<input
-type="number"
-id="stock"
-min="0"
-required
->
+                        <option value="Kg">Kg</option>
 
-</div>
+                        <option value="Gram">Gram</option>
 
+                        <option value="Packet">Packet</option>
 
-<div class="form-group">
+                    </select>
 
-<label>
-Unit *
-</label>
+                </div>
 
-<select
-id="unit"
-required
->
 
-<option value="Kg">
-Kg
-</option>
+                <div class="form-group">
 
-<option value="Gram">
-Gram
-</option>
+                    <label for="status">
+                        Product Status *
+                    </label>
 
-<option value="Packet">
-Packet
-</option>
+                    <select id="status" required>
 
-</select>
+                        <option value="Available">
+                            Available
+                        </option>
 
-</div>
+                        <option value="Out of Stock">
+                            Out of Stock
+                        </option>
 
+                    </select>
 
-<div class="form-group">
+                </div>
 
-<label>
-Product Status *
-</label>
 
-<select
-id="status"
-required
->
+                <div class="form-group full">
 
-<option value="Available">
-Available
-</option>
+                    <label for="description">
+                        Product Description
+                    </label>
 
-<option value="Out of Stock">
-Out of Stock
-</option>
+                    <textarea
+                        id="description"
+                        placeholder="Product के बारे में जानकारी लिखें..."
+                    ></textarea>
 
-</select>
+                </div>
 
-</div>
 
+                <div class="form-group full">
 
-<div class="form-group full">
+                    <label for="image">
+                        Product Image Path / URL
+                    </label>
 
-<label>
-Product Description *
-</label>
+                    <input
+                        type="text"
+                        id="image"
+                        placeholder="images/wheat.jpg"
+                    >
 
-<textarea
-id="description"
-required
-></textarea>
+                    <small style="margin-top:6px;color:#666;">
+                        उदाहरण: images/wheat.jpg
+                    </small>
 
-</div>
+                </div>
 
+            </div>
 
-<div class="form-group full">
 
-<label>
-Product Image Path / URL
-</label>
+            <div class="buttons">
 
-<input
-type="text"
-id="image"
-placeholder="images/wheat.jpg"
->
+                <button
+                    type="submit"
+                    class="btn-green"
+                    id="saveButton"
+                >
+                    Add Product
+                </button>
 
-<div class="photo-help">
+                <button
+                    type="button"
+                    class="btn-gray"
+                    id="clearButton"
+                >
+                    Clear Form
+                </button>
 
-<strong>महत्वपूर्ण:</strong>
+                <button
+                    type="button"
+                    class="btn-purple"
+                    id="importButton"
+                >
+                    Import Default Products
+                </button>
 
-नई photo को अभी सीधे Firebase Storage में upload नहीं किया जा रहा है।
+                <button
+                    type="button"
+                    class="btn-red"
+                    id="deleteAllButton"
+                >
+                    Delete All Products
+                </button>
 
-आप अपनी GitHub
-<strong>images</strong>
-folder में photo upload करके यहाँ उसका path लिखें।
+            </div>
 
-उदाहरण:
+        </form>
 
-<strong>images/wheat.jpg</strong>
+    </section>
 
-<br><br>
 
-पुराने products के लिए existing image अपने आप बनी रहेगी।
+    <!-- STATS -->
 
-</div>
+    <section class="stats">
 
-<div
-class="preview"
-id="photoPreview"
-></div>
+        <div class="stat">
 
-</div>
+            <h3>Total Products</h3>
 
+            <strong id="totalProducts">
+                0
+            </strong>
 
-</div>
+        </div>
 
 
-<div class="button-row">
+        <div class="stat">
 
-<button
-type="submit"
-class="btn-add"
-id="saveButton"
->
+            <h3>Total Stock</h3>
 
-Add Product
+            <strong id="totalStock">
+                0
+            </strong>
 
-</button>
+        </div>
 
 
-<button
-type="button"
-class="btn-clear"
-onclick="clearForm()"
->
+        <div class="stat">
 
-Clear Form
+            <h3>Available Products</h3>
 
-</button>
+            <strong id="availableProducts">
+                0
+            </strong>
 
+        </div>
 
-<button
-type="button"
-class="btn-delete-all"
-onclick="deleteAllProducts()"
->
+    </section>
 
-Delete All Products
 
-</button>
+    <!-- PRODUCT LIST -->
 
-</div>
+    <section class="card">
 
+        <h2>Product List</h2>
 
-</form>
+        <div class="search-box">
 
-</div>
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search Product..."
+            >
 
+        </div>
 
-<!-- STATISTICS -->
 
-<div class="stats">
+        <div id="loading" class="loading">
+            Firebase से Products load हो रहे हैं...
+        </div>
 
 
-<div class="stat">
+        <div
+            id="tableArea"
+            class="table-wrapper"
+            style="display:none;"
+        >
 
-<div
-class="stat-number"
-id="totalProducts"
->
-0
-</div>
+            <table>
 
-<div>
-Total Products
-</div>
+                <thead>
 
-</div>
+                    <tr>
 
+                        <th>S.No.</th>
 
-<div class="stat">
+                        <th>Image</th>
 
-<div
-class="stat-number"
-id="totalStock"
->
-0
-</div>
+                        <th>Product</th>
 
-<div>
-Total Stock
-</div>
+                        <th>Category</th>
 
-</div>
+                        <th>Price</th>
 
+                        <th>Stock</th>
 
-<div class="stat">
+                        <th>Unit</th>
 
-<div
-class="stat-number"
-id="availableProducts"
->
-0
-</div>
+                        <th>Status</th>
 
-<div>
-Available Products
-</div>
+                        <th>Action</th>
 
-</div>
+                    </tr>
 
+                </thead>
 
-</div>
+                <tbody id="productTableBody"></tbody>
 
+            </table>
 
-<!-- PRODUCT LIST -->
+        </div>
 
-<div class="card">
 
-<h2>
-Product List
-</h2>
+        <div
+            id="emptyMessage"
+            class="empty"
+            style="display:none;"
+        >
+            अभी Firebase में कोई Product उपलब्ध नहीं है।
+        </div>
 
-<div
-id="productList"
-class="product-grid"
->
+    </section>
 
-<div class="loading">
-Loading products from Firebase...
-</div>
-
-</div>
-
-</div>
-
-
-</div>
+</main>
 
 
 <footer>
 
-<h3>
-बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-</h3>
+    <p>
+        © 2026 Bundelkhand Organic Farmer Producer Company Limited
+    </p>
 
-<p>
-Bundelkhand Organic Farmer Producer Company Limited
-</p>
-
-<p>
-Empowering Farmers • Promoting Organic Agriculture
-</p>
-
-<p>
-© 2026 All Rights Reserved
-</p>
+    <p>
+        स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+    </p>
 
 </footer>
 
 
+<!-- FIREBASE -->
+
 <script type="module">
 
-/* =====================================================
-   FIREBASE IMPORTS
-===================================================== */
-
-import {
-    initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/12.17.0/firebase-app.js";
-
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
     getFirestore,
     collection,
-    getDocs,
     addDoc,
-    updateDoc,
-    deleteDoc,
+    getDocs,
     doc,
-    writeBatch
+    updateDoc,
+    deleteDoc
 }
-from
-"https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
-/* =====================================================
-   FIREBASE CONFIG
-===================================================== */
+/* =========================================
+   FIREBASE CONFIGURATION
+========================================= */
 
 const firebaseConfig = {
 
-    apiKey:
-    "AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
+    apiKey: "AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
 
-    authDomain:
-    "bundelkhand-organic-fpo.firebaseapp.com",
+    authDomain: "bundelkhand-organic-fpo.firebaseapp.com",
 
-    projectId:
-    "bundelkhand-organic-fpo",
+    projectId: "bundelkhand-organic-fpo",
 
-    storageBucket:
-    "bundelkhand-organic-fpo.firebasestorage.app",
+    storageBucket: "bundelkhand-organic-fpo.firebasestorage.app",
 
-    messagingSenderId:
-    "939641455963",
+    messagingSenderId: "939641455963",
 
-    appId:
-    "1:939641455963:web:1745b1299b3c463e74867e"
+    appId: "1:939641455963:web:1745b1299b3c463e74867e"
 
 };
 
 
-/* =====================================================
+/* =========================================
    INITIALIZE FIREBASE
-===================================================== */
+========================================= */
 
-const app =
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-const db =
-getFirestore(app);
+const db = getFirestore(app);
 
-
-/* =====================================================
-   COLLECTION
-===================================================== */
-
-const productsCollection =
-collection(db,"products");
+const productsRef = collection(db, "products");
 
 
-/* =====================================================
-   DEFAULT PRODUCTS
-===================================================== */
+/* =========================================
+   ELEMENTS
+========================================= */
 
-const defaultProducts = [
+const form = document.getElementById("productForm");
 
-{
-name:"गेहूँ",
-category:"Cereals",
-price:40,
-stock:1000,
-unit:"Kg",
-status:"Available",
-description:
-"Bundelkhand क्षेत्र के किसानों से प्राप्त गुणवत्तापूर्ण गेहूँ। साफ-सुथरा, प्राकृतिक एवं दैनिक उपयोग के लिए उपयुक्त।",
-image:"images/wheat.jpg"
-},
+const editingId =
+    document.getElementById("editingId");
 
-{
-name:"चना दाल",
-category:"Pulses",
-price:110,
-stock:1000,
-unit:"Kg",
-status:"Available",
-description:
-"स्वच्छ एवं गुणवत्तापूर्ण चना दाल। प्रोटीन से भरपूर और स्वादिष्ट। FPO के माध्यम से किसानों से सीधे उपलब्ध।",
-image:"images/chana-dal.jpg"
-},
+const productName =
+    document.getElementById("productName");
 
-{
-name:"मटर दाल",
-category:"Pulses",
-price:100,
-stock:1000,
-unit:"Kg",
-status:"Available",
-description:
-"गुणवत्तापूर्ण मटर दाल, अच्छी तरह साफ एवं पैक की गई। घर के दैनिक भोजन के लिए उपयुक्त।",
-image:"images/matar-dal.jpg"
-},
+const category =
+    document.getElementById("category");
 
-{
-name:"मसूर दाल",
-category:"Pulses",
-price:100,
-stock:1000,
-unit:"Kg",
-status:"Available",
-description:
-"स्वच्छ और गुणवत्तापूर्ण मसूर दाल। पौष्टिक, स्वादिष्ट और दैनिक भोजन के लिए उपयुक्त।",
-image:"images/masoor-dal.jpg"
-},
+const price =
+    document.getElementById("price");
 
-{
-name:"अरहर / तुअर दाल",
-category:"Pulses",
-price:140,
-stock:1000,
-unit:"Kg",
-status:"Available",
-description:
-"उत्तम गुणवत्ता की अरहर / तुअर दाल। स्वादिष्ट एवं पौष्टिक। किसानों से सीधे FPO के माध्यम से उपलब्ध।",
-image:"images/arhar-dal.jpg"
-},
+const stock =
+    document.getElementById("stock");
 
-{
-name:"उड़द दाल",
-category:"Pulses",
-price:140,
-stock:1000,
-unit:"Kg",
-status:"Available",
-description:
-"गुणवत्तापूर्ण उड़द दाल। दाल, इडली, डोसा और अन्य व्यंजनों के लिए उपयुक्त।",
-image:"images/urad-dal.jpg"
-},
+const unit =
+    document.getElementById("unit");
 
-{
-name:"दलिया",
-category:"Cereals",
-price:70,
-stock:1000,
-unit:"Kg",
-status:"Available",
-description:
-"गुणवत्तापूर्ण गेहूँ से तैयार दलिया। पौष्टिक नाश्ते और दैनिक भोजन के लिए उपयुक्त।",
-image:"images/daliya.jpg"
-},
+const status =
+    document.getElementById("status");
 
-{
-name:"बेसन",
-category:"Organic Products",
-price:120,
-stock:1000,
-unit:"Kg",
-status:"Available",
-description:
-"उत्तम गुणवत्ता वाले चने से तैयार बेसन। पकौड़ी, चीला, कढ़ी एवं अन्य व्यंजनों के लिए उपयुक्त।",
-image:"images/besan.jpg"
-},
+const description =
+    document.getElementById("description");
 
-{
-name:"सरसों",
-category:"Oil Seeds",
-price:80,
-stock:1000,
-unit:"Kg",
-status:"Available",
-description:
-"Bundelkhand के किसानों से प्राप्त गुणवत्तापूर्ण सरसों। तेल उत्पादन एवं अन्य उपयोग के लिए उपयुक्त।",
-image:"images/mustard.jpg"
-},
+const image =
+    document.getElementById("image");
 
-{
-name:"मूंगफली",
-category:"Oil Seeds",
-price:130,
-stock:1000,
-unit:"Kg",
-status:"Available",
-description:
-"चयनित एवं गुणवत्तापूर्ण मूंगफली। खाने और तेल उत्पादन दोनों के लिए उपयुक्त।",
-image:"images/groundnut.jpg"
-},
+const saveButton =
+    document.getElementById("saveButton");
 
-{
-name:"तिल",
-category:"Oil Seeds",
-price:180,
-stock:1000,
-unit:"Kg",
-status:"Available",
-description:
-"किसानों से प्राप्त गुणवत्तापूर्ण तिल। खाद्य उपयोग एवं तेल उत्पादन के लिए उपयुक्त।",
-image:"images/sesame.jpg"
-}
+const clearButton =
+    document.getElementById("clearButton");
 
-];
+const importButton =
+    document.getElementById("importButton");
+
+const deleteAllButton =
+    document.getElementById("deleteAllButton");
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const tableBody =
+    document.getElementById("productTableBody");
+
+const tableArea =
+    document.getElementById("tableArea");
+
+const emptyMessage =
+    document.getElementById("emptyMessage");
+
+const loading =
+    document.getElementById("loading");
+
+const firebaseStatus =
+    document.getElementById("firebaseStatus");
+
+const totalProducts =
+    document.getElementById("totalProducts");
+
+const totalStock =
+    document.getElementById("totalStock");
+
+const availableProducts =
+    document.getElementById("availableProducts");
+
+const formTitle =
+    document.getElementById("formTitle");
 
 
-/* =====================================================
-   LOCAL VARIABLES
-===================================================== */
+/* =========================================
+   PRODUCTS ARRAY
+========================================= */
 
 let products = [];
 
-let isLoading = false;
+
+/* =========================================
+   FIREBASE CONNECTED
+========================================= */
+
+firebaseStatus.className =
+    "firebase-status success";
+
+firebaseStatus.textContent =
+    "Firebase Connected — Products Database तैयार है।";
 
 
-/* =====================================================
-   STATUS
-===================================================== */
-
-function setStatus(message,error=false){
-
-    const box =
-    document.getElementById("firebaseStatus");
-
-    const text =
-    document.getElementById("statusText");
-
-    text.textContent =
-    message;
-
-    if(error){
-
-        box.classList.add(
-            "status-error"
-        );
-
-    }else{
-
-        box.classList.remove(
-            "status-error"
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   ESCAPE HTML
-===================================================== */
-
-function escapeHTML(value){
-
-    return String(value ?? "")
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-
-}
-
-
-/* =====================================================
-   CATEGORY
-===================================================== */
-
-function categoryName(category){
-
-    const names = {
-
-        "Cereals":
-        "Cereals / अनाज",
-
-        "Pulses":
-        "Pulses / दालें",
-
-        "Oil Seeds":
-        "Oil Seeds / तिलहन",
-
-        "Organic Products":
-        "Organic Products / जैविक उत्पाद"
-
-    };
-
-    return names[category] || category;
-
-}
-
-
-/* =====================================================
-   NORMALIZE
-===================================================== */
-
-function normalizeProduct(data,id){
-
-    return {
-
-        id:id,
-
-        name:data.name || "",
-
-        category:
-        data.category || "Cereals",
-
-        price:
-        Number(data.price) || 0,
-
-        stock:
-        Number(data.stock) || 0,
-
-        unit:
-        data.unit || "Kg",
-
-        status:
-        data.status || "Available",
-
-        description:
-        data.description || "",
-
-        image:
-        data.image || "images/wheat.jpg"
-
-    };
-
-}
-
-
-/* =====================================================
-   LOAD FIREBASE PRODUCTS
-===================================================== */
+/* =========================================
+   LOAD PRODUCTS
+========================================= */
 
 async function loadProducts(){
 
+    loading.style.display = "block";
+
+    tableArea.style.display = "none";
+
+    emptyMessage.style.display = "none";
+
     try{
 
-        setStatus(
-            "Loading products from Firebase..."
-        );
-
         const snapshot =
-        await getDocs(
-            productsCollection
-        );
+            await getDocs(productsRef);
 
         products = [];
 
-        snapshot.forEach(
-            function(item){
+        snapshot.forEach((item) => {
 
-                products.push(
-                    normalizeProduct(
-                        item.data(),
-                        item.id
-                    )
+            products.push({
+
+                id: item.id,
+
+                ...item.data()
+
+            });
+
+        });
+
+
+        products.sort((a,b) => {
+
+            return String(a.name || "")
+                .localeCompare(
+                    String(b.name || ""),
+                    "hi"
                 );
 
-            }
-        );
+        });
 
 
-        /*
-        अगर Firebase में अभी कोई product नहीं है,
-        तो पुराने default products डालें
-        */
+        loading.style.display = "none";
 
-        if(products.length === 0){
-
-            setStatus(
-                "Firebase empty. Adding default products..."
-            );
-
-            for(
-                const product
-                of defaultProducts
-            ){
-
-                await addDoc(
-                    productsCollection,
-                    product
-                );
-
-            }
-
-
-            /*
-            दोबारा Firebase से load
-            */
-
-            const newSnapshot =
-            await getDocs(
-                productsCollection
-            );
-
-            products = [];
-
-            newSnapshot.forEach(
-                function(item){
-
-                    products.push(
-                        normalizeProduct(
-                            item.data(),
-                            item.id
-                        )
-                    );
-
-                }
-            );
-
-        }
-
+        updateStats();
 
         renderProducts();
 
-        setStatus(
-            "Connected. Products are coming from Firebase."
-        );
 
     }catch(error){
 
-        console.error(
-            "Firebase Load Error:",
-            error
-        );
+        console.error(error);
 
-        setStatus(
-            "Firebase error: " +
-            error.message,
-            true
-        );
+        loading.style.display = "none";
 
-        document.getElementById(
-            "productList"
-        ).innerHTML = `
+        firebaseStatus.className =
+            "firebase-status error";
 
-            <div
-            class="empty-products"
-            style="grid-column:1/-1;"
-            >
+        firebaseStatus.textContent =
+            "Firebase Error: " + error.message;
 
-            <h3>
-            Firebase Database Error
-            </h3>
+        emptyMessage.style.display =
+            "block";
 
-            <p>
-            ${escapeHTML(error.message)}
-            </p>
-
-            <p>
-            कृपया Firestore Rules की जांच करें।
-            </p>
-
-            </div>
-
-        `;
+        emptyMessage.innerHTML =
+            "<strong>Products load नहीं हो सके।</strong><br><br>" +
+            error.message;
 
     }
 
 }
 
 
-/* =====================================================
+/* =========================================
+   UPDATE STATS
+========================================= */
+
+function updateStats(){
+
+    totalProducts.textContent =
+        products.length;
+
+    let stockTotal = 0;
+
+    let availableTotal = 0;
+
+    products.forEach(product => {
+
+        stockTotal +=
+            Number(product.stock || 0);
+
+        if(
+            product.status === "Available" &&
+            Number(product.stock || 0) > 0
+        ){
+
+            availableTotal++;
+
+        }
+
+    });
+
+
+    totalStock.textContent =
+        stockTotal;
+
+    availableProducts.textContent =
+        availableTotal;
+
+}
+
+
+/* =========================================
    RENDER PRODUCTS
-===================================================== */
+========================================= */
 
 function renderProducts(){
 
-    const list =
-    document.getElementById(
-        "productList"
-    );
-
-    list.innerHTML = "";
+    const search =
+        searchInput.value
+        .trim()
+        .toLowerCase();
 
 
-    if(products.length === 0){
+    const filtered =
+        products.filter(product => {
 
-        list.innerHTML = `
+            const name =
+                String(product.name || "")
+                .toLowerCase();
 
-            <div
-            class="empty-products"
-            style="grid-column:1/-1;"
-            >
+            const cat =
+                String(product.category || "")
+                .toLowerCase();
 
-            <h3>
-            No Products Found
-            </h3>
+            return (
+                name.includes(search) ||
+                cat.includes(search)
+            );
 
-            <p>
-            Add your first product.
-            </p>
+        });
 
-            </div>
 
-        `;
+    tableBody.innerHTML = "";
 
-        updateStats();
+
+    if(filtered.length === 0){
+
+        tableArea.style.display = "none";
+
+        emptyMessage.style.display =
+            "block";
+
+        emptyMessage.innerHTML =
+            search
+            ? "Search के अनुसार कोई Product नहीं मिला।"
+            : "अभी Firebase में कोई Product उपलब्ध नहीं है।";
 
         return;
 
     }
 
 
-    products.forEach(
-        function(product){
+    emptyMessage.style.display = "none";
 
-            const card =
-            document.createElement(
-                "div"
+    tableArea.style.display = "block";
+
+
+    filtered.forEach((product,index) => {
+
+        const row =
+            document.createElement("tr");
+
+
+        const imagePath =
+            product.image ||
+            "images/fpo-logo.png.png";
+
+
+        const productStatus =
+            product.status ||
+            (
+                Number(product.stock || 0) > 0
+                ? "Available"
+                : "Out of Stock"
             );
 
-            card.className =
-            "product-card";
+
+        const statusClass =
+            productStatus === "Available"
+            ? "available"
+            : "out";
 
 
-            card.innerHTML = `
+        row.innerHTML = `
+
+            <td>
+                ${index + 1}
+            </td>
+
+            <td>
 
                 <img
-                src="${escapeHTML(product.image)}"
-                alt="${escapeHTML(product.name)}"
-                onerror="
-                this.onerror=null;
-                this.src='images/wheat.jpg';
-                "
+                    class="product-image"
+                    src="${escapeHtml(imagePath)}"
+                    alt="${escapeHtml(product.name || "Product")}"
+                    onerror="this.onerror=null;this.src='images/fpo-logo.png.png';"
                 >
 
+            </td>
 
-                <div class="product-content">
+            <td>
 
-                    <div class="category">
-                    ${categoryName(
-                        product.category
-                    )}
-                    </div>
+                <strong>
+                    ${escapeHtml(product.name || "")}
+                </strong>
 
-                    <h3>
-                    ${escapeHTML(
-                        product.name
-                    )}
-                    </h3>
+                ${
+                    product.description
+                    ? `<br>
+                       <small>
+                       ${escapeHtml(product.description)}
+                       </small>`
+                    : ""
+                }
 
-                    <div class="description">
-                    ${escapeHTML(
-                        product.description
-                    )}
-                    </div>
+            </td>
 
-                    <div class="price">
+            <td>
+                ${escapeHtml(product.category || "-")}
+            </td>
 
-                    Rs.
-                    ${Number(
-                        product.price
-                    ).toLocaleString("en-IN")}
+            <td>
+                ₹${Number(product.price || 0).toFixed(2)}
+            </td>
 
-                    /
-                    ${escapeHTML(
-                        product.unit
-                    )}
+            <td>
+                ${Number(product.stock || 0)}
+            </td>
 
-                    </div>
+            <td>
+                ${escapeHtml(product.unit || "Kg")}
+            </td>
 
-                    <div class="stock">
+            <td>
 
-                    Stock:
-                    ${Number(
-                        product.stock
-                    ).toLocaleString("en-IN")}
+                <span class="status ${statusClass}">
+                    ${escapeHtml(productStatus)}
+                </span>
 
-                    ${escapeHTML(
-                        product.unit
-                    )}
+            </td>
 
-                    </div>
+            <td>
 
-                    <div class="${
-                        product.status === "Available"
-                        ? "available"
-                        : "out"
-                    }">
-
-                    ${
-                        product.status === "Available"
-                        ? "Available"
-                        : "Out of Stock"
-                    }
-
-                    </div>
-
-                    <div class="product-id">
-
-                    Firebase ID:
-                    ${escapeHTML(product.id)}
-
-                    </div>
-
-                </div>
-
-
-                <div class="actions">
+                <div class="action-buttons">
 
                     <button
-                    type="button"
-                    class="btn-edit"
-                    onclick="
-                    editProduct('${escapeHTML(product.id)}')
-                    "
+                        class="btn-blue"
+                        onclick="editProduct('${product.id}')"
                     >
-
-                    Edit
-
+                        Edit
                     </button>
 
-
                     <button
-                    type="button"
-                    class="btn-delete"
-                    onclick="
-                    deleteProduct('${escapeHTML(product.id)}')
-                    "
+                        class="btn-red"
+                        onclick="deleteProduct('${product.id}')"
                     >
-
-                    Delete
-
+                        Delete
                     </button>
 
                 </div>
 
-            `;
+            </td>
 
-            list.appendChild(card);
-
-        }
-    );
+        `;
 
 
-    updateStats();
+        tableBody.appendChild(row);
 
-}
-
-
-/* =====================================================
-   STATISTICS
-===================================================== */
-
-function updateStats(){
-
-    document.getElementById(
-        "totalProducts"
-    ).textContent =
-    products.length;
-
-
-    const totalStock =
-    products.reduce(
-        function(sum,product){
-
-            return sum +
-            Number(
-                product.stock || 0
-            );
-
-        },
-        0
-    );
-
-
-    document.getElementById(
-        "totalStock"
-    ).textContent =
-    totalStock.toLocaleString(
-        "en-IN"
-    );
-
-
-    const available =
-    products.filter(
-        function(product){
-
-            return product.status ===
-            "Available";
-
-        }
-    ).length;
-
-
-    document.getElementById(
-        "availableProducts"
-    ).textContent =
-    available;
+    });
 
 }
 
 
-/* =====================================================
-   FORM SUBMIT
-===================================================== */
+/* =========================================
+   ESCAPE HTML
+========================================= */
 
-document.getElementById(
-    "productForm"
-)
-.addEventListener(
-    "submit",
-    async function(event){
+function escapeHtml(value){
 
-        event.preventDefault();
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
+}
 
-        if(isLoading){
 
-            return;
+/* =========================================
+   ADD / UPDATE PRODUCT
+========================================= */
 
-        }
+form.addEventListener("submit", async function(event){
 
+    event.preventDefault();
 
-        const editId =
-        document.getElementById(
-            "editId"
-        ).value.trim();
 
+    const name =
+        productName.value.trim();
 
-        const name =
-        document.getElementById(
-            "productName"
-        ).value.trim();
+    const cat =
+        category.value;
 
+    const productPrice =
+        Number(price.value);
 
-        const category =
-        document.getElementById(
-            "category"
-        ).value;
+    const productStock =
+        Number(stock.value);
 
+    const productUnit =
+        unit.value;
 
-        const price =
-        Number(
-            document.getElementById(
-                "price"
-            ).value
-        );
+    const productStatus =
+        status.value;
 
+    const productDescription =
+        description.value.trim();
 
-        const stock =
-        Number(
-            document.getElementById(
-                "stock"
-            ).value
-        );
+    const productImage =
+        image.value.trim();
 
 
-        const unit =
-        document.getElementById(
-            "unit"
-        ).value;
+    if(!name){
 
+        alert("Product Name भरें।");
 
-        const status =
-        document.getElementById(
-            "status"
-        ).value;
-
-
-        const description =
-        document.getElementById(
-            "description"
-        ).value.trim();
-
-
-        const imageInput =
-        document.getElementById(
-            "image"
-        ).value.trim();
-
-
-        if(
-            !name ||
-            !category ||
-            !Number.isFinite(price) ||
-            price < 0 ||
-            !Number.isFinite(stock) ||
-            stock < 0 ||
-            !description
-        ){
-
-            alert(
-                "कृपया सभी जरूरी जानकारी सही तरीके से भरें।"
-            );
-
-            return;
-
-        }
-
-
-        const productData = {
-
-            name:name,
-
-            category:category,
-
-            price:price,
-
-            stock:stock,
-
-            unit:unit,
-
-            status:status,
-
-            description:description,
-
-            image:
-            imageInput ||
-            "images/wheat.jpg"
-
-        };
-
-
-        try{
-
-            isLoading = true;
-
-            document.getElementById(
-                "saveButton"
-            ).disabled = true;
-
-
-            /* =========================
-               UPDATE
-            ========================= */
-
-            if(editId){
-
-                await updateDoc(
-                    doc(
-                        db,
-                        "products",
-                        editId
-                    ),
-                    productData
-                );
-
-
-                alert(
-                    "Product successfully updated in Firebase."
-                );
-
-            }
-
-
-            /* =========================
-               ADD
-            ========================= */
-
-            else{
-
-                await addDoc(
-                    productsCollection,
-                    productData
-                );
-
-
-                alert(
-                    "New Product successfully added to Firebase."
-                );
-
-            }
-
-
-            clearForm();
-
-            await loadProducts();
-
-        }catch(error){
-
-            console.error(
-                "Save Error:",
-                error
-            );
-
-            alert(
-                "Product save नहीं हुआ.\n\n" +
-                error.message
-            );
-
-            setStatus(
-                "Save error: " +
-                error.message,
-                true
-            );
-
-        }finally{
-
-            isLoading = false;
-
-            document.getElementById(
-                "saveButton"
-            ).disabled = false;
-
-        }
+        return;
 
     }
-);
 
 
-/* =====================================================
-   EDIT PRODUCT
-===================================================== */
+    if(!cat){
 
-window.editProduct =
-async function(id){
+        alert("Category select करें।");
 
-    const product =
-    products.find(
-        function(item){
+        return;
 
-            return item.id === id;
+    }
+
+
+    if(productPrice < 0){
+
+        alert("Price सही डालें।");
+
+        return;
+
+    }
+
+
+    if(productStock < 0){
+
+        alert("Stock सही डालें।");
+
+        return;
+
+    }
+
+
+    const productData = {
+
+        name: name,
+
+        category: cat,
+
+        price: productPrice,
+
+        stock: productStock,
+
+        unit: productUnit,
+
+        status:
+            productStock > 0
+            ? productStatus
+            : "Out of Stock",
+
+        description:
+            productDescription,
+
+        image:
+            productImage,
+
+        updatedAt:
+            new Date().toISOString()
+
+    };
+
+
+    saveButton.disabled = true;
+
+    saveButton.textContent =
+        "Saving...";
+
+
+    try{
+
+        if(editingId.value){
+
+            const productDoc =
+                doc(
+                    db,
+                    "products",
+                    editingId.value
+                );
+
+
+            await updateDoc(
+                productDoc,
+                productData
+            );
+
+
+            alert(
+                "Product successfully updated."
+            );
+
+        }else{
+
+            productData.createdAt =
+                new Date().toISOString();
+
+
+            await addDoc(
+                productsRef,
+                productData
+            );
+
+
+            alert(
+                "Product successfully added to Firebase."
+            );
 
         }
-    );
+
+
+        clearForm();
+
+        await loadProducts();
+
+
+    }catch(error){
+
+        console.error(error);
+
+        alert(
+            "Firebase Error:\n\n" +
+            error.message
+        );
+
+    }
+
+
+    saveButton.disabled = false;
+
+    saveButton.textContent =
+        "Add Product";
+
+});
+
+
+/* =========================================
+   EDIT PRODUCT
+========================================= */
+
+window.editProduct = function(id){
+
+    const product =
+        products.find(
+            item => item.id === id
+        );
 
 
     if(!product){
 
-        alert(
-            "Product नहीं मिला।"
-        );
+        alert("Product नहीं मिला।");
 
         return;
 
     }
 
 
-    document.getElementById(
-        "editId"
-    ).value =
-    product.id;
+    editingId.value =
+        product.id;
+
+    productName.value =
+        product.name || "";
+
+    category.value =
+        product.category || "";
+
+    price.value =
+        product.price ?? "";
+
+    stock.value =
+        product.stock ?? 0;
+
+    unit.value =
+        product.unit || "Kg";
+
+    status.value =
+        product.status || "Available";
+
+    description.value =
+        product.description || "";
+
+    image.value =
+        product.image || "";
 
 
-    document.getElementById(
-        "productName"
-    ).value =
-    product.name;
+    formTitle.textContent =
+        "Edit Product";
 
-
-    document.getElementById(
-        "category"
-    ).value =
-    product.category;
-
-
-    document.getElementById(
-        "price"
-    ).value =
-    product.price;
-
-
-    document.getElementById(
-        "stock"
-    ).value =
-    product.stock;
-
-
-    document.getElementById(
-        "unit"
-    ).value =
-    product.unit;
-
-
-    document.getElementById(
-        "status"
-    ).value =
-    product.status;
-
-
-    document.getElementById(
-        "description"
-    ).value =
-    product.description;
-
-
-    document.getElementById(
-        "image"
-    ).value =
-    product.image;
-
-
-    document.getElementById(
-        "formTitle"
-    ).textContent =
-    "Edit Product: " +
-    product.name;
-
-
-    document.getElementById(
-        "formTitle"
-    ).classList.add(
-        "edit-title"
-    );
-
-
-    document.getElementById(
-        "productFormCard"
-    ).classList.add(
-        "edit-mode"
-    );
-
-
-    document.getElementById(
-        "saveButton"
-    ).textContent =
-    "Update Product";
-
-
-    document.getElementById(
-        "saveButton"
-    ).className =
-    "btn-update";
-
-
-    document.getElementById(
-        "photoPreview"
-    ).innerHTML = `
-
-        <p>
-        Current Product Photo:
-        </p>
-
-        <img
-        src="${escapeHTML(product.image)}"
-        alt="${escapeHTML(product.name)}"
-        onerror="
-        this.onerror=null;
-        this.src='images/wheat.jpg';
-        "
-        >
-
-    `;
+    saveButton.textContent =
+        "Update Product";
 
 
     window.scrollTo({
@@ -1931,21 +1505,16 @@ async function(id){
 };
 
 
-/* =====================================================
+/* =========================================
    DELETE PRODUCT
-===================================================== */
+========================================= */
 
-window.deleteProduct =
-async function(id){
+window.deleteProduct = async function(id){
 
     const product =
-    products.find(
-        function(item){
-
-            return item.id === id;
-
-        }
-    );
+        products.find(
+            item => item.id === id
+        );
 
 
     if(!product){
@@ -1956,11 +1525,10 @@ async function(id){
 
 
     const confirmDelete =
-    confirm(
-        "क्या आप '" +
-        product.name +
-        "' को Firebase से Delete करना चाहते हैं?"
-    );
+        confirm(
+            "क्या आप यह Product delete करना चाहते हैं?\n\n" +
+            product.name
+        );
 
 
     if(!confirmDelete){
@@ -1982,23 +1550,19 @@ async function(id){
 
 
         alert(
-            "Product successfully deleted from Firebase."
+            "Product successfully deleted."
         );
 
 
         await loadProducts();
 
-        clearForm();
 
     }catch(error){
 
-        console.error(
-            "Delete Error:",
-            error
-        );
+        console.error(error);
 
         alert(
-            "Delete नहीं हुआ.\n\n" +
+            "Delete Error:\n\n" +
             error.message
         );
 
@@ -2007,53 +1571,98 @@ async function(id){
 };
 
 
-/* =====================================================
+/* =========================================
+   CLEAR FORM
+========================================= */
+
+function clearForm(){
+
+    form.reset();
+
+    editingId.value = "";
+
+    formTitle.textContent =
+        "Add New Product";
+
+    saveButton.textContent =
+        "Add Product";
+
+    unit.value = "Kg";
+
+    status.value =
+        "Available";
+
+}
+
+
+/* =========================================
+   CLEAR BUTTON
+========================================= */
+
+clearButton.addEventListener(
+    "click",
+    clearForm
+);
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+searchInput.addEventListener(
+    "input",
+    renderProducts
+);
+
+
+/* =========================================
    DELETE ALL
-===================================================== */
+========================================= */
 
-window.deleteAllProducts =
-async function(){
+deleteAllButton.addEventListener(
+    "click",
+    async function(){
 
-    if(products.length === 0){
+        if(products.length === 0){
 
-        alert(
-            "Product list पहले से खाली है।"
-        );
+            alert(
+                "Firebase में कोई Product नहीं है।"
+            );
 
-        return;
+            return;
 
-    }
-
-
-    const confirmation =
-    confirm(
-        "क्या आप Firebase से सभी products Delete करना चाहते हैं?\n\n" +
-        "यह action सभी products को हटा देगा।"
-    );
+        }
 
 
-    if(!confirmation){
-
-        return;
-
-    }
-
-
-    try{
-
-        setStatus(
-            "Deleting all products..."
-        );
+        const confirmFirst =
+            confirm(
+                "WARNING!\n\n" +
+                "क्या आप Firebase के सभी " +
+                products.length +
+                " Products delete करना चाहते हैं?\n\n" +
+                "यह action वापस नहीं किया जा सकता।"
+            );
 
 
-        const batch =
-        writeBatch(db);
+        if(!confirmFirst){
+
+            return;
+
+        }
 
 
-        products.forEach(
-            function(product){
+        try{
 
-                batch.delete(
+            deleteAllButton.disabled =
+                true;
+
+            deleteAllButton.textContent =
+                "Deleting...";
+
+
+            for(const product of products){
+
+                await deleteDoc(
                     doc(
                         db,
                         "products",
@@ -2062,154 +1671,304 @@ async function(){
                 );
 
             }
-        );
 
 
-        await batch.commit();
+            alert(
+                "सभी Products successfully deleted."
+            );
 
 
-        alert(
-            "सभी Products Firebase से Delete हो गए हैं।"
-        );
+            await loadProducts();
 
 
-        clearForm();
+        }catch(error){
 
-        await loadProducts();
+            console.error(error);
 
-    }catch(error){
+            alert(
+                "Delete All Error:\n\n" +
+                error.message
+            );
 
-        console.error(
-            "Delete All Error:",
-            error
-        );
+        }
 
-        alert(
-            "Products delete नहीं हुए.\n\n" +
-            error.message
-        );
+
+        deleteAllButton.disabled =
+            false;
+
+        deleteAllButton.textContent =
+            "Delete All Products";
 
     }
-
-};
-
-
-/* =====================================================
-   CLEAR FORM
-===================================================== */
-
-window.clearForm =
-function(){
-
-    document.getElementById(
-        "productForm"
-    ).reset();
+);
 
 
-    document.getElementById(
-        "editId"
-    ).value =
-    "";
+/* =========================================
+   DEFAULT PRODUCTS
+========================================= */
+
+const defaultProducts = [
+
+    {
+        name:"गेहूँ",
+        category:"Cereals",
+        price:50,
+        stock:100,
+        unit:"Kg",
+        status:"Available",
+        description:"गुणवत्तापूर्ण गेहूँ",
+        image:"images/wheat.jpg"
+    },
+
+    {
+        name:"चना दाल",
+        category:"Pulses",
+        price:110,
+        stock:100,
+        unit:"Kg",
+        status:"Available",
+        description:"स्वच्छ एवं गुणवत्तापूर्ण चना दाल",
+        image:"images/chana-dal.jpg"
+    },
+
+    {
+        name:"मटर दाल",
+        category:"Pulses",
+        price:100,
+        stock:100,
+        unit:"Kg",
+        status:"Available",
+        description:"गुणवत्तापूर्ण मटर दाल",
+        image:"images/matar-dal.jpg"
+    },
+
+    {
+        name:"मसूर दाल",
+        category:"Pulses",
+        price:99,
+        stock:100,
+        unit:"Kg",
+        status:"Available",
+        description:"गुणवत्तापूर्ण मसूर दाल",
+        image:"images/masoor-dal.jpg"
+    },
+
+    {
+        name:"अरहर / तुअर दाल",
+        category:"Pulses",
+        price:140,
+        stock:100,
+        unit:"Kg",
+        status:"Available",
+        description:"गुणवत्तापूर्ण अरहर दाल",
+        image:"images/arhar-dal.jpg"
+    },
+
+    {
+        name:"उड़द दाल",
+        category:"Pulses",
+        price:140,
+        stock:100,
+        unit:"Kg",
+        status:"Available",
+        description:"गुणवत्तापूर्ण उड़द दाल",
+        image:"images/urad-dal.jpg"
+    },
+
+    {
+        name:"दलिया",
+        category:"Cereals",
+        price:70,
+        stock:100,
+        unit:"Kg",
+        status:"Available",
+        description:"स्वच्छ एवं पौष्टिक दलिया",
+        image:"images/daliya.jpg"
+    },
+
+    {
+        name:"बेसन",
+        category:"Organic Products",
+        price:120,
+        stock:100,
+        unit:"Kg",
+        status:"Available",
+        description:"गुणवत्तापूर्ण बेसन",
+        image:"images/besan.jpg"
+    },
+
+    {
+        name:"सरसों",
+        category:"Oil Seeds",
+        price:80,
+        stock:100,
+        unit:"Kg",
+        status:"Available",
+        description:"गुणवत्तापूर्ण सरसों",
+        image:"images/mustard.jpg"
+    },
+
+    {
+        name:"मूंगफली",
+        category:"Oil Seeds",
+        price:120,
+        stock:100,
+        unit:"Kg",
+        status:"Available",
+        description:"गुणवत्तापूर्ण मूंगफली",
+        image:"images/groundnut.jpg"
+    },
+
+    {
+        name:"तिल",
+        category:"Oil Seeds",
+        price:170,
+        stock:100,
+        unit:"Kg",
+        status:"Available",
+        description:"गुणवत्तापूर्ण तिल",
+        image:"images/sesame.jpg"
+    },
+
+    {
+        name:"सोयाबीन",
+        category:"Oil Seeds",
+        price:150,
+        stock:100,
+        unit:"Kg",
+        status:"Available",
+        description:"गुणवत्तापूर्ण सोयाबीन",
+        image:""
+    }
+
+];
 
 
-    document.getElementById(
-        "formTitle"
-    ).textContent =
-    "Add New Product";
+/* =========================================
+   IMPORT DEFAULT PRODUCTS
+========================================= */
+
+importButton.addEventListener(
+    "click",
+    async function(){
+
+        const existingNames =
+            products.map(
+                product =>
+                    String(product.name || "")
+                    .trim()
+                    .toLowerCase()
+            );
 
 
-    document.getElementById(
-        "formTitle"
-    ).classList.remove(
-        "edit-title"
-    );
+        const productsToImport =
+            defaultProducts.filter(product => {
+
+                return !existingNames.includes(
+                    product.name
+                    .trim()
+                    .toLowerCase()
+                );
+
+            });
 
 
-    document.getElementById(
-        "productFormCard"
-    ).classList.remove(
-        "edit-mode"
-    );
+        if(productsToImport.length === 0){
 
-
-    document.getElementById(
-        "saveButton"
-    ).textContent =
-    "Add Product";
-
-
-    document.getElementById(
-        "saveButton"
-    ).className =
-    "btn-add";
-
-
-    document.getElementById(
-        "photoPreview"
-    ).innerHTML =
-    "";
-
-};
-
-
-/* =====================================================
-   IMAGE PREVIEW FROM PATH
-===================================================== */
-
-document.getElementById(
-    "image"
-)
-.addEventListener(
-    "input",
-    function(){
-
-        const image =
-        this.value.trim();
-
-
-        if(!image){
-
-            document.getElementById(
-                "photoPreview"
-            ).innerHTML =
-            "";
+            alert(
+                "सभी Default Products पहले से Firebase में मौजूद हैं।"
+            );
 
             return;
 
         }
 
 
-        document.getElementById(
-            "photoPreview"
-        ).innerHTML = `
+        const confirmation =
+            confirm(
+                productsToImport.length +
+                " Default Products Firebase में add किए जाएंगे।\n\n" +
+                "Continue करें?"
+            );
 
-            <p>
-            Image Preview:
-            </p>
 
-            <img
-            src="${escapeHTML(image)}"
-            alt="Product Preview"
-            onerror="
-            this.style.display='none';
-            "
-            >
+        if(!confirmation){
 
-        `;
+            return;
+
+        }
+
+
+        try{
+
+            importButton.disabled =
+                true;
+
+            importButton.textContent =
+                "Importing...";
+
+
+            for(
+                const product
+                of productsToImport
+            ){
+
+                await addDoc(
+                    productsRef,
+                    {
+
+                        ...product,
+
+                        createdAt:
+                            new Date().toISOString(),
+
+                        updatedAt:
+                            new Date().toISOString()
+
+                    }
+                );
+
+            }
+
+
+            alert(
+                productsToImport.length +
+                " Products Firebase में successfully add हो गए।"
+            );
+
+
+            await loadProducts();
+
+
+        }catch(error){
+
+            console.error(error);
+
+            alert(
+                "Import Error:\n\n" +
+                error.message
+            );
+
+        }
+
+
+        importButton.disabled =
+            false;
+
+        importButton.textContent =
+            "Import Default Products";
 
     }
 );
 
 
-/* =====================================================
+/* =========================================
    START
-===================================================== */
+========================================= */
 
 loadProducts();
 
 </script>
 
-
 </body>
-
 </html>
