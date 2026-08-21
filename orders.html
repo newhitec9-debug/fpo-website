@@ -1,1576 +1,2227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Orders Management | Bundelkhand Organic FPO</title>
+<title>
+Orders Management | Bundelkhand Organic FPO
+</title>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
 
 body{
     margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:linear-gradient(135deg,#eef8f2,#f3f7ff);
-    color:#222;
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+    background:#f4f7f5;
+    color:#263238;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 
-.header{
-    background:linear-gradient(135deg,#087f3f,#0ca653);
+header{
+    background:linear-gradient(135deg,#075e2d,#198754);
     color:white;
-    padding:22px 25px;
-    box-shadow:0 4px 15px rgba(0,0,0,.18);
+    padding:18px 20px;
 }
 
-.header h1{
-    margin:0;
-    font-size:28px;
-    font-weight:700;
-}
-
-.header p{
-    margin:6px 0 0;
-    font-size:15px;
-}
-
-/* ================= NAVIGATION ================= */
-
-.nav{
-    background:white;
-    padding:12px 15px;
+.header-inner{
+    max-width:1400px;
+    margin:auto;
     display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    box-shadow:0 2px 8px rgba(0,0,0,.12);
+    align-items:center;
+    gap:18px;
 }
 
-.nav a,
-.refresh-btn{
-    text-decoration:none;
-    border:0;
-    background:linear-gradient(135deg,#087f3f,#099a4d);
-    color:white;
-    padding:10px 17px;
-    border-radius:8px;
-    font-size:14px;
+.logo{
+    width:78px;
+    height:78px;
+    border-radius:50%;
+    background:white;
+    padding:5px;
+    object-fit:contain;
+}
+
+.header-text h1{
+    margin:0;
+    font-size:25px;
+}
+
+.header-text h2{
+    margin:5px 0;
+    font-size:16px;
+    font-weight:normal;
+}
+
+.header-text p{
+    margin:5px 0 0;
+    display:inline-block;
+    background:#ff9800;
+    padding:5px 12px;
+    border-radius:20px;
     font-weight:bold;
-    cursor:pointer;
-    transition:.2s;
 }
 
-.nav a:hover,
-.refresh-btn:hover{
-    background:#056831;
-    transform:translateY(-1px);
+/* NAV */
+
+nav{
+    background:#064d24;
+    padding:8px 12px;
 }
 
-/* ================= MAIN ================= */
+.nav-inner{
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:10px 13px;
+    border-radius:6px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+nav a:hover{
+    background:#ff9800;
+}
+
+/* CONTAINER */
 
 .container{
-    max-width:1500px;
-    margin:25px auto;
-    padding:0 12px;
+    max-width:1400px;
+    margin:22px auto;
+    padding:0 15px;
 }
 
-/* ================= TITLE ================= */
+/* FIREBASE STATUS */
+
+.firebase-status{
+    padding:13px 16px;
+    border-radius:8px;
+    margin-bottom:20px;
+    font-weight:bold;
+    background:#fff3cd;
+    color:#856404;
+    border:1px solid #ffe69c;
+}
+
+.firebase-success{
+    background:#d1e7dd;
+    color:#0f5132;
+    border-color:#badbcc;
+}
+
+.firebase-error{
+    background:#f8d7da;
+    color:#842029;
+    border-color:#f5c2c7;
+}
+
+/* TITLE */
 
 .page-title{
     background:white;
-    padding:21px;
-    border-radius:13px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
     margin-bottom:20px;
-    box-shadow:0 4px 14px rgba(0,0,0,.10);
-    border-left:6px solid #0a8f48;
 }
 
-.page-title h2{
-    margin:0;
-    color:#087f3f;
-    font-size:24px;
+.page-title h1{
+    margin:0 0 8px;
+    color:#176b35;
 }
 
-.page-title p{
-    margin:7px 0 0;
-    color:#666;
-    font-size:14px;
-}
-
-/* ================= STAT CARDS ================= */
+/* STATS */
 
 .stats{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:16px;
+    gap:15px;
     margin-bottom:22px;
 }
 
 .stat{
     background:white;
     padding:20px;
-    border-radius:13px;
-    box-shadow:0 4px 14px rgba(0,0,0,.10);
-    position:relative;
-    overflow:hidden;
+    border-radius:10px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    text-align:center;
+    border-top:5px solid #198754;
 }
 
-.stat:after{
-    content:"";
-    position:absolute;
-    right:-25px;
-    top:-25px;
-    width:80px;
-    height:80px;
-    border-radius:50%;
-    background:rgba(255,255,255,.45);
+.stat:nth-child(2){
+    border-top-color:#ff9800;
 }
 
-.stat.total{
-    border-left:6px solid #087f3f;
+.stat:nth-child(3){
+    border-top-color:#0d6efd;
 }
 
-.stat.pending{
-    border-left:6px solid #f39c12;
-}
-
-.stat.confirmed{
-    border-left:6px solid #2980b9;
-}
-
-.stat.delivered{
-    border-left:6px solid #16a085;
+.stat:nth-child(4){
+    border-top-color:#dc3545;
 }
 
 .stat h3{
     margin:0 0 8px;
-    font-size:14px;
+    font-size:15px;
     color:#666;
 }
 
-.stat .number{
-    font-size:29px;
+.stat-number{
+    font-size:30px;
     font-weight:bold;
-    color:#087f3f;
+    color:#176b35;
 }
 
-.stat.pending .number{
-    color:#e08a00;
-}
+/* CONTROLS */
 
-.stat.confirmed .number{
-    color:#1976b9;
-}
-
-.stat.delivered .number{
-    color:#0c8c80;
-}
-
-/* ================= TABLE ================= */
-
-.table-box{
+.controls{
     background:white;
-    border-radius:13px;
-    overflow:auto;
-    box-shadow:0 5px 18px rgba(0,0,0,.13);
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    margin-bottom:20px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.controls input,
+.controls select{
+    padding:11px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:14px;
+}
+
+.search{
+    flex:1;
+    min-width:220px;
+}
+
+.refresh{
+    background:#198754;
+    color:white;
+    border:none;
+    padding:11px 18px;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.refresh:hover{
+    background:#146c43;
+}
+
+/* LOADING */
+
+.loading{
+    background:white;
+    padding:45px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    font-weight:bold;
+    color:#176b35;
+}
+
+.spinner{
+    width:38px;
+    height:38px;
+    margin:0 auto 15px;
+    border:4px solid #d7eadc;
+    border-top-color:#198754;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* TABLE */
+
+.table-wrapper{
+    background:white;
+    border-radius:10px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    overflow-x:auto;
 }
 
 table{
     width:100%;
-    min-width:1150px;
     border-collapse:collapse;
+    min-width:1250px;
 }
 
 thead{
-    background:linear-gradient(135deg,#087f3f,#0a9b4d);
+    background:#176b35;
     color:white;
 }
 
-th{
-    padding:14px 10px;
+th,
+td{
+    padding:12px 10px;
+    border-bottom:1px solid #ddd;
     text-align:left;
-    font-size:14px;
+    vertical-align:top;
+}
+
+th{
     white-space:nowrap;
 }
 
-td{
-    padding:11px 10px;
-    border-bottom:1px solid #dfe7e2;
-    vertical-align:top;
-    font-size:14px;
-}
-
-tbody tr:nth-child(even){
-    background:#f3f8f4;
-}
-
 tbody tr:hover{
-    background:#e8f6ec;
+    background:#f7fbf8;
 }
 
-/* ================= ORDER ID ================= */
+/* ORDER ID */
 
 .order-id{
-    color:#126bb0;
     font-weight:bold;
-    cursor:pointer;
+    color:#0d6efd;
+    white-space:nowrap;
 }
 
-.order-id:hover{
-    text-decoration:underline;
-}
+/* CUSTOMER */
 
-/* ================= CUSTOMER ================= */
-
-.customer{
+.customer-name{
     font-weight:bold;
-    color:#222;
+    color:#176b35;
 }
 
-/* ================= PRODUCTS ================= */
+.mobile{
+    color:#555;
+    margin-top:5px;
+}
 
-.product-item{
-    background:linear-gradient(135deg,#fff8dc,#fff4c8);
-    border-left:4px solid #f39c12;
-    padding:8px 10px;
-    margin-bottom:5px;
-    border-radius:6px;
-    min-width:145px;
+/* PRODUCTS */
+
+.order-product{
+    margin-bottom:8px;
+    padding-bottom:8px;
+    border-bottom:1px dashed #ddd;
+}
+
+.order-product:last-child{
+    border-bottom:none;
 }
 
 .product-name{
     font-weight:bold;
-    color:#333;
 }
 
-.product-price{
+.product-detail{
     color:#666;
-    margin-top:4px;
     font-size:13px;
 }
 
-/* ================= TOTAL ================= */
+/* TOTAL */
 
 .total{
+    font-size:18px;
     font-weight:bold;
-    color:#682080;
-    font-size:16px;
+    color:#d35400;
     white-space:nowrap;
 }
 
-/* ================= STATUS ================= */
+/* PAYMENT */
+
+.payment{
+    font-weight:bold;
+}
+
+/* STATUS */
 
 .status-select{
-    border:0;
-    color:white;
-    padding:9px 12px;
-    border-radius:8px;
+    padding:8px;
+    border-radius:6px;
+    border:1px solid #ccc;
     font-weight:bold;
-    cursor:pointer;
-    min-width:140px;
-    outline:none;
+    min-width:130px;
 }
 
 .status-pending{
-    background:#f39c12;
+    background:#fff3cd;
+    color:#856404;
 }
 
 .status-confirmed{
-    background:#28a745;
+    background:#cff4fc;
+    color:#055160;
+}
+
+.status-processing{
+    background:#e2d9f3;
+    color:#432874;
 }
 
 .status-shipped{
-    background:#1976d2;
+    background:#cfe2ff;
+    color:#084298;
 }
 
 .status-delivered{
-    background:#0c8f95;
+    background:#d1e7dd;
+    color:#0f5132;
 }
 
 .status-cancelled{
-    background:#dc3545;
+    background:#f8d7da;
+    color:#842029;
 }
 
-/* ================= ACTION BUTTONS ================= */
-
-.action-btn{
-    border:0;
-    color:white;
-    padding:9px 14px;
-    border-radius:7px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-right:4px;
-    margin-bottom:4px;
-    transition:.2s;
-}
-
-.view-btn{
-    background:#287dcc;
-}
-
-.view-btn:hover{
-    background:#155da0;
-}
+/* ACTION */
 
 .delete-btn{
     background:#dc3545;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
 }
 
 .delete-btn:hover{
-    background:#b51f2d;
+    background:#bb2d3b;
 }
 
-/* ================= EMPTY ================= */
+/* EMPTY */
 
 .empty{
-    text-align:center;
-    padding:50px;
-    color:#777;
-    font-size:18px;
-}
-
-/* ================= MODAL ================= */
-
-.modal{
-    display:none;
-    position:fixed;
-    z-index:9999;
-    inset:0;
-    background:rgba(0,0,0,.65);
-    padding:25px 12px;
-    overflow:auto;
-}
-
-.modal-box{
     background:white;
-    max-width:680px;
-    margin:35px auto;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 12px 45px rgba(0,0,0,.35);
+    padding:50px 20px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
-.modal-header{
-    background:linear-gradient(135deg,#087f3f,#0ca653);
+.empty h2{
+    color:#176b35;
+}
+
+/* ERROR */
+
+.error{
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    color:#842029;
+    border:1px solid #f5c2c7;
+}
+
+/* ADDRESS */
+
+.address{
+    max-width:240px;
+    line-height:1.5;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:40px;
+    background:#075e2d;
     color:white;
-    padding:18px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    text-align:center;
+    padding:25px;
 }
 
-.modal-header h2{
-    margin:0;
-    font-size:21px;
-}
+/* RESPONSIVE */
 
-.close{
-    font-size:30px;
-    cursor:pointer;
-    line-height:1;
-}
-
-.modal-body{
-    padding:22px;
-}
-
-.detail-row{
-    display:grid;
-    grid-template-columns:150px 1fr;
-    gap:10px;
-    padding:11px 0;
-    border-bottom:1px solid #eee;
-}
-
-.detail-label{
-    font-weight:bold;
-    color:#555;
-}
-
-.modal-products{
-    margin-top:18px;
-}
-
-.modal-product{
-    background:#f5f8f6;
-    border-left:4px solid #0a9950;
-    padding:11px;
-    margin-top:8px;
-    border-radius:6px;
-}
-
-.modal-total{
-    margin-top:18px;
-    padding:12px;
-    background:#e9f7ee;
-    border-radius:7px;
-    text-align:right;
-    font-size:20px;
-    font-weight:bold;
-    color:#087f3f;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:950px){
+@media(max-width:900px){
 
     .stats{
         grid-template-columns:repeat(2,1fr);
     }
 
+    .header-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .header-text h1{
+        font-size:20px;
+    }
+
 }
 
-@media(max-width:600px){
-
-    .header h1{
-        font-size:21px;
-    }
-
-    .container{
-        padding:0 7px;
-    }
+@media(max-width:500px){
 
     .stats{
         grid-template-columns:1fr;
     }
 
-    .page-title h2{
-        font-size:21px;
+    .controls{
+        flex-direction:column;
     }
 
-    .detail-row{
-        grid-template-columns:1fr;
-        gap:4px;
+    .search{
+        width:100%;
     }
 
 }
+
 </style>
+
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
 
-<div class="header">
+<!-- HEADER -->
 
-    <h1>Bundelkhand Organic Farmer Producer Company Limited</h1>
+<header>
 
-    <p>Orders Management</p>
+<div class="header-inner">
+
+<img
+    class="logo"
+    src="images/fpo-logo.png.png"
+    alt="FPO Logo"
+    onerror="
+        this.onerror=null;
+        this.src='images/logo.png.png';
+    "
+>
+
+<div class="header-text">
+
+<h1>
+बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+</h1>
+
+<h2>
+Bundelkhand Organic Farmer Producer Company Limited
+</h2>
+
+<p>
+स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+</p>
 
 </div>
 
+</div>
 
-<!-- ================= NAVIGATION ================= -->
+</header>
 
-<div class="nav">
 
-    <a href="admin-dashboard.html">
-        Admin Dashboard
-    </a>
+<!-- NAVIGATION -->
 
-    <a href="manage-products.html">
-        Manage Products
-    </a>
+<nav>
 
-    <button class="refresh-btn" onclick="loadOrders()">
-        Refresh Orders
-    </button>
+<div class="nav-inner">
+
+<a href="admin-dashboard.html">
+Dashboard
+</a>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="products.html">
+View Products
+</a>
+
+<a href="orders.html">
+Orders
+</a>
+
+<a href="manage-products.html">
+Manage Products
+</a>
+
+<a href="admin-gallery.html">
+Gallery
+</a>
+
+<a href="admin-news.html">
+Agriculture News
+</a>
 
 </div>
 
+</nav>
 
-<!-- ================= MAIN ================= -->
+
+<!-- MAIN -->
 
 <div class="container">
 
-    <div class="page-title">
 
-        <h2>Orders Management</h2>
+<!-- FIREBASE STATUS -->
 
-        <p>
-            View, manage and update customer orders
-        </p>
-
-    </div>
-
-
-    <!-- ================= STATISTICS ================= -->
-
-    <div class="stats">
-
-        <div class="stat total">
-
-            <h3>Total Orders</h3>
-
-            <div class="number" id="totalOrders">
-                0
-            </div>
-
-        </div>
+<div
+    id="firebaseStatus"
+    class="firebase-status"
+>
+Firebase से Orders load हो रहे हैं...
+</div>
 
 
-        <div class="stat pending">
+<!-- TITLE -->
 
-            <h3>Pending Orders</h3>
+<div class="page-title">
 
-            <div class="number" id="pendingOrders">
-                0
-            </div>
+<h1>
+Orders Management
+</h1>
 
-        </div>
-
-
-        <div class="stat confirmed">
-
-            <h3>Confirmed Orders</h3>
-
-            <div class="number" id="confirmedOrders">
-                0
-            </div>
-
-        </div>
-
-
-        <div class="stat delivered">
-
-            <h3>Delivered Orders</h3>
-
-            <div class="number" id="deliveredOrders">
-                0
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= ORDERS TABLE ================= -->
-
-    <div class="table-box">
-
-        <table>
-
-            <thead>
-
-                <tr>
-
-                    <th>Sr.</th>
-                    <th>Order ID</th>
-                    <th>Customer</th>
-                    <th>Mobile</th>
-                    <th>Products</th>
-                    <th>Total</th>
-                    <th>Payment</th>
-                    <th>Date</th>
-                    <th>Status</th>
-                    <th>Action</th>
-
-                </tr>
-
-            </thead>
-
-
-            <tbody id="ordersBody">
-
-            </tbody>
-
-        </table>
-
-    </div>
+<p>
+Firebase Firestore से सभी Customer Orders
+</p>
 
 </div>
 
 
-<!-- ================= VIEW MODAL ================= -->
+<!-- STATS -->
 
-<div class="modal" id="viewModal">
+<div class="stats">
 
-    <div class="modal-box">
+<div class="stat">
 
-        <div class="modal-header">
+<h3>
+Total Orders
+</h3>
 
-            <h2>Order Details</h2>
-
-            <span class="close" onclick="closeModal()">
-                &times;
-            </span>
-
-        </div>
-
-
-        <div class="modal-body" id="modalBody">
-
-        </div>
-
-    </div>
+<div
+    id="totalOrders"
+    class="stat-number"
+>
+0
+</div>
 
 </div>
 
 
-<script>
+<div class="stat">
 
-/* ==================================================
-   GET ORDERS
-================================================== */
+<h3>
+Pending Orders
+</h3>
 
-function getOrders(){
+<div
+    id="pendingOrders"
+    class="stat-number"
+>
+0
+</div>
 
-    try{
+</div>
 
-        const data = localStorage.getItem("orders");
 
-        if(!data){
-            return [];
-        }
+<div class="stat">
 
-        const orders = JSON.parse(data);
+<h3>
+Confirmed / Processing
+</h3>
 
-        return Array.isArray(orders) ? orders : [];
+<div
+    id="confirmedOrders"
+    class="stat-number"
+>
+0
+</div>
 
-    }catch(error){
+</div>
 
-        console.error("Orders Error:",error);
 
-        return [];
+<div class="stat">
 
-    }
+<h3>
+Delivered
+</h3>
 
+<div
+    id="deliveredOrders"
+    class="stat-number"
+>
+0
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CONTROLS -->
+
+<div class="controls">
+
+<input
+    type="search"
+    id="searchInput"
+    class="search"
+    placeholder="Order ID, नाम या मोबाइल खोजें..."
+>
+
+<select id="statusFilter">
+
+<option value="">
+सभी Status
+</option>
+
+<option value="Pending">
+Pending
+</option>
+
+<option value="Confirmed">
+Confirmed
+</option>
+
+<option value="Processing">
+Processing
+</option>
+
+<option value="Shipped">
+Shipped
+</option>
+
+<option value="Delivered">
+Delivered
+</option>
+
+<option value="Cancelled">
+Cancelled
+</option>
+
+</select>
+
+
+<button
+    type="button"
+    class="refresh"
+    id="refreshButton"
+>
+Refresh Orders
+</button>
+
+</div>
+
+
+<!-- LOADING -->
+
+<div
+    id="loadingBox"
+    class="loading"
+>
+
+<div class="spinner"></div>
+
+Orders load हो रहे हैं...
+
+</div>
+
+
+<!-- ERROR -->
+
+<div
+    id="errorBox"
+    class="error"
+    style="display:none;"
+>
+
+<h2>
+Firebase Error
+</h2>
+
+<p id="errorMessage"></p>
+
+<p>
+Firestore Rules में <strong>orders</strong> collection की read permission जांचें।
+</p>
+
+</div>
+
+
+<!-- EMPTY -->
+
+<div
+    id="emptyBox"
+    class="empty"
+    style="display:none;"
+>
+
+<h2>
+अभी कोई Order उपलब्ध नहीं है
+</h2>
+
+<p>
+Customer द्वारा Order करने के बाद वह यहाँ दिखाई देगा।
+</p>
+
+</div>
+
+
+<!-- TABLE -->
+
+<div
+    id="tableWrapper"
+    class="table-wrapper"
+    style="display:none;"
+>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+S.No.
+</th>
+
+<th>
+Order ID
+</th>
+
+<th>
+Customer
+</th>
+
+<th>
+Address
+</th>
+
+<th>
+Products
+</th>
+
+<th>
+Total
+</th>
+
+<th>
+Payment
+</th>
+
+<th>
+Date / Time
+</th>
+
+<th>
+Status
+</th>
+
+<th>
+Action
+</th>
+
+</tr>
+
+</thead>
+
+<tbody
+    id="ordersTableBody"
+>
+</tbody>
+
+</table>
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Bundelkhand Organic Farmer Producer Company Limited
+</p>
+
+<p>
+स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+</p>
+
+</footer>
+
+
+<!-- =====================================================
+     FIREBASE SCRIPT
+===================================================== -->
+
+<script type="module">
+
+
+/* =====================================================
+   FIREBASE
+===================================================== */
+
+import {
+    initializeApp
 }
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 
-/* ==================================================
-   SAVE ORDERS
-================================================== */
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    updateDoc,
+    deleteDoc,
+    doc
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-function saveOrders(orders){
 
-    localStorage.setItem(
-        "orders",
-        JSON.stringify(orders)
+/* =====================================================
+   CONFIG
+===================================================== */
+
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
+
+    authDomain:
+        "bundelkhand-organic-fpo.firebaseapp.com",
+
+    projectId:
+        "bundelkhand-organic-fpo",
+
+    storageBucket:
+        "bundelkhand-organic-fpo.firebasestorage.app",
+
+    messagingSenderId:
+        "939641455963",
+
+    appId:
+        "1:939641455963:web:1745b1299b3c463e74867e"
+
+};
+
+
+/* =====================================================
+   INIT
+===================================================== */
+
+const app =
+    initializeApp(
+        firebaseConfig
+    );
+
+const db =
+    getFirestore(app);
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const statusBox =
+    document.getElementById(
+        "firebaseStatus"
+    );
+
+const loadingBox =
+    document.getElementById(
+        "loadingBox"
+    );
+
+const errorBox =
+    document.getElementById(
+        "errorBox"
+    );
+
+const errorMessage =
+    document.getElementById(
+        "errorMessage"
+    );
+
+const emptyBox =
+    document.getElementById(
+        "emptyBox"
+    );
+
+const tableWrapper =
+    document.getElementById(
+        "tableWrapper"
+    );
+
+const tableBody =
+    document.getElementById(
+        "ordersTableBody"
+    );
+
+const searchInput =
+    document.getElementById(
+        "searchInput"
+    );
+
+const statusFilter =
+    document.getElementById(
+        "statusFilter"
+    );
+
+
+/* =====================================================
+   DATA
+===================================================== */
+
+let allOrders = [];
+
+
+/* =====================================================
+   SAFE TEXT
+===================================================== */
+
+function safeText(value){
+
+    return String(
+        value ?? ""
     );
 
 }
 
 
-/* ==================================================
+/* =====================================================
    ESCAPE HTML
-================================================== */
+===================================================== */
 
 function escapeHTML(value){
 
-    if(value === null || value === undefined){
-        return "";
+    return safeText(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* =====================================================
+   FORMAT DATE
+===================================================== */
+
+function formatDate(order){
+
+    if(
+        order.date ||
+        order.time
+    ){
+
+        return `
+
+            <div>
+                ${escapeHTML(
+                    order.date || ""
+                )}
+            </div>
+
+            <small>
+                ${escapeHTML(
+                    order.time || ""
+                )}
+            </small>
+
+        `;
+
     }
 
-    return String(value)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
+
+    if(
+        order.createdAt &&
+        typeof order.createdAt.toDate ===
+        "function"
+    ){
+
+        const date =
+            order.createdAt.toDate();
+
+        return `
+
+            <div>
+                ${date.toLocaleDateString(
+                    "en-IN"
+                )}
+            </div>
+
+            <small>
+                ${date.toLocaleTimeString(
+                    "en-IN"
+                )}
+            </small>
+
+        `;
+
+    }
+
+
+    return "-";
 
 }
 
 
-/* ==================================================
-   MONEY
-   Rs. USED TO AVOID SQUARE SYMBOL PROBLEM
-================================================== */
+/* =====================================================
+   STATUS CLASS
+===================================================== */
 
-function money(value){
+function getStatusClass(status){
 
-    const number = Number(value) || 0;
+    const value =
+        safeText(status)
+        .toLowerCase();
 
-    return "Rs. " + number.toLocaleString("en-IN",{
+    if(
+        value === "pending"
+    ){
+        return "status-pending";
+    }
 
-        minimumFractionDigits:2,
+    if(
+        value === "confirmed"
+    ){
+        return "status-confirmed";
+    }
 
-        maximumFractionDigits:2
+    if(
+        value === "processing"
+    ){
+        return "status-processing";
+    }
 
-    });
+    if(
+        value === "shipped"
+    ){
+        return "status-shipped";
+    }
+
+    if(
+        value === "delivered"
+    ){
+        return "status-delivered";
+    }
+
+    if(
+        value === "cancelled"
+    ){
+        return "status-cancelled";
+    }
+
+    return "";
 
 }
 
 
-/* ==================================================
-   PRODUCTS
-================================================== */
+/* =====================================================
+   LOAD ORDERS
+===================================================== */
 
-function getProducts(order){
+async function loadOrders(){
 
-    if(Array.isArray(order.products)){
+    loadingBox.style.display =
+        "block";
+
+    tableWrapper.style.display =
+        "none";
+
+    emptyBox.style.display =
+        "none";
+
+    errorBox.style.display =
+        "none";
+
+
+    try{
+
+        const snapshot =
+            await getDocs(
+                collection(
+                    db,
+                    "orders"
+                )
+            );
+
+
+        allOrders = [];
+
+
+        snapshot.forEach(
+            documentSnapshot => {
+
+                const data =
+                    documentSnapshot.data();
+
+
+                allOrders.push({
+
+                    firestoreId:
+                        documentSnapshot.id,
+
+                    ...data
+
+                });
+
+            }
+        );
+
+
+        /*
+            Latest orders first
+        */
+
+        allOrders.sort(
+            function(a,b){
+
+                const aTime =
+                    getTimeValue(a);
+
+                const bTime =
+                    getTimeValue(b);
+
+                return bTime - aTime;
+
+            }
+        );
+
+
+        statusBox.textContent =
+            "Firebase Connected — Orders Database तैयार है।";
+
+        statusBox.className =
+            "firebase-status firebase-success";
+
+
+        loadingBox.style.display =
+            "none";
+
+
+        updateStats();
+
+        renderOrders();
+
+
+    }
+    catch(error){
+
+        console.error(
+            "Firebase Orders Error:",
+            error
+        );
+
+
+        loadingBox.style.display =
+            "none";
+
+        errorBox.style.display =
+            "block";
+
+        errorMessage.textContent =
+            error.message;
+
+
+        statusBox.textContent =
+            "Firebase Error: " +
+            error.message;
+
+        statusBox.className =
+            "firebase-status firebase-error";
+
+    }
+
+}
+
+
+/* =====================================================
+   TIME VALUE
+===================================================== */
+
+function getTimeValue(order){
+
+    try{
+
+        if(
+            order.createdAt &&
+            typeof order.createdAt.toMillis ===
+            "function"
+        ){
+
+            return order.createdAt.toMillis();
+
+        }
+
+
+        if(
+            order.createdAt &&
+            typeof order.createdAt.toDate ===
+            "function"
+        ){
+
+            return order.createdAt
+                .toDate()
+                .getTime();
+
+        }
+
+
+        if(
+            order.date &&
+            order.time
+        ){
+
+            const parsed =
+                new Date(
+                    order.date +
+                    " " +
+                    order.time
+                );
+
+            if(
+                !isNaN(
+                    parsed.getTime()
+                )
+            ){
+
+                return parsed.getTime();
+
+            }
+
+        }
+
+    }
+    catch(error){
+
+        console.log(error);
+
+    }
+
+
+    return 0;
+
+}
+
+
+/* =====================================================
+   UPDATE STATS
+===================================================== */
+
+function updateStats(){
+
+    const total =
+        allOrders.length;
+
+
+    let pending = 0;
+
+    let confirmed = 0;
+
+    let delivered = 0;
+
+
+    allOrders.forEach(
+        order => {
+
+            const status =
+                safeText(
+                    order.status
+                ).toLowerCase();
+
+
+            if(
+                status === "pending"
+            ){
+
+                pending++;
+
+            }
+
+
+            if(
+                status === "confirmed" ||
+                status === "processing"
+            ){
+
+                confirmed++;
+
+            }
+
+
+            if(
+                status === "delivered"
+            ){
+
+                delivered++;
+
+            }
+
+        }
+    );
+
+
+    document.getElementById(
+        "totalOrders"
+    ).textContent =
+        total;
+
+
+    document.getElementById(
+        "pendingOrders"
+    ).textContent =
+        pending;
+
+
+    document.getElementById(
+        "confirmedOrders"
+    ).textContent =
+        confirmed;
+
+
+    document.getElementById(
+        "deliveredOrders"
+    ).textContent =
+        delivered;
+
+}
+
+
+/* =====================================================
+   GET PRODUCTS
+===================================================== */
+
+function getOrderProducts(order){
+
+    if(
+        Array.isArray(
+            order.products
+        )
+    ){
+
         return order.products;
+
     }
 
-    if(Array.isArray(order.items)){
-        return order.items;
+
+    /*
+       Compatibility with old order structure
+    */
+
+    if(
+        order.product
+    ){
+
+        return [
+            order.product
+        ];
+
     }
 
-    if(order.product){
-        return [order.product];
-    }
 
     return [];
 
 }
 
 
-/* ==================================================
-   PRODUCT NAME
-================================================== */
+/* =====================================================
+   PRODUCTS HTML
+===================================================== */
 
-function productName(product){
+function productsHTML(order){
 
-    return product.name ||
-           product.productName ||
-           product.title ||
-           "Product";
+    const products =
+        getOrderProducts(
+            order
+        );
 
-}
-
-
-/* ==================================================
-   PRODUCT PRICE
-================================================== */
-
-function productPrice(product){
-
-    return Number(
-
-        product.price ??
-        product.unitPrice ??
-        product.amount ??
-        0
-
-    );
-
-}
-
-
-/* ==================================================
-   PRODUCT QUANTITY
-================================================== */
-
-function productQuantity(product){
-
-    return Number(
-
-        product.quantity ??
-        product.qty ??
-        1
-
-    ) || 1;
-
-}
-
-
-/* ==================================================
-   ORDER TOTAL
-================================================== */
-
-function orderTotal(order){
-
-    if(order.total !== undefined){
-
-        return Number(order.total) || 0;
-
-    }
-
-    if(order.orderTotal !== undefined){
-
-        return Number(order.orderTotal) || 0;
-
-    }
-
-    if(order.grandTotal !== undefined){
-
-        return Number(order.grandTotal) || 0;
-
-    }
-
-
-    const products = getProducts(order);
-
-
-    return products.reduce(
-
-        function(total,product){
-
-            return total +
-                productPrice(product) *
-                productQuantity(product);
-
-        },
-
-        0
-
-    );
-
-}
-
-
-/* ==================================================
-   CUSTOMER
-================================================== */
-
-function customerName(order){
-
-    return order.customerName ||
-           order.customer ||
-           order.name ||
-           "Customer";
-
-}
-
-
-/* ==================================================
-   MOBILE
-================================================== */
-
-function customerMobile(order){
-
-    return order.mobile ||
-           order.phone ||
-           order.mobileNumber ||
-           "-";
-
-}
-
-
-/* ==================================================
-   PAYMENT
-================================================== */
-
-function paymentMethod(order){
-
-    return order.payment ||
-           order.paymentMethod ||
-           order.method ||
-           "Cash on Delivery";
-
-}
-
-
-/* ==================================================
-   DATE
-================================================== */
-
-function orderDate(order){
-
-    return order.date ||
-           order.orderDate ||
-           order.createdAt ||
-           "-";
-
-}
-
-
-/* ==================================================
-   STATUS
-================================================== */
-
-function getStatus(order){
-
-    const status = String(
-
-        order.status || "Pending"
-
-    ).toLowerCase();
-
-
-    if(status === "confirmed"){
-        return "Confirmed";
-    }
-
-    if(status === "shipped"){
-        return "Shipped";
-    }
-
-    if(status === "delivered"){
-        return "Delivered";
-    }
 
     if(
-        status === "cancelled" ||
-        status === "canceled"
+        products.length === 0
     ){
 
-        return "Cancelled";
+        return "-";
 
     }
 
 
-    return "Pending";
+    return products.map(
+        item => {
+
+            const name =
+                escapeHTML(
+                    item.name ||
+                    item.productName ||
+                    "Product"
+                );
+
+
+            const quantity =
+                Number(
+                    item.quantity
+                ) || 1;
+
+
+            const price =
+                Number(
+                    item.price
+                ) || 0;
+
+
+            return `
+
+                <div class="order-product">
+
+                    <div class="product-name">
+                        ${name}
+                    </div>
+
+                    <div class="product-detail">
+
+                        ₹${price.toLocaleString(
+                            "en-IN"
+                        )}
+
+                        ×
+
+                        ${quantity}
+
+                        ${escapeHTML(
+                            item.unit ||
+                            "Kg"
+                        )}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    ).join("");
 
 }
 
 
-/* ==================================================
-   STATUS CLASS
-================================================== */
+/* =====================================================
+   FILTER
+===================================================== */
 
-function statusClass(status){
+function getFilteredOrders(){
 
-    return "status-" +
-           status.toLowerCase();
+    const search =
+        searchInput.value
+        .trim()
+        .toLowerCase();
+
+
+    const selectedStatus =
+        statusFilter.value;
+
+
+    return allOrders.filter(
+        order => {
+
+            const orderId =
+                safeText(
+                    order.orderId ||
+                    order.id
+                ).toLowerCase();
+
+
+            const name =
+                safeText(
+                    order.customerName ||
+                    order.name
+                ).toLowerCase();
+
+
+            const mobile =
+                safeText(
+                    order.customerMobile ||
+                    order.mobile
+                ).toLowerCase();
+
+
+            const status =
+                safeText(
+                    order.status
+                );
+
+
+            const matchesSearch =
+                !search ||
+                orderId.includes(
+                    search
+                ) ||
+                name.includes(
+                    search
+                ) ||
+                mobile.includes(
+                    search
+                );
+
+
+            const matchesStatus =
+                !selectedStatus ||
+                status ===
+                    selectedStatus;
+
+
+            return (
+                matchesSearch &&
+                matchesStatus
+            );
+
+        }
+    );
 
 }
 
 
-/* ==================================================
-   LOAD ORDERS
-================================================== */
+/* =====================================================
+   RENDER
+===================================================== */
 
-function loadOrders(){
+function renderOrders(){
 
-    const orders = getOrders();
-
-    const body =
-        document.getElementById("ordersBody");
+    const orders =
+        getFilteredOrders();
 
 
-    /* COUNTERS */
-
-    document.getElementById(
-        "totalOrders"
-    ).textContent = orders.length;
+    tableBody.innerHTML =
+        "";
 
 
-    document.getElementById(
-        "pendingOrders"
-    ).textContent = orders.filter(
+    if(
+        orders.length === 0
+    ){
 
-        function(order){
+        tableWrapper.style.display =
+            "none";
 
-            return getStatus(order) === "Pending";
-
-        }
-
-    ).length;
-
-
-    document.getElementById(
-        "confirmedOrders"
-    ).textContent = orders.filter(
-
-        function(order){
-
-            return getStatus(order) === "Confirmed";
-
-        }
-
-    ).length;
-
-
-    document.getElementById(
-        "deliveredOrders"
-    ).textContent = orders.filter(
-
-        function(order){
-
-            return getStatus(order) === "Delivered";
-
-        }
-
-    ).length;
-
-
-    /* NO ORDERS */
-
-    if(orders.length === 0){
-
-        body.innerHTML = `
-
-            <tr>
-
-                <td
-                    colspan="10"
-                    class="empty"
-                >
-                    No orders found
-                </td>
-
-            </tr>
-
-        `;
+        emptyBox.style.display =
+            "block";
 
         return;
 
     }
 
 
-    body.innerHTML = "";
+    emptyBox.style.display =
+        "none";
 
+    tableWrapper.style.display =
+        "block";
 
-    /* ORDERS */
 
     orders.forEach(
+        (order,index) => {
 
-        function(order,index){
-
-            const products =
-                getProducts(order);
-
-
-            let productHTML = "";
-
-
-            if(products.length > 0){
-
-                products.forEach(
-
-                    function(product){
-
-                        productHTML += `
-
-                            <div class="product-item">
-
-                                <div class="product-name">
-
-                                    ${escapeHTML(
-                                        productName(product)
-                                    )}
-
-                                    x ${productQuantity(product)}
-
-                                </div>
-
-
-                                <div class="product-price">
-
-                                    ${money(
-                                        productPrice(product)
-                                    )}
-
-                                </div>
-
-                            </div>
-
-                        `;
-
-                    }
-
+            const row =
+                document.createElement(
+                    "tr"
                 );
-
-            }else{
-
-                productHTML = `
-
-                    <div class="product-item">
-
-                        No product details
-
-                    </div>
-
-                `;
-
-            }
-
-
-            const status =
-                getStatus(order);
 
 
             const orderId =
                 order.orderId ||
                 order.id ||
-                "FPO" + Date.now();
+                order.firestoreId;
 
 
-            body.innerHTML += `
-
-                <tr>
-
-                    <td>
-                        ${index + 1}
-                    </td>
+            const customerName =
+                order.customerName ||
+                order.name ||
+                "-";
 
 
-                    <td>
-
-                        <span
-                            class="order-id"
-                            onclick="viewOrder(${index})"
-                        >
-
-                            ${escapeHTML(orderId)}
-
-                        </span>
-
-                    </td>
+            const mobile =
+                order.customerMobile ||
+                order.mobile ||
+                "-";
 
 
-                    <td class="customer">
-
-                        ${escapeHTML(
-                            customerName(order)
-                        )}
-
-                    </td>
+            const address =
+                order.customerAddress ||
+                order.address ||
+                "-";
 
 
-                    <td>
-
-                        ${escapeHTML(
-                            customerMobile(order)
-                        )}
-
-                    </td>
+            const total =
+                Number(
+                    order.total
+                ) || 0;
 
 
-                    <td>
-
-                        ${productHTML}
-
-                    </td>
-
-
-                    <td class="total">
-
-                        ${money(
-                            orderTotal(order)
-                        )}
-
-                    </td>
+            const payment =
+                order.paymentMethod ||
+                order.payment ||
+                "-";
 
 
-                    <td>
+            const currentStatus =
+                order.status ||
+                "Pending";
+
+
+            row.innerHTML = `
+
+                <td>
+                    ${index + 1}
+                </td>
+
+
+                <td>
+
+                    <div class="order-id">
 
                         ${escapeHTML(
-                            paymentMethod(order)
+                            orderId
                         )}
 
-                    </td>
+                    </div>
+
+                </td>
 
 
-                    <td>
+                <td>
+
+                    <div class="customer-name">
 
                         ${escapeHTML(
-                            orderDate(order)
+                            customerName
                         )}
 
-                    </td>
+                    </div>
 
-
-                    <td>
-
-                        <select
-
-                            class="status-select
-                            ${statusClass(status)}"
-
-                            onchange="
-                                changeStatus(
-                                    ${index},
-                                    this.value
-                                )
-                            "
-
-                        >
-
-                            <option
-                                value="Pending"
-                                ${status === "Pending"
-                                    ? "selected"
-                                    : ""}
-                            >
-                                Pending
-                            </option>
-
-
-                            <option
-                                value="Confirmed"
-                                ${status === "Confirmed"
-                                    ? "selected"
-                                    : ""}
-                            >
-                                Confirmed
-                            </option>
-
-
-                            <option
-                                value="Shipped"
-                                ${status === "Shipped"
-                                    ? "selected"
-                                    : ""}
-                            >
-                                Shipped
-                            </option>
-
-
-                            <option
-                                value="Delivered"
-                                ${status === "Delivered"
-                                    ? "selected"
-                                    : ""}
-                            >
-                                Delivered
-                            </option>
-
-
-                            <option
-                                value="Cancelled"
-                                ${status === "Cancelled"
-                                    ? "selected"
-                                    : ""}
-                            >
-                                Cancelled
-                            </option>
-
-                        </select>
-
-                    </td>
-
-
-                    <td>
-
-                        <button
-
-                            class="action-btn view-btn"
-
-                            onclick="
-                                viewOrder(${index})
-                            "
-
-                        >
-                            View
-                        </button>
-
-
-                        <button
-
-                            class="action-btn delete-btn"
-
-                            onclick="
-                                deleteOrder(${index})
-                            "
-
-                        >
-                            Delete
-                        </button>
-
-                    </td>
-
-                </tr>
-
-            `;
-
-        }
-
-    );
-
-}
-
-
-/* ==================================================
-   CHANGE STATUS
-================================================== */
-
-function changeStatus(index,newStatus){
-
-    const orders = getOrders();
-
-
-    if(!orders[index]){
-        return;
-    }
-
-
-    orders[index].status =
-        newStatus;
-
-
-    saveOrders(orders);
-
-    loadOrders();
-
-}
-
-
-/* ==================================================
-   VIEW ORDER
-================================================== */
-
-function viewOrder(index){
-
-    const orders = getOrders();
-
-    const order = orders[index];
-
-
-    if(!order){
-        return;
-    }
-
-
-    const products =
-        getProducts(order);
-
-
-    let productsHTML = "";
-
-
-    products.forEach(
-
-        function(product){
-
-            productsHTML += `
-
-                <div class="modal-product">
-
-                    <strong>
+                    <div class="mobile">
 
                         ${escapeHTML(
-                            productName(product)
+                            mobile
                         )}
 
-                    </strong>
+                    </div>
 
-                    x ${productQuantity(product)}
+                </td>
 
-                    <br>
 
-                    ${money(
-                        productPrice(product)
+                <td>
+
+                    <div class="address">
+
+                        ${escapeHTML(
+                            address
+                        )}
+
+                    </div>
+
+                </td>
+
+
+                <td>
+
+                    ${productsHTML(
+                        order
                     )}
 
-                </div>
+                </td>
+
+
+                <td>
+
+                    <div class="total">
+
+                        ₹${total.toLocaleString(
+                            "en-IN"
+                        )}
+
+                    </div>
+
+                </td>
+
+
+                <td>
+
+                    <div class="payment">
+
+                        ${escapeHTML(
+                            payment
+                        )}
+
+                    </div>
+
+                </td>
+
+
+                <td>
+
+                    ${formatDate(
+                        order
+                    )}
+
+                </td>
+
+
+                <td>
+
+                    <select
+                        class="
+                            status-select
+                            ${getStatusClass(
+                                currentStatus
+                            )}
+                        "
+                        data-id="${escapeHTML(
+                            order.firestoreId
+                        )}"
+                    >
+
+                        <option
+                            value="Pending"
+                            ${
+                                currentStatus ===
+                                "Pending"
+                                ? "selected"
+                                : ""
+                            }
+                        >
+                            Pending
+                        </option>
+
+                        <option
+                            value="Confirmed"
+                            ${
+                                currentStatus ===
+                                "Confirmed"
+                                ? "selected"
+                                : ""
+                            }
+                        >
+                            Confirmed
+                        </option>
+
+                        <option
+                            value="Processing"
+                            ${
+                                currentStatus ===
+                                "Processing"
+                                ? "selected"
+                                : ""
+                            }
+                        >
+                            Processing
+                        </option>
+
+                        <option
+                            value="Shipped"
+                            ${
+                                currentStatus ===
+                                "Shipped"
+                                ? "selected"
+                                : ""
+                            }
+                        >
+                            Shipped
+                        </option>
+
+                        <option
+                            value="Delivered"
+                            ${
+                                currentStatus ===
+                                "Delivered"
+                                ? "selected"
+                                : ""
+                            }
+                        >
+                            Delivered
+                        </option>
+
+                        <option
+                            value="Cancelled"
+                            ${
+                                currentStatus ===
+                                "Cancelled"
+                                ? "selected"
+                                : ""
+                            }
+                        >
+                            Cancelled
+                        </option>
+
+                    </select>
+
+                </td>
+
+
+                <td>
+
+                    <button
+                        type="button"
+                        class="delete-btn"
+                        data-id="${escapeHTML(
+                            order.firestoreId
+                        )}"
+                    >
+                        Delete
+                    </button>
+
+                </td>
 
             `;
 
-        }
 
+            tableBody.appendChild(
+                row
+            );
+
+        }
     );
 
 
-    const orderId =
-        order.orderId ||
-        order.id ||
-        "-";
+    attachStatusEvents();
 
-
-    document.getElementById(
-        "modalBody"
-    ).innerHTML = `
-
-        <div class="detail-row">
-
-            <div class="detail-label">
-                Order ID
-            </div>
-
-            <div>
-                ${escapeHTML(orderId)}
-            </div>
-
-        </div>
-
-
-        <div class="detail-row">
-
-            <div class="detail-label">
-                Customer
-            </div>
-
-            <div>
-                ${escapeHTML(
-                    customerName(order)
-                )}
-            </div>
-
-        </div>
-
-
-        <div class="detail-row">
-
-            <div class="detail-label">
-                Mobile
-            </div>
-
-            <div>
-                ${escapeHTML(
-                    customerMobile(order)
-                )}
-            </div>
-
-        </div>
-
-
-        <div class="detail-row">
-
-            <div class="detail-label">
-                Payment
-            </div>
-
-            <div>
-                ${escapeHTML(
-                    paymentMethod(order)
-                )}
-            </div>
-
-        </div>
-
-
-        <div class="detail-row">
-
-            <div class="detail-label">
-                Date
-            </div>
-
-            <div>
-                ${escapeHTML(
-                    orderDate(order)
-                )}
-            </div>
-
-        </div>
-
-
-        <div class="detail-row">
-
-            <div class="detail-label">
-                Status
-            </div>
-
-            <div>
-                ${escapeHTML(
-                    getStatus(order)
-                )}
-            </div>
-
-        </div>
-
-
-        <div class="modal-products">
-
-            <strong>
-                Products
-            </strong>
-
-            ${productsHTML || `
-                <div class="modal-product">
-                    No product details
-                </div>
-            `}
-
-        </div>
-
-
-        <div class="modal-total">
-
-            Total:
-            ${money(orderTotal(order))}
-
-        </div>
-
-    `;
-
-
-    document.getElementById(
-        "viewModal"
-    ).style.display = "block";
+    attachDeleteEvents();
 
 }
 
 
-/* ==================================================
-   CLOSE MODAL
-================================================== */
+/* =====================================================
+   STATUS EVENTS
+===================================================== */
 
-function closeModal(){
+function attachStatusEvents(){
 
-    document.getElementById(
-        "viewModal"
-    ).style.display = "none";
+    const selects =
+        document.querySelectorAll(
+            ".status-select"
+        );
+
+
+    selects.forEach(
+        select => {
+
+            select.addEventListener(
+                "change",
+                async function(){
+
+                    const id =
+                        this.dataset.id;
+
+
+                    const newStatus =
+                        this.value;
+
+
+                    await updateOrderStatus(
+                        id,
+                        newStatus
+                    );
+
+                }
+            );
+
+        }
+    );
 
 }
 
 
-/* ==================================================
-   DELETE ORDER
-================================================== */
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
 
-function deleteOrder(index){
+async function updateOrderStatus(
+    firestoreId,
+    newStatus
+){
 
-    const orders = getOrders();
+    if(!firestoreId){
 
+        alert(
+            "Order ID उपलब्ध नहीं है।"
+        );
 
-    if(!orders[index]){
         return;
+
     }
 
 
-    const orderId =
-        orders[index].orderId ||
-        orders[index].id ||
-        "this order";
+    try{
 
+        await updateDoc(
 
-    const confirmed =
-        confirm(
+            doc(
+                db,
+                "orders",
+                firestoreId
+            ),
 
-            "Are you sure you want to delete Order " +
-            orderId +
-            "?"
+            {
+                status:
+                    newStatus
+            }
 
         );
 
 
-    if(!confirmed){
-        return;
+        /*
+           Local array भी update करें
+        */
+
+        const order =
+            allOrders.find(
+                item =>
+                    item.firestoreId ===
+                    firestoreId
+            );
+
+
+        if(order){
+
+            order.status =
+                newStatus;
+
+        }
+
+
+        updateStats();
+
+        renderOrders();
+
+
+        statusBox.textContent =
+            "Order Status successfully updated.";
+
+        statusBox.className =
+            "firebase-status firebase-success";
+
+
     }
+    catch(error){
 
-
-    orders.splice(index,1);
-
-
-    saveOrders(orders);
-
-
-    loadOrders();
-
-}
-
-
-/* ==================================================
-   CLOSE MODAL OUTSIDE
-================================================== */
-
-window.onclick = function(event){
-
-    const modal =
-        document.getElementById(
-            "viewModal"
+        console.error(
+            error
         );
 
 
-    if(event.target === modal){
-
-        closeModal();
-
-    }
-
-};
-
-
-/* ==================================================
-   INITIAL LOAD
-================================================== */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function(){
+        alert(
+            "Status update नहीं हो सका:\n" +
+            error.message
+        );
 
         loadOrders();
 
     }
+
+}
+
+
+/* =====================================================
+   DELETE EVENTS
+===================================================== */
+
+function attachDeleteEvents(){
+
+    const buttons =
+        document.querySelectorAll(
+            ".delete-btn"
+        );
+
+
+    buttons.forEach(
+        button => {
+
+            button.addEventListener(
+                "click",
+                async function(){
+
+                    const id =
+                        this.dataset.id;
+
+
+                    if(!id){
+
+                        return;
+
+                    }
+
+
+                    const order =
+                        allOrders.find(
+                            item =>
+                                item.firestoreId ===
+                                id
+                        );
+
+
+                    const orderId =
+                        order
+                        ? (
+                            order.orderId ||
+                            order.id ||
+                            id
+                        )
+                        : id;
+
+
+                    const confirmed =
+                        confirm(
+                            "क्या आप Order " +
+                            orderId +
+                            " को Delete करना चाहते हैं?"
+                        );
+
+
+                    if(!confirmed){
+
+                        return;
+
+                    }
+
+
+                    await deleteOrder(
+                        id
+                    );
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   DELETE ORDER
+===================================================== */
+
+async function deleteOrder(
+    firestoreId
+){
+
+    try{
+
+        await deleteDoc(
+
+            doc(
+                db,
+                "orders",
+                firestoreId
+            )
+
+        );
+
+
+        allOrders =
+            allOrders.filter(
+                order =>
+                    order.firestoreId !==
+                    firestoreId
+            );
+
+
+        updateStats();
+
+        renderOrders();
+
+
+        statusBox.textContent =
+            "Order successfully deleted from Firebase.";
+
+        statusBox.className =
+            "firebase-status firebase-success";
+
+
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
+
+
+        alert(
+            "Order delete नहीं हो सका:\n" +
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+searchInput.addEventListener(
+    "input",
+    renderOrders
 );
 
+
+/* =====================================================
+   STATUS FILTER
+===================================================== */
+
+statusFilter.addEventListener(
+    "change",
+    renderOrders
+);
+
+
+/* =====================================================
+   REFRESH
+===================================================== */
+
+document
+.getElementById(
+    "refreshButton"
+)
+.addEventListener(
+    "click",
+    loadOrders
+);
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadOrders();
+
 </script>
+
 
 </body>
 </html>
