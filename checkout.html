@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
 Checkout | Bundelkhand Organic Farmer Producer Company Limited
@@ -26,7 +23,7 @@ body{
     color:#222;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 header{
     background:linear-gradient(135deg,#176b2c,#2e8b3c);
@@ -45,7 +42,7 @@ header p{
     font-size:16px;
 }
 
-/* ================= NAV ================= */
+/* NAV */
 
 nav{
     background:white;
@@ -80,7 +77,7 @@ nav a:hover{
     box-shadow:0 3px 8px rgba(0,0,0,.18);
 }
 
-/* ================= CONTAINER ================= */
+/* CONTAINER */
 
 .container{
     width:94%;
@@ -88,7 +85,7 @@ nav a:hover{
     margin:30px auto;
 }
 
-/* ================= CARD ================= */
+/* CARD */
 
 .card{
     background:white;
@@ -107,7 +104,7 @@ h3{
     margin-bottom:15px;
 }
 
-/* ================= PRODUCTS ================= */
+/* PRODUCTS */
 
 .product-row{
     display:flex;
@@ -148,7 +145,7 @@ h3{
     background:#f2f2f2;
 }
 
-/* ================= TOTAL ================= */
+/* TOTAL */
 
 .total-box{
     margin-top:20px;
@@ -165,7 +162,7 @@ h3{
     color:#176b2c;
 }
 
-/* ================= FORM ================= */
+/* FORM */
 
 label{
     display:block;
@@ -206,7 +203,12 @@ textarea{
     background:#0f5421;
 }
 
-/* ================= EMPTY ================= */
+.place-btn:disabled{
+    background:#999;
+    cursor:not-allowed;
+}
+
+/* EMPTY */
 
 .empty{
     text-align:center;
@@ -229,7 +231,7 @@ textarea{
     font-weight:bold;
 }
 
-/* ================= SUCCESS ================= */
+/* SUCCESS */
 
 .success{
     display:none;
@@ -276,7 +278,27 @@ textarea{
     color:white;
 }
 
-/* ================= FOOTER ================= */
+/* FIREBASE STATUS */
+
+.firebase-status{
+    text-align:center;
+    margin-bottom:15px;
+    padding:10px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.firebase-connected{
+    background:#e8f5e9;
+    color:#176b2c;
+}
+
+.firebase-error{
+    background:#ffebee;
+    color:#c62828;
+}
+
+/* FOOTER */
 
 footer{
     margin-top:40px;
@@ -287,7 +309,7 @@ footer{
     line-height:1.8;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:600px){
 
@@ -321,226 +343,230 @@ footer{
 
 <body>
 
-
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
 <header>
 
-    <h1>
-        🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-    </h1>
+<h1>
+🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+</h1>
 
-    <p>
-        Bundelkhand Organic Farmer Producer Company Limited
-    </p>
+<p>
+Bundelkhand Organic Farmer Producer Company Limited
+</p>
 
-    <p>
-        🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
-    </p>
+<p>
+🌾 स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+</p>
 
 </header>
 
 
-<!-- ================= NAV ================= -->
+<!-- NAV -->
 
 <nav>
 
-    <a href="index.html">
-        🏠 Home
-    </a>
+<a href="index.html">
+🏠 Home
+</a>
 
-    <a href="products.html">
-        🛒 Products
-    </a>
+<a href="products.html">
+🛒 Products
+</a>
 
-    <a href="cart.html" class="cart-link">
-        🛒 Cart:
-        <span id="cartCount">0</span>
-    </a>
+<a href="cart.html" class="cart-link">
+🛒 Cart:
+<span id="cartCount">0</span>
+</a>
 
 </nav>
 
 
 <div class="container">
 
+<!-- FIREBASE STATUS -->
 
-<!-- ================= CHECKOUT ================= -->
+<div
+    id="firebaseStatus"
+    class="firebase-status firebase-connected"
+>
+    Firebase से जुड़ रहा है...
+</div>
+
+
+<!-- CHECKOUT -->
 
 <div id="checkoutSection">
 
+<!-- ORDER PRODUCTS -->
 
-    <!-- ORDER PRODUCTS -->
+<div class="card">
 
-    <div class="card">
+<h2>
+🛒 Checkout / ऑर्डर करें
+</h2>
 
-        <h2>
-            🛒 Checkout / ऑर्डर करें
-        </h2>
+<h3>
+📦 आपका Order
+</h3>
 
-        <h3>
-            📦 आपका Order
-        </h3>
+<div id="orderItems"></div>
 
-        <div id="orderItems"></div>
+<div class="total-box">
 
+<div class="total">
 
-        <div class="total-box">
+Total:
+₹<span id="totalAmount">0</span>
 
-            <div class="total">
+</div>
 
-                Total:
-                ₹<span id="totalAmount">0</span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- CUSTOMER DETAILS -->
-
-    <div
-        id="customerCard"
-        class="card"
-    >
-
-        <h2>
-            👤 Customer Details
-        </h2>
-
-
-        <form id="checkoutForm">
-
-
-            <label for="customerName">
-                नाम *
-            </label>
-
-            <input
-                type="text"
-                id="customerName"
-                placeholder="अपना पूरा नाम लिखें"
-                required
-            >
-
-
-            <label for="customerMobile">
-                मोबाइल नंबर *
-            </label>
-
-            <input
-                type="tel"
-                id="customerMobile"
-                placeholder="10 अंकों का मोबाइल नंबर"
-                maxlength="10"
-                inputmode="numeric"
-                required
-            >
-
-
-            <label for="customerAddress">
-                पूरा पता *
-            </label>
-
-            <textarea
-                id="customerAddress"
-                rows="4"
-                placeholder="गांव, पोस्ट, तहसील, जिला, पिन कोड"
-                required
-            ></textarea>
-
-
-            <label for="paymentMethod">
-                Payment Method *
-            </label>
-
-            <select
-                id="paymentMethod"
-                required
-            >
-
-                <option value="">
-                    -- Select Payment Method --
-                </option>
-
-                <option value="Cash on Delivery">
-                    💵 Cash on Delivery
-                </option>
-
-                <option value="UPI">
-                    📱 UPI
-                </option>
-
-            </select>
-
-
-            <button
-                type="submit"
-                class="place-btn"
-            >
-                ✅ Place Order
-            </button>
-
-        </form>
-
-    </div>
+</div>
 
 </div>
 
 
-<!-- ================= SUCCESS ================= -->
+<!-- CUSTOMER DETAILS -->
+
+<div
+    id="customerCard"
+    class="card"
+>
+
+<h2>
+👤 Customer Details
+</h2>
+
+<form id="checkoutForm">
+
+<label for="customerName">
+नाम *
+</label>
+
+<input
+    type="text"
+    id="customerName"
+    placeholder="अपना पूरा नाम लिखें"
+    required
+>
+
+
+<label for="customerMobile">
+मोबाइल नंबर *
+</label>
+
+<input
+    type="tel"
+    id="customerMobile"
+    placeholder="10 अंकों का मोबाइल नंबर"
+    maxlength="10"
+    inputmode="numeric"
+    required
+>
+
+
+<label for="customerAddress">
+पूरा पता *
+</label>
+
+<textarea
+    id="customerAddress"
+    rows="4"
+    placeholder="गांव, पोस्ट, तहसील, जिला, पिन कोड"
+    required
+></textarea>
+
+
+<label for="paymentMethod">
+Payment Method *
+</label>
+
+<select
+    id="paymentMethod"
+    required
+>
+
+<option value="">
+-- Select Payment Method --
+</option>
+
+<option value="Cash on Delivery">
+💵 Cash on Delivery
+</option>
+
+<option value="UPI">
+📱 UPI
+</option>
+
+</select>
+
+
+<button
+    type="submit"
+    class="place-btn"
+    id="placeOrderButton"
+>
+✅ Place Order
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- SUCCESS -->
 
 <div
     id="successSection"
     class="success"
 >
 
-    <h1>
-        🎉 Order Successfully Placed!
-    </h1>
+<h1>
+🎉 Order Successfully Placed!
+</h1>
 
-    <p>
-        आपका Order सफलतापूर्वक दर्ज हो गया है।
-    </p>
+<p>
+आपका Order सफलतापूर्वक दर्ज हो गया है।
+</p>
 
-    <p style="margin-top:15px;">
-        आपका Order ID:
-    </p>
+<p style="margin-top:15px;">
+आपका Order ID:
+</p>
 
-    <div
-        class="order-id"
-        id="successOrderId"
-    >
-        FPO00000000
-    </div>
+<div
+    class="order-id"
+    id="successOrderId"
+>
+FPO00000000
+</div>
 
-    <p>
-        कृपया Order ID सुरक्षित रखें।
-    </p>
+<p>
+कृपया Order ID सुरक्षित रखें।
+</p>
 
-    <p style="margin-top:10px;">
-        📱 FPO आपके Order की जानकारी देखकर आपसे संपर्क करेगा।
-    </p>
+<p style="margin-top:10px;">
+📱 FPO आपके Order की जानकारी देखकर आपसे संपर्क करेगा।
+</p>
 
+<div style="margin-top:20px;">
 
-    <div style="margin-top:20px;">
+<a
+    href="products.html"
+    class="continue-btn shop-btn"
+>
+🛒 Continue Shopping
+</a>
 
-        <a
-            href="products.html"
-            class="continue-btn shop-btn"
-        >
-            🛒 Continue Shopping
-        </a>
+<a
+    href="index.html"
+    class="continue-btn home-btn"
+>
+🏠 Home
+</a>
 
-        <a
-            href="index.html"
-            class="continue-btn home-btn"
-        >
-            🏠 Home
-        </a>
-
-    </div>
+</div>
 
 </div>
 
@@ -548,30 +574,96 @@ footer{
 </div>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer>
 
-    <h3>
-        🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-    </h3>
+<h3>
+🌾 बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+</h3>
 
-    <p>
-        Bundelkhand Organic Farmer Producer Company Limited
-    </p>
+<p>
+Bundelkhand Organic Farmer Producer Company Limited
+</p>
 
-    <p>
-        Empowering Farmers • Promoting Organic Agriculture
-    </p>
+<p>
+Empowering Farmers • Promoting Organic Agriculture
+</p>
 
-    <p>
-        © 2026 All Rights Reserved
-    </p>
+<p>
+© 2026 All Rights Reserved
+</p>
 
 </footer>
 
 
-<script>
+<!-- =====================================================
+     FIREBASE + CHECKOUT SCRIPT
+===================================================== -->
+
+<script type="module">
+
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+/* =====================================================
+   FIREBASE CONFIG
+===================================================== */
+
+const firebaseConfig = {
+
+    apiKey:
+    "AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
+
+    authDomain:
+    "bundelkhand-organic-fpo.firebaseapp.com",
+
+    projectId:
+    "bundelkhand-organic-fpo",
+
+    storageBucket:
+    "bundelkhand-organic-fpo.firebasestorage.app",
+
+    messagingSenderId:
+    "939641455963",
+
+    appId:
+    "1:939641455963:web:1745b1299b3c463e74867e"
+
+};
+
+
+/* =====================================================
+   INITIALIZE FIREBASE
+===================================================== */
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+
+/* =====================================================
+   FIREBASE STATUS
+===================================================== */
+
+const firebaseStatus =
+    document.getElementById("firebaseStatus");
+
+firebaseStatus.textContent =
+    "Firebase Connected";
+
+firebaseStatus.className =
+    "firebase-status firebase-connected";
+
 
 /* =====================================================
    GET CART
@@ -581,16 +673,14 @@ function getCart(){
 
     try{
 
-        let data =
+        const data =
             localStorage.getItem("cart");
 
         if(!data){
-
             return [];
-
         }
 
-        let cart =
+        const cart =
             JSON.parse(data);
 
         return Array.isArray(cart)
@@ -619,15 +709,13 @@ function getBuyNowProduct(){
 
     try{
 
-        let data =
+        const data =
             localStorage.getItem(
                 "buyNowProduct"
             );
 
         if(!data){
-
             return null;
-
         }
 
         return JSON.parse(data);
@@ -652,15 +740,13 @@ function getBuyNowProduct(){
 
 function getCheckoutMode(){
 
-    let mode =
+    const mode =
         sessionStorage.getItem(
             "checkoutMode"
         );
 
     if(mode === "buyNow"){
-
         return "buyNow";
-
     }
 
     return "cart";
@@ -712,6 +798,11 @@ const successOrderId =
         "successOrderId"
     );
 
+const placeOrderButton =
+    document.getElementById(
+        "placeOrderButton"
+    );
+
 
 /* =====================================================
    UPDATE CART COUNT
@@ -719,7 +810,7 @@ const successOrderId =
 
 function updateCartCount(){
 
-    let cart =
+    const cart =
         getCart();
 
     let count = 0;
@@ -727,9 +818,7 @@ function updateCartCount(){
     cart.forEach(function(item){
 
         count +=
-            Number(
-                item.quantity
-            ) || 0;
+            Number(item.quantity) || 0;
 
     });
 
@@ -748,6 +837,7 @@ function escapeHTML(value){
     return String(
         value ?? ""
     )
+
     .replace(/&/g,"&amp;")
     .replace(/</g,"&lt;")
     .replace(/>/g,"&gt;")
@@ -763,7 +853,7 @@ function escapeHTML(value){
 
 function getOrderProducts(){
 
-    let mode =
+    const mode =
         getCheckoutMode();
 
 
@@ -771,7 +861,7 @@ function getOrderProducts(){
 
     if(mode === "buyNow"){
 
-        let buyNow =
+        const buyNow =
             getBuyNowProduct();
 
         if(
@@ -801,7 +891,7 @@ function getOrderProducts(){
 
 function showOrder(){
 
-    let products =
+    const products =
         getOrderProducts();
 
 
@@ -850,38 +940,29 @@ function showOrder(){
     orderItems.innerHTML =
         "";
 
-
     let total =
         0;
 
 
     products.forEach(function(item){
 
-        let price =
-            Number(
-                item.price
-            ) || 0;
+        const price =
+            Number(item.price) || 0;
 
+        const quantity =
+            Number(item.quantity) || 1;
 
-        let quantity =
-            Number(
-                item.quantity
-            ) || 1;
-
-
-        let subtotal =
+        const subtotal =
             price * quantity;
-
 
         total +=
             subtotal;
 
 
-        let row =
+        const row =
             document.createElement(
                 "div"
             );
-
 
         row.className =
             "product-row";
@@ -995,12 +1076,11 @@ function showOrder(){
 
 function generateOrderId(){
 
-    let number =
+    const number =
         Math.floor(
             10000000 +
             Math.random() * 90000000
         );
-
 
     return "FPO" + number;
 
@@ -1013,16 +1093,16 @@ function generateOrderId(){
 
 checkoutForm.addEventListener(
     "submit",
-    function(event){
+    async function(event){
 
         event.preventDefault();
 
 
-        let mode =
+        const mode =
             getCheckoutMode();
 
 
-        let products =
+        const products =
             getOrderProducts();
 
 
@@ -1037,7 +1117,7 @@ checkoutForm.addEventListener(
         }
 
 
-        let name =
+        const name =
             document
             .getElementById(
                 "customerName"
@@ -1046,7 +1126,7 @@ checkoutForm.addEventListener(
             .trim();
 
 
-        let mobile =
+        const mobile =
             document
             .getElementById(
                 "customerMobile"
@@ -1055,7 +1135,7 @@ checkoutForm.addEventListener(
             .trim();
 
 
-        let address =
+        const address =
             document
             .getElementById(
                 "customerAddress"
@@ -1064,12 +1144,23 @@ checkoutForm.addEventListener(
             .trim();
 
 
-        let payment =
+        const payment =
             document
             .getElementById(
                 "paymentMethod"
             )
             .value;
+
+
+        if(!name){
+
+            alert(
+                "कृपया अपना नाम दर्ज करें।"
+            );
+
+            return;
+
+        }
 
 
         if(
@@ -1080,6 +1171,17 @@ checkoutForm.addEventListener(
 
             alert(
                 "कृपया सही 10 अंकों का मोबाइल नंबर डालें।"
+            );
+
+            return;
+
+        }
+
+
+        if(!address){
+
+            alert(
+                "कृपया पूरा पता दर्ज करें।"
             );
 
             return;
@@ -1098,9 +1200,7 @@ checkoutForm.addEventListener(
         }
 
 
-        /* =========================
-           TOTAL
-        ========================= */
+        /* TOTAL */
 
         let total =
             0;
@@ -1129,23 +1229,21 @@ checkoutForm.addEventListener(
         );
 
 
-        /* =========================
-           ORDER ID
-        ========================= */
+        /* ORDER ID */
 
-        let orderId =
+        const orderId =
             generateOrderId();
 
 
-        let now =
+        const now =
             new Date();
 
 
-        /* =========================
-           NEW ORDER
-        ========================= */
+        /* =================================================
+           FIREBASE ORDER DATA
+        ================================================= */
 
-        let newOrder = {
+        const firebaseOrder = {
 
             id:
                 orderId,
@@ -1166,7 +1264,35 @@ checkoutForm.addEventListener(
                 payment,
 
             products:
-                products,
+                products.map(function(item){
+
+                    return {
+
+                        id:
+                            item.id || "",
+
+                        name:
+                            item.name || "",
+
+                        price:
+                            Number(
+                                item.price
+                            ) || 0,
+
+                        quantity:
+                            Number(
+                                item.quantity
+                            ) || 1,
+
+                        unit:
+                            item.unit || "Kg",
+
+                        image:
+                            item.image || ""
+
+                    };
+
+                }),
 
             total:
                 total,
@@ -1188,108 +1314,187 @@ checkoutForm.addEventListener(
                 ),
 
             createdAt:
-                now.toISOString()
+                serverTimestamp()
 
         };
 
 
-        /* =================================================
-           SAVE ORDER
-           IMPORTANT:
-           Admin orders.html reads "orders"
-        ================================================= */
+        /* BUTTON LOCK */
 
-        let orders =
-            JSON.parse(
-                localStorage.getItem(
+        placeOrderButton.disabled =
+            true;
+
+        placeOrderButton.textContent =
+            "Order Save हो रहा है...";
+
+
+        try{
+
+            /* =================================================
+               FIREBASE SAVE
+            ================================================= */
+
+            await addDoc(
+                collection(
+                    db,
                     "orders"
+                ),
+                firebaseOrder
+            );
+
+
+            /* =================================================
+               LOCAL STORAGE BACKUP
+            ================================================= */
+
+            const localOrder = {
+
+                ...firebaseOrder,
+
+                createdAt:
+                    now.toISOString()
+
+            };
+
+
+            let orders = [];
+
+
+            try{
+
+                orders =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "orders"
+                        )
+                    ) || [];
+
+            }catch(error){
+
+                orders = [];
+
+            }
+
+
+            orders.push(
+                localOrder
+            );
+
+
+            localStorage.setItem(
+                "orders",
+                JSON.stringify(
+                    orders
                 )
-            ) || [];
-
-
-        orders.push(
-            newOrder
-        );
-
-
-        localStorage.setItem(
-            "orders",
-            JSON.stringify(
-                orders
-            )
-        );
-
-
-        /* =================================================
-           LAST ORDER
-        ================================================= */
-
-        localStorage.setItem(
-            "lastOrder",
-            JSON.stringify(
-                newOrder
-            )
-        );
-
-
-        /* =================================================
-           CLEAR CORRECT SOURCE
-        ================================================= */
-
-        if(mode === "buyNow"){
-
-            /* Buy Now में Cart को नहीं छेड़ना */
-
-            localStorage.removeItem(
-                "buyNowProduct"
             );
 
-        }else{
 
-            /* Cart Checkout */
+            /* LAST ORDER */
 
-            localStorage.removeItem(
-                "cart"
+            localStorage.setItem(
+                "lastOrder",
+                JSON.stringify(
+                    localOrder
+                )
             );
 
-            localStorage.removeItem(
-                "buyNowProduct"
+
+            /* =================================================
+               CLEAR CORRECT SOURCE
+            ================================================= */
+
+            if(mode === "buyNow"){
+
+                /*
+                   Buy Now में Cart को नहीं छेड़ना
+                */
+
+                localStorage.removeItem(
+                    "buyNowProduct"
+                );
+
+            }else{
+
+                /*
+                   Cart Checkout
+                */
+
+                localStorage.removeItem(
+                    "cart"
+                );
+
+                localStorage.removeItem(
+                    "buyNowProduct"
+                );
+
+            }
+
+
+            sessionStorage.removeItem(
+                "checkoutMode"
             );
+
+
+            updateCartCount();
+
+
+            /* SUCCESS */
+
+            successOrderId.textContent =
+                orderId;
+
+
+            checkoutSection.style.display =
+                "none";
+
+
+            successSection.style.display =
+                "block";
+
+
+            window.scrollTo({
+
+                top:0,
+
+                behavior:"smooth"
+
+            });
+
+
+        }catch(error){
+
+            console.error(
+                "Firebase Order Error:",
+                error
+            );
+
+
+            console.error(
+                "Firebase Error Code:",
+                error.code
+            );
+
+
+            console.error(
+                "Firebase Error Message:",
+                error.message
+            );
+
+
+            alert(
+                "Order Firebase में save नहीं हो सका।\n\n" +
+                "Error: " +
+                error.message
+            );
+
+
+            placeOrderButton.disabled =
+                false;
+
+            placeOrderButton.textContent =
+                "✅ Place Order";
 
         }
-
-
-        sessionStorage.removeItem(
-            "checkoutMode"
-        );
-
-
-        updateCartCount();
-
-
-        /* =================================================
-           SUCCESS
-        ================================================= */
-
-        successOrderId.textContent =
-            orderId;
-
-
-        checkoutSection.style.display =
-            "none";
-
-
-        successSection.style.display =
-            "block";
-
-
-        window.scrollTo({
-
-            top:0,
-
-            behavior:"smooth"
-
-        });
 
     }
 );
@@ -1305,6 +1510,6 @@ updateCartCount();
 
 </script>
 
-</body>
 
+</body>
 </html>
