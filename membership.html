@@ -1,11 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="hi">
 
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Join FPO | Bundelkhand Organic Farmer Producer Company Limited</title>
@@ -15,7 +13,7 @@
 <style>
 
 body{
-font-family:Arial,sans-serif;
+font-family:Arial,"Noto Sans Devanagari",sans-serif;
 background:#f4fff4;
 margin:0;
 }
@@ -62,6 +60,10 @@ margin:0 10px;
 font-weight:bold;
 }
 
+nav a:hover{
+text-decoration:underline;
+}
+
 .hero{
 background:#e8f5e9;
 text-align:center;
@@ -86,19 +88,44 @@ color:#2E7D32;
 text-align:center;
 }
 
+.firebase-status{
+max-width:850px;
+margin:20px auto;
+padding:14px 18px;
+border-radius:8px;
+background:#fff3cd;
+color:#856404;
+border:1px solid #ffe69c;
+font-weight:bold;
+}
+
+.firebase-success{
+background:#d1e7dd;
+color:#0f5132;
+border-color:#badbcc;
+}
+
+.firebase-error{
+background:#f8d7da;
+color:#842029;
+border-color:#f5c2c7;
+}
+
 label{
 font-weight:bold;
 display:block;
 margin-top:12px;
 }
 
-input,select{
+input,
+select{
 width:100%;
 padding:12px;
 margin-top:6px;
 border:1px solid #ccc;
 border-radius:6px;
 box-sizing:border-box;
+font-size:15px;
 }
 
 .checkbox{
@@ -126,6 +153,11 @@ button:hover{
 background:#1B5E20;
 }
 
+button:disabled{
+background:#888;
+cursor:not-allowed;
+}
+
 .success{
 display:none;
 background:#e8f5e9;
@@ -137,12 +169,54 @@ text-align:center;
 color:#1B5E20;
 }
 
+.success h2{
+margin-top:0;
+}
+
+.application-id{
+font-size:22px;
+font-weight:bold;
+color:#0d6efd;
+background:white;
+padding:12px;
+border-radius:8px;
+display:inline-block;
+margin:10px 0;
+}
+
 footer{
 background:#2E7D32;
 color:white;
 text-align:center;
 padding:18px;
 margin-top:40px;
+}
+
+@media(max-width:700px){
+
+.logo{
+flex-direction:column;
+text-align:center;
+}
+
+.logo h1{
+font-size:21px;
+}
+
+nav a{
+display:inline-block;
+margin:5px;
+}
+
+.about{
+margin:20px 10px;
+padding:20px;
+}
+
+.hero{
+padding:25px 15px;
+}
+
 }
 
 </style>
@@ -153,11 +227,17 @@ margin-top:40px;
 <body>
 
 
+<!-- ================= HEADER ================= -->
+
 <header class="top-header">
 
 <div class="logo">
 
-<img src="images/logo.png" alt="FPO Logo">
+<img
+src="images/logo.png"
+alt="FPO Logo"
+onerror="this.onerror=null;this.src='images/fpo-logo.png.png';"
+>
 
 <div>
 
@@ -166,7 +246,7 @@ Bundelkhand Organic Farmer Producer Company Limited
 </h1>
 
 <p>
-🌾 Join Our Farmer Producer Organization
+Farmer Producer Organization
 </p>
 
 </div>
@@ -176,27 +256,31 @@ Bundelkhand Organic Farmer Producer Company Limited
 </header>
 
 
+<!-- ================= NAVIGATION ================= -->
+
 <nav>
 
-<a href="index.html">🏠 Home</a>
+<a href="index.html">Home</a>
 
-<a href="about.html">🌿 About</a>
+<a href="about.html">About</a>
 
-<a href="products.html">🛒 Products</a>
+<a href="products.html">Products</a>
 
-<a href="farmers.html">👨‍🌾 Kisan Corner</a>
+<a href="farmers.html">Kisan Corner</a>
 
-<a href="membership.html">📝 Join FPO</a>
+<a href="membership.html">Join FPO</a>
 
-<a href="contact.html">📞 Contact</a>
+<a href="contact.html">Contact</a>
 
 </nav>
 
 
+<!-- ================= HERO ================= -->
+
 <section class="hero">
 
 <h1>
-📝 FPO Membership Registration
+FPO Membership Registration
 </h1>
 
 <p>
@@ -206,13 +290,26 @@ Become a Shareholder Member of Bundelkhand Organic Farmer Producer Company Limit
 </section>
 
 
-<section class="about">
+<!-- ================= FIREBASE STATUS ================= -->
 
+<div
+id="firebaseStatus"
+class="firebase-status"
+>
+
+Firebase से Membership Database connect हो रहा है...
+
+</div>
+
+
+<!-- ================= FORM ================= -->
+
+<section class="about">
 
 <form id="membershipForm">
 
 <h2>
-👨‍🌾 Membership Application Form
+Membership Application Form
 </h2>
 
 
@@ -249,6 +346,7 @@ type="tel"
 id="mobile"
 placeholder="Enter 10 Digit Mobile Number"
 maxlength="10"
+inputmode="numeric"
 required
 >
 
@@ -339,19 +437,33 @@ Irrigation Source
 
 <select id="irrigation">
 
-<option>Tube Well</option>
+<option value="Tube Well">
+Tube Well
+</option>
 
-<option>Canal</option>
+<option value="Canal">
+Canal
+</option>
 
-<option>Pond</option>
+<option value="Pond">
+Pond
+</option>
 
-<option>Rainfed</option>
+<option value="Rainfed">
+Rainfed
+</option>
 
-<option>Drip Irrigation</option>
+<option value="Drip Irrigation">
+Drip Irrigation
+</option>
 
-<option>Sprinkler</option>
+<option value="Sprinkler">
+Sprinkler
+</option>
 
-<option>Other</option>
+<option value="Other">
+Other
+</option>
 
 </select>
 
@@ -391,9 +503,12 @@ class="agree-label"
 <br>
 
 
-<button type="submit">
+<button
+type="submit"
+id="submitButton"
+>
 
-✅ Submit Membership
+Submit Membership
 
 </button>
 
@@ -401,18 +516,31 @@ class="agree-label"
 </form>
 
 
+<!-- ================= SUCCESS ================= -->
+
 <div
 id="successMessage"
 class="success"
 >
 
 <h2>
-✅ Membership Request Submitted
+Membership Request Submitted
 </h2>
 
 <p>
 आपका Membership आवेदन सफलतापूर्वक प्राप्त हो गया है।
 </p>
+
+<p>
+आपका Application ID:
+</p>
+
+<div
+id="applicationId"
+class="application-id"
+>
+-
+</div>
 
 <p>
 FPO Team आपके आवेदन की जाँच करके आपसे संपर्क करेगी।
@@ -424,6 +552,8 @@ FPO Team आपके आवेदन की जाँच करके आपस
 </section>
 
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
 <p>
@@ -433,125 +563,434 @@ FPO Team आपके आवेदन की जाँच करके आपस
 </footer>
 
 
-<script>
+<!-- =====================================================
+     FIREBASE
+===================================================== -->
 
-document
-.getElementById("membershipForm")
-.addEventListener("submit", function(e){
+<script type="module">
+
+/* ================= FIREBASE IMPORT ================= */
+
+import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+
+import {
+getFirestore,
+collection,
+addDoc,
+serverTimestamp
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+/* ================= FIREBASE CONFIG ================= */
+
+const firebaseConfig = {
+
+apiKey:
+"AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
+
+authDomain:
+"bundelkhand-organic-fpo.firebaseapp.com",
+
+projectId:
+"bundelkhand-organic-fpo",
+
+storageBucket:
+"bundelkhand-organic-fpo.firebasestorage.app",
+
+messagingSenderId:
+"939641455963",
+
+appId:
+"1:939641455963:web:1745b1299b3c463e74867e"
+
+};
+
+
+/* ================= INITIALIZE ================= */
+
+const app =
+initializeApp(firebaseConfig);
+
+const db =
+getFirestore(app);
+
+
+/* ================= ELEMENTS ================= */
+
+const form =
+document.getElementById(
+"membershipForm"
+);
+
+const submitButton =
+document.getElementById(
+"submitButton"
+);
+
+const statusBox =
+document.getElementById(
+"firebaseStatus"
+);
+
+const successMessage =
+document.getElementById(
+"successMessage"
+);
+
+const applicationIdBox =
+document.getElementById(
+"applicationId"
+);
+
+
+/* ================= FIREBASE STATUS ================= */
+
+statusBox.textContent =
+"Firebase Connected — Membership Database तैयार है।";
+
+statusBox.className =
+"firebase-status firebase-success";
+
+
+/* =====================================================
+   GENERATE APPLICATION ID
+===================================================== */
+
+function generateApplicationId(){
+
+const randomNumber =
+Math.floor(
+10000000 +
+Math.random() * 90000000
+);
+
+return "MEM" + randomNumber;
+
+}
+
+
+/* =====================================================
+   FORM SUBMIT
+===================================================== */
+
+form.addEventListener(
+"submit",
+async function(e){
 
 e.preventDefault();
 
 
-let name =
-document.getElementById("name").value.trim();
+/* ================= GET VALUES ================= */
 
-let father =
-document.getElementById("father").value.trim();
-
-let mobile =
-document.getElementById("mobile").value.trim();
-
-let village =
-document.getElementById("village").value.trim();
-
-let panchayat =
-document.getElementById("panchayat").value.trim();
-
-let block =
-document.getElementById("block").value.trim();
-
-let district =
-document.getElementById("district").value.trim();
-
-let state =
-document.getElementById("state").value;
-
-let land =
-document.getElementById("land").value.trim();
-
-let crop =
-document.getElementById("crop").value.trim();
-
-let irrigation =
-document.getElementById("irrigation").value;
-
-let share =
-document.getElementById("share").value;
+const name =
+document.getElementById(
+"name"
+).value.trim();
 
 
-if(!/^[0-9]{10}$/.test(mobile)){
+const father =
+document.getElementById(
+"father"
+).value.trim();
 
-alert("कृपया सही 10 Digit Mobile Number डालें।");
+
+const mobile =
+document.getElementById(
+"mobile"
+).value.trim();
+
+
+const village =
+document.getElementById(
+"village"
+).value.trim();
+
+
+const panchayat =
+document.getElementById(
+"panchayat"
+).value.trim();
+
+
+const block =
+document.getElementById(
+"block"
+).value.trim();
+
+
+const district =
+document.getElementById(
+"district"
+).value.trim();
+
+
+const state =
+document.getElementById(
+"state"
+).value;
+
+
+const land =
+document.getElementById(
+"land"
+).value.trim();
+
+
+const crop =
+document.getElementById(
+"crop"
+).value.trim();
+
+
+const irrigation =
+document.getElementById(
+"irrigation"
+).value;
+
+
+const share =
+Number(
+document.getElementById(
+"share"
+).value
+) || 500;
+
+
+/* ================= MOBILE VALIDATION ================= */
+
+if(
+! /^[0-9]{10}$/.test(mobile)
+){
+
+alert(
+"कृपया सही 10 Digit Mobile Number डालें।"
+);
 
 return;
 
 }
 
 
-/* Existing Members Load */
+/* ================= APPLICATION ID ================= */
 
-let members =
-JSON.parse(localStorage.getItem("members")) || [];
+const applicationId =
+generateApplicationId();
 
 
-/* New Membership */
+/* ================= DISABLE BUTTON ================= */
 
-let member = {
+submitButton.disabled =
+true;
 
-name:name,
+submitButton.textContent =
+"Saving...";
 
-father:father,
 
-mobile:mobile,
+/* ================= DATA ================= */
 
-village:village,
+const member = {
 
-panchayat:panchayat,
+applicationId:
 
-block:block,
+applicationId,
 
-district:district,
+name:
 
-state:state,
+name,
 
-land:land,
+father:
 
-crop:crop,
+father,
 
-irrigation:irrigation,
+mobile:
 
-share:share,
+mobile,
 
-status:"Pending",
+village:
 
-date:new Date().toLocaleString("en-IN")
+village,
+
+panchayat:
+
+panchayat,
+
+block:
+
+block,
+
+district:
+
+district,
+
+state:
+
+state,
+
+land:
+
+land,
+
+crop:
+
+crop,
+
+irrigation:
+
+irrigation,
+
+share:
+
+share,
+
+status:
+
+"Pending",
+
+date:
+
+new Date().toLocaleString(
+"en-IN"
+),
+
+createdAt:
+
+serverTimestamp()
 
 };
 
 
-/* Save */
+/* =====================================================
+   SAVE TO FIREBASE
+===================================================== */
 
-members.push(member);
+try{
 
-localStorage.setItem(
-"members",
-JSON.stringify(members)
+const docRef =
+await addDoc(
+
+collection(
+db,
+"members"
+),
+
+member
+
 );
 
 
-/* Success */
+/* ================= LOCAL STORAGE BACKUP ================= */
 
-document.getElementById(
-"membershipForm"
-).style.display="none";
+try{
+
+let members =
+JSON.parse(
+localStorage.getItem(
+"members"
+)
+) || [];
 
 
-document.getElementById(
-"successMessage"
-).style.display="block";
+members.push({
 
+...member,
+
+firestoreId:
+docRef.id
 
 });
+
+
+localStorage.setItem(
+"members",
+JSON.stringify(
+members
+)
+);
+
+}
+catch(localError){
+
+console.warn(
+"LocalStorage backup failed:",
+localError
+);
+
+}
+
+
+/* ================= SUCCESS ================= */
+
+form.style.display =
+"none";
+
+
+successMessage.style.display =
+"block";
+
+
+applicationIdBox.textContent =
+applicationId;
+
+
+statusBox.textContent =
+"Membership application Firebase में सफलतापूर्वक save हो गया।";
+
+
+statusBox.className =
+"firebase-status firebase-success";
+
+
+/* ================= SCROLL ================= */
+
+successMessage.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+
+}
+catch(error){
+
+console.error(
+"Firebase Membership Error:",
+error
+);
+
+
+statusBox.textContent =
+"Firebase Error: " +
+error.message;
+
+
+statusBox.className =
+"firebase-status firebase-error";
+
+
+alert(
+"Membership application save नहीं हो सका:\n\n" +
+error.message
+);
+
+
+/* ================= ENABLE AGAIN ================= */
+
+submitButton.disabled =
+false;
+
+submitButton.textContent =
+"Submit Membership";
+
+}
+
+});
+
 
 </script>
 
@@ -559,4 +998,3 @@ document.getElementById(
 </body>
 
 </html>
-```
