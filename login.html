@@ -1,38 +1,658 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FPO Login</title>
-<link rel="stylesheet" href="css/login.css">
+
+<title>
+FPO Login | Bundelkhand Organic Farmer Producer Company Limited
+</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(
+        135deg,
+        #e8f5e9,
+        #c8e6c9,
+        #fff8e1
+    );
+}
+
+.login-container{
+    width:100%;
+    max-width:430px;
+    margin:20px;
+    background:white;
+    padding:35px 30px;
+    border-radius:18px;
+    box-shadow:0 10px 35px rgba(0,0,0,.18);
+    text-align:center;
+}
+
+.logo{
+    width:80px;
+    height:80px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    background:#2e7d32;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    font-weight:bold;
+    border:5px solid #fbc02d;
+}
+
+h1{
+    color:#1b5e20;
+    font-size:24px;
+    margin:10px 0 5px;
+}
+
+.subtitle{
+    color:#666;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.tabs{
+    display:flex;
+    gap:8px;
+    margin-bottom:22px;
+}
+
+.tab-button{
+    flex:1;
+    padding:12px 8px;
+    border:none;
+    border-radius:7px;
+    background:#e0e0e0;
+    color:#333;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.tab-button.active{
+    background:#2e7d32;
+    color:white;
+}
+
+.login-form{
+    display:block;
+}
+
+label{
+    display:block;
+    text-align:left;
+    font-weight:bold;
+    color:#333;
+    margin:12px 0 6px;
+}
+
+input{
+    width:100%;
+    padding:13px;
+    border:1px solid #ccc;
+    border-radius:7px;
+    font-size:15px;
+    outline:none;
+}
+
+input:focus{
+    border-color:#2e7d32;
+    box-shadow:0 0 0 2px rgba(46,125,50,.12);
+}
+
+.login-button{
+    width:100%;
+    padding:13px;
+    margin-top:20px;
+    border:none;
+    border-radius:7px;
+    background:#2e7d32;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.login-button:hover{
+    background:#1b5e20;
+}
+
+.login-button:disabled{
+    background:#9e9e9e;
+    cursor:not-allowed;
+}
+
+.message{
+    display:none;
+    margin-top:18px;
+    padding:12px;
+    border-radius:7px;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.message.success{
+    display:block;
+    background:#d1e7dd;
+    color:#0f5132;
+}
+
+.message.error{
+    display:block;
+    background:#f8d7da;
+    color:#842029;
+}
+
+.info{
+    margin-top:20px;
+    font-size:13px;
+    color:#777;
+}
+
+.footer{
+    margin-top:22px;
+    font-size:12px;
+    color:#777;
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
 <div class="login-container">
 
-<h1>🌾 Bundelkhand Organic FPO</h1>
 
-<div class="tabs">
-<button id="farmerBtn" class="active">Farmer Login</button>
-<button id="adminBtn">Admin Login</button>
+    <div class="logo">
+        FPO
+    </div>
+
+
+    <h1>
+        Bundelkhand Organic FPO
+    </h1>
+
+
+    <div class="subtitle">
+        Bundelkhand Organic Farmer Producer Company Limited
+    </div>
+
+
+    <!-- LOGIN TABS -->
+
+    <div class="tabs">
+
+        <button
+            type="button"
+            id="farmerBtn"
+            class="tab-button"
+        >
+            Farmer Login
+        </button>
+
+
+        <button
+            type="button"
+            id="adminBtn"
+            class="tab-button active"
+        >
+            Admin Login
+        </button>
+
+    </div>
+
+
+    <!-- LOGIN FORM -->
+
+    <form
+        id="loginForm"
+        class="login-form"
+    >
+
+
+        <label for="email">
+            Admin Email
+        </label>
+
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter Admin Email"
+            autocomplete="email"
+            required
+        >
+
+
+        <label for="password">
+            Password
+        </label>
+
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            autocomplete="current-password"
+            required
+        >
+
+
+        <button
+            type="submit"
+            id="loginButton"
+            class="login-button"
+        >
+            Login
+        </button>
+
+
+    </form>
+
+
+    <div
+        id="message"
+        class="message"
+    ></div>
+
+
+    <div class="info">
+        Admin access is protected by Firebase Authentication.
+    </div>
+
+
+    <div class="footer">
+        © 2026 Bundelkhand Organic Farmer Producer Company Limited
+    </div>
+
+
 </div>
 
-<form id="loginForm">
 
-<input type="text" id="username" placeholder="Username" required>
+<!-- =====================================================
+     FIREBASE AUTHENTICATION
+===================================================== -->
 
-<input type="password" id="password" placeholder="Password" required>
+<script type="module">
 
-<button type="submit">Login</button>
 
-</form>
+/* ================= FIREBASE IMPORT ================= */
 
-<p id="message"></p>
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-</div>
 
-<script src="script.js"></script>
+import {
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+/* ================= FIREBASE CONFIG ================= */
+
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
+
+    authDomain:
+        "bundelkhand-organic-fpo.firebaseapp.com",
+
+    projectId:
+        "bundelkhand-organic-fpo",
+
+    storageBucket:
+        "bundelkhand-organic-fpo.firebasestorage.app",
+
+    messagingSenderId:
+        "939641455963",
+
+    appId:
+        "1:939641455963:web:1745b1299b3c463e74867e"
+
+};
+
+
+/* ================= INITIALIZE FIREBASE ================= */
+
+const app =
+    initializeApp(
+        firebaseConfig
+    );
+
+
+const auth =
+    getAuth(app);
+
+
+/* ================= ELEMENTS ================= */
+
+const loginForm =
+    document.getElementById(
+        "loginForm"
+    );
+
+
+const emailInput =
+    document.getElementById(
+        "email"
+    );
+
+
+const passwordInput =
+    document.getElementById(
+        "password"
+    );
+
+
+const loginButton =
+    document.getElementById(
+        "loginButton"
+    );
+
+
+const message =
+    document.getElementById(
+        "message"
+    );
+
+
+const farmerBtn =
+    document.getElementById(
+        "farmerBtn"
+    );
+
+
+const adminBtn =
+    document.getElementById(
+        "adminBtn"
+    );
+
+
+/* ================= MESSAGE ================= */
+
+function showMessage(
+    text,
+    type
+){
+
+    message.textContent =
+        text;
+
+    message.className =
+        "message " + type;
+
+}
+
+
+/* ================= ADMIN TAB ================= */
+
+adminBtn.addEventListener(
+    "click",
+    function(){
+
+        adminBtn.classList.add(
+            "active"
+        );
+
+        farmerBtn.classList.remove(
+            "active"
+        );
+
+        showMessage(
+            "Admin Login selected.",
+            "success"
+        );
+
+    }
+);
+
+
+/* ================= FARMER TAB ================= */
+
+farmerBtn.addEventListener(
+    "click",
+    function(){
+
+        farmerBtn.classList.add(
+            "active"
+        );
+
+        adminBtn.classList.remove(
+            "active"
+        );
+
+        showMessage(
+            "Farmer Login अभी उपलब्ध नहीं है। Admin Login का उपयोग करें।",
+            "error"
+        );
+
+    }
+);
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+loginForm.addEventListener(
+    "submit",
+    async function(event){
+
+        event.preventDefault();
+
+
+        const email =
+            emailInput.value.trim();
+
+
+        const password =
+            passwordInput.value;
+
+
+        if(!email){
+
+            showMessage(
+                "कृपया Admin Email डालें।",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if(!password){
+
+            showMessage(
+                "कृपया Password डालें।",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        loginButton.disabled =
+            true;
+
+
+        loginButton.textContent =
+            "Logging in...";
+
+
+        try{
+
+            const userCredential =
+                await signInWithEmailAndPassword(
+                    auth,
+                    email,
+                    password
+                );
+
+
+            const user =
+                userCredential.user;
+
+
+            showMessage(
+                "Login सफल हुआ। Dashboard खोला जा रहा है...",
+                "success"
+            );
+
+
+            /*
+             * Firebase Authentication successful.
+             * User session Firebase द्वारा maintain होगी.
+             */
+
+            setTimeout(
+                function(){
+
+                    window.location.href =
+                        "admin-dashboard.html";
+
+                },
+                800
+            );
+
+        }
+        catch(error){
+
+            console.error(
+                "Firebase Login Error:",
+                error
+            );
+
+
+            let errorMessage =
+                "Login failed। Email और Password जाँचें।";
+
+
+            if(
+                error.code ===
+                "auth/invalid-credential"
+            ){
+
+                errorMessage =
+                    "Email या Password गलत है।";
+
+            }
+            else if(
+                error.code ===
+                "auth/user-not-found"
+            ){
+
+                errorMessage =
+                    "यह Admin Email Firebase में मौजूद नहीं है।";
+
+            }
+            else if(
+                error.code ===
+                "auth/wrong-password"
+            ){
+
+                errorMessage =
+                    "Password गलत है।";
+
+            }
+            else if(
+                error.code ===
+                "auth/invalid-email"
+            ){
+
+                errorMessage =
+                    "Email format सही नहीं है।";
+
+            }
+            else if(
+                error.code ===
+                "auth/too-many-requests"
+            ){
+
+                errorMessage =
+                    "बहुत अधिक login प्रयास हुए हैं। कुछ समय बाद फिर प्रयास करें।";
+
+            }
+
+
+            showMessage(
+                errorMessage,
+                "error"
+            );
+
+
+            loginButton.disabled =
+                false;
+
+
+            loginButton.textContent =
+                "Login";
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   AUTH STATE
+===================================================== */
+
+onAuthStateChanged(
+    auth,
+    function(user){
+
+        if(user){
+
+            /*
+             * यदि Admin पहले से Firebase में login है,
+             * तो Dashboard खोल दें।
+             */
+
+            console.log(
+                "Firebase Admin already logged in:",
+                user.email
+            );
+
+        }
+
+    }
+);
+
+
+</script>
+
 
 </body>
+
 </html>
