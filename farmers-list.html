@@ -21,7 +21,7 @@ Approved Farmers | Bundelkhand Organic Farmer Producer Company Limited
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#f4fff4;
     color:#263238;
 }
@@ -29,7 +29,13 @@ body{
 /* HEADER */
 
 header{
-    background:linear-gradient(135deg,#1b5e20,#2e7d32,#43a047);
+    background:linear-gradient(
+        135deg,
+        #1b5e20,
+        #2e7d32,
+        #43a047
+    );
+
     color:white;
     text-align:center;
     padding:28px 15px;
@@ -42,6 +48,37 @@ header h1{
 
 header p{
     font-size:16px;
+}
+
+/* NAVIGATION */
+
+.navbar{
+    background:#fff8e1;
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+.navbar a{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    padding:10px 18px;
+    margin:4px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+.dashboard{
+    background:#1565c0;
+}
+
+.home{
+    background:#f57c00;
+}
+
+.refresh{
+    background:#2e7d32;
 }
 
 /* CONTAINER */
@@ -70,17 +107,41 @@ h2{
     font-size:24px;
 }
 
+/* FIREBASE STATUS */
+
+.firebase-status{
+    padding:13px 16px;
+    border-radius:8px;
+    margin-bottom:20px;
+    font-weight:bold;
+    border:1px solid #ddd;
+    background:#fff3cd;
+    color:#856404;
+}
+
+.firebase-connected{
+    background:#d1e7dd;
+    color:#0f5132;
+    border-color:#badbcc;
+}
+
+.firebase-error{
+    background:#f8d7da;
+    color:#842029;
+    border-color:#f5c2c7;
+}
+
 /* COUNT */
 
 .count-box{
     text-align:center;
     margin-bottom:20px;
-    padding:14px;
+    padding:16px;
     background:#e8f5e9;
     border-radius:8px;
     color:#1b5e20;
     font-weight:bold;
-    font-size:18px;
+    font-size:19px;
 }
 
 /* SEARCH */
@@ -108,7 +169,7 @@ h2{
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:900px;
+    min-width:1000px;
 }
 
 th{
@@ -136,7 +197,7 @@ tbody tr:hover td{
     font-weight:bold;
 }
 
-/* DELETE BUTTON */
+/* DELETE */
 
 .delete-btn{
     background:#d32f2f;
@@ -152,7 +213,29 @@ tbody tr:hover td{
     background:#b71c1c;
 }
 
-/* BACK BUTTON */
+.delete-btn:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+/* LOADING */
+
+.loading{
+    text-align:center;
+    padding:30px;
+    color:#2e7d32;
+    font-weight:bold;
+}
+
+/* EMPTY */
+
+.empty{
+    text-align:center;
+    padding:30px;
+    color:#777;
+}
+
+/* BACK */
 
 .back{
     display:inline-block;
@@ -167,14 +250,6 @@ tbody tr:hover td{
 
 .back:hover{
     background:#0d47a1;
-}
-
-/* EMPTY */
-
-.empty{
-    text-align:center;
-    padding:25px;
-    color:#777;
 }
 
 /* FOOTER */
@@ -220,6 +295,11 @@ footer p{
         font-size:16px;
     }
 
+    .navbar a{
+        display:block;
+        margin:6px 0;
+    }
+
 }
 
 </style>
@@ -245,15 +325,55 @@ footer p{
 </header>
 
 
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+    <a
+        href="admin-dashboard.html"
+        class="dashboard"
+    >
+        Admin Dashboard
+    </a>
+
+    <a
+        href="index.html"
+        class="home"
+    >
+        Home
+    </a>
+
+    <a
+        href="farmers-list.html"
+        class="refresh"
+        onclick="setTimeout(function(){location.reload();},100);"
+    >
+        Refresh
+    </a>
+
+</nav>
+
+
 <!-- MAIN -->
 
 <div class="container">
 
     <div class="box">
 
+
         <h2>
             Registered Approved Farmers
         </h2>
+
+
+        <!-- FIREBASE STATUS -->
+
+        <div
+            id="firebaseStatus"
+            class="firebase-status"
+        >
+            Firebase Database से Farmers load हो रहे हैं...
+        </div>
 
 
         <!-- COUNT -->
@@ -272,8 +392,7 @@ footer p{
             type="text"
             id="search"
             class="search-box"
-            placeholder="किसान का नाम, मोबाइल, गांव या फसल खोजें"
-            onkeyup="searchFarmers()"
+            placeholder="किसान का नाम, मोबाइल, गांव, जिला या फसल खोजें..."
         >
 
 
@@ -289,6 +408,10 @@ footer p{
 
                         <th>
                             Sr No.
+                        </th>
+
+                        <th>
+                            Application ID
                         </th>
 
                         <th>
@@ -312,6 +435,10 @@ footer p{
                         </th>
 
                         <th>
+                            Share
+                        </th>
+
+                        <th>
                             Status
                         </th>
 
@@ -324,7 +451,20 @@ footer p{
                 </thead>
 
 
-                <tbody id="farmersTable">
+                <tbody
+                    id="farmersTable"
+                >
+
+                    <tr>
+
+                        <td
+                            colspan="10"
+                            class="loading"
+                        >
+                            Firebase से Approved Farmers load हो रहे हैं...
+                        </td>
+
+                    </tr>
 
                 </tbody>
 
@@ -342,6 +482,7 @@ footer p{
             Back to Admin Dashboard
         </a>
 
+
     </div>
 
 </div>
@@ -356,110 +497,109 @@ footer p{
     </p>
 
     <p>
+        Empowering Farmers • Promoting Organic Agriculture
+    </p>
+
+    <p>
         © 2026 All Rights Reserved
     </p>
 
 </footer>
 
 
-<script>
+<!-- =====================================================
+     FIREBASE
+===================================================== -->
 
-/* =====================================================
-   GET MEMBERS
-   IMPORTANT:
-   Farmers data is stored in localStorage key:
-   "members"
-===================================================== */
+<script type="module">
 
-function getMembers(){
 
-    try{
+/* ================= FIREBASE IMPORT ================= */
 
-        const data =
-            localStorage.getItem("members");
-
-        if(!data){
-
-            return [];
-
-        }
-
-        const members =
-            JSON.parse(data);
-
-        if(!Array.isArray(members)){
-
-            return [];
-
-        }
-
-        return members;
-
-    }
-    catch(error){
-
-        console.error(
-            "Members Error:",
-            error
-        );
-
-        return [];
-
-    }
-
+import {
+    initializeApp
 }
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 
-/* =====================================================
-   GET APPROVED FARMERS
-===================================================== */
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    deleteDoc,
+    doc
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-function getApprovedFarmers(){
 
-    const members =
-        getMembers();
+/* ================= FIREBASE CONFIG ================= */
 
-    return members.filter(
-        function(member){
+const firebaseConfig = {
 
-            if(
-                !member ||
-                typeof member !== "object"
-            ){
+    apiKey:
+        "AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
 
-                return false;
+    authDomain:
+        "bundelkhand-organic-fpo.firebaseapp.com",
 
-            }
+    projectId:
+        "bundelkhand-organic-fpo",
 
-            return String(
-                member.status || ""
-            )
-            .trim()
-            .toLowerCase()
-            === "approved";
+    storageBucket:
+        "bundelkhand-organic-fpo.firebasestorage.app",
 
-        }
+    messagingSenderId:
+        "939641455963",
+
+    appId:
+        "1:939641455963:web:1745b1299b3c463e74867e"
+
+};
+
+
+/* ================= INITIALIZE ================= */
+
+const app =
+    initializeApp(
+        firebaseConfig
     );
 
-}
+
+const db =
+    getFirestore(app);
 
 
-/* =====================================================
-   UPDATE FARMER COUNT
-===================================================== */
+/* ================= VARIABLES ================= */
 
-function updateFarmerCount(){
+let approvedFarmers = [];
 
-    const farmers =
-        getApprovedFarmers();
 
+/* ================= ELEMENTS ================= */
+
+const farmersTable =
+    document.getElementById(
+        "farmersTable"
+    );
+
+
+const farmerCount =
     document.getElementById(
         "farmerCount"
-    ).textContent =
-        "Approved Farmers: "
-        + farmers.length;
+    );
 
-}
+
+const searchBox =
+    document.getElementById(
+        "search"
+    );
+
+
+const firebaseStatus =
+    document.getElementById(
+        "firebaseStatus"
+    );
 
 
 /* =====================================================
@@ -481,48 +621,155 @@ function escapeHTML(value){
 
 
 /* =====================================================
-   PREPARE APPROVED FARMERS
+   GET STATUS
 ===================================================== */
 
-function prepareApprovedFarmers(){
+function getStatus(member){
 
-    const members =
-        getMembers();
+    return String(
+        member.status || ""
+    )
+    .trim()
+    .toLowerCase();
 
-    const approved = [];
+}
 
 
-    members.forEach(
-        function(member,index){
+/* =====================================================
+   LOAD APPROVED FARMERS FROM FIREBASE
+===================================================== */
 
-            if(
-                member &&
-                String(
-                    member.status || ""
+async function loadFarmers(){
+
+    farmersTable.innerHTML = `
+
+        <tr>
+
+            <td
+                colspan="10"
+                class="loading"
+            >
+                Firebase से Approved Farmers load हो रहे हैं...
+            </td>
+
+        </tr>
+
+    `;
+
+
+    try{
+
+        const snapshot =
+            await getDocs(
+                collection(
+                    db,
+                    "members"
                 )
-                .trim()
-                .toLowerCase()
-                === "approved"
-            ){
-
-                approved.push({
-
-                    ...member,
-
-                    memberIndex:index,
-
-                    displayIndex:
-                        approved.length + 1
-
-                });
-
-            }
-
-        }
-    );
+            );
 
 
-    return approved;
+        approvedFarmers =
+            snapshot.docs
+
+            .map(
+                function(item){
+
+                    return {
+
+                        id:
+                            item.id,
+
+                        ...item.data()
+
+                    };
+
+                }
+            )
+
+            .filter(
+                function(member){
+
+                    return (
+                        getStatus(member)
+                        ===
+                        "approved"
+                    );
+
+                }
+            );
+
+
+        farmerCount.textContent =
+            "Approved Farmers: " +
+            approvedFarmers.length;
+
+
+        firebaseStatus.textContent =
+            "Firebase Connected — Approved Farmers सफलतापूर्वक load हो गए।";
+
+
+        firebaseStatus.className =
+            "firebase-status firebase-connected";
+
+
+        displayFarmers(
+            approvedFarmers
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            "Firebase Farmers Error:",
+            error
+        );
+
+
+        farmerCount.textContent =
+            "Approved Farmers: 0";
+
+
+        firebaseStatus.textContent =
+            "Firebase Error: " +
+            error.message;
+
+
+        firebaseStatus.className =
+            "firebase-status firebase-error";
+
+
+        farmersTable.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="10"
+                    class="empty"
+                >
+
+                    <strong>
+                        Firebase से Farmers load नहीं हो सके।
+                    </strong>
+
+                    <br><br>
+
+                    ${escapeHTML(
+                        error.message
+                    )}
+
+                    <br><br>
+
+                    Firestore में
+                    <strong>members</strong>
+                    collection की permission जांचें।
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
 
 }
 
@@ -533,12 +780,7 @@ function prepareApprovedFarmers(){
 
 function displayFarmers(list){
 
-    const table =
-        document.getElementById(
-            "farmersTable"
-        );
-
-    table.innerHTML = "";
+    farmersTable.innerHTML = "";
 
 
     if(
@@ -546,23 +788,20 @@ function displayFarmers(list){
         list.length === 0
     ){
 
-        table.innerHTML = `
+        farmersTable.innerHTML = `
 
             <tr>
 
                 <td
-                    colspan="8"
+                    colspan="10"
                     class="empty"
                 >
-                    अभी कोई Approved Farmer
-                    उपलब्ध नहीं है।
+                    अभी कोई Approved Farmer उपलब्ध नहीं है।
                 </td>
 
             </tr>
 
         `;
-
-        updateFarmerCount();
 
         return;
 
@@ -570,45 +809,63 @@ function displayFarmers(list){
 
 
     list.forEach(
-        function(farmer){
+        function(farmer,index){
 
             const row =
-                document.createElement("tr");
+                document.createElement(
+                    "tr"
+                );
 
 
             row.innerHTML = `
 
                 <td>
-                    ${farmer.displayIndex}
+                    ${index + 1}
+                </td>
+
+                <td>
+                    <strong>
+                        ${escapeHTML(
+                            farmer.applicationId || "-"
+                        )}
+                    </strong>
+                </td>
+
+                <td>
+                    <strong>
+                        ${escapeHTML(
+                            farmer.name || "-"
+                        )}
+                    </strong>
                 </td>
 
                 <td>
                     ${escapeHTML(
-                        farmer.name
+                        farmer.mobile || "-"
                     )}
                 </td>
 
                 <td>
                     ${escapeHTML(
-                        farmer.mobile
+                        farmer.village || "-"
                     )}
                 </td>
 
                 <td>
                     ${escapeHTML(
-                        farmer.village
+                        farmer.district || "-"
                     )}
                 </td>
 
                 <td>
                     ${escapeHTML(
-                        farmer.district
+                        farmer.crop || "-"
                     )}
                 </td>
 
                 <td>
-                    ${escapeHTML(
-                        farmer.crop
+                    ₹${escapeHTML(
+                        farmer.share || "0"
                     )}
                 </td>
 
@@ -621,11 +878,9 @@ function displayFarmers(list){
                     <button
                         type="button"
                         class="delete-btn"
-                        onclick="
-                            deleteFarmerByMemberIndex(
-                                ${farmer.memberIndex}
-                            )
-                        "
+                        data-id="${escapeHTML(
+                            farmer.id
+                        )}"
                     >
                         Delete
                     </button>
@@ -635,13 +890,12 @@ function displayFarmers(list){
             `;
 
 
-            table.appendChild(row);
+            farmersTable.appendChild(
+                row
+            );
 
         }
     );
-
-
-    updateFarmerCount();
 
 }
 
@@ -652,25 +906,16 @@ function displayFarmers(list){
 
 function searchFarmers(){
 
-    const searchInput =
-        document.getElementById("search");
-
     const search =
-        String(
-            searchInput.value || ""
-        )
+        searchBox.value
         .toLowerCase()
         .trim();
-
-
-    const farmers =
-        prepareApprovedFarmers();
 
 
     if(search === ""){
 
         displayFarmers(
-            farmers
+            approvedFarmers
         );
 
         return;
@@ -678,11 +923,19 @@ function searchFarmers(){
     }
 
 
-    let filtered =
-        farmers.filter(
+    const filtered =
+        approvedFarmers.filter(
             function(farmer){
 
                 return (
+
+                    String(
+                        farmer.applicationId || ""
+                    )
+                    .toLowerCase()
+                    .includes(search)
+
+                    ||
 
                     String(
                         farmer.name || ""
@@ -728,28 +981,6 @@ function searchFarmers(){
         );
 
 
-    /*
-       Search result numbering
-       starts from 1
-    */
-
-    filtered =
-        filtered.map(
-            function(farmer,index){
-
-                return {
-
-                    ...farmer,
-
-                    displayIndex:
-                        index + 1
-
-                };
-
-            }
-        );
-
-
     displayFarmers(
         filtered
     );
@@ -758,22 +989,26 @@ function searchFarmers(){
 
 
 /* =====================================================
-   DELETE APPROVED FARMER
+   DELETE FARMER FROM FIREBASE
 ===================================================== */
 
-function deleteFarmerByMemberIndex(
-    memberIndex
+async function deleteFarmer(
+    firestoreId
 ){
 
-    const members =
-        getMembers();
+    const farmer =
+        approvedFarmers.find(
+            function(item){
+
+                return (
+                    item.id === firestoreId
+                );
+
+            }
+        );
 
 
-    if(
-        !Number.isInteger(memberIndex) ||
-        memberIndex < 0 ||
-        memberIndex >= members.length
-    ){
+    if(!farmer){
 
         alert(
             "Farmer record नहीं मिला।"
@@ -784,107 +1019,112 @@ function deleteFarmerByMemberIndex(
     }
 
 
-    const farmer =
-        members[memberIndex];
-
-
-    if(
-        !farmer ||
-        String(
-            farmer.status || ""
-        )
-        .trim()
-        .toLowerCase()
-        !== "approved"
-    ){
-
-        alert(
-            "यह Approved Farmer record नहीं है।"
-        );
-
-        return;
-
-    }
-
-
-    const farmerName =
-        farmer.name ||
-        "इस Farmer";
-
-
     const confirmation =
         confirm(
+
             "क्या आप '" +
-            farmerName +
-            "' को Delete करना चाहते हैं?"
+            (
+                farmer.name ||
+                "इस Farmer"
+            ) +
+            "' को Firebase से permanently Delete करना चाहते हैं?"
+
         );
 
 
     if(!confirmation){
-
         return;
-
     }
 
 
-    /*
-       Original members array से
-       exact record delete करें।
-    */
+    try{
 
-    members.splice(
-        memberIndex,
-        1
-    );
+        await deleteDoc(
 
+            doc(
+                db,
+                "members",
+                firestoreId
+            )
 
-    localStorage.setItem(
-        "members",
-        JSON.stringify(members)
-    );
+        );
 
 
-    alert(
-        "Farmer successfully deleted!"
-    );
+        alert(
+            "Farmer successfully deleted from Firebase!"
+        );
 
 
-    /*
-       Search clear करें
-    */
+        await loadFarmers();
 
-    document.getElementById(
-        "search"
-    ).value = "";
+    }
+    catch(error){
+
+        console.error(
+            "Delete Farmer Error:",
+            error
+        );
 
 
-    /*
-       Updated list दिखाएँ
-    */
+        alert(
+            "Farmer delete नहीं हो सका:\n\n" +
+            error.message
+        );
 
-    displayFarmers(
-        prepareApprovedFarmers()
-    );
+    }
 
 }
 
 
 /* =====================================================
-   PAGE LOAD
+   DELETE BUTTON EVENT
 ===================================================== */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function(){
+farmersTable.addEventListener(
+    "click",
+    function(event){
 
-        displayFarmers(
-            prepareApprovedFarmers()
+        const button =
+            event.target.closest(
+                "button[data-id]"
+            );
+
+
+        if(!button){
+            return;
+        }
+
+
+        const firestoreId =
+            button.dataset.id;
+
+
+        button.disabled = true;
+
+
+        deleteFarmer(
+            firestoreId
         );
-
-        updateFarmerCount();
 
     }
 );
+
+
+/* =====================================================
+   SEARCH EVENT
+===================================================== */
+
+searchBox.addEventListener(
+    "input",
+    searchFarmers
+);
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+loadFarmers();
 
 
 /* =====================================================
@@ -895,14 +1135,11 @@ window.addEventListener(
     "pageshow",
     function(){
 
-        displayFarmers(
-            prepareApprovedFarmers()
-        );
-
-        updateFarmerCount();
+        loadFarmers();
 
     }
 );
+
 
 </script>
 
