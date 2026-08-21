@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Admin Dashboard | Bundelkhand Organic Farmer Producer Company Limited</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -14,15 +18,22 @@
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#f4f8f3;
     color:#263238;
     min-height:100vh;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 .header{
-    background:linear-gradient(135deg,#166534,#2e7d32,#43a047);
+    background:linear-gradient(
+        135deg,
+        #166534,
+        #2e7d32,
+        #43a047
+    );
+
     color:white;
     padding:28px 20px;
 }
@@ -44,7 +55,7 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:25px;
+    font-size:22px;
     font-weight:bold;
     border:4px solid #fbc02d;
     box-shadow:0 5px 15px rgba(0,0,0,.2);
@@ -60,7 +71,8 @@ body{
     opacity:.95;
 }
 
-/* NAVIGATION */
+/* ================= NAVIGATION ================= */
+
 .navbar{
     background:#fff8e1;
     border-bottom:1px solid #ddd;
@@ -103,21 +115,27 @@ body{
     background:#d32f2f;
 }
 
-/* MAIN */
+.refresh{
+    background:#1565c0;
+}
+
+/* ================= MAIN ================= */
+
 .container{
     max-width:1200px;
     margin:35px auto;
     padding:0 20px;
 }
 
-/* WELCOME */
+/* ================= WELCOME ================= */
+
 .welcome{
     background:white;
     border-left:6px solid #43a047;
     border-radius:12px;
     padding:25px;
     box-shadow:0 5px 18px rgba(0,0,0,.08);
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
 .welcome h2{
@@ -131,7 +149,32 @@ body{
     font-size:16px;
 }
 
-/* CARDS */
+/* ================= FIREBASE STATUS ================= */
+
+.firebase-status{
+    margin-top:18px;
+    padding:13px 16px;
+    border-radius:8px;
+    font-weight:bold;
+    border:1px solid #ddd;
+    background:#fff3cd;
+    color:#856404;
+}
+
+.firebase-connected{
+    background:#d1e7dd;
+    color:#0f5132;
+    border-color:#badbcc;
+}
+
+.firebase-error{
+    background:#f8d7da;
+    color:#842029;
+    border-color:#f5c2c7;
+}
+
+/* ================= CARDS ================= */
+
 .cards{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -245,7 +288,8 @@ body{
     background:#8e24aa;
 }
 
-/* ORDER MINI STATS */
+/* ================= MINI STATS ================= */
+
 .order-stats{
     display:flex;
     justify-content:center;
@@ -271,12 +315,60 @@ body{
     color:#1e40af;
 }
 
+.processing{
+    background:#ede9fe;
+    color:#6d28d9;
+}
+
+.shipped{
+    background:#e0f2fe;
+    color:#0369a1;
+}
+
 .delivered{
     background:#dcfce7;
     color:#166534;
 }
 
-/* MANAGEMENT */
+.rejected{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+/* ================= MEMBERSHIP MINI STATS ================= */
+
+.membership-stats{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:5px;
+    margin:8px 0 12px;
+}
+
+.member-stat{
+    padding:5px 8px;
+    border-radius:5px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.member-approved{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.member-pending{
+    background:#fff3cd;
+    color:#856404;
+}
+
+.member-rejected{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+/* ================= MANAGEMENT ================= */
+
 .section-title{
     text-align:center;
     color:#2e7d32;
@@ -352,7 +444,8 @@ body{
     background:#455a64;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 .footer{
     margin-top:45px;
     background:#1b5e20;
@@ -371,14 +464,18 @@ body{
     margin:5px 0;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
+
 @media(max-width:900px){
+
     .cards{
         grid-template-columns:repeat(2,1fr);
     }
+
 }
 
 @media(max-width:600px){
+
     .header-inner{
         flex-direction:column;
         text-align:center;
@@ -404,55 +501,96 @@ body{
         text-align:center;
         width:100%;
     }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+
+<!-- ================= HEADER ================= -->
+
 <header class="header">
+
     <div class="header-inner">
 
-        <div class="logo">FPO</div>
+        <div class="logo">
+            FPO
+        </div>
 
         <div>
-            <h1>Admin Dashboard</h1>
-            <p>Bundelkhand Organic Farmer Producer Company Limited</p>
+
+            <h1>
+                Admin Dashboard
+            </h1>
+
+            <p>
+                Bundelkhand Organic Farmer Producer Company Limited
+            </p>
+
         </div>
 
     </div>
+
 </header>
 
-<!-- NAVIGATION -->
+
+<!-- ================= NAVIGATION ================= -->
+
 <nav class="navbar">
+
     <div class="nav-inner">
 
-        <a class="nav-btn home"
-           href="index.html">
-           Home Page
+        <a
+            class="nav-btn home"
+            href="index.html"
+        >
+            Home Page
         </a>
 
-        <a class="nav-btn dashboard"
-           href="admin-dashboard.html">
-           Dashboard
+        <a
+            class="nav-btn dashboard"
+            href="admin-dashboard.html"
+        >
+            Dashboard
         </a>
 
-        <a class="nav-btn logout"
-           href="login.html">
-           Logout
+        <a
+            class="nav-btn refresh"
+            href="admin-dashboard.html"
+            onclick="setTimeout(function(){location.reload();},100);"
+        >
+            Refresh Dashboard
+        </a>
+
+        <a
+            class="nav-btn logout"
+            href="login.html"
+        >
+            Logout
         </a>
 
     </div>
+
 </nav>
 
-<!-- MAIN -->
+
+<!-- ================= MAIN ================= -->
+
 <main class="container">
 
-    <!-- WELCOME -->
+
+    <!-- ================= WELCOME ================= -->
+
     <section class="welcome">
 
-        <h2>Welcome Admin</h2>
+        <h2>
+            Welcome Admin
+        </h2>
 
         <p>
             यह आपका FPO Administration Panel है।
@@ -460,194 +598,331 @@ body{
             Agriculture News और Website Content को Manage कर सकते हैं।
         </p>
 
+
+        <div
+            id="firebaseStatus"
+            class="firebase-status"
+        >
+            Firebase Database से connection हो रहा है...
+        </div>
+
     </section>
 
 
-    <!-- MAIN CARDS -->
+    <!-- ================= MAIN CARDS ================= -->
+
     <section class="cards">
 
-        <!-- FARMERS -->
+
+        <!-- ================= FARMERS ================= -->
+
         <div class="card farmers">
 
-            <div class="card-icon">F</div>
+            <div class="card-icon">
+                F
+            </div>
 
-            <h3>Total Farmers</h3>
+            <h3>
+                Total Farmers
+            </h3>
 
             <p>
-                Approved Registered Farmers
+                Registered Farmers
             </p>
 
-            <div class="number" id="farmerCount">0</div>
+            <div
+                class="number"
+                id="farmerCount"
+            >
+                0
+            </div>
 
-            <a class="open-btn"
-               href="farmers-list.html">
-               Open
+            <a
+                class="open-btn"
+                href="farmers-list.html"
+            >
+                Open
             </a>
 
         </div>
 
 
-        <!-- MEMBERSHIP -->
+        <!-- ================= MEMBERSHIP ================= -->
+
         <div class="card membership">
 
-            <div class="card-icon">M</div>
+            <div class="card-icon">
+                M
+            </div>
 
-            <h3>Membership Requests</h3>
+            <h3>
+                Membership
+            </h3>
 
             <p>
-                Pending Membership Applications
+                Farmer Membership Applications
             </p>
 
-            <div class="number" id="membershipCount">0</div>
+            <div
+                class="number"
+                id="membershipCount"
+            >
+                0
+            </div>
 
-            <a class="open-btn"
-               href="membership-requests.html">
-               Open
+
+            <div class="membership-stats">
+
+                <span class="member-stat member-approved">
+                    Approved:
+                    <span id="approvedMemberCount">
+                        0
+                    </span>
+                </span>
+
+                <span class="member-stat member-pending">
+                    Pending:
+                    <span id="pendingMemberCount">
+                        0
+                    </span>
+                </span>
+
+                <span class="member-stat member-rejected">
+                    Rejected:
+                    <span id="rejectedMemberCount">
+                        0
+                    </span>
+                </span>
+
+            </div>
+
+
+            <a
+                class="open-btn"
+                href="membership-requests.html"
+            >
+                Open
             </a>
 
         </div>
 
 
-        <!-- PRODUCTS -->
+        <!-- ================= PRODUCTS ================= -->
+
         <div class="card products">
 
-            <div class="card-icon">P</div>
+            <div class="card-icon">
+                P
+            </div>
 
-            <h3>Products</h3>
+            <h3>
+                Products
+            </h3>
 
             <p>
                 Add, Edit और Delete Products
             </p>
 
-            <div class="number" id="productCount">0</div>
+            <div
+                class="number"
+                id="productCount"
+            >
+                0
+            </div>
 
-            <a class="open-btn"
-               href="manage-products.html">
-               Open
+            <a
+                class="open-btn"
+                href="manage-products.html"
+            >
+                Open
             </a>
 
         </div>
 
 
-        <!-- ORDERS -->
+        <!-- ================= ORDERS ================= -->
+
         <div class="card orders">
 
-            <div class="card-icon">O</div>
+            <div class="card-icon">
+                O
+            </div>
 
-            <h3>Orders</h3>
+            <h3>
+                Orders
+            </h3>
 
             <p>
                 Customer Orders Manage करें
             </p>
 
-            <div class="number" id="orderCount">0</div>
+            <div
+                class="number"
+                id="orderCount"
+            >
+                0
+            </div>
+
 
             <div class="order-stats">
 
                 <span class="order-stat pending">
-                    Pending: <span id="pendingCount">0</span>
+                    Pending:
+                    <span id="pendingCount">
+                        0
+                    </span>
                 </span>
 
                 <span class="order-stat confirmed">
-                    Confirmed: <span id="confirmedCount">0</span>
+                    Confirmed:
+                    <span id="confirmedCount">
+                        0
+                    </span>
+                </span>
+
+                <span class="order-stat processing">
+                    Processing:
+                    <span id="processingCount">
+                        0
+                    </span>
+                </span>
+
+                <span class="order-stat shipped">
+                    Shipped:
+                    <span id="shippedCount">
+                        0
+                    </span>
                 </span>
 
                 <span class="order-stat delivered">
-                    Delivered: <span id="deliveredCount">0</span>
+                    Delivered:
+                    <span id="deliveredCount">
+                        0
+                    </span>
                 </span>
 
             </div>
 
-            <a class="open-btn"
-               href="orders.html">
-               Open
+
+            <a
+                class="open-btn"
+                href="orders.html"
+            >
+                Open
             </a>
 
         </div>
 
+
     </section>
 
 
-    <!-- MANAGEMENT -->
+    <!-- ================= MANAGEMENT ================= -->
+
     <h2 class="section-title">
         Website Management
     </h2>
 
+
     <section class="management">
 
+
         <!-- NEWS -->
+
         <div class="management-card news">
 
-            <h3>Agriculture News</h3>
+            <h3>
+                Agriculture News
+            </h3>
 
             <p>
                 कृषि समाचार Add, Edit और Delete करें।
             </p>
 
-            <a class="manage-btn"
-               href="admin-news.html">
-               Open
+            <a
+                class="manage-btn"
+                href="admin-news.html"
+            >
+                Open
             </a>
 
         </div>
 
 
         <!-- GALLERY -->
+
         <div class="management-card gallery">
 
-            <h3>Gallery</h3>
+            <h3>
+                Gallery
+            </h3>
 
             <p>
                 Website Gallery Manage करें।
             </p>
 
-            <a class="manage-btn"
-               href="admin-gallery.html">
-               Open
+            <a
+                class="manage-btn"
+                href="admin-gallery.html"
+            >
+                Open
             </a>
 
         </div>
 
 
         <!-- REPORTS -->
+
         <div class="management-card reports">
 
-            <h3>Reports</h3>
+            <h3>
+                Reports
+            </h3>
 
             <p>
                 FPO Statistics और Reports देखें।
             </p>
 
-            <a class="manage-btn"
-               href="admin-dashboard.html">
-               Open
+            <a
+                class="manage-btn"
+                href="admin-dashboard.html"
+            >
+                Open
             </a>
 
         </div>
 
 
         <!-- SETTINGS -->
+
         <div class="management-card settings">
 
-            <h3>Settings</h3>
+            <h3>
+                Settings
+            </h3>
 
             <p>
                 Website Settings Manage करें।
             </p>
 
-            <a class="manage-btn"
-               href="admin-dashboard.html">
-               Open
+            <a
+                class="manage-btn"
+                href="admin-dashboard.html"
+            >
+                Open
             </a>
 
         </div>
 
+
     </section>
+
 
 </main>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
+
 <footer class="footer">
 
     <h3>
@@ -665,227 +940,587 @@ body{
 </footer>
 
 
-<script>
+<!-- =====================================================
+     FIREBASE
+===================================================== -->
 
-/* ================================
-   SAFE LOCAL STORAGE READER
-================================ */
+<script type="module">
 
-function readStorage(key, fallback = []) {
 
-    try {
+/* ================= FIREBASE IMPORT ================= */
 
-        const data = localStorage.getItem(key);
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-        if (!data) {
-            return fallback;
-        }
 
-        const parsed = JSON.parse(data);
+import {
+    getFirestore,
+    collection,
+    getDocs
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-        return parsed;
 
-    } catch (error) {
+/* ================= FIREBASE CONFIG ================= */
 
-        console.warn("Storage error:", key, error);
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
+
+    authDomain:
+        "bundelkhand-organic-fpo.firebaseapp.com",
+
+    projectId:
+        "bundelkhand-organic-fpo",
+
+    storageBucket:
+        "bundelkhand-organic-fpo.firebasestorage.app",
+
+    messagingSenderId:
+        "939641455963",
+
+    appId:
+        "1:939641455963:web:1745b1299b3c463e74867e"
+
+};
+
+
+/* ================= INITIALIZE FIREBASE ================= */
+
+const app =
+    initializeApp(firebaseConfig);
+
+const db =
+    getFirestore(app);
+
+
+/* ================= STATUS ================= */
+
+const statusBox =
+    document.getElementById(
+        "firebaseStatus"
+    );
+
+
+/* ================= SAFE STATUS ================= */
+
+function normalizeStatus(value, fallback){
+
+    if(
+        value === undefined ||
+        value === null ||
+        value === ""
+    ){
 
         return fallback;
 
     }
 
+    return String(value)
+        .trim()
+        .toLowerCase();
+
 }
 
 
-/* ================================
-   FARMERS COUNT
-================================ */
+/* =====================================================
+   LOAD MEMBERS
+===================================================== */
 
-function updateFarmers() {
+async function loadMembers(){
 
-    let farmers = readStorage("farmers", []);
+    const snapshot =
+        await getDocs(
+            collection(
+                db,
+                "members"
+            )
+        );
 
-    if (!Array.isArray(farmers)) {
-        farmers = [];
-    }
 
-    /*
-       केवल approved farmers count करें।
-       अगर पुराने data में status नहीं है,
-       तो उसे भी farmer माना जाएगा।
-    */
+    let approved = 0;
+    let pending = 0;
+    let rejected = 0;
 
-    const approvedFarmers = farmers.filter(function(farmer) {
 
-        if (!farmer || typeof farmer !== "object") {
-            return false;
+    snapshot.forEach(
+        function(item){
+
+            const member =
+                item.data();
+
+
+            const status =
+                normalizeStatus(
+                    member.status,
+                    "pending"
+                );
+
+
+            if(status === "approved"){
+
+                approved++;
+
+            }
+            else if(status === "rejected"){
+
+                rejected++;
+
+            }
+            else{
+
+                pending++;
+
+            }
+
         }
-
-        if (!farmer.status) {
-            return true;
-        }
-
-        return String(farmer.status).toLowerCase() === "approved";
-
-    });
-
-    document.getElementById("farmerCount").textContent =
-        approvedFarmers.length;
-
-}
+    );
 
 
-/* ================================
-   MEMBERSHIP REQUEST COUNT
-================================ */
+    const total =
+        snapshot.size;
 
-function updateMemberships() {
 
-    let members = readStorage("members", []);
+    document.getElementById(
+        "membershipCount"
+    ).textContent =
+        total;
 
-    if (!Array.isArray(members)) {
-        members = [];
-    }
 
-    const pendingMembers = members.filter(function(member) {
+    document.getElementById(
+        "approvedMemberCount"
+    ).textContent =
+        approved;
 
-        if (!member || typeof member !== "object") {
-            return false;
-        }
 
-        const status =
-            String(member.status || "pending").toLowerCase();
+    document.getElementById(
+        "pendingMemberCount"
+    ).textContent =
+        pending;
 
-        return status === "pending";
 
-    });
+    document.getElementById(
+        "rejectedMemberCount"
+    ).textContent =
+        rejected;
 
-    document.getElementById("membershipCount").textContent =
-        pendingMembers.length;
+
+    return total;
 
 }
 
 
-/* ================================
-   PRODUCTS COUNT
-================================ */
+/* =====================================================
+   LOAD PRODUCTS
+===================================================== */
 
-function updateProducts() {
+async function loadProducts(){
 
-    let products = readStorage("products", null);
+    const snapshot =
+        await getDocs(
+            collection(
+                db,
+                "products"
+            )
+        );
 
-    if (!Array.isArray(products)) {
 
-        products = readStorage("fpoProducts", []);
+    document.getElementById(
+        "productCount"
+    ).textContent =
+        snapshot.size;
 
-    }
 
-    if (!Array.isArray(products)) {
-        products = [];
-    }
-
-    document.getElementById("productCount").textContent =
-        products.length;
+    return snapshot.size;
 
 }
 
 
-/* ================================
-   ORDERS COUNT
-================================ */
+/* =====================================================
+   LOAD ORDERS
+===================================================== */
 
-function updateOrders() {
+async function loadOrders(){
 
-    let orders = readStorage("orders", []);
-
-    if (!Array.isArray(orders)) {
-        orders = [];
-    }
+    const snapshot =
+        await getDocs(
+            collection(
+                db,
+                "orders"
+            )
+        );
 
 
     let pending = 0;
     let confirmed = 0;
+    let processing = 0;
+    let shipped = 0;
     let delivered = 0;
 
 
-    orders.forEach(function(order) {
+    snapshot.forEach(
+        function(item){
 
-        if (!order || typeof order !== "object") {
-            return;
+            const order =
+                item.data();
+
+
+            const status =
+                normalizeStatus(
+                    order.status,
+                    "pending"
+                );
+
+
+            if(status === "pending"){
+
+                pending++;
+
+            }
+            else if(status === "confirmed"){
+
+                confirmed++;
+
+            }
+            else if(status === "processing"){
+
+                processing++;
+
+            }
+            else if(status === "shipped"){
+
+                shipped++;
+
+            }
+            else if(status === "delivered"){
+
+                delivered++;
+
+            }
+
         }
-
-        const status =
-            String(order.status || "Pending")
-            .trim()
-            .toLowerCase();
+    );
 
 
-        if (status === "pending") {
-
-            pending++;
-
-        }
-        else if (status === "confirmed") {
-
-            confirmed++;
-
-        }
-        else if (status === "delivered") {
-
-            delivered++;
-
-        }
-
-    });
+    document.getElementById(
+        "orderCount"
+    ).textContent =
+        snapshot.size;
 
 
-    document.getElementById("orderCount").textContent =
-        orders.length;
-
-    document.getElementById("pendingCount").textContent =
+    document.getElementById(
+        "pendingCount"
+    ).textContent =
         pending;
 
-    document.getElementById("confirmedCount").textContent =
+
+    document.getElementById(
+        "confirmedCount"
+    ).textContent =
         confirmed;
 
-    document.getElementById("deliveredCount").textContent =
+
+    document.getElementById(
+        "processingCount"
+    ).textContent =
+        processing;
+
+
+    document.getElementById(
+        "shippedCount"
+    ).textContent =
+        shipped;
+
+
+    document.getElementById(
+        "deliveredCount"
+    ).textContent =
         delivered;
 
-}
 
-
-/* ================================
-   UPDATE EVERYTHING
-================================ */
-
-function updateDashboard() {
-
-    updateFarmers();
-
-    updateMemberships();
-
-    updateProducts();
-
-    updateOrders();
+    return snapshot.size;
 
 }
 
 
-/* PAGE LOAD */
+/* =====================================================
+   FARMERS
+===================================================== */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    updateDashboard
-);
+/*
+   IMPORTANT:
+   अभी Farmers module को Firebase में migrate
+   नहीं किया गया है।
+
+   इसलिए फिलहाल farmers count localStorage से
+   लिया जा रहा है।
+
+   जब farmers.html / farmers-list.html को Firebase
+   से जोड़ेंगे, तब इसे भी पूरी तरह Firebase में
+   बदल देंगे।
+*/
+
+function loadFarmers(){
+
+    try{
+
+        const data =
+            localStorage.getItem(
+                "farmers"
+            );
 
 
-/* BACK/FORWARD PAGE REFRESH */
+        if(!data){
+
+            document.getElementById(
+                "farmerCount"
+            ).textContent =
+                "0";
+
+            return 0;
+
+        }
+
+
+        const farmers =
+            JSON.parse(data);
+
+
+        if(!Array.isArray(farmers)){
+
+            document.getElementById(
+                "farmerCount"
+            ).textContent =
+                "0";
+
+            return 0;
+
+        }
+
+
+        const approved =
+            farmers.filter(
+                function(farmer){
+
+                    if(
+                        !farmer ||
+                        typeof farmer !== "object"
+                    ){
+
+                        return false;
+
+                    }
+
+
+                    if(
+                        !farmer.status
+                    ){
+
+                        return true;
+
+                    }
+
+
+                    return String(
+                        farmer.status
+                    )
+                    .trim()
+                    .toLowerCase()
+                    ===
+                    "approved";
+
+                }
+            );
+
+
+        document.getElementById(
+            "farmerCount"
+        ).textContent =
+            approved.length;
+
+
+        return approved.length;
+
+    }
+    catch(error){
+
+        console.error(
+            "Farmers count error:",
+            error
+        );
+
+
+        document.getElementById(
+            "farmerCount"
+        ).textContent =
+            "0";
+
+
+        return 0;
+
+    }
+
+}
+
+
+/* =====================================================
+   LOAD DASHBOARD
+===================================================== */
+
+async function loadDashboard(){
+
+    statusBox.textContent =
+        "Firebase Database से data load हो रहा है...";
+
+
+    statusBox.className =
+        "firebase-status";
+
+
+    try{
+
+        await Promise.all([
+
+            loadMembers(),
+
+            loadProducts(),
+
+            loadOrders()
+
+        ]);
+
+
+        loadFarmers();
+
+
+        statusBox.textContent =
+            "Firebase Connected — Dashboard data सफलतापूर्वक load हो गया।";
+
+
+        statusBox.className =
+            "firebase-status firebase-connected";
+
+
+    }
+    catch(error){
+
+        console.error(
+            "Dashboard Firebase Error:",
+            error
+        );
+
+
+        statusBox.textContent =
+            "Firebase Error: " +
+            error.message;
+
+
+        statusBox.className =
+            "firebase-status firebase-error";
+
+
+        /*
+           अगर किसी collection की permission
+           problem हो तो बाकी counters को
+           disturb न करने के लिए values 0 पर
+           रखी जाती हैं।
+        */
+
+        document.getElementById(
+            "membershipCount"
+        ).textContent =
+            "0";
+
+
+        document.getElementById(
+            "approvedMemberCount"
+        ).textContent =
+            "0";
+
+
+        document.getElementById(
+            "pendingMemberCount"
+        ).textContent =
+            "0";
+
+
+        document.getElementById(
+            "rejectedMemberCount"
+        ).textContent =
+            "0";
+
+
+        document.getElementById(
+            "productCount"
+        ).textContent =
+            "0";
+
+
+        document.getElementById(
+            "orderCount"
+        ).textContent =
+            "0";
+
+
+        document.getElementById(
+            "pendingCount"
+        ).textContent =
+            "0";
+
+
+        document.getElementById(
+            "confirmedCount"
+        ).textContent =
+            "0";
+
+
+        document.getElementById(
+            "processingCount"
+        ).textContent =
+            "0";
+
+
+        document.getElementById(
+            "shippedCount"
+        ).textContent =
+            "0";
+
+
+        document.getElementById(
+            "deliveredCount"
+        ).textContent =
+            "0";
+
+    }
+
+}
+
+
+/* ================= START ================= */
+
+loadDashboard();
+
+
+/* ================= PAGE SHOW ================= */
 
 window.addEventListener(
     "pageshow",
-    updateDashboard
+    function(){
+
+        loadDashboard();
+
+    }
 );
+
 
 </script>
 
+
 </body>
+
 </html>
