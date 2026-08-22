@@ -1,30 +1,17 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>
-Join FPO | Bundelkhand Organic Farmer Producer Company Limited
-</title>
-
+<title>Join FPO | Bundelkhand Organic Farmer Producer Company Limited</title>
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
 
 body{
     font-family:Arial,"Noto Sans Devanagari",sans-serif;
@@ -33,929 +20,454 @@ body{
     line-height:1.6;
 }
 
-
-/* =====================================================
-   HEADER
-===================================================== */
+/* ================= HEADER ================= */
 
 .main-header{
-
     background:#f7fff3;
-
     min-height:150px;
-
     border-bottom:4px solid #f5a400;
-
     display:flex;
-
     align-items:center;
-
     padding:15px 35px;
-
-    position:relative;
 }
 
-
-/* =====================================================
-   LOGO
-===================================================== */
-
 .logo-box{
-
     width:120px;
-
     min-width:120px;
-
     height:120px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     margin-right:20px;
 }
 
-
 .logo-box img{
-
     width:115px;
-
     height:115px;
-
     object-fit:contain;
-
-    display:block;
 }
-
-
-/* =====================================================
-   COMPANY
-===================================================== */
 
 .company-info{
-
     flex:1;
-
     text-align:center;
-
-    padding-right:180px;
 }
-
 
 .company-info h1{
-
     color:#286b32;
-
     font-size:30px;
-
     line-height:1.25;
-
     margin-bottom:4px;
-
-    font-weight:bold;
 }
-
 
 .company-info h2{
-
     color:#286b32;
-
     font-size:22px;
-
-    line-height:1.3;
-
     margin-bottom:10px;
-
-    font-weight:bold;
 }
-
 
 .tagline{
-
-    display:block;
-
-    width:max-content;
-
-    max-width:100%;
-
-    margin:0 auto;
-
-    padding:7px 20px;
-
-    background:#f57c00;
-
-    color:white;
-
-    border-radius:22px;
-
-    font-size:14px;
-
-    font-weight:bold;
-
-    text-align:center;
-
-    box-shadow:
-        0 3px 8px rgba(0,0,0,.20);
-}
-
-
-/* =====================================================
-   LOGIN
-===================================================== */
-
-.login-buttons{
-
-    position:absolute;
-
-    right:30px;
-
-    top:48px;
-}
-
-
-.admin-login{
-
     display:inline-block;
-
-    background:#7b1fa2;
-
+    padding:7px 20px;
+    background:#f57c00;
     color:white;
-
-    text-decoration:none;
-
-    padding:14px 28px;
-
-    border-radius:8px;
-
+    border-radius:22px;
+    font-size:14px;
     font-weight:bold;
-
-    font-size:16px;
-
-    box-shadow:
-        0 4px 10px rgba(0,0,0,.25);
-
-    transition:.3s;
 }
 
-
-.admin-login:hover{
-
-    background:#5e1680;
-
-    transform:translateY(-2px);
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
+/* ================= NAVIGATION ================= */
 
 .navbar{
-
     background:#19752b;
-
     border-bottom:3px solid #f5a400;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     flex-wrap:wrap;
 }
 
-
 .navbar a{
-
     color:white;
-
     text-decoration:none;
-
     padding:13px 16px;
-
     font-weight:bold;
-
     font-size:14px;
-
     transition:.3s;
 }
 
-
 .navbar a:hover{
-
     background:#0d5b20;
 }
 
-
 .navbar a.active{
-
     background:#f57c00;
-
     color:white;
 }
 
-
-/* =====================================================
-   HERO
-===================================================== */
+/* ================= HERO ================= */
 
 .hero{
-
     min-height:270px;
-
     background:
         linear-gradient(
-            rgba(35,120,53,.86),
-            rgba(65,155,80,.80)
+            rgba(35,120,53,.88),
+            rgba(65,155,80,.82)
         );
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     text-align:center;
-
     padding:45px 20px;
-
-    position:relative;
-
-    overflow:hidden;
-
     color:white;
+    position:relative;
+    overflow:hidden;
 }
-
 
 .hero::before{
-
     content:"";
-
     position:absolute;
-
     width:330px;
-
     height:330px;
-
     left:50%;
-
     top:50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    background-image:
-        url("images/fpo-logo.png.png");
-
-    background-repeat:no-repeat;
-
-    background-position:center;
-
-    background-size:contain;
-
+    transform:translate(-50%,-50%);
+    background:url("images/fpo-logo.png.png")
+        center/contain no-repeat;
     opacity:.10;
-
-    pointer-events:none;
-
-    z-index:0;
 }
 
-
 .hero-content{
-
     position:relative;
-
     z-index:2;
-
     max-width:900px;
 }
 
-
 .hero h1{
-
     font-size:38px;
-
     margin-bottom:8px;
-
-    text-shadow:
-        2px 2px 4px #333;
+    text-shadow:2px 2px 4px #333;
 }
 
-
 .hero h2{
-
     font-size:22px;
-
     color:#fff200;
-
     margin-bottom:12px;
 }
 
-
 .hero p{
-
     font-size:16px;
 }
 
-
-/* =====================================================
-   STATUS
-===================================================== */
+/* ================= STATUS ================= */
 
 .firebase-status{
-
     max-width:950px;
-
     margin:25px auto;
-
     padding:13px 18px;
-
     border-radius:8px;
-
     text-align:center;
-
     font-weight:bold;
-
-    background:#e8f5e9;
-
-    color:#1b5e20;
-
-    border:1px solid #81c784;
 }
-
 
 .firebase-success{
-
     background:#e8f5e9;
-
     color:#1b5e20;
-
-    border-color:#66bb6a;
+    border:1px solid #66bb6a;
 }
-
 
 .firebase-error{
-
     background:#ffebee;
-
     color:#b71c1c;
-
-    border-color:#ef5350;
+    border:1px solid #ef5350;
 }
 
-
-/* =====================================================
-   MAIN FORM
-===================================================== */
+/* ================= CONTAINER ================= */
 
 .container{
-
     width:94%;
-
     max-width:1100px;
-
     margin:0 auto;
-
     padding-bottom:40px;
 }
 
-
-.form-box{
-
-    background:white;
-
-    padding:32px;
-
-    border-radius:14px;
-
-    box-shadow:
-        0 4px 18px rgba(0,0,0,.12);
-
-    border-top:6px solid #2e7d32;
-}
-
-
-.form-title{
-
-    text-align:center;
-
-    margin-bottom:25px;
-}
-
-
-.form-title h2{
-
-    color:#286b32;
-
-    font-size:30px;
-
-    margin-bottom:5px;
-}
-
-
-.form-title p{
-
-    color:#666;
-}
-
-
-/* =====================================================
-   SHARE BOX
-===================================================== */
-
-.share-box{
-
-    background:#fff8e1;
-
-    border:1px solid #f9a825;
-
-    border-radius:10px;
-
-    padding:16px;
-
-    text-align:center;
-
-    margin-bottom:25px;
-}
-
-
-.share-box h3{
-
-    color:#8d5d00;
-
-    margin-bottom:4px;
-}
-
-
-.share-price{
-
-    color:#e65100;
-
-    font-size:26px;
-
-    font-weight:bold;
-}
-
-
-/* =====================================================
-   FORM GRID
-===================================================== */
-
-.form-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:18px 22px;
-}
-
-
-.form-group{
-
-    display:flex;
-
-    flex-direction:column;
-}
-
-
-.form-group.full{
-
-    grid-column:1/-1;
-}
-
-
-.form-group label{
-
-    color:#245b29;
-
-    font-weight:bold;
-
-    margin-bottom:6px;
-}
-
-
-.form-group input,
-.form-group select{
-
-    width:100%;
-
-    padding:12px 13px;
-
-    border:1px solid #c8d8c9;
-
-    border-radius:7px;
-
-    background:#fbfffb;
-
-    font-size:15px;
-
-    outline:none;
-}
-
-
-.form-group input:focus,
-.form-group select:focus{
-
-    border-color:#2e7d32;
-
-    box-shadow:
-        0 0 0 2px
-        rgba(46,125,50,.12);
-}
-
-
-/* =====================================================
-   BUTTON
-===================================================== */
-
-.submit-area{
-
-    text-align:center;
-
-    margin-top:28px;
-}
-
-
-.submit-button{
-
-    background:
-        linear-gradient(
-            135deg,
-            #1b5e20,
-            #43a047
-        );
-
-    color:white;
-
-    border:none;
-
-    padding:14px 38px;
-
-    border-radius:8px;
-
-    font-size:17px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 3px 8px rgba(0,0,0,.20);
-
-    transition:.3s;
-}
-
-
-.submit-button:hover{
-
-    transform:translateY(-2px);
-
-    background:
-        linear-gradient(
-            135deg,
-            #145a20,
-            #2e7d32
-        );
-}
-
-
-.submit-button:disabled{
-
-    background:#999;
-
-    cursor:not-allowed;
-
-    transform:none;
-}
-
-
-.clear-button{
-
-    background:white;
-
-    color:#555;
-
-    border:1px solid #999;
-
-    padding:13px 25px;
-
-    border-radius:8px;
-
-    margin-left:10px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-}
-
-
-.clear-button:hover{
-
-    background:#f1f1f1;
-}
-
-
-/* =====================================================
-   SUCCESS
-===================================================== */
-
-.success-message{
-
-    display:none;
-
-    max-width:850px;
-
-    margin:25px auto;
-
-    background:#e8f5e9;
-
-    border:1px solid #66bb6a;
-
-    border-radius:12px;
-
-    padding:30px;
-
-    text-align:center;
-
-    color:#1b5e20;
-
-    box-shadow:
-        0 4px 15px rgba(0,0,0,.10);
-}
-
-
-.success-message h2{
-
-    margin-bottom:10px;
-}
-
-
-.application-id{
-
-    display:inline-block;
-
-    margin:12px 0;
-
-    padding:12px 20px;
-
-    background:white;
-
-    border-radius:8px;
-
-    color:#1565c0;
-
-    font-size:23px;
-
-    font-weight:bold;
-
-    box-shadow:
-        0 2px 7px rgba(0,0,0,.12);
-}
-
-
-/* =====================================================
-   INFORMATION
-===================================================== */
+/* ================= INFO ================= */
 
 .info-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:18px;
-
     margin:30px 0;
 }
 
-
 .info-card{
-
     background:white;
-
     padding:22px;
-
     text-align:center;
-
     border-radius:10px;
-
-    box-shadow:
-        0 3px 12px rgba(0,0,0,.10);
-
+    box-shadow:0 3px 12px rgba(0,0,0,.10);
     border-top:4px solid #2e7d32;
 }
 
-
 .info-card h3{
-
     color:#286b32;
-
     margin-bottom:7px;
 }
 
-
 .info-card p{
-
     color:#666;
-
     font-size:14px;
 }
 
+/* ================= FORM ================= */
 
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-
-    background:#075b27;
-
-    color:white;
-
-    text-align:center;
-
-    padding:28px 15px;
-
-    margin-top:10px;
+.form-box{
+    background:white;
+    padding:32px;
+    border-radius:14px;
+    box-shadow:0 4px 18px rgba(0,0,0,.12);
+    border-top:6px solid #2e7d32;
 }
 
+.form-title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.form-title h2{
+    color:#286b32;
+    font-size:30px;
+}
+
+.form-title p{
+    color:#666;
+}
+
+/* ================= SHARE ================= */
+
+.share-box{
+    background:#fff8e1;
+    border:1px solid #f9a825;
+    border-radius:10px;
+    padding:16px;
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.share-box h3{
+    color:#8d5d00;
+}
+
+.share-price{
+    color:#e65100;
+    font-size:27px;
+    font-weight:bold;
+}
+
+/* ================= FORM GRID ================= */
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px 22px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    color:#245b29;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:12px 13px;
+    border:1px solid #c8d8c9;
+    border-radius:7px;
+    background:#fbfffb;
+    font-size:15px;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:#2e7d32;
+    box-shadow:0 0 0 2px rgba(46,125,50,.12);
+}
+
+/* ================= BUTTON ================= */
+
+.submit-area{
+    text-align:center;
+    margin-top:28px;
+}
+
+.submit-button{
+    background:linear-gradient(135deg,#1b5e20,#43a047);
+    color:white;
+    border:none;
+    padding:14px 38px;
+    border-radius:8px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 3px 8px rgba(0,0,0,.20);
+}
+
+.submit-button:hover{
+    background:linear-gradient(135deg,#145a20,#2e7d32);
+}
+
+.submit-button:disabled{
+    background:#999;
+    cursor:not-allowed;
+}
+
+.clear-button{
+    background:white;
+    color:#555;
+    border:1px solid #999;
+    padding:13px 25px;
+    border-radius:8px;
+    margin-left:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.clear-button:hover{
+    background:#f1f1f1;
+}
+
+/* ================= SUCCESS ================= */
+
+.success-message{
+    display:none;
+    max-width:850px;
+    margin:25px auto;
+    background:#e8f5e9;
+    border:1px solid #66bb6a;
+    border-radius:12px;
+    padding:30px;
+    text-align:center;
+    color:#1b5e20;
+}
+
+.application-id{
+    display:inline-block;
+    margin:12px 0;
+    padding:12px 20px;
+    background:white;
+    border-radius:8px;
+    color:#1565c0;
+    font-size:23px;
+    font-weight:bold;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#075b27;
+    color:white;
+    text-align:center;
+    padding:28px 15px;
+}
 
 footer p{
-
     margin:6px 0;
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
+/* ================= MOBILE ================= */
 
 @media(max-width:800px){
 
     .main-header{
-
         flex-direction:column;
-
         text-align:center;
-
         padding:15px 10px;
-
-        min-height:auto;
     }
 
-
     .logo-box{
-
         width:105px;
-
         min-width:105px;
-
         height:105px;
-
         margin:0 auto 8px;
     }
 
-
     .logo-box img{
-
         width:100px;
-
         height:100px;
     }
 
-
     .company-info{
-
         width:100%;
-
-        padding:0;
     }
 
-
     .company-info h1{
-
         font-size:21px;
     }
 
-
     .company-info h2{
-
         font-size:16px;
     }
 
-
     .tagline{
-
         font-size:12px;
-
         padding:6px 14px;
     }
 
-
-    .login-buttons{
-
-        position:static;
-
-        margin:15px auto 0;
-    }
-
-
-    .admin-login{
-
-        padding:11px 22px;
-
-        font-size:14px;
-    }
-
-
     .navbar a{
-
         padding:10px 9px;
-
         font-size:12px;
     }
 
-
     .hero{
-
         min-height:250px;
-
         padding:40px 15px;
     }
 
-
     .hero h1{
-
         font-size:27px;
     }
 
-
     .hero h2{
-
         font-size:19px;
     }
 
-
     .hero p{
-
         font-size:14px;
     }
 
-
     .form-box{
-
         padding:20px 15px;
     }
 
-
     .form-grid{
-
         grid-template-columns:1fr;
     }
-
-
-    .form-group.full{
-
-        grid-column:auto;
-    }
-
 
     .info-grid{
-
         grid-template-columns:1fr;
     }
-
 
     .submit-button,
     .clear-button{
-
         width:100%;
-
         margin:5px 0;
     }
-
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- ================= HEADER ================= -->
 
 <header class="main-header">
-
 
     <div class="logo-box">
 
@@ -969,7 +481,6 @@ footer p{
         >
 
     </div>
-
 
     <div class="company-info">
 
@@ -987,24 +498,10 @@ footer p{
 
     </div>
 
-
-    <div class="login-buttons">
-
-        <a
-            href="login.html"
-            class="admin-login"
-        >
-            Admin Login
-        </a>
-
-    </div>
-
 </header>
 
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<!-- ================= NAVIGATION ================= -->
 
 <nav class="navbar">
 
@@ -1024,10 +521,7 @@ footer p{
         Kisan Corner
     </a>
 
-    <a
-        href="membership.html"
-        class="active"
-    >
+    <a href="membership.html" class="active">
         Join FPO
     </a>
 
@@ -1050,9 +544,7 @@ footer p{
 </nav>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -1076,28 +568,22 @@ footer p{
 </section>
 
 
-<!-- =====================================================
-     FIREBASE STATUS
-===================================================== -->
+<!-- ================= FIREBASE STATUS ================= -->
 
 <div
     id="firebaseStatus"
-    class="firebase-status"
+    class="firebase-status firebase-success"
 >
-    Firebase से Membership Database connect हो रहा है...
+    Firebase Connected — Membership Database तैयार है।
 </div>
 
 
-<!-- =====================================================
-     MAIN
-===================================================== -->
+<!-- ================= MAIN ================= -->
 
 <div class="container">
 
 
-    <!-- =================================================
-         INFO
-    ================================================= -->
+    <!-- ================= INFO CARDS ================= -->
 
     <div class="info-grid">
 
@@ -1114,7 +600,6 @@ footer p{
 
         </div>
 
-
         <div class="info-card">
 
             <h3>
@@ -1127,7 +612,6 @@ footer p{
             </p>
 
         </div>
-
 
         <div class="info-card">
 
@@ -1145,9 +629,7 @@ footer p{
     </div>
 
 
-    <!-- =================================================
-         SUCCESS
-    ================================================= -->
+    <!-- ================= SUCCESS ================= -->
 
     <div
         id="successMessage"
@@ -1171,7 +653,7 @@ footer p{
             कृपया इस Application ID को सुरक्षित रखें।
         </p>
 
-        <p style="margin-top:10px;">
+        <p>
             आपका आवेदन Admin द्वारा verify किया जाएगा।
         </p>
 
@@ -1195,9 +677,7 @@ footer p{
     </div>
 
 
-    <!-- =================================================
-         FORM
-    ================================================= -->
+    <!-- ================= FORM ================= -->
 
     <section
         id="formSection"
@@ -1216,8 +696,6 @@ footer p{
 
         </div>
 
-
-        <!-- SHARE -->
 
         <div class="share-box">
 
@@ -1238,11 +716,7 @@ footer p{
 
         <form id="membershipForm">
 
-
             <div class="form-grid">
-
-
-                <!-- NAME -->
 
                 <div class="form-group">
 
@@ -1260,8 +734,6 @@ footer p{
                 </div>
 
 
-                <!-- FATHER -->
-
                 <div class="form-group">
 
                     <label>
@@ -1277,8 +749,6 @@ footer p{
 
                 </div>
 
-
-                <!-- MOBILE -->
 
                 <div class="form-group">
 
@@ -1298,8 +768,6 @@ footer p{
                 </div>
 
 
-                <!-- VILLAGE -->
-
                 <div class="form-group">
 
                     <label>
@@ -1316,8 +784,6 @@ footer p{
                 </div>
 
 
-                <!-- PANCHAYAT -->
-
                 <div class="form-group">
 
                     <label>
@@ -1333,8 +799,6 @@ footer p{
                 </div>
 
 
-                <!-- BLOCK -->
-
                 <div class="form-group">
 
                     <label>
@@ -1349,8 +813,6 @@ footer p{
 
                 </div>
 
-
-                <!-- DISTRICT -->
 
                 <div class="form-group">
 
@@ -1368,8 +830,6 @@ footer p{
                 </div>
 
 
-                <!-- STATE -->
-
                 <div class="form-group">
 
                     <label>
@@ -1386,8 +846,6 @@ footer p{
                 </div>
 
 
-                <!-- LAND -->
-
                 <div class="form-group">
 
                     <label>
@@ -1403,8 +861,6 @@ footer p{
                 </div>
 
 
-                <!-- CROP -->
-
                 <div class="form-group">
 
                     <label>
@@ -1419,8 +875,6 @@ footer p{
 
                 </div>
 
-
-                <!-- IRRIGATION -->
 
                 <div class="form-group">
 
@@ -1455,8 +909,6 @@ footer p{
                 </div>
 
 
-                <!-- SHARE -->
-
                 <div class="form-group">
 
                     <label>
@@ -1472,11 +924,8 @@ footer p{
 
                 </div>
 
-
             </div>
 
-
-            <!-- BUTTONS -->
 
             <div class="submit-area">
 
@@ -1497,18 +946,14 @@ footer p{
 
             </div>
 
-
         </form>
 
     </section>
 
-
 </div>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1527,40 +972,21 @@ footer p{
 </footer>
 
 
-<!-- =====================================================
-     FIREBASE
-===================================================== -->
+<!-- ================= FIREBASE ================= -->
 
 <script type="module">
 
-
 import {
-
     initializeApp
-
-}
-
-from
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
-
     getFirestore,
     collection,
     addDoc,
     serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-}
-
-from
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-
-/* =====================================================
-   FIREBASE CONFIG
-   आपकी working membership.html वाली configuration
-===================================================== */
 
 const firebaseConfig = {
 
@@ -1585,53 +1011,37 @@ const firebaseConfig = {
 };
 
 
-/* =====================================================
-   INITIALIZE
-===================================================== */
-
 const app =
-    initializeApp(
-        firebaseConfig
-    );
-
+    initializeApp(firebaseConfig);
 
 const db =
     getFirestore(app);
 
-
-/* =====================================================
-   ELEMENTS
-===================================================== */
 
 const form =
     document.getElementById(
         "membershipForm"
     );
 
-
 const submitButton =
     document.getElementById(
         "submitButton"
     );
-
 
 const statusBox =
     document.getElementById(
         "firebaseStatus"
     );
 
-
 const successMessage =
     document.getElementById(
         "successMessage"
     );
 
-
 const formSection =
     document.getElementById(
         "formSection"
     );
-
 
 const applicationIdBox =
     document.getElementById(
@@ -1639,40 +1049,16 @@ const applicationIdBox =
     );
 
 
-/* =====================================================
-   FIREBASE STATUS
-===================================================== */
-
-statusBox.textContent =
-    "Firebase Connected — Membership Database तैयार है।";
-
-
-statusBox.className =
-    "firebase-status firebase-success";
-
-
-/* =====================================================
-   APPLICATION ID
-===================================================== */
-
 function generateApplicationId(){
 
-    const randomNumber =
+    return "MEM" +
         Math.floor(
             10000000 +
             Math.random() * 90000000
         );
 
-
-    return "MEM" +
-        randomNumber;
-
 }
 
-
-/* =====================================================
-   FORM SUBMIT
-===================================================== */
 
 form.addEventListener(
     "submit",
@@ -1681,73 +1067,60 @@ form.addEventListener(
         e.preventDefault();
 
 
-        /* ================= VALUES ================= */
-
         const name =
             document.getElementById(
                 "name"
             ).value.trim();
-
 
         const father =
             document.getElementById(
                 "father"
             ).value.trim();
 
-
         const mobile =
             document.getElementById(
                 "mobile"
             ).value.trim();
-
 
         const village =
             document.getElementById(
                 "village"
             ).value.trim();
 
-
         const panchayat =
             document.getElementById(
                 "panchayat"
             ).value.trim();
-
 
         const block =
             document.getElementById(
                 "block"
             ).value.trim();
 
-
         const district =
             document.getElementById(
                 "district"
             ).value.trim();
-
 
         const state =
             document.getElementById(
                 "state"
             ).value;
 
-
         const land =
             document.getElementById(
                 "land"
             ).value.trim();
-
 
         const crop =
             document.getElementById(
                 "crop"
             ).value.trim();
 
-
         const irrigation =
             document.getElementById(
                 "irrigation"
             ).value;
-
 
         const share =
             Number(
@@ -1756,8 +1129,6 @@ form.addEventListener(
                 ).value
             ) || 500;
 
-
-        /* ================= MOBILE ================= */
 
         if(
             !/^[0-9]{10}$/.test(
@@ -1770,27 +1141,19 @@ form.addEventListener(
             );
 
             return;
-
         }
 
-
-        /* ================= APPLICATION ID ================= */
 
         const applicationId =
             generateApplicationId();
 
 
-        /* ================= DISABLE ================= */
-
         submitButton.disabled =
             true;
-
 
         submitButton.textContent =
             "Saving...";
 
-
-        /* ================= DATA ================= */
 
         const member = {
 
@@ -1848,29 +1211,19 @@ form.addEventListener(
         };
 
 
-        /* =================================================
-           SAVE FIREBASE
-        ================================================= */
-
         try{
-
 
             const docRef =
                 await addDoc(
-
                     collection(
                         db,
                         "members"
                     ),
-
                     member
-
                 );
 
 
-            /* =================================================
-               LOCAL STORAGE BACKUP
-            ================================================= */
+            /* Local Backup */
 
             try{
 
@@ -1881,7 +1234,6 @@ form.addEventListener(
                         )
                     ) || [];
 
-
                 members.push({
 
                     ...member,
@@ -1891,90 +1243,67 @@ form.addEventListener(
 
                 });
 
-
                 localStorage.setItem(
-
                     "members",
-
                     JSON.stringify(
                         members
                     )
-
                 );
 
-            }
-            catch(localError){
+            }catch(localError){
 
                 console.warn(
-                    "LocalStorage backup failed:",
+                    "LocalStorage backup failed",
                     localError
                 );
 
             }
 
 
-            /* =================================================
-               SUCCESS
-            ================================================= */
-
             formSection.style.display =
                 "none";
-
 
             successMessage.style.display =
                 "block";
 
-
             applicationIdBox.textContent =
                 applicationId;
 
-
             statusBox.textContent =
-                "Membership application Firebase में सफलतापूर्वक save हो गया।";
-
+                "Firebase Connected — Membership application successfully saved.";
 
             statusBox.className =
                 "firebase-status firebase-success";
 
 
             successMessage.scrollIntoView({
-
-                behavior:
-                    "smooth",
-
-                block:
-                    "center"
-
+                behavior:"smooth",
+                block:"center"
             });
 
 
-        }
-        catch(error){
+        }catch(error){
 
             console.error(
-                "Firebase Membership Error:",
                 error
             );
-
 
             statusBox.textContent =
                 "Firebase Error: " +
                 error.message;
-
 
             statusBox.className =
                 "firebase-status firebase-error";
 
 
             alert(
-                "Membership application save नहीं हो सका:\n\n" +
+                "Membership application save नहीं हो सका।\n\n" +
                 error.message
             );
 
 
             submitButton.disabled =
                 false;
-
 
             submitButton.textContent =
                 "Submit Membership";
@@ -1986,7 +1315,5 @@ form.addEventListener(
 
 </script>
 
-
 </body>
-
 </html>
