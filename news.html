@@ -1,174 +1,205 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>
-Agriculture News | Bundelkhand Organic Farmer Producer Company Limited
-</title>
+<title>Agriculture News | Bundelkhand Organic Farmer Producer Company Limited</title>
 
 <style>
-
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 
 body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
     background:#f4fff4;
-    color:#263238;
+    color:#333;
+    line-height:1.6;
 }
 
 /* ================= HEADER ================= */
 
-header{
-    background:linear-gradient(
-        135deg,
-        #1b5e20,
-        #2e7d32,
-        #43a047
-    );
-    color:white;
-    padding:22px 15px;
-}
-
-.header-inner{
-    max-width:1200px;
-    margin:auto;
+.main-header{
+    background:#f7fff3;
+    min-height:150px;
+    border-bottom:4px solid #f5a400;
     display:flex;
     align-items:center;
-    gap:18px;
+    padding:15px 35px;
 }
 
-.logo{
-    width:70px;
-    height:70px;
-    background:white;
-    border:4px solid #fbc02d;
-    border-radius:50%;
+.logo-box{
+    width:120px;
+    min-width:120px;
+    height:120px;
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#2e7d32;
+    margin-right:20px;
+}
+
+.logo-box img{
+    width:115px;
+    height:115px;
+    object-fit:contain;
+}
+
+.company-info{
+    flex:1;
+    text-align:center;
+}
+
+.company-info h1{
+    color:#286b32;
+    font-size:30px;
+    line-height:1.25;
+    margin-bottom:4px;
+}
+
+.company-info h2{
+    color:#286b32;
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.tagline{
+    display:inline-block;
+    padding:7px 20px;
+    background:#f57c00;
+    color:white;
+    border-radius:22px;
+    font-size:14px;
     font-weight:bold;
-    font-size:20px;
-    flex-shrink:0;
-}
-
-header h1{
-    margin:0;
-    font-size:27px;
-}
-
-header p{
-    margin:6px 0 0;
 }
 
 /* ================= NAVIGATION ================= */
 
-nav{
-    background:white;
-    padding:12px 15px;
-    border-bottom:1px solid #ddd;
-}
-
-.nav-inner{
-    max-width:1200px;
-    margin:auto;
+.navbar{
+    background:#19752b;
+    border-bottom:3px solid #f5a400;
     display:flex;
     justify-content:center;
+    align-items:center;
     flex-wrap:wrap;
-    gap:9px;
 }
 
-nav a{
+.navbar a{
     color:white;
     text-decoration:none;
+    padding:13px 16px;
     font-weight:bold;
-    padding:10px 17px;
-    border-radius:7px;
+    font-size:14px;
+    transition:.3s;
 }
 
-.home{
+.navbar a:hover{
+    background:#0d5b20;
+}
+
+.navbar a.active{
     background:#f57c00;
-}
-
-.about{
-    background:#388e3c;
-}
-
-.products{
-    background:#1976d2;
-}
-
-.farmers{
-    background:#00897b;
-}
-
-.gallery{
-    background:#6a1b9a;
-}
-
-.news{
-    background:#ef6c00;
-}
-
-.contact{
-    background:#455a64;
+    color:white;
 }
 
 /* ================= HERO ================= */
 
 .hero{
+    min-height:270px;
+    background:
+        linear-gradient(
+            rgba(35,120,53,.88),
+            rgba(65,155,80,.82)
+        );
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
     padding:45px 20px;
-    background:#e8f5e9;
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:330px;
+    height:330px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background:url("images/fpo-logo.png.png")
+        center/contain no-repeat;
+    opacity:.10;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:8px;
+    text-shadow:2px 2px 4px #333;
 }
 
 .hero h2{
-    margin:0;
-    color:#1b5e20;
-    font-size:34px;
+    font-size:22px;
+    color:#fff200;
+    margin-bottom:12px;
 }
 
 .hero p{
-    margin:12px auto 0;
-    max-width:800px;
-    color:#555;
-    font-size:17px;
-    line-height:1.6;
-}
-
-/* ================= MAIN ================= */
-
-.container{
-    max-width:1200px;
-    margin:35px auto;
-    padding:0 20px;
+    font-size:16px;
 }
 
 /* ================= STATUS ================= */
 
-.status{
-    background:#d1e7dd;
-    color:#0f5132;
-    border:1px solid #badbcc;
-    padding:13px 16px;
+.firebase-status{
+    max-width:950px;
+    margin:25px auto;
+    padding:13px 18px;
     border-radius:8px;
     text-align:center;
     font-weight:bold;
-    margin-bottom:25px;
+    background:#e8f5e9;
+    color:#1b5e20;
+    border:1px solid #66bb6a;
 }
 
-.error-status{
-    background:#f8d7da;
-    color:#842029;
-    border-color:#f5c2c7;
+/* ================= CONTAINER ================= */
+
+.container{
+    width:94%;
+    max-width:1150px;
+    margin:0 auto;
+    padding-bottom:45px;
+}
+
+/* ================= NEWS INTRO ================= */
+
+.news-intro{
+    background:white;
+    margin:25px auto;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.10);
+    border-top:5px solid #2e7d32;
+}
+
+.news-intro h2{
+    color:#286b32;
+    margin-bottom:7px;
+}
+
+.news-intro p{
+    color:#666;
 }
 
 /* ================= NEWS GRID ================= */
@@ -177,7 +208,7 @@ nav a{
     display:grid;
     grid-template-columns:
         repeat(2,1fr);
-    gap:25px;
+    gap:22px;
 }
 
 /* ================= NEWS CARD ================= */
@@ -185,215 +216,249 @@ nav a{
 .news-card{
     background:white;
     border-radius:12px;
-    padding:23px;
+    overflow:hidden;
     box-shadow:
-        0 5px 18px
-        rgba(0,0,0,.10);
-    border-left:5px solid #2e7d32;
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+        0 4px 14px rgba(0,0,0,.12);
+    border-top:5px solid #2e7d32;
+    transition:.3s;
 }
 
 .news-card:hover{
     transform:translateY(-4px);
     box-shadow:
-        0 9px 24px
-        rgba(0,0,0,.16);
+        0 7px 18px rgba(0,0,0,.16);
 }
 
-.news-title{
-    margin:0 0 10px;
-    color:#2e7d32;
-    font-size:23px;
-    line-height:1.35;
+.news-card-header{
+    background:#19752b;
+    color:white;
+    padding:14px 18px;
+}
+
+.news-card-header h2{
+    font-size:21px;
 }
 
 .news-date{
     display:inline-block;
-    background:#fff3e0;
-    color:#e65100;
-    padding:6px 10px;
-    border-radius:5px;
-    font-size:13px;
+    margin-top:5px;
+    background:#f57c00;
+    color:white;
+    padding:4px 11px;
+    border-radius:15px;
+    font-size:12px;
     font-weight:bold;
-    margin-bottom:15px;
+}
+
+.news-card-body{
+    padding:20px;
 }
 
 .news-description{
     color:#555;
-    line-height:1.7;
-    white-space:pre-wrap;
     font-size:16px;
+    line-height:1.8;
+}
+
+.news-read{
+    display:inline-block;
+    margin-top:15px;
+    padding:9px 18px;
+    background:#2e7d32;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+.news-read:hover{
+    background:#145a20;
 }
 
 /* ================= EMPTY ================= */
 
-.empty{
-    grid-column:1/-1;
+.empty-news{
     background:white;
-    padding:50px 20px;
+    padding:40px 20px;
     text-align:center;
     border-radius:12px;
-    box-shadow:
-        0 5px 18px
-        rgba(0,0,0,.08);
+    box-shadow:0 3px 12px rgba(0,0,0,.10);
     color:#666;
-    font-size:17px;
+}
+
+.empty-news h3{
+    color:#286b32;
+    margin-bottom:7px;
 }
 
 /* ================= LOADING ================= */
 
 .loading{
-    grid-column:1/-1;
-    background:white;
-    padding:45px;
     text-align:center;
-    border-radius:12px;
-    color:#2e7d32;
+    padding:35px;
+    color:#286b32;
     font-weight:bold;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-    margin-top:45px;
-    background:#1b5e20;
+    background:#075b27;
     color:white;
     text-align:center;
-    padding:22px;
+    padding:28px 15px;
 }
 
 footer p{
-    margin:6px;
+    margin:6px 0;
 }
 
 /* ================= MOBILE ================= */
 
 @media(max-width:800px){
 
+    .main-header{
+        flex-direction:column;
+        text-align:center;
+        padding:15px 10px;
+    }
+
+    .logo-box{
+        width:105px;
+        min-width:105px;
+        height:105px;
+        margin:0 auto 8px;
+    }
+
+    .logo-box img{
+        width:100px;
+        height:100px;
+    }
+
+    .company-info{
+        width:100%;
+    }
+
+    .company-info h1{
+        font-size:21px;
+    }
+
+    .company-info h2{
+        font-size:16px;
+    }
+
+    .tagline{
+        font-size:12px;
+        padding:6px 14px;
+    }
+
+    .navbar a{
+        padding:10px 9px;
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:250px;
+        padding:40px 15px;
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .hero h2{
+        font-size:19px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
     .news-grid{
         grid-template-columns:1fr;
     }
 
 }
-
-@media(max-width:600px){
-
-    .header-inner{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    header h1{
-        font-size:21px;
-    }
-
-    .hero h2{
-        font-size:28px;
-    }
-
-    .nav-inner{
-        flex-direction:column;
-    }
-
-    nav a{
-        text-align:center;
-    }
-
-}
-
 </style>
-
 </head>
-
 
 <body>
 
-
 <!-- ================= HEADER ================= -->
 
-<header>
+<header class="main-header">
 
-<div class="header-inner">
+    <div class="logo-box">
 
-<div class="logo">
-FPO
-</div>
+        <img
+            src="images/fpo-logo.png.png"
+            alt="Bundelkhand Organic FPO Logo"
+            onerror="
+                this.onerror=null;
+                this.src='images/logo.png.png';
+            "
+        >
 
-<div>
+    </div>
 
-<h1>
-Bundelkhand Organic Farmer Producer Company Limited
-</h1>
+    <div class="company-info">
 
-<p>
-स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
-</p>
+        <h1>
+            बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+        </h1>
 
-</div>
+        <h2>
+            Bundelkhand Organic Farmer Producer Company Limited
+        </h2>
 
-</div>
+        <div class="tagline">
+            स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+        </div>
+
+    </div>
 
 </header>
 
 
 <!-- ================= NAVIGATION ================= -->
 
-<nav>
+<nav class="navbar">
 
-<div class="nav-inner">
+    <a href="index.html">
+        Home
+    </a>
 
-<a
-href="index.html"
-class="home"
->
-Home
-</a>
+    <a href="about.html">
+        About
+    </a>
 
-<a
-href="about.html"
-class="about"
->
-About
-</a>
+    <a href="products.html">
+        Products
+    </a>
 
-<a
-href="products.html"
-class="products"
->
-Products
-</a>
+    <a href="farmers.html">
+        Kisan Corner
+    </a>
 
-<a
-href="farmers.html"
-class="farmers"
->
-Kisan Corner
-</a>
+    <a href="membership.html">
+        Join FPO
+    </a>
 
-<a
-href="gallery.html"
-class="gallery"
->
-Gallery
-</a>
+    <a href="news.html" class="active">
+        Agriculture News
+    </a>
 
-<a
-href="news.html"
-class="news"
->
-Agriculture News
-</a>
+    <a href="bulk-order.html">
+        Bulk Order
+    </a>
 
-<a
-href="contact.html"
-class="contact"
->
-Contact
-</a>
+    <a href="gallery.html">
+        Gallery
+    </a>
 
-</div>
+    <a href="contact.html">
+        Contact
+    </a>
 
 </nav>
 
@@ -402,85 +467,104 @@ Contact
 
 <section class="hero">
 
-<h2>
-Agriculture News
-</h2>
+    <div class="hero-content">
 
-<p>
-कृषि, किसान, जैविक खेती, सरकारी योजनाओं और ग्रामीण विकास से जुड़ी महत्वपूर्ण जानकारी।
-</p>
+        <h1>
+            Agriculture News
+        </h1>
+
+        <h2>
+            कृषि और किसानों से जुड़ी नवीनतम जानकारी
+        </h2>
+
+        <p>
+            कृषि, किसान, जैविक खेती, सरकारी योजनाओं
+            और ग्रामीण विकास से संबंधित महत्वपूर्ण समाचार।
+        </p>
+
+    </div>
 
 </section>
 
 
+<!-- ================= FIREBASE STATUS ================= -->
+
+<div
+    id="firebaseStatus"
+    class="firebase-status"
+>
+    Firebase Connected — Agriculture News Database से जानकारी load हो रही है...
+</div>
+
+
 <!-- ================= MAIN ================= -->
 
-<main class="container">
+<div class="container">
 
 
-<div
-id="status"
-class="status"
->
-Firebase Agriculture News load हो रही है...
+    <div class="news-intro">
+
+        <h2>
+            कृषि समाचार
+        </h2>
+
+        <p>
+            किसानों के लिए उपयोगी कृषि जानकारी,
+            योजनाओं और ग्रामीण विकास से संबंधित समाचार।
+        </p>
+
+    </div>
+
+
+    <!-- ================= NEWS LIST ================= -->
+
+    <div
+        id="newsContainer"
+        class="news-grid"
+    >
+
+        <div class="loading">
+            Agriculture News load हो रही हैं...
+        </div>
+
+    </div>
+
+
 </div>
-
-
-<div
-id="newsGrid"
-class="news-grid"
->
-
-<div class="loading">
-Agriculture News load हो रही है...
-</div>
-
-</div>
-
-
-</main>
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-<p>
-Bundelkhand Organic Farmer Producer Company Limited
-</p>
+    <p>
+        Bundelkhand Organic Farmer Producer Company Limited
+    </p>
 
-<p>
-Empowering Farmers • Promoting Organic Agriculture
-</p>
+    <p>
+        Empowering Farmers • Promoting Organic Agriculture
+    </p>
 
-<p>
-© 2026 All Rights Reserved
-</p>
+    <p>
+        © 2026 All Rights Reserved
+    </p>
 
 </footer>
 
 
-<!-- =====================================================
-     FIREBASE
-===================================================== -->
+<!-- ================= FIREBASE ================= -->
 
 <script type="module">
 
-
 import {
     initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
     getFirestore,
     collection,
     getDocs
-}
-from
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
 /* ================= FIREBASE CONFIG ================= */
@@ -488,22 +572,22 @@ from
 const firebaseConfig = {
 
     apiKey:
-        "AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
+    "AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
 
     authDomain:
-        "bundelkhand-organic-fpo.firebaseapp.com",
+    "bundelkhand-organic-fpo.firebaseapp.com",
 
     projectId:
-        "bundelkhand-organic-fpo",
+    "bundelkhand-organic-fpo",
 
     storageBucket:
-        "bundelkhand-organic-fpo.firebasestorage.app",
+    "bundelkhand-organic-fpo.firebasestorage.app",
 
     messagingSenderId:
-        "939641455963",
+    "939641455963",
 
     appId:
-        "1:939641455963:web:1745b1299b3c463e74867e"
+    "1:939641455963:web:1745b1299b3c463e74867e"
 
 };
 
@@ -511,10 +595,7 @@ const firebaseConfig = {
 /* ================= INITIALIZE ================= */
 
 const app =
-    initializeApp(
-        firebaseConfig
-    );
-
+    initializeApp(firebaseConfig);
 
 const db =
     getFirestore(app);
@@ -522,21 +603,18 @@ const db =
 
 /* ================= ELEMENTS ================= */
 
-const newsGrid =
+const container =
     document.getElementById(
-        "newsGrid"
+        "newsContainer"
+    );
+
+const status =
+    document.getElementById(
+        "firebaseStatus"
     );
 
 
-const statusBox =
-    document.getElementById(
-        "status"
-    );
-
-
-/* =====================================================
-   LOAD NEWS
-===================================================== */
+/* ================= LOAD NEWS ================= */
 
 async function loadNews(){
 
@@ -551,21 +629,31 @@ async function loadNews(){
             );
 
 
-        newsGrid.innerHTML =
-            "";
+        container.innerHTML = "";
 
 
         if(snapshot.empty){
 
-            newsGrid.innerHTML =
-                `
-                <div class="empty">
-                    अभी कोई Agriculture News उपलब्ध नहीं है।
+            container.innerHTML = `
+
+                <div
+                    class="empty-news"
+                    style="grid-column:1/-1;"
+                >
+
+                    <h3>
+                        अभी कोई Agriculture News उपलब्ध नहीं है।
+                    </h3>
+
+                    <p>
+                        नई कृषि समाचार जानकारी जल्द उपलब्ध होगी।
+                    </p>
+
                 </div>
-                `;
 
+            `;
 
-            statusBox.textContent =
+            status.textContent =
                 "Firebase Connected — अभी कोई Agriculture News उपलब्ध नहीं है।";
 
             return;
@@ -573,38 +661,66 @@ async function loadNews(){
         }
 
 
-        let count = 0;
+        let newsList = [];
 
 
         snapshot.forEach(
-            function(item){
+            doc => {
 
-                const data =
-                    item.data();
+                newsList.push({
 
+                    id:
+                        doc.id,
+
+                    ...doc.data()
+
+                });
+
+            }
+        );
+
+
+        /* ================= SORT ================= */
+
+        newsList.sort(
+            (a,b) => {
+
+                const dateA =
+                    a.createdAt?.seconds ||
+                    0;
+
+                const dateB =
+                    b.createdAt?.seconds ||
+                    0;
+
+                return dateB - dateA;
+
+            }
+        );
+
+
+        /* ================= DISPLAY ================= */
+
+        newsList.forEach(
+            news => {
 
                 const title =
-                    data.title ||
-                    data.newsTitle ||
+                    news.title ||
+                    news.newsTitle ||
                     "Agriculture News";
 
 
                 const description =
-                    data.description ||
-                    data.newsDescription ||
-                    "";
+                    news.description ||
+                    news.newsDescription ||
+                    "कृषि और किसानों से संबंधित महत्वपूर्ण जानकारी।";
 
 
                 const date =
-                    data.date ||
-                    data.newsDate ||
+                    news.date ||
+                    news.newsDate ||
                     "";
 
-
-                count++;
-
-
-                /* CARD */
 
                 const card =
                     document.createElement(
@@ -616,74 +732,39 @@ async function loadNews(){
                     "news-card";
 
 
-                /* TITLE */
+                card.innerHTML = `
 
-                const titleElement =
-                    document.createElement(
-                        "h3"
-                    );
+                    <div class="news-card-header">
 
+                        <h2>
+                            ${escapeHtml(title)}
+                        </h2>
 
-                titleElement.className =
-                    "news-title";
+                        ${
+                            date
+                            ?
+                            `<span class="news-date">
+                                Date: ${escapeHtml(date)}
+                            </span>`
+                            :
+                            ""
+                        }
 
-
-                titleElement.textContent =
-                    title;
-
-
-                /* DATE */
-
-                const dateElement =
-                    document.createElement(
-                        "div"
-                    );
+                    </div>
 
 
-                dateElement.className =
-                    "news-date";
+                    <div class="news-card-body">
+
+                        <div class="news-description">
+                            ${escapeHtml(description)}
+                        </div>
+
+                    </div>
+
+                `;
 
 
-                dateElement.textContent =
-                    date
-                    ? "Date: " + formatDate(date)
-                    : "Date not available";
-
-
-                /* DESCRIPTION */
-
-                const descriptionElement =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                descriptionElement.className =
-                    "news-description";
-
-
-                descriptionElement.textContent =
-                    description;
-
-
-                /* ADD */
-
-                card.appendChild(
-                    titleElement
-                );
-
-
-                card.appendChild(
-                    dateElement
-                );
-
-
-                card.appendChild(
-                    descriptionElement
-                );
-
-
-                newsGrid.appendChild(
+                container.appendChild(
                     card
                 );
 
@@ -691,10 +772,11 @@ async function loadNews(){
         );
 
 
-        statusBox.textContent =
+        status.textContent =
             "Firebase Connected — " +
-            count +
-            " Agriculture News सफलतापूर्वक load हो गईं।";
+            newsList.length +
+            " Agriculture News सफलतापूर्वक load हुईं।";
+
 
     }
     catch(error){
@@ -705,67 +787,58 @@ async function loadNews(){
         );
 
 
-        newsGrid.innerHTML =
-            `
-            <div class="empty">
-                Agriculture News load नहीं हो सकी।<br><br>
-                ${error.message}
+        container.innerHTML = `
+
+            <div
+                class="empty-news"
+                style="grid-column:1/-1;"
+            >
+
+                <h3>
+                    Agriculture News load नहीं हो सकीं।
+                </h3>
+
+                <p>
+                    Firebase से data प्राप्त करने में समस्या हुई।
+                </p>
+
             </div>
-            `;
+
+        `;
 
 
-        statusBox.textContent =
-            "Firebase Agriculture News load करने में समस्या आई।";
+        status.textContent =
+            "Firebase Error — Agriculture News load नहीं हो सकीं।";
 
+        status.style.background =
+            "#ffebee";
 
-        statusBox.classList.add(
-            "error-status"
-        );
+        status.style.color =
+            "#b71c1c";
+
+        status.style.borderColor =
+            "#ef5350";
 
     }
 
 }
 
 
-/* =====================================================
-   DATE FORMAT
-===================================================== */
+/* ================= SECURITY ================= */
 
-function formatDate(value){
+function escapeHtml(value){
 
-    if(!value){
+    return String(value)
 
-        return "";
+        .replaceAll("&","&amp;")
 
-    }
+        .replaceAll("<","&lt;")
 
+        .replaceAll(">","&gt;")
 
-    /*
-     * YYYY-MM-DD
-     */
+        .replaceAll('"',"&quot;")
 
-    if(
-        /^\d{4}-\d{2}-\d{2}$/.test(
-            value
-        )
-    ){
-
-        const parts =
-            value.split("-");
-
-
-        return (
-            parts[2] +
-            "-" +
-            parts[1] +
-            "-" +
-            parts[0]
-        );
-
-    }
-
-
-    return value;
+        .replaceAll("'","&#039;");
 
 }
 
@@ -774,10 +847,7 @@ function formatDate(value){
 
 loadNews();
 
-
 </script>
 
-
 </body>
-
 </html>
