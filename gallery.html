@@ -5,7 +5,8 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>
 Gallery | Bundelkhand Organic Farmer Producer Company Limited
@@ -13,310 +14,758 @@ Gallery | Bundelkhand Organic Farmer Producer Company Limited
 
 <style>
 
+/* =====================================================
+   BASIC
+===================================================== */
+
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 
 body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
     background:#f4fff4;
-    color:#263238;
+    color:#333;
+    line-height:1.6;
 }
 
-/* ================= HEADER ================= */
 
-header{
-    background:linear-gradient(
-        135deg,
-        #1b5e20,
-        #2e7d32,
-        #43a047
-    );
-    color:white;
-    padding:22px 15px;
-}
+/* =====================================================
+   HEADER
+===================================================== */
 
-.header-inner{
-    max-width:1200px;
-    margin:auto;
+.main-header{
+    background:#f7fff3;
+    min-height:150px;
+    border-bottom:4px solid #f5a400;
+
     display:flex;
     align-items:center;
-    gap:18px;
+
+    padding:15px 35px;
 }
 
-.logo{
-    width:70px;
-    height:70px;
-    background:white;
-    border-radius:50%;
-    border:4px solid #fbc02d;
+.logo-box{
+    width:120px;
+    min-width:120px;
+    height:120px;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#2e7d32;
-    font-weight:bold;
-    font-size:20px;
-    flex-shrink:0;
+
+    margin-right:20px;
 }
 
-header h1{
-    margin:0;
-    font-size:27px;
+.logo-box img{
+    width:115px;
+    height:115px;
+    object-fit:contain;
 }
 
-header p{
-    margin:6px 0 0;
+.company-info{
+    flex:1;
+    text-align:center;
 }
 
-/* ================= NAVIGATION ================= */
-
-nav{
-    background:#ffffff;
-    padding:12px 15px;
-    border-bottom:1px solid #ddd;
+.company-info h1{
+    color:#286b32;
+    font-size:30px;
+    line-height:1.25;
+    margin-bottom:4px;
 }
 
-.nav-inner{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:9px;
+.company-info h2{
+    color:#286b32;
+    font-size:22px;
+    margin-bottom:10px;
 }
 
-nav a{
-    text-decoration:none;
-    color:white;
-    font-weight:bold;
-    padding:10px 17px;
-    border-radius:7px;
-}
+.tagline{
+    display:inline-block;
 
-.home{
+    padding:7px 20px;
+
     background:#f57c00;
+
+    color:white;
+
+    border-radius:22px;
+
+    font-size:14px;
+
+    font-weight:bold;
 }
 
-.about{
-    background:#388e3c;
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navbar{
+    background:#19752b;
+
+    border-bottom:3px solid #f5a400;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
 }
 
-.products{
-    background:#1976d2;
+.navbar a{
+    color:white;
+
+    text-decoration:none;
+
+    padding:13px 16px;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+    transition:.3s;
 }
 
-.farmers{
-    background:#00897b;
+.navbar a:hover{
+    background:#0d5b20;
 }
 
-.gallery{
-    background:#6a1b9a;
+.navbar a.active{
+    background:#f57c00;
+    color:white;
 }
 
-.contact{
-    background:#455a64;
-}
 
-/* ================= HERO ================= */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
+    min-height:280px;
+
+    background:
+        linear-gradient(
+            rgba(35,120,53,.88),
+            rgba(65,155,80,.82)
+        );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
     text-align:center;
+
     padding:45px 20px;
-    background:#e8f5e9;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:340px;
+
+    height:340px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:
+        url("images/fpo-logo.png.png")
+        center/contain
+        no-repeat;
+
+    opacity:.10;
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+}
+
+.hero h1{
+
+    font-size:40px;
+
+    margin-bottom:8px;
+
+    text-shadow:
+        2px 2px 4px #333;
 }
 
 .hero h2{
-    margin:0;
-    color:#1b5e20;
-    font-size:34px;
+
+    font-size:22px;
+
+    color:#fff200;
+
+    margin-bottom:12px;
 }
 
 .hero p{
-    margin:12px auto 0;
-    max-width:750px;
-    color:#555;
+
     font-size:17px;
-    line-height:1.6;
 }
 
-/* ================= MAIN ================= */
+
+/* =====================================================
+   FIREBASE STATUS
+===================================================== */
+
+.firebase-status{
+
+    width:94%;
+
+    max-width:1100px;
+
+    margin:25px auto 10px;
+
+    padding:13px 18px;
+
+    border-radius:8px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+    background:#e8f5e9;
+
+    color:#1b5e20;
+
+    border:1px solid #66bb6a;
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
 
 .container{
-    max-width:1200px;
-    margin:35px auto;
-    padding:0 20px;
+
+    width:94%;
+
+    max-width:1150px;
+
+    margin:0 auto;
+
+    padding-bottom:50px;
 }
 
-/* ================= STATUS ================= */
 
-.status{
-    background:#d1e7dd;
-    color:#0f5132;
-    border:1px solid #badbcc;
-    padding:13px 16px;
-    border-radius:8px;
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title{
+
     text-align:center;
-    font-weight:bold;
-    margin-bottom:25px;
+
+    margin:28px 0;
 }
 
-.error-status{
-    background:#f8d7da;
-    color:#842029;
-    border-color:#f5c2c7;
+.section-title h2{
+
+    color:#286b32;
+
+    font-size:30px;
+
+    margin-bottom:5px;
 }
 
-/* ================= GALLERY GRID ================= */
+.section-title p{
+
+    color:#666;
+
+    font-size:15px;
+}
+
+
+/* =====================================================
+   GALLERY GRID
+===================================================== */
 
 .gallery-grid{
+
     display:grid;
+
     grid-template-columns:
         repeat(3,1fr);
+
     gap:25px;
 }
 
-/* ================= CARD ================= */
+
+/* =====================================================
+   GALLERY CARD
+===================================================== */
 
 .gallery-card{
+
     background:white;
-    border-radius:13px;
+
+    border-radius:14px;
+
     overflow:hidden;
+
     box-shadow:
-        0 5px 18px
-        rgba(0,0,0,.12);
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+        0 4px 15px rgba(0,0,0,.12);
+
+    border-top:5px solid #2e7d32;
+
+    transition:.3s;
 }
 
 .gallery-card:hover{
-    transform:translateY(-5px);
+
+    transform:
+        translateY(-5px);
+
     box-shadow:
-        0 9px 25px
-        rgba(0,0,0,.18);
+        0 8px 22px rgba(0,0,0,.16);
 }
 
-/* ================= IMAGE ================= */
 
-.image-wrapper{
-    width:100%;
-    height:240px;
-    background:#eeeeee;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-}
+/* =====================================================
+   IMAGE
+===================================================== */
 
 .gallery-image{
+
     width:100%;
+
+    height:260px;
+
+    background:#f7fff7;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    cursor:pointer;
+}
+
+.gallery-image img{
+
+    width:100%;
+
     height:100%;
+
     object-fit:cover;
+
+    transition:.4s;
 }
 
-.image-error{
-    padding:20px;
-    text-align:center;
-    color:#c62828;
-    font-weight:bold;
+.gallery-card:hover
+.gallery-image img{
+
+    transform:scale(1.05);
 }
 
-/* ================= CONTENT ================= */
 
-.card-content{
+/* =====================================================
+   IMAGE CONTENT
+===================================================== */
+
+.gallery-content{
+
     padding:18px;
 }
 
-.card-content h3{
-    margin:0 0 9px;
-    color:#2e7d32;
+.gallery-content h3{
+
+    color:#286b32;
+
     font-size:21px;
+
+    margin-bottom:7px;
 }
 
-.card-content p{
-    margin:0;
+.gallery-content p{
+
     color:#666;
+
+    font-size:14px;
+
     line-height:1.6;
 }
 
-/* ================= EMPTY ================= */
 
-.empty{
-    grid-column:1/-1;
-    background:white;
-    padding:50px 20px;
-    text-align:center;
-    border-radius:12px;
-    box-shadow:
-        0 5px 18px
-        rgba(0,0,0,.08);
-    color:#666;
-    font-size:17px;
+/* =====================================================
+   IMAGE LINK
+===================================================== */
+
+.image-link{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:#19752b;
+
+    font-size:12px;
+
+    word-break:break-all;
+
+    text-decoration:none;
 }
 
-/* ================= LOADING ================= */
+.image-link:hover{
+
+    color:#f57c00;
+
+    text-decoration:underline;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
 
 .loading{
+
     grid-column:1/-1;
+
     background:white;
+
     padding:45px;
+
     text-align:center;
+
     border-radius:12px;
-    color:#2e7d32;
+
+    color:#286b32;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 4px 14px rgba(0,0,0,.10);
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty-gallery{
+
+    grid-column:1/-1;
+
+    background:white;
+
+    padding:45px;
+
+    text-align:center;
+
+    border-radius:12px;
+
+    color:#666;
+
+    box-shadow:
+        0 4px 14px rgba(0,0,0,.10);
+}
+
+.empty-gallery h3{
+
+    color:#286b32;
+
+    margin-bottom:8px;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error-box{
+
+    grid-column:1/-1;
+
+    background:#ffebee;
+
+    color:#b71c1c;
+
+    border:1px solid #ef5350;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    text-align:center;
+}
+
+
+/* =====================================================
+   IMAGE MODAL
+===================================================== */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    z-index:1000;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+        rgba(0,0,0,.85);
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:25px;
+}
+
+.modal.show{
+
+    display:flex;
+}
+
+.modal-content{
+
+    max-width:950px;
+
+    max-height:90vh;
+
+    position:relative;
+
+    text-align:center;
+}
+
+.modal-content img{
+
+    max-width:100%;
+
+    max-height:75vh;
+
+    border-radius:10px;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.5);
+}
+
+.modal-title{
+
+    color:white;
+
+    margin-top:12px;
+
+    font-size:20px;
+
     font-weight:bold;
 }
 
-/* ================= FOOTER ================= */
+.close-modal{
+
+    position:absolute;
+
+    right:-15px;
+
+    top:-45px;
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#f57c00;
+
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
-    margin-top:45px;
-    background:#1b5e20;
+
+    background:#075b27;
+
     color:white;
+
     text-align:center;
-    padding:22px;
+
+    padding:28px 15px;
 }
 
 footer p{
-    margin:6px;
+
+    margin:6px 0;
 }
 
-/* ================= MOBILE ================= */
 
-@media(max-width:900px){
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:950px){
 
     .gallery-grid{
+
         grid-template-columns:
             repeat(2,1fr);
     }
 
 }
 
-@media(max-width:600px){
 
-    .header-inner{
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:800px){
+
+    .main-header{
+
         flex-direction:column;
+
         text-align:center;
+
+        padding:15px 10px;
     }
 
-    header h1{
+    .logo-box{
+
+        width:105px;
+
+        min-width:105px;
+
+        height:105px;
+
+        margin:
+            0 auto 8px;
+    }
+
+    .logo-box img{
+
+        width:100px;
+
+        height:100px;
+    }
+
+    .company-info{
+
+        width:100%;
+    }
+
+    .company-info h1{
+
         font-size:21px;
     }
 
-    .hero h2{
+    .company-info h2{
+
+        font-size:16px;
+    }
+
+    .tagline{
+
+        font-size:12px;
+
+        padding:6px 14px;
+    }
+
+    .navbar a{
+
+        padding:10px 9px;
+
+        font-size:12px;
+    }
+
+    .hero{
+
+        min-height:250px;
+
+        padding:40px 15px;
+    }
+
+    .hero h1{
+
         font-size:28px;
     }
 
+    .hero h2{
+
+        font-size:19px;
+    }
+
+    .hero p{
+
+        font-size:14px;
+    }
+
     .gallery-grid{
+
         grid-template-columns:1fr;
+
+        gap:18px;
     }
 
-    .nav-inner{
-        flex-direction:column;
+    .gallery-image{
+
+        height:240px;
     }
 
-    nav a{
-        text-align:center;
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:450px){
+
+    .gallery-image{
+
+        height:220px;
+    }
+
+    .section-title h2{
+
+        font-size:25px;
     }
 
 }
@@ -329,144 +778,231 @@ footer p{
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-<header>
+<header class="main-header">
 
-<div class="header-inner">
+    <div class="logo-box">
 
-<div class="logo">
-FPO
-</div>
+        <img
 
-<div>
+            src="images/fpo-logo.png.png"
 
-<h1>
-Bundelkhand Organic Farmer Producer Company Limited
-</h1>
+            alt="Bundelkhand Organic FPO Logo"
 
-<p>
-स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
-</p>
+            onerror="
+                this.onerror=null;
+                this.src='images/logo.png.png';
+            "
+        >
 
-</div>
+    </div>
 
-</div>
+
+    <div class="company-info">
+
+        <h1>
+            बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+        </h1>
+
+        <h2>
+            Bundelkhand Organic Farmer Producer Company Limited
+        </h2>
+
+        <div class="tagline">
+
+            स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+
+        </div>
+
+    </div>
 
 </header>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-<nav>
+<nav class="navbar">
 
-<div class="nav-inner">
+    <a href="index.html">
+        Home
+    </a>
 
-<a
-href="index.html"
-class="home"
->
-Home
-</a>
+    <a href="about.html">
+        About
+    </a>
 
-<a
-href="about.html"
-class="about"
->
-About
-</a>
+    <a href="products.html">
+        Products
+    </a>
 
-<a
-href="products.html"
-class="products"
->
-Products
-</a>
+    <a href="farmers.html">
+        Kisan Corner
+    </a>
 
-<a
-href="farmers.html"
-class="farmers"
->
-Kisan Corner
-</a>
+    <a href="membership.html">
+        Join FPO
+    </a>
 
-<a
-href="gallery.html"
-class="gallery"
->
-Gallery
-</a>
+    <a href="news.html">
+        Agriculture News
+    </a>
 
-<a
-href="contact.html"
-class="contact"
->
-Contact
-</a>
+    <a href="bulk-order.html">
+        Bulk Order
+    </a>
 
-</div>
+    <a
+        href="gallery.html"
+        class="active"
+    >
+        Gallery
+    </a>
+
+    <a href="contact.html">
+        Contact
+    </a>
 
 </nav>
 
 
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
-<h2>
-Website Gallery
-</h2>
+    <div class="hero-content">
 
-<p>
-हमारे किसान, कृषि उत्पाद, जैविक खेती और FPO की गतिविधियों की तस्वीरें।
-</p>
+        <h1>
+            Gallery
+        </h1>
+
+        <h2>
+            किसान, कृषि और FPO गतिविधियों की झलक
+        </h2>
+
+        <p>
+            हमारे किसानों, कृषि उत्पादों, जैविक खेती
+            और FPO की गतिविधियों की तस्वीरें।
+        </p>
+
+    </div>
 
 </section>
 
 
-<!-- ================= MAIN ================= -->
-
-<main class="container">
-
-
-<div
-id="status"
-class="status"
->
-Firebase Gallery load हो रही है...
-</div>
-
+<!-- =====================================================
+     FIREBASE STATUS
+===================================================== -->
 
 <div
-id="galleryGrid"
-class="gallery-grid"
+    id="firebaseStatus"
+    class="firebase-status"
 >
 
-<div class="loading">
-Gallery Images load हो रही हैं...
-</div>
+    Firebase Connected —
+    Gallery Images load हो रही हैं...
 
 </div>
 
 
-</main>
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<div class="container">
 
 
-<!-- ================= FOOTER ================= -->
+    <div class="section-title">
+
+        <h2>
+            Our Gallery
+        </h2>
+
+        <p>
+            हमारे किसान और कृषि गतिविधियों की तस्वीरें
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         GALLERY GRID
+    ================================================= -->
+
+    <div
+        id="galleryContainer"
+        class="gallery-grid"
+    >
+
+        <div class="loading">
+
+            Gallery Images load हो रही हैं...
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     IMAGE MODAL
+===================================================== -->
+
+<div
+    id="imageModal"
+    class="modal"
+>
+
+    <div class="modal-content">
+
+        <button
+            id="closeModal"
+            class="close-modal"
+        >
+            ×
+        </button>
+
+        <img
+            id="modalImage"
+            src=""
+            alt="Gallery Image"
+        >
+
+        <div
+            id="modalTitle"
+            class="modal-title"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-<p>
-Bundelkhand Organic Farmer Producer Company Limited
-</p>
+    <p>
+        Bundelkhand Organic Farmer Producer Company Limited
+    </p>
 
-<p>
-Empowering Farmers • Promoting Organic Agriculture
-</p>
+    <p>
+        Empowering Farmers • Promoting Organic Agriculture
+    </p>
 
-<p>
-© 2026 All Rights Reserved
-</p>
+    <p>
+        © 2026 All Rights Reserved
+    </p>
 
 </footer>
 
@@ -478,47 +1014,59 @@ Empowering Farmers • Promoting Organic Agriculture
 <script type="module">
 
 import {
+
     initializeApp
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 
 import {
+
     getFirestore,
     collection,
     getDocs
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
-/* ================= FIREBASE CONFIG ================= */
+/* =====================================================
+   FIREBASE CONFIG
+===================================================== */
 
 const firebaseConfig = {
 
     apiKey:
-        "AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
+    "AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
 
     authDomain:
-        "bundelkhand-organic-fpo.firebaseapp.com",
+    "bundelkhand-organic-fpo.firebaseapp.com",
 
     projectId:
-        "bundelkhand-organic-fpo",
+    "bundelkhand-organic-fpo",
 
     storageBucket:
-        "bundelkhand-organic-fpo.firebasestorage.app",
+    "bundelkhand-organic-fpo.firebasestorage.app",
 
     messagingSenderId:
-        "939641455963",
+    "939641455963",
 
     appId:
-        "1:939641455963:web:1745b1299b3c463e74867e"
+    "1:939641455963:web:1745b1299b3c463e74867e"
 
 };
 
 
-/* ================= INITIALIZE FIREBASE ================= */
+/* =====================================================
+   INITIALIZE FIREBASE
+===================================================== */
 
 const app =
     initializeApp(
@@ -527,74 +1075,168 @@ const app =
 
 
 const db =
-    getFirestore(app);
-
-
-/* ================= ELEMENTS ================= */
-
-const galleryGrid =
-    document.getElementById(
-        "galleryGrid"
-    );
-
-
-const statusBox =
-    document.getElementById(
-        "status"
+    getFirestore(
+        app
     );
 
 
 /* =====================================================
-   IMAGE URL FUNCTION
+   ELEMENTS
 ===================================================== */
 
-function getImageUrl(value){
+const galleryContainer =
+    document.getElementById(
+        "galleryContainer"
+    );
 
-    const url =
-        String(value || "").trim();
+
+const firebaseStatus =
+    document.getElementById(
+        "firebaseStatus"
+    );
 
 
-    if(!url){
+const imageModal =
+    document.getElementById(
+        "imageModal"
+    );
+
+
+const modalImage =
+    document.getElementById(
+        "modalImage"
+    );
+
+
+const modalTitle =
+    document.getElementById(
+        "modalTitle"
+    );
+
+
+const closeModal =
+    document.getElementById(
+        "closeModal"
+    );
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHtml(value){
+
+    return String(
+        value ?? ""
+    )
+
+    .replaceAll(
+        "&",
+        "&amp;"
+    )
+
+    .replaceAll(
+        "<",
+        "&lt;"
+    )
+
+    .replaceAll(
+        ">",
+        "&gt;"
+    )
+
+    .replaceAll(
+        '"',
+        "&quot;"
+    )
+
+    .replaceAll(
+        "'",
+        "&#039;"
+    );
+
+}
+
+
+/* =====================================================
+   IMAGE URL
+===================================================== */
+
+function getImageUrl(image){
+
+    if(!image){
 
         return "";
 
     }
 
 
-    /*
-     * Full URL
-     */
+    image =
+        String(
+            image
+        ).trim();
+
+
+    /* Full URL */
 
     if(
-        url.startsWith("http://") ||
-        url.startsWith("https://") ||
-        url.startsWith("data:")
+
+        image.startsWith(
+            "http://"
+        )
+
+        ||
+
+        image.startsWith(
+            "https://"
+        )
+
+        ||
+
+        image.startsWith(
+            "data:"
+        )
+
     ){
 
-        return url;
+        return image;
 
     }
 
 
-    /*
-     * Root path
-     */
+    /* Relative images path */
 
-    if(url.startsWith("/")){
+    if(
 
-        return url;
+        image.startsWith(
+            "images/"
+        )
+
+    ){
+
+        return image;
 
     }
 
 
-    /*
-     * Relative path
-     */
+    /* Root path */
+
+    if(
+
+        image.startsWith(
+            "/"
+        )
+
+    ){
+
+        return image;
+
+    }
+
 
     return (
-        window.location.origin +
-        "/fpo-website/" +
-        url.replace(/^\/+/, "")
+        "images/" +
+        image
     );
 
 }
@@ -608,237 +1250,66 @@ async function loadGallery(){
 
     try{
 
+        firebaseStatus.textContent =
+            "Firebase Connected — Gallery Images load हो रही हैं...";
+
+
         const snapshot =
             await getDocs(
+
                 collection(
                     db,
                     "gallery"
                 )
+
             );
 
 
-        galleryGrid.innerHTML =
-            "";
-
-
-        if(snapshot.empty){
-
-            galleryGrid.innerHTML =
-                `
-                <div class="empty">
-                    अभी Gallery में कोई Image उपलब्ध नहीं है।
-                </div>
-                `;
-
-            statusBox.textContent =
-                "Firebase Connected — Gallery में अभी कोई Image नहीं है।";
-
-            return;
-
-        }
-
-
-        let imageCount = 0;
+        const gallery = [];
 
 
         snapshot.forEach(
-            function(item){
+
+            doc => {
 
                 const data =
-                    item.data();
+                    doc.data();
 
 
-                const imageValue =
-                    data.imageUrl ||
-                    data.image ||
-                    "";
+                gallery.push({
 
+                    id:
+                        doc.id,
 
-                const imageUrl =
-                    getImageUrl(
-                        imageValue
-                    );
+                    ...data
 
-
-                if(!imageUrl){
-
-                    return;
-
-                }
-
-
-                imageCount++;
-
-
-                /* CARD */
-
-                const card =
-                    document.createElement(
-                        "article"
-                    );
-
-
-                card.className =
-                    "gallery-card";
-
-
-                /* IMAGE WRAPPER */
-
-                const imageWrapper =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                imageWrapper.className =
-                    "image-wrapper";
-
-
-                /* IMAGE */
-
-                const image =
-                    document.createElement(
-                        "img"
-                    );
-
-
-                image.className =
-                    "gallery-image";
-
-
-                image.alt =
-                    data.title ||
-                    "FPO Gallery Image";
-
-
-                image.src =
-                    imageUrl;
-
-
-                /* IMAGE ERROR */
-
-                image.addEventListener(
-                    "error",
-                    function(){
-
-                        image.style.display =
-                            "none";
-
-
-                        const error =
-                            document.createElement(
-                                "div"
-                            );
-
-
-                        error.className =
-                            "image-error";
-
-
-                        error.textContent =
-                            "Image load नहीं हो सकी";
-
-
-                        imageWrapper.appendChild(
-                            error
-                        );
-
-                    }
-                );
-
-
-                imageWrapper.appendChild(
-                    image
-                );
-
-
-                /* CONTENT */
-
-                const content =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                content.className =
-                    "card-content";
-
-
-                const title =
-                    document.createElement(
-                        "h3"
-                    );
-
-
-                title.textContent =
-                    data.title ||
-                    "Gallery Image";
-
-
-                const description =
-                    document.createElement(
-                        "p"
-                    );
-
-
-                description.textContent =
-                    data.description ||
-                    "";
-
-
-                content.appendChild(
-                    title
-                );
-
-
-                if(
-                    data.description
-                ){
-
-                    content.appendChild(
-                        description
-                    );
-
-                }
-
-
-                /* CARD */
-
-                card.appendChild(
-                    imageWrapper
-                );
-
-
-                card.appendChild(
-                    content
-                );
-
-
-                galleryGrid.appendChild(
-                    card
-                );
+                });
 
             }
+
         );
 
 
-        if(imageCount === 0){
+        /* =============================================
+           RENDER
+        ============================================= */
 
-            galleryGrid.innerHTML =
-                `
-                <div class="empty">
-                    कोई valid Gallery Image उपलब्ध नहीं है।
-                </div>
-                `;
-
-        }
+        renderGallery(
+            gallery
+        );
 
 
-        statusBox.textContent =
-            "Firebase Connected — Gallery Images सफलतापूर्वक load हो गईं।";
+        firebaseStatus.textContent =
+
+            "Firebase Connected — " +
+
+            gallery.length +
+
+            " Gallery Images सफलतापूर्वक load हुईं।";
 
 
     }
+
     catch(error){
 
         console.error(
@@ -847,29 +1318,420 @@ async function loadGallery(){
         );
 
 
-        galleryGrid.innerHTML =
-            `
-            <div class="empty">
-                Gallery load नहीं हो सकी।<br><br>
-                ${error.message}
+        galleryContainer.innerHTML = `
+
+            <div
+                class="error-box"
+            >
+
+                <h3>
+                    Gallery load नहीं हो सकी।
+                </h3>
+
+                <p>
+                    Firebase से Gallery Images प्राप्त करने में समस्या हुई।
+                </p>
+
+                <p>
+                    ${escapeHtml(
+                        error.message
+                    )}
+                </p>
+
             </div>
-            `;
+
+        `;
 
 
-        statusBox.textContent =
-            "Firebase Gallery load करने में समस्या आई।";
+        firebaseStatus.textContent =
+            "Firebase Error — Gallery load नहीं हो सकी।";
 
 
-        statusBox.classList.add(
-            "error-status"
-        );
+        firebaseStatus.style.background =
+            "#ffebee";
+
+
+        firebaseStatus.style.color =
+            "#b71c1c";
+
+
+        firebaseStatus.style.borderColor =
+            "#ef5350";
 
     }
 
 }
 
 
-/* ================= START ================= */
+/* =====================================================
+   RENDER GALLERY
+===================================================== */
+
+function renderGallery(gallery){
+
+    galleryContainer.innerHTML =
+        "";
+
+
+    if(
+        !gallery.length
+    ){
+
+        galleryContainer.innerHTML = `
+
+            <div
+                class="empty-gallery"
+            >
+
+                <h3>
+                    अभी Gallery में कोई Image उपलब्ध नहीं है।
+                </h3>
+
+                <p>
+                    Images जल्द यहाँ दिखाई देंगी।
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    gallery.forEach(
+
+        item => {
+
+            const title =
+
+                item.title ??
+
+                item.name ??
+
+                "Gallery Image";
+
+
+            const description =
+
+                item.description ??
+
+                "";
+
+
+            const image =
+
+                item.imageUrl ??
+
+                item.imageURL ??
+
+                item.image ??
+
+                item.url ??
+
+                item.path ??
+
+                "";
+
+
+            const imageUrl =
+                getImageUrl(
+                    image
+                );
+
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "gallery-card";
+
+
+            let imageHtml = "";
+
+
+            if(imageUrl){
+
+                imageHtml = `
+
+                    <img
+
+                        src="${escapeHtml(
+                            imageUrl
+                        )}"
+
+                        alt="${escapeHtml(
+                            title
+                        )}"
+
+                        loading="lazy"
+
+                        onerror="
+
+                            this.onerror=null;
+
+                            this.style.display='none';
+
+                            this.parentElement.innerHTML +=
+
+                            '<div style=&quot;color:#999;padding:30px;text-align:center;&quot;>Image load नहीं हो सकी</div>';
+
+                        "
+
+                    >
+
+                `;
+
+            }
+
+            else{
+
+                imageHtml = `
+
+                    <div
+                        style="
+                            color:#999;
+                            text-align:center;
+                            padding:30px;
+                        "
+                    >
+
+                        Image उपलब्ध नहीं है
+
+                    </div>
+
+                `;
+
+            }
+
+
+            card.innerHTML = `
+
+                <div
+                    class="gallery-image"
+                    data-image="${escapeHtml(
+                        imageUrl
+                    )}"
+                    data-title="${escapeHtml(
+                        title
+                    )}"
+                >
+
+                    ${imageHtml}
+
+                </div>
+
+
+                <div
+                    class="gallery-content"
+                >
+
+                    <h3>
+
+                        ${escapeHtml(
+                            title
+                        )}
+
+                    </h3>
+
+
+                    <p>
+
+                        ${escapeHtml(
+                            description
+                        )}
+
+                    </p>
+
+
+                    ${
+                        imageUrl
+
+                        ?
+
+                        `
+
+                        <a
+
+                            href="${escapeHtml(
+                                imageUrl
+                            )}"
+
+                            target="_blank"
+
+                            class="image-link"
+
+                        >
+
+                            ${escapeHtml(
+                                imageUrl
+                            )}
+
+                        </a>
+
+                        `
+
+                        :
+
+                        ""
+
+                    }
+
+                </div>
+
+            `;
+
+
+            /* =========================================
+               IMAGE CLICK
+            ========================================= */
+
+            const imageBox =
+                card.querySelector(
+                    ".gallery-image"
+                );
+
+
+            imageBox.addEventListener(
+
+                "click",
+
+                function(){
+
+                    const src =
+                        this.dataset.image;
+
+
+                    const title =
+                        this.dataset.title;
+
+
+                    if(!src){
+
+                        return;
+
+                    }
+
+
+                    modalImage.src =
+                        src;
+
+
+                    modalImage.alt =
+                        title;
+
+
+                    modalTitle.textContent =
+                        title;
+
+
+                    imageModal.classList.add(
+                        "show"
+                    );
+
+                }
+
+            );
+
+
+            galleryContainer.appendChild(
+                card
+            );
+
+        }
+
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE MODAL
+===================================================== */
+
+closeModal.addEventListener(
+
+    "click",
+
+    function(){
+
+        imageModal.classList.remove(
+            "show"
+        );
+
+        modalImage.src =
+            "";
+
+    }
+
+);
+
+
+/* =====================================================
+   CLOSE MODAL OUTSIDE IMAGE
+===================================================== */
+
+imageModal.addEventListener(
+
+    "click",
+
+    function(e){
+
+        if(
+            e.target ===
+            imageModal
+        ){
+
+            imageModal.classList.remove(
+                "show"
+            );
+
+            modalImage.src =
+                "";
+
+        }
+
+    }
+
+);
+
+
+/* =====================================================
+   ESC KEY
+===================================================== */
+
+document.addEventListener(
+
+    "keydown",
+
+    function(e){
+
+        if(
+            e.key ===
+            "Escape"
+        ){
+
+            imageModal.classList.remove(
+                "show"
+            );
+
+            modalImage.src =
+                "";
+
+        }
+
+    }
+
+);
+
+
+/* =====================================================
+   START
+===================================================== */
 
 loadGallery();
 
