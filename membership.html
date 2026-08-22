@@ -4,218 +4,941 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Join FPO | Bundelkhand Organic Farmer Producer Company Limited</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="css/style.css">
+<title>
+Join FPO | Bundelkhand Organic Farmer Producer Company Limited
+</title>
+
 
 <style>
 
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
 body{
-font-family:Arial,"Noto Sans Devanagari",sans-serif;
-background:#f4fff4;
-margin:0;
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+    background:#f4fff4;
+    color:#333;
+    line-height:1.6;
 }
 
-.top-header{
-background:#1B5E20;
-color:white;
-padding:20px;
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.main-header{
+
+    background:#f7fff3;
+
+    min-height:150px;
+
+    border-bottom:4px solid #f5a400;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:15px 35px;
+
+    position:relative;
 }
 
-.logo{
-display:flex;
-align-items:center;
-gap:15px;
-max-width:1200px;
-margin:auto;
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo-box{
+
+    width:120px;
+
+    min-width:120px;
+
+    height:120px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-right:20px;
 }
 
-.logo img{
-width:70px;
-height:70px;
-object-fit:contain;
+
+.logo-box img{
+
+    width:115px;
+
+    height:115px;
+
+    object-fit:contain;
+
+    display:block;
 }
 
-.logo h1{
-margin:0;
-font-size:28px;
+
+/* =====================================================
+   COMPANY
+===================================================== */
+
+.company-info{
+
+    flex:1;
+
+    text-align:center;
+
+    padding-right:180px;
 }
 
-.logo p{
-margin:5px 0 0;
+
+.company-info h1{
+
+    color:#286b32;
+
+    font-size:30px;
+
+    line-height:1.25;
+
+    margin-bottom:4px;
+
+    font-weight:bold;
 }
 
-nav{
-background:#2E7D32;
-padding:12px;
-text-align:center;
+
+.company-info h2{
+
+    color:#286b32;
+
+    font-size:22px;
+
+    line-height:1.3;
+
+    margin-bottom:10px;
+
+    font-weight:bold;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin:0 10px;
-font-weight:bold;
+
+.tagline{
+
+    display:block;
+
+    width:max-content;
+
+    max-width:100%;
+
+    margin:0 auto;
+
+    padding:7px 20px;
+
+    background:#f57c00;
+
+    color:white;
+
+    border-radius:22px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    text-align:center;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.20);
 }
 
-nav a:hover{
-text-decoration:underline;
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+.login-buttons{
+
+    position:absolute;
+
+    right:30px;
+
+    top:48px;
 }
+
+
+.admin-login{
+
+    display:inline-block;
+
+    background:#7b1fa2;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px 28px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    font-size:16px;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.25);
+
+    transition:.3s;
+}
+
+
+.admin-login:hover{
+
+    background:#5e1680;
+
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navbar{
+
+    background:#19752b;
+
+    border-bottom:3px solid #f5a400;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+}
+
+
+.navbar a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:13px 16px;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+    transition:.3s;
+}
+
+
+.navbar a:hover{
+
+    background:#0d5b20;
+}
+
+
+.navbar a.active{
+
+    background:#f57c00;
+
+    color:white;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
-background:#e8f5e9;
-text-align:center;
-padding:35px 20px;
+
+    min-height:270px;
+
+    background:
+        linear-gradient(
+            rgba(35,120,53,.86),
+            rgba(65,155,80,.80)
+        );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:45px 20px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    color:white;
 }
+
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:330px;
+
+    height:330px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    background-image:
+        url("images/fpo-logo.png.png");
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    background-size:contain;
+
+    opacity:.10;
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+}
+
 
 .hero h1{
-color:#1B5E20;
+
+    font-size:38px;
+
+    margin-bottom:8px;
+
+    text-shadow:
+        2px 2px 4px #333;
 }
 
-.about{
-max-width:850px;
-margin:30px auto;
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 0 10px #ccc;
+
+.hero h2{
+
+    font-size:22px;
+
+    color:#fff200;
+
+    margin-bottom:12px;
 }
 
-.about h2{
-color:#2E7D32;
-text-align:center;
+
+.hero p{
+
+    font-size:16px;
 }
+
+
+/* =====================================================
+   STATUS
+===================================================== */
 
 .firebase-status{
-max-width:850px;
-margin:20px auto;
-padding:14px 18px;
-border-radius:8px;
-background:#fff3cd;
-color:#856404;
-border:1px solid #ffe69c;
-font-weight:bold;
+
+    max-width:950px;
+
+    margin:25px auto;
+
+    padding:13px 18px;
+
+    border-radius:8px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+    background:#e8f5e9;
+
+    color:#1b5e20;
+
+    border:1px solid #81c784;
 }
+
 
 .firebase-success{
-background:#d1e7dd;
-color:#0f5132;
-border-color:#badbcc;
+
+    background:#e8f5e9;
+
+    color:#1b5e20;
+
+    border-color:#66bb6a;
 }
+
 
 .firebase-error{
-background:#f8d7da;
-color:#842029;
-border-color:#f5c2c7;
+
+    background:#ffebee;
+
+    color:#b71c1c;
+
+    border-color:#ef5350;
 }
 
-label{
-font-weight:bold;
-display:block;
-margin-top:12px;
+
+/* =====================================================
+   MAIN FORM
+===================================================== */
+
+.container{
+
+    width:94%;
+
+    max-width:1100px;
+
+    margin:0 auto;
+
+    padding-bottom:40px;
 }
 
-input,
-select{
-width:100%;
-padding:12px;
-margin-top:6px;
-border:1px solid #ccc;
-border-radius:6px;
-box-sizing:border-box;
-font-size:15px;
+
+.form-box{
+
+    background:white;
+
+    padding:32px;
+
+    border-radius:14px;
+
+    box-shadow:
+        0 4px 18px rgba(0,0,0,.12);
+
+    border-top:6px solid #2e7d32;
 }
 
-.checkbox{
-width:auto;
-margin-right:8px;
+
+.form-title{
+
+    text-align:center;
+
+    margin-bottom:25px;
 }
 
-.agree-label{
-display:inline;
-font-weight:normal;
+
+.form-title h2{
+
+    color:#286b32;
+
+    font-size:30px;
+
+    margin-bottom:5px;
 }
 
-button{
-background:#2E7D32;
-color:white;
-border:none;
-padding:13px 25px;
-border-radius:6px;
-font-size:16px;
-cursor:pointer;
-margin-top:20px;
+
+.form-title p{
+
+    color:#666;
 }
 
-button:hover{
-background:#1B5E20;
+
+/* =====================================================
+   SHARE BOX
+===================================================== */
+
+.share-box{
+
+    background:#fff8e1;
+
+    border:1px solid #f9a825;
+
+    border-radius:10px;
+
+    padding:16px;
+
+    text-align:center;
+
+    margin-bottom:25px;
 }
 
-button:disabled{
-background:#888;
-cursor:not-allowed;
+
+.share-box h3{
+
+    color:#8d5d00;
+
+    margin-bottom:4px;
 }
 
-.success{
-display:none;
-background:#e8f5e9;
-border:2px solid #2E7D32;
-padding:25px;
-margin-top:25px;
-border-radius:10px;
-text-align:center;
-color:#1B5E20;
+
+.share-price{
+
+    color:#e65100;
+
+    font-size:26px;
+
+    font-weight:bold;
 }
 
-.success h2{
-margin-top:0;
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:18px 22px;
 }
+
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+
+.form-group.full{
+
+    grid-column:1/-1;
+}
+
+
+.form-group label{
+
+    color:#245b29;
+
+    font-weight:bold;
+
+    margin-bottom:6px;
+}
+
+
+.form-group input,
+.form-group select{
+
+    width:100%;
+
+    padding:12px 13px;
+
+    border:1px solid #c8d8c9;
+
+    border-radius:7px;
+
+    background:#fbfffb;
+
+    font-size:15px;
+
+    outline:none;
+}
+
+
+.form-group input:focus,
+.form-group select:focus{
+
+    border-color:#2e7d32;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(46,125,50,.12);
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.submit-area{
+
+    text-align:center;
+
+    margin-top:28px;
+}
+
+
+.submit-button{
+
+    background:
+        linear-gradient(
+            135deg,
+            #1b5e20,
+            #43a047
+        );
+
+    color:white;
+
+    border:none;
+
+    padding:14px 38px;
+
+    border-radius:8px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.20);
+
+    transition:.3s;
+}
+
+
+.submit-button:hover{
+
+    transform:translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #145a20,
+            #2e7d32
+        );
+}
+
+
+.submit-button:disabled{
+
+    background:#999;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
+
+.clear-button{
+
+    background:white;
+
+    color:#555;
+
+    border:1px solid #999;
+
+    padding:13px 25px;
+
+    border-radius:8px;
+
+    margin-left:10px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+
+.clear-button:hover{
+
+    background:#f1f1f1;
+}
+
+
+/* =====================================================
+   SUCCESS
+===================================================== */
+
+.success-message{
+
+    display:none;
+
+    max-width:850px;
+
+    margin:25px auto;
+
+    background:#e8f5e9;
+
+    border:1px solid #66bb6a;
+
+    border-radius:12px;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#1b5e20;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.10);
+}
+
+
+.success-message h2{
+
+    margin-bottom:10px;
+}
+
 
 .application-id{
-font-size:22px;
-font-weight:bold;
-color:#0d6efd;
-background:white;
-padding:12px;
-border-radius:8px;
-display:inline-block;
-margin:10px 0;
+
+    display:inline-block;
+
+    margin:12px 0;
+
+    padding:12px 20px;
+
+    background:white;
+
+    border-radius:8px;
+
+    color:#1565c0;
+
+    font-size:23px;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 2px 7px rgba(0,0,0,.12);
 }
+
+
+/* =====================================================
+   INFORMATION
+===================================================== */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+
+    margin:30px 0;
+}
+
+
+.info-card{
+
+    background:white;
+
+    padding:22px;
+
+    text-align:center;
+
+    border-radius:10px;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,.10);
+
+    border-top:4px solid #2e7d32;
+}
+
+
+.info-card h3{
+
+    color:#286b32;
+
+    margin-bottom:7px;
+}
+
+
+.info-card p{
+
+    color:#666;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
-background:#2E7D32;
-color:white;
-text-align:center;
-padding:18px;
-margin-top:40px;
+
+    background:#075b27;
+
+    color:white;
+
+    text-align:center;
+
+    padding:28px 15px;
+
+    margin-top:10px;
 }
 
-@media(max-width:700px){
 
-.logo{
-flex-direction:column;
-text-align:center;
+footer p{
+
+    margin:6px 0;
 }
 
-.logo h1{
-font-size:21px;
-}
 
-nav a{
-display:inline-block;
-margin:5px;
-}
+/* =====================================================
+   MOBILE
+===================================================== */
 
-.about{
-margin:20px 10px;
-padding:20px;
-}
+@media(max-width:800px){
 
-.hero{
-padding:25px 15px;
-}
+    .main-header{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:15px 10px;
+
+        min-height:auto;
+    }
+
+
+    .logo-box{
+
+        width:105px;
+
+        min-width:105px;
+
+        height:105px;
+
+        margin:0 auto 8px;
+    }
+
+
+    .logo-box img{
+
+        width:100px;
+
+        height:100px;
+    }
+
+
+    .company-info{
+
+        width:100%;
+
+        padding:0;
+    }
+
+
+    .company-info h1{
+
+        font-size:21px;
+    }
+
+
+    .company-info h2{
+
+        font-size:16px;
+    }
+
+
+    .tagline{
+
+        font-size:12px;
+
+        padding:6px 14px;
+    }
+
+
+    .login-buttons{
+
+        position:static;
+
+        margin:15px auto 0;
+    }
+
+
+    .admin-login{
+
+        padding:11px 22px;
+
+        font-size:14px;
+    }
+
+
+    .navbar a{
+
+        padding:10px 9px;
+
+        font-size:12px;
+    }
+
+
+    .hero{
+
+        min-height:250px;
+
+        padding:40px 15px;
+    }
+
+
+    .hero h1{
+
+        font-size:27px;
+    }
+
+
+    .hero h2{
+
+        font-size:19px;
+    }
+
+
+    .hero p{
+
+        font-size:14px;
+    }
+
+
+    .form-box{
+
+        padding:20px 15px;
+    }
+
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .form-group.full{
+
+        grid-column:auto;
+    }
+
+
+    .info-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .submit-button,
+    .clear-button{
+
+        width:100%;
+
+        margin:5px 0;
+    }
 
 }
 
@@ -227,338 +950,579 @@ padding:25px 15px;
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-<header class="top-header">
+<header class="main-header">
 
-<div class="logo">
 
-<img
-src="images/logo.png"
-alt="FPO Logo"
-onerror="this.onerror=null;this.src='images/fpo-logo.png.png';"
->
+    <div class="logo-box">
 
-<div>
+        <img
+            src="images/fpo-logo.png.png"
+            alt="Bundelkhand Organic FPO Logo"
+            onerror="
+                this.onerror=null;
+                this.src='images/logo.png.png';
+            "
+        >
 
-<h1>
-Bundelkhand Organic Farmer Producer Company Limited
-</h1>
+    </div>
 
-<p>
-Farmer Producer Organization
-</p>
 
-</div>
+    <div class="company-info">
 
-</div>
+        <h1>
+            बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
+        </h1>
+
+        <h2>
+            Bundelkhand Organic Farmer Producer Company Limited
+        </h2>
+
+        <div class="tagline">
+            स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+        </div>
+
+    </div>
+
+
+    <div class="login-buttons">
+
+        <a
+            href="login.html"
+            class="admin-login"
+        >
+            Admin Login
+        </a>
+
+    </div>
 
 </header>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-<nav>
+<nav class="navbar">
 
-<a href="index.html">Home</a>
+    <a href="index.html">
+        Home
+    </a>
 
-<a href="about.html">About</a>
+    <a href="about.html">
+        About
+    </a>
 
-<a href="products.html">Products</a>
+    <a href="products.html">
+        Products
+    </a>
 
-<a href="farmers.html">Kisan Corner</a>
+    <a href="farmers.html">
+        Kisan Corner
+    </a>
 
-<a href="membership.html">Join FPO</a>
+    <a
+        href="membership.html"
+        class="active"
+    >
+        Join FPO
+    </a>
 
-<a href="contact.html">Contact</a>
+    <a href="news.html">
+        Agriculture News
+    </a>
+
+    <a href="bulk-order.html">
+        Bulk Order
+    </a>
+
+    <a href="gallery.html">
+        Gallery
+    </a>
+
+    <a href="contact.html">
+        Contact
+    </a>
 
 </nav>
 
 
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
-<h1>
-FPO Membership Registration
-</h1>
+    <div class="hero-content">
 
-<p>
-Become a Shareholder Member of Bundelkhand Organic Farmer Producer Company Limited.
-</p>
+        <h1>
+            FPO Membership Registration
+        </h1>
+
+        <h2>
+            Become a Shareholder Member
+        </h2>
+
+        <p>
+            Bundelkhand Organic Farmer Producer Company Limited
+            से जुड़कर सामूहिक कृषि विकास और बेहतर बाजार अवसरों का लाभ उठाएँ।
+        </p>
+
+    </div>
 
 </section>
 
 
-<!-- ================= FIREBASE STATUS ================= -->
+<!-- =====================================================
+     FIREBASE STATUS
+===================================================== -->
 
 <div
-id="firebaseStatus"
-class="firebase-status"
+    id="firebaseStatus"
+    class="firebase-status"
 >
+    Firebase से Membership Database connect हो रहा है...
+</div>
 
-Firebase से Membership Database connect हो रहा है...
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<div class="container">
+
+
+    <!-- =================================================
+         INFO
+    ================================================= -->
+
+    <div class="info-grid">
+
+        <div class="info-card">
+
+            <h3>
+                FPO Membership
+            </h3>
+
+            <p>
+                किसान FPO के सदस्य बनकर
+                सामूहिक विकास से जुड़ सकते हैं।
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Shareholder
+            </h3>
+
+            <p>
+                Membership के साथ किसान
+                FPO में Shareholder Member बनते हैं।
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Easy Registration
+            </h3>
+
+            <p>
+                ऑनलाइन Membership Form भरकर
+                आवेदन जमा करें।
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         SUCCESS
+    ================================================= -->
+
+    <div
+        id="successMessage"
+        class="success-message"
+    >
+
+        <h2>
+            Membership Application सफलतापूर्वक जमा हो गया।
+        </h2>
+
+        <p>
+            आपका Application ID:
+        </p>
+
+        <div
+            id="applicationId"
+            class="application-id"
+        ></div>
+
+        <p>
+            कृपया इस Application ID को सुरक्षित रखें।
+        </p>
+
+        <p style="margin-top:10px;">
+            आपका आवेदन Admin द्वारा verify किया जाएगा।
+        </p>
+
+        <br>
+
+        <a
+            href="index.html"
+            style="
+            display:inline-block;
+            background:#2e7d32;
+            color:white;
+            padding:11px 22px;
+            border-radius:7px;
+            text-decoration:none;
+            font-weight:bold;
+            "
+        >
+            Home Page
+        </a>
+
+    </div>
+
+
+    <!-- =================================================
+         FORM
+    ================================================= -->
+
+    <section
+        id="formSection"
+        class="form-box"
+    >
+
+        <div class="form-title">
+
+            <h2>
+                Membership Application Form
+            </h2>
+
+            <p>
+                FPO Membership के लिए अपनी सही जानकारी भरें
+            </p>
+
+        </div>
+
+
+        <!-- SHARE -->
+
+        <div class="share-box">
+
+            <h3>
+                Current Share Membership
+            </h3>
+
+            <div class="share-price">
+                ₹500
+            </div>
+
+            <p>
+                Share Membership Amount
+            </p>
+
+        </div>
+
+
+        <form id="membershipForm">
+
+
+            <div class="form-grid">
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label>
+                        Farmer Name *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter Farmer Name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- FATHER -->
+
+                <div class="form-group">
+
+                    <label>
+                        Father / Husband Name *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="father"
+                        placeholder="Enter Father / Husband Name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- MOBILE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Mobile Number *
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        placeholder="Enter 10 Digit Mobile Number"
+                        maxlength="10"
+                        inputmode="numeric"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- VILLAGE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Village *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="village"
+                        placeholder="Village Name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PANCHAYAT -->
+
+                <div class="form-group">
+
+                    <label>
+                        Gram Panchayat
+                    </label>
+
+                    <input
+                        type="text"
+                        id="panchayat"
+                        placeholder="Gram Panchayat"
+                    >
+
+                </div>
+
+
+                <!-- BLOCK -->
+
+                <div class="form-group">
+
+                    <label>
+                        Block
+                    </label>
+
+                    <input
+                        type="text"
+                        id="block"
+                        placeholder="Block Name"
+                    >
+
+                </div>
+
+
+                <!-- DISTRICT -->
+
+                <div class="form-group">
+
+                    <label>
+                        District *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="district"
+                        placeholder="District Name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- STATE -->
+
+                <div class="form-group">
+
+                    <label>
+                        State
+                    </label>
+
+                    <input
+                        type="text"
+                        id="state"
+                        value="Uttar Pradesh"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- LAND -->
+
+                <div class="form-group">
+
+                    <label>
+                        Total Land Holding
+                    </label>
+
+                    <input
+                        type="text"
+                        id="land"
+                        placeholder="Example: 2.5 Acres"
+                    >
+
+                </div>
+
+
+                <!-- CROP -->
+
+                <div class="form-group">
+
+                    <label>
+                        Main Crop
+                    </label>
+
+                    <input
+                        type="text"
+                        id="crop"
+                        placeholder="Wheat, Chana, Mustard"
+                    >
+
+                </div>
+
+
+                <!-- IRRIGATION -->
+
+                <div class="form-group">
+
+                    <label>
+                        Irrigation Source
+                    </label>
+
+                    <select id="irrigation">
+
+                        <option value="Tube Well">
+                            Tube Well
+                        </option>
+
+                        <option value="Bore Well">
+                            Bore Well
+                        </option>
+
+                        <option value="Canal">
+                            Canal
+                        </option>
+
+                        <option value="Rainfed">
+                            Rainfed
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SHARE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Share Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="share"
+                        value="500"
+                        readonly
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="submit-area">
+
+                <button
+                    type="submit"
+                    id="submitButton"
+                    class="submit-button"
+                >
+                    Submit Membership
+                </button>
+
+                <button
+                    type="reset"
+                    class="clear-button"
+                >
+                    Clear Form
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </section>
+
 
 </div>
 
 
-<!-- ================= FORM ================= -->
-
-<section class="about">
-
-<form id="membershipForm">
-
-<h2>
-Membership Application Form
-</h2>
-
-
-<label>
-Farmer Name *
-</label>
-
-<input
-type="text"
-id="name"
-placeholder="Enter Farmer Name"
-required
->
-
-
-<label>
-Father Name *
-</label>
-
-<input
-type="text"
-id="father"
-placeholder="Enter Father Name"
-required
->
-
-
-<label>
-Mobile Number *
-</label>
-
-<input
-type="tel"
-id="mobile"
-placeholder="Enter 10 Digit Mobile Number"
-maxlength="10"
-inputmode="numeric"
-required
->
-
-
-<label>
-Village *
-</label>
-
-<input
-type="text"
-id="village"
-placeholder="Village Name"
-required
->
-
-
-<label>
-Gram Panchayat
-</label>
-
-<input
-type="text"
-id="panchayat"
-placeholder="Gram Panchayat"
->
-
-
-<label>
-Block
-</label>
-
-<input
-type="text"
-id="block"
-placeholder="Block Name"
->
-
-
-<label>
-District *
-</label>
-
-<input
-type="text"
-id="district"
-placeholder="District Name"
-required
->
-
-
-<label>
-State
-</label>
-
-<input
-type="text"
-id="state"
-value="Uttar Pradesh"
-readonly
->
-
-
-<label>
-Total Land Holding
-</label>
-
-<input
-type="text"
-id="land"
-placeholder="Example: 2.5 Acres"
->
-
-
-<label>
-Main Crops
-</label>
-
-<input
-type="text"
-id="crop"
-placeholder="Wheat, Chana, Mustard"
->
-
-
-<label>
-Irrigation Source
-</label>
-
-<select id="irrigation">
-
-<option value="Tube Well">
-Tube Well
-</option>
-
-<option value="Canal">
-Canal
-</option>
-
-<option value="Pond">
-Pond
-</option>
-
-<option value="Rainfed">
-Rainfed
-</option>
-
-<option value="Drip Irrigation">
-Drip Irrigation
-</option>
-
-<option value="Sprinkler">
-Sprinkler
-</option>
-
-<option value="Other">
-Other
-</option>
-
-</select>
-
-
-<label>
-Membership Share Amount (₹)
-</label>
-
-<input
-type="number"
-id="share"
-value="500"
-readonly
->
-
-
-<br><br>
-
-
-<input
-type="checkbox"
-id="agree"
-class="checkbox"
-required
->
-
-<label
-for="agree"
-class="agree-label"
->
-
-मैं घोषणा करता/करती हूँ कि मेरे द्वारा दी गई सभी जानकारी सत्य एवं सही है।
-
-</label>
-
-
-<br>
-
-
-<button
-type="submit"
-id="submitButton"
->
-
-Submit Membership
-
-</button>
-
-
-</form>
-
-
-<!-- ================= SUCCESS ================= -->
-
-<div
-id="successMessage"
-class="success"
->
-
-<h2>
-Membership Request Submitted
-</h2>
-
-<p>
-आपका Membership आवेदन सफलतापूर्वक प्राप्त हो गया है।
-</p>
-
-<p>
-आपका Application ID:
-</p>
-
-<div
-id="applicationId"
-class="application-id"
->
--
-</div>
-
-<p>
-FPO Team आपके आवेदन की जाँच करके आपसे संपर्क करेगी।
-</p>
-
-</div>
-
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-<p>
-© 2026 Bundelkhand Organic Farmer Producer Company Limited
-</p>
+    <p>
+        Bundelkhand Organic Farmer Producer Company Limited
+    </p>
+
+    <p>
+        Empowering Farmers • Promoting Organic Agriculture
+    </p>
+
+    <p>
+        © 2026 All Rights Reserved
+    </p>
 
 </footer>
 
@@ -569,109 +1533,139 @@ FPO Team आपके आवेदन की जाँच करके आपस
 
 <script type="module">
 
-/* ================= FIREBASE IMPORT ================= */
 
 import {
-initializeApp
+
+    initializeApp
+
 }
+
 from
 "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 
 import {
-getFirestore,
-collection,
-addDoc,
-serverTimestamp
+
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+
 }
+
 from
 "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
-/* ================= FIREBASE CONFIG ================= */
+/* =====================================================
+   FIREBASE CONFIG
+   आपकी working membership.html वाली configuration
+===================================================== */
 
 const firebaseConfig = {
 
-apiKey:
-"AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
+    apiKey:
+    "AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
 
-authDomain:
-"bundelkhand-organic-fpo.firebaseapp.com",
+    authDomain:
+    "bundelkhand-organic-fpo.firebaseapp.com",
 
-projectId:
-"bundelkhand-organic-fpo",
+    projectId:
+    "bundelkhand-organic-fpo",
 
-storageBucket:
-"bundelkhand-organic-fpo.firebasestorage.app",
+    storageBucket:
+    "bundelkhand-organic-fpo.firebasestorage.app",
 
-messagingSenderId:
-"939641455963",
+    messagingSenderId:
+    "939641455963",
 
-appId:
-"1:939641455963:web:1745b1299b3c463e74867e"
+    appId:
+    "1:939641455963:web:1745b1299b3c463e74867e"
 
 };
 
 
-/* ================= INITIALIZE ================= */
+/* =====================================================
+   INITIALIZE
+===================================================== */
 
 const app =
-initializeApp(firebaseConfig);
+    initializeApp(
+        firebaseConfig
+    );
+
 
 const db =
-getFirestore(app);
-
-
-/* ================= ELEMENTS ================= */
-
-const form =
-document.getElementById(
-"membershipForm"
-);
-
-const submitButton =
-document.getElementById(
-"submitButton"
-);
-
-const statusBox =
-document.getElementById(
-"firebaseStatus"
-);
-
-const successMessage =
-document.getElementById(
-"successMessage"
-);
-
-const applicationIdBox =
-document.getElementById(
-"applicationId"
-);
-
-
-/* ================= FIREBASE STATUS ================= */
-
-statusBox.textContent =
-"Firebase Connected — Membership Database तैयार है।";
-
-statusBox.className =
-"firebase-status firebase-success";
+    getFirestore(app);
 
 
 /* =====================================================
-   GENERATE APPLICATION ID
+   ELEMENTS
+===================================================== */
+
+const form =
+    document.getElementById(
+        "membershipForm"
+    );
+
+
+const submitButton =
+    document.getElementById(
+        "submitButton"
+    );
+
+
+const statusBox =
+    document.getElementById(
+        "firebaseStatus"
+    );
+
+
+const successMessage =
+    document.getElementById(
+        "successMessage"
+    );
+
+
+const formSection =
+    document.getElementById(
+        "formSection"
+    );
+
+
+const applicationIdBox =
+    document.getElementById(
+        "applicationId"
+    );
+
+
+/* =====================================================
+   FIREBASE STATUS
+===================================================== */
+
+statusBox.textContent =
+    "Firebase Connected — Membership Database तैयार है।";
+
+
+statusBox.className =
+    "firebase-status firebase-success";
+
+
+/* =====================================================
+   APPLICATION ID
 ===================================================== */
 
 function generateApplicationId(){
 
-const randomNumber =
-Math.floor(
-10000000 +
-Math.random() * 90000000
-);
+    const randomNumber =
+        Math.floor(
+            10000000 +
+            Math.random() * 90000000
+        );
 
-return "MEM" + randomNumber;
+
+    return "MEM" +
+        randomNumber;
 
 }
 
@@ -681,316 +1675,314 @@ return "MEM" + randomNumber;
 ===================================================== */
 
 form.addEventListener(
-"submit",
-async function(e){
+    "submit",
+    async function(e){
 
-e.preventDefault();
-
-
-/* ================= GET VALUES ================= */
-
-const name =
-document.getElementById(
-"name"
-).value.trim();
+        e.preventDefault();
 
 
-const father =
-document.getElementById(
-"father"
-).value.trim();
+        /* ================= VALUES ================= */
+
+        const name =
+            document.getElementById(
+                "name"
+            ).value.trim();
 
 
-const mobile =
-document.getElementById(
-"mobile"
-).value.trim();
+        const father =
+            document.getElementById(
+                "father"
+            ).value.trim();
 
 
-const village =
-document.getElementById(
-"village"
-).value.trim();
+        const mobile =
+            document.getElementById(
+                "mobile"
+            ).value.trim();
 
 
-const panchayat =
-document.getElementById(
-"panchayat"
-).value.trim();
+        const village =
+            document.getElementById(
+                "village"
+            ).value.trim();
 
 
-const block =
-document.getElementById(
-"block"
-).value.trim();
+        const panchayat =
+            document.getElementById(
+                "panchayat"
+            ).value.trim();
 
 
-const district =
-document.getElementById(
-"district"
-).value.trim();
+        const block =
+            document.getElementById(
+                "block"
+            ).value.trim();
 
 
-const state =
-document.getElementById(
-"state"
-).value;
+        const district =
+            document.getElementById(
+                "district"
+            ).value.trim();
 
 
-const land =
-document.getElementById(
-"land"
-).value.trim();
+        const state =
+            document.getElementById(
+                "state"
+            ).value;
 
 
-const crop =
-document.getElementById(
-"crop"
-).value.trim();
+        const land =
+            document.getElementById(
+                "land"
+            ).value.trim();
 
 
-const irrigation =
-document.getElementById(
-"irrigation"
-).value;
+        const crop =
+            document.getElementById(
+                "crop"
+            ).value.trim();
 
 
-const share =
-Number(
-document.getElementById(
-"share"
-).value
-) || 500;
+        const irrigation =
+            document.getElementById(
+                "irrigation"
+            ).value;
 
 
-/* ================= MOBILE VALIDATION ================= */
+        const share =
+            Number(
+                document.getElementById(
+                    "share"
+                ).value
+            ) || 500;
 
-if(
-! /^[0-9]{10}$/.test(mobile)
-){
 
-alert(
-"कृपया सही 10 Digit Mobile Number डालें।"
+        /* ================= MOBILE ================= */
+
+        if(
+            !/^[0-9]{10}$/.test(
+                mobile
+            )
+        ){
+
+            alert(
+                "कृपया सही 10 Digit Mobile Number डालें।"
+            );
+
+            return;
+
+        }
+
+
+        /* ================= APPLICATION ID ================= */
+
+        const applicationId =
+            generateApplicationId();
+
+
+        /* ================= DISABLE ================= */
+
+        submitButton.disabled =
+            true;
+
+
+        submitButton.textContent =
+            "Saving...";
+
+
+        /* ================= DATA ================= */
+
+        const member = {
+
+            applicationId:
+                applicationId,
+
+            name:
+                name,
+
+            father:
+                father,
+
+            mobile:
+                mobile,
+
+            village:
+                village,
+
+            panchayat:
+                panchayat,
+
+            block:
+                block,
+
+            district:
+                district,
+
+            state:
+                state,
+
+            land:
+                land,
+
+            crop:
+                crop,
+
+            irrigation:
+                irrigation,
+
+            share:
+                share,
+
+            status:
+                "Pending",
+
+            date:
+                new Date()
+                .toLocaleString(
+                    "en-IN"
+                ),
+
+            createdAt:
+                serverTimestamp()
+
+        };
+
+
+        /* =================================================
+           SAVE FIREBASE
+        ================================================= */
+
+        try{
+
+
+            const docRef =
+                await addDoc(
+
+                    collection(
+                        db,
+                        "members"
+                    ),
+
+                    member
+
+                );
+
+
+            /* =================================================
+               LOCAL STORAGE BACKUP
+            ================================================= */
+
+            try{
+
+                let members =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "members"
+                        )
+                    ) || [];
+
+
+                members.push({
+
+                    ...member,
+
+                    firestoreId:
+                        docRef.id
+
+                });
+
+
+                localStorage.setItem(
+
+                    "members",
+
+                    JSON.stringify(
+                        members
+                    )
+
+                );
+
+            }
+            catch(localError){
+
+                console.warn(
+                    "LocalStorage backup failed:",
+                    localError
+                );
+
+            }
+
+
+            /* =================================================
+               SUCCESS
+            ================================================= */
+
+            formSection.style.display =
+                "none";
+
+
+            successMessage.style.display =
+                "block";
+
+
+            applicationIdBox.textContent =
+                applicationId;
+
+
+            statusBox.textContent =
+                "Membership application Firebase में सफलतापूर्वक save हो गया।";
+
+
+            statusBox.className =
+                "firebase-status firebase-success";
+
+
+            successMessage.scrollIntoView({
+
+                behavior:
+                    "smooth",
+
+                block:
+                    "center"
+
+            });
+
+
+        }
+        catch(error){
+
+            console.error(
+                "Firebase Membership Error:",
+                error
+            );
+
+
+            statusBox.textContent =
+                "Firebase Error: " +
+                error.message;
+
+
+            statusBox.className =
+                "firebase-status firebase-error";
+
+
+            alert(
+                "Membership application save नहीं हो सका:\n\n" +
+                error.message
+            );
+
+
+            submitButton.disabled =
+                false;
+
+
+            submitButton.textContent =
+                "Submit Membership";
+
+        }
+
+    }
 );
-
-return;
-
-}
-
-
-/* ================= APPLICATION ID ================= */
-
-const applicationId =
-generateApplicationId();
-
-
-/* ================= DISABLE BUTTON ================= */
-
-submitButton.disabled =
-true;
-
-submitButton.textContent =
-"Saving...";
-
-
-/* ================= DATA ================= */
-
-const member = {
-
-applicationId:
-
-applicationId,
-
-name:
-
-name,
-
-father:
-
-father,
-
-mobile:
-
-mobile,
-
-village:
-
-village,
-
-panchayat:
-
-panchayat,
-
-block:
-
-block,
-
-district:
-
-district,
-
-state:
-
-state,
-
-land:
-
-land,
-
-crop:
-
-crop,
-
-irrigation:
-
-irrigation,
-
-share:
-
-share,
-
-status:
-
-"Pending",
-
-date:
-
-new Date().toLocaleString(
-"en-IN"
-),
-
-createdAt:
-
-serverTimestamp()
-
-};
-
-
-/* =====================================================
-   SAVE TO FIREBASE
-===================================================== */
-
-try{
-
-const docRef =
-await addDoc(
-
-collection(
-db,
-"members"
-),
-
-member
-
-);
-
-
-/* ================= LOCAL STORAGE BACKUP ================= */
-
-try{
-
-let members =
-JSON.parse(
-localStorage.getItem(
-"members"
-)
-) || [];
-
-
-members.push({
-
-...member,
-
-firestoreId:
-docRef.id
-
-});
-
-
-localStorage.setItem(
-"members",
-JSON.stringify(
-members
-)
-);
-
-}
-catch(localError){
-
-console.warn(
-"LocalStorage backup failed:",
-localError
-);
-
-}
-
-
-/* ================= SUCCESS ================= */
-
-form.style.display =
-"none";
-
-
-successMessage.style.display =
-"block";
-
-
-applicationIdBox.textContent =
-applicationId;
-
-
-statusBox.textContent =
-"Membership application Firebase में सफलतापूर्वक save हो गया।";
-
-
-statusBox.className =
-"firebase-status firebase-success";
-
-
-/* ================= SCROLL ================= */
-
-successMessage.scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
-
-
-}
-catch(error){
-
-console.error(
-"Firebase Membership Error:",
-error
-);
-
-
-statusBox.textContent =
-"Firebase Error: " +
-error.message;
-
-
-statusBox.className =
-"firebase-status firebase-error";
-
-
-alert(
-"Membership application save नहीं हो सका:\n\n" +
-error.message
-);
-
-
-/* ================= ENABLE AGAIN ================= */
-
-submitButton.disabled =
-false;
-
-submitButton.textContent =
-"Submit Membership";
-
-}
-
-});
-
 
 </script>
 
