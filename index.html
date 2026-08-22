@@ -2,1321 +2,1382 @@
 <html lang="hi">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>
-Bundelkhand Organic Farmer Producer Company Limited
-</title>
+<title>Bundelkhand Organic Farmer Producer Company Limited</title>
 
 <style>
 
-/* =========================================
-   RESET
-========================================= */
-
 *{
-    margin:0;
-    padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
     background:#f4fff4;
-    color:#333;
-    line-height:1.6;
+    color:#263238;
 }
 
-
-/* =========================================
-   HEADER
-========================================= */
-
-.main-header{
-    background:#f7fff3;
-
-    min-height:150px;
-
-    border-bottom:4px solid #f5a400;
-
-    display:flex;
-
-    align-items:center;
-
-    padding:15px 35px;
-
-    position:relative;
+header{
+    background:linear-gradient(135deg,#1b5e20,#2e7d32,#43a047);
+    color:white;
+    padding:22px 15px;
 }
 
-
-/* =========================================
-   LOGO
-========================================= */
-
-.logo-box{
-    width:120px;
-    min-width:120px;
-
-    height:120px;
-
+.header-inner{
+    max-width:1200px;
+    margin:auto;
     display:flex;
-
     align-items:center;
+    gap:18px;
+}
 
+.logo{
+    width:75px;
+    height:75px;
+    background:white;
+    border:4px solid #fbc02d;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
     justify-content:center;
-
-    margin-right:20px;
+    overflow:hidden;
+    flex-shrink:0;
 }
 
-.logo-box img{
-    width:115px;
-
-    height:115px;
-
+.logo img{
+    width:100%;
+    height:100%;
     object-fit:contain;
-
-    display:block;
 }
 
-
-/* =========================================
-   COMPANY INFORMATION
-========================================= */
-
-.company-info{
-    flex:1;
-
-    text-align:center;
-
-    padding-right:180px;
+header h1{
+    margin:0;
+    font-size:27px;
 }
 
-.company-info h1{
-    color:#286b32;
-
-    font-size:30px;
-
-    line-height:1.25;
-
-    margin-bottom:4px;
-
-    font-weight:bold;
+header p{
+    margin:7px 0 0;
 }
 
-.company-info h2{
-    color:#286b32;
+/* NAV */
 
-    font-size:22px;
-
-    line-height:1.3;
-
-    margin-bottom:10px;
-
-    font-weight:bold;
+nav{
+    background:white;
+    padding:12px 15px;
+    border-bottom:1px solid #ddd;
 }
 
-
-/* =========================================
-   TAGLINE
-========================================= */
-
-.tagline{
-    display:block;
-
-    width:max-content;
-
-    max-width:100%;
-
-    margin:0 auto;
-
-    padding:7px 20px;
-
-    background:#f57c00;
-
-    color:white;
-
-    border-radius:22px;
-
-    font-size:14px;
-
-    font-weight:bold;
-
-    text-align:center;
-
-    box-shadow:0 3px 8px rgba(0,0,0,.20);
-}
-
-
-/* =========================================
-   ADMIN LOGIN ONLY
-========================================= */
-
-.login-buttons{
-    position:absolute;
-
-    right:30px;
-
-    top:48px;
-}
-
-.admin-login{
-    display:inline-block;
-
-    background:#7b1fa2;
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:14px 28px;
-
-    border-radius:8px;
-
-    font-weight:bold;
-
-    font-size:16px;
-
-    box-shadow:0 4px 10px rgba(0,0,0,.25);
-
-    transition:.3s;
-}
-
-.admin-login:hover{
-    background:#5e1680;
-
-    transform:translateY(-2px);
-}
-
-
-/* =========================================
-   NAVIGATION
-========================================= */
-
-.navbar{
-    background:#19752b;
-
-    border-bottom:3px solid #f5a400;
-
+.nav-inner{
+    max-width:1200px;
+    margin:auto;
     display:flex;
-
     justify-content:center;
-
-    align-items:center;
-
     flex-wrap:wrap;
+    gap:9px;
 }
 
-.navbar a{
+nav a{
     color:white;
-
     text-decoration:none;
-
-    padding:13px 16px;
-
     font-weight:bold;
-
-    font-size:14px;
-
-    transition:.3s;
+    padding:10px 16px;
+    border-radius:7px;
 }
 
-.navbar a:hover{
-    background:#0d5b20;
-}
+.home{background:#f57c00;}
+.about{background:#388e3c;}
+.products{background:#1976d2;}
+.farmers{background:#00897b;}
+.gallery{background:#6a1b9a;}
+.news{background:#ef6c00;}
+.contact{background:#455a64;}
+.login{background:#c62828;}
 
-.navbar a.active{
-    background:#f57c00;
-}
-
-
-/* =========================================
-   HERO
-========================================= */
+/* HERO */
 
 .hero{
-    min-height:370px;
-
-    background:
-    linear-gradient(
-        rgba(35,120,53,.78),
-        rgba(65,155,80,.72)
-    );
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
+    min-height:430px;
+    padding:75px 20px;
     text-align:center;
-
-    padding:60px 20px;
+    color:white;
+    background:
+        linear-gradient(
+            rgba(27,94,32,.80),
+            rgba(46,125,50,.80)
+        ),
+        url("images/fpo-logo.png.png");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .hero-content{
-    max-width:1050px;
-
-    color:white;
+    max-width:850px;
 }
-
-
-/* MAIN CENTER TAGLINE */
-
-.hero h1{
-    font-size:40px;
-
-    line-height:1.3;
-
-    margin-bottom:15px;
-
-    color:white;
-
-    text-shadow:
-    2px 2px 4px #333;
-}
-
-
-/* ENGLISH HEADING */
 
 .hero h2{
-    color:#fff200;
-
-    font-size:27px;
-
-    margin-bottom:20px;
+    font-size:42px;
+    margin:0 0 15px;
 }
 
 .hero p{
-    font-size:18px;
-
-    line-height:1.8;
-
-    margin-bottom:7px;
+    font-size:19px;
+    line-height:1.7;
+    margin:0 auto 25px;
 }
-
-
-/* =========================================
-   HERO BUTTONS
-========================================= */
 
 .hero-buttons{
-    margin-top:28px;
-
     display:flex;
-
     justify-content:center;
-
-    gap:15px;
-
     flex-wrap:wrap;
+    gap:12px;
 }
 
-.hero-btn{
-    display:inline-block;
-
+.hero-buttons a{
     text-decoration:none;
-
+    padding:13px 22px;
+    border-radius:8px;
     color:white;
-
     font-weight:bold;
-
-    padding:14px 30px;
-
-    border-radius:25px;
-
-    box-shadow:0 4px 10px rgba(0,0,0,.25);
-
-    transition:.3s;
 }
 
 .shop-btn{
-    background:#ff9800;
+    background:#f57c00;
 }
 
-.join-btn{
-    background:#159447;
-
-    border:1px solid white;
+.member-btn{
+    background:#1976d2;
 }
 
-.hero-btn:hover{
-    transform:translateY(-3px);
-}
+/* COMMON */
 
-
-/* =========================================
-   COMMON SECTION
-========================================= */
-
-.section{
-    max-width:1150px;
-
-    margin:0 auto;
-
-    padding:45px 20px;
+.container{
+    max-width:1200px;
+    margin:40px auto;
+    padding:0 20px;
 }
 
 .section-title{
     text-align:center;
+    margin-bottom:25px;
+}
 
-    color:#287634;
-
+.section-title h2{
+    margin:0;
+    color:#1b5e20;
     font-size:30px;
-
-    margin-bottom:8px;
 }
 
-.section-subtitle{
-    text-align:center;
-
+.section-title p{
     color:#666;
-
-    margin-bottom:30px;
-
-    font-size:16px;
 }
 
+/* STATUS */
 
-/* =========================================
-   FPO CARDS
-========================================= */
-
-.cards{
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:20px;
-}
-
-.card{
-    background:white;
-
-    padding:28px 20px;
-
+.status{
     text-align:center;
-
-    border-radius:12px;
-
-    box-shadow:
-    0 4px 14px rgba(0,0,0,.15);
-
-    border-top:5px solid #2e7d32;
-
-    transition:.3s;
-}
-
-.card:nth-child(2){
-    border-top-color:#f57c00;
-}
-
-.card:nth-child(3){
-    border-top-color:#1976d2;
-}
-
-.card:nth-child(4){
-    border-top-color:#8e24aa;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-}
-
-.card-icon{
-    width:55px;
-
-    height:55px;
-
-    border-radius:50%;
-
-    background:#e8f5e9;
-
-    color:#2e7d32;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    margin:0 auto 15px;
-
-    font-size:25px;
-
+    background:#d1e7dd;
+    color:#0f5132;
+    border:1px solid #badbcc;
+    padding:11px;
+    border-radius:7px;
+    margin-bottom:20px;
     font-weight:bold;
 }
 
-.card h3{
+/* PRODUCTS */
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.product-card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.10);
+    transition:.2s;
+}
+
+.product-card:hover{
+    transform:translateY(-4px);
+}
+
+.product-image{
+    height:190px;
+    background:#eee;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.product-content{
+    padding:16px;
+}
+
+.product-content h3{
     color:#2e7d32;
-
-    margin-bottom:10px;
-
-    font-size:20px;
+    margin:0 0 8px;
 }
 
-.card p{
-    color:#555;
-
-    line-height:1.6;
+.price{
+    color:#e65100;
+    font-size:19px;
+    font-weight:bold;
+    margin-bottom:12px;
 }
 
-
-/* =========================================
-   NEWS SECTION
-========================================= */
-
-.news-section{
-    background:#eef9ee;
+.view-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2e7d32;
+    color:white;
+    padding:10px;
+    border-radius:6px;
 }
+
+/* NEWS */
 
 .news-grid{
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
 .news-card{
     background:white;
-
-    padding:22px;
-
-    border-radius:10px;
-
+    padding:20px;
+    border-radius:11px;
     border-left:5px solid #2e7d32;
-
-    box-shadow:
-    0 3px 12px rgba(0,0,0,.15);
+    box-shadow:0 5px 18px rgba(0,0,0,.09);
 }
 
 .news-card h3{
     color:#2e7d32;
+    margin:0 0 10px;
+}
 
-    font-size:20px;
-
-    line-height:1.5;
-
-    margin-bottom:10px;
+.news-date{
+    display:inline-block;
+    background:#fff3e0;
+    color:#e65100;
+    padding:5px 9px;
+    border-radius:5px;
+    font-size:13px;
+    margin-bottom:12px;
 }
 
 .news-card p{
     color:#555;
-
-    line-height:1.7;
-
-    margin-bottom:12px;
-}
-
-.news-date{
-    color:#777;
-
-    font-size:14px;
-
-    font-weight:bold;
-
-    margin-bottom:15px;
-}
-
-.read-more{
-    display:inline-block;
-
-    background:#2e7d32;
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:9px 17px;
-
-    border-radius:5px;
-
-    font-weight:bold;
-}
-
-.read-more:hover{
-    background:#1b5e20;
-}
-
-
-/* =========================================
-   QUICK LINKS
-========================================= */
-
-.quick-links{
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:15px;
-}
-
-.quick-link{
-    text-decoration:none;
-
-    background:white;
-
-    color:#2e7d32;
-
-    padding:18px;
-
-    text-align:center;
-
-    border-radius:8px;
-
-    font-weight:bold;
-
-    box-shadow:
-    0 3px 10px rgba(0,0,0,.12);
-
-    border-left:4px solid #f57c00;
-
-    transition:.3s;
-}
-
-.quick-link:hover{
-    background:#2e7d32;
-
-    color:white;
-}
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer{
-    background:#075b27;
-
-    color:white;
-
-    text-align:center;
-
-    padding:30px 15px;
-
-    margin-top:0;
-}
-
-footer h3{
-    font-size:20px;
-
-    margin-bottom:6px;
-}
-
-footer p{
-    margin:6px 0;
-
     line-height:1.6;
 }
 
+/* GALLERY */
 
-/* =========================================
-   TABLET
-========================================= */
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.gallery-card{
+    background:white;
+    border-radius:11px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.10);
+}
+
+.gallery-image{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    display:block;
+}
+
+.gallery-content{
+    padding:14px;
+}
+
+.gallery-content h3{
+    margin:0 0 5px;
+    color:#2e7d32;
+}
+
+.gallery-content p{
+    margin:0;
+    color:#666;
+}
+
+/* ABOUT */
+
+.about-box{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.about-box p{
+    line-height:1.8;
+    color:#555;
+}
+
+/* QUICK LINKS */
+
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.quick-card{
+    padding:25px 15px;
+    border-radius:11px;
+    text-align:center;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.q1{background:#2e7d32;}
+.q2{background:#1976d2;}
+.q3{background:#ef6c00;}
+.q4{background:#6a1b9a;}
+
+/* EMPTY */
+
+.empty{
+    grid-column:1/-1;
+    background:white;
+    padding:35px;
+    text-align:center;
+    border-radius:10px;
+    color:#666;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:50px;
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+footer p{
+    margin:7px;
+}
+
+/* MOBILE */
 
 @media(max-width:1000px){
 
-    .main-header{
-        padding:15px 20px;
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .company-info{
-        padding-right:170px;
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .company-info h1{
-        font-size:25px;
+    .news-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .company-info h2{
-        font-size:19px;
-    }
-
-    .cards{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-    .quick-links{
-        grid-template-columns:
-        repeat(2,1fr);
+    .quick-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
 }
 
+@media(max-width:650px){
 
-/* =========================================
-   MOBILE
-========================================= */
-
-@media(max-width:700px){
-
-    .main-header{
+    .header-inner{
         flex-direction:column;
-
         text-align:center;
-
-        padding:15px 10px;
-
-        min-height:auto;
     }
 
-    .logo-box{
-        width:105px;
-
-        min-width:105px;
-
-        height:105px;
-
-        margin:0 auto 8px;
-    }
-
-    .logo-box img{
-        width:100px;
-
-        height:100px;
-    }
-
-    .company-info{
-        width:100%;
-
-        padding:0;
-    }
-
-    .company-info h1{
+    header h1{
         font-size:21px;
     }
 
-    .company-info h2{
+    .hero h2{
+        font-size:30px;
+    }
+
+    .hero p{
         font-size:16px;
     }
 
-    .tagline{
-        font-size:12px;
-
-        padding:6px 14px;
-    }
-
-    .login-buttons{
-        position:static;
-
-        margin:15px auto 0;
-    }
-
-    .admin-login{
-        padding:11px 22px;
-
-        font-size:14px;
-    }
-
-    .navbar a{
-        padding:10px 9px;
-
-        font-size:12px;
-    }
-
-    .hero{
-        min-height:350px;
-
-        padding:45px 15px;
-    }
-
-    .hero h1{
-        font-size:27px;
-    }
-
-    .hero h2{
-        font-size:21px;
-    }
-
-    .hero p{
-        font-size:15px;
-    }
-
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media(max-width:480px){
-
-    .company-info h1{
-        font-size:19px;
-    }
-
-    .company-info h2{
-        font-size:15px;
-    }
-
-    .hero h1{
-        font-size:23px;
-    }
-
-    .hero h2{
-        font-size:19px;
-    }
-
-    .hero p{
-        font-size:14px;
-    }
-
-    .cards{
+    .product-grid,
+    .gallery-grid,
+    .news-grid,
+    .quick-grid{
         grid-template-columns:1fr;
     }
 
-    .quick-links{
-        grid-template-columns:1fr;
+    .nav-inner{
+        flex-direction:column;
     }
 
-    .navbar a{
-        padding:8px 7px;
-
-        font-size:11px;
+    nav a{
+        text-align:center;
     }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
+<!-- HEADER -->
 
-<!-- ==================================================
-     HEADER
-     
-     Home Page पर Mobile Number / Email नहीं है।
-================================================== -->
+<header>
 
-<header class="main-header">
+<div class="header-inner">
 
+<div class="logo">
 
-    <!-- FPO LOGO -->
+<img
+src="images/fpo-logo.png.png"
+alt="FPO Logo"
+onerror="this.style.display='none';this.parentElement.innerHTML='FPO';"
+>
 
-    <div class="logo-box">
+</div>
 
-        <img
-            src="images/fpo-logo.png.png"
-            alt="Bundelkhand Organic FPO Logo"
-        >
+<div>
 
-    </div>
+<h1>
+Bundelkhand Organic Farmer Producer Company Limited
+</h1>
 
+<p>
+स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+</p>
 
-    <!-- COMPANY NAME -->
+</div>
 
-    <div class="company-info">
-
-        <h1>
-            बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-        </h1>
-
-        <h2>
-            Bundelkhand Organic Farmer Producer Company Limited
-        </h2>
-
-        <!-- CENTER TAGLINE -->
-
-        <div class="tagline">
-            स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
-        </div>
-
-    </div>
-
-
-    <!-- ONLY ADMIN LOGIN -->
-
-    <div class="login-buttons">
-
-        <a
-            href="login.html"
-            class="admin-login"
-        >
-            Admin Login
-        </a>
-
-    </div>
+</div>
 
 </header>
 
 
-<!-- ==================================================
-     NAVIGATION
-================================================== -->
+<!-- NAVIGATION -->
 
-<nav class="navbar">
+<nav>
 
-    <a
-        href="index.html"
-        class="active"
-    >
-        Home
-    </a>
+<div class="nav-inner">
 
-    <a href="about.html">
-        About
-    </a>
+<a href="index.html" class="home">Home</a>
 
-    <a href="products.html">
-        Products
-    </a>
+<a href="about.html" class="about">About</a>
 
-    <a href="farmers.html">
-        Kisan Corner
-    </a>
+<a href="products.html" class="products">Products</a>
 
-    <a href="membership.html">
-        Join FPO
-    </a>
+<a href="farmers.html" class="farmers">Kisan Corner</a>
 
-    <a href="news.html">
-        Agriculture News
-    </a>
+<a href="gallery.html" class="gallery">Gallery</a>
 
-    <a href="bulk-order.html">
-        Bulk Order
-    </a>
+<a href="news.html" class="news">Agriculture News</a>
 
-    <a href="gallery.html">
-        Gallery
-    </a>
+<a href="contact.html" class="contact">Contact</a>
 
-    <a href="contact.html">
-        Contact
-    </a>
+<a href="login.html" class="login">Login</a>
+
+</div>
 
 </nav>
 
 
-<!-- ==================================================
-     HERO
-================================================== -->
+<!-- HERO -->
 
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <h1>
-            स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
-        </h1>
+<h2>
+किसान से ग्राहक तक, गुणवत्ता के साथ
+</h2>
 
-        <h2>
-            From Farmers To Your Home
-        </h2>
+<p>
+Bundelkhand Organic Farmer Producer Company Limited
+किसानों को संगठित करके जैविक एवं गुणवत्तापूर्ण कृषि उत्पादों को
+बाजार तक पहुँचाने के लिए कार्य कर रही है।
+</p>
 
-        <p>
-            हम किसानों द्वारा उगाए गए शुद्ध एवं गुणवत्तापूर्ण
-            कृषि उत्पाद सीधे आपके घर तक पहुँचाने के लिए प्रतिबद्ध हैं।
-        </p>
+<div class="hero-buttons">
 
-        <p>
-            We deliver fresh and quality organic products
-            directly from farmers to consumers.
-        </p>
+<a
+href="products.html"
+class="shop-btn"
+>
+View Products
+</a>
 
+<a
+href="membership.html"
+class="member-btn"
+>
+Farmer Membership
+</a>
 
-        <div class="hero-buttons">
+</div>
 
-            <a
-                href="products.html"
-                class="hero-btn shop-btn"
-            >
-                Shop Now
-            </a>
-
-            <a
-                href="membership.html"
-                class="hero-btn join-btn"
-            >
-                Join FPO
-            </a>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ==================================================
-     OUR FPO
-================================================== -->
+<!-- ABOUT -->
 
-<section class="section">
+<section class="container">
 
-    <h2 class="section-title">
-        Our FPO
-    </h2>
+<div class="section-title">
 
-    <p class="section-subtitle">
+<h2>
+हमारे बारे में
+</h2>
 
-        किसानों के विकास और कृषि को बढ़ावा देने की हमारी पहल
+<p>
+किसान, कृषि और ग्रामीण विकास के लिए समर्पित
+</p>
 
-        <br>
+</div>
 
-        Our initiative for farmer development and promotion of agriculture.
+<div class="about-box">
 
-    </p>
+<p>
+Bundelkhand Organic Farmer Producer Company Limited
+किसानों को बेहतर बाजार, गुणवत्तापूर्ण कृषि उत्पाद,
+जैविक खेती और सामूहिक विकास के अवसर उपलब्ध कराने की दिशा
+में कार्य करती है।
+</p>
 
+<p>
+हमारा उद्देश्य किसानों की आय और कृषि उत्पादों की गुणवत्ता
+में सुधार करते हुए स्थानीय कृषि उत्पादों को उचित बाजार
+तक पहुँचाना है।
+</p>
 
-    <div class="cards">
-
-
-        <!-- ABOUT -->
-
-        <div class="card">
-
-            <div class="card-icon">
-                A
-            </div>
-
-            <h3>
-                About Us
-            </h3>
-
-            <p>
-                किसानों को संगठित कर बेहतर बाजार,
-                उचित मूल्य और विकास के अवसर उपलब्ध कराना।
-            </p>
-
-        </div>
-
-
-        <!-- PRODUCTS -->
-
-        <div class="card">
-
-            <div class="card-icon">
-                P
-            </div>
-
-            <h3>
-                Products
-            </h3>
-
-            <p>
-                किसानों से सीधे प्राप्त गुणवत्तापूर्ण
-                कृषि एवं जैविक उत्पाद उपलब्ध कराना।
-            </p>
-
-        </div>
-
-
-        <!-- KISAN CORNER -->
-
-        <div class="card">
-
-            <div class="card-icon">
-                F
-            </div>
-
-            <h3>
-                Kisan Corner
-            </h3>
-
-            <p>
-                किसानों के लिए जानकारी, पंजीकरण
-                और FPO से जुड़ी सुविधाएँ।
-            </p>
-
-        </div>
-
-
-        <!-- JOIN FPO -->
-
-        <div class="card">
-
-            <div class="card-icon">
-                M
-            </div>
-
-            <h3>
-                Join FPO
-            </h3>
-
-            <p>
-                किसान FPO से जुड़कर बाजार,
-                प्रशिक्षण और अन्य सुविधाओं का लाभ प्राप्त करें।
-            </p>
-
-        </div>
-
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ==================================================
-     AGRICULTURE NEWS
-================================================== -->
+<!-- PRODUCTS -->
 
-<section class="news-section">
+<section class="container">
 
-    <div class="section">
+<div class="section-title">
 
-        <h2 class="section-title">
-            Agriculture News
-        </h2>
+<h2>
+हमारे कृषि उत्पाद
+</h2>
 
-        <p class="section-subtitle">
+<p>
+FPO द्वारा उपलब्ध गुणवत्तापूर्ण कृषि उत्पाद
+</p>
 
-            किसानों और कृषि से जुड़ी महत्वपूर्ण खबरें
+</div>
 
-            <br>
+<div
+id="productStatus"
+class="status"
+>
+Firebase Products load हो रहे हैं...
+</div>
 
-            Important news related to farmers and agriculture.
+<div
+id="productGrid"
+class="product-grid"
+>
 
-        </p>
+<div class="empty">
+Products load हो रहे हैं...
+</div>
 
-
-        <div
-            class="news-grid"
-            id="newsGrid"
-        >
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ==================================================
-     QUICK LINKS
-================================================== -->
-
-<section class="section">
-
-    <h2 class="section-title">
-        Quick Links
-    </h2>
-
-    <p class="section-subtitle">
-        हमारी प्रमुख सेवाओं तक आसानी से पहुँचें
-    </p>
-
-
-    <div class="quick-links">
-
-
-        <a
-            href="products.html"
-            class="quick-link"
-        >
-            Our Products
-        </a>
-
-
-        <a
-            href="membership.html"
-            class="quick-link"
-        >
-            Join FPO
-        </a>
-
-
-        <a
-            href="farmers.html"
-            class="quick-link"
-        >
-            Kisan Corner
-        </a>
-
-
-        <a
-            href="news.html"
-            class="quick-link"
-        >
-            Agriculture News
-        </a>
-
-
-        <a
-            href="bulk-order.html"
-            class="quick-link"
-        >
-            Bulk Order
-        </a>
-
-
-        <a
-            href="gallery.html"
-            class="quick-link"
-        >
-            Gallery
-        </a>
-
-
-        <a
-            href="contact.html"
-            class="quick-link"
-        >
-            Contact Us
-        </a>
-
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ==================================================
-     FOOTER
-================================================== -->
+<!-- NEWS -->
+
+<section class="container">
+
+<div class="section-title">
+
+<h2>
+Agriculture News
+</h2>
+
+<p>
+कृषि और किसानों से जुड़ी नवीनतम जानकारी
+</p>
+
+</div>
+
+<div
+id="newsStatus"
+class="status"
+>
+Firebase News load हो रही है...
+</div>
+
+<div
+id="newsGrid"
+class="news-grid"
+>
+
+<div class="empty">
+News load हो रही है...
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="container">
+
+<div class="section-title">
+
+<h2>
+Gallery
+</h2>
+
+<p>
+हमारे किसान और कृषि गतिविधियों की झलक
+</p>
+
+</div>
+
+<div
+id="galleryStatus"
+class="status"
+>
+Firebase Gallery load हो रही है...
+</div>
+
+<div
+id="galleryGrid"
+class="gallery-grid"
+>
+
+<div class="empty">
+Gallery load हो रही है...
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUICK LINKS -->
+
+<section class="container">
+
+<div class="section-title">
+
+<h2>
+Quick Services
+</h2>
+
+</div>
+
+<div class="quick-grid">
+
+<a
+href="membership.html"
+class="quick-card q1"
+>
+Farmer Membership
+</a>
+
+<a
+href="products.html"
+class="quick-card q2"
+>
+Online Products
+</a>
+
+<a
+href="farmers.html"
+class="quick-card q3"
+>
+Kisan Corner
+</a>
+
+<a
+href="contact.html"
+class="quick-card q4"
+>
+Contact Us
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-    <h3>
-        बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-    </h3>
+<p>
+Bundelkhand Organic Farmer Producer Company Limited
+</p>
 
-    <p>
-        Bundelkhand Organic Farmer Producer Company Limited
-    </p>
+<p>
+Empowering Farmers • Promoting Organic Agriculture
+</p>
 
-    <p>
-        Empowering Farmers • Promoting Agriculture
-    </p>
-
-    <p>
-        किसानों को सशक्त बनाना • कृषि को बढ़ावा देना
-    </p>
-
-    <p>
-        © 2026 All Rights Reserved
-    </p>
+<p>
+© 2026 All Rights Reserved
+</p>
 
 </footer>
 
 
-<!-- ==================================================
-     JAVASCRIPT
-================================================== -->
+<!-- FIREBASE -->
 
-<script>
+<script type="module">
 
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-/* =========================================
-   LOAD AGRICULTURE NEWS
-========================================= */
-
-function loadNews(){
-
-    const newsGrid =
-        document.getElementById("newsGrid");
-
-
-    let agricultureNews =
-        JSON.parse(
-            localStorage.getItem("agricultureNews")
-        ) || [];
+import {
+    getFirestore,
+    collection,
+    getDocs
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
-    newsGrid.innerHTML = "";
+/* ================= FIREBASE CONFIG ================= */
+
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
+
+    authDomain:
+        "bundelkhand-organic-fpo.firebaseapp.com",
+
+    projectId:
+        "bundelkhand-organic-fpo",
+
+    storageBucket:
+        "bundelkhand-organic-fpo.firebasestorage.app",
+
+    messagingSenderId:
+        "939641455963",
+
+    appId:
+        "1:939641455963:web:1745b1299b3c463e74867e"
+
+};
 
 
-    /* NO NEWS */
+const app =
+    initializeApp(firebaseConfig);
 
-    if(agricultureNews.length === 0){
+const db =
+    getFirestore(app);
 
-        newsGrid.innerHTML = `
 
-            <div class="news-card">
+/* ================= ELEMENTS ================= */
 
-                <h3>
-                    Agriculture News
-                </h3>
+const productGrid =
+    document.getElementById("productGrid");
 
-                <p>
-                    अभी कोई Agriculture News उपलब्ध नहीं है।
-                </p>
+const productStatus =
+    document.getElementById("productStatus");
 
-                <a
-                    href="news.html"
-                    class="read-more"
-                >
-                    View News
-                </a>
+const newsGrid =
+    document.getElementById("newsGrid");
 
-            </div>
+const newsStatus =
+    document.getElementById("newsStatus");
 
-        `;
+const galleryGrid =
+    document.getElementById("galleryGrid");
 
-        return;
+const galleryStatus =
+    document.getElementById("galleryStatus");
+
+
+/* ================= IMAGE URL ================= */
+
+function getImageUrl(value){
+
+    const url =
+        String(value || "").trim();
+
+    if(!url){
+        return "";
     }
 
+    if(
+        url.startsWith("http://") ||
+        url.startsWith("https://") ||
+        url.startsWith("data:")
+    ){
+        return url;
+    }
 
-    /* LATEST 4 NEWS */
+    if(url.startsWith("/")){
+        return url;
+    }
 
-    const latestNews =
-        agricultureNews
-        .slice()
-        .reverse()
-        .slice(0,4);
-
-
-    latestNews.forEach(function(news){
-
-        const originalIndex =
-            agricultureNews.indexOf(news);
-
-
-        const card =
-            document.createElement("div");
-
-
-        card.className =
-            "news-card";
-
-
-        card.innerHTML = `
-
-            <h3>
-                ${news.title || "Agriculture News"}
-            </h3>
-
-            <p>
-                ${news.description || ""}
-            </p>
-
-            <div class="news-date">
-                Date: ${news.date || ""}
-            </div>
-
-            <a
-                href="news-details.html?id=${originalIndex}"
-                class="read-more"
-            >
-                Read More
-            </a>
-
-        `;
-
-
-        newsGrid.appendChild(card);
-
-    });
+    return (
+        window.location.origin +
+        "/fpo-website/" +
+        url.replace(/^\/+/,"")
+    );
 
 }
 
 
-/* =========================================
-   START
-========================================= */
+/* ================= PRODUCTS ================= */
+
+async function loadProducts(){
+
+    try{
+
+        const snapshot =
+            await getDocs(
+                collection(
+                    db,
+                    "products"
+                )
+            );
+
+        productGrid.innerHTML = "";
+
+        if(snapshot.empty){
+
+            productGrid.innerHTML =
+                `
+                <div class="empty">
+                अभी कोई Product उपलब्ध नहीं है।
+                </div>
+                `;
+
+            productStatus.textContent =
+                "Firebase Connected — कोई Product उपलब्ध नहीं है।";
+
+            return;
+        }
+
+
+        let count = 0;
+
+
+        snapshot.forEach(
+            function(item){
+
+                const data =
+                    item.data();
+
+                count++;
+
+
+                const card =
+                    document.createElement("div");
+
+                card.className =
+                    "product-card";
+
+
+                const imageBox =
+                    document.createElement("div");
+
+                imageBox.className =
+                    "product-image";
+
+
+                const image =
+                    document.createElement("img");
+
+
+                const imageUrl =
+                    getImageUrl(
+                        data.image ||
+                        data.imageUrl ||
+                        data.photo ||
+                        ""
+                    );
+
+
+                if(imageUrl){
+
+                    image.src =
+                        imageUrl;
+
+                    image.alt =
+                        data.name ||
+                        "Product";
+
+                    image.onerror =
+                        function(){
+
+                            image.style.display =
+                                "none";
+
+                        };
+
+                    imageBox.appendChild(
+                        image
+                    );
+
+                }
+
+
+                const content =
+                    document.createElement("div");
+
+                content.className =
+                    "product-content";
+
+
+                const title =
+                    document.createElement("h3");
+
+                title.textContent =
+                    data.name ||
+                    data.title ||
+                    "Product";
+
+
+                const price =
+                    document.createElement("div");
+
+                price.className =
+                    "price";
+
+
+                const productPrice =
+                    data.price ||
+                    data.salePrice ||
+                    0;
+
+
+                price.textContent =
+                    "₹" +
+                    productPrice;
+
+
+                const link =
+                    document.createElement("a");
+
+                link.href =
+                    "products.html";
+
+                link.className =
+                    "view-btn";
+
+                link.textContent =
+                    "View Product";
+
+
+                content.appendChild(
+                    title
+                );
+
+                content.appendChild(
+                    price
+                );
+
+                content.appendChild(
+                    link
+                );
+
+
+                card.appendChild(
+                    imageBox
+                );
+
+                card.appendChild(
+                    content
+                );
+
+
+                productGrid.appendChild(
+                    card
+                );
+
+            }
+        );
+
+
+        productStatus.textContent =
+            "Firebase Connected — " +
+            count +
+            " Products सफलतापूर्वक load हुए।";
+
+    }
+    catch(error){
+
+        console.error(
+            "Products Error:",
+            error
+        );
+
+        productGrid.innerHTML =
+            `
+            <div class="empty">
+            Products load नहीं हो सके।
+            </div>
+            `;
+
+        productStatus.textContent =
+            "Firebase Products load करने में समस्या आई।";
+
+    }
+
+}
+
+
+/* ================= NEWS ================= */
+
+async function loadNews(){
+
+    try{
+
+        const snapshot =
+            await getDocs(
+                collection(
+                    db,
+                    "agricultureNews"
+                )
+            );
+
+
+        newsGrid.innerHTML = "";
+
+
+        if(snapshot.empty){
+
+            newsGrid.innerHTML =
+                `
+                <div class="empty">
+                अभी कोई Agriculture News उपलब्ध नहीं है।
+                </div>
+                `;
+
+            newsStatus.textContent =
+                "Firebase Connected — कोई News उपलब्ध नहीं है।";
+
+            return;
+
+        }
+
+
+        let count = 0;
+
+
+        snapshot.forEach(
+            function(item){
+
+                const data =
+                    item.data();
+
+                count++;
+
+
+                const card =
+                    document.createElement("article");
+
+                card.className =
+                    "news-card";
+
+
+                const title =
+                    document.createElement("h3");
+
+                title.textContent =
+                    data.title ||
+                    data.newsTitle ||
+                    "Agriculture News";
+
+
+                const date =
+                    document.createElement("div");
+
+                date.className =
+                    "news-date";
+
+                date.textContent =
+                    data.date ||
+                    data.newsDate ||
+                    "";
+
+
+                const description =
+                    document.createElement("p");
+
+                description.textContent =
+                    data.description ||
+                    data.newsDescription ||
+                    "";
+
+
+                card.appendChild(
+                    title
+                );
+
+                card.appendChild(
+                    date
+                );
+
+                card.appendChild(
+                    description
+                );
+
+
+                newsGrid.appendChild(
+                    card
+                );
+
+            }
+        );
+
+
+        newsStatus.textContent =
+            "Firebase Connected — " +
+            count +
+            " Agriculture News सफलतापूर्वक load हुईं।";
+
+    }
+    catch(error){
+
+        console.error(
+            "News Error:",
+            error
+        );
+
+        newsGrid.innerHTML =
+            `
+            <div class="empty">
+            Agriculture News load नहीं हो सकीं।
+            </div>
+            `;
+
+        newsStatus.textContent =
+            "Firebase News load करने में समस्या आई।";
+
+    }
+
+}
+
+
+/* ================= GALLERY ================= */
+
+async function loadGallery(){
+
+    try{
+
+        const snapshot =
+            await getDocs(
+                collection(
+                    db,
+                    "gallery"
+                )
+            );
+
+
+        galleryGrid.innerHTML = "";
+
+
+        if(snapshot.empty){
+
+            galleryGrid.innerHTML =
+                `
+                <div class="empty">
+                अभी Gallery में कोई Image उपलब्ध नहीं है।
+                </div>
+                `;
+
+            galleryStatus.textContent =
+                "Firebase Connected — Gallery खाली है।";
+
+            return;
+
+        }
+
+
+        let count = 0;
+
+
+        snapshot.forEach(
+            function(item){
+
+                const data =
+                    item.data();
+
+                const imageUrl =
+                    getImageUrl(
+                        data.imageUrl ||
+                        data.image ||
+                        ""
+                    );
+
+
+                if(!imageUrl){
+                    return;
+                }
+
+
+                count++;
+
+
+                const card =
+                    document.createElement("div");
+
+                card.className =
+                    "gallery-card";
+
+
+                const image =
+                    document.createElement("img");
+
+                image.className =
+                    "gallery-image";
+
+                image.src =
+                    imageUrl;
+
+                image.alt =
+                    data.title ||
+                    "Gallery Image";
+
+
+                image.onerror =
+                    function(){
+
+                        image.style.display =
+                            "none";
+
+                    };
+
+
+                const content =
+                    document.createElement("div");
+
+                content.className =
+                    "gallery-content";
+
+
+                const title =
+                    document.createElement("h3");
+
+                title.textContent =
+                    data.title ||
+                    "Gallery Image";
+
+
+                const description =
+                    document.createElement("p");
+
+                description.textContent =
+                    data.description ||
+                    "";
+
+
+                content.appendChild(
+                    title
+                );
+
+                if(
+                    data.description
+                ){
+
+                    content.appendChild(
+                        description
+                    );
+
+                }
+
+
+                card.appendChild(
+                    image
+                );
+
+                card.appendChild(
+                    content
+                );
+
+
+                galleryGrid.appendChild(
+                    card
+                );
+
+            }
+        );
+
+
+        galleryStatus.textContent =
+            "Firebase Connected — " +
+            count +
+            " Gallery Images सफलतापूर्वक load हुईं।";
+
+    }
+    catch(error){
+
+        console.error(
+            "Gallery Error:",
+            error
+        );
+
+        galleryGrid.innerHTML =
+            `
+            <div class="empty">
+            Gallery load नहीं हो सकी।
+            </div>
+            `;
+
+        galleryStatus.textContent =
+            "Firebase Gallery load करने में समस्या आई।";
+
+    }
+
+}
+
+
+/* ================= START ================= */
+
+loadProducts();
 
 loadNews();
 
-</script>
+loadGallery();
 
+</script>
 
 </body>
 
