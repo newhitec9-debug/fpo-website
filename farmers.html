@@ -7,177 +7,191 @@
 <title>Kisan Corner | Bundelkhand Organic Farmer Producer Company Limited</title>
 
 <style>
-
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 body{
     font-family:Arial,"Noto Sans Devanagari",sans-serif;
-    background:#f4f8f4;
+    background:#f4fff4;
     color:#333;
     line-height:1.6;
-    position:relative;
-}
-
-/* ================= WATERMARK ================= */
-
-body::before{
-    content:"";
-    position:fixed;
-    top:50%;
-    left:50%;
-    width:520px;
-    height:520px;
-    transform:translate(-50%,-50%);
-    background:url("images/fpo-logo.png.png") center/contain no-repeat;
-    opacity:0.035;
-    z-index:-1;
-    pointer-events:none;
 }
 
 /* ================= HEADER ================= */
 
 .main-header{
-    background:linear-gradient(135deg,#0b5d1e,#2e7d32);
-    color:white;
-    padding:18px 25px;
+    background:#f7fff3;
+    min-height:150px;
+    border-bottom:4px solid #f5a400;
     display:flex;
     align-items:center;
-    justify-content:center;
-    gap:22px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.18);
+    padding:15px 35px;
 }
 
 .logo-box{
-    width:110px;
-    height:110px;
-    background:white;
-    border-radius:50%;
+    width:120px;
+    min-width:120px;
+    height:120px;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:7px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.25);
-    flex-shrink:0;
+    margin-right:20px;
 }
 
 .logo-box img{
-    width:100%;
-    height:100%;
+    width:115px;
+    height:115px;
     object-fit:contain;
-    border-radius:50%;
 }
 
 .company-info{
+    flex:1;
     text-align:center;
 }
 
 .company-info h1{
+    color:#286b32;
     font-size:30px;
+    line-height:1.25;
     margin-bottom:4px;
-    font-weight:700;
 }
 
 .company-info h2{
-    font-size:21px;
-    font-weight:600;
-    margin-bottom:8px;
+    color:#286b32;
+    font-size:22px;
+    margin-bottom:10px;
 }
 
 .tagline{
     display:inline-block;
-    background:#f9a825;
-    color:#173d1c;
     padding:7px 20px;
-    border-radius:25px;
-    font-size:16px;
+    background:#f57c00;
+    color:white;
+    border-radius:22px;
+    font-size:14px;
     font-weight:bold;
 }
 
 /* ================= NAVIGATION ================= */
 
 .navbar{
-    background:#145a20;
+    background:#19752b;
+    border-bottom:3px solid #f5a400;
     display:flex;
     justify-content:center;
     align-items:center;
     flex-wrap:wrap;
-    padding:0 10px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.15);
 }
 
 .navbar a{
     color:white;
     text-decoration:none;
-    padding:14px 17px;
-    font-size:15px;
+    padding:13px 16px;
     font-weight:bold;
-    border-bottom:3px solid transparent;
-    transition:0.3s;
+    font-size:14px;
+    transition:.3s;
 }
 
 .navbar a:hover{
-    background:#2e7d32;
-    border-bottom-color:#f9a825;
+    background:#0d5b20;
 }
 
 .navbar a.active{
-    background:#f9a825;
-    color:#173d1c;
-    border-bottom-color:#ffffff;
+    background:#f57c00;
+    color:white;
 }
 
 /* ================= HERO ================= */
 
-.page-hero{
-    background:linear-gradient(
-        rgba(21,101,31,0.90),
-        rgba(46,125,50,0.90)
-    );
-    color:white;
+.hero{
+    min-height:280px;
+
+    background:
+        linear-gradient(
+            rgba(35,120,53,.88),
+            rgba(65,155,80,.82)
+        );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    padding:48px 20px;
+
+    padding:45px 20px;
+
+    color:white;
+
+    position:relative;
+    overflow:hidden;
 }
 
-.page-hero h1{
-    font-size:36px;
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:340px;
+    height:340px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:
+        url("images/fpo-logo.png.png")
+        center/contain no-repeat;
+
+    opacity:.10;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:40px;
     margin-bottom:8px;
+    text-shadow:2px 2px 4px #333;
 }
 
-.page-hero h2{
-    font-size:20px;
-    font-weight:normal;
+.hero h2{
+    font-size:22px;
+    color:#fff200;
+    margin-bottom:12px;
 }
 
-.page-hero p{
-    max-width:850px;
-    margin:12px auto 0;
-    font-size:16px;
-}
-
-/* ================= CONTAINER ================= */
-
-.container{
-    width:94%;
-    max-width:1200px;
-    margin:30px auto;
+.hero p{
+    font-size:17px;
 }
 
 /* ================= STATUS ================= */
 
 .firebase-status{
+    width:94%;
     max-width:1100px;
-    margin:25px auto 0;
+    margin:25px auto 10px;
     padding:13px 18px;
     border-radius:8px;
     text-align:center;
     font-weight:bold;
     background:#e8f5e9;
     color:#1b5e20;
-    border:1px solid #81c784;
+    border:1px solid #66bb6a;
+}
+
+/* ================= MAIN ================= */
+
+.container{
+    width:94%;
+    max-width:1100px;
+    margin:0 auto;
+    padding-bottom:50px;
 }
 
 /* ================= INFO CARDS ================= */
@@ -186,37 +200,35 @@ body::before{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
-    margin-bottom:30px;
+    margin:28px 0;
 }
 
 .info-card{
     background:white;
-    padding:25px;
-    border-radius:12px;
+    padding:23px 18px;
     text-align:center;
-    box-shadow:0 3px 12px rgba(0,0,0,0.10);
+    border-radius:12px;
+    box-shadow:0 4px 14px rgba(0,0,0,.10);
     border-top:5px solid #2e7d32;
 }
 
 .info-card h3{
-    color:#1b5e20;
+    color:#286b32;
     margin-bottom:8px;
-    font-size:21px;
 }
 
 .info-card p{
-    color:#555;
+    color:#666;
+    font-size:14px;
 }
 
-/* ================= FORM BOX ================= */
+/* ================= FORM ================= */
 
 .form-box{
     background:white;
-    max-width:950px;
-    margin:0 auto 35px;
     padding:32px;
     border-radius:14px;
-    box-shadow:0 4px 18px rgba(0,0,0,0.12);
+    box-shadow:0 4px 18px rgba(0,0,0,.12);
     border-top:6px solid #2e7d32;
 }
 
@@ -226,16 +238,14 @@ body::before{
 }
 
 .form-title h2{
-    color:#1b5e20;
-    font-size:28px;
+    color:#286b32;
+    font-size:30px;
+    margin-bottom:5px;
 }
 
 .form-title p{
     color:#666;
-    margin-top:5px;
 }
-
-/* ================= FORM GRID ================= */
 
 .form-grid{
     display:grid;
@@ -253,151 +263,203 @@ body::before{
 }
 
 .form-group label{
+    color:#245b29;
     font-weight:bold;
     margin-bottom:6px;
-    color:#245b29;
 }
 
 .form-group input,
-.form-group select,
-.form-group textarea{
+.form-group select{
     width:100%;
     padding:12px 13px;
     border:1px solid #c8d8c9;
     border-radius:7px;
-    font-size:15px;
-    outline:none;
     background:#fbfffb;
+    font-size:15px;
+    font-family:inherit;
+    outline:none;
 }
 
 .form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
+.form-group select:focus{
     border-color:#2e7d32;
-    box-shadow:0 0 0 2px rgba(46,125,50,0.12);
+    box-shadow:0 0 0 2px rgba(46,125,50,.12);
 }
 
-.form-group textarea{
-    min-height:90px;
-    resize:vertical;
+/* ================= CHECKBOX ================= */
+
+.checkbox-box{
+    background:#f8fff8;
+    border:1px solid #c8dfc9;
+    border-radius:9px;
+    padding:16px;
+    margin-top:20px;
+}
+
+.checkbox-box label{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    color:#555;
+    font-size:14px;
+}
+
+.checkbox-box input{
+    width:18px;
+    height:18px;
+    margin-top:3px;
 }
 
 /* ================= BUTTON ================= */
 
 .submit-area{
     text-align:center;
-    margin-top:25px;
+    margin-top:28px;
 }
 
-.submit-btn{
-    border:none;
+.submit-button{
     background:linear-gradient(135deg,#1b5e20,#43a047);
     color:white;
-    padding:13px 35px;
+    border:none;
+    padding:14px 38px;
     border-radius:8px;
     font-size:17px;
     font-weight:bold;
     cursor:pointer;
-    box-shadow:0 3px 8px rgba(0,0,0,0.18);
+    box-shadow:0 3px 8px rgba(0,0,0,.20);
 }
 
-.submit-btn:hover{
+.submit-button:hover{
     background:linear-gradient(135deg,#145a20,#2e7d32);
 }
 
-.clear-btn{
-    margin-left:10px;
-    padding:12px 25px;
-    border:1px solid #999;
-    border-radius:8px;
-    background:#fff;
-    color:#444;
-    cursor:pointer;
-    font-weight:bold;
+.submit-button:disabled{
+    background:#999;
+    cursor:not-allowed;
 }
 
-.clear-btn:hover{
-    background:#f1f1f1;
+.clear-button{
+    background:white;
+    color:#555;
+    border:1px solid #999;
+    padding:13px 25px;
+    border-radius:8px;
+    margin-left:10px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 /* ================= SUCCESS ================= */
 
-#successMessage{
+.success-message{
     display:none;
     max-width:850px;
-    margin:20px auto;
-    padding:22px;
+    margin:25px auto;
     background:#e8f5e9;
     border:1px solid #66bb6a;
-    border-radius:10px;
+    border-radius:12px;
+    padding:30px;
     text-align:center;
     color:#1b5e20;
+    box-shadow:0 4px 15px rgba(0,0,0,.10);
 }
 
-#successMessage h3{
-    margin-bottom:8px;
+.success-message h2{
+    margin-bottom:10px;
 }
 
 .application-id{
     display:inline-block;
-    margin-top:10px;
-    padding:10px 18px;
+    margin:12px 0;
+    padding:12px 20px;
     background:white;
-    border-radius:7px;
+    border-radius:8px;
     color:#1565c0;
+    font-size:23px;
     font-weight:bold;
-    font-size:20px;
-}
-
-/* ================= IMPORTANT ================= */
-
-.notice{
-    max-width:950px;
-    margin:0 auto 30px;
-    background:#fff8e1;
-    border-left:5px solid #f9a825;
-    padding:18px 20px;
-    border-radius:7px;
-}
-
-.notice h3{
-    color:#8d6e00;
-    margin-bottom:5px;
+    box-shadow:0 2px 7px rgba(0,0,0,.12);
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-    background:#174d20;
+    background:#075b27;
     color:white;
     text-align:center;
-    padding:25px 15px;
-    margin-top:45px;
+    padding:28px 15px;
 }
 
 footer p{
-    margin:5px;
+    margin:6px 0;
 }
 
 /* ================= MOBILE ================= */
 
-@media(max-width:850px){
+@media(max-width:800px){
 
     .main-header{
         flex-direction:column;
         text-align:center;
+        padding:15px 10px;
+    }
+
+    .logo-box{
+        width:105px;
+        min-width:105px;
+        height:105px;
+        margin:0 auto 8px;
+    }
+
+    .logo-box img{
+        width:100px;
+        height:100px;
+    }
+
+    .company-info{
+        width:100%;
     }
 
     .company-info h1{
-        font-size:25px;
+        font-size:21px;
     }
 
     .company-info h2{
-        font-size:18px;
+        font-size:16px;
+    }
+
+    .tagline{
+        font-size:12px;
+        padding:6px 14px;
+    }
+
+    .navbar a{
+        padding:10px 9px;
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:250px;
+        padding:40px 15px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero h2{
+        font-size:19px;
+    }
+
+    .hero p{
+        font-size:14px;
     }
 
     .info-grid{
         grid-template-columns:1fr;
+    }
+
+    .form-box{
+        padding:20px 15px;
     }
 
     .form-grid{
@@ -408,69 +470,12 @@ footer p{
         grid-column:auto;
     }
 
-}
-
-@media(max-width:600px){
-
-    .main-header{
-        padding:15px 10px;
-    }
-
-    .logo-box{
-        width:90px;
-        height:90px;
-    }
-
-    .company-info h1{
-        font-size:21px;
-    }
-
-    .company-info h2{
-        font-size:15px;
-    }
-
-    .tagline{
-        font-size:12px;
-        padding:6px 12px;
-    }
-
-    .navbar a{
-        padding:9px 10px;
-        font-size:12px;
-    }
-
-    .page-hero{
-        padding:35px 15px;
-    }
-
-    .page-hero h1{
-        font-size:26px;
-    }
-
-    .page-hero h2{
-        font-size:17px;
-    }
-
-    .container{
-        width:96%;
-    }
-
-    .form-box{
-        padding:20px 15px;
-    }
-
-    .form-title h2{
-        font-size:23px;
-    }
-
-    .submit-btn,
-    .clear-btn{
+    .submit-button,
+    .clear-button{
         width:100%;
         margin:5px 0;
     }
-
 }
-
 </style>
 </head>
 
@@ -481,11 +486,16 @@ footer p{
 <header class="main-header">
 
     <div class="logo-box">
+
         <img
             src="images/fpo-logo.png.png"
             alt="Bundelkhand Organic FPO Logo"
-            onerror="this.onerror=null;this.src='images/logo.png.png';"
+            onerror="
+                this.onerror=null;
+                this.src='images/logo.png.png';
+            "
         >
+
     </div>
 
     <div class="company-info">
@@ -552,20 +562,24 @@ footer p{
 
 <!-- ================= HERO ================= -->
 
-<section class="page-hero">
+<section class="hero">
 
-    <h1>
-        Kisan Corner
-    </h1>
+    <div class="hero-content">
 
-    <h2>
-        किसान पंजीकरण एवं FPO किसान सेवा केंद्र
-    </h2>
+        <h1>
+            Kisan Corner
+        </h1>
 
-    <p>
-        Bundelkhand Organic Farmer Producer Company Limited
-        के साथ जुड़ें और कृषि से संबंधित सेवाओं एवं अवसरों का लाभ उठाएँ।
-    </p>
+        <h2>
+            किसान पंजीकरण एवं किसान सेवाएँ
+        </h2>
+
+        <p>
+            FPO से जुड़ने और किसान संबंधी जानकारी
+            उपलब्ध कराने के लिए अपना विवरण दर्ज करें।
+        </p>
+
+    </div>
 
 </section>
 
@@ -576,7 +590,7 @@ footer p{
     id="firebaseStatus"
     class="firebase-status"
 >
-    Firebase से Farmer Database connect हो रहा है...
+    Firebase Connected — Farmer Registration Database तैयार है।
 </div>
 
 
@@ -592,26 +606,11 @@ footer p{
         <div class="info-card">
 
             <h3>
-                Farmer Registration
+                किसान पंजीकरण
             </h3>
 
             <p>
-                FPO से जुड़ने के लिए किसान अपना
-                पंजीकरण कर सकते हैं।
-            </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>
-                Farmer Services
-            </h3>
-
-            <p>
-                कृषि उत्पाद, बाजार, प्रशिक्षण और
-                सामूहिक कृषि सेवाओं की जानकारी।
+                अपनी किसान जानकारी ऑनलाइन दर्ज करें।
             </p>
 
         </div>
@@ -624,8 +623,20 @@ footer p{
             </h3>
 
             <p>
-                FPO Membership के लिए
-                Join FPO पेज पर आवेदन करें।
+                FPO से जुड़कर सामूहिक कृषि विकास का हिस्सा बनें।
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                किसान सेवाएँ
+            </h3>
+
+            <p>
+                कृषि उत्पाद, बाजार और FPO से संबंधित जानकारी प्राप्त करें।
             </p>
 
         </div>
@@ -633,30 +644,16 @@ footer p{
     </div>
 
 
-    <!-- ================= NOTICE ================= -->
-
-    <div class="notice">
-
-        <h3>
-            किसान के लिए महत्वपूर्ण जानकारी
-        </h3>
-
-        <p>
-            कृपया Farmer Registration Form में
-            सही एवं पूर्ण जानकारी भरें। मोबाइल नंबर
-            सही दर्ज करें ताकि FPO आपसे संपर्क कर सके।
-        </p>
-
-    </div>
-
-
     <!-- ================= SUCCESS ================= -->
 
-    <div id="successMessage">
+    <div
+        id="successMessage"
+        class="success-message"
+    >
 
-        <h3>
-            Farmer Registration सफलतापूर्वक दर्ज हो गया।
-        </h3>
+        <h2>
+            किसान पंजीकरण सफलतापूर्वक जमा हो गया।
+        </h2>
 
         <p>
             आपका Application ID:
@@ -667,31 +664,56 @@ footer p{
             class="application-id"
         ></div>
 
-        <p style="margin-top:10px;">
+        <p>
             कृपया Application ID सुरक्षित रखें।
         </p>
+
+        <p>
+            FPO द्वारा आपके आवेदन की जानकारी की समीक्षा की जाएगी।
+        </p>
+
+        <br>
+
+        <a
+            href="index.html"
+            style="
+                display:inline-block;
+                background:#2e7d32;
+                color:white;
+                padding:11px 22px;
+                border-radius:7px;
+                text-decoration:none;
+                font-weight:bold;
+            "
+        >
+            Home Page
+        </a>
 
     </div>
 
 
-    <!-- ================= FARMER FORM ================= -->
+    <!-- ================= FORM ================= -->
 
-    <section class="form-box">
+    <section
+        id="formSection"
+        class="form-box"
+    >
 
         <div class="form-title">
 
             <h2>
-                Farmer Registration Form
+                Farmer Registration
             </h2>
 
             <p>
-                किसान पंजीकरण के लिए नीचे दी गई जानकारी भरें
+                किसान की सही जानकारी भरें
             </p>
 
         </div>
 
 
         <form id="farmerForm">
+
 
             <div class="form-grid">
 
@@ -706,7 +728,7 @@ footer p{
 
                     <input
                         type="text"
-                        id="name"
+                        id="farmerName"
                         placeholder="किसान का नाम"
                         required
                     >
@@ -724,7 +746,7 @@ footer p{
 
                     <input
                         type="text"
-                        id="father"
+                        id="fatherName"
                         placeholder="पिता / पति का नाम"
                         required
                     >
@@ -743,7 +765,7 @@ footer p{
                     <input
                         type="tel"
                         id="mobile"
-                        placeholder="10 अंकों का मोबाइल नंबर"
+                        placeholder="10 Digit Mobile Number"
                         maxlength="10"
                         inputmode="numeric"
                         required
@@ -763,7 +785,7 @@ footer p{
                     <input
                         type="text"
                         id="aadhaar"
-                        placeholder="12 अंकों का Aadhaar Number"
+                        placeholder="12 Digit Aadhaar Number"
                         maxlength="12"
                         inputmode="numeric"
                     >
@@ -800,7 +822,7 @@ footer p{
                     <input
                         type="text"
                         id="farmerRegistration"
-                        placeholder="यदि उपलब्ध हो"
+                        placeholder="Farmer Registration Number"
                     >
 
                 </div>
@@ -817,42 +839,8 @@ footer p{
                     <input
                         type="text"
                         id="village"
-                        placeholder="गांव का नाम"
+                        placeholder="गाँव"
                         required
-                    >
-
-                </div>
-
-
-                <!-- PANCHAYAT -->
-
-                <div class="form-group">
-
-                    <label>
-                        Gram Panchayat
-                    </label>
-
-                    <input
-                        type="text"
-                        id="panchayat"
-                        placeholder="ग्राम पंचायत"
-                    >
-
-                </div>
-
-
-                <!-- BLOCK -->
-
-                <div class="form-group">
-
-                    <label>
-                        Block
-                    </label>
-
-                    <input
-                        type="text"
-                        id="block"
-                        placeholder="विकासखंड"
                     >
 
                 </div>
@@ -881,15 +869,89 @@ footer p{
                 <div class="form-group">
 
                     <label>
-                        State
+                        State *
                     </label>
 
                     <input
                         type="text"
                         id="state"
                         value="Uttar Pradesh"
-                        readonly
+                        required
                     >
+
+                </div>
+
+
+                <!-- MAIN CROP -->
+
+                <div class="form-group">
+
+                    <label>
+                        Main Crop *
+                    </label>
+
+                    <select
+                        id="mainCrop"
+                        required
+                    >
+
+                        <option value="">
+                            Select Crop
+                        </option>
+
+                        <option value="गेहूँ">
+                            गेहूँ
+                        </option>
+
+                        <option value="चना">
+                            चना
+                        </option>
+
+                        <option value="चना दाल">
+                            चना दाल
+                        </option>
+
+                        <option value="मूंग">
+                            मूंग
+                        </option>
+
+                        <option value="मसूर">
+                            मसूर
+                        </option>
+
+                        <option value="मटर">
+                            मटर
+                        </option>
+
+                        <option value="उड़द">
+                            उड़द
+                        </option>
+
+                        <option value="अरहर">
+                            अरहर
+                        </option>
+
+                        <option value="सोयाबीन">
+                            सोयाबीन
+                        </option>
+
+                        <option value="सरसों">
+                            सरसों
+                        </option>
+
+                        <option value="तिल">
+                            तिल
+                        </option>
+
+                        <option value="मूंगफली">
+                            मूंगफली
+                        </option>
+
+                        <option value="अन्य">
+                            अन्य
+                        </option>
+
+                    </select>
 
                 </div>
 
@@ -899,70 +961,14 @@ footer p{
                 <div class="form-group">
 
                     <label>
-                        Total Land Holding
+                        Land Area
                     </label>
 
                     <input
                         type="text"
-                        id="land"
-                        placeholder="उदाहरण: 2.5 Acre"
+                        id="landArea"
+                        placeholder="उदाहरण: 2 Acre"
                     >
-
-                </div>
-
-
-                <!-- CROP -->
-
-                <div class="form-group">
-
-                    <label>
-                        Main Crop
-                    </label>
-
-                    <input
-                        type="text"
-                        id="crop"
-                        placeholder="गेहूँ, चना, सरसों आदि"
-                    >
-
-                </div>
-
-
-                <!-- IRRIGATION -->
-
-                <div class="form-group">
-
-                    <label>
-                        Irrigation Source
-                    </label>
-
-                    <select id="irrigation">
-
-                        <option value="">
-                            Select
-                        </option>
-
-                        <option value="Tube Well">
-                            Tube Well
-                        </option>
-
-                        <option value="Bore Well">
-                            Bore Well
-                        </option>
-
-                        <option value="Canal">
-                            Canal
-                        </option>
-
-                        <option value="Rainfed">
-                            Rainfed
-                        </option>
-
-                        <option value="Other">
-                            Other
-                        </option>
-
-                    </select>
 
                 </div>
 
@@ -995,7 +1001,7 @@ footer p{
                     <input
                         type="text"
                         id="accountNumber"
-                        placeholder="Bank Account Number"
+                        placeholder="Account Number"
                     >
 
                 </div>
@@ -1018,87 +1024,58 @@ footer p{
                 </div>
 
 
-                <!-- ADDRESS -->
-
-                <div class="form-group full">
-
-                    <label>
-                        Complete Address
-                    </label>
-
-                    <textarea
-                        id="address"
-                        placeholder="पूरा पता"
-                    ></textarea>
-
-                </div>
+            </div>
 
 
-                <!-- REMARKS -->
+            <!-- ================= CONSENT ================= -->
 
-                <div class="form-group full">
+            <div class="checkbox-box">
 
-                    <label>
-                        Remarks
-                    </label>
+                <label>
 
-                    <textarea
-                        id="remarks"
-                        placeholder="अन्य जानकारी"
-                    ></textarea>
+                    <input
+                        type="checkbox"
+                        id="consent"
+                        required
+                    >
 
-                </div>
+                    <span>
+                        मैं घोषणा करता/करती हूँ कि मेरे द्वारा दी गई
+                        जानकारी मेरी जानकारी के अनुसार सही है और
+                        FPO इस जानकारी का उपयोग किसान पंजीकरण एवं
+                        संबंधित FPO सेवाओं के लिए कर सकता है।
+                    </span>
 
+                </label>
 
             </div>
 
 
-            <!-- ================= BUTTONS ================= -->
+            <!-- ================= BUTTON ================= -->
 
             <div class="submit-area">
 
                 <button
                     type="submit"
-                    class="submit-btn"
+                    id="submitButton"
+                    class="submit-button"
                 >
                     Submit Farmer Registration
                 </button>
 
                 <button
                     type="reset"
-                    class="clear-btn"
+                    class="clear-button"
                 >
                     Clear Form
                 </button>
 
             </div>
 
+
         </form>
 
     </section>
-
-
-    <!-- ================= MEMBERSHIP BUTTON ================= -->
-
-    <div style="text-align:center;margin:30px 0;">
-
-        <a
-            href="membership.html"
-            style="
-            display:inline-block;
-            background:#f9a825;
-            color:#173d1c;
-            text-decoration:none;
-            padding:13px 28px;
-            border-radius:8px;
-            font-weight:bold;
-            "
-        >
-            Join FPO Membership
-        </a>
-
-    </div>
-
 
 </div>
 
@@ -1112,7 +1089,7 @@ footer p{
     </p>
 
     <p>
-        स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
+        Empowering Farmers • Promoting Organic Agriculture
     </p>
 
     <p>
@@ -1122,96 +1099,253 @@ footer p{
 </footer>
 
 
-<!-- =====================================================
-     FIREBASE + FARMER REGISTRATION
-===================================================== -->
+<!-- ================= FIREBASE ================= -->
 
 <script type="module">
 
 import {
     initializeApp
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
     getFirestore,
     collection,
     addDoc,
     serverTimestamp
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
-/*
-==========================================================
-IMPORTANT
-
-नीचे वही Firebase configuration रखें
-जो आपकी बाकी working pages में है।
-==========================================================
-*/
+/* ================= FIREBASE CONFIG ================= */
 
 const firebaseConfig = {
 
-    apiKey: "YOUR_API_KEY",
+    apiKey:
+    "AIzaSyDEX5Ta3l2UVT7IKlWdxqqyacY0HELM24s",
 
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    authDomain:
+    "bundelkhand-organic-fpo.firebaseapp.com",
 
-    projectId: "YOUR_PROJECT_ID",
+    projectId:
+    "bundelkhand-organic-fpo",
 
-    storageBucket: "YOUR_PROJECT.appspot.com",
+    storageBucket:
+    "bundelkhand-organic-fpo.firebasestorage.app",
 
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    messagingSenderId:
+    "939641455963",
 
-    appId: "YOUR_APP_ID"
+    appId:
+    "1:939641455963:web:1745b1299b3c463e74867e"
 
 };
 
 
-const app =
-    initializeApp(firebaseConfig);
+/* ================= INITIALIZE ================= */
 
+const app =
+    initializeApp(
+        firebaseConfig
+    );
 
 const db =
     getFirestore(app);
 
 
-/* ================= FIREBASE STATUS ================= */
+/* ================= ELEMENTS ================= */
 
-const firebaseStatus =
-    document.getElementById("firebaseStatus");
+const form =
+    document.getElementById(
+        "farmerForm"
+    );
 
-firebaseStatus.textContent =
-    "Firebase Connected — Farmer Database तैयार है।";
+const submitButton =
+    document.getElementById(
+        "submitButton"
+    );
 
-firebaseStatus.style.background =
-    "#e8f5e9";
+const statusBox =
+    document.getElementById(
+        "firebaseStatus"
+    );
 
-firebaseStatus.style.color =
-    "#1b5e20";
+const formSection =
+    document.getElementById(
+        "formSection"
+    );
+
+const successMessage =
+    document.getElementById(
+        "successMessage"
+    );
+
+const applicationIdBox =
+    document.getElementById(
+        "applicationId"
+    );
 
 
-/* ================= FORM ================= */
+/* ================= STATUS ================= */
 
-const farmerForm =
-    document.getElementById("farmerForm");
+statusBox.textContent =
+    "Firebase Connected — Farmer Registration Database तैयार है।";
 
 
-farmerForm.addEventListener(
+/* ================= GENERATE ID ================= */
+
+function generateApplicationId(){
+
+    return "FAR" +
+        Math.floor(
+            10000000 +
+            Math.random() * 90000000
+        );
+
+}
+
+
+/* ================= FORM SUBMIT ================= */
+
+form.addEventListener(
     "submit",
-    async function(event){
+    async function(e){
 
-        event.preventDefault();
+        e.preventDefault();
+
+
+        const farmerName =
+            document.getElementById(
+                "farmerName"
+            ).value.trim();
+
+
+        const fatherName =
+            document.getElementById(
+                "fatherName"
+            ).value.trim();
 
 
         const mobile =
-            document.getElementById("mobile")
-            .value
-            .trim();
+            document.getElementById(
+                "mobile"
+            ).value.trim();
 
 
-        if(!/^[0-9]{10}$/.test(mobile)){
+        const aadhaar =
+            document.getElementById(
+                "aadhaar"
+            ).value.trim();
+
+
+        const pan =
+            document.getElementById(
+                "pan"
+            ).value.trim();
+
+
+        const farmerRegistration =
+            document.getElementById(
+                "farmerRegistration"
+            ).value.trim();
+
+
+        const village =
+            document.getElementById(
+                "village"
+            ).value.trim();
+
+
+        const district =
+            document.getElementById(
+                "district"
+            ).value.trim();
+
+
+        const state =
+            document.getElementById(
+                "state"
+            ).value.trim();
+
+
+        const mainCrop =
+            document.getElementById(
+                "mainCrop"
+            ).value;
+
+
+        const landArea =
+            document.getElementById(
+                "landArea"
+            ).value.trim();
+
+
+        const bankName =
+            document.getElementById(
+                "bankName"
+            ).value.trim();
+
+
+        const accountNumber =
+            document.getElementById(
+                "accountNumber"
+            ).value.trim();
+
+
+        const ifsc =
+            document.getElementById(
+                "ifsc"
+            ).value.trim();
+
+
+        /* ================= MOBILE ================= */
+
+        if(
+            !/^[0-9]{10}$/.test(
+                mobile
+            )
+        ){
 
             alert(
-                "कृपया सही 10 अंकों का Mobile Number दर्ज करें।"
+                "कृपया सही 10 Digit Mobile Number डालें।"
+            );
+
+            return;
+
+        }
+
+
+        /* ================= AADHAAR ================= */
+
+        if(
+            aadhaar &&
+            !/^[0-9]{12}$/.test(
+                aadhaar
+            )
+        ){
+
+            alert(
+                "Aadhaar Number 12 अंकों का होना चाहिए।"
+            );
+
+            return;
+
+        }
+
+
+        /* ================= PAN ================= */
+
+        if(
+            pan &&
+            !/^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$/.test(
+                pan
+            )
+        ){
+
+            alert(
+                "कृपया सही PAN Number डालें।"
             );
 
             return;
@@ -1220,202 +1354,205 @@ farmerForm.addEventListener(
 
 
         const applicationId =
-            "FAR" +
-            Math.floor(
-                10000000 +
-                Math.random() * 90000000
-            );
+            generateApplicationId();
 
+
+        submitButton.disabled =
+            true;
+
+
+        submitButton.textContent =
+            "Saving...";
+
+
+        /* ================= DATA ================= */
 
         const farmerData = {
 
             applicationId:
-
                 applicationId,
 
-            name:
+            farmerName:
+                farmerName,
 
-                document.getElementById("name")
-                .value
-                .trim(),
-
-            father:
-
-                document.getElementById("father")
-                .value
-                .trim(),
+            fatherName:
+                fatherName,
 
             mobile:
-
                 mobile,
 
             aadhaar:
-
-                document.getElementById("aadhaar")
-                .value
-                .trim(),
+                aadhaar,
 
             pan:
-
-                document.getElementById("pan")
-                .value
-                .trim(),
+                pan,
 
             farmerRegistration:
-
-                document.getElementById(
-                    "farmerRegistration"
-                )
-                .value
-                .trim(),
+                farmerRegistration,
 
             village:
-
-                document.getElementById("village")
-                .value
-                .trim(),
-
-            panchayat:
-
-                document.getElementById("panchayat")
-                .value
-                .trim(),
-
-            block:
-
-                document.getElementById("block")
-                .value
-                .trim(),
+                village,
 
             district:
-
-                document.getElementById("district")
-                .value
-                .trim(),
+                district,
 
             state:
+                state,
 
-                document.getElementById("state")
-                .value,
+            mainCrop:
+                mainCrop,
 
-            land:
-
-                document.getElementById("land")
-                .value
-                .trim(),
-
-            crop:
-
-                document.getElementById("crop")
-                .value
-                .trim(),
-
-            irrigation:
-
-                document.getElementById("irrigation")
-                .value,
+            landArea:
+                landArea,
 
             bankName:
-
-                document.getElementById("bankName")
-                .value
-                .trim(),
+                bankName,
 
             accountNumber:
-
-                document.getElementById(
-                    "accountNumber"
-                )
-                .value
-                .trim(),
+                accountNumber,
 
             ifsc:
-
-                document.getElementById("ifsc")
-                .value
-                .trim(),
-
-            address:
-
-                document.getElementById("address")
-                .value
-                .trim(),
-
-            remarks:
-
-                document.getElementById("remarks")
-                .value
-                .trim(),
+                ifsc,
 
             status:
-
                 "Pending",
 
-            createdAt:
+            date:
+                new Date()
+                .toLocaleString(
+                    "en-IN"
+                ),
 
+            createdAt:
                 serverTimestamp()
 
         };
 
 
+        /* ================= FIREBASE ================= */
+
         try{
 
+            const docRef =
+                await addDoc(
 
-            await addDoc(
-                collection(
-                    db,
-                    "farmers"
-                ),
-                farmerData
-            );
+                    collection(
+                        db,
+                        "farmers"
+                    ),
 
+                    farmerData
 
-            document.getElementById(
-                "applicationId"
-            ).textContent =
-                applicationId;
+                );
 
 
-            document.getElementById(
-                "successMessage"
-            ).style.display =
+            /* ================= LOCAL BACKUP ================= */
+
+            try{
+
+                let farmers =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "farmers"
+                        )
+                    ) || [];
+
+
+                farmers.push({
+
+                    ...farmerData,
+
+                    firestoreId:
+                        docRef.id
+
+                });
+
+
+                localStorage.setItem(
+
+                    "farmers",
+
+                    JSON.stringify(
+                        farmers
+                    )
+
+                );
+
+            }
+            catch(localError){
+
+                console.warn(
+                    "LocalStorage backup failed:",
+                    localError
+                );
+
+            }
+
+
+            /* ================= SUCCESS ================= */
+
+            formSection.style.display =
+                "none";
+
+
+            successMessage.style.display =
                 "block";
 
 
-            farmerForm.reset();
+            applicationIdBox.textContent =
+                applicationId;
 
 
-            document.getElementById(
-                "state"
-            ).value =
-                "Uttar Pradesh";
+            statusBox.textContent =
+                "Firebase Connected — Farmer Registration सफलतापूर्वक save हो गया।";
 
 
-            window.scrollTo({
+            successMessage.scrollIntoView({
 
-                top:0,
+                behavior:
+                    "smooth",
 
-                behavior:"smooth"
+                block:
+                    "center"
 
             });
 
 
-            alert(
-                "Farmer Registration सफलतापूर्वक दर्ज हो गया।"
-            );
-
-
-        }catch(error){
+        }
+        catch(error){
 
             console.error(
-                "Firebase Error:",
+                "Farmer Registration Error:",
                 error
             );
 
 
+            statusBox.textContent =
+                "Firebase Error — Farmer Registration save नहीं हो सका।";
+
+
+            statusBox.style.background =
+                "#ffebee";
+
+            statusBox.style.color =
+                "#b71c1c";
+
+            statusBox.style.borderColor =
+                "#ef5350";
+
+
             alert(
-                "Farmer Registration save नहीं हो सका। कृपया Firebase Rules और Configuration check करें।"
+                "Farmer Registration save नहीं हो सका:\n\n" +
+                error.message
             );
+
+
+            submitButton.disabled =
+                false;
+
+
+            submitButton.textContent =
+                "Submit Farmer Registration";
 
         }
 
