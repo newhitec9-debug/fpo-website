@@ -14,910 +14,471 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     margin:0;
     font-family:Arial,Helvetica,sans-serif;
-    background:#f7fff7;
+    background:#f4fff4;
     color:#263238;
 }
 
-/* =====================================================
-   HEADER
-===================================================== */
+/* ================= HEADER ================= */
 
-.header{
-    background:linear-gradient(
-        135deg,
-        #1b5e20,
-        #2e7d32,
-        #388e3c
-    );
-
+header{
+    background:linear-gradient(135deg,#1b5e20,#2e7d32,#43a047);
     color:white;
-    padding:12px 20px;
+    padding:22px 15px;
 }
 
 .header-inner{
     max-width:1200px;
     margin:auto;
-
     display:flex;
     align-items:center;
     gap:18px;
 }
 
-/* LOGO */
-
-.logo-box{
-    width:78px;
-    height:78px;
-
+.logo{
+    width:75px;
+    height:75px;
     background:white;
-
-    border-radius:50%;
-
     border:4px solid #fbc02d;
-
+    border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-
     overflow:hidden;
-
     flex-shrink:0;
-
-    box-shadow:
-        0 3px 10px rgba(0,0,0,.25);
 }
 
-.logo-box img{
+.logo img{
     width:100%;
     height:100%;
     object-fit:contain;
 }
 
-.header-text h1{
+header h1{
     margin:0;
-
     font-size:27px;
-    line-height:1.25;
 }
 
-.header-text p{
-    margin:6px 0 0;
-
-    font-size:16px;
+header p{
+    margin:7px 0 0;
 }
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
+/* ================= NAVIGATION ================= */
 
-.navbar{
+nav{
     background:white;
-
+    padding:12px 15px;
     border-bottom:1px solid #ddd;
-
-    box-shadow:
-        0 2px 7px rgba(0,0,0,.08);
-
-    position:sticky;
-    top:0;
-    z-index:1000;
 }
 
 .nav-inner{
     max-width:1200px;
     margin:auto;
-
-    padding:10px 15px;
-
     display:flex;
     justify-content:center;
-
     flex-wrap:wrap;
-
-    gap:8px;
+    gap:9px;
 }
 
-.nav-inner a{
-    text-decoration:none;
-
+nav a{
     color:white;
-
-    padding:9px 15px;
-
-    border-radius:6px;
-
+    text-decoration:none;
     font-weight:bold;
-
-    font-size:14px;
-
-    transition:.2s;
+    padding:10px 16px;
+    border-radius:7px;
 }
 
-.nav-inner a:hover{
-    transform:translateY(-2px);
+.home{background:#f57c00;}
+.about{background:#388e3c;}
+.products{background:#1976d2;}
+.farmers{background:#00897b;}
+.gallery{background:#6a1b9a;}
+.news{background:#ef6c00;}
+.contact{background:#455a64;}
+.login{background:#c62828;}
 
-    box-shadow:
-        0 3px 8px rgba(0,0,0,.18);
-}
-
-.nav-home{
-    background:#f57c00;
-}
-
-.nav-about{
-    background:#388e3c;
-}
-
-.nav-products{
-    background:#1976d2;
-}
-
-.nav-farmers{
-    background:#00897b;
-}
-
-.nav-gallery{
-    background:#6a1b9a;
-}
-
-.nav-news{
-    background:#ef6c00;
-}
-
-.nav-contact{
-    background:#455a64;
-}
-
-.nav-login{
-    background:#c62828;
-}
-
-/* =====================================================
-   HERO
-===================================================== */
+/* ================= HERO ================= */
 
 .hero{
-
-    min-height:455px;
-
-    position:relative;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
+    min-height:430px;
+    padding:75px 20px;
     text-align:center;
-
     color:white;
 
+    position:relative;
     overflow:hidden;
 
     background:
         linear-gradient(
-            rgba(27,94,32,.82),
-            rgba(46,125,50,.82)
-        ),
-        url("images/fpo-logo.png.png");
+            rgba(27,94,32,.84),
+            rgba(46,125,50,.84)
+        );
 
-    background-size:
-        cover,
-        420px;
-
-    background-position:
-        center,
-        center;
-
-    background-repeat:
-        no-repeat,
-        no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-/* soft logo in background */
+/* FPO LOGO WATERMARK */
 
-.hero::after{
+.hero::before{
 
     content:"";
 
     position:absolute;
 
-    width:430px;
-    height:430px;
+    width:460px;
+    height:460px;
 
     left:50%;
     top:50%;
 
-    transform:
-        translate(-50%,-50%);
+    transform:translate(-50%,-50%);
 
-    background-image:
-        url("images/fpo-logo.png.png");
-
-    background-size:contain;
-
-    background-position:center;
+    background-image:url("images/fpo-logo.png.png");
 
     background-repeat:no-repeat;
 
-    opacity:.09;
+    background-position:center;
+
+    background-size:contain;
+
+    opacity:.10;
 
     pointer-events:none;
+
+    z-index:0;
 }
 
 .hero-content{
-
-    position:relative;
-
-    z-index:2;
-
     max-width:850px;
-
-    padding:30px 20px;
+    position:relative;
+    z-index:2;
 }
 
-.hero-content h2{
-
-    margin:0 0 15px;
-
+.hero h2{
     font-size:42px;
+    margin:0 0 15px;
 
     text-shadow:
         0 2px 5px rgba(0,0,0,.35);
 }
 
-.hero-content h3{
-
-    margin:0 0 12px;
-
-    font-size:25px;
-}
-
-.hero-content p{
-
+.hero p{
+    font-size:19px;
+    line-height:1.7;
     margin:0 auto 25px;
-
-    max-width:760px;
-
-    font-size:18px;
-
-    line-height:1.8;
 }
 
 .hero-buttons{
-
     display:flex;
-
     justify-content:center;
-
     flex-wrap:wrap;
-
     gap:12px;
 }
 
 .hero-buttons a{
-
     text-decoration:none;
-
+    padding:13px 22px;
+    border-radius:8px;
     color:white;
-
-    padding:13px 23px;
-
-    border-radius:7px;
-
     font-weight:bold;
-
-    box-shadow:
-        0 3px 8px rgba(0,0,0,.25);
 }
 
-.hero-products{
+.shop-btn{
     background:#f57c00;
 }
 
-.hero-membership{
+.member-btn{
     background:#1976d2;
 }
 
-.hero-contact{
-    background:#00897b;
-}
+/* ================= COMMON ================= */
 
-/* =====================================================
-   COMMON SECTION
-===================================================== */
-
-.section{
-
+.container{
     max-width:1200px;
-
     margin:40px auto;
-
     padding:0 20px;
 }
 
-.section-heading{
-
+.section-title{
     text-align:center;
-
     margin-bottom:25px;
 }
 
-.section-heading h2{
-
+.section-title h2{
     margin:0;
-
     color:#1b5e20;
-
     font-size:30px;
 }
 
-.section-heading p{
-
-    margin:8px 0 0;
-
+.section-title p{
     color:#666;
-
-    font-size:16px;
 }
 
-/* =====================================================
-   ABOUT
-===================================================== */
+/* ================= STATUS ================= */
 
-.about-box{
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:12px;
-
-    box-shadow:
-        0 4px 16px rgba(0,0,0,.08);
-
-    border-top:4px solid #2e7d32;
-
+.status{
     text-align:center;
+    background:#d1e7dd;
+    color:#0f5132;
+    border:1px solid #badbcc;
+    padding:11px;
+    border-radius:7px;
+    margin-bottom:20px;
+    font-weight:bold;
 }
 
-.about-box p{
-
-    max-width:950px;
-
-    margin:10px auto;
-
-    line-height:1.8;
-
-    color:#555;
-
-}
-
-/* =====================================================
-   FEATURE CARDS
-===================================================== */
-
-.feature-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:18px;
-}
-
-.feature-card{
-
-    background:white;
-
-    border-radius:11px;
-
-    padding:25px 18px;
-
-    text-align:center;
-
-    box-shadow:
-        0 4px 15px rgba(0,0,0,.09);
-
-    border-top:4px solid #2e7d32;
-
-    transition:.2s;
-}
-
-.feature-card:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-        0 8px 22px rgba(0,0,0,.14);
-}
-
-.feature-card .icon{
-
-    font-size:38px;
-
-    margin-bottom:10px;
-}
-
-.feature-card h3{
-
-    margin:8px 0;
-
-    color:#2e7d32;
-}
-
-.feature-card p{
-
-    margin:0;
-
-    color:#666;
-
-    line-height:1.5;
-}
-
-/* =====================================================
-   PRODUCT PREVIEW
-===================================================== */
+/* ================= PRODUCTS ================= */
 
 .product-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:20px;
 }
 
 .product-card{
-
     background:white;
-
-    border-radius:11px;
-
+    border-radius:12px;
     overflow:hidden;
-
-    box-shadow:
-        0 4px 16px rgba(0,0,0,.10);
-
+    box-shadow:0 5px 18px rgba(0,0,0,.10);
     transition:.2s;
 }
 
 .product-card:hover{
-
     transform:translateY(-4px);
 }
 
 .product-image{
-
-    width:100%;
-
-    height:180px;
-
-    background:#eeeeee;
-
+    height:190px;
+    background:#eee;
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 }
 
 .product-image img{
-
     width:100%;
-
     height:100%;
-
     object-fit:cover;
 }
 
 .product-content{
-
-    padding:15px;
+    padding:16px;
 }
 
 .product-content h3{
-
-    margin:0 0 7px;
-
     color:#2e7d32;
-
-    font-size:19px;
+    margin:0 0 8px;
 }
 
-.product-price{
-
+.price{
     color:#e65100;
-
+    font-size:19px;
     font-weight:bold;
-
-    font-size:18px;
-
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
-.product-link{
-
+.view-btn{
     display:block;
-
     text-align:center;
-
+    text-decoration:none;
     background:#2e7d32;
-
     color:white;
-
-    text-decoration:none;
-
-    padding:9px;
-
+    padding:10px;
     border-radius:6px;
-
-    font-weight:bold;
 }
 
-/* =====================================================
-   VIEW ALL BUTTON
-===================================================== */
-
-.center-button{
-
-    text-align:center;
-
-    margin-top:25px;
-}
-
-.center-button a{
-
-    display:inline-block;
-
-    background:#1976d2;
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:12px 25px;
-
-    border-radius:7px;
-
-    font-weight:bold;
-}
-
-/* =====================================================
-   NEWS PREVIEW
-===================================================== */
+/* ================= NEWS ================= */
 
 .news-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
 .news-card{
-
     background:white;
-
-    padding:22px;
-
+    padding:20px;
     border-radius:11px;
-
     border-left:5px solid #2e7d32;
-
-    box-shadow:
-        0 4px 15px rgba(0,0,0,.08);
+    box-shadow:0 5px 18px rgba(0,0,0,.09);
 }
 
 .news-card h3{
-
-    margin:0 0 8px;
-
     color:#2e7d32;
-
-    font-size:21px;
+    margin:0 0 10px;
 }
 
 .news-date{
-
     display:inline-block;
-
     background:#fff3e0;
-
     color:#e65100;
-
     padding:5px 9px;
-
     border-radius:5px;
-
     font-size:13px;
-
-    font-weight:bold;
-
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .news-card p{
-
-    margin:0;
-
     color:#555;
-
     line-height:1.6;
 }
 
-/* =====================================================
-   GALLERY PREVIEW
-===================================================== */
+/* ================= GALLERY ================= */
 
 .gallery-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:18px;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
 .gallery-card{
-
     background:white;
-
-    border-radius:10px;
-
+    border-radius:11px;
     overflow:hidden;
-
-    box-shadow:
-        0 4px 15px rgba(0,0,0,.09);
+    box-shadow:0 5px 18px rgba(0,0,0,.10);
 }
 
-.gallery-card img{
-
+.gallery-image{
     width:100%;
-
-    height:180px;
-
+    height:210px;
     object-fit:cover;
-
     display:block;
 }
 
 .gallery-content{
-
-    padding:12px;
+    padding:14px;
 }
 
 .gallery-content h3{
-
     margin:0 0 5px;
-
     color:#2e7d32;
 }
 
 .gallery-content p{
-
     margin:0;
-
     color:#666;
-
-    font-size:14px;
 }
 
-/* =====================================================
-   FIREBASE STATUS
-===================================================== */
+/* ================= ABOUT ================= */
 
-.status{
-
+.about-box{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
     text-align:center;
-
-    background:#d1e7dd;
-
-    color:#0f5132;
-
-    border:1px solid #badbcc;
-
-    padding:10px;
-
-    border-radius:6px;
-
-    margin-bottom:20px;
-
-    font-weight:bold;
-
-    font-size:14px;
 }
 
-/* =====================================================
-   QUICK SERVICES
-===================================================== */
+.about-box p{
+    line-height:1.8;
+    color:#555;
+}
+
+/* ================= QUICK LINKS ================= */
 
 .quick-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:18px;
 }
 
-.quick-grid a{
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:20px;
-
-    border-radius:10px;
-
-    text-align:center;
-
-    font-weight:bold;
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,.12);
-
-    transition:.2s;
-}
-
-.quick-grid a:hover{
-
-    transform:translateY(-3px);
-}
-
-.quick-membership{
-    background:#2e7d32;
-}
-
-.quick-products{
-    background:#1976d2;
-}
-
-.quick-farmers{
-    background:#ef6c00;
-}
-
-.quick-contact{
-    background:#6a1b9a;
-}
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.footer{
-
-    margin-top:50px;
-
-    background:#1b5e20;
-
-    color:white;
-
-    text-align:center;
-
+.quick-card{
     padding:25px 15px;
+    border-radius:11px;
+    text-align:center;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-.footer p{
+.q1{background:#2e7d32;}
+.q2{background:#1976d2;}
+.q3{background:#ef6c00;}
+.q4{background:#6a1b9a;}
 
-    margin:6px;
+/* ================= EMPTY ================= */
+
+.empty{
+    grid-column:1/-1;
+    background:white;
+    padding:35px;
+    text-align:center;
+    border-radius:10px;
+    color:#666;
 }
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* ================= FOOTER ================= */
+
+footer{
+    margin-top:50px;
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+footer p{
+    margin:7px;
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:1000px){
 
-    .feature-grid{
-
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
     .product-grid{
-
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .gallery-grid{
-
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .quick-grid{
-
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:700px){
-
-    .header-inner{
-
-        flex-direction:column;
-
-        text-align:center;
-    }
-
-    .header-text h1{
-
-        font-size:22px;
-    }
-
-    .hero{
-
-        min-height:420px;
-    }
-
-    .hero-content h2{
-
-        font-size:30px;
-    }
-
-    .hero-content h3{
-
-        font-size:21px;
-    }
-
-    .hero-content p{
-
-        font-size:16px;
+        grid-template-columns:repeat(2,1fr);
     }
 
     .news-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-        grid-template-columns:1fr;
+    .quick-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
 }
 
-@media(max-width:550px){
+@media(max-width:650px){
 
-    .feature-grid,
+    .header-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    header h1{
+        font-size:21px;
+    }
+
+    .hero h2{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
     .product-grid,
     .gallery-grid,
+    .news-grid,
     .quick-grid{
-
         grid-template-columns:1fr;
     }
 
     .nav-inner{
-
         flex-direction:column;
     }
 
-    .nav-inner a{
-
+    nav a{
         text-align:center;
-    }
-
-    .hero-buttons{
-
-        flex-direction:column;
-    }
-
-    .hero-buttons a{
-
-        width:100%;
     }
 
 }
@@ -930,29 +491,23 @@ body{
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- ================= HEADER ================= -->
 
-<header class="header">
+<header>
 
 <div class="header-inner">
 
-<div class="logo-box">
+<div class="logo">
 
 <img
 src="images/fpo-logo.png.png"
-alt="Bundelkhand Organic FPO Logo"
-onerror="
-this.style.display='none';
-this.parentElement.innerHTML='FPO';
-"
+alt="FPO Logo"
+onerror="this.style.display='none';this.parentElement.innerHTML='FPO';"
 >
 
 </div>
 
-
-<div class="header-text">
+<div>
 
 <h1>
 Bundelkhand Organic Farmer Producer Company Limited
@@ -969,119 +524,63 @@ Bundelkhand Organic Farmer Producer Company Limited
 </header>
 
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<!-- ================= NAVIGATION ================= -->
 
-<nav class="navbar">
+<nav>
 
 <div class="nav-inner">
 
-<a
-href="index.html"
-class="nav-home"
->
-Home
-</a>
+<a href="index.html" class="home">Home</a>
 
-<a
-href="about.html"
-class="nav-about"
->
-About
-</a>
+<a href="about.html" class="about">About</a>
 
-<a
-href="products.html"
-class="nav-products"
->
-Products
-</a>
+<a href="products.html" class="products">Products</a>
 
-<a
-href="farmers.html"
-class="nav-farmers"
->
-Kisan Corner
-</a>
+<a href="farmers.html" class="farmers">Kisan Corner</a>
 
-<a
-href="gallery.html"
-class="nav-gallery"
->
-Gallery
-</a>
+<a href="gallery.html" class="gallery">Gallery</a>
 
-<a
-href="news.html"
-class="nav-news"
->
-Agriculture News
-</a>
+<a href="news.html" class="news">Agriculture News</a>
 
-<a
-href="contact.html"
-class="nav-contact"
->
-Contact
-</a>
+<a href="contact.html" class="contact">Contact</a>
 
-<a
-href="login.html"
-class="nav-login"
->
-Login
-</a>
+<a href="login.html" class="login">Login</a>
 
 </div>
 
 </nav>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
 <div class="hero-content">
-
-<h3>
-Bundelkhand Organic Farmer Producer Company Limited
-</h3>
 
 <h2>
 किसान से ग्राहक तक, गुणवत्ता के साथ
 </h2>
 
 <p>
-किसानों को संगठित करके गुणवत्तापूर्ण कृषि उत्पादों को
-उचित बाजार तक पहुँचाने और ग्रामीण विकास को बढ़ावा देने
-के लिए समर्पित।
+Bundelkhand Organic Farmer Producer Company Limited
+किसानों को संगठित करके जैविक एवं गुणवत्तापूर्ण कृषि उत्पादों को
+बाजार तक पहुँचाने के लिए कार्य कर रही है।
 </p>
-
 
 <div class="hero-buttons">
 
 <a
 href="products.html"
-class="hero-products"
+class="shop-btn"
 >
 View Products
 </a>
 
 <a
 href="membership.html"
-class="hero-membership"
+class="member-btn"
 >
 Farmer Membership
-</a>
-
-<a
-href="contact.html"
-class="hero-contact"
->
-Contact Us
 </a>
 
 </div>
@@ -1091,13 +590,11 @@ Contact Us
 </section>
 
 
-<!-- =====================================================
-     ABOUT
-===================================================== -->
+<!-- ================= ABOUT ================= -->
 
-<section class="section">
+<section class="container">
 
-<div class="section-heading">
+<div class="section-title">
 
 <h2>
 हमारे बारे में
@@ -1109,20 +606,19 @@ Contact Us
 
 </div>
 
-
 <div class="about-box">
 
 <p>
 Bundelkhand Organic Farmer Producer Company Limited
 किसानों को बेहतर बाजार, गुणवत्तापूर्ण कृषि उत्पाद,
-जैविक खेती और सामूहिक विकास के अवसर उपलब्ध कराने
-की दिशा में कार्य करती है।
+जैविक खेती और सामूहिक विकास के अवसर उपलब्ध कराने की दिशा
+में कार्य करती है।
 </p>
 
 <p>
-हमारा उद्देश्य किसानों की आय और कृषि उत्पादों की
-गुणवत्ता में सुधार करते हुए स्थानीय कृषि उत्पादों को
-उचित बाजार तक पहुँचाना है।
+हमारा उद्देश्य किसानों की आय और कृषि उत्पादों की गुणवत्ता
+में सुधार करते हुए स्थानीय कृषि उत्पादों को उचित बाजार
+तक पहुँचाना है।
 </p>
 
 </div>
@@ -1130,111 +626,21 @@ Bundelkhand Organic Farmer Producer Company Limited
 </section>
 
 
-<!-- =====================================================
-     FEATURES
-===================================================== -->
+<!-- ================= PRODUCTS ================= -->
 
-<section class="section">
+<section class="container">
 
-<div class="section-heading">
+<div class="section-title">
 
 <h2>
-हमारी प्रमुख सेवाएँ
+हमारे कृषि उत्पाद
 </h2>
 
 <p>
-किसानों और ग्राहकों के लिए महत्वपूर्ण सुविधाएँ
+FPO द्वारा उपलब्ध गुणवत्तापूर्ण कृषि उत्पाद
 </p>
 
 </div>
-
-
-<div class="feature-grid">
-
-
-<div class="feature-card">
-
-<div class="icon">🌾</div>
-
-<h3>
-किसान सदस्यता
-</h3>
-
-<p>
-किसान FPO से जुड़कर सामूहिक विकास में भाग ले सकते हैं।
-</p>
-
-</div>
-
-
-<div class="feature-card">
-
-<div class="icon">🛒</div>
-
-<h3>
-कृषि उत्पाद
-</h3>
-
-<p>
-गुणवत्तापूर्ण कृषि उत्पादों को ग्राहकों तक पहुँचाना।
-</p>
-
-</div>
-
-
-<div class="feature-card">
-
-<div class="icon">🌱</div>
-
-<h3>
-जैविक खेती
-</h3>
-
-<p>
-प्राकृतिक एवं टिकाऊ कृषि को बढ़ावा देना।
-</p>
-
-</div>
-
-
-<div class="feature-card">
-
-<div class="icon">🤝</div>
-
-<h3>
-किसान विकास
-</h3>
-
-<p>
-किसानों को बाजार और सामूहिक विकास के अवसर देना।
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     FEATURED PRODUCTS
-===================================================== -->
-
-<section class="section">
-
-<div class="section-heading">
-
-<h2>
-हमारे प्रमुख कृषि उत्पाद
-</h2>
-
-<p>
-कुछ प्रमुख उत्पादों की झलक
-</p>
-
-</div>
-
 
 <div
 id="productStatus"
@@ -1243,43 +649,35 @@ class="status"
 Firebase Products load हो रहे हैं...
 </div>
 
-
 <div
 id="productGrid"
 class="product-grid"
 >
+
+<div class="empty">
+Products load हो रहे हैं...
 </div>
-
-
-<div class="center-button">
-
-<a href="products.html">
-सभी Products देखें
-</a>
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     NEWS
-===================================================== -->
+<!-- ================= NEWS ================= -->
 
-<section class="section">
+<section class="container">
 
-<div class="section-heading">
+<div class="section-title">
 
 <h2>
 Agriculture News
 </h2>
 
 <p>
-कृषि और किसानों से जुड़ी महत्वपूर्ण जानकारी
+कृषि और किसानों से जुड़ी नवीनतम जानकारी
 </p>
 
 </div>
-
 
 <div
 id="newsStatus"
@@ -1288,32 +686,25 @@ class="status"
 Firebase News load हो रही है...
 </div>
 
-
 <div
 id="newsGrid"
 class="news-grid"
 >
+
+<div class="empty">
+News load हो रही है...
 </div>
-
-
-<div class="center-button">
-
-<a href="news.html">
-सभी Agriculture News देखें
-</a>
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     GALLERY
-===================================================== -->
+<!-- ================= GALLERY ================= -->
 
-<section class="section">
+<section class="container">
 
-<div class="section-heading">
+<div class="section-title">
 
 <h2>
 Gallery
@@ -1325,7 +716,6 @@ Gallery
 
 </div>
 
-
 <div
 id="galleryStatus"
 class="status"
@@ -1333,32 +723,25 @@ class="status"
 Firebase Gallery load हो रही है...
 </div>
 
-
 <div
 id="galleryGrid"
 class="gallery-grid"
 >
+
+<div class="empty">
+Gallery load हो रही है...
 </div>
-
-
-<div class="center-button">
-
-<a href="gallery.html">
-पूरी Gallery देखें
-</a>
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     QUICK SERVICES
-===================================================== -->
+<!-- ================= QUICK LINKS ================= -->
 
-<section class="section">
+<section class="container">
 
-<div class="section-heading">
+<div class="section-title">
 
 <h2>
 Quick Services
@@ -1366,33 +749,32 @@ Quick Services
 
 </div>
 
-
 <div class="quick-grid">
 
 <a
 href="membership.html"
-class="quick-membership"
+class="quick-card q1"
 >
 Farmer Membership
 </a>
 
 <a
 href="products.html"
-class="quick-products"
+class="quick-card q2"
 >
 Online Products
 </a>
 
 <a
 href="farmers.html"
-class="quick-farmers"
+class="quick-card q3"
 >
 Kisan Corner
 </a>
 
 <a
 href="contact.html"
-class="quick-contact"
+class="quick-card q4"
 >
 Contact Us
 </a>
@@ -1402,11 +784,9 @@ Contact Us
 </section>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- ================= FOOTER ================= -->
 
-<footer class="footer">
+<footer>
 
 <p>
 Bundelkhand Organic Farmer Producer Company Limited
@@ -1423,9 +803,7 @@ Empowering Farmers • Promoting Organic Agriculture
 </footer>
 
 
-<!-- =====================================================
-     FIREBASE
-===================================================== -->
+<!-- ================= FIREBASE ================= -->
 
 <script type="module">
 
@@ -1445,9 +823,7 @@ from
 "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
-/* =====================================================
-   FIREBASE CONFIG
-===================================================== */
+/* ================= FIREBASE CONFIG ================= */
 
 const firebaseConfig = {
 
@@ -1477,44 +853,36 @@ const app =
         firebaseConfig
     );
 
-
 const db =
     getFirestore(app);
 
 
-/* =====================================================
-   ELEMENTS
-===================================================== */
+/* ================= ELEMENTS ================= */
 
 const productGrid =
     document.getElementById(
         "productGrid"
     );
 
-
 const productStatus =
     document.getElementById(
         "productStatus"
     );
-
 
 const newsGrid =
     document.getElementById(
         "newsGrid"
     );
 
-
 const newsStatus =
     document.getElementById(
         "newsStatus"
     );
 
-
 const galleryGrid =
     document.getElementById(
         "galleryGrid"
     );
-
 
 const galleryStatus =
     document.getElementById(
@@ -1522,9 +890,7 @@ const galleryStatus =
     );
 
 
-/* =====================================================
-   IMAGE URL
-===================================================== */
+/* ================= IMAGE URL ================= */
 
 function getImageUrl(value){
 
@@ -1535,9 +901,7 @@ function getImageUrl(value){
 
 
     if(!url){
-
         return "";
-
     }
 
 
@@ -1546,18 +910,14 @@ function getImageUrl(value){
         url.startsWith("https://") ||
         url.startsWith("data:")
     ){
-
         return url;
-
     }
 
 
     if(
         url.startsWith("/")
     ){
-
         return url;
-
     }
 
 
@@ -1573,10 +933,7 @@ function getImageUrl(value){
 }
 
 
-/* =====================================================
-   PRODUCTS
-   केवल 4 FEATURED PRODUCTS
-===================================================== */
+/* ================= PRODUCTS ================= */
 
 async function loadProducts(){
 
@@ -1599,15 +956,7 @@ async function loadProducts(){
 
             productGrid.innerHTML =
                 `
-                <div
-                style="
-                grid-column:1/-1;
-                background:white;
-                padding:30px;
-                text-align:center;
-                border-radius:10px;
-                "
-                >
+                <div class="empty">
                 अभी कोई Product उपलब्ध नहीं है।
                 </div>
                 `;
@@ -1626,19 +975,11 @@ async function loadProducts(){
         snapshot.forEach(
             function(item){
 
-                /*
-                 * Home Page पर केवल पहले 4 products
-                 */
-
-                if(count >= 4){
-
-                    return;
-
-                }
-
-
                 const data =
                     item.data();
+
+
+                count++;
 
 
                 const card =
@@ -1688,7 +1029,7 @@ async function loadProducts(){
                     image.onerror =
                         function(){
 
-                            this.style.display =
+                            image.style.display =
                                 "none";
 
                         };
@@ -1727,18 +1068,19 @@ async function loadProducts(){
                         "div"
                     );
 
-
                 price.className =
-                    "product-price";
+                    "price";
+
+
+                const productPrice =
+                    data.price ||
+                    data.salePrice ||
+                    0;
 
 
                 price.textContent =
                     "₹" +
-                    (
-                        data.price ||
-                        data.salePrice ||
-                        0
-                    );
+                    productPrice;
 
 
                 const link =
@@ -1750,10 +1092,8 @@ async function loadProducts(){
                 link.href =
                     "products.html";
 
-
                 link.className =
-                    "product-link";
-
+                    "view-btn";
 
                 link.textContent =
                     "View Product";
@@ -1763,11 +1103,9 @@ async function loadProducts(){
                     title
                 );
 
-
                 content.appendChild(
                     price
                 );
-
 
                 content.appendChild(
                     link
@@ -1778,7 +1116,6 @@ async function loadProducts(){
                     imageBox
                 );
 
-
                 card.appendChild(
                     content
                 );
@@ -1788,22 +1125,30 @@ async function loadProducts(){
                     card
                 );
 
-
-                count++;
-
             }
         );
 
 
         productStatus.textContent =
-            "Firebase Connected — Featured Products सफलतापूर्वक load हुए।";
+            "Firebase Connected — " +
+            count +
+            " Products सफलतापूर्वक load हुए।";
 
     }
     catch(error){
 
         console.error(
+            "Products Error:",
             error
         );
+
+
+        productGrid.innerHTML =
+            `
+            <div class="empty">
+            Products load नहीं हो सके।
+            </div>
+            `;
 
 
         productStatus.textContent =
@@ -1814,10 +1159,7 @@ async function loadProducts(){
 }
 
 
-/* =====================================================
-   NEWS
-   केवल 2 NEWS
-===================================================== */
+/* ================= NEWS ================= */
 
 async function loadNews(){
 
@@ -1840,18 +1182,11 @@ async function loadNews(){
 
             newsGrid.innerHTML =
                 `
-                <div
-                style="
-                grid-column:1/-1;
-                background:white;
-                padding:30px;
-                text-align:center;
-                border-radius:10px;
-                "
-                >
+                <div class="empty">
                 अभी कोई Agriculture News उपलब्ध नहीं है।
                 </div>
                 `;
+
 
             newsStatus.textContent =
                 "Firebase Connected — कोई News उपलब्ध नहीं है।";
@@ -1867,15 +1202,11 @@ async function loadNews(){
         snapshot.forEach(
             function(item){
 
-                if(count >= 2){
-
-                    return;
-
-                }
-
-
                 const data =
                     item.data();
+
+
+                count++;
 
 
                 const card =
@@ -1947,22 +1278,30 @@ async function loadNews(){
                     card
                 );
 
-
-                count++;
-
             }
         );
 
 
         newsStatus.textContent =
-            "Firebase Connected — Agriculture News सफलतापूर्वक load हुई।";
+            "Firebase Connected — " +
+            count +
+            " Agriculture News सफलतापूर्वक load हुईं।";
 
     }
     catch(error){
 
         console.error(
+            "News Error:",
             error
         );
+
+
+        newsGrid.innerHTML =
+            `
+            <div class="empty">
+            Agriculture News load नहीं हो सकीं।
+            </div>
+            `;
 
 
         newsStatus.textContent =
@@ -1973,10 +1312,7 @@ async function loadNews(){
 }
 
 
-/* =====================================================
-   GALLERY
-   केवल 4 IMAGES
-===================================================== */
+/* ================= GALLERY ================= */
 
 async function loadGallery(){
 
@@ -1999,18 +1335,11 @@ async function loadGallery(){
 
             galleryGrid.innerHTML =
                 `
-                <div
-                style="
-                grid-column:1/-1;
-                background:white;
-                padding:30px;
-                text-align:center;
-                border-radius:10px;
-                "
-                >
+                <div class="empty">
                 अभी Gallery में कोई Image उपलब्ध नहीं है।
                 </div>
                 `;
+
 
             galleryStatus.textContent =
                 "Firebase Connected — Gallery खाली है।";
@@ -2025,13 +1354,6 @@ async function loadGallery(){
 
         snapshot.forEach(
             function(item){
-
-                if(count >= 4){
-
-                    return;
-
-                }
-
 
                 const data =
                     item.data();
@@ -2052,6 +1374,9 @@ async function loadGallery(){
                 }
 
 
+                count++;
+
+
                 const card =
                     document.createElement(
                         "div"
@@ -2066,6 +1391,10 @@ async function loadGallery(){
                     document.createElement(
                         "img"
                     );
+
+
+                image.className =
+                    "gallery-image";
 
 
                 image.src =
@@ -2123,9 +1452,7 @@ async function loadGallery(){
                 );
 
 
-                if(
-                    data.description
-                ){
+                if(data.description){
 
                     content.appendChild(
                         description
@@ -2148,22 +1475,30 @@ async function loadGallery(){
                     card
                 );
 
-
-                count++;
-
             }
         );
 
 
         galleryStatus.textContent =
-            "Firebase Connected — Gallery सफलतापूर्वक load हुई।";
+            "Firebase Connected — " +
+            count +
+            " Gallery Images सफलतापूर्वक load हुईं।";
 
     }
     catch(error){
 
         console.error(
+            "Gallery Error:",
             error
         );
+
+
+        galleryGrid.innerHTML =
+            `
+            <div class="empty">
+            Gallery load नहीं हो सकी।
+            </div>
+            `;
 
 
         galleryStatus.textContent =
@@ -2174,9 +1509,7 @@ async function loadGallery(){
 }
 
 
-/* =====================================================
-   START
-===================================================== */
+/* ================= START ================= */
 
 loadProducts();
 
