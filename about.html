@@ -1,204 +1,97 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>
-About Us | Bundelkhand Organic Farmer Producer Company Limited
-</title>
+<title>About Us | Bundelkhand Organic Farmer Producer Company Limited</title>
 
 <style>
-
-/* =========================================
-   RESET
-========================================= */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#f3fff3;
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+    background:#f4fff4;
     color:#333;
     line-height:1.7;
 }
 
-
-/* =========================================
-   HEADER
-========================================= */
+/* ================= HEADER ================= */
 
 .main-header{
     background:#f7fff3;
     min-height:150px;
     border-bottom:4px solid #f5a400;
-
     display:flex;
     align-items:center;
-
     padding:15px 35px;
-
-    position:relative;
 }
-
-
-/* =========================================
-   LOGO
-========================================= */
 
 .logo-box{
     width:120px;
     min-width:120px;
     height:120px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     margin-right:20px;
 }
 
 .logo-box img{
     width:115px;
     height:115px;
-
     object-fit:contain;
-
-    display:block;
 }
-
-
-/* =========================================
-   COMPANY NAME
-========================================= */
 
 .company-info{
     flex:1;
     text-align:center;
-
-    padding-right:180px;
 }
 
 .company-info h1{
     color:#286b32;
     font-size:30px;
-    line-height:1.3;
-
+    line-height:1.25;
     margin-bottom:4px;
-
-    font-weight:bold;
 }
 
 .company-info h2{
     color:#286b32;
-    font-size:21px;
-    line-height:1.3;
-
+    font-size:22px;
     margin-bottom:10px;
 }
 
-
-/* =========================================
-   TAGLINE
-========================================= */
-
 .tagline{
-    display:block;
-
-    width:max-content;
-    max-width:100%;
-
-    margin:0 auto;
-
+    display:inline-block;
     padding:7px 20px;
-
     background:#f57c00;
     color:white;
-
     border-radius:22px;
-
     font-size:14px;
     font-weight:bold;
-
-    text-align:center;
-
-    box-shadow:0 3px 8px rgba(0,0,0,.20);
 }
 
-
-/* =========================================
-   ADMIN LOGIN
-========================================= */
-
-.login-buttons{
-    position:absolute;
-
-    right:30px;
-    top:48px;
-}
-
-.admin-login{
-    display:inline-block;
-
-    background:#7b1fa2;
-    color:white;
-
-    text-decoration:none;
-
-    padding:14px 28px;
-
-    border-radius:8px;
-
-    font-weight:bold;
-
-    font-size:16px;
-
-    box-shadow:0 4px 10px rgba(0,0,0,.25);
-
-    transition:.3s;
-}
-
-.admin-login:hover{
-    background:#5e1680;
-    transform:translateY(-2px);
-}
-
-
-/* =========================================
-   NAVIGATION
-========================================= */
+/* ================= NAVIGATION ================= */
 
 .navbar{
     background:#19752b;
-
     border-bottom:3px solid #f5a400;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     flex-wrap:wrap;
 }
 
 .navbar a{
     color:white;
-
     text-decoration:none;
-
     padding:13px 16px;
-
     font-weight:bold;
-
     font-size:14px;
-
     transition:.3s;
 }
 
@@ -208,338 +101,264 @@ body{
 
 .navbar a.active{
     background:#f57c00;
-}
-
-
-/* =========================================
-   PAGE HERO
-========================================= */
-
-.page-hero{
-    background:
-    linear-gradient(
-        rgba(40,120,55,.90),
-        rgba(80,160,90,.88)
-    );
-
     color:white;
-
-    text-align:center;
-
-    padding:55px 20px;
 }
 
-.page-hero h1{
-    font-size:38px;
+/* ================= HERO ================= */
 
-    line-height:1.4;
+.hero{
+    min-height:280px;
+    background:
+        linear-gradient(
+            rgba(35,120,53,.88),
+            rgba(65,155,80,.82)
+        );
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:45px 20px;
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
 
-    margin-bottom:12px;
+.hero::before{
+    content:"";
+    position:absolute;
+    width:340px;
+    height:340px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background:url("images/fpo-logo.png.png")
+        center/contain no-repeat;
+    opacity:.10;
+}
 
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:8px;
     text-shadow:2px 2px 4px #333;
 }
 
-.page-hero h2{
-    color:#fff200;
-
+.hero h2{
     font-size:22px;
-
-    line-height:1.5;
-}
-
-
-/* =========================================
-   COMMON SECTION
-========================================= */
-
-.section{
-    max-width:1100px;
-
-    margin:0 auto;
-
-    padding:45px 20px;
-}
-
-.section-box{
-    background:white;
-
-    padding:30px;
-
-    border-radius:12px;
-
-    box-shadow:
-    0 4px 15px rgba(0,0,0,.12);
-
-    border-left:6px solid #2e7d32;
-
-    margin-bottom:30px;
-}
-
-.section-box h2{
-    color:#2e7d32;
-
-    text-align:center;
-
-    margin-bottom:20px;
-
-    font-size:28px;
-}
-
-.section-box p{
-    font-size:16px;
-
-    line-height:1.9;
-
-    margin-bottom:15px;
-}
-
-
-/* =========================================
-   COLOURFUL CARDS
-========================================= */
-
-.card-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:20px;
-}
-
-.card{
-    background:white;
-
-    padding:25px 20px;
-
-    border-radius:12px;
-
-    text-align:center;
-
-    box-shadow:
-    0 4px 14px rgba(0,0,0,.13);
-
-    border-top:5px solid #2e7d32;
-
-    transition:.3s;
-}
-
-.card:nth-child(2){
-    border-top-color:#f57c00;
-}
-
-.card:nth-child(3){
-    border-top-color:#1976d2;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.card h3{
-    color:#2e7d32;
-
-    font-size:20px;
-
+    color:#fff200;
     margin-bottom:12px;
 }
 
-.card p{
-    color:#555;
-
-    line-height:1.7;
+.hero p{
+    font-size:17px;
 }
 
+/* ================= CONTAINER ================= */
 
-/* =========================================
-   MISSION LIST
-========================================= */
-
-.mission-list{
-    max-width:800px;
-
+.container{
+    width:94%;
+    max-width:1100px;
     margin:0 auto;
+    padding-bottom:45px;
 }
 
-.mission-item{
-    background:#f4fff4;
+/* ================= SECTION ================= */
 
-    border-left:5px solid #2e7d32;
-
-    padding:12px 18px;
-
-    margin-bottom:10px;
-
-    border-radius:5px;
-
-    font-weight:bold;
-}
-
-
-/* =========================================
-   SERVICES
-========================================= */
-
-.services-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:12px;
-}
-
-.service{
-    background:#f4fff4;
-
-    border-left:5px solid #f57c00;
-
-    padding:12px 18px;
-
-    border-radius:5px;
-
-    font-weight:bold;
-}
-
-
-/* =========================================
-   OFFICE SECTION
-========================================= */
-
-.office-card{
+.section{
     background:white;
-
-    padding:25px;
-
-    border-radius:12px;
-
-    text-align:center;
-
-    box-shadow:
-    0 4px 14px rgba(0,0,0,.13);
-
+    margin:28px 0;
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 4px 16px rgba(0,0,0,.10);
     border-top:5px solid #2e7d32;
 }
 
-.office-card h3{
-    color:#2e7d32;
-
-    margin-bottom:15px;
+.section h2{
+    color:#286b32;
+    font-size:28px;
+    margin-bottom:12px;
 }
 
-.office-card p{
-    line-height:1.8;
+.section h3{
+    color:#286b32;
+    font-size:21px;
+    margin-top:18px;
+    margin-bottom:8px;
 }
 
+.section p{
+    color:#555;
+    font-size:16px;
+    margin-bottom:12px;
+    text-align:justify;
+}
 
-/* =========================================
-   THANK YOU
-========================================= */
+/* ================= CARDS ================= */
 
-.thank-you{
-    background:
-    linear-gradient(
-        135deg,
-        #e8f5e9,
-        #fff8e1
-    );
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:22px;
+}
 
+.card{
+    background:#f8fff8;
+    padding:24px 20px;
+    border-radius:10px;
+    border:1px solid #c8dfc9;
     text-align:center;
+    transition:.3s;
+}
 
-    padding:40px 20px;
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 6px 15px rgba(0,0,0,.10);
+}
 
+.card-title{
+    color:#286b32;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#666;
+    font-size:14px;
+    text-align:center;
+}
+
+/* ================= MISSION ================= */
+
+.mission-box{
+    background:
+        linear-gradient(
+            135deg,
+            #e8f5e9,
+            #f7fff3
+        );
+
+    border-left:6px solid #2e7d32;
+    padding:24px;
+    border-radius:10px;
     margin-top:20px;
 }
 
-.thank-you h2{
-    color:#2e7d32;
-
-    margin-bottom:15px;
-}
-
-.thank-you strong{
-    color:#f57c00;
-
-    font-size:18px;
-}
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer{
-    background:#075b27;
-
-    color:white;
-
-    text-align:center;
-
-    padding:28px 15px;
-
+.mission-box h3{
     margin-top:0;
 }
 
-footer h3{
-    font-size:20px;
+.mission-list{
+    margin-top:15px;
+    padding-left:25px;
+}
 
-    margin-bottom:6px;
+.mission-list li{
+    margin:9px 0;
+    color:#555;
+}
+
+/* ================= VALUES ================= */
+
+.value-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:20px;
+}
+
+.value-item{
+    background:#fff8e1;
+    border:1px solid #f2c46d;
+    border-radius:9px;
+    padding:18px;
+}
+
+.value-item h3{
+    margin-top:0;
+    color:#8d5d00;
+    font-size:18px;
+}
+
+.value-item p{
+    font-size:14px;
+    margin-bottom:0;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    margin:30px 0 10px;
+    background:
+        linear-gradient(
+            135deg,
+            #19752b,
+            #43a047
+        );
+    color:white;
+    text-align:center;
+    padding:32px 20px;
+    border-radius:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.12);
+}
+
+.cta h2{
+    font-size:27px;
+    margin-bottom:8px;
+}
+
+.cta p{
+    margin-bottom:20px;
+}
+
+.cta a{
+    display:inline-block;
+    background:#f57c00;
+    color:white;
+    text-decoration:none;
+    padding:11px 22px;
+    border-radius:7px;
+    font-weight:bold;
+    margin:4px;
+}
+
+.cta a:hover{
+    background:#e56f00;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#075b27;
+    color:white;
+    text-align:center;
+    padding:28px 15px;
 }
 
 footer p{
-    margin:5px 0;
+    margin:6px 0;
 }
 
+/* ================= MOBILE ================= */
 
-/* =========================================
-   TABLET
-========================================= */
-
-@media(max-width:1000px){
-
-    .company-info{
-        padding-right:170px;
-    }
-
-    .company-info h1{
-        font-size:25px;
-    }
-
-    .company-info h2{
-        font-size:18px;
-    }
-
-    .card-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media(max-width:700px){
+@media(max-width:800px){
 
     .main-header{
         flex-direction:column;
-
         text-align:center;
-
         padding:15px 10px;
-
-        min-height:auto;
     }
 
     .logo-box{
         width:105px;
-
         min-width:105px;
-
         height:105px;
-
         margin:0 auto 8px;
     }
 
@@ -550,7 +369,6 @@ footer p{
 
     .company-info{
         width:100%;
-        padding:0;
     }
 
     .company-info h1{
@@ -566,113 +384,75 @@ footer p{
         padding:6px 14px;
     }
 
-    .login-buttons{
-        position:static;
-
-        margin:15px auto 0;
-    }
-
-    .admin-login{
-        padding:11px 22px;
-
-        font-size:14px;
-    }
-
     .navbar a{
         padding:10px 9px;
-
         font-size:12px;
     }
 
-    .page-hero{
+    .hero{
+        min-height:250px;
         padding:40px 15px;
     }
 
-    .page-hero h1{
-        font-size:27px;
+    .hero h1{
+        font-size:28px;
     }
 
-    .page-hero h2{
-        font-size:18px;
-    }
-
-    .section{
-        padding:30px 12px;
-    }
-
-    .section-box{
-        padding:22px 16px;
-    }
-
-    .section-box h2{
-        font-size:24px;
-    }
-
-    .card-grid{
-        grid-template-columns:1fr;
-    }
-
-    .services-grid{
-        grid-template-columns:1fr;
-    }
-
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media(max-width:480px){
-
-    .company-info h1{
+    .hero h2{
         font-size:19px;
     }
 
-    .company-info h2{
+    .hero p{
+        font-size:14px;
+    }
+
+    .section{
+        padding:22px 17px;
+    }
+
+    .section h2{
+        font-size:24px;
+    }
+
+    .section p{
         font-size:15px;
+        text-align:left;
     }
 
-    .navbar a{
-        padding:8px 7px;
-
-        font-size:11px;
+    .cards{
+        grid-template-columns:1fr;
     }
 
-    .page-hero h1{
+    .value-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cta h2{
         font-size:23px;
     }
 
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =================================================
-     HEADER
-================================================= -->
+<!-- ================= HEADER ================= -->
 
 <header class="main-header">
-
-
-    <!-- FPO LOGO -->
 
     <div class="logo-box">
 
         <img
             src="images/fpo-logo.png.png"
             alt="Bundelkhand Organic FPO Logo"
+            onerror="
+                this.onerror=null;
+                this.src='images/logo.png.png';
+            "
         >
 
     </div>
-
-
-    <!-- COMPANY NAME -->
 
     <div class="company-info">
 
@@ -690,26 +470,10 @@ footer p{
 
     </div>
 
-
-    <!-- ADMIN LOGIN -->
-
-    <div class="login-buttons">
-
-        <a
-            href="login.html"
-            class="admin-login"
-        >
-            Admin Login
-        </a>
-
-    </div>
-
 </header>
 
 
-<!-- =================================================
-     NAVIGATION
-================================================= -->
+<!-- ================= NAVIGATION ================= -->
 
 <nav class="navbar">
 
@@ -717,10 +481,7 @@ footer p{
         Home
     </a>
 
-    <a
-        href="about.html"
-        class="active"
-    >
+    <a href="about.html" class="active">
         About
     </a>
 
@@ -755,547 +516,297 @@ footer p{
 </nav>
 
 
-<!-- =================================================
-     PAGE HERO
-================================================= -->
+<!-- ================= HERO ================= -->
 
-<section class="page-hero">
+<section class="hero">
 
-    <h1>
-        About Bundelkhand Organic Farmer Producer Company Limited
-    </h1>
+    <div class="hero-content">
 
-    <h2>
-        Empowering Farmers • Strengthening Agriculture • Building Prosperity
-    </h2>
+        <h1>
+            About Us
+        </h1>
+
+        <h2>
+            किसान, कृषि और ग्रामीण विकास के लिए समर्पित
+        </h2>
+
+        <p>
+            किसानों को संगठित करके गुणवत्तापूर्ण कृषि उत्पादों,
+            बेहतर बाजार और सामूहिक विकास के अवसर उपलब्ध कराना।
+        </p>
+
+    </div>
 
 </section>
 
 
-<!-- =================================================
-     COMPANY PROFILE
-================================================= -->
+<!-- ================= MAIN ================= -->
 
-<section class="section">
+<div class="container">
 
-    <div class="section-box">
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="section">
 
         <h2>
-            Company Profile
+            हमारे बारे में
         </h2>
 
         <p>
-            Bundelkhand Organic Farmer Producer Company Limited एक किसान उत्पादक
-            संगठन (Farmer Producer Organization - FPO) है, जिसका उद्देश्य किसानों को
-            सामूहिक रूप से जोड़कर उन्हें कृषि इनपुट, प्रशिक्षण, विपणन, मूल्य संवर्धन
-            और आधुनिक तकनीकों से लाभान्वित करना है।
+            Bundelkhand Organic Farmer Producer Company Limited
+            किसानों को संगठित करके कृषि उत्पादन, विपणन और
+            ग्रामीण विकास के क्षेत्र में सामूहिक रूप से कार्य करने
+            के उद्देश्य से बनाई गई Farmer Producer Company है।
         </p>
 
         <p>
-            हमारा लक्ष्य किसानों की आय बढ़ाना, जैविक खेती को प्रोत्साहित करना तथा
-            कृषि उत्पादों को स्थानीय, राष्ट्रीय एवं अंतरराष्ट्रीय बाजार तक पहुँचाना है।
+            हमारा प्रयास किसानों को उनके कृषि उत्पादों के लिए
+            बेहतर बाजार उपलब्ध कराने, गुणवत्तापूर्ण कृषि उत्पादों
+            को ग्राहकों तक पहुँचाने तथा किसानों की सामूहिक
+            आर्थिक क्षमता को मजबूत करने की दिशा में है।
         </p>
 
-    </div>
+        <p>
+            FPO के माध्यम से किसान अपनी कृषि उपज को बेहतर
+            तरीके से बाजार तक पहुँचा सकते हैं और सामूहिक
+            खरीद एवं बिक्री के माध्यम से अधिक अवसर प्राप्त कर सकते हैं।
+        </p>
+
+    </section>
 
 
-    <!-- VISION -->
+    <!-- ================= OUR WORK ================= -->
 
-    <div class="section-box">
-
-        <h2>
-            Our Vision
-        </h2>
-
-        <div class="card-grid">
-
-            <div class="card">
-
-                <h3>
-                    आत्मनिर्भर किसान
-                </h3>
-
-                <p>
-                    बुन्देलखण्ड क्षेत्र के किसानों को आत्मनिर्भर,
-                    समृद्ध एवं आधुनिक बनाना।
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3>
-                    जैविक कृषि
-                </h3>
-
-                <p>
-                    जैविक एवं प्राकृतिक कृषि को बढ़ावा देना
-                    तथा गुणवत्तापूर्ण उत्पादन को प्रोत्साहित करना।
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3>
-                    राष्ट्रीय बाजार
-                </h3>
-
-                <p>
-                    किसानों के कृषि उत्पादों को बड़े बाजारों तक
-                    पहुँचाने के अवसर उपलब्ध कराना।
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- MISSION -->
-
-    <div class="section-box">
+    <section class="section">
 
         <h2>
-            Our Mission
+            हम क्या करते हैं
         </h2>
 
-        <div class="mission-list">
-
-            <div class="mission-item">
-                किसानों को संगठित करना
-            </div>
-
-            <div class="mission-item">
-                कृषि लागत कम करना
-            </div>
-
-            <div class="mission-item">
-                आधुनिक तकनीक उपलब्ध कराना
-            </div>
-
-            <div class="mission-item">
-                जैविक खेती को बढ़ावा देना
-            </div>
-
-            <div class="mission-item">
-                किसानों को उचित बाजार उपलब्ध कराना
-            </div>
-
-            <div class="mission-item">
-                किसानों की आय बढ़ाने में सहयोग करना
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- OBJECTIVES -->
-
-    <div class="section-box">
-
-        <h2>
-            Our Objectives
-        </h2>
-
-        <div class="card-grid">
+        <div class="cards">
 
             <div class="card">
 
-                <h3>
-                    Better Farming
-                </h3>
+                <div class="card-title">
+                    Farmer Organization
+                </div>
 
                 <p>
-                    किसानों को आधुनिक एवं जैविक खेती के लिए
-                    प्रोत्साहित करना तथा उत्पादन बढ़ाना।
+                    किसानों को एक साथ जोड़कर
+                    सामूहिक कृषि विकास को बढ़ावा देना।
                 </p>
 
             </div>
 
+
             <div class="card">
 
-                <h3>
-                    Better Income
-                </h3>
+                <div class="card-title">
+                    Agricultural Products
+                </div>
 
                 <p>
-                    किसानों को उनकी उपज का उचित मूल्य दिलाकर
-                    उनकी आय में वृद्धि करना।
+                    किसानों से जुड़े गुणवत्तापूर्ण
+                    कृषि उत्पादों को बाजार तक पहुँचाना।
                 </p>
 
             </div>
 
+
             <div class="card">
 
-                <h3>
+                <div class="card-title">
                     Better Market
-                </h3>
+                </div>
 
                 <p>
-                    कृषि उत्पादों को e-NAM, ONDC, Retail Stores
-                    एवं Export Market तक पहुँचाने का प्रयास।
+                    कृषि उत्पादों के लिए बेहतर
+                    बाजार और बिक्री के अवसर उपलब्ध कराना।
                 </p>
 
             </div>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <!-- SERVICES -->
+    <!-- ================= MISSION ================= -->
 
-    <div class="section-box">
+    <section class="section">
 
         <h2>
-            Our Services
+            हमारा उद्देश्य
         </h2>
 
-        <div class="services-grid">
+        <div class="mission-box">
 
-            <div class="service">
-                Organic Farming Promotion
-            </div>
+            <h3>
+                किसानों की आय और कृषि उत्पादों की गुणवत्ता में सुधार
+            </h3>
 
-            <div class="service">
-                Seed & Fertilizer Supply
-            </div>
+            <p>
+                हमारा उद्देश्य किसानों को सामूहिक रूप से मजबूत
+                करके उन्हें कृषि उत्पादन और विपणन के बेहतर
+                अवसर उपलब्ध कराना है।
+            </p>
 
-            <div class="service">
-                Soil Testing & Advisory
-            </div>
+            <ul class="mission-list">
 
-            <div class="service">
-                Farmer Training Programs
-            </div>
+                <li>
+                    किसानों को संगठित और सशक्त बनाना।
+                </li>
 
-            <div class="service">
-                Farm Mechanization Support
-            </div>
+                <li>
+                    कृषि उत्पादों के लिए बेहतर बाजार उपलब्ध कराना।
+                </li>
 
-            <div class="service">
-                Market Linkage & e-NAM Support
-            </div>
+                <li>
+                    गुणवत्तापूर्ण एवं जैविक कृषि को प्रोत्साहित करना।
+                </li>
 
-            <div class="service">
-                Value Addition & Processing
-            </div>
+                <li>
+                    किसानों को सामूहिक खरीद और बिक्री के अवसर देना।
+                </li>
 
-            <div class="service">
-                Storage & Warehouse Facility
-            </div>
+                <li>
+                    स्थानीय कृषि उत्पादों को व्यापक बाजार से जोड़ना।
+                </li>
 
-            <div class="service">
-                Export Assistance
-            </div>
+                <li>
+                    ग्रामीण क्षेत्रों में कृषि आधारित विकास को बढ़ावा देना।
+                </li>
 
-            <div class="service">
-                Government Scheme Facilitation
-            </div>
+            </ul>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <!-- BOARD -->
+    <!-- ================= VISION ================= -->
 
-    <div class="section-box">
+    <section class="section">
 
         <h2>
-            Board of Directors
+            हमारा Vision
         </h2>
 
-        <div class="card-grid">
+        <p>
+            हमारा लक्ष्य एक ऐसा मजबूत किसान समुदाय विकसित करना है
+            जहाँ किसान अपनी कृषि उपज, संसाधनों और बाजार के संबंध में
+            सामूहिक रूप से बेहतर निर्णय ले सकें तथा कृषि को एक
+            लाभकारी और टिकाऊ व्यवसाय के रूप में आगे बढ़ा सकें।
+        </p>
 
-            <div class="card">
-
-                <h3>
-                    Chairman
-                </h3>
-
-                <p>
-                    Chairman Name
-                </p>
-
-            </div>
-
-            <div class="card">
-
-                <h3>
-                    Director
-                </h3>
-
-                <p>
-                    Director Name
-                </p>
-
-            </div>
-
-            <div class="card">
-
-                <h3>
-                    Director
-                </h3>
-
-                <p>
-                    Director Name
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
+    </section>
 
 
-    <!-- MANAGEMENT -->
+    <!-- ================= VALUES ================= -->
 
-    <div class="section-box">
+    <section class="section">
 
         <h2>
-            Management Team
+            हमारे मूल मूल्य
         </h2>
 
-        <div class="mission-list">
+        <div class="value-grid">
 
-            <div class="mission-item">
-                CEO : _______________________
+            <div class="value-item">
+
+                <h3>
+                    किसान हित
+                </h3>
+
+                <p>
+                    हमारे कार्यों में किसानों के हित और
+                    उनके आर्थिक विकास को प्राथमिकता दी जाती है।
+                </p>
+
             </div>
 
-            <div class="mission-item">
-                Accountant : _______________________
+
+            <div class="value-item">
+
+                <h3>
+                    गुणवत्ता
+                </h3>
+
+                <p>
+                    कृषि उत्पादों की गुणवत्ता और
+                    ग्राहकों के विश्वास को महत्व दिया जाता है।
+                </p>
+
             </div>
 
-            <div class="mission-item">
-                Marketing Manager : _______________________
+
+            <div class="value-item">
+
+                <h3>
+                    पारदर्शिता
+                </h3>
+
+                <p>
+                    FPO की गतिविधियों में पारदर्शिता,
+                    जिम्मेदारी और विश्वास को महत्व दिया जाता है।
+                </p>
+
             </div>
 
-            <div class="mission-item">
-                Field Coordinator : _______________________
+
+            <div class="value-item">
+
+                <h3>
+                    सामूहिक विकास
+                </h3>
+
+                <p>
+                    किसानों के सामूहिक प्रयासों से
+                    कृषि और ग्रामीण अर्थव्यवस्था को मजबूत करना।
+                </p>
+
             </div>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <!-- WHY CHOOSE -->
+    <!-- ================= FARMER CTA ================= -->
 
-    <div class="section-box">
+    <section class="cta">
 
         <h2>
-            Why Choose Our FPO?
+            FPO से जुड़ें और सामूहिक विकास का हिस्सा बनें
         </h2>
 
-        <div class="card-grid">
+        <p>
+            किसान Membership के लिए ऑनलाइन आवेदन करें
+            या हमारे कृषि उत्पाद देखें।
+        </p>
 
-            <div class="card">
+        <a href="membership.html">
+            Join FPO
+        </a>
 
-                <h3>
-                    Organic Products
-                </h3>
+        <a href="products.html">
+            View Products
+        </a>
 
-                <p>
-                    प्राकृतिक एवं गुणवत्तापूर्ण कृषि उत्पादों
-                    को बढ़ावा देना।
-                </p>
+        <a href="contact.html">
+            Contact Us
+        </a>
 
-            </div>
+    </section>
 
-            <div class="card">
 
-                <h3>
-                    Direct From Farmers
-                </h3>
+</div>
 
-                <p>
-                    उत्पाद सीधे किसानों से ग्राहकों तक
-                    पहुँचाने का प्रयास।
-                </p>
 
-            </div>
-
-            <div class="card">
-
-                <h3>
-                    Large Market Access
-                </h3>
-
-                <p>
-                    राष्ट्रीय एवं अंतरराष्ट्रीय बाजारों तक
-                    पहुँच के अवसर।
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- ACHIEVEMENTS -->
-
-    <div class="section-box">
-
-        <h2>
-            Our Achievements
-        </h2>
-
-        <div class="mission-list">
-
-            <div class="mission-item">
-                500+ Registered Farmers
-            </div>
-
-            <div class="mission-item">
-                Organic Farming Promotion in Bundelkhand Region
-            </div>
-
-            <div class="mission-item">
-                Modern Agriculture Training Programs
-            </div>
-
-            <div class="mission-item">
-                Better Market Linkage for Farmers
-            </div>
-
-            <div class="mission-item">
-                Digital Marketing through e-NAM, ONDC & E-Commerce Platforms
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- OFFICE -->
-
-    <div class="section-box">
-
-        <h2>
-            Registered Office
-        </h2>
-
-        <div class="card-grid">
-
-            <div class="office-card">
-
-                <h3>
-                    Office Address
-                </h3>
-
-                <p>
-                    Bundelkhand Organic Farmer Producer Company Limited
-                    <br><br>
-
-                    Belatal Road, Bansphadiya,
-                    <br>
-
-                    Village & Post - Srinagar,
-                    <br>
-
-                    District - Mahoba,
-                    <br>
-
-                    Uttar Pradesh - 210433
-                </p>
-
-            </div>
-
-
-            <div class="office-card">
-
-                <h3>
-                    Contact Us
-                </h3>
-
-                <p>
-                    Contact details के लिए कृपया
-                    हमारे Contact page पर जाएँ।
-                </p>
-
-                <br>
-
-                <a
-                    href="contact.html"
-                    style="
-                    display:inline-block;
-                    background:#2e7d32;
-                    color:white;
-                    padding:10px 20px;
-                    border-radius:6px;
-                    text-decoration:none;
-                    font-weight:bold;
-                    "
-                >
-                    Contact Us
-                </a>
-
-            </div>
-
-
-            <div class="office-card">
-
-                <h3>
-                    Our Motto
-                </h3>
-
-                <p>
-                    Healthy Farmers
-                    <br>
-                    Healthy Food
-                    <br>
-                    Healthy Future
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =================================================
-     THANK YOU
-================================================= -->
-
-<section class="thank-you">
-
-    <h2>
-        Thank You
-    </h2>
-
-    <p>
-        हमारा उद्देश्य किसानों को आत्मनिर्भर, समृद्ध एवं आधुनिक बनाना है।
-        हम सभी किसानों, उपभोक्ताओं एवं सहयोगियों का हार्दिक स्वागत करते हैं।
-    </p>
-
-    <br>
-
-    <strong>
-        Together We Grow • Together We Prosper
-    </strong>
-
-</section>
-
-
-<!-- =================================================
-     FOOTER
-================================================= -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
-
-    <h3>
-        बुंदेलखंड ऑर्गेनिक फार्मर प्रोड्यूसर कंपनी लिमिटेड
-    </h3>
 
     <p>
         Bundelkhand Organic Farmer Producer Company Limited
@@ -1311,7 +822,5 @@ footer p{
 
 </footer>
 
-
 </body>
-
 </html>
