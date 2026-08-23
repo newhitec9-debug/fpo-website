@@ -447,60 +447,36 @@ const PIN_MASTER = {
             "Mahoba": {
 
                 "Kabrai": {
-
-                    /*
-                    Kabrai S.O.
-                    */
-
                     "Kabrai": "210424",
-
-                    /*
-                    Srinagar (Mahoba)
-                    */
-
                     "Srinagar": "210433"
-
                 }
 
             },
-
 
             "Charkhari": {
 
                 "Charkhari": {
-
-                    /*
-                    Charkhari S.O.
-                    */
-
-                    "Charkhari": "210421"
-
+                    "Charkhari": "210421",
+                    "Barenda": "210501"
                 }
 
             },
 
-
             "Kulpahar": {
 
                 "Jaitpur": {
-
-                    /*
-                    Jaitpur S.O.
-                    */
-
-                    "Jaitpur": "210423"
-
+                    "Jaitpur": "210423",
+                    "Amanpura": "210423",
+                    "Bihar": "210423",
+                    "Lamaura": "210423",
+                    "Magraul Kalan": "210423",
+                    "Mawaiya": "210423",
+                    "Thurat": "210423",
+                    "Tikariya Jaitpur": "210423"
                 },
 
-
                 "Panwari": {
-
-                    /*
-                    Panwari S.O.
-                    */
-
-                    "Panwari": "210429"
-
+                    /* अभी village-wise verification बाकी है */
                 }
 
             }
