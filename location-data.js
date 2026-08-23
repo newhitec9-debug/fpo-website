@@ -1,34 +1,34 @@
 /*
 ===========================================================
 BUNDELKHAND ORGANIC FARMER PRODUCER COMPANY LIMITED
-LOCATION DATA
+LOCATION DATA MASTER
 ===========================================================
 
-CORRECT HIERARCHY
+Hierarchy:
 
 State
-  └── District
-        └── Tehsil
-              └── Block
-                    └── Village
+  -> District
+      -> Tehsil
+          -> Block
+              -> Village
 
-UP - Mahoba:
+UP - MAHOBA
 
-Uttar Pradesh
-  └── Mahoba
-       ├── Mahoba
-       │    └── Kabrai
-       │
-       ├── Charkhari
-       │    └── Charkhari
-       │
-       └── Kulpahar
-            ├── Jaitpur
-            └── Panwari
+District:
+    Mahoba
 
+Tehsil:
+    Mahoba
+    Charkhari
+    Kulpahar
+
+Blocks:
+    Kabrai
+    Charkhari
+    Jaitpur
+    Panwari
 ===========================================================
 */
-
 
 const LOCATION_MASTER = {
 
@@ -36,10 +36,10 @@ const LOCATION_MASTER = {
 
         "Mahoba": {
 
-            /* ================================
+            /* =================================================
                TEHSIL : MAHOBA
                BLOCK  : KABRAI
-            ================================= */
+            ================================================= */
 
             "Mahoba": {
 
@@ -161,10 +161,10 @@ const LOCATION_MASTER = {
             },
 
 
-            /* ================================
+            /* =================================================
                TEHSIL : CHARKHARI
                BLOCK  : CHARKHARI
-            ================================= */
+            ================================================= */
 
             "Charkhari": {
 
@@ -181,16 +181,16 @@ const LOCATION_MASTER = {
                     "Bamhouri Kalan",
                     "Bamhouri Khurd",
                     "Bamhouriya",
-                    "Bareda",
                     "Barakachha",
+                    "Bareda",
                     "Barenda",
                     "Bari",
                     "Basauth",
                     "Brijapur",
                     "Chandauli",
+                    "Charakhariya",
                     "Charkhari",
                     "Chhani Khurd",
-                    "Charakhariya",
                     "Damadama",
                     "Dhoomagir",
                     "Fatehpur",
@@ -199,8 +199,8 @@ const LOCATION_MASTER = {
                     "Imiliya Dang",
                     "Itawa",
                     "Jarauli",
-                    "Jataura",
                     "Jaswari",
+                    "Jataura",
                     "Kakun",
                     "Kamal Kheda",
                     "Kanera",
@@ -250,15 +250,12 @@ const LOCATION_MASTER = {
             },
 
 
-            /* ================================
+            /* =================================================
                TEHSIL : KULPAHAR
-            ================================= */
+               BLOCK  : JAITPUR
+            ================================================= */
 
             "Kulpahar": {
-
-                /* ================================
-                   BLOCK : JAITPUR
-                ================================= */
 
                 "Jaitpur": [
 
@@ -327,9 +324,10 @@ const LOCATION_MASTER = {
                 ],
 
 
-                /* ================================
-                   BLOCK : PANWARI
-                ================================= */
+                /* =================================================
+                   TEHSIL : KULPAHAR
+                   BLOCK  : PANWARI
+                ================================================= */
 
                 "Panwari": [
 
@@ -343,7 +341,9 @@ const LOCATION_MASTER = {
                     "Bhagauree",
                     "Bihar",
                     "Budaero",
+                    "Chandanhas",
                     "Chhachhari",
+                    "Churaari",
                     "Devganpura",
                     "Didaura",
                     "Didwara",
@@ -401,9 +401,9 @@ const LOCATION_MASTER = {
     },
 
 
-    /* ====================================================
+    /* =======================================================
        MADHYA PRADESH
-       ==================================================== */
+       ======================================================= */
 
     "Madhya Pradesh": {
 
@@ -429,13 +429,87 @@ const LOCATION_MASTER = {
 /*
 ===========================================================
 PIN MASTER
-===========================================================
 
-अभी PIN खाली रखा गया है ताकि गलत PIN automatic न आए।
+IMPORTANT:
+PIN केवल verified entries के लिए रखा गया है।
+
+जहाँ village-specific PIN verify नहीं है,
+वहाँ PIN खाली रहेगा।
 ===========================================================
 */
 
-const PIN_MASTER = {};
+const PIN_MASTER = {
+
+    "Uttar Pradesh": {
+
+        "Mahoba": {
+
+            "Mahoba": {
+
+                "Kabrai": {
+
+                    /*
+                    Kabrai S.O.
+                    */
+
+                    "Kabrai": "210424",
+
+                    /*
+                    Srinagar (Mahoba)
+                    */
+
+                    "Srinagar": "210433"
+
+                }
+
+            },
+
+
+            "Charkhari": {
+
+                "Charkhari": {
+
+                    /*
+                    Charkhari S.O.
+                    */
+
+                    "Charkhari": "210421"
+
+                }
+
+            },
+
+
+            "Kulpahar": {
+
+                "Jaitpur": {
+
+                    /*
+                    Jaitpur S.O.
+                    */
+
+                    "Jaitpur": "210423"
+
+                },
+
+
+                "Panwari": {
+
+                    /*
+                    Panwari S.O.
+                    */
+
+                    "Panwari": "210429"
+
+                }
+
+            }
+
+        }
+
+    }
+
+};
 
 
 /*
@@ -611,7 +685,7 @@ function getLocationVillages(
 
 /*
 ===========================================================
-GET VILLAGE PIN
+GET PIN
 ===========================================================
 */
 
@@ -679,7 +753,7 @@ function findLocationVillage(
 
 /*
 ===========================================================
-BUILD AUTOMATIC ADDRESS
+AUTOMATIC ADDRESS
 ===========================================================
 */
 
@@ -698,32 +772,35 @@ function buildFarmerAddress(
     if (village)
         parts.push(village);
 
+
     if (block)
         parts.push(block);
+
 
     if (tehsil)
         parts.push(tehsil);
 
+
     if (district)
         parts.push(district);
 
+
     if (state)
         parts.push(state);
+
 
     if (pincode)
         parts.push(pincode);
 
 
-    return parts.join(
-        ", "
-    );
+    return parts.join(", ");
 
 }
 
 
 /*
 ===========================================================
-EXPORT TO WINDOW
+EXPORT
 ===========================================================
 */
 
@@ -760,12 +837,29 @@ window.buildFarmerAddress =
 
 /*
 ===========================================================
-LOAD TEST
+READY EVENT
+===========================================================
+*/
+
+window.dispatchEvent(
+    new CustomEvent(
+        "locationMasterReady",
+        {
+            detail:
+                LOCATION_MASTER
+        }
+    )
+);
+
+
+/*
+===========================================================
+TEST
 ===========================================================
 */
 
 console.log(
-    "LOCATION DATA LOADED"
+    "LOCATION MASTER LOADED"
 );
 
 console.log(
@@ -816,41 +910,56 @@ console.log(
 );
 
 console.log(
-    "Kabrai Villages:",
-    getLocationVillages(
+    "Kabrai PIN:",
+    getVillagePin(
         "Uttar Pradesh",
         "Mahoba",
         "Mahoba",
+        "Kabrai",
         "Kabrai"
-    ).length
+    )
 );
 
 console.log(
-    "Charkhari Villages:",
-    getLocationVillages(
+    "Srinagar PIN:",
+    getVillagePin(
+        "Uttar Pradesh",
+        "Mahoba",
+        "Mahoba",
+        "Kabrai",
+        "Srinagar"
+    )
+);
+
+console.log(
+    "Charkhari PIN:",
+    getVillagePin(
         "Uttar Pradesh",
         "Mahoba",
         "Charkhari",
+        "Charkhari",
         "Charkhari"
-    ).length
+    )
 );
 
 console.log(
-    "Jaitpur Villages:",
-    getLocationVillages(
+    "Jaitpur PIN:",
+    getVillagePin(
         "Uttar Pradesh",
         "Mahoba",
         "Kulpahar",
+        "Jaitpur",
         "Jaitpur"
-    ).length
+    )
 );
 
 console.log(
-    "Panwari Villages:",
-    getLocationVillages(
+    "Panwari PIN:",
+    getVillagePin(
         "Uttar Pradesh",
         "Mahoba",
         "Kulpahar",
+        "Panwari",
         "Panwari"
-    ).length
+    )
 );
