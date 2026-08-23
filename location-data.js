@@ -1,30 +1,43 @@
 /*
 ============================================================
- BUNDELKHAND ORGANIC FARMER PRODUCER COMPANY LIMITED
- LOCATION MASTER
+LOCATION DATA
+Bundelkhand Organic Farmer Producer Company Limited
+============================================================
 
- FLOW:
+FLOW:
 
- State
-   ↓
- District
-   ↓
- Tehsil
-   ↓
- Block
-   ↓
- Village
-   ↓
- PIN
-   ↓
- Automatic Address
+State
+  ↓
+District
+  ↓
+Tehsil
+  ↓
+Block
+  ↓
+Village
+  ↓
+PIN
+  ↓
+Automatic Address
 
- Current States:
- Uttar Pradesh
- Madhya Pradesh
+Current verified district data:
+Uttar Pradesh → Mahoba
 
- IMPORTANT:
- farmers.html इस file को पढ़ेगा।
+Mahoba:
+Tehsil:
+1. Mahoba
+2. Charkhari
+3. Kulpahar
+
+Blocks:
+1. Kabrai
+2. Charkhari
+3. Jaitpur
+4. Panwari
+
+Source:
+District Mahoba, Government of Uttar Pradesh
+Village & Panchayats
 ============================================================
 */
 
@@ -35,1006 +48,585 @@ const LOCATION_MASTER = {
 
         "Mahoba": {
 
+            /*
+            ==================================================
+            TEHSIL: MAHOBA
+            BLOCK: KABRAI
+            ==================================================
+            */
+
             "Mahoba": {
 
                 "Kabrai": [
 
-                    {
-                        name: "Srinagar",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kabrai",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Gyonda",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Banni",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Khanna",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Ataghar",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Akawaii",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Pura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Mawai Khurd",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Tamaura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Chichara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Baramhauli",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Sirsi Khurd",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bahiga",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Khamhariya",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Khiruhi",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kulkuwan",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kahra",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Sirsi Kalan",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Tinduhai",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Pachpahara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Nurpur",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kauhari",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Babedi",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Suraha",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Parsaha",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Pidari",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Singhanpur Baghari",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Gahra",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Lilwahi",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Chhani Kala",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Barbai",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Sichaura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Mahewa",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Gauh ari",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Marhathi",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Baghwa",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Mochipura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Beela Dakshin",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Amilahi",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kaimaha",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Riwai Sunecha",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Sukaura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Beela Uttar",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Nahdaura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Raivara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kharaka",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Balakaura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Hardua",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Pahra",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bamhouri Kazi",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Utiyan",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Dharoun",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Jujhar",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Baree",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Raipura Khurd",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Baraat Pahadi",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bilbai",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Chhikahara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Nathupura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Karahara Kalan",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Chandpura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Gugura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Makarbai",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Ratauli",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Naigaon",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Daharara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Tikamau",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kali Pahadi",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Barepura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kidaari",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Paswara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Thana",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bijanagar",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Shahpahadi",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Churwara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Damaura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Ghutwai",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Pachhara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Chak Maraila",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kumhaura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Fatehpur Bajariya",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Dariba",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bhateepura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Rahil iya",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bamhouri Gusain",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Eraipura Kala",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Pawa",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Majhalwara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Palka",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Mamna",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Mudahara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Basaura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Sijahari",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Nanaura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Selamaf",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Urawara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kar Pahadiya",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Luhedi",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Hilua",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Pipra Maf",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Gopalpura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bhadra",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Dhikvaha",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Mabai",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Khyoraia Jyoraia",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Sijwaha",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Digariya",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Sijariya",
-                        pincode: ""
-                    }
-
+                    "Gyonda",
+                    "Banni",
+                    "Khanna",
+                    "Ataghar",
+                    "Akawaii",
+                    "Pura",
+                    "Mawai Khurd",
+                    "Tamaura",
+                    "Chichara",
+                    "Baramhauli",
+                    "Sirsi Khurd",
+                    "Bahiga",
+                    "Khamhariya",
+                    "Khiruhi",
+                    "Kulkuwan",
+                    "Kahra",
+                    "Sirsi Kalan",
+                    "Ghondauwa",
+                    "Tinduhai",
+                    "Pachpahara",
+                    "Nur Pur",
+                    "Kauhari",
+                    "Babedai",
+                    "Suraha",
+                    "Bhaista Maf",
+                    "Parsaha",
+                    "Pidari",
+                    "Singhanpur Baghari",
+                    "Gahra",
+                    "Lilwahi",
+                    "Chhani Kala",
+                    "Barbai",
+                    "Sichaura",
+                    "Mahewa",
+                    "Gauh ari",
+                    "Kabrai",
+                    "Marhathi",
+                    "Baghwa",
+                    "Mochipura",
+                    "Beela Dakshin",
+                    "Amilahi",
+                    "Kaimaha",
+                    "Riwai Sunecha",
+                    "Sukaura",
+                    "Beela Uttar",
+                    "Nahdaura Maf",
+                    "Raivara",
+                    "Balakaura",
+                    "Hardua",
+                    "Kharaka",
+                    "Pahra",
+                    "Bamhouri Kazi",
+                    "Utiyan",
+                    "Dharoun",
+                    "Baree",
+                    "Raipura Khurd",
+                    "Jujhar",
+                    "Ganj",
+                    "Jhir Saheba",
+                    "Baraat Pahadi",
+                    "Bilbai",
+                    "Chhikahara",
+                    "Nathupura",
+                    "Karahara Kalan",
+                    "Pachpahara",
+                    "Chodau",
+                    "Chandpura",
+                    "Gugura",
+                    "Makarbai",
+                    "Naigaon",
+                    "Daharara",
+                    "Tikamau",
+                    "Ratauli",
+                    "Kali Pahadi",
+                    "Barepura",
+                    "Dadahat Maf",
+                    "Kidaari",
+                    "Thana",
+                    "Paswara",
+                    "Bijanagar",
+                    "Shahpahadi",
+                    "Churwara",
+                    "Ghutwai",
+                    "Damaura",
+                    "Pachhara",
+                    "Chak Maraila",
+                    "Kumhadaura Maf",
+                    "Fatehpur Bajariya",
+                    "Dariba",
+                    "Mahoba",
+                    "Bhateepura",
+                    "Rahiliya",
+                    "Bamhouri Gusain",
+                    "Baniya Tala Mahnapura",
+                    "Eraipura Kala",
+                    "Pawa",
+                    "Majhalwara",
+                    "Palka",
+                    "Miratala",
+                    "Mudhahara",
+                    "Mamana",
+                    "Basaura",
+                    "Sijahari",
+                    "Selamaf",
+                    "Nanaura",
+                    "Urawara",
+                    "Kar Pahadiya",
+                    "Luhedi",
+                    "Hilua",
+                    "Pipra Maf",
+                    "Shamsher Afutera",
+                    "Atarara Maf",
+                    "Muraani",
+                    "Bilakhi",
+                    "Tautiya Bara",
+                    "Srinagar",
+                    "Dhudaiya",
+                    "Chitaiya",
+                    "Bilarahi",
+                    "Imiliya",
+                    "Tindouli",
+                    "Salarpur",
+                    "Bara",
+                    "Gopalpura",
+                    "Bhadra",
+                    "Dhikvaha",
+                    "Mabai",
+                    "Khyoraia Jyoraia",
+                    "Sijwaha",
+                    "Digariya",
+                    "Sijariya",
+                    "Kabrai Andar Town",
+                    "Gauh ari Andar Town",
+                    "Baghwa Andar Town",
+                    "Marhathi Andar Town",
+                    "Mochipura Andar"
                 ]
 
             },
 
+
+            /*
+            ==================================================
+            TEHSIL: CHARKHARI
+            BLOCK: CHARKHARI
+            ==================================================
+            */
 
             "Charkhari": {
 
                 "Charkhari": [
 
-                    {
-                        name: "Imalikheda",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Berikheda",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Malakhanpur",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Rupanagar",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Soharayangaon",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Itawa",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Fatehpur",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kurora Dang",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Manjhol",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Maharaj Nagar",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Gopala Pura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bagaraun",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Asthaun",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bamhori Beladaran",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Dhoomagir",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kutiya",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Soopa",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Barakachha",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Puchhi",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Naredai",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Salat",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Swasamaf",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Charakhariya",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Balachaur",
-                        pincode: ""
-                    }
-
-                ]
-
-            },
-
-
-            "Kulpahar": {
-
-                "Panwari": [
-
-                    {
-                        name: "Syonḍhee",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Salaiya Khalsa",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bihar",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Haiwatpura Khangaran",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Silalapura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Lakhniyan",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Gaungudha",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Tagariya",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Budero",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Masoodpura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Padariya",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Aleepura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Chhachhari",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Nisawara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Jagpura Bujurg",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Govindpura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Nibaur a",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bendo",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Itwan",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Khiriya Bujurg",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Turara Mohar",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Sukhaura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Shergarh",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bhagauree",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Jakh a",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Lodipura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Uldan",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Simariya",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bahadurpur Nau Abad",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Panwadi",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Raimalpura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Chhatesar",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Haiwatpura Brahmanan",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Devganpura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Sargapura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kauniyan",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Bahadurpur Kala",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Didwara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Khngarara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Natara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kamala",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kilhauva",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Naugaon",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Kasaari",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Pahaanpura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Ghurwas Mau",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Saigarpura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Sinkandarpura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Gahlood",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Khenana Nanakari",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Gugaura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Jamaala",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Vijaypur",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Panara",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Mahua Itaura",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Dinai",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Nonaka",
-                        pincode: ""
-                    },
-
-                    {
-                        name: "Andawara",
-                        pincode: ""
-                    }
-
-                ],
-
-
-                "Jaitpur": [
-
-                    {
-                        name: "Vudhaura",
-                        pincode: ""
-                    }
-
+                    "Bareda",
+                    "Barenda",
+                    "Dhawaree",
+                    "Basauth",
+                    "Punniyan",
+                    "Kharela",
+                    "Kuwa",
+                    "Barayan",
+                    "Aichana",
+                    "Pada Ora",
+                    "Paharetha",
+                    "Pupwara",
+                    "Bari",
+                    "Gadhhari",
+                    "Rihuniya",
+                    "Sijaura",
+                    "Atarauli",
+                    "Patha",
+                    "Kaneri",
+                    "Salua",
+                    "Kamal Kheda",
+                    "Bamhouri Kalan",
+                    "Shivahar",
+                    "Brijapur",
+                    "Imiliya Dang",
+                    "Maharajpura",
+                    "Rivai",
+                    "Lataura",
+                    "Markui",
+                    "Kumharai",
+                    "Jaswari",
+                    "Santoshpura",
+                    "Nibuwari",
+                    "Kiratpura",
+                    "Kuraura Bajpai",
+                    "Kaakun",
+                    "Baihari",
+                    "Natarara",
+                    "Bamhouriya",
+                    "Jataura",
+                    "Panchampura",
+                    "Rajaura",
+                    "Kanera",
+                    "Chhani Khurd",
+                    "Sudamapuri",
+                    "Kudaar",
+                    "Chandauli",
+                    "Ballayan",
+                    "Tisauni",
+                    "Jarauli",
+                    "Ujendai",
+                    "Kusarma",
+                    "Damadama",
+                    "Anaghaura",
+                    "Pratishtha",
+                    "Bamhouri Khurd",
+                    "Khiria",
+                    "Sabua",
+                    "Kauhari",
+                    "Guptamau",
+                    "Ragaul",
+                    "Beejalpura",
+                    "Ghutwai",
+                    "Udaipura",
+                    "Luhapuri",
+                    "Suhajana",
+                    "Rayanpur",
+                    "Karahara Khurd",
+                    "Garoutha",
+                    "Jaraula",
+                    "Bhetevar Kalan",
+                    "Singhain",
+                    "Tola Chaharum",
+                    "Gaurahari",
+                    "Dhanawan",
+                    "Lidhaura Soyam",
+                    "Luhari",
+                    "Akathauhan",
+                    "Gorakha",
+                    "Chhedi Mau",
+                    "Rampura Kadeem",
+                    "Bamanetha",
+                    "Kakara",
+                    "Nausara",
+                    "Bamaraara",
+                    "Roshanpura",
+                    "Imalikheda",
+                    "Berikheda",
+                    "Malakhanpur",
+                    "Rupanagar",
+                    "Soharayangaon",
+                    "Itawa",
+                    "Fatehpur",
+                    "Kurora Dang",
+                    "Manjhol",
+                    "Maharaj Nagar",
+                    "Jardinagar",
+                    "Mid Lane Ganj",
+                    "Dayalpura",
+                    "Gopalpura",
+                    "Bagaraun",
+                    "Asthaun",
+                    "Bamhouri Beladaran",
+                    "Dhoomagir",
+                    "Kutiya",
+                    "Soopa",
+                    "Barakachha",
+                    "Puchhi",
+                    "Naredai",
+                    "Salat",
+                    "Swasamaf",
+                    "Charakhariya",
+                    "Balachaur",
+                    "Tola Soyam"
                 ]
 
             }
+
+        },
+
+
+        /*
+        ======================================================
+        TEHSIL: KULPAHAR
+        BLOCK: PANWARI
+        ======================================================
+        */
+
+        "Kulpahar": {
+
+            "Panwari": [
+
+                "Syondhee",
+                "Salaiyaa Khalsa",
+                "Bihar",
+                "Haivatpura Khangaran",
+                "Silalapura",
+                "Lakhaniyan",
+                "Gaunagudha",
+                "Tagariya",
+                "Budaero",
+                "Masoodpura",
+                "Padariya",
+                "Aleepura",
+                "Lidhaura Khurd",
+                "Laulara",
+                "Chhachhari",
+                "Nisawara",
+                "Gararauli",
+                "Jagpura Bujurg",
+                "Govindpura",
+                "Niboura",
+                "Bendo",
+                "Itwan",
+                "Maragpura",
+                "Khiriya Bujurg",
+                "Turara Mohar",
+                "Sukhaura",
+                "Shergarh",
+                "Bhagauree",
+                "Jakha",
+                "Lodipura",
+                "Jakhee",
+                "Uldan",
+                "Simariya",
+                "Bahadurpur Nau Abad",
+                "Panwadi",
+                "Raimalpura",
+                "Chhatesar",
+                "Haivatpura Brahmanan",
+                "Devganpura",
+                "Sargapura",
+                "Kauniyan",
+                "Bahadurpur Kala",
+                "Didwara",
+                "Khngarara",
+                "Natara",
+                "Kamala",
+                "Kilhauva",
+                "Naugaon",
+                "Kasaari",
+                "Pahaanpura",
+                "Fadna",
+                "Ghurwas Mau",
+                "Saigarpura",
+                "Sinkandarpura",
+                "Gahalaud",
+                "Khenna Nanakari",
+                "Gugaura",
+                "Jamala",
+                "Vijaypur",
+                "Panara",
+                "Mahua Itaura",
+                "Dinai",
+                "Nonaka",
+                "Andawara",
+                "Richha",
+                "Budhi",
+                "Leta",
+                "Bharwara",
+                "Kunata",
+                "Churari",
+                "Charuwa",
+                "Pathari Kadeem",
+                "Vagaul",
+                "Dvasi",
+                "Vijarari",
+                "Chandanhas",
+                "Pahaniya",
+                "Itaura Bujurg",
+                "Vyarjau",
+                "Parapanter",
+                "Tingura",
+                "Dadari",
+                "Tola Panter",
+                "Kajribar",
+                "Dulara",
+                "Ghatera",
+                "Saathar",
+                "Bhujpura",
+                "Chapka",
+                "Varanau",
+                "Patha",
+                "Nagraaghat",
+                "Roopnaul",
+                "Vihat",
+                "Kotara",
+                "Naipura",
+                "Lohargaon",
+                "Kohaniyan",
+                "Marwari",
+                "Sataiyara",
+                "Tikariya",
+                "Richhara",
+                "Dharwar",
+                "Lilwan",
+                "Kasheepur",
+                "Raipura Hardo Nisf",
+                "Umarai",
+                "Teiya",
+                "Khairo Kalan",
+                "Ruri Khurd",
+                "Dhavar",
+                "Basariya Panawaji",
+                "Thalaura",
+                "Bamhouri Kurmin",
+                "Tunadar",
+                "Bhura",
+                "Chamarara",
+                "Mahobakanth",
+                "Karimawar",
+                "Kanakuwa",
+                "Tleepahani",
+                "Vagarauni",
+                "Barenda Bujurg",
+                "Gaunau",
+                "Putta",
+                "Ravatpur Kalan",
+                "Chauka",
+                "Saura",
+                "Kuwan Khenna",
+                "Manki",
+                "Karhara Khurd Khairo",
+                "Rivai",
+                "Devagaon",
+                "Kanaura",
+                "Ganaura",
+                "Didaura",
+                "Amiliya",
+                "Pipari",
+                "Bhanwara",
+                "Amanpura"
+            ],
+
+
+            /*
+            ==================================================
+            TEHSIL: KULPAHAR
+            BLOCK: JAITPUR
+            ==================================================
+            */
+
+            "Jaitpur": [
+
+                "Vudhaura",
+                "Sela Khalsa",
+                "Bhetevara Khurd",
+                "Sugira",
+                "Kulpahar",
+                "Sirmaur",
+                "Saharara",
+                "Udaipura",
+                "Mauh ari",
+                "Sonkapura",
+                "Bhilauni",
+                "Bamhouri Khurd",
+                "Atarapatha",
+                "Lanpur",
+                "Kamalpura",
+                "Indaura",
+                "Khaunariya",
+                "Karahara Dang",
+                "Rawatpura Khurd",
+                "Prithvipura",
+                "Thathevara",
+                "Sataari",
+                "Vaura",
+                "Bihar",
+                "Jaitpur",
+                "Mudhari",
+                "Belatal",
+                "Kutara",
+                "Maheba",
+                "Magaraul Khurd",
+                "Magaraul Kalan",
+                "Mawaiya",
+                "Chhitarwara",
+                "Thurat",
+                "Sarngapura",
+                "Pachara",
+                "Paraunwari",
+                "Rajauni",
+                "Binaura",
+                "Khiriya Khurd",
+                "Kunai",
+                "Hansala",
+                "Vasariya Jaitpur",
+                "Khiriya Kala",
+                "Vagarajan",
+                "Tikariya Jaitpur",
+                "Bhagaura",
+                "Jailwara",
+                "Bamaur",
+                "Jatevara",
+                "Aari",
+                "Ladpura",
+                "Karri Jadeed",
+                "Baghaura",
+                "Repura Kalan",
+                "Budhawara",
+                "Seegaun",
+                "Bunakhera",
+                "Magariya",
+                "Ajanar",
+                "Purawa Jaitpur",
+                "Gahapura",
+                "Khoi",
+                "Sethwara",
+                "Rampura Nau Abad",
+                "Majhgawan Kala",
+                "Barenda Khurd",
+                "Ragauli",
+                "Gunda",
+                "Ataniyamanf",
+                "Lakhaura",
+                "Vachevara",
+                "Ahraura",
+                "Sagun iya Maf",
+                "Lalauni",
+                "Syavan",
+                "Amarpura",
+                "Bamanaura",
+                "Veree",
+                "Koti",
+                "Bachhechhar Khurd",
+                "Kaithora",
+                "Bachhechhar Kalan",
+                "Mahua Bandh",
+                "Araghat Mau",
+                "Bamauliya",
+                "Purawa Panawani",
+                "Majhgawan Khurd",
+                "Ramoopura",
+                "Ranipura",
+                "Lamaura",
+                "Khairariya",
+                "Rikhavaha",
+                "Tikariya Panawani",
+                "Bhadarwara",
+                "Khiriya Jadeed",
+                "Bagvaha",
+                "Nanawara",
+                "Jagpura Khurd",
+                "Ragauliya Khurd",
+                "Leva",
+                "Indrahata",
+                "Pasana Bad",
+                "Rajpura",
+                "Nagada Dang",
+                "Mohanpura",
+                "Ghanghaura",
+                "Vijauree",
+                "Karara",
+                "Salaiyaa Maf",
+                "Bhagaari",
+                "Narwara",
+                "Purainiyan",
+                "Pathari Nau Abad",
+                "Khama",
+                "Jagatpur Urf Gadhiya",
+                "Rawatpura Khalsa",
+                "Ganj",
+                "Ghisalani",
+                "Dhavarara"
+            ]
 
         }
 
     },
 
+
+    /*
+    ==========================================================
+    MADHYA PRADESH
+    ==========================================================
+    */
 
     "Madhya Pradesh": {
 
@@ -1044,10 +636,7 @@ const LOCATION_MASTER = {
 
                 "Nowgong": [
 
-                    {
-                        name: "Nowgong",
-                        pincode: ""
-                    }
+                    "Nowgong"
 
                 ]
 
@@ -1062,23 +651,20 @@ const LOCATION_MASTER = {
 
 /*
 ============================================================
-HELPER FUNCTIONS
+PIN MASTER
+
+PIN केवल verified होने पर यहाँ रखें।
+अभी गलत PIN नहीं डाल रहे हैं।
 ============================================================
 */
 
 
-function locationNormalize(value){
-
-    return String(value || "")
-        .trim()
-        .replace(/\s+/g, " ");
-
-}
+const PIN_MASTER = {};
 
 
 /*
 ============================================================
-GET STATES
+HELPER
 ============================================================
 */
 
@@ -1091,63 +677,29 @@ function getLocationStates(){
 }
 
 
-/*
-============================================================
-GET DISTRICTS
-============================================================
-*/
-
 function getLocationDistricts(
     state
 ){
 
-    if(
-        !LOCATION_MASTER[state]
-    ){
-
-        return [];
-
-    }
-
     return Object.keys(
-        LOCATION_MASTER[state]
+        LOCATION_MASTER[state] || {}
     ).sort();
 
 }
 
-
-/*
-============================================================
-GET TEHSILS
-============================================================
-*/
 
 function getLocationTehsils(
     state,
     district
 ){
 
-    if(
-        !LOCATION_MASTER[state] ||
-        !LOCATION_MASTER[state][district]
-    ){
-
-        return [];
-
-    }
-
     return Object.keys(
-        LOCATION_MASTER[state][district]
+        LOCATION_MASTER
+        [state]?.[district] || {}
     ).sort();
 
 }
 
-
-/*
-============================================================
-GET BLOCKS
-============================================================
-*/
 
 function getLocationBlocks(
     state,
@@ -1155,28 +707,19 @@ function getLocationBlocks(
     tehsil
 ){
 
-    if(
-        !LOCATION_MASTER[state] ||
-        !LOCATION_MASTER[state][district] ||
-        !LOCATION_MASTER[state][district][tehsil]
-    ){
+    const data =
+    LOCATION_MASTER
+    [state]
+    ?.[district]
+    ?.[tehsil];
 
-        return [];
-
-    }
 
     return Object.keys(
-        LOCATION_MASTER[state][district][tehsil]
+        data || {}
     ).sort();
 
 }
 
-
-/*
-============================================================
-GET VILLAGES
-============================================================
-*/
 
 function getLocationVillages(
     state,
@@ -1185,30 +728,90 @@ function getLocationVillages(
     block
 ){
 
-    if(
-        !LOCATION_MASTER[state] ||
-        !LOCATION_MASTER[state][district] ||
-        !LOCATION_MASTER[state][district][tehsil] ||
-        !LOCATION_MASTER[state][district][tehsil][block]
-    ){
+    const data =
+    LOCATION_MASTER
+    [state]
+    ?.[district]
+    ?.[tehsil]
+    ?.[block];
+
+
+    if(!Array.isArray(data)){
 
         return [];
 
     }
 
-    return LOCATION_MASTER
+
+    return data
+    .map(
+        village => {
+
+            if(
+                typeof village ===
+                "string"
+            ){
+
+                return {
+
+                    name:
+                    village,
+
+                    pincode:
+                    getVillagePin(
+                        state,
+                        district,
+                        tehsil,
+                        block,
+                        village
+                    )
+
+                };
+
+            }
+
+
+            return village;
+
+        }
+    )
+    .sort(
+        (a,b) =>
+        a.name.localeCompare(
+            b.name,
+            "hi"
+        )
+    );
+
+}
+
+
+/*
+============================================================
+PIN
+============================================================
+*/
+
+function getVillagePin(
+    state,
+    district,
+    tehsil,
+    block,
+    village
+){
+
+    return (
+
+        PIN_MASTER
         [state]
-        [district]
-        [tehsil]
-        [block]
-        .slice()
-        .sort(
-            (a,b) =>
-            a.name.localeCompare(
-                b.name,
-                "hi"
-            )
-        );
+        ?.[district]
+        ?.[tehsil]
+        ?.[block]
+        ?.[village]
+
+        || ""
+
+    );
 
 }
 
@@ -1235,6 +838,7 @@ function findLocationVillage(
         block
     );
 
+
     return villages.find(
         item =>
         item.name === village
@@ -1260,32 +864,41 @@ function buildFarmerAddress(
 
     const parts = [];
 
+
     if(village)
         parts.push(village);
+
 
     if(block)
         parts.push(block);
 
+
     if(tehsil)
         parts.push(tehsil);
+
 
     if(district)
         parts.push(district);
 
+
     if(state)
         parts.push(state);
+
 
     if(pincode)
         parts.push(pincode);
 
-    return parts.join(", ");
+
+    return parts.join(
+        ", "
+    );
 
 }
 
 
 /*
 ============================================================
-ADD VILLAGE
+OPTIONAL VILLAGE ADD FUNCTION
 ============================================================
 */
 
@@ -1298,46 +911,105 @@ function addLocationVillage(
     pincode = ""
 ){
 
-    village =
-    locationNormalize(village);
+    if(
+        !LOCATION_MASTER[state]
+    ){
 
-    if(!village)
-        return;
-
-    if(!LOCATION_MASTER[state])
         LOCATION_MASTER[state] = {};
 
-    if(!LOCATION_MASTER[state][district])
+    }
+
+
+    if(
+        !LOCATION_MASTER[state][district]
+    ){
+
         LOCATION_MASTER[state][district] = {};
 
-    if(!LOCATION_MASTER[state][district][tehsil])
-        LOCATION_MASTER[state][district][tehsil] = {};
+    }
 
-    if(!LOCATION_MASTER[state][district][tehsil][block])
-        LOCATION_MASTER[state][district][tehsil][block] = [];
 
-    const list =
-    LOCATION_MASTER
-        [state]
+    if(
+        !LOCATION_MASTER[state]
         [district]
         [tehsil]
-        [block];
+    ){
 
-    const exists =
-    list.some(
-        item =>
-        item.name === village
-    );
+        LOCATION_MASTER[state]
+        [district]
+        [tehsil] = {};
 
-    if(!exists){
+    }
 
-        list.push({
 
-            name:village,
+    if(
+        !LOCATION_MASTER[state]
+        [district]
+        [tehsil]
+        [block]
+    ){
 
-            pincode:pincode
+        LOCATION_MASTER[state]
+        [district]
+        [tehsil]
+        [block] = [];
 
-        });
+    }
+
+
+    const list =
+    LOCATION_MASTER[state]
+    [district]
+    [tehsil]
+    [block];
+
+
+    if(
+        !list.includes(village)
+    ){
+
+        list.push(village);
+
+    }
+
+
+    if(pincode){
+
+        if(
+            !PIN_MASTER[state]
+        )
+            PIN_MASTER[state] = {};
+
+        if(
+            !PIN_MASTER[state][district]
+        )
+            PIN_MASTER[state][district] = {};
+
+        if(
+            !PIN_MASTER[state]
+            [district]
+            [tehsil]
+        )
+            PIN_MASTER[state]
+            [district]
+            [tehsil] = {};
+
+        if(
+            !PIN_MASTER[state]
+            [district]
+            [tehsil]
+            [block]
+        )
+            PIN_MASTER[state]
+            [district]
+            [tehsil]
+            [block] = {};
+
+        PIN_MASTER[state]
+        [district]
+        [tehsil]
+        [block]
+        [village] = pincode;
 
     }
 
@@ -1352,6 +1024,9 @@ GLOBAL ACCESS
 
 window.LOCATION_MASTER =
 LOCATION_MASTER;
+
+window.PIN_MASTER =
+PIN_MASTER;
 
 window.getLocationStates =
 getLocationStates;
@@ -1368,6 +1043,9 @@ getLocationBlocks;
 window.getLocationVillages =
 getLocationVillages;
 
+window.getVillagePin =
+getVillagePin;
+
 window.findLocationVillage =
 findLocationVillage;
 
@@ -1380,7 +1058,7 @@ addLocationVillage;
 
 /*
 ============================================================
-READY EVENT
+READY
 ============================================================
 */
 
@@ -1389,7 +1067,8 @@ window.dispatchEvent(
     new CustomEvent(
         "locationMasterReady",
         {
-            detail:LOCATION_MASTER
+            detail:
+            LOCATION_MASTER
         }
     )
 
@@ -1398,35 +1077,79 @@ window.dispatchEvent(
 
 /*
 ============================================================
-CONSOLE TEST
-============================================================
-
-getLocationStates()
-
-getLocationDistricts("Uttar Pradesh")
-
-getLocationTehsils(
-    "Uttar Pradesh",
-    "Mahoba"
-)
-
-getLocationBlocks(
-    "Uttar Pradesh",
-    "Mahoba",
-    "Mahoba"
-)
-
-getLocationVillages(
-    "Uttar Pradesh",
-    "Mahoba",
-    "Mahoba",
-    "Kabrai"
-)
-
+CONSOLE
 ============================================================
 */
 
 console.log(
-    "LOCATION MASTER LOADED",
-    LOCATION_MASTER
+    "LOCATION MASTER LOADED SUCCESSFULLY"
+);
+
+console.log(
+    "States:",
+    getLocationStates()
+);
+
+console.log(
+    "Mahoba Districts:",
+    getLocationDistricts(
+        "Uttar Pradesh"
+    )
+);
+
+console.log(
+    "Mahoba Tehsils:",
+    getLocationTehsils(
+        "Uttar Pradesh",
+        "Mahoba"
+    )
+);
+
+console.log(
+    "Mahoba Blocks:",
+    getLocationBlocks(
+        "Uttar Pradesh",
+        "Mahoba",
+        "Mahoba"
+    )
+);
+
+console.log(
+    "Kabrai Villages:",
+    getLocationVillages(
+        "Uttar Pradesh",
+        "Mahoba",
+        "Mahoba",
+        "Kabrai"
+    ).length
+);
+
+console.log(
+    "Charkhari Villages:",
+    getLocationVillages(
+        "Uttar Pradesh",
+        "Mahoba",
+        "Charkhari",
+        "Charkhari"
+    ).length
+);
+
+console.log(
+    "Jaitpur Villages:",
+    getLocationVillages(
+        "Uttar Pradesh",
+        "Mahoba",
+        "Kulpahar",
+        "Jaitpur"
+    ).length
+);
+
+console.log(
+    "Panwari Villages:",
+    getLocationVillages(
+        "Uttar Pradesh",
+        "Mahoba",
+        "Kulpahar",
+        "Panwari"
+    ).length
 );
