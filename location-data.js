@@ -1,46 +1,22 @@
 /*
-============================================================
-LOCATION DATA
-Bundelkhand Organic Farmer Producer Company Limited
-============================================================
+========================================================
+BUNDelkhand ORGANIC FPO
+LOCATION MASTER
+========================================================
 
-FLOW:
+STRUCTURE:
 
 State
-  ↓
-District
-  ↓
-Tehsil
-  ↓
-Block
-  ↓
-Village
-  ↓
-PIN
-  ↓
-Automatic Address
+  -> District
+      -> Tehsil
+          -> Block
+              -> Village
+                  -> PIN
 
-Current verified district data:
-Uttar Pradesh → Mahoba
-
-Mahoba:
-Tehsil:
-1. Mahoba
-2. Charkhari
-3. Kulpahar
-
-Blocks:
-1. Kabrai
-2. Charkhari
-3. Jaitpur
-4. Panwari
-
-Source:
-District Mahoba, Government of Uttar Pradesh
-Village & Panchayats
-============================================================
+IMPORTANT:
+farmers.html इसी file के functions को पढ़ता है.
+========================================================
 */
-
 
 const LOCATION_MASTER = {
 
@@ -48,12 +24,10 @@ const LOCATION_MASTER = {
 
         "Mahoba": {
 
-            /*
-            ==================================================
-            TEHSIL: MAHOBA
-            BLOCK: KABRAI
-            ==================================================
-            */
+            /* =========================================
+               TEHSIL: MAHOBA
+               BLOCK: KABRAI
+            ========================================= */
 
             "Mahoba": {
 
@@ -76,7 +50,7 @@ const LOCATION_MASTER = {
                     "Kulkuwan",
                     "Kahra",
                     "Sirsi Kalan",
-                    "Ghondauwa",
+                    "Ghandauwa",
                     "Tinduhai",
                     "Pachpahara",
                     "Nur Pur",
@@ -106,25 +80,21 @@ const LOCATION_MASTER = {
                     "Beela Uttar",
                     "Nahdaura Maf",
                     "Raivara",
+                    "Kharaka",
                     "Balakaura",
                     "Hardua",
-                    "Kharaka",
                     "Pahra",
                     "Bamhouri Kazi",
                     "Utiyan",
                     "Dharoun",
+                    "Jujhar",
                     "Baree",
                     "Raipura Khurd",
-                    "Jujhar",
-                    "Ganj",
-                    "Jhir Saheba",
                     "Baraat Pahadi",
                     "Bilbai",
                     "Chhikahara",
                     "Nathupura",
                     "Karahara Kalan",
-                    "Pachpahara",
-                    "Chodau",
                     "Chandpura",
                     "Gugura",
                     "Makarbai",
@@ -134,10 +104,9 @@ const LOCATION_MASTER = {
                     "Ratauli",
                     "Kali Pahadi",
                     "Barepura",
-                    "Dadahat Maf",
                     "Kidaari",
-                    "Thana",
                     "Paswara",
+                    "Thana",
                     "Bijanagar",
                     "Shahpahadi",
                     "Churwara",
@@ -145,42 +114,27 @@ const LOCATION_MASTER = {
                     "Damaura",
                     "Pachhara",
                     "Chak Maraila",
-                    "Kumhadaura Maf",
+                    "Kumhaura Maf",
                     "Fatehpur Bajariya",
                     "Dariba",
-                    "Mahoba",
                     "Bhateepura",
                     "Rahiliya",
                     "Bamhouri Gusain",
-                    "Baniya Tala Mahnapura",
                     "Eraipura Kala",
                     "Pawa",
                     "Majhalwara",
                     "Palka",
-                    "Miratala",
-                    "Mudhahara",
-                    "Mamana",
+                    "Mamna",
+                    "Mudahara",
                     "Basaura",
                     "Sijahari",
-                    "Selamaf",
                     "Nanaura",
+                    "Selamaf",
                     "Urawara",
                     "Kar Pahadiya",
                     "Luhedi",
                     "Hilua",
                     "Pipra Maf",
-                    "Shamsher Afutera",
-                    "Atarara Maf",
-                    "Muraani",
-                    "Bilakhi",
-                    "Tautiya Bara",
-                    "Srinagar",
-                    "Dhudaiya",
-                    "Chitaiya",
-                    "Bilarahi",
-                    "Imiliya",
-                    "Tindouli",
-                    "Salarpur",
                     "Bara",
                     "Gopalpura",
                     "Bhadra",
@@ -190,22 +144,17 @@ const LOCATION_MASTER = {
                     "Sijwaha",
                     "Digariya",
                     "Sijariya",
-                    "Kabrai Andar Town",
-                    "Gauh ari Andar Town",
-                    "Baghwa Andar Town",
-                    "Marhathi Andar Town",
-                    "Mochipura Andar"
+                    "Srinagar"
+
                 ]
 
             },
 
 
-            /*
-            ==================================================
-            TEHSIL: CHARKHARI
-            BLOCK: CHARKHARI
-            ==================================================
-            */
+            /* =========================================
+               TEHSIL: CHARKHARI
+               BLOCK: CHARKHARI
+            ========================================= */
 
             "Charkhari": {
 
@@ -218,7 +167,7 @@ const LOCATION_MASTER = {
                     "Punniyan",
                     "Kharela",
                     "Kuwa",
-                    "Barayan",
+                    "Barayn",
                     "Aichana",
                     "Pada Ora",
                     "Paharetha",
@@ -243,10 +192,10 @@ const LOCATION_MASTER = {
                     "Kumharai",
                     "Jaswari",
                     "Santoshpura",
-                    "Nibuwari",
+                    "Nibuari",
                     "Kiratpura",
                     "Kuraura Bajpai",
-                    "Kaakun",
+                    "Kakun",
                     "Baihari",
                     "Natarara",
                     "Bamhouriya",
@@ -267,36 +216,7 @@ const LOCATION_MASTER = {
                     "Anaghaura",
                     "Pratishtha",
                     "Bamhouri Khurd",
-                    "Khiria",
-                    "Sabua",
-                    "Kauhari",
-                    "Guptamau",
-                    "Ragaul",
-                    "Beejalpura",
-                    "Ghutwai",
-                    "Udaipura",
-                    "Luhapuri",
-                    "Suhajana",
-                    "Rayanpur",
-                    "Karahara Khurd",
-                    "Garoutha",
-                    "Jaraula",
-                    "Bhetevar Kalan",
-                    "Singhain",
-                    "Tola Chaharum",
-                    "Gaurahari",
-                    "Dhanawan",
-                    "Lidhaura Soyam",
-                    "Luhari",
-                    "Akathauhan",
-                    "Gorakha",
-                    "Chhedi Mau",
-                    "Rampura Kadeem",
-                    "Bamanetha",
-                    "Kakara",
                     "Nausara",
-                    "Bamaraara",
-                    "Roshanpura",
                     "Imalikheda",
                     "Berikheda",
                     "Malakhanpur",
@@ -308,7 +228,6 @@ const LOCATION_MASTER = {
                     "Manjhol",
                     "Maharaj Nagar",
                     "Jardinagar",
-                    "Mid Lane Ganj",
                     "Dayalpura",
                     "Gopalpura",
                     "Bagaraun",
@@ -323,8 +242,8 @@ const LOCATION_MASTER = {
                     "Salat",
                     "Swasamaf",
                     "Charakhariya",
-                    "Balachaur",
-                    "Tola Soyam"
+                    "Balachaur"
+
                 ]
 
             }
@@ -332,18 +251,20 @@ const LOCATION_MASTER = {
         },
 
 
-        /*
-        ======================================================
-        TEHSIL: KULPAHAR
-        BLOCK: PANWARI
-        ======================================================
-        */
+        /* =============================================
+           TEHSIL: KULPAHAR
+        ============================================= */
 
         "Kulpahar": {
 
+
+            /* =========================================
+               BLOCK: PANWARI
+            ========================================= */
+
             "Panwari": [
 
-                "Syondhee",
+                "Syonḍhee",
                 "Salaiyaa Khalsa",
                 "Bihar",
                 "Haivatpura Khangaran",
@@ -393,11 +314,10 @@ const LOCATION_MASTER = {
                 "Naugaon",
                 "Kasaari",
                 "Pahaanpura",
-                "Fadna",
                 "Ghurwas Mau",
                 "Saigarpura",
                 "Sinkandarpura",
-                "Gahalaud",
+                "Gahlood",
                 "Khenna Nanakari",
                 "Gugaura",
                 "Jamala",
@@ -406,206 +326,18 @@ const LOCATION_MASTER = {
                 "Mahua Itaura",
                 "Dinai",
                 "Nonaka",
-                "Andawara",
-                "Richha",
-                "Budhi",
-                "Leta",
-                "Bharwara",
-                "Kunata",
-                "Churari",
-                "Charuwa",
-                "Pathari Kadeem",
-                "Vagaul",
-                "Dvasi",
-                "Vijarari",
-                "Chandanhas",
-                "Pahaniya",
-                "Itaura Bujurg",
-                "Vyarjau",
-                "Parapanter",
-                "Tingura",
-                "Dadari",
-                "Tola Panter",
-                "Kajribar",
-                "Dulara",
-                "Ghatera",
-                "Saathar",
-                "Bhujpura",
-                "Chapka",
-                "Varanau",
-                "Patha",
-                "Nagraaghat",
-                "Roopnaul",
-                "Vihat",
-                "Kotara",
-                "Naipura",
-                "Lohargaon",
-                "Kohaniyan",
-                "Marwari",
-                "Sataiyara",
-                "Tikariya",
-                "Richhara",
-                "Dharwar",
-                "Lilwan",
-                "Kasheepur",
-                "Raipura Hardo Nisf",
-                "Umarai",
-                "Teiya",
-                "Khairo Kalan",
-                "Ruri Khurd",
-                "Dhavar",
-                "Basariya Panawaji",
-                "Thalaura",
-                "Bamhouri Kurmin",
-                "Tunadar",
-                "Bhura",
-                "Chamarara",
-                "Mahobakanth",
-                "Karimawar",
-                "Kanakuwa",
-                "Tleepahani",
-                "Vagarauni",
-                "Barenda Bujurg",
-                "Gaunau",
-                "Putta",
-                "Ravatpur Kalan",
-                "Chauka",
-                "Saura",
-                "Kuwan Khenna",
-                "Manki",
-                "Karhara Khurd Khairo",
-                "Rivai",
-                "Devagaon",
-                "Kanaura",
-                "Ganaura",
-                "Didaura",
-                "Amiliya",
-                "Pipari",
-                "Bhanwara",
-                "Amanpura"
+                "Andawara"
+
             ],
 
 
-            /*
-            ==================================================
-            TEHSIL: KULPAHAR
-            BLOCK: JAITPUR
-            ==================================================
-            */
+            /* =========================================
+               BLOCK: JAITPUR
+            ========================================= */
 
             "Jaitpur": [
 
-                "Vudhaura",
-                "Sela Khalsa",
-                "Bhetevara Khurd",
-                "Sugira",
-                "Kulpahar",
-                "Sirmaur",
-                "Saharara",
-                "Udaipura",
-                "Mauh ari",
-                "Sonkapura",
-                "Bhilauni",
-                "Bamhouri Khurd",
-                "Atarapatha",
-                "Lanpur",
-                "Kamalpura",
-                "Indaura",
-                "Khaunariya",
-                "Karahara Dang",
-                "Rawatpura Khurd",
-                "Prithvipura",
-                "Thathevara",
-                "Sataari",
-                "Vaura",
-                "Bihar",
-                "Jaitpur",
-                "Mudhari",
-                "Belatal",
-                "Kutara",
-                "Maheba",
-                "Magaraul Khurd",
-                "Magaraul Kalan",
-                "Mawaiya",
-                "Chhitarwara",
-                "Thurat",
-                "Sarngapura",
-                "Pachara",
-                "Paraunwari",
-                "Rajauni",
-                "Binaura",
-                "Khiriya Khurd",
-                "Kunai",
-                "Hansala",
-                "Vasariya Jaitpur",
-                "Khiriya Kala",
-                "Vagarajan",
-                "Tikariya Jaitpur",
-                "Bhagaura",
-                "Jailwara",
-                "Bamaur",
-                "Jatevara",
-                "Aari",
-                "Ladpura",
-                "Karri Jadeed",
-                "Baghaura",
-                "Repura Kalan",
-                "Budhawara",
-                "Seegaun",
-                "Bunakhera",
-                "Magariya",
-                "Ajanar",
-                "Purawa Jaitpur",
-                "Gahapura",
-                "Khoi",
-                "Sethwara",
-                "Rampura Nau Abad",
-                "Majhgawan Kala",
-                "Barenda Khurd",
-                "Ragauli",
-                "Gunda",
-                "Ataniyamanf",
-                "Lakhaura",
-                "Vachevara",
-                "Ahraura",
-                "Sagun iya Maf",
-                "Lalauni",
-                "Syavan",
-                "Amarpura",
-                "Bamanaura",
-                "Veree",
-                "Koti",
-                "Bachhechhar Khurd",
-                "Kaithora",
-                "Bachhechhar Kalan",
-                "Mahua Bandh",
-                "Araghat Mau",
-                "Bamauliya",
-                "Purawa Panawani",
-                "Majhgawan Khurd",
-                "Ramoopura",
-                "Ranipura",
-                "Lamaura",
-                "Khairariya",
-                "Rikhavaha",
-                "Tikariya Panawani",
-                "Bhadarwara",
-                "Khiriya Jadeed",
-                "Bagvaha",
-                "Nanawara",
-                "Jagpura Khurd",
-                "Ragauliya Khurd",
-                "Leva",
-                "Indrahata",
-                "Pasana Bad",
-                "Rajpura",
-                "Nagada Dang",
-                "Mohanpura",
-                "Ghanghaura",
-                "Vijauree",
-                "Karara",
-                "Salaiyaa Maf",
-                "Bhagaari",
+                "Chamaroova",
                 "Narwara",
                 "Purainiyan",
                 "Pathari Nau Abad",
@@ -614,7 +346,32 @@ const LOCATION_MASTER = {
                 "Rawatpura Khalsa",
                 "Ganj",
                 "Ghisalani",
-                "Dhavarara"
+                "Dhavarara",
+                "Jaitpur",
+                "Belatal",
+                "Sugira",
+                "Vudhaura",
+                "Bhetevara Khurd",
+                "Bamaur",
+                "Ajanar",
+                "Kaithora",
+                "Bachhechhar Khurd",
+                "Bachhechhar Kalan",
+                "Mahua Bandh",
+                "Amarpura",
+                "Bamanaura",
+                "Koti",
+                "Lamaura",
+                "Khairariya",
+                "Rikhavaha",
+                "Bagvaha",
+                "Nanawara",
+                "Rajpura",
+                "Karara",
+                "Narwara",
+                "Salaiyaa Maf",
+                "Bhagaari"
+
             ]
 
         }
@@ -622,11 +379,9 @@ const LOCATION_MASTER = {
     },
 
 
-    /*
-    ==========================================================
-    MADHYA PRADESH
-    ==========================================================
-    */
+    /* ====================================================
+       MADHYA PRADESH
+       ==================================================== */
 
     "Madhya Pradesh": {
 
@@ -650,22 +405,22 @@ const LOCATION_MASTER = {
 
 
 /*
-============================================================
+========================================================
 PIN MASTER
 
-PIN केवल verified होने पर यहाँ रखें।
-अभी गलत PIN नहीं डाल रहे हैं।
-============================================================
+अभी PIN केवल उन्हीं villages में भरेंगे
+जिनका PIN अलग से verify हो चुका हो।
+गलत PIN automatic नहीं लगाया जाएगा।
+========================================================
 */
-
 
 const PIN_MASTER = {};
 
 
 /*
-============================================================
-HELPER
-============================================================
+========================================================
+GET STATES
+========================================================
 */
 
 function getLocationStates(){
@@ -677,29 +432,63 @@ function getLocationStates(){
 }
 
 
+/*
+========================================================
+GET DISTRICTS
+========================================================
+*/
+
 function getLocationDistricts(
     state
 ){
 
+    if(
+        !LOCATION_MASTER[state]
+    ){
+
+        return [];
+
+    }
+
     return Object.keys(
-        LOCATION_MASTER[state] || {}
+        LOCATION_MASTER[state]
     ).sort();
 
 }
 
+
+/*
+========================================================
+GET TEHSILS
+========================================================
+*/
 
 function getLocationTehsils(
     state,
     district
 ){
 
+    if(
+        !LOCATION_MASTER[state] ||
+        !LOCATION_MASTER[state][district]
+    ){
+
+        return [];
+
+    }
+
     return Object.keys(
-        LOCATION_MASTER
-        [state]?.[district] || {}
+        LOCATION_MASTER[state][district]
     ).sort();
 
 }
 
+
+/*
+========================================================
+GET BLOCKS
+========================================================
+*/
 
 function getLocationBlocks(
     state,
@@ -707,19 +496,30 @@ function getLocationBlocks(
     tehsil
 ){
 
-    const data =
-    LOCATION_MASTER
-    [state]
-    ?.[district]
-    ?.[tehsil];
+    if(
+        !LOCATION_MASTER[state] ||
+        !LOCATION_MASTER[state][district] ||
+        !LOCATION_MASTER[state][district][tehsil]
+    ){
 
+        return [];
+
+    }
 
     return Object.keys(
-        data || {}
+        LOCATION_MASTER[state]
+        [district]
+        [tehsil]
     ).sort();
 
 }
 
+
+/*
+========================================================
+GET VILLAGES
+========================================================
+*/
 
 function getLocationVillages(
     state,
@@ -728,34 +528,27 @@ function getLocationVillages(
     block
 ){
 
-    const data =
-    LOCATION_MASTER
-    [state]
-    ?.[district]
-    ?.[tehsil]
-    ?.[block];
-
-
-    if(!Array.isArray(data)){
+    if(
+        !LOCATION_MASTER[state] ||
+        !LOCATION_MASTER[state][district] ||
+        !LOCATION_MASTER[state][district][tehsil] ||
+        !LOCATION_MASTER[state][district][tehsil][block]
+    ){
 
         return [];
 
     }
 
-
-    return data
-    .map(
-        village => {
-
-            if(
-                typeof village ===
-                "string"
-            ){
+    return LOCATION_MASTER[state]
+        [district]
+        [tehsil]
+        [block]
+        .map(
+            function(village){
 
                 return {
 
-                    name:
-                    village,
+                    name: village,
 
                     pincode:
                     getVillagePin(
@@ -769,27 +562,25 @@ function getLocationVillages(
                 };
 
             }
-
-
-            return village;
-
-        }
-    )
-    .sort(
-        (a,b) =>
-        a.name.localeCompare(
-            b.name,
-            "hi"
         )
-    );
+        .sort(
+            function(a,b){
+
+                return a.name.localeCompare(
+                    b.name,
+                    "hi"
+                );
+
+            }
+        );
 
 }
 
 
 /*
-============================================================
-PIN
-============================================================
+========================================================
+GET PIN
+========================================================
 */
 
 function getVillagePin(
@@ -800,26 +591,31 @@ function getVillagePin(
     village
 ){
 
-    return (
+    if(
+        PIN_MASTER[state] &&
+        PIN_MASTER[state][district] &&
+        PIN_MASTER[state][district][tehsil] &&
+        PIN_MASTER[state][district][tehsil][block] &&
+        PIN_MASTER[state][district][tehsil][block][village]
+    ){
 
-        PIN_MASTER
-        [state]
-        ?.[district]
-        ?.[tehsil]
-        ?.[block]
-        ?.[village]
+        return PIN_MASTER[state]
+            [district]
+            [tehsil]
+            [block]
+            [village];
 
-        || ""
+    }
 
-    );
+    return "";
 
 }
 
 
 /*
-============================================================
+========================================================
 FIND VILLAGE
-============================================================
+========================================================
 */
 
 function findLocationVillage(
@@ -838,19 +634,21 @@ function findLocationVillage(
         block
     );
 
-
     return villages.find(
-        item =>
-        item.name === village
+        function(item){
+
+            return item.name === village;
+
+        }
     ) || null;
 
 }
 
 
 /*
-============================================================
+========================================================
 AUTOMATIC ADDRESS
-============================================================
+========================================================
 */
 
 function buildFarmerAddress(
@@ -864,42 +662,33 @@ function buildFarmerAddress(
 
     const parts = [];
 
-
     if(village)
         parts.push(village);
-
 
     if(block)
         parts.push(block);
 
-
     if(tehsil)
         parts.push(tehsil);
-
 
     if(district)
         parts.push(district);
 
-
     if(state)
         parts.push(state);
-
 
     if(pincode)
         parts.push(pincode);
 
-
-    return parts.join(
-        ", "
-    );
+    return parts.join(", ");
 
 }
 
 
 /*
-============================================================
-OPTIONAL VILLAGE ADD FUNCTION
-============================================================
+========================================================
+ADD VILLAGE
+========================================================
 */
 
 function addLocationVillage(
@@ -919,7 +708,6 @@ function addLocationVillage(
 
     }
 
-
     if(
         !LOCATION_MASTER[state][district]
     ){
@@ -928,19 +716,13 @@ function addLocationVillage(
 
     }
 
-
     if(
-        !LOCATION_MASTER[state]
-        [district]
-        [tehsil]
+        !LOCATION_MASTER[state][district][tehsil]
     ){
 
-        LOCATION_MASTER[state]
-        [district]
-        [tehsil] = {};
+        LOCATION_MASTER[state][district][tehsil] = {};
 
     }
-
 
     if(
         !LOCATION_MASTER[state]
@@ -956,22 +738,19 @@ function addLocationVillage(
 
     }
 
-
-    const list =
+    const villages =
     LOCATION_MASTER[state]
     [district]
     [tehsil]
     [block];
 
-
     if(
-        !list.includes(village)
+        !villages.includes(village)
     ){
 
-        list.push(village);
+        villages.push(village);
 
     }
-
 
     if(pincode){
 
@@ -1017,9 +796,9 @@ function addLocationVillage(
 
 
 /*
-============================================================
-GLOBAL ACCESS
-============================================================
+========================================================
+GLOBAL
+========================================================
 */
 
 window.LOCATION_MASTER =
@@ -1057,32 +836,29 @@ addLocationVillage;
 
 
 /*
-============================================================
+========================================================
 READY
-============================================================
+========================================================
 */
 
 window.dispatchEvent(
-
     new CustomEvent(
         "locationMasterReady",
         {
-            detail:
-            LOCATION_MASTER
+            detail: LOCATION_MASTER
         }
     )
-
 );
 
 
 /*
-============================================================
-CONSOLE
-============================================================
+========================================================
+TEST
+========================================================
 */
 
 console.log(
-    "LOCATION MASTER LOADED SUCCESSFULLY"
+    "LOCATION MASTER LOADED"
 );
 
 console.log(
@@ -1091,7 +867,7 @@ console.log(
 );
 
 console.log(
-    "Mahoba Districts:",
+    "Mahoba District:",
     getLocationDistricts(
         "Uttar Pradesh"
     )
@@ -1115,7 +891,7 @@ console.log(
 );
 
 console.log(
-    "Kabrai Villages:",
+    "Kabrai Village Count:",
     getLocationVillages(
         "Uttar Pradesh",
         "Mahoba",
@@ -1125,7 +901,7 @@ console.log(
 );
 
 console.log(
-    "Charkhari Villages:",
+    "Charkhari Village Count:",
     getLocationVillages(
         "Uttar Pradesh",
         "Mahoba",
@@ -1135,7 +911,7 @@ console.log(
 );
 
 console.log(
-    "Jaitpur Villages:",
+    "Jaitpur Village Count:",
     getLocationVillages(
         "Uttar Pradesh",
         "Mahoba",
@@ -1145,7 +921,7 @@ console.log(
 );
 
 console.log(
-    "Panwari Villages:",
+    "Panwari Village Count:",
     getLocationVillages(
         "Uttar Pradesh",
         "Mahoba",
