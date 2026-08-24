@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>
-Approved Farmers | Bundelkhand Organic Farmer Producer Company Limited
-</title>
+<title>Approved Farmers | Bundelkhand Organic FPO</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -22,310 +15,497 @@ Approved Farmers | Bundelkhand Organic Farmer Producer Company Limited
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#f4fff4;
+    background:linear-gradient(135deg,#e8f5e9,#f1f8e9,#fffde7);
     color:#263238;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
-header{
-    background:linear-gradient(
-        135deg,
-        #1b5e20,
-        #2e7d32,
-        #43a047
-    );
-
-    color:white;
+.header{
+    background:linear-gradient(135deg,#1b5e20,#2e7d32,#43a047);
+    color:#fff;
     text-align:center;
     padding:28px 15px;
 }
 
-header h1{
-    font-size:28px;
-    margin-bottom:8px;
+.header h1{
+    font-size:30px;
+    margin-bottom:6px;
 }
 
-header p{
+.header p{
     font-size:16px;
 }
 
-/* NAVIGATION */
+/* ================= NAV ================= */
 
 .navbar{
-    background:#fff8e1;
+    background:#fff;
     padding:12px;
     text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.10);
     border-bottom:1px solid #ddd;
 }
 
-.navbar a{
+.navbar a,
+.navbar button{
     display:inline-block;
+    border:none;
     text-decoration:none;
-    color:white;
+    color:#fff;
     padding:10px 18px;
     margin:4px;
-    border-radius:6px;
+    border-radius:7px;
     font-weight:bold;
+    cursor:pointer;
+    font-size:14px;
 }
 
 .dashboard{
     background:#1565c0;
 }
 
-.home{
-    background:#f57c00;
+.registration{
+    background:#ef6c00;
 }
 
 .refresh{
     background:#2e7d32;
 }
 
-/* CONTAINER */
+/* ================= CONTAINER ================= */
 
 .container{
-    max-width:1200px;
+    max-width:1450px;
     margin:30px auto;
-    padding:20px;
+    padding:15px;
 }
 
-/* BOX */
-
-.box{
-    background:white;
+.card{
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 8px 28px rgba(0,0,0,.12);
     padding:25px;
-    border-radius:12px;
-    box-shadow:0 5px 18px rgba(0,0,0,.10);
 }
 
-/* TITLE */
+/* ================= TITLE ================= */
 
-h2{
-    color:#2e7d32;
-    margin-bottom:20px;
+.page-title{
     text-align:center;
-    font-size:24px;
+    color:#1b5e20;
+    font-size:28px;
+    margin-bottom:7px;
 }
 
-/* FIREBASE STATUS */
+.page-subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:25px;
+}
+
+/* ================= FIREBASE STATUS ================= */
 
 .firebase-status{
     padding:13px 16px;
     border-radius:8px;
-    margin-bottom:20px;
-    font-weight:bold;
-    border:1px solid #ddd;
     background:#fff3cd;
+    border:1px solid #ffe69c;
     color:#856404;
+    font-weight:bold;
+    margin-bottom:20px;
 }
 
-.firebase-connected{
+.firebase-ok{
     background:#d1e7dd;
-    color:#0f5132;
     border-color:#badbcc;
+    color:#0f5132;
 }
 
 .firebase-error{
     background:#f8d7da;
-    color:#842029;
     border-color:#f5c2c7;
+    color:#842029;
 }
 
-/* COUNT */
+/* ================= STATS ================= */
 
-.count-box{
-    text-align:center;
-    margin-bottom:20px;
-    padding:16px;
-    background:#e8f5e9;
-    border-radius:8px;
-    color:#1b5e20;
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.stat{
+    border-radius:12px;
+    padding:20px;
+    color:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.stat:nth-child(1){
+    background:linear-gradient(135deg,#1565c0,#42a5f5);
+}
+
+.stat:nth-child(2){
+    background:linear-gradient(135deg,#2e7d32,#66bb6a);
+}
+
+.stat:nth-child(3){
+    background:linear-gradient(135deg,#ef6c00,#ffb74d);
+}
+
+.stat:nth-child(4){
+    background:linear-gradient(135deg,#6a1b9a,#ab47bc);
+}
+
+.stat-label{
+    font-size:14px;
+    opacity:.95;
+}
+
+.stat-value{
+    font-size:30px;
     font-weight:bold;
-    font-size:19px;
+    margin-top:5px;
 }
 
-/* SEARCH */
+/* ================= FILTERS ================= */
 
-.search-box{
+.filters{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:12px;
+    margin-bottom:22px;
+}
+
+.filters input,
+.filters select{
     width:100%;
-    padding:14px;
-    font-size:16px;
-    border:2px solid #c8e6c9;
+    padding:12px;
+    border:1px solid #bdbdbd;
     border-radius:7px;
-    margin-bottom:20px;
+    font-size:14px;
     outline:none;
+    background:#fff;
 }
 
-.search-box:focus{
+.filters input:focus,
+.filters select:focus{
     border-color:#2e7d32;
+    box-shadow:0 0 0 3px rgba(46,125,50,.10);
 }
 
-/* TABLE */
+/* ================= TABLE ================= */
 
-.table-container{
+.table-wrapper{
+    width:100%;
     overflow-x:auto;
+    border-radius:10px;
+    border:1px solid #ddd;
 }
 
 table{
     width:100%;
+    min-width:1450px;
     border-collapse:collapse;
-    min-width:1000px;
+    background:#fff;
+}
+
+thead{
+    background:linear-gradient(135deg,#1b5e20,#2e7d32);
+    color:#fff;
 }
 
 th{
-    background:#2e7d32;
-    color:white;
     padding:13px 10px;
-    border:1px solid #1b5e20;
+    text-align:left;
+    font-size:13px;
+    white-space:nowrap;
 }
 
 td{
     padding:12px 10px;
-    border:1px solid #ddd;
-    text-align:center;
-    background:#fff;
+    border-bottom:1px solid #e0e0e0;
+    font-size:13px;
+    vertical-align:top;
 }
 
-tbody tr:hover td{
-    background:#f1f8e9;
+tbody tr:nth-child(even){
+    background:#f8fbf8;
 }
 
-/* STATUS */
+tbody tr:hover{
+    background:#e8f5e9;
+}
 
-.approved{
-    color:#2e7d32;
+/* ================= BADGES ================= */
+
+.status-badge{
+    display:inline-block;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
     font-weight:bold;
 }
 
-/* DELETE */
+.approved{
+    background:#c8e6c9;
+    color:#1b5e20;
+}
+
+.rejected{
+    background:#ffcdd2;
+    color:#b71c1c;
+}
+
+.pending{
+    background:#fff3cd;
+    color:#856404;
+}
+
+.application-id{
+    color:#1565c0;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.farmer-name{
+    font-weight:bold;
+    color:#1b5e20;
+}
+
+.mobile{
+    white-space:nowrap;
+}
+
+.address{
+    min-width:260px;
+    max-width:350px;
+    line-height:1.5;
+}
+
+.location{
+    line-height:1.6;
+}
+
+.pin{
+    font-weight:bold;
+    color:#1565c0;
+}
+
+/* ================= DELETE ================= */
 
 .delete-btn{
-    background:#d32f2f;
-    color:white;
+    background:#c62828;
+    color:#fff;
     border:none;
-    padding:8px 14px;
+    padding:8px 12px;
     border-radius:6px;
     cursor:pointer;
     font-weight:bold;
 }
 
 .delete-btn:hover{
-    background:#b71c1c;
+    background:#8e0000;
 }
 
-.delete-btn:disabled{
-    opacity:.6;
-    cursor:not-allowed;
-}
-
-/* LOADING */
-
-.loading{
-    text-align:center;
-    padding:30px;
-    color:#2e7d32;
+.view-btn{
+    background:#1565c0;
+    color:#fff;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
     font-weight:bold;
+    margin-bottom:5px;
 }
 
-/* EMPTY */
+.actions{
+    white-space:nowrap;
+}
+
+/* ================= EMPTY ================= */
 
 .empty{
     text-align:center;
-    padding:30px;
-    color:#777;
+    padding:45px 20px;
+    color:#666;
+    display:none;
 }
 
-/* BACK */
+.empty h3{
+    color:#1b5e20;
+    margin-bottom:8px;
+    font-size:22px;
+}
 
-.back{
-    display:inline-block;
-    margin-top:22px;
-    background:#1565c0;
-    color:white;
-    padding:12px 22px;
-    text-decoration:none;
-    border-radius:6px;
+/* ================= LOADING ================= */
+
+.loading{
+    text-align:center;
+    padding:40px;
+    color:#1565c0;
     font-weight:bold;
 }
 
-.back:hover{
-    background:#0d47a1;
+/* ================= MODAL ================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    z-index:9999;
+    padding:20px;
+    overflow:auto;
 }
 
-/* FOOTER */
+.modal-content{
+    background:#fff;
+    max-width:800px;
+    margin:30px auto;
+    border-radius:14px;
+    padding:25px;
+    position:relative;
+}
 
-footer{
+.modal-header{
+    color:#1b5e20;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:20px;
+    border-bottom:2px solid #c8e6c9;
+    padding-bottom:12px;
+}
+
+.close-btn{
+    position:absolute;
+    right:18px;
+    top:15px;
+    background:#c62828;
+    color:#fff;
+    border:none;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:20px;
+}
+
+.detail-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.detail-item{
+    background:#f5f5f5;
+    padding:12px;
+    border-radius:7px;
+}
+
+.detail-item strong{
+    display:block;
+    color:#1b5e20;
+    margin-bottom:3px;
+}
+
+.detail-full{
+    grid-column:1/-1;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
     margin-top:40px;
     background:#1b5e20;
-    color:white;
+    color:#fff;
     text-align:center;
-    padding:20px 15px;
+    padding:22px 15px;
 }
 
-footer p{
-    margin:5px 0;
+.footer p{
+    margin:4px;
 }
 
-/* MOBILE */
+/* ================= RESPONSIVE ================= */
 
-@media(max-width:700px){
+@media(max-width:1000px){
 
-    header h1{
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .filters{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .header h1{
         font-size:22px;
     }
 
-    header p{
+    .header p{
         font-size:14px;
     }
 
-    .container{
-        padding:10px;
-        margin:20px auto;
-    }
-
-    .box{
-        padding:15px;
-    }
-
-    h2{
-        font-size:20px;
-    }
-
-    .count-box{
-        font-size:16px;
-    }
-
-    .navbar a{
+    .navbar a,
+    .navbar button{
         display:block;
+        width:100%;
         margin:6px 0;
     }
 
+    .card{
+        padding:15px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .filters{
+        grid-template-columns:1fr;
+    }
+
+    .detail-grid{
+        grid-template-columns:1fr;
+    }
+
+    .detail-full{
+        grid-column:auto;
+    }
+
 }
-
 </style>
-
 </head>
-
 
 <body>
 
+<!-- =====================================================
+     HEADER
+====================================================== -->
 
-<!-- HEADER -->
-
-<header>
+<header class="header">
 
     <h1>
-        Approved Farmers
+        Bundelkhand Organic Farmer Producer Company Limited
     </h1>
 
     <p>
-        Bundelkhand Organic Farmer Producer Company Limited
+        Registered & Approved Farmers
     </p>
 
 </header>
 
 
-<!-- NAVIGATION -->
+<!-- =====================================================
+     NAVIGATION
+====================================================== -->
 
 <nav class="navbar">
 
@@ -333,171 +513,347 @@ footer p{
         href="admin-dashboard.html"
         class="dashboard"
     >
-        Admin Dashboard
+        Back to Admin Dashboard
     </a>
 
     <a
-        href="index.html"
-        class="home"
+        href="farmers.html"
+        class="registration"
     >
-        Home
+        New Farmer Registration
     </a>
 
-    <a
-        href="farmers-list.html"
+    <button
+        id="refreshBtn"
         class="refresh"
-        onclick="setTimeout(function(){location.reload();},100);"
     >
-        Refresh
-    </a>
+        Refresh Farmers
+    </button>
 
 </nav>
 
 
-<!-- MAIN -->
-
 <div class="container">
 
-    <div class="box">
+<div class="card">
+
+    <h2 class="page-title">
+        Registered Approved Farmers
+    </h2>
+
+    <p class="page-subtitle">
+        Firebase से Approved Farmer Records
+    </p>
 
 
-        <h2>
-            Registered Approved Farmers
-        </h2>
+    <!-- =================================================
+         FIREBASE STATUS
+    ================================================== -->
+
+    <div
+        id="firebaseStatus"
+        class="firebase-status"
+    >
+        Firebase Database से connection तैयार हो रहा है...
+    </div>
 
 
-        <!-- FIREBASE STATUS -->
+    <!-- =================================================
+         STATS
+    ================================================== -->
 
-        <div
-            id="firebaseStatus"
-            class="firebase-status"
-        >
-            Firebase Database से Farmers load हो रहे हैं...
+    <div class="stats">
+
+        <div class="stat">
+
+            <div class="stat-label">
+                Approved Farmers
+            </div>
+
+            <div
+                class="stat-value"
+                id="approvedCount"
+            >
+                0
+            </div>
+
         </div>
 
 
-        <!-- COUNT -->
+        <div class="stat">
 
-        <div
-            class="count-box"
-            id="farmerCount"
-        >
-            Approved Farmers: 0
+            <div class="stat-label">
+                Uttar Pradesh
+            </div>
+
+            <div
+                class="stat-value"
+                id="upCount"
+            >
+                0
+            </div>
+
         </div>
 
 
-        <!-- SEARCH -->
+        <div class="stat">
+
+            <div class="stat-label">
+                Madhya Pradesh
+            </div>
+
+            <div
+                class="stat-value"
+                id="mpCount"
+            >
+                0
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-label">
+                Total Share
+            </div>
+
+            <div
+                class="stat-value"
+                id="shareCount"
+            >
+                ₹0
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         FILTERS
+    ================================================== -->
+
+    <div class="filters">
 
         <input
-            type="text"
-            id="search"
-            class="search-box"
-            placeholder="किसान का नाम, मोबाइल, गांव, जिला या फसल खोजें..."
+            type="search"
+            id="searchInput"
+            placeholder="Farmer Name, Mobile या Application ID खोजें..."
         >
 
 
-        <!-- TABLE -->
+        <select id="stateFilter">
 
-        <div class="table-container">
+            <option value="">
+                सभी State
+            </option>
 
-            <table>
+            <option value="Uttar Pradesh">
+                Uttar Pradesh
+            </option>
 
-                <thead>
+            <option value="Madhya Pradesh">
+                Madhya Pradesh
+            </option>
 
-                    <tr>
-
-                        <th>
-                            Sr No.
-                        </th>
-
-                        <th>
-                            Application ID
-                        </th>
-
-                        <th>
-                            Farmer Name
-                        </th>
-
-                        <th>
-                            Mobile
-                        </th>
-
-                        <th>
-                            Village
-                        </th>
-
-                        <th>
-                            District
-                        </th>
-
-                        <th>
-                            Main Crop
-                        </th>
-
-                        <th>
-                            Share
-                        </th>
-
-                        <th>
-                            Status
-                        </th>
-
-                        <th>
-                            Action
-                        </th>
-
-                    </tr>
-
-                </thead>
+        </select>
 
 
-                <tbody
-                    id="farmersTable"
-                >
+        <select id="districtFilter">
 
-                    <tr>
+            <option value="">
+                सभी District
+            </option>
 
-                        <td
-                            colspan="10"
-                            class="loading"
-                        >
-                            Firebase से Approved Farmers load हो रहे हैं...
-                        </td>
+        </select>
 
-                    </tr>
 
-                </tbody>
+        <select id="statusFilter">
 
-            </table>
+            <option value="approved">
+                Approved
+            </option>
 
+            <option value="">
+                सभी Status
+            </option>
+
+            <option value="pending">
+                Pending
+            </option>
+
+            <option value="rejected">
+                Rejected
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- =================================================
+         LOADING
+    ================================================== -->
+
+    <div
+        id="loading"
+        class="loading"
+    >
+        Farmers data load हो रहा है...
+    </div>
+
+
+    <!-- =================================================
+         EMPTY
+    ================================================== -->
+
+    <div
+        id="empty"
+        class="empty"
+    >
+
+        <h3>
+            कोई Farmer Record नहीं मिला
+        </h3>
+
+        <p>
+            Search या filter बदलकर फिर प्रयास करें।
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         TABLE
+    ================================================== -->
+
+    <div class="table-wrapper">
+
+        <table id="farmersTable">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Sr No.
+                    </th>
+
+                    <th>
+                        Application ID
+                    </th>
+
+                    <th>
+                        Farmer Name
+                    </th>
+
+                    <th>
+                        Mobile
+                    </th>
+
+                    <th>
+                        State
+                    </th>
+
+                    <th>
+                        District
+                    </th>
+
+                    <th>
+                        Tehsil
+                    </th>
+
+                    <th>
+                        Block
+                    </th>
+
+                    <th>
+                        Village
+                    </th>
+
+                    <th>
+                        PIN Code
+                    </th>
+
+                    <th>
+                        Main Crop
+                    </th>
+
+                    <th>
+                        Share
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="farmersBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     VIEW FARMER MODAL
+====================================================== -->
+
+<div
+    id="farmerModal"
+    class="modal"
+>
+
+    <div class="modal-content">
+
+        <button
+            class="close-btn"
+            id="closeModal"
+        >
+            ×
+        </button>
+
+        <div class="modal-header">
+            Farmer Details
         </div>
 
-
-        <!-- BACK -->
-
-        <a
-            href="admin-dashboard.html"
-            class="back"
+        <div
+            id="farmerDetails"
+            class="detail-grid"
         >
-            Back to Admin Dashboard
-        </a>
-
+        </div>
 
     </div>
 
 </div>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 
-<footer>
+<footer class="footer">
 
     <p>
         Bundelkhand Organic Farmer Producer Company Limited
     </p>
 
     <p>
-        Empowering Farmers • Promoting Organic Agriculture
+        स्वस्थ किसान • स्वस्थ भोजन • स्वस्थ भविष्य
     </p>
 
     <p>
@@ -509,12 +865,9 @@ footer p{
 
 <!-- =====================================================
      FIREBASE
-===================================================== -->
+====================================================== -->
 
 <script type="module">
-
-
-/* ================= FIREBASE IMPORT ================= */
 
 import {
     initializeApp
@@ -534,7 +887,9 @@ from
 "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
-/* ================= FIREBASE CONFIG ================= */
+/* =====================================================
+   FIREBASE CONFIG
+===================================================== */
 
 const firebaseConfig = {
 
@@ -559,102 +914,282 @@ const firebaseConfig = {
 };
 
 
-/* ================= INITIALIZE ================= */
+/* =====================================================
+   INITIALIZE
+===================================================== */
 
 const app =
     initializeApp(
         firebaseConfig
     );
 
-
 const db =
-    getFirestore(app);
-
-
-/* ================= VARIABLES ================= */
-
-let approvedFarmers = [];
-
-
-/* ================= ELEMENTS ================= */
-
-const farmersTable =
-    document.getElementById(
-        "farmersTable"
+    getFirestore(
+        app
     );
 
 
-const farmerCount =
-    document.getElementById(
-        "farmerCount"
-    );
-
-
-const searchBox =
-    document.getElementById(
-        "search"
-    );
-
+/* =====================================================
+   ELEMENTS
+===================================================== */
 
 const firebaseStatus =
     document.getElementById(
         "firebaseStatus"
     );
 
+const loading =
+    document.getElementById(
+        "loading"
+    );
+
+const empty =
+    document.getElementById(
+        "empty"
+    );
+
+const farmersBody =
+    document.getElementById(
+        "farmersBody"
+    );
+
+const searchInput =
+    document.getElementById(
+        "searchInput"
+    );
+
+const stateFilter =
+    document.getElementById(
+        "stateFilter"
+    );
+
+const districtFilter =
+    document.getElementById(
+        "districtFilter"
+    );
+
+const statusFilter =
+    document.getElementById(
+        "statusFilter"
+    );
+
+const approvedCount =
+    document.getElementById(
+        "approvedCount"
+    );
+
+const upCount =
+    document.getElementById(
+        "upCount"
+    );
+
+const mpCount =
+    document.getElementById(
+        "mpCount"
+    );
+
+const shareCount =
+    document.getElementById(
+        "shareCount"
+    );
+
+const refreshBtn =
+    document.getElementById(
+        "refreshBtn"
+    );
+
+const farmerModal =
+    document.getElementById(
+        "farmerModal"
+    );
+
+const farmerDetails =
+    document.getElementById(
+        "farmerDetails"
+    );
+
+const closeModal =
+    document.getElementById(
+        "closeModal"
+    );
+
+
+/* =====================================================
+   DATA
+===================================================== */
+
+let allFarmers = [];
+
+let filteredFarmers = [];
+
 
 /* =====================================================
    ESCAPE HTML
 ===================================================== */
 
-function escapeHTML(value){
+function escapeHTML(
+    value
+){
 
     return String(
         value ?? ""
     )
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
+    );
 
 }
 
 
 /* =====================================================
-   GET STATUS
+   NORMALIZE STATUS
 ===================================================== */
 
-function getStatus(member){
+function normalizeStatus(
+    farmer
+){
 
     return String(
-        member.status || ""
+        farmer.status ||
+        farmer.approvalStatus ||
+        ""
     )
-    .trim()
-    .toLowerCase();
+    .toLowerCase()
+    .trim();
 
 }
 
 
 /* =====================================================
-   LOAD APPROVED FARMERS FROM FIREBASE
+   GET FARMER NAME
+===================================================== */
+
+function getFarmerName(
+    farmer
+){
+
+    return (
+        farmer.name ||
+        farmer.farmerName ||
+        farmer.fullName ||
+        "-"
+    );
+
+}
+
+
+/* =====================================================
+   GET MOBILE
+===================================================== */
+
+function getMobile(
+    farmer
+){
+
+    return (
+        farmer.mobile ||
+        farmer.mobileNumber ||
+        farmer.phone ||
+        "-"
+    );
+
+}
+
+
+/* =====================================================
+   GET APPLICATION ID
+===================================================== */
+
+function getApplicationId(
+    farmer
+){
+
+    return (
+        farmer.applicationId ||
+        farmer.membershipId ||
+        farmer.id ||
+        farmer.farmerId ||
+        "-"
+    );
+
+}
+
+
+/* =====================================================
+   GET CROP
+===================================================== */
+
+function getCrop(
+    farmer
+){
+
+    return (
+        farmer.mainCrop ||
+        farmer.crop ||
+        "-"
+    );
+
+}
+
+
+/* =====================================================
+   GET SHARE
+===================================================== */
+
+function getShare(
+    farmer
+){
+
+    const value =
+        Number(
+            farmer.share ||
+            farmer.shareAmount ||
+            0
+        );
+
+    return value;
+
+}
+
+
+/* =====================================================
+   LOAD FARMERS
 ===================================================== */
 
 async function loadFarmers(){
 
-    farmersTable.innerHTML = `
+    loading.style.display =
+        "block";
 
-        <tr>
+    empty.style.display =
+        "none";
 
-            <td
-                colspan="10"
-                class="loading"
-            >
-                Firebase से Approved Farmers load हो रहे हैं...
-            </td>
+    farmersBody.innerHTML =
+        "";
 
-        </tr>
 
-    `;
+    firebaseStatus.textContent =
+        "Firebase से Approved Farmers load हो रहे हैं...";
+
+    firebaseStatus.className =
+        "firebase-status";
 
 
     try{
@@ -668,106 +1203,62 @@ async function loadFarmers(){
             );
 
 
-        approvedFarmers =
-            snapshot.docs
-
-            .map(
-                function(item){
-
-                    return {
-
-                        id:
-                            item.id,
-
-                        ...item.data()
-
-                    };
-
-                }
-            )
-
-            .filter(
-                function(member){
-
-                    return (
-                        getStatus(member)
-                        ===
-                        "approved"
-                    );
-
-                }
-            );
+        allFarmers = [];
 
 
-        farmerCount.textContent =
-            "Approved Farmers: " +
-            approvedFarmers.length;
+        snapshot.forEach(
+            function(documentSnapshot){
+
+                const data =
+                    documentSnapshot.data();
+
+
+                allFarmers.push({
+
+                    ...data,
+
+                    firestoreId:
+                        documentSnapshot.id
+
+                });
+
+            }
+        );
 
 
         firebaseStatus.textContent =
-            "Firebase Connected — Approved Farmers सफलतापूर्वक load हो गए।";
-
+            "Firebase Connected — Farmers successfully loaded.";
 
         firebaseStatus.className =
-            "firebase-status firebase-connected";
+            "firebase-status firebase-ok";
 
 
-        displayFarmers(
-            approvedFarmers
-        );
+        updateDistrictFilter();
+
+        updateStats();
+
+        applyFilters();
+
 
     }
     catch(error){
 
         console.error(
-            "Firebase Farmers Error:",
+            "Firebase Load Error:",
             error
         );
 
 
-        farmerCount.textContent =
-            "Approved Farmers: 0";
-
-
         firebaseStatus.textContent =
-            "Firebase Error: " +
+            "Firebase Error — Farmers load नहीं हो सके: " +
             error.message;
-
 
         firebaseStatus.className =
             "firebase-status firebase-error";
 
 
-        farmersTable.innerHTML = `
-
-            <tr>
-
-                <td
-                    colspan="10"
-                    class="empty"
-                >
-
-                    <strong>
-                        Firebase से Farmers load नहीं हो सके।
-                    </strong>
-
-                    <br><br>
-
-                    ${escapeHTML(
-                        error.message
-                    )}
-
-                    <br><br>
-
-                    Firestore में
-                    <strong>members</strong>
-                    collection की permission जांचें।
-
-                </td>
-
-            </tr>
-
-        `;
+        loading.style.display =
+            "none";
 
     }
 
@@ -775,45 +1266,409 @@ async function loadFarmers(){
 
 
 /* =====================================================
-   DISPLAY FARMERS
+   UPDATE DISTRICT FILTER
 ===================================================== */
 
-function displayFarmers(list){
+function updateDistrictFilter(){
 
-    farmersTable.innerHTML = "";
+    const current =
+        districtFilter.value;
+
+
+    const districts =
+        [
+            ...new Set(
+                allFarmers
+                .map(
+                    farmer =>
+                        farmer.district
+                )
+                .filter(Boolean)
+            )
+        ]
+        .sort(
+            (a,b) =>
+                String(a)
+                .localeCompare(
+                    String(b),
+                    "hi"
+                )
+        );
+
+
+    districtFilter.innerHTML =
+        '<option value="">सभी District</option>';
+
+
+    districts.forEach(
+        function(district){
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+            option.value =
+                district;
+
+            option.textContent =
+                district;
+
+            districtFilter.appendChild(
+                option
+            );
+
+        }
+    );
 
 
     if(
-        !Array.isArray(list) ||
-        list.length === 0
+        districts.includes(
+            current
+        )
     ){
 
-        farmersTable.innerHTML = `
+        districtFilter.value =
+            current;
 
-            <tr>
+    }
 
-                <td
-                    colspan="10"
-                    class="empty"
-                >
-                    अभी कोई Approved Farmer उपलब्ध नहीं है।
-                </td>
+}
 
-            </tr>
 
-        `;
+/* =====================================================
+   UPDATE STATS
+===================================================== */
+
+function updateStats(){
+
+    const approved =
+        allFarmers.filter(
+            farmer =>
+                normalizeStatus(
+                    farmer
+                ) === "approved"
+        );
+
+
+    const up =
+        approved.filter(
+            farmer =>
+                String(
+                    farmer.state || ""
+                ).toLowerCase()
+                ===
+                "uttar pradesh"
+                ||
+                String(
+                    farmer.state || ""
+                ).toLowerCase()
+                ===
+                "उत्तर प्रदेश"
+        );
+
+
+    const mp =
+        approved.filter(
+            farmer =>
+                String(
+                    farmer.state || ""
+                ).toLowerCase()
+                ===
+                "madhya pradesh"
+                ||
+                String(
+                    farmer.state || ""
+                ).toLowerCase()
+                ===
+                "मध्य प्रदेश"
+        );
+
+
+    const totalShare =
+        approved.reduce(
+            function(total, farmer){
+
+                return (
+                    total +
+                    getShare(
+                        farmer
+                    )
+                );
+
+            },
+            0
+        );
+
+
+    approvedCount.textContent =
+        approved.length;
+
+
+    upCount.textContent =
+        up.length;
+
+
+    mpCount.textContent =
+        mp.length;
+
+
+    shareCount.textContent =
+        "₹" +
+        totalShare.toLocaleString(
+            "en-IN"
+        );
+
+}
+
+
+/* =====================================================
+   APPLY FILTERS
+===================================================== */
+
+function applyFilters(){
+
+    const search =
+        searchInput.value
+        .trim()
+        .toLowerCase();
+
+
+    const state =
+        stateFilter.value
+        .trim()
+        .toLowerCase();
+
+
+    const district =
+        districtFilter.value
+        .trim()
+        .toLowerCase();
+
+
+    const status =
+        statusFilter.value
+        .trim()
+        .toLowerCase();
+
+
+    filteredFarmers =
+        allFarmers.filter(
+            function(farmer){
+
+                const farmerName =
+                    getFarmerName(
+                        farmer
+                    )
+                    .toLowerCase();
+
+
+                const mobile =
+                    getMobile(
+                        farmer
+                    )
+                    .toLowerCase();
+
+
+                const applicationId =
+                    getApplicationId(
+                        farmer
+                    )
+                    .toLowerCase();
+
+
+                const farmerState =
+                    String(
+                        farmer.state || ""
+                    )
+                    .toLowerCase();
+
+
+                const farmerDistrict =
+                    String(
+                        farmer.district || ""
+                    )
+                    .toLowerCase();
+
+
+                const farmerStatus =
+                    normalizeStatus(
+                        farmer
+                    );
+
+
+                const searchMatch =
+                    !search ||
+                    farmerName.includes(
+                        search
+                    ) ||
+                    mobile.includes(
+                        search
+                    ) ||
+                    applicationId.includes(
+                        search
+                    );
+
+
+                const stateMatch =
+                    !state ||
+                    farmerState ===
+                    state;
+
+
+                const districtMatch =
+                    !district ||
+                    farmerDistrict ===
+                    district;
+
+
+                const statusMatch =
+                    !status ||
+                    farmerStatus ===
+                    status;
+
+
+                return (
+                    searchMatch &&
+                    stateMatch &&
+                    districtMatch &&
+                    statusMatch
+                );
+
+            }
+        );
+
+
+    renderFarmers();
+
+}
+
+
+/* =====================================================
+   RENDER FARMERS
+===================================================== */
+
+function renderFarmers(){
+
+    loading.style.display =
+        "none";
+
+
+    farmersBody.innerHTML =
+        "";
+
+
+    if(
+        filteredFarmers.length === 0
+    ){
+
+        empty.style.display =
+            "block";
 
         return;
 
     }
 
 
-    list.forEach(
+    empty.style.display =
+        "none";
+
+
+    filteredFarmers.forEach(
         function(farmer,index){
 
             const row =
                 document.createElement(
                     "tr"
+                );
+
+
+            const status =
+                normalizeStatus(
+                    farmer
+                );
+
+
+            let statusClass =
+                "pending";
+
+
+            if(
+                status === "approved"
+            ){
+
+                statusClass =
+                    "approved";
+
+            }
+            else if(
+                status === "rejected"
+            ){
+
+                statusClass =
+                    "rejected";
+
+            }
+
+
+            const applicationId =
+                getApplicationId(
+                    farmer
+                );
+
+
+            const name =
+                getFarmerName(
+                    farmer
+                );
+
+
+            const mobile =
+                getMobile(
+                    farmer
+                );
+
+
+            const state =
+                farmer.state ||
+                "-";
+
+
+            const district =
+                farmer.district ||
+                "-";
+
+
+            const tehsil =
+                farmer.tehsil ||
+                "-";
+
+
+            const block =
+                farmer.block ||
+                "-";
+
+
+            const village =
+                farmer.village ||
+                "-";
+
+
+            const pincode =
+                farmer.pincode ||
+                farmer.pinCode ||
+                "-";
+
+
+            const crop =
+                getCrop(
+                    farmer
+                );
+
+
+            const share =
+                getShare(
+                    farmer
                 );
 
 
@@ -824,62 +1679,85 @@ function displayFarmers(list){
                 </td>
 
                 <td>
-                    <strong>
+                    <span class="application-id">
+                        ${escapeHTML(applicationId)}
+                    </span>
+                </td>
+
+                <td>
+                    <span class="farmer-name">
+                        ${escapeHTML(name)}
+                    </span>
+                </td>
+
+                <td>
+                    <span class="mobile">
+                        ${escapeHTML(mobile)}
+                    </span>
+                </td>
+
+                <td>
+                    ${escapeHTML(state)}
+                </td>
+
+                <td>
+                    ${escapeHTML(district)}
+                </td>
+
+                <td>
+                    ${escapeHTML(tehsil)}
+                </td>
+
+                <td>
+                    ${escapeHTML(block)}
+                </td>
+
+                <td>
+                    ${escapeHTML(village)}
+                </td>
+
+                <td>
+                    <span class="pin">
+                        ${escapeHTML(pincode)}
+                    </span>
+                </td>
+
+                <td>
+                    ${escapeHTML(crop)}
+                </td>
+
+                <td>
+                    ₹${share.toLocaleString("en-IN")}
+                </td>
+
+                <td>
+                    <span class="status-badge ${statusClass}">
                         ${escapeHTML(
-                            farmer.applicationId || "-"
+                            status
+                            ? status.charAt(0).toUpperCase() +
+                              status.slice(1)
+                            : "Unknown"
                         )}
-                    </strong>
+                    </span>
                 </td>
 
-                <td>
-                    <strong>
-                        ${escapeHTML(
-                            farmer.name || "-"
-                        )}
-                    </strong>
-                </td>
-
-                <td>
-                    ${escapeHTML(
-                        farmer.mobile || "-"
-                    )}
-                </td>
-
-                <td>
-                    ${escapeHTML(
-                        farmer.village || "-"
-                    )}
-                </td>
-
-                <td>
-                    ${escapeHTML(
-                        farmer.district || "-"
-                    )}
-                </td>
-
-                <td>
-                    ${escapeHTML(
-                        farmer.crop || "-"
-                    )}
-                </td>
-
-                <td>
-                    ₹${escapeHTML(
-                        farmer.share || "0"
-                    )}
-                </td>
-
-                <td class="approved">
-                    Approved
-                </td>
-
-                <td>
+                <td class="actions">
 
                     <button
-                        type="button"
+                        class="view-btn"
+                        data-id="${escapeHTML(
+                            farmer.firestoreId
+                        )}"
+                    >
+                        View
+                    </button>
+
+                    <br>
+
+                    <button
                         class="delete-btn"
                         data-id="${escapeHTML(
-                            farmer.id
+                            farmer.firestoreId
                         )}"
                     >
                         Delete
@@ -890,106 +1768,331 @@ function displayFarmers(list){
             `;
 
 
-            farmersTable.appendChild(
+            farmersBody.appendChild(
                 row
             );
 
         }
     );
 
+
+    attachActionButtons();
+
 }
 
 
 /* =====================================================
-   SEARCH FARMERS
+   ACTION BUTTONS
 ===================================================== */
 
-function searchFarmers(){
+function attachActionButtons(){
 
-    const search =
-        searchBox.value
-        .toLowerCase()
-        .trim();
+    document
+        .querySelectorAll(
+            ".view-btn"
+        )
+        .forEach(
+            function(button){
 
+                button.addEventListener(
+                    "click",
+                    function(){
 
-    if(search === ""){
+                        const id =
+                            this.dataset.id;
 
-        displayFarmers(
-            approvedFarmers
-        );
+                        viewFarmer(
+                            id
+                        );
 
-        return;
-
-    }
-
-
-    const filtered =
-        approvedFarmers.filter(
-            function(farmer){
-
-                return (
-
-                    String(
-                        farmer.applicationId || ""
-                    )
-                    .toLowerCase()
-                    .includes(search)
-
-                    ||
-
-                    String(
-                        farmer.name || ""
-                    )
-                    .toLowerCase()
-                    .includes(search)
-
-                    ||
-
-                    String(
-                        farmer.mobile || ""
-                    )
-                    .toLowerCase()
-                    .includes(search)
-
-                    ||
-
-                    String(
-                        farmer.village || ""
-                    )
-                    .toLowerCase()
-                    .includes(search)
-
-                    ||
-
-                    String(
-                        farmer.district || ""
-                    )
-                    .toLowerCase()
-                    .includes(search)
-
-                    ||
-
-                    String(
-                        farmer.crop || ""
-                    )
-                    .toLowerCase()
-                    .includes(search)
-
+                    }
                 );
 
             }
         );
 
 
-    displayFarmers(
-        filtered
-    );
+    document
+        .querySelectorAll(
+            ".delete-btn"
+        )
+        .forEach(
+            function(button){
+
+                button.addEventListener(
+                    "click",
+                    function(){
+
+                        const id =
+                            this.dataset.id;
+
+                        deleteFarmer(
+                            id
+                        );
+
+                    }
+                );
+
+            }
+        );
 
 }
 
 
 /* =====================================================
-   DELETE FARMER FROM FIREBASE
+   VIEW FARMER
+===================================================== */
+
+function viewFarmer(
+    firestoreId
+){
+
+    const farmer =
+        allFarmers.find(
+            item =>
+                item.firestoreId ===
+                firestoreId
+        );
+
+
+    if(!farmer){
+
+        return;
+
+    }
+
+
+    const status =
+        normalizeStatus(
+            farmer
+        );
+
+
+    const address =
+        farmer.address ||
+        farmer.automaticAddress ||
+        [
+            farmer.village,
+            farmer.block,
+            farmer.tehsil,
+            farmer.district,
+            farmer.state,
+            farmer.pincode ||
+            farmer.pinCode
+        ]
+        .filter(Boolean)
+        .join(", ");
+
+
+    farmerDetails.innerHTML = `
+
+        <div class="detail-item">
+
+            <strong>Application ID</strong>
+
+            ${escapeHTML(
+                getApplicationId(
+                    farmer
+                )
+            )}
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>Farmer ID</strong>
+
+            ${escapeHTML(
+                farmer.farmerId ||
+                "-"
+            )}
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>Farmer Name</strong>
+
+            ${escapeHTML(
+                getFarmerName(
+                    farmer
+                )
+            )}
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>Father / Husband Name</strong>
+
+            ${escapeHTML(
+                farmer.fatherName ||
+                "-"
+            )}
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>Mobile</strong>
+
+            ${escapeHTML(
+                getMobile(
+                    farmer
+                )
+            )}
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>State</strong>
+
+            ${escapeHTML(
+                farmer.state ||
+                "-"
+            )}
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>District</strong>
+
+            ${escapeHTML(
+                farmer.district ||
+                "-"
+            )}
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>Tehsil</strong>
+
+            ${escapeHTML(
+                farmer.tehsil ||
+                "-"
+            )}
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>Block</strong>
+
+            ${escapeHTML(
+                farmer.block ||
+                "-"
+            )}
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>Village</strong>
+
+            ${escapeHTML(
+                farmer.village ||
+                "-"
+            )}
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>PIN Code</strong>
+
+            ${escapeHTML(
+                farmer.pincode ||
+                farmer.pinCode ||
+                "-"
+            )}
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>Main Crop</strong>
+
+            ${escapeHTML(
+                getCrop(
+                    farmer
+                )
+            )}
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>Land</strong>
+
+            ${escapeHTML(
+                farmer.land ||
+                "-"
+            )}
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>Share</strong>
+
+            ₹${getShare(
+                farmer
+            ).toLocaleString(
+                "en-IN"
+            )}
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>Status</strong>
+
+            ${escapeHTML(
+                status
+            )}
+
+        </div>
+
+
+        <div class="detail-item detail-full">
+
+            <strong>Automatic Address</strong>
+
+            ${escapeHTML(
+                address ||
+                "-"
+            )}
+
+        </div>
+
+    `;
+
+
+    farmerModal.style.display =
+        "block";
+
+}
+
+
+/* =====================================================
+   DELETE FARMER
 ===================================================== */
 
 async function deleteFarmer(
@@ -997,14 +2100,10 @@ async function deleteFarmer(
 ){
 
     const farmer =
-        approvedFarmers.find(
-            function(item){
-
-                return (
-                    item.id === firestoreId
-                );
-
-            }
+        allFarmers.find(
+            item =>
+                item.firestoreId ===
+                firestoreId
         );
 
 
@@ -1019,49 +2118,72 @@ async function deleteFarmer(
     }
 
 
-    const confirmation =
-        confirm(
-
-            "क्या आप '" +
-            (
-                farmer.name ||
-                "इस Farmer"
-            ) +
-            "' को Firebase से permanently Delete करना चाहते हैं?"
-
+    const name =
+        getFarmerName(
+            farmer
         );
 
 
-    if(!confirmation){
+    const applicationId =
+        getApplicationId(
+            farmer
+        );
+
+
+    const confirmed =
+        confirm(
+            "क्या आप इस farmer को Firebase से permanently delete करना चाहते हैं?\n\n" +
+            "Farmer: " +
+            name +
+            "\n" +
+            "Application ID: " +
+            applicationId
+        );
+
+
+    if(!confirmed){
+
         return;
+
     }
 
 
     try{
 
         await deleteDoc(
-
             doc(
                 db,
                 "members",
                 firestoreId
             )
-
         );
+
+
+        allFarmers =
+            allFarmers.filter(
+                item =>
+                    item.firestoreId !==
+                    firestoreId
+            );
+
+
+        updateDistrictFilter();
+
+        updateStats();
+
+        applyFilters();
 
 
         alert(
-            "Farmer successfully deleted from Firebase!"
+            "Farmer record successfully deleted."
         );
 
-
-        await loadFarmers();
 
     }
     catch(error){
 
         console.error(
-            "Delete Farmer Error:",
+            "Delete Error:",
             error
         );
 
@@ -1077,75 +2199,75 @@ async function deleteFarmer(
 
 
 /* =====================================================
-   DELETE BUTTON EVENT
+   EVENTS
 ===================================================== */
 
-farmersTable.addEventListener(
+searchInput.addEventListener(
+    "input",
+    applyFilters
+);
+
+
+stateFilter.addEventListener(
+    "change",
+    applyFilters
+);
+
+
+districtFilter.addEventListener(
+    "change",
+    applyFilters
+);
+
+
+statusFilter.addEventListener(
+    "change",
+    applyFilters
+);
+
+
+refreshBtn.addEventListener(
+    "click",
+    loadFarmers
+);
+
+
+closeModal.addEventListener(
+    "click",
+    function(){
+
+        farmerModal.style.display =
+            "none";
+
+    }
+);
+
+
+farmerModal.addEventListener(
     "click",
     function(event){
 
-        const button =
-            event.target.closest(
-                "button[data-id]"
-            );
+        if(
+            event.target ===
+            farmerModal
+        ){
 
+            farmerModal.style.display =
+                "none";
 
-        if(!button){
-            return;
         }
-
-
-        const firestoreId =
-            button.dataset.id;
-
-
-        button.disabled = true;
-
-
-        deleteFarmer(
-            firestoreId
-        );
 
     }
 );
 
 
 /* =====================================================
-   SEARCH EVENT
-===================================================== */
-
-searchBox.addEventListener(
-    "input",
-    searchFarmers
-);
-
-
-/* =====================================================
-   INITIAL LOAD
+   START
 ===================================================== */
 
 loadFarmers();
 
-
-/* =====================================================
-   PAGE SHOW
-===================================================== */
-
-window.addEventListener(
-    "pageshow",
-    function(){
-
-        loadFarmers();
-
-    }
-);
-
-
 </script>
 
-<script type="module" src="admin-auth.js"></script>
 </body>
-</html>
-</body>
-
 </html>
