@@ -2,55 +2,51 @@
 <html lang="hi">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Farmer Registration | Bundelkhand Organic FPO</title>
+<title>किसान पंजीकरण | Bundelkhand Organic FPO</title>
 
 <style>
-
 *{
     box-sizing:border-box;
-    margin:0;
-    padding:0;
 }
 
 body{
+    margin:0;
     font-family:Arial,Helvetica,sans-serif;
     background:linear-gradient(135deg,#e8f5e9,#f1f8e9,#fffde7);
     color:#263238;
-    min-height:100vh;
 }
 
 .header{
     background:linear-gradient(135deg,#1b5e20,#2e7d32,#43a047);
-    color:white;
-    padding:25px 15px;
+    color:#fff;
     text-align:center;
+    padding:25px 15px;
 }
 
 .header h1{
+    margin:0 0 8px;
     font-size:28px;
-    margin-bottom:7px;
 }
 
 .header p{
+    margin:0;
     font-size:15px;
 }
 
 .nav{
-    background:white;
-    padding:12px;
+    background:#fff;
     text-align:center;
+    padding:12px;
     box-shadow:0 2px 10px rgba(0,0,0,.12);
 }
 
 .nav a{
     display:inline-block;
+    color:#fff;
     text-decoration:none;
-    color:white;
     padding:10px 18px;
     margin:4px;
     border-radius:7px;
@@ -66,13 +62,13 @@ body{
 }
 
 .container{
-    max-width:1000px;
+    max-width:1050px;
     margin:30px auto;
     padding:15px;
 }
 
 .form-card{
-    background:white;
+    background:#fff;
     border-radius:16px;
     padding:28px;
     box-shadow:0 8px 30px rgba(0,0,0,.12);
@@ -81,19 +77,18 @@ body{
 .title{
     text-align:center;
     color:#1b5e20;
+    margin:0 0 8px;
     font-size:28px;
-    margin-bottom:8px;
 }
 
 .subtitle{
     text-align:center;
     color:#666;
-    margin-bottom:25px;
+    margin:0 0 25px;
 }
 
 .section{
-    margin-top:25px;
-    margin-bottom:10px;
+    margin:25px 0 15px;
     padding:11px 15px;
     background:#e8f5e9;
     color:#1b5e20;
@@ -106,7 +101,11 @@ body{
 .grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    gap:16px;
+}
+
+.full{
+    grid-column:1/-1;
 }
 
 .field{
@@ -114,17 +113,12 @@ body{
     flex-direction:column;
 }
 
-.field.full{
-    grid-column:1/-1;
-}
-
 label{
     font-weight:bold;
-    margin-bottom:6px;
-    color:#37474f;
+    margin-bottom:7px;
 }
 
-label span{
+.required{
     color:#d32f2f;
 }
 
@@ -137,14 +131,14 @@ textarea{
     border-radius:7px;
     font-size:15px;
     outline:none;
-    background:white;
+    background:#fff;
 }
 
 input:focus,
 select:focus,
 textarea:focus{
     border-color:#2e7d32;
-    box-shadow:0 0 0 2px rgba(46,125,50,.1);
+    box-shadow:0 0 0 2px rgba(46,125,50,.12);
 }
 
 input[readonly],
@@ -153,16 +147,38 @@ textarea[readonly]{
 }
 
 textarea{
-    min-height:80px;
+    min-height:85px;
     resize:vertical;
 }
 
+.location-status{
+    margin-top:15px;
+    padding:12px;
+    border-radius:7px;
+    display:none;
+    font-size:14px;
+}
+
+.location-ok{
+    display:block;
+    background:#e8f5e9;
+    color:#1b5e20;
+    border:1px solid #a5d6a7;
+}
+
+.location-error{
+    display:block;
+    background:#ffebee;
+    color:#b71c1c;
+    border:1px solid #ef9a9a;
+}
+
 .address-box{
+    margin-top:5px;
     background:#f8fff8;
     border:1px solid #c8e6c9;
     border-radius:8px;
     padding:15px;
-    margin-top:15px;
 }
 
 .address-title{
@@ -172,7 +188,7 @@ textarea{
 }
 
 .pin-status{
-    margin-top:7px;
+    margin-top:6px;
     font-size:13px;
     color:#666;
 }
@@ -183,11 +199,11 @@ textarea{
 }
 
 .submit-btn{
-    background:linear-gradient(135deg,#1b5e20,#43a047);
-    color:white;
-    border:none;
-    padding:14px 45px;
+    border:0;
     border-radius:8px;
+    padding:14px 45px;
+    color:#fff;
+    background:linear-gradient(135deg,#1b5e20,#43a047);
     font-size:17px;
     font-weight:bold;
     cursor:pointer;
@@ -204,19 +220,21 @@ textarea{
 
 .message{
     display:none;
-    padding:15px;
     margin-top:20px;
+    padding:14px;
     border-radius:8px;
     font-weight:bold;
 }
 
 .success{
+    display:block;
     background:#d1e7dd;
     color:#0f5132;
     border:1px solid #badbcc;
 }
 
 .error{
+    display:block;
     background:#f8d7da;
     color:#842029;
     border:1px solid #f5c2c7;
@@ -225,26 +243,25 @@ textarea{
 .result{
     display:none;
     margin-top:25px;
+    padding:22px;
     background:#e8f5e9;
     border:2px solid #43a047;
     border-radius:12px;
-    padding:22px;
 }
 
 .result h2{
     color:#1b5e20;
-    margin-bottom:12px;
+    margin-top:0;
 }
 
 .result p{
     margin:7px 0;
-    line-height:1.5;
 }
 
 .footer{
     margin-top:40px;
     background:#1b5e20;
-    color:white;
+    color:#fff;
     text-align:center;
     padding:22px 15px;
 }
@@ -263,7 +280,7 @@ textarea{
         grid-template-columns:1fr;
     }
 
-    .field.full{
+    .full{
         grid-column:auto;
     }
 
@@ -279,55 +296,32 @@ textarea{
     .submit-btn{
         width:100%;
     }
-
 }
-
 </style>
-
 </head>
 
 <body>
 
-
 <header class="header">
-
-    <h1>
-        Bundelkhand Organic Farmer Producer Company Limited
-    </h1>
-
-    <p>
-        किसान पंजीकरण केंद्र
-    </p>
-
+    <h1>Bundelkhand Organic Farmer Producer Company Limited</h1>
+    <p>किसान पंजीकरण केंद्र</p>
 </header>
-
 
 <nav class="nav">
 
-    <a
-        href="index.html"
-        class="home"
-    >
+    <a href="index.html" class="home">
         Home Page
     </a>
 
-    <!-- यह link Admin Dashboard के लिए है।
-         Login सुरक्षा admin-dashboard.html में है। -->
-
-    <a
-        href="admin-dashboard.html"
-        class="admin"
-    >
+    <a href="admin-dashboard.html" class="admin">
         Admin Dashboard
     </a>
 
 </nav>
 
-
 <main class="container">
 
 <div class="form-card">
-
 
 <h2 class="title">
     किसान पंजीकरण फॉर्म
@@ -337,133 +331,91 @@ textarea{
     किसान अपनी जानकारी भरकर FPO में पंजीकरण कर सकते हैं।
 </p>
 
-
 <form id="farmerForm">
 
-
-<!-- =====================================================
-     PERSONAL INFORMATION
-===================================================== -->
+<!-- व्यक्तिगत जानकारी -->
 
 <div class="section">
     किसान की व्यक्तिगत जानकारी
 </div>
 
-
 <div class="grid">
 
-
 <div class="field">
-
 <label>
-    किसान का नाम <span>*</span>
+    किसान का नाम <span class="required">*</span>
 </label>
-
 <input
     type="text"
     id="name"
     required
-    placeholder="किसान का पूरा नाम"
->
-
+    placeholder="किसान का पूरा नाम">
 </div>
 
-
 <div class="field">
-
 <label>
-    पिता / पति का नाम <span>*</span>
+    पिता / पति का नाम <span class="required">*</span>
 </label>
-
 <input
     type="text"
     id="fatherName"
     required
-    placeholder="पिता / पति का नाम"
->
-
+    placeholder="पिता / पति का नाम">
 </div>
 
-
 <div class="field">
-
 <label>
-    मोबाइल नंबर <span>*</span>
+    मोबाइल नंबर <span class="required">*</span>
 </label>
-
 <input
     type="tel"
     id="mobile"
-    required
     maxlength="10"
-    placeholder="10 अंकों का मोबाइल नंबर"
->
-
+    required
+    placeholder="10 अंकों का मोबाइल नंबर">
 </div>
 
-
 <div class="field">
-
 <label>
     Aadhaar Number
 </label>
-
 <input
     type="text"
     id="aadhaar"
     maxlength="12"
-    placeholder="12 अंकों का Aadhaar"
->
-
+    placeholder="12 अंकों का Aadhaar Number">
 </div>
 
-
 <div class="field">
-
 <label>
     PAN Number
 </label>
-
 <input
     type="text"
     id="pan"
     maxlength="10"
-    placeholder="PAN Number"
->
+    placeholder="PAN Number">
+</div>
 
 </div>
 
 
-</div>
-
-
-<!-- =====================================================
-     LOCATION
-===================================================== -->
+<!-- पता -->
 
 <div class="section">
     किसान का पता
 </div>
 
-
 <div class="grid">
 
-
 <div class="field">
 
 <label>
-    State <span>*</span>
+    State <span class="required">*</span>
 </label>
 
-<select
-    id="state"
-    required
->
-
-<option value="">
-    State चुनें
-</option>
-
+<select id="state" required>
+    <option value="">State चुनें</option>
 </select>
 
 </div>
@@ -472,18 +424,11 @@ textarea{
 <div class="field">
 
 <label>
-    District <span>*</span>
+    District <span class="required">*</span>
 </label>
 
-<select
-    id="district"
-    required
->
-
-<option value="">
-    District चुनें
-</option>
-
+<select id="district" required disabled>
+    <option value="">District चुनें</option>
 </select>
 
 </div>
@@ -492,18 +437,11 @@ textarea{
 <div class="field">
 
 <label>
-    Tehsil <span>*</span>
+    Tehsil <span class="required">*</span>
 </label>
 
-<select
-    id="tehsil"
-    required
->
-
-<option value="">
-    Tehsil चुनें
-</option>
-
+<select id="tehsil" required disabled>
+    <option value="">Tehsil चुनें</option>
 </select>
 
 </div>
@@ -512,18 +450,11 @@ textarea{
 <div class="field">
 
 <label>
-    Block <span>*</span>
+    Block <span class="required">*</span>
 </label>
 
-<select
-    id="block"
-    required
->
-
-<option value="">
-    Block चुनें
-</option>
-
+<select id="block" required disabled>
+    <option value="">Block चुनें</option>
 </select>
 
 </div>
@@ -532,18 +463,11 @@ textarea{
 <div class="field">
 
 <label>
-    Village <span>*</span>
+    Village <span class="required">*</span>
 </label>
 
-<select
-    id="village"
-    required
->
-
-<option value="">
-    Village चुनें
-</option>
-
+<select id="village" required disabled>
+    <option value="">Village चुनें</option>
 </select>
 
 </div>
@@ -559,13 +483,11 @@ textarea{
     type="text"
     id="pincode"
     readonly
-    placeholder="Village चुनें"
->
+    placeholder="Village चुनें">
 
 <div
     id="pinStatus"
-    class="pin-status"
->
+    class="pin-status">
 </div>
 
 </div>
@@ -582,28 +504,29 @@ textarea{
 <textarea
     id="automaticAddress"
     readonly
-    placeholder="पूरा Address अपने-आप तैयार होगा।"
-></textarea>
+    placeholder="पूरा Address अपने-आप तैयार होगा।">
+</textarea>
 
 </div>
 
 </div>
 
-
 </div>
 
 
-<!-- =====================================================
-     FARMING INFORMATION
-===================================================== -->
+<div
+    id="locationStatus"
+    class="location-status">
+</div>
+
+
+<!-- कृषि जानकारी -->
 
 <div class="section">
     कृषि एवं FPO जानकारी
 </div>
 
-
 <div class="grid">
-
 
 <div class="field">
 
@@ -614,8 +537,7 @@ textarea{
 <input
     type="text"
     id="mainCrop"
-    placeholder="जैसे गेहूँ, चना, सरसों"
->
+    placeholder="जैसे गेहूँ, चना, सरसों">
 
 </div>
 
@@ -630,9 +552,7 @@ textarea{
     type="number"
     id="share"
     value="500"
-    min="0"
-    placeholder="Share Amount"
->
+    min="0">
 
 </div>
 
@@ -645,19 +565,18 @@ textarea{
 
 <textarea
     id="remarks"
-    placeholder="यदि कोई अन्य जानकारी हो"
-></textarea>
+    placeholder="यदि कोई अन्य जानकारी हो">
+</textarea>
 
 </div>
-
 
 </div>
 
 
 <div
     id="message"
-    class="message"
-></div>
+    class="message">
+</div>
 
 
 <div class="submit-area">
@@ -665,25 +584,22 @@ textarea{
 <button
     type="submit"
     id="submitBtn"
-    class="submit-btn"
->
+    class="submit-btn">
+
     किसान पंजीकरण करें
+
 </button>
 
 </div>
 
-
 </form>
 
 
-<!-- =====================================================
-     SUCCESS RESULT
-===================================================== -->
+<!-- SUCCESS -->
 
 <div
     id="result"
-    class="result"
->
+    class="result">
 
 <h2>
     Farmer Registration Successful
@@ -741,7 +657,6 @@ textarea{
 
 </div>
 
-
 </div>
 
 </main>
@@ -765,14 +680,512 @@ textarea{
 
 
 <!-- =====================================================
-     LOCATION DATA
+     आपकी मौजूदा location-data.js
+     इसे बिल्कुल न बदलें
 ===================================================== -->
 
 <script src="location-data.js"></script>
 
 
 <!-- =====================================================
-     FIREBASE FARMER REGISTRATION
+     FARMER FORM JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        const state =
+            document.getElementById("state");
+
+        const district =
+            document.getElementById("district");
+
+        const tehsil =
+            document.getElementById("tehsil");
+
+        const block =
+            document.getElementById("block");
+
+        const village =
+            document.getElementById("village");
+
+        const pincode =
+            document.getElementById("pincode");
+
+        const automaticAddress =
+            document.getElementById("automaticAddress");
+
+        const pinStatus =
+            document.getElementById("pinStatus");
+
+        const locationStatus =
+            document.getElementById("locationStatus");
+
+
+        /* =================================================
+           LOCATION DATA CHECK
+        ================================================= */
+
+        if(
+            typeof window.getLocationStates !== "function"
+        ){
+
+            locationStatus.textContent =
+                "Location data load नहीं हुआ। कृपया location-data.js check करें।";
+
+            locationStatus.className =
+                "location-status location-error";
+
+            return;
+        }
+
+
+        locationStatus.textContent =
+            "Location data सफलतापूर्वक load हो गया।";
+
+        locationStatus.className =
+            "location-status location-ok";
+
+
+        /* =================================================
+           COMMON SELECT RESET
+        ================================================= */
+
+        function resetSelect(
+            element,
+            text
+        ){
+
+            element.innerHTML =
+                '<option value="">' +
+                text +
+                '</option>';
+
+            element.disabled = true;
+
+        }
+
+
+        /* =================================================
+           LOAD STATES
+        ================================================= */
+
+        function loadStates(){
+
+            resetSelect(
+                state,
+                "State चुनें"
+            );
+
+            const states =
+                window.getLocationStates();
+
+
+            states.forEach(
+                function(item){
+
+                    const option =
+                        document.createElement("option");
+
+                    option.value =
+                        item;
+
+                    option.textContent =
+                        item;
+
+                    state.appendChild(option);
+
+                }
+            );
+
+            state.disabled = false;
+
+        }
+
+
+        /* =================================================
+           STATE CHANGE
+        ================================================= */
+
+        state.addEventListener(
+            "change",
+            function(){
+
+                resetSelect(
+                    district,
+                    "District चुनें"
+                );
+
+                resetSelect(
+                    tehsil,
+                    "Tehsil चुनें"
+                );
+
+                resetSelect(
+                    block,
+                    "Block चुनें"
+                );
+
+                resetSelect(
+                    village,
+                    "Village चुनें"
+                );
+
+                pincode.value = "";
+
+                pinStatus.textContent = "";
+
+                automaticAddress.value = "";
+
+
+                if(!state.value){
+
+                    return;
+
+                }
+
+
+                const districts =
+                    window.getLocationDistricts(
+                        state.value
+                    );
+
+
+                districts.forEach(
+                    function(item){
+
+                        const option =
+                            document.createElement("option");
+
+                        option.value =
+                            item;
+
+                        option.textContent =
+                            item;
+
+                        district.appendChild(
+                            option
+                        );
+
+                    }
+                );
+
+
+                district.disabled = false;
+
+            }
+        );
+
+
+        /* =================================================
+           DISTRICT CHANGE
+        ================================================= */
+
+        district.addEventListener(
+            "change",
+            function(){
+
+                resetSelect(
+                    tehsil,
+                    "Tehsil चुनें"
+                );
+
+                resetSelect(
+                    block,
+                    "Block चुनें"
+                );
+
+                resetSelect(
+                    village,
+                    "Village चुनें"
+                );
+
+                pincode.value = "";
+
+                pinStatus.textContent = "";
+
+                automaticAddress.value = "";
+
+
+                if(!district.value){
+
+                    return;
+
+                }
+
+
+                const tehsils =
+                    window.getLocationTehsils(
+                        state.value,
+                        district.value
+                    );
+
+
+                tehsils.forEach(
+                    function(item){
+
+                        const option =
+                            document.createElement("option");
+
+                        option.value =
+                            item;
+
+                        option.textContent =
+                            item;
+
+                        tehsil.appendChild(
+                            option
+                        );
+
+                    }
+                );
+
+
+                tehsil.disabled = false;
+
+            }
+        );
+
+
+        /* =================================================
+           TEHSIL CHANGE
+        ================================================= */
+
+        tehsil.addEventListener(
+            "change",
+            function(){
+
+                resetSelect(
+                    block,
+                    "Block चुनें"
+                );
+
+                resetSelect(
+                    village,
+                    "Village चुनें"
+                );
+
+                pincode.value = "";
+
+                pinStatus.textContent = "";
+
+                automaticAddress.value = "";
+
+
+                if(!tehsil.value){
+
+                    return;
+
+                }
+
+
+                const blocks =
+                    window.getLocationBlocks(
+                        state.value,
+                        district.value,
+                        tehsil.value
+                    );
+
+
+                blocks.forEach(
+                    function(item){
+
+                        const option =
+                            document.createElement("option");
+
+                        option.value =
+                            item;
+
+                        option.textContent =
+                            item;
+
+                        block.appendChild(
+                            option
+                        );
+
+                    }
+                );
+
+
+                block.disabled = false;
+
+            }
+        );
+
+
+        /* =================================================
+           BLOCK CHANGE
+        ================================================= */
+
+        block.addEventListener(
+            "change",
+            function(){
+
+                resetSelect(
+                    village,
+                    "Village चुनें"
+                );
+
+                pincode.value = "";
+
+                pinStatus.textContent = "";
+
+                automaticAddress.value = "";
+
+
+                if(!block.value){
+
+                    return;
+
+                }
+
+
+                const villages =
+                    window.getLocationVillages(
+                        state.value,
+                        district.value,
+                        tehsil.value,
+                        block.value
+                    );
+
+
+                villages.forEach(
+                    function(item){
+
+                        const option =
+                            document.createElement("option");
+
+                        option.value =
+                            item.name;
+
+                        option.textContent =
+                            item.name;
+
+                        option.dataset.pincode =
+                            item.pincode || "";
+
+                        village.appendChild(
+                            option
+                        );
+
+                    }
+                );
+
+
+                if(
+                    villages.length === 0
+                ){
+
+                    pinStatus.textContent =
+                        "इस Block की Village mapping उपलब्ध नहीं है।";
+
+                }
+                else{
+
+                    village.disabled = false;
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           VILLAGE CHANGE
+        ================================================= */
+
+        village.addEventListener(
+            "change",
+            function(){
+
+                pincode.value = "";
+
+                pinStatus.textContent = "";
+
+
+                if(!village.value){
+
+                    updateAddress();
+
+                    return;
+
+                }
+
+
+                const selected =
+                    window.findLocationVillage(
+                        state.value,
+                        district.value,
+                        tehsil.value,
+                        block.value,
+                        village.value
+                    );
+
+
+                if(selected){
+
+                    pincode.value =
+                        selected.pincode || "";
+
+                }
+
+
+                if(pincode.value){
+
+                    pinStatus.textContent =
+                        "Village-wise PIN Code उपलब्ध है।";
+
+                }
+                else{
+
+                    pinStatus.textContent =
+                        "इस Village का PIN Code अभी verified नहीं है।";
+
+                }
+
+
+                updateAddress();
+
+            }
+        );
+
+
+        /* =================================================
+           ADDRESS
+        ================================================= */
+
+        function updateAddress(){
+
+            automaticAddress.value =
+                window.buildFarmerAddress(
+                    village.value,
+                    block.value,
+                    tehsil.value,
+                    district.value,
+                    state.value,
+                    pincode.value
+                );
+
+        }
+
+
+        /* =================================================
+           INITIALIZE
+        ================================================= */
+
+        loadStates();
+
+    }
+);
+
+</script>
+
+
+<!-- =====================================================
+     FIREBASE REGISTRATION
 ===================================================== -->
 
 <script type="module">
@@ -793,10 +1206,6 @@ import {
 from
 "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-
-/* =====================================================
-   FIREBASE CONFIG
-===================================================== */
 
 const firebaseConfig = {
 
@@ -822,72 +1231,16 @@ const firebaseConfig = {
 
 
 const app =
-    initializeApp(
-        firebaseConfig
-    );
+    initializeApp(firebaseConfig);
 
 
 const db =
-    getFirestore(
-        app
-    );
+    getFirestore(app);
 
-
-/* =====================================================
-   ELEMENTS
-===================================================== */
 
 const form =
     document.getElementById(
         "farmerForm"
-    );
-
-
-const state =
-    document.getElementById(
-        "state"
-    );
-
-
-const district =
-    document.getElementById(
-        "district"
-    );
-
-
-const tehsil =
-    document.getElementById(
-        "tehsil"
-    );
-
-
-const block =
-    document.getElementById(
-        "block"
-    );
-
-
-const village =
-    document.getElementById(
-        "village"
-    );
-
-
-const pincode =
-    document.getElementById(
-        "pincode"
-    );
-
-
-const automaticAddress =
-    document.getElementById(
-        "automaticAddress"
-    );
-
-
-const pinStatus =
-    document.getElementById(
-        "pinStatus"
     );
 
 
@@ -903,10 +1256,6 @@ const submitBtn =
     );
 
 
-/* =====================================================
-   MESSAGE
-===================================================== */
-
 function showMessage(
     text,
     type
@@ -916,1020 +1265,10 @@ function showMessage(
         text;
 
     message.className =
-        "message " +
-        type;
-
-    message.style.display =
-        "block";
+        "message " + type;
 
 }
 
-
-/* =====================================================
-   LOCATION DATA
-===================================================== */
-
-function findLocationData(){
-
-    /*
-     * location-data.js में अलग-अलग
-     * naming हो सकती है।
-     * नीचे common variables को support किया गया है।
-     */
-
-    return (
-        window.locationData ||
-        window.LOCATION_DATA ||
-        window.locationDataUP ||
-        window.LOCATION_DATA_UP ||
-        null
-    );
-
-}
-
-
-/* =====================================================
-   SAFE OBJECT / ARRAY
-===================================================== */
-
-function isObject(
-    value
-){
-
-    return (
-        value !== null &&
-        typeof value === "object"
-    );
-
-}
-
-
-/* =====================================================
-   LOAD STATES
-===================================================== */
-
-function loadStates(){
-
-    const data =
-        findLocationData();
-
-
-    if(!data){
-
-        console.error(
-            "location-data.js नहीं मिला।"
-        );
-
-        showMessage(
-            "Location data load नहीं हुआ। कृपया location-data.js check करें।",
-            "error"
-        );
-
-        return;
-
-    }
-
-
-    state.innerHTML =
-        '<option value="">State चुनें</option>';
-
-
-    let states = [];
-
-
-    if(
-        Array.isArray(data)
-    ){
-
-        states =
-            data;
-
-    }
-    else if(
-        Array.isArray(data.states)
-    ){
-
-        states =
-            data.states;
-
-    }
-    else{
-
-        states =
-            Object.keys(data);
-
-    }
-
-
-    states.forEach(
-        function(item){
-
-            let name =
-                typeof item === "string"
-                ? item
-                : item.name;
-
-
-            if(!name){
-
-                return;
-
-            }
-
-
-            const option =
-                document.createElement(
-                    "option"
-                );
-
-
-            option.value =
-                name;
-
-
-            option.textContent =
-                name;
-
-
-            state.appendChild(
-                option
-            );
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   GENERIC LOCATION FINDER
-===================================================== */
-
-function getDataRoot(){
-
-    return findLocationData();
-
-}
-
-
-function getStateObject(
-    stateName
-){
-
-    const data =
-        getDataRoot();
-
-
-    if(!data){
-
-        return null;
-
-    }
-
-
-    if(
-        Array.isArray(data)
-    ){
-
-        return data.find(
-            x =>
-                x.name ===
-                stateName
-        );
-
-    }
-
-
-    if(
-        data.states &&
-        Array.isArray(data.states)
-    ){
-
-        return data.states.find(
-            x =>
-                x.name ===
-                stateName
-        );
-
-    }
-
-
-    return data[stateName] || null;
-
-}
-
-
-function getDistrictObject(
-    stateName,
-    districtName
-){
-
-    const stateData =
-        getStateObject(
-            stateName
-        );
-
-
-    if(!stateData){
-
-        return null;
-
-    }
-
-
-    if(
-        stateData.districts
-    ){
-
-        if(
-            Array.isArray(
-                stateData.districts
-            )
-        ){
-
-            return stateData.districts.find(
-                x =>
-                    x.name ===
-                    districtName
-            );
-
-        }
-
-
-        return stateData.districts[
-            districtName
-        ] || null;
-
-    }
-
-
-    return stateData[
-        districtName
-    ] || null;
-
-}
-
-
-function getTehsilObject(
-    stateName,
-    districtName,
-    tehsilName
-){
-
-    const districtData =
-        getDistrictObject(
-            stateName,
-            districtName
-        );
-
-
-    if(!districtData){
-
-        return null;
-
-    }
-
-
-    if(
-        districtData.tehsils
-    ){
-
-        if(
-            Array.isArray(
-                districtData.tehsils
-            )
-        ){
-
-            return districtData.tehsils.find(
-                x =>
-                    x.name ===
-                    tehsilName
-            );
-
-        }
-
-
-        return districtData.tehsils[
-            tehsilName
-        ] || null;
-
-    }
-
-
-    return districtData[
-        tehsilName
-    ] || null;
-
-}
-
-
-function getBlockObject(
-    stateName,
-    districtName,
-    tehsilName,
-    blockName
-){
-
-    const tehsilData =
-        getTehsilObject(
-            stateName,
-            districtName,
-            tehsilName
-        );
-
-
-    if(!tehsilData){
-
-        return null;
-
-    }
-
-
-    if(
-        tehsilData.blocks
-    ){
-
-        if(
-            Array.isArray(
-                tehsilData.blocks
-            )
-        ){
-
-            return tehsilData.blocks.find(
-                x =>
-                    x.name ===
-                    blockName
-            );
-
-        }
-
-
-        return tehsilData.blocks[
-            blockName
-        ] || null;
-
-    }
-
-
-    return tehsilData[
-        blockName
-    ] || null;
-
-}
-
-
-/* =====================================================
-   GET ARRAY VALUES
-===================================================== */
-
-function getChildren(
-    object,
-    key
-){
-
-    if(!object){
-
-        return [];
-
-    }
-
-
-    const value =
-        object[key];
-
-
-    if(
-        Array.isArray(value)
-    ){
-
-        return value;
-
-    }
-
-
-    if(
-        isObject(value)
-    ){
-
-        return Object.keys(
-            value
-        ).map(
-            function(name){
-
-                const item =
-                    value[name];
-
-
-                if(
-                    isObject(item)
-                ){
-
-                    return {
-                        ...item,
-                        name:
-                            item.name ||
-                            name
-                    };
-
-                }
-
-
-                return {
-                    name
-                };
-
-            }
-        );
-
-    }
-
-
-    return [];
-
-}
-
-
-/* =====================================================
-   DISTRICT
-===================================================== */
-
-state.addEventListener(
-    "change",
-    function(){
-
-        district.innerHTML =
-            '<option value="">District चुनें</option>';
-
-        tehsil.innerHTML =
-            '<option value="">Tehsil चुनें</option>';
-
-        block.innerHTML =
-            '<option value="">Block चुनें</option>';
-
-        village.innerHTML =
-            '<option value="">Village चुनें</option>';
-
-        pincode.value =
-            "";
-
-        automaticAddress.value =
-            "";
-
-        pinStatus.textContent =
-            "";
-
-
-        if(!state.value){
-
-            return;
-
-        }
-
-
-        const stateData =
-            getStateObject(
-                state.value
-            );
-
-
-        let list =
-            getChildren(
-                stateData,
-                "districts"
-            );
-
-
-        if(
-            list.length === 0 &&
-            stateData
-        ){
-
-            list =
-                Object.keys(
-                    stateData
-                )
-                .filter(
-                    key =>
-                        ![
-                            "name",
-                            "districts"
-                        ].includes(key)
-                )
-                .map(
-                    name => ({
-                        name
-                    })
-                );
-
-        }
-
-
-        list.forEach(
-            function(item){
-
-                if(!item.name){
-
-                    return;
-
-                }
-
-
-                const option =
-                    document.createElement(
-                        "option"
-                    );
-
-
-                option.value =
-                    item.name;
-
-
-                option.textContent =
-                    item.name;
-
-
-                district.appendChild(
-                    option
-                );
-
-            }
-        );
-
-    }
-);
-
-
-/* =====================================================
-   TEHSIL
-===================================================== */
-
-district.addEventListener(
-    "change",
-    function(){
-
-        tehsil.innerHTML =
-            '<option value="">Tehsil चुनें</option>';
-
-        block.innerHTML =
-            '<option value="">Block चुनें</option>';
-
-        village.innerHTML =
-            '<option value="">Village चुनें</option>';
-
-        pincode.value =
-            "";
-
-        automaticAddress.value =
-            "";
-
-
-        if(!district.value){
-
-            return;
-
-        }
-
-
-        const districtData =
-            getDistrictObject(
-                state.value,
-                district.value
-            );
-
-
-        let list =
-            getChildren(
-                districtData,
-                "tehsils"
-            );
-
-
-        if(
-            list.length === 0 &&
-            districtData
-        ){
-
-            list =
-                Object.keys(
-                    districtData
-                )
-                .filter(
-                    key =>
-                        ![
-                            "name",
-                            "tehsils"
-                        ].includes(key)
-                )
-                .map(
-                    name => ({
-                        name
-                    })
-                );
-
-        }
-
-
-        list.forEach(
-            function(item){
-
-                if(!item.name){
-
-                    return;
-
-                }
-
-
-                const option =
-                    document.createElement(
-                        "option"
-                    );
-
-
-                option.value =
-                    item.name;
-
-
-                option.textContent =
-                    item.name;
-
-
-                tehsil.appendChild(
-                    option
-                );
-
-            }
-        );
-
-    }
-);
-
-
-/* =====================================================
-   BLOCK
-===================================================== */
-
-tehsil.addEventListener(
-    "change",
-    function(){
-
-        block.innerHTML =
-            '<option value="">Block चुनें</option>';
-
-        village.innerHTML =
-            '<option value="">Village चुनें</option>';
-
-        pincode.value =
-            "";
-
-        automaticAddress.value =
-            "";
-
-
-        if(!tehsil.value){
-
-            return;
-
-        }
-
-
-        const tehsilData =
-            getTehsilObject(
-                state.value,
-                district.value,
-                tehsil.value
-            );
-
-
-        let list =
-            getChildren(
-                tehsilData,
-                "blocks"
-            );
-
-
-        if(
-            list.length === 0 &&
-            tehsilData
-        ){
-
-            list =
-                Object.keys(
-                    tehsilData
-                )
-                .filter(
-                    key =>
-                        ![
-                            "name",
-                            "blocks"
-                        ].includes(key)
-                )
-                .map(
-                    name => ({
-                        name
-                    })
-                );
-
-        }
-
-
-        list.forEach(
-            function(item){
-
-                if(!item.name){
-
-                    return;
-
-                }
-
-
-                const option =
-                    document.createElement(
-                        "option"
-                    );
-
-
-                option.value =
-                    item.name;
-
-
-                option.textContent =
-                    item.name;
-
-
-                block.appendChild(
-                    option
-                );
-
-            }
-        );
-
-    }
-);
-
-
-/* =====================================================
-   VILLAGE
-===================================================== */
-
-block.addEventListener(
-    "change",
-    function(){
-
-        village.innerHTML =
-            '<option value="">Village चुनें</option>';
-
-        pincode.value =
-            "";
-
-        automaticAddress.value =
-            "";
-
-        pinStatus.textContent =
-            "";
-
-
-        if(!block.value){
-
-            return;
-
-        }
-
-
-        const blockData =
-            getBlockObject(
-                state.value,
-                district.value,
-                tehsil.value,
-                block.value
-            );
-
-
-        let list =
-            getChildren(
-                blockData,
-                "villages"
-            );
-
-
-        if(
-            list.length === 0 &&
-            blockData
-        ){
-
-            list =
-                Object.keys(
-                    blockData
-                )
-                .filter(
-                    key =>
-                        ![
-                            "name",
-                            "villages"
-                        ].includes(key)
-                )
-                .map(
-                    name => ({
-                        name,
-                        ...(
-                            isObject(
-                                blockData[name]
-                            )
-                            ? blockData[name]
-                            : {}
-                        )
-                    })
-                );
-
-        }
-
-
-        list.forEach(
-            function(item){
-
-                if(!item.name){
-
-                    return;
-
-                }
-
-
-                const option =
-                    document.createElement(
-                        "option"
-                    );
-
-
-                option.value =
-                    item.name;
-
-
-                option.textContent =
-                    item.name;
-
-
-                if(
-                    item.pincode
-                ){
-
-                    option.dataset.pincode =
-                        item.pincode;
-
-                }
-
-
-                if(
-                    item.pin
-                ){
-
-                    option.dataset.pincode =
-                        item.pin;
-
-                }
-
-
-                if(
-                    item.pinCode
-                ){
-
-                    option.dataset.pincode =
-                        item.pinCode;
-
-                }
-
-
-                village.appendChild(
-                    option
-                );
-
-            }
-        );
-
-
-        if(
-            list.length === 0
-        ){
-
-            pinStatus.textContent =
-                "इस Block की Village mapping उपलब्ध नहीं है।";
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   VILLAGE SELECT
-===================================================== */
-
-village.addEventListener(
-    "change",
-    function(){
-
-        pincode.value =
-            "";
-
-        pinStatus.textContent =
-            "";
-
-
-        if(!village.value){
-
-            updateAddress();
-
-            return;
-
-        }
-
-
-        const option =
-            village.options[
-                village.selectedIndex
-            ];
-
-
-        const selectedPin =
-            option.dataset.pincode ||
-            "";
-
-
-        pincode.value =
-            selectedPin;
-
-
-        if(selectedPin){
-
-            pinStatus.textContent =
-                "Village-wise PIN Code उपलब्ध है।";
-
-        }
-        else{
-
-            pinStatus.textContent =
-                "इस Village का PIN Code location-data.js में उपलब्ध नहीं है।";
-
-        }
-
-
-        updateAddress();
-
-    }
-);
-
-
-/* =====================================================
-   AUTOMATIC ADDRESS
-===================================================== */
-
-function updateAddress(){
-
-    const parts = [
-
-        village.value,
-
-        block.value,
-
-        tehsil.value,
-
-        district.value,
-
-        state.value
-
-    ]
-    .filter(
-        Boolean
-    );
-
-
-    automaticAddress.value =
-        parts.join(
-            ", "
-        );
-
-}
-
-
-[
-    state,
-    district,
-    tehsil,
-    block
-]
-.forEach(
-    function(element){
-
-        element.addEventListener(
-            "change",
-            updateAddress
-        );
-
-    }
-);
-
-
-/* =====================================================
-   FORM SUBMIT
-===================================================== */
 
 form.addEventListener(
     "submit",
@@ -1968,6 +1307,48 @@ form.addEventListener(
             ).value.trim();
 
 
+        const state =
+            document.getElementById(
+                "state"
+            ).value;
+
+
+        const district =
+            document.getElementById(
+                "district"
+            ).value;
+
+
+        const tehsil =
+            document.getElementById(
+                "tehsil"
+            ).value;
+
+
+        const block =
+            document.getElementById(
+                "block"
+            ).value;
+
+
+        const village =
+            document.getElementById(
+                "village"
+            ).value;
+
+
+        const pincode =
+            document.getElementById(
+                "pincode"
+            ).value;
+
+
+        const automaticAddress =
+            document.getElementById(
+                "automaticAddress"
+            ).value;
+
+
         const mainCrop =
             document.getElementById(
                 "mainCrop"
@@ -1978,8 +1359,7 @@ form.addEventListener(
             Number(
                 document.getElementById(
                     "share"
-                ).value ||
-                0
+                ).value || 0
             );
 
 
@@ -1993,11 +1373,11 @@ form.addEventListener(
             !name ||
             !fatherName ||
             !mobile ||
-            !state.value ||
-            !district.value ||
-            !tehsil.value ||
-            !block.value ||
-            !village.value
+            !state ||
+            !district ||
+            !tehsil ||
+            !block ||
+            !village
         ){
 
             showMessage(
@@ -2026,40 +1406,6 @@ form.addEventListener(
         }
 
 
-        if(
-            aadhaar &&
-            !/^[0-9]{12}$/.test(
-                aadhaar
-            )
-        ){
-
-            showMessage(
-                "Aadhaar Number 12 अंकों का होना चाहिए।",
-                "error"
-            );
-
-            return;
-
-        }
-
-
-        if(
-            pan &&
-            !/^[A-Za-z0-9]{10}$/.test(
-                pan
-            )
-        ){
-
-            showMessage(
-                "PAN Number सही दर्ज करें।",
-                "error"
-            );
-
-            return;
-
-        }
-
-
         submitBtn.disabled =
             true;
 
@@ -2067,95 +1413,96 @@ form.addEventListener(
             "Registration हो रहा है...";
 
 
-        showMessage(
-            "कृपया प्रतीक्षा करें...",
-            "success"
-        );
-
-
         try{
-
-            const now =
-                Date.now();
-
 
             const applicationId =
                 "MEM" +
-                String(
-                    now
-                ).slice(
-                    -8
+                Math.floor(
+                    10000000 +
+                    Math.random() *
+                    90000000
                 );
 
 
             const farmerId =
                 "FARMER" +
-                String(
-                    Math.floor(
-                        10000000 +
-                        Math.random() *
-                        90000000
-                    )
+                Math.floor(
+                    10000000 +
+                    Math.random() *
+                    90000000
                 );
 
 
             const farmerData = {
 
-                applicationId,
+                applicationId:
+                    applicationId,
 
-                farmerId,
+                farmerId:
+                    farmerId,
 
-                name,
+                name:
+                    name,
 
-                fatherName,
+                farmerName:
+                    name,
 
-                mobile,
+                fatherName:
+                    fatherName,
 
-                aadhaar,
+                mobile:
+                    mobile,
 
-                pan,
+                aadhaar:
+                    aadhaar,
+
+                pan:
+                    pan,
 
                 state:
-                    state.value,
+                    state,
 
                 district:
-                    district.value,
+                    district,
 
                 tehsil:
-                    tehsil.value,
+                    tehsil,
 
                 block:
-                    block.value,
+                    block,
 
                 village:
-                    village.value,
+                    village,
 
                 pincode:
-                    pincode.value,
+                    pincode,
 
                 pinCode:
-                    pincode.value,
-
-                automaticAddress:
-                    automaticAddress.value,
+                    pincode,
 
                 address:
-                    automaticAddress.value,
+                    automaticAddress,
 
-                mainCrop,
+                automaticAddress:
+                    automaticAddress,
+
+                mainCrop:
+                    mainCrop,
 
                 crop:
                     mainCrop,
 
-                share,
-
-                remarks,
+                share:
+                    share,
 
                 status:
-                    "pending",
+                    "Pending",
 
                 approvalStatus:
-                    "pending",
+                    "Pending",
+
+                remarks:
+                    remarks,
 
                 createdAt:
                     serverTimestamp()
@@ -2193,44 +1540,44 @@ form.addEventListener(
             document.getElementById(
                 "resultState"
             ).textContent =
-                state.value;
+                state;
 
 
             document.getElementById(
                 "resultDistrict"
             ).textContent =
-                district.value;
+                district;
 
 
             document.getElementById(
                 "resultTehsil"
             ).textContent =
-                tehsil.value;
+                tehsil;
 
 
             document.getElementById(
                 "resultBlock"
             ).textContent =
-                block.value;
+                block;
 
 
             document.getElementById(
                 "resultVillage"
             ).textContent =
-                village.value;
+                village;
 
 
             document.getElementById(
                 "resultPin"
             ).textContent =
-                pincode.value ||
-                "उपलब्ध नहीं";
+                pincode ||
+                "-";
 
 
             document.getElementById(
                 "resultAddress"
             ).textContent =
-                automaticAddress.value;
+                automaticAddress;
 
 
             document.getElementById(
@@ -2248,29 +1595,63 @@ form.addEventListener(
             form.reset();
 
 
-            state.value =
-                "";
-
-            district.innerHTML =
+            document.getElementById(
+                "district"
+            ).innerHTML =
                 '<option value="">District चुनें</option>';
 
-            tehsil.innerHTML =
+
+            document.getElementById(
+                "tehsil"
+            ).innerHTML =
                 '<option value="">Tehsil चुनें</option>';
 
-            block.innerHTML =
+
+            document.getElementById(
+                "block"
+            ).innerHTML =
                 '<option value="">Block चुनें</option>';
 
-            village.innerHTML =
+
+            document.getElementById(
+                "village"
+            ).innerHTML =
                 '<option value="">Village चुनें</option>';
 
-            pincode.value =
-                "";
 
-            automaticAddress.value =
-                "";
+            document.getElementById(
+                "district"
+            ).disabled = true;
 
-            pinStatus.textContent =
-                "";
+
+            document.getElementById(
+                "tehsil"
+            ).disabled = true;
+
+
+            document.getElementById(
+                "block"
+            ).disabled = true;
+
+
+            document.getElementById(
+                "village"
+            ).disabled = true;
+
+
+            document.getElementById(
+                "pincode"
+            ).value = "";
+
+
+            document.getElementById(
+                "automaticAddress"
+            ).value = "";
+
+
+            document.getElementById(
+                "pinStatus"
+            ).textContent = "";
 
 
             document.getElementById(
@@ -2308,31 +1689,7 @@ form.addEventListener(
     }
 );
 
-
-/* =====================================================
-   START LOCATION
-===================================================== */
-
-if(
-    document.readyState ===
-    "loading"
-){
-
-    document.addEventListener(
-        "DOMContentLoaded",
-        loadStates
-    );
-
-}
-else{
-
-    loadStates();
-
-}
-
 </script>
 
-
 </body>
-
 </html>
