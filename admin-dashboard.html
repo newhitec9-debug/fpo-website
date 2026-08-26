@@ -5,13 +5,21 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>
-Admin Dashboard | Bundelkhand Organic Farmer Producer Company Limited
+    Admin Dashboard | Bundelkhand Organic Farmer Producer Company Limited
 </title>
 
+
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     box-sizing:border-box;
@@ -19,483 +27,1119 @@ Admin Dashboard | Bundelkhand Organic Farmer Producer Company Limited
     padding:0;
 }
 
+
+/* =====================================================
+   BODY
+===================================================== */
+
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f8f3;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef7ee,
+            #f7fbf5,
+            #fffde7
+        );
+
     color:#263238;
+
     min-height:100vh;
+
 }
 
-/* ================= HEADER ================= */
+
+/* =====================================================
+   SECURITY LOADING SCREEN
+===================================================== */
+
+#securityScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1b5e20,
+            #2e7d32,
+            #43a047
+        );
+
+    color:white;
+
+    text-align:center;
+
+}
+
+
+.security-box{
+
+    width:min(90%,420px);
+
+    background:
+        rgba(255,255,255,.12);
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    border-radius:18px;
+
+    padding:35px 25px;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.25);
+
+}
+
+
+.security-logo{
+
+    width:75px;
+
+    height:75px;
+
+    margin:0 auto 18px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#2e7d32;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    border:
+        4px solid
+        #fbc02d;
+
+}
+
+
+.security-box h2{
+
+    margin-bottom:10px;
+
+}
+
+
+.security-box p{
+
+    line-height:1.6;
+
+    opacity:.95;
+
+}
+
+
+.loader{
+
+    width:35px;
+
+    height:35px;
+
+    margin:20px auto 0;
+
+    border:
+        4px solid
+        rgba(255,255,255,.35);
+
+    border-top-color:white;
+
+    border-radius:50%;
+
+    animation:
+        spin .8s linear infinite;
+
+}
+
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   ADMIN PAGE
+===================================================== */
+
+#adminPage{
+
+    display:none;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 .header{
-    background:linear-gradient(
-        135deg,
-        #166534,
-        #2e7d32,
-        #43a047
-    );
+
+    background:
+        linear-gradient(
+            135deg,
+            #166534,
+            #2e7d32,
+            #43a047
+        );
+
     color:white;
+
     padding:28px 20px;
+
 }
+
 
 .header-inner{
+
     max-width:1200px;
+
     margin:auto;
+
     display:flex;
+
     align-items:center;
+
     gap:18px;
+
 }
+
 
 .logo{
+
     width:68px;
+
     height:68px;
+
     border-radius:50%;
+
     background:white;
+
     color:#2e7d32;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     font-size:22px;
+
     font-weight:bold;
-    border:4px solid #fbc02d;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+    border:
+        4px solid
+        #fbc02d;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,.2);
+
 }
+
 
 .header h1{
+
     font-size:27px;
+
     margin-bottom:6px;
+
 }
+
 
 .header p{
+
     font-size:15px;
+
     opacity:.95;
+
 }
 
-/* ================= NAVIGATION ================= */
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .navbar{
+
     background:#fff8e1;
-    border-bottom:1px solid #ddd;
+
+    border-bottom:
+        1px solid #ddd;
+
     padding:15px 20px;
+
 }
+
 
 .nav-inner{
+
     max-width:1200px;
+
     margin:auto;
+
     display:flex;
+
     justify-content:center;
-    gap:14px;
+
+    gap:12px;
+
     flex-wrap:wrap;
+
 }
+
 
 .nav-btn{
+
+    border:none;
+
     text-decoration:none;
+
     color:white;
-    padding:12px 22px;
+
+    padding:12px 20px;
+
     border-radius:7px;
+
     font-weight:bold;
+
+    cursor:pointer;
+
     transition:.25s;
+
     display:inline-block;
+
+    font-size:14px;
+
 }
+
 
 .nav-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 5px 12px rgba(0,0,0,.18);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 5px 12px
+        rgba(0,0,0,.18);
+
 }
+
 
 .home{
+
     background:#f57c00;
+
 }
+
 
 .dashboard{
+
     background:#2e7d32;
+
 }
+
 
 .logout{
+
     background:#d32f2f;
+
 }
+
 
 .refresh{
+
     background:#1565c0;
+
 }
 
-/* ================= MAIN ================= */
+
+/* =====================================================
+   ADMIN INFO
+===================================================== */
+
+.admin-info{
+
+    max-width:1200px;
+
+    margin:18px auto 0;
+
+    padding:0 20px;
+
+}
+
+
+.admin-info-box{
+
+    background:white;
+
+    border-left:
+        5px solid #2e7d32;
+
+    border-radius:8px;
+
+    padding:12px 15px;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0,0,0,.07);
+
+}
+
+
+.admin-info-box strong{
+
+    color:#1b5e20;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
 
 .container{
+
     max-width:1200px;
-    margin:35px auto;
+
+    margin:30px auto;
+
     padding:0 20px;
+
 }
 
-/* ================= WELCOME ================= */
+
+/* =====================================================
+   WELCOME
+===================================================== */
 
 .welcome{
+
     background:white;
-    border-left:6px solid #43a047;
+
+    border-left:
+        6px solid #43a047;
+
     border-radius:12px;
+
     padding:25px;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,.08);
+
     margin-bottom:25px;
+
 }
+
 
 .welcome h2{
+
     color:#2e7d32;
+
     margin-bottom:12px;
+
     font-size:25px;
+
 }
+
 
 .welcome p{
+
     line-height:1.7;
+
     font-size:16px;
+
 }
 
-/* ================= FIREBASE STATUS ================= */
+
+/* =====================================================
+   FIREBASE STATUS
+===================================================== */
 
 .firebase-status{
+
     margin-top:18px;
+
     padding:13px 16px;
+
     border-radius:8px;
+
     font-weight:bold;
-    border:1px solid #ddd;
+
+    border:
+        1px solid #ddd;
+
     background:#fff3cd;
+
     color:#856404;
+
 }
+
 
 .firebase-connected{
+
     background:#d1e7dd;
+
     color:#0f5132;
+
     border-color:#badbcc;
+
 }
+
 
 .firebase-error{
+
     background:#f8d7da;
+
     color:#842029;
+
     border-color:#f5c2c7;
+
 }
 
-/* ================= CARDS ================= */
+
+/* =====================================================
+   CARDS
+===================================================== */
 
 .cards{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:20px;
+
     margin-bottom:30px;
+
 }
+
 
 .card{
+
     background:white;
+
     border-radius:14px;
+
     padding:25px 20px;
+
     text-align:center;
-    box-shadow:0 5px 18px rgba(0,0,0,.09);
+
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,.09);
+
     border-top:5px solid;
+
     transition:.25s;
+
 }
+
 
 .card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,0,0,.14);
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,.14);
+
 }
+
 
 .card.farmers{
+
     border-color:#2e7d32;
+
 }
+
 
 .card.membership{
+
     border-color:#f9a825;
+
 }
+
 
 .card.products{
+
     border-color:#1976d2;
+
 }
+
 
 .card.orders{
+
     border-color:#8e24aa;
+
 }
+
 
 .card-icon{
+
     width:58px;
+
     height:58px;
-    margin:0 auto 14px;
+
+    margin:
+        0 auto 14px;
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     color:white;
+
     font-size:22px;
+
     font-weight:bold;
+
 }
+
 
 .farmers .card-icon{
+
     background:#2e7d32;
+
 }
+
 
 .membership .card-icon{
+
     background:#f9a825;
+
+    color:#222;
+
 }
+
 
 .products .card-icon{
+
     background:#1976d2;
+
 }
+
 
 .orders .card-icon{
+
     background:#8e24aa;
+
 }
+
 
 .card h3{
+
     color:#2e7d32;
+
     font-size:21px;
+
     margin-bottom:8px;
+
 }
+
 
 .card p{
+
     color:#666;
+
     font-size:14px;
+
     min-height:38px;
+
 }
+
 
 .number{
+
     font-size:38px;
+
     font-weight:bold;
+
     margin:12px 0;
+
     color:#263238;
+
 }
+
 
 .open-btn{
+
     display:inline-block;
+
     text-decoration:none;
+
     color:white;
+
     padding:9px 22px;
+
     border-radius:6px;
+
     font-weight:bold;
+
     margin-top:5px;
+
 }
+
 
 .farmers .open-btn{
+
     background:#2e7d32;
+
 }
+
 
 .membership .open-btn{
+
     background:#f9a825;
+
     color:#222;
+
 }
+
 
 .products .open-btn{
+
     background:#1976d2;
+
 }
+
 
 .orders .open-btn{
+
     background:#8e24aa;
+
 }
 
-/* ================= ORDER STATS ================= */
+
+/* =====================================================
+   ORDER STATS
+===================================================== */
 
 .order-stats{
+
     display:flex;
+
     justify-content:center;
+
     flex-wrap:wrap;
+
     gap:7px;
-    margin:10px 0 12px;
+
+    margin:
+        10px 0 12px;
+
 }
+
 
 .order-stat{
+
     padding:5px 9px;
+
     border-radius:5px;
+
     font-size:12px;
+
     font-weight:bold;
+
 }
+
 
 .pending{
+
     background:#fff3cd;
+
     color:#856404;
+
 }
+
 
 .confirmed{
+
     background:#dbeafe;
+
     color:#1e40af;
+
 }
+
 
 .processing{
+
     background:#ede9fe;
+
     color:#6d28d9;
+
 }
+
 
 .shipped{
+
     background:#e0f2fe;
+
     color:#0369a1;
+
 }
+
 
 .delivered{
+
     background:#dcfce7;
+
     color:#166534;
+
 }
 
-/* ================= MEMBERSHIP STATS ================= */
+
+/* =====================================================
+   MEMBERSHIP STATS
+===================================================== */
 
 .membership-stats{
+
     display:flex;
+
     justify-content:center;
+
     flex-wrap:wrap;
+
     gap:5px;
-    margin:8px 0 12px;
+
+    margin:
+        8px 0 12px;
+
 }
+
 
 .member-stat{
+
     padding:5px 8px;
+
     border-radius:5px;
+
     font-size:11px;
+
     font-weight:bold;
+
 }
+
 
 .member-approved{
+
     background:#dcfce7;
+
     color:#166534;
+
 }
+
 
 .member-pending{
+
     background:#fff3cd;
+
     color:#856404;
+
 }
+
 
 .member-rejected{
+
     background:#fee2e2;
+
     color:#991b1b;
+
 }
 
-/* ================= MANAGEMENT ================= */
+
+/* =====================================================
+   MANAGEMENT
+===================================================== */
 
 .section-title{
+
     text-align:center;
+
     color:#2e7d32;
+
     font-size:25px;
-    margin:35px 0 20px;
+
+    margin:
+        35px 0 20px;
+
 }
+
 
 .management{
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+        repeat(2,1fr);
+
     gap:20px;
+
 }
+
 
 .management-card{
+
     background:white;
+
     border-radius:12px;
+
     padding:22px;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
-    border-left:5px solid #2e7d32;
+
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,.08);
+
+    border-left:
+        5px solid #2e7d32;
+
 }
+
 
 .management-card.news{
+
     border-color:#ef6c00;
+
 }
+
 
 .management-card.gallery{
+
     border-color:#1976d2;
+
 }
+
 
 .management-card.reports{
+
     border-color:#6a1b9a;
+
 }
+
 
 .management-card.settings{
+
     border-color:#455a64;
+
 }
+
 
 .management-card h3{
+
     margin-bottom:8px;
+
     color:#2e7d32;
+
     font-size:20px;
+
 }
+
 
 .management-card p{
+
     color:#666;
+
     line-height:1.6;
+
     margin-bottom:15px;
+
 }
+
 
 .manage-btn{
+
     display:inline-block;
+
     background:#2e7d32;
+
     color:white;
+
     text-decoration:none;
+
     padding:9px 18px;
+
     border-radius:6px;
+
     font-weight:bold;
+
 }
+
 
 .news .manage-btn{
+
     background:#ef6c00;
+
 }
+
 
 .gallery .manage-btn{
+
     background:#1976d2;
+
 }
+
 
 .reports .manage-btn{
+
     background:#6a1b9a;
+
 }
+
 
 .settings .manage-btn{
+
     background:#455a64;
+
 }
 
-/* ================= FOOTER ================= */
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 .footer{
+
     margin-top:45px;
+
     background:#1b5e20;
+
     color:white;
+
     text-align:center;
+
     padding:25px 15px;
+
 }
+
 
 .footer h3{
+
     margin-bottom:8px;
+
 }
+
 
 .footer p{
+
     font-size:14px;
+
     opacity:.9;
+
     margin:5px 0;
+
 }
 
-/* ================= MOBILE ================= */
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:900px){
 
     .cards{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
+
     }
 
 }
 
+
 @media(max-width:600px){
 
     .header-inner{
+
         flex-direction:column;
+
         text-align:center;
+
     }
+
 
     .header h1{
+
         font-size:22px;
+
     }
+
 
     .cards{
+
         grid-template-columns:1fr;
+
     }
+
 
     .management{
+
         grid-template-columns:1fr;
+
     }
+
 
     .nav-inner{
+
         flex-direction:column;
+
     }
 
+
     .nav-btn{
+
         text-align:center;
+
         width:100%;
+
+    }
+
+
+    .container{
+
+        padding:
+            0 12px;
+
     }
 
 }
@@ -508,7 +1152,43 @@ body{
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     SECURITY SCREEN
+===================================================== -->
+
+<div id="securityScreen">
+
+    <div class="security-box">
+
+        <div class="security-logo">
+            FPO
+        </div>
+
+        <h2>
+            Admin Authentication
+        </h2>
+
+        <p>
+            Admin access verify किया जा रहा है...
+        </p>
+
+        <div class="loader"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROTECTED ADMIN PAGE
+===================================================== -->
+
+<div id="adminPage">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header class="header">
 
@@ -535,7 +1215,9 @@ body{
 </header>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
 <nav class="navbar">
 
@@ -548,6 +1230,7 @@ body{
             Home Page
         </a>
 
+
         <a
             class="nav-btn dashboard"
             href="admin-dashboard.html"
@@ -555,346 +1238,405 @@ body{
             Dashboard
         </a>
 
-        <a
+
+        <button
+            id="refreshBtn"
             class="nav-btn refresh"
-            href="admin-dashboard.html"
+            type="button"
         >
             Refresh Dashboard
-        </a>
+        </button>
 
-        <a
+
+        <button
+            id="logoutBtn"
             class="nav-btn logout"
-            href="login.html"
+            type="button"
         >
             Logout
-        </a>
+        </button>
 
     </div>
 
 </nav>
 
 
-<!-- ================= MAIN ================= -->
+<!-- =====================================================
+     ADMIN INFORMATION
+===================================================== -->
+
+<div class="admin-info">
+
+    <div class="admin-info-box">
+
+        Logged in Admin:
+
+        <strong id="adminEmail">
+            Checking...
+        </strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <main class="container">
 
 
-    <!-- ================= WELCOME ================= -->
+<section class="welcome">
 
-    <section class="welcome">
-
-        <h2>
-            Welcome Admin
-        </h2>
-
-        <p>
-            यह आपका FPO Administration Panel है।
-            यहाँ से आप Farmers, Membership, Products, Orders,
-            Agriculture News और Website Content को Manage कर सकते हैं।
-        </p>
-
-
-        <div
-            id="firebaseStatus"
-            class="firebase-status"
-        >
-            Firebase Database से connection हो रहा है...
-        </div>
-
-    </section>
-
-
-    <!-- ================= MAIN CARDS ================= -->
-
-    <section class="cards">
-
-
-        <!-- FARMERS -->
-
-        <div class="card farmers">
-
-            <div class="card-icon">
-                F
-            </div>
-
-            <h3>
-                Total Farmers
-            </h3>
-
-            <p>
-                Registered Approved Farmers
-            </p>
-
-            <div
-                class="number"
-                id="farmerCount"
-            >
-                0
-            </div>
-
-            <a
-                class="open-btn"
-                href="farmers-list.html"
-            >
-                Open
-            </a>
-
-        </div>
-
-
-        <!-- MEMBERSHIP -->
-
-        <div class="card membership">
-
-            <div class="card-icon">
-                M
-            </div>
-
-            <h3>
-                Membership
-            </h3>
-
-            <p>
-                Farmer Membership Applications
-            </p>
-
-            <div
-                class="number"
-                id="membershipCount"
-            >
-                0
-            </div>
-
-            <div class="membership-stats">
-
-                <span class="member-stat member-approved">
-                    Approved:
-                    <span id="approvedMemberCount">
-                        0
-                    </span>
-                </span>
-
-                <span class="member-stat member-pending">
-                    Pending:
-                    <span id="pendingMemberCount">
-                        0
-                    </span>
-                </span>
-
-                <span class="member-stat member-rejected">
-                    Rejected:
-                    <span id="rejectedMemberCount">
-                        0
-                    </span>
-                </span>
-
-            </div>
-
-            <a
-                class="open-btn"
-                href="membership-requests.html"
-            >
-                Open
-            </a>
-
-        </div>
-
-
-        <!-- PRODUCTS -->
-
-        <div class="card products">
-
-            <div class="card-icon">
-                P
-            </div>
-
-            <h3>
-                Products
-            </h3>
-
-            <p>
-                Add, Edit और Delete Products
-            </p>
-
-            <div
-                class="number"
-                id="productCount"
-            >
-                0
-            </div>
-
-            <a
-                class="open-btn"
-                href="manage-products.html"
-            >
-                Open
-            </a>
-
-        </div>
-
-
-        <!-- ORDERS -->
-
-        <div class="card orders">
-
-            <div class="card-icon">
-                O
-            </div>
-
-            <h3>
-                Orders
-            </h3>
-
-            <p>
-                Customer Orders Manage करें
-            </p>
-
-            <div
-                class="number"
-                id="orderCount"
-            >
-                0
-            </div>
-
-            <div class="order-stats">
-
-                <span class="order-stat pending">
-                    Pending:
-                    <span id="pendingCount">0</span>
-                </span>
-
-                <span class="order-stat confirmed">
-                    Confirmed:
-                    <span id="confirmedCount">0</span>
-                </span>
-
-                <span class="order-stat processing">
-                    Processing:
-                    <span id="processingCount">0</span>
-                </span>
-
-                <span class="order-stat shipped">
-                    Shipped:
-                    <span id="shippedCount">0</span>
-                </span>
-
-                <span class="order-stat delivered">
-                    Delivered:
-                    <span id="deliveredCount">0</span>
-                </span>
-
-            </div>
-
-            <a
-                class="open-btn"
-                href="orders.html"
-            >
-                Open
-            </a>
-
-        </div>
-
-
-    </section>
-
-
-    <!-- ================= MANAGEMENT ================= -->
-
-    <h2 class="section-title">
-        Website Management
+    <h2>
+        Welcome Admin
     </h2>
 
-
-    <section class="management">
-
-
-        <div class="management-card news">
-
-            <h3>
-                Agriculture News
-            </h3>
-
-            <p>
-                कृषि समाचार Add, Edit और Delete करें।
-            </p>
-
-            <a
-                class="manage-btn"
-                href="admin-news.html"
-            >
-                Open
-            </a>
-
-        </div>
+    <p>
+        यह आपका FPO Administration Panel है।
+        यहाँ से आप Farmers, Membership, Products,
+        Orders, Agriculture News और Website Content
+        को Manage कर सकते हैं।
+    </p>
 
 
-        <div class="management-card gallery">
+    <div
+        id="firebaseStatus"
+        class="firebase-status"
+    >
+        Firebase Database से connection हो रहा है...
+    </div>
 
-            <h3>
-                Gallery
-            </h3>
-
-            <p>
-                Website Gallery Manage करें।
-            </p>
-
-            <a
-                class="manage-btn"
-                href="admin-gallery.html"
-            >
-                Open
-            </a>
-
-        </div>
+</section>
 
 
-        <div class="management-card reports">
+<!-- =====================================================
+     MAIN CARDS
+===================================================== -->
 
-            <h3>
-                Reports
-            </h3>
-
-            <p>
-                FPO Statistics और Reports देखें।
-            </p>
-
-            <a
-                class="manage-btn"
-                href="admin-dashboard.html"
-            >
-                Open
-            </a>
-
-        </div>
+<section class="cards">
 
 
-        <div class="management-card settings">
+<!-- FARMERS -->
 
-            <h3>
-                Settings
-            </h3>
+<div class="card farmers">
 
-            <p>
-                Website Settings Manage करें।
-            </p>
+    <div class="card-icon">
+        F
+    </div>
 
-            <a
-                class="manage-btn"
-                href="admin-dashboard.html"
-            >
-                Open
-            </a>
+    <h3>
+        Total Farmers
+    </h3>
 
-        </div>
+    <p>
+        Registered Approved Farmers
+    </p>
+
+    <div
+        class="number"
+        id="farmerCount"
+    >
+        0
+    </div>
+
+    <a
+        class="open-btn"
+        href="farmers-list.html"
+    >
+        Open
+    </a>
+
+</div>
 
 
-    </section>
+<!-- MEMBERSHIP -->
+
+<div class="card membership">
+
+    <div class="card-icon">
+        M
+    </div>
+
+    <h3>
+        Membership
+    </h3>
+
+    <p>
+        Farmer Membership Applications
+    </p>
+
+    <div
+        class="number"
+        id="membershipCount"
+    >
+        0
+    </div>
+
+
+    <div class="membership-stats">
+
+        <span class="member-stat member-approved">
+
+            Approved:
+
+            <span id="approvedMemberCount">
+                0
+            </span>
+
+        </span>
+
+
+        <span class="member-stat member-pending">
+
+            Pending:
+
+            <span id="pendingMemberCount">
+                0
+            </span>
+
+        </span>
+
+
+        <span class="member-stat member-rejected">
+
+            Rejected:
+
+            <span id="rejectedMemberCount">
+                0
+            </span>
+
+        </span>
+
+    </div>
+
+
+    <a
+        class="open-btn"
+        href="membership-requests.html"
+    >
+        Open
+    </a>
+
+</div>
+
+
+<!-- PRODUCTS -->
+
+<div class="card products">
+
+    <div class="card-icon">
+        P
+    </div>
+
+    <h3>
+        Products
+    </h3>
+
+    <p>
+        Add, Edit और Delete Products
+    </p>
+
+    <div
+        class="number"
+        id="productCount"
+    >
+        0
+    </div>
+
+    <a
+        class="open-btn"
+        href="manage-products.html"
+    >
+        Open
+    </a>
+
+</div>
+
+
+<!-- ORDERS -->
+
+<div class="card orders">
+
+    <div class="card-icon">
+        O
+    </div>
+
+    <h3>
+        Orders
+    </h3>
+
+    <p>
+        Customer Orders Manage करें
+    </p>
+
+    <div
+        class="number"
+        id="orderCount"
+    >
+        0
+    </div>
+
+
+    <div class="order-stats">
+
+        <span class="order-stat pending">
+
+            Pending:
+            <span id="pendingCount">0</span>
+
+        </span>
+
+
+        <span class="order-stat confirmed">
+
+            Confirmed:
+            <span id="confirmedCount">0</span>
+
+        </span>
+
+
+        <span class="order-stat processing">
+
+            Processing:
+            <span id="processingCount">0</span>
+
+        </span>
+
+
+        <span class="order-stat shipped">
+
+            Shipped:
+            <span id="shippedCount">0</span>
+
+        </span>
+
+
+        <span class="order-stat delivered">
+
+            Delivered:
+            <span id="deliveredCount">0</span>
+
+        </span>
+
+    </div>
+
+
+    <a
+        class="open-btn"
+        href="orders.html"
+    >
+        Open
+    </a>
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     WEBSITE MANAGEMENT
+===================================================== -->
+
+<h2 class="section-title">
+    Website Management
+</h2>
+
+
+<section class="management">
+
+
+<div class="management-card news">
+
+    <h3>
+        Agriculture News
+    </h3>
+
+    <p>
+        कृषि समाचार Add, Edit और Delete करें।
+    </p>
+
+    <a
+        class="manage-btn"
+        href="admin-news.html"
+    >
+        Open
+    </a>
+
+</div>
+
+
+<div class="management-card gallery">
+
+    <h3>
+        Gallery
+    </h3>
+
+    <p>
+        Website Gallery Manage करें।
+    </p>
+
+    <a
+        class="manage-btn"
+        href="admin-gallery.html"
+    >
+        Open
+    </a>
+
+</div>
+
+
+<div class="management-card reports">
+
+    <h3>
+        Reports
+    </h3>
+
+    <p>
+        FPO Statistics और Reports देखें।
+    </p>
+
+    <a
+        class="manage-btn"
+        href="admin-dashboard.html"
+    >
+        Open
+    </a>
+
+</div>
+
+
+<div class="management-card settings">
+
+    <h3>
+        Settings
+    </h3>
+
+    <p>
+        Website Settings Manage करें।
+    </p>
+
+    <a
+        class="manage-btn"
+        href="admin-dashboard.html"
+    >
+        Open
+    </a>
+
+</div>
+
+
+</section>
 
 
 </main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer class="footer">
 
@@ -913,20 +1655,29 @@ body{
 </footer>
 
 
+</div>
+
+
 <!-- =====================================================
-     FIREBASE
+     FIREBASE AUTH + DATABASE
 ===================================================== -->
 
 <script type="module">
-
-
-/* ================= FIREBASE IMPORT ================= */
 
 import {
     initializeApp
 }
 from
 "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+
+import {
+    getAuth,
+    onAuthStateChanged,
+    signOut
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 
 import {
@@ -938,7 +1689,9 @@ from
 "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
-/* ================= FIREBASE CONFIG ================= */
+/* =====================================================
+   FIREBASE CONFIG
+===================================================== */
 
 const firebaseConfig = {
 
@@ -963,18 +1716,57 @@ const firebaseConfig = {
 };
 
 
-/* ================= INITIALIZE ================= */
+/* =====================================================
+   INITIALIZE
+===================================================== */
 
 const app =
     initializeApp(
         firebaseConfig
     );
 
+
+const auth =
+    getAuth(
+        app
+    );
+
+
 const db =
-    getFirestore(app);
+    getFirestore(
+        app
+    );
 
 
-/* ================= ELEMENTS ================= */
+/* =====================================================
+   ADMIN EMAIL
+===================================================== */
+
+const ADMIN_EMAIL =
+    "newhitec9@gmail.com";
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const securityScreen =
+    document.getElementById(
+        "securityScreen"
+    );
+
+
+const adminPage =
+    document.getElementById(
+        "adminPage"
+    );
+
+
+const adminEmail =
+    document.getElementById(
+        "adminEmail"
+    );
+
 
 const firebaseStatus =
     document.getElementById(
@@ -982,7 +1774,9 @@ const firebaseStatus =
     );
 
 
-/* ================= STATUS NORMALIZER ================= */
+/* =====================================================
+   STATUS NORMALIZER
+===================================================== */
 
 function normalizeStatus(
     value,
@@ -999,15 +1793,119 @@ function normalizeStatus(
 
     }
 
-    return String(value)
-        .trim()
-        .toLowerCase();
+
+    return String(
+        value
+    )
+    .trim()
+    .toLowerCase();
 
 }
 
 
 /* =====================================================
-   LOAD MEMBERSHIP + FARMERS
+   SHOW LOGIN
+===================================================== */
+
+function redirectToLogin(){
+
+    window.location.replace(
+        "login.html"
+    );
+
+}
+
+
+/* =====================================================
+   SHOW ADMIN
+===================================================== */
+
+function showAdmin(
+    user
+){
+
+    adminEmail.textContent =
+        user.email || "-";
+
+
+    securityScreen.style.display =
+        "none";
+
+
+    adminPage.style.display =
+        "block";
+
+
+    loadDashboard();
+
+}
+
+
+/* =====================================================
+   AUTHENTICATION GUARD
+===================================================== */
+
+onAuthStateChanged(
+    auth,
+    function(user){
+
+        /*
+         * सबसे पहले login check
+         */
+
+        if(!user){
+
+            redirectToLogin();
+
+            return;
+
+        }
+
+
+        /*
+         * Admin email check
+         */
+
+        if(
+            !user.email ||
+            user.email.toLowerCase() !==
+            ADMIN_EMAIL.toLowerCase()
+        ){
+
+            signOut(auth)
+            .finally(
+                function(){
+
+                    redirectToLogin();
+
+                }
+            );
+
+            return;
+
+        }
+
+
+        /*
+         * सही Admin
+         */
+
+        console.log(
+            "Admin Authentication Verified:",
+            user.email
+        );
+
+
+        showAdmin(
+            user
+        );
+
+    }
+);
+
+
+/* =====================================================
+   LOAD MEMBERS
 ===================================================== */
 
 async function loadMembers(){
@@ -1022,8 +1920,11 @@ async function loadMembers(){
 
 
     let total = 0;
+
     let approved = 0;
+
     let pending = 0;
+
     let rejected = 0;
 
 
@@ -1031,6 +1932,7 @@ async function loadMembers(){
         function(item){
 
             total++;
+
 
             const member =
                 item.data();
@@ -1043,12 +1945,16 @@ async function loadMembers(){
                 );
 
 
-            if(status === "approved"){
+            if(
+                status === "approved"
+            ){
 
                 approved++;
 
             }
-            else if(status === "rejected"){
+            else if(
+                status === "rejected"
+            ){
 
                 rejected++;
 
@@ -1062,8 +1968,6 @@ async function loadMembers(){
         }
     );
 
-
-    /* MEMBERSHIP TOTAL */
 
     document.getElementById(
         "membershipCount"
@@ -1088,8 +1992,6 @@ async function loadMembers(){
     ).textContent =
         rejected;
 
-
-    /* APPROVED FARMERS */
 
     document.getElementById(
         "farmerCount"
@@ -1149,9 +2051,13 @@ async function loadOrders(){
 
 
     let pending = 0;
+
     let confirmed = 0;
+
     let processing = 0;
+
     let shipped = 0;
+
     let delivered = 0;
 
 
@@ -1169,27 +2075,37 @@ async function loadOrders(){
                 );
 
 
-            if(status === "pending"){
+            if(
+                status === "pending"
+            ){
 
                 pending++;
 
             }
-            else if(status === "confirmed"){
+            else if(
+                status === "confirmed"
+            ){
 
                 confirmed++;
 
             }
-            else if(status === "processing"){
+            else if(
+                status === "processing"
+            ){
 
                 processing++;
 
             }
-            else if(status === "shipped"){
+            else if(
+                status === "shipped"
+            ){
 
                 shipped++;
 
             }
-            else if(status === "delivered"){
+            else if(
+                status === "delivered"
+            ){
 
                 delivered++;
 
@@ -1249,6 +2165,7 @@ async function loadDashboard(){
     firebaseStatus.textContent =
         "Firebase Database से data load हो रहा है...";
 
+
     firebaseStatus.className =
         "firebase-status";
 
@@ -1269,6 +2186,7 @@ async function loadDashboard(){
         firebaseStatus.textContent =
             "Firebase Connected — Dashboard data सफलतापूर्वक load हो गया।";
 
+
         firebaseStatus.className =
             "firebase-status firebase-connected";
 
@@ -1285,83 +2203,25 @@ async function loadDashboard(){
             "Firebase Error: " +
             error.message;
 
+
         firebaseStatus.className =
             "firebase-status firebase-error";
-
-
-        document.getElementById(
-            "farmerCount"
-        ).textContent = "0";
-
-
-        document.getElementById(
-            "membershipCount"
-        ).textContent = "0";
-
-
-        document.getElementById(
-            "approvedMemberCount"
-        ).textContent = "0";
-
-
-        document.getElementById(
-            "pendingMemberCount"
-        ).textContent = "0";
-
-
-        document.getElementById(
-            "rejectedMemberCount"
-        ).textContent = "0";
-
-
-        document.getElementById(
-            "productCount"
-        ).textContent = "0";
-
-
-        document.getElementById(
-            "orderCount"
-        ).textContent = "0";
-
-
-        document.getElementById(
-            "pendingCount"
-        ).textContent = "0";
-
-
-        document.getElementById(
-            "confirmedCount"
-        ).textContent = "0";
-
-
-        document.getElementById(
-            "processingCount"
-        ).textContent = "0";
-
-
-        document.getElementById(
-            "shippedCount"
-        ).textContent = "0";
-
-
-        document.getElementById(
-            "deliveredCount"
-        ).textContent = "0";
 
     }
 
 }
 
 
-/* ================= INITIAL LOAD ================= */
+/* =====================================================
+   REFRESH
+===================================================== */
 
-loadDashboard();
-
-
-/* ================= REFRESH WHEN PAGE RETURNS ================= */
-
-window.addEventListener(
-    "pageshow",
+document
+.getElementById(
+    "refreshBtn"
+)
+.addEventListener(
+    "click",
     function(){
 
         loadDashboard();
@@ -1370,9 +2230,63 @@ window.addEventListener(
 );
 
 
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+document
+.getElementById(
+    "logoutBtn"
+)
+.addEventListener(
+    "click",
+    async function(){
+
+        const confirmLogout =
+            confirm(
+                "क्या आप Admin Logout करना चाहते हैं?"
+            );
+
+
+        if(!confirmLogout){
+
+            return;
+
+        }
+
+
+        try{
+
+            await signOut(
+                auth
+            );
+
+
+            window.location.replace(
+                "login.html"
+            );
+
+        }
+        catch(error){
+
+            console.error(
+                "Logout Error:",
+                error
+            );
+
+
+            alert(
+                "Logout नहीं हो सका। कृपया फिर से प्रयास करें।"
+            );
+
+        }
+
+    }
+);
+
 </script>
 
-<script type="module" src="admin-auth.js"></script>
+
 </body>
 
 </html>
