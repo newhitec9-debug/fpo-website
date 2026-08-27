@@ -12,34 +12,150 @@ State
           -> Block
               -> Village
 
-UP - MAHOBA
+IMPORTANT:
+UP के सभी 75 District उपलब्ध हैं।
 
-District:
-    Mahoba
+Mahoba की detailed:
+District -> Tehsil -> Block -> Village
+mapping सुरक्षित रखी गई है।
 
-Tehsil:
-    Mahoba
-    Charkhari
-    Kulpahar
-
-Blocks:
-    Kabrai
-    Charkhari
-    Jaitpur
-    Panwari
+PIN केवल verified entries के लिए रखा गया है।
 ===========================================================
 */
 
+
+/* =========================================================
+   LOCATION MASTER
+========================================================= */
+
 const LOCATION_MASTER = {
+
+
+    /* =====================================================
+       UTTAR PRADESH
+    ===================================================== */
 
     "Uttar Pradesh": {
 
+
+        /* =================================================
+           ALL 75 UP DISTRICTS
+           Government verified district list
+        ================================================= */
+
+        "Agra": {},
+
+        "Aligarh": {},
+
+        "Ambedkar Nagar": {},
+
+        "Amethi": {},
+
+        "Amroha": {},
+
+        "Auraiya": {},
+
+        "Ayodhya": {},
+
+        "Azamgarh": {},
+
+        "Baghpat": {},
+
+        "Bahraich": {},
+
+        "Ballia": {},
+
+        "Balrampur": {},
+
+        "Banda": {},
+
+        "Barabanki": {},
+
+        "Bareilly": {},
+
+        "Basti": {},
+
+        "Bhadohi": {},
+
+        "Bijnor": {},
+
+        "Budaun": {},
+
+        "Bulandshahr": {},
+
+        "Chandauli": {},
+
+        "Chitrakoot": {},
+
+        "Deoria": {},
+
+        "Etah": {},
+
+        "Etawah": {},
+
+        "Farrukhabad": {},
+
+        "Fatehpur": {},
+
+        "Firozabad": {},
+
+        "Gautam Buddha Nagar": {},
+
+        "Ghaziabad": {},
+
+        "Ghazipur": {},
+
+        "Gonda": {},
+
+        "Gorakhpur": {},
+
+        "Hamirpur": {},
+
+        "Hapur": {},
+
+        "Hardoi": {},
+
+        "Hathras": {},
+
+        "Jalaun": {},
+
+        "Jaunpur": {},
+
+        "Jhansi": {},
+
+        "Kannauj": {},
+
+        "Kanpur Dehat": {},
+
+        "Kanpur Nagar": {},
+
+        "Kasganj": {},
+
+        "Kaushambi": {},
+
+        "Kushinagar": {},
+
+        "Lakhimpur Kheri": {},
+
+        "Lalitpur": {},
+
+        "Lucknow": {},
+
+        "Maharajganj": {},
+
+
+        /* =================================================
+           MAHOBA
+           DETAILED VERIFIED MAPPING
+        ================================================= */
+
         "Mahoba": {
 
-            /* =================================================
+
+            /* =============================================
                TEHSIL : MAHOBA
                BLOCK  : KABRAI
-            ================================================= */
+            ============================================= */
 
             "Mahoba": {
 
@@ -161,10 +277,10 @@ const LOCATION_MASTER = {
             },
 
 
-            /* =================================================
+            /* =============================================
                TEHSIL : CHARKHARI
                BLOCK  : CHARKHARI
-            ================================================= */
+            ============================================= */
 
             "Charkhari": {
 
@@ -250,10 +366,10 @@ const LOCATION_MASTER = {
             },
 
 
-            /* =================================================
+            /* =============================================
                TEHSIL : KULPAHAR
                BLOCK  : JAITPUR
-            ================================================= */
+            ============================================= */
 
             "Kulpahar": {
 
@@ -324,10 +440,10 @@ const LOCATION_MASTER = {
                 ],
 
 
-                /* =================================================
+                /* =========================================
                    TEHSIL : KULPAHAR
                    BLOCK  : PANWARI
-                ================================================= */
+                ========================================= */
 
                 "Panwari": [
 
@@ -396,14 +512,64 @@ const LOCATION_MASTER = {
 
             }
 
-        }
+        },
+
+
+        "Mainpuri": {},
+
+        "Mathura": {},
+
+        "Mau": {},
+
+        "Meerut": {},
+
+        "Mirzapur": {},
+
+        "Moradabad": {},
+
+        "Muzaffarnagar": {},
+
+        "Pilibhit": {},
+
+        "Pratapgarh": {},
+
+        "Prayagraj": {},
+
+        "Rae Bareli": {},
+
+        "Rampur": {},
+
+        "Saharanpur": {},
+
+        "Sambhal": {},
+
+        "Sant Kabir Nagar": {},
+
+        "Shahjahanpur": {},
+
+        "Shamli": {},
+
+        "Shravasti": {},
+
+        "Siddharth Nagar": {},
+
+        "Sitapur": {},
+
+        "Sonbhadra": {},
+
+        "Sultanpur": {},
+
+        "Unnao": {},
+
+        "Varanasi": {}
 
     },
 
 
-    /* =======================================================
+    /* =====================================================
        MADHYA PRADESH
-       ======================================================= */
+       Existing verified starter mapping retained
+    ===================================================== */
 
     "Madhya Pradesh": {
 
@@ -426,17 +592,9 @@ const LOCATION_MASTER = {
 };
 
 
-/*
-===========================================================
-PIN MASTER
-
-IMPORTANT:
-PIN केवल verified entries के लिए रखा गया है।
-
-जहाँ village-specific PIN verify नहीं है,
-वहाँ PIN खाली रहेगा।
-===========================================================
-*/
+/* =========================================================
+   PIN MASTER
+========================================================= */
 
 const PIN_MASTER = {
 
@@ -447,37 +605,53 @@ const PIN_MASTER = {
             "Mahoba": {
 
                 "Kabrai": {
+
                     "Kabrai": "210424",
+
                     "Srinagar": "210433"
+
                 }
 
             },
+
 
             "Charkhari": {
 
                 "Charkhari": {
+
                     "Charkhari": "210421",
+
                     "Barenda": "210501"
+
                 }
 
             },
 
+
             "Kulpahar": {
 
                 "Jaitpur": {
+
                     "Jaitpur": "210423",
+
                     "Amanpura": "210423",
+
                     "Bihar": "210423",
+
                     "Lamaura": "210423",
-                    "Magraul Kalan": "210423",
+
+                    "Magaraul Kalan": "210423",
+
                     "Mawaiya": "210423",
+
                     "Thurat": "210423",
+
                     "Tikariya Jaitpur": "210423"
+
                 },
 
-                "Panwari": {
-                    /* अभी village-wise verification बाकी है */
-                }
+
+                "Panwari": {}
 
             }
 
@@ -488,13 +662,11 @@ const PIN_MASTER = {
 };
 
 
-/*
-===========================================================
-GET STATES
-===========================================================
-*/
+/* =========================================================
+   GET STATES
+========================================================= */
 
-function getLocationStates() {
+function getLocationStates(){
 
     return Object.keys(
         LOCATION_MASTER
@@ -503,21 +675,22 @@ function getLocationStates() {
 }
 
 
-/*
-===========================================================
-GET DISTRICTS
-===========================================================
-*/
+/* =========================================================
+   GET DISTRICTS
+========================================================= */
 
-function getLocationDistricts(state) {
+function getLocationDistricts(
+    state
+){
 
-    if (
+    if(
         !LOCATION_MASTER[state]
-    ) {
+    ){
 
         return [];
 
     }
+
 
     return Object.keys(
         LOCATION_MASTER[state]
@@ -526,25 +699,24 @@ function getLocationDistricts(state) {
 }
 
 
-/*
-===========================================================
-GET TEHSILS
-===========================================================
-*/
+/* =========================================================
+   GET TEHSILS
+========================================================= */
 
 function getLocationTehsils(
     state,
     district
-) {
+){
 
-    if (
+    if(
         !LOCATION_MASTER[state] ||
         !LOCATION_MASTER[state][district]
-    ) {
+    ){
 
         return [];
 
     }
+
 
     return Object.keys(
         LOCATION_MASTER[state][district]
@@ -553,27 +725,26 @@ function getLocationTehsils(
 }
 
 
-/*
-===========================================================
-GET BLOCKS
-===========================================================
-*/
+/* =========================================================
+   GET BLOCKS
+========================================================= */
 
 function getLocationBlocks(
     state,
     district,
     tehsil
-) {
+){
 
-    if (
+    if(
         !LOCATION_MASTER[state] ||
         !LOCATION_MASTER[state][district] ||
         !LOCATION_MASTER[state][district][tehsil]
-    ) {
+    ){
 
         return [];
 
     }
+
 
     return Object.keys(
         LOCATION_MASTER[state]
@@ -584,29 +755,28 @@ function getLocationBlocks(
 }
 
 
-/*
-===========================================================
-GET VILLAGES
-===========================================================
-*/
+/* =========================================================
+   GET VILLAGES
+========================================================= */
 
 function getLocationVillages(
     state,
     district,
     tehsil,
     block
-) {
+){
 
-    if (
+    if(
         !LOCATION_MASTER[state] ||
         !LOCATION_MASTER[state][district] ||
         !LOCATION_MASTER[state][district][tehsil] ||
         !LOCATION_MASTER[state][district][tehsil][block]
-    ) {
+    ){
 
         return [];
 
     }
+
 
     const villages =
         LOCATION_MASTER[state]
@@ -615,9 +785,9 @@ function getLocationVillages(
         [block];
 
 
-    if (
+    if(
         !Array.isArray(villages)
-    ) {
+    ){
 
         return [];
 
@@ -626,11 +796,12 @@ function getLocationVillages(
 
     return villages
         .map(
-            function(village) {
+            function(village){
 
                 return {
 
-                    name: village,
+                    name:
+                        village,
 
                     pincode:
                         getVillagePin(
@@ -646,7 +817,7 @@ function getLocationVillages(
             }
         )
         .sort(
-            function(a, b) {
+            function(a,b){
 
                 return a.name.localeCompare(
                     b.name,
@@ -659,11 +830,9 @@ function getLocationVillages(
 }
 
 
-/*
-===========================================================
-GET PIN
-===========================================================
-*/
+/* =========================================================
+   GET VILLAGE PIN
+========================================================= */
 
 function getVillagePin(
     state,
@@ -671,15 +840,15 @@ function getVillagePin(
     tehsil,
     block,
     village
-) {
+){
 
-    if (
+    if(
         PIN_MASTER[state] &&
         PIN_MASTER[state][district] &&
         PIN_MASTER[state][district][tehsil] &&
         PIN_MASTER[state][district][tehsil][block] &&
         PIN_MASTER[state][district][tehsil][block][village]
-    ) {
+    ){
 
         return PIN_MASTER[state]
             [district]
@@ -689,16 +858,15 @@ function getVillagePin(
 
     }
 
+
     return "";
 
 }
 
 
-/*
-===========================================================
-FIND VILLAGE
-===========================================================
-*/
+/* =========================================================
+   FIND VILLAGE
+========================================================= */
 
 function findLocationVillage(
     state,
@@ -706,7 +874,7 @@ function findLocationVillage(
     tehsil,
     block,
     village
-) {
+){
 
     const villages =
         getLocationVillages(
@@ -716,8 +884,9 @@ function findLocationVillage(
             block
         );
 
+
     return villages.find(
-        function(item) {
+        function(item){
 
             return item.name === village;
 
@@ -727,11 +896,9 @@ function findLocationVillage(
 }
 
 
-/*
-===========================================================
-AUTOMATIC ADDRESS
-===========================================================
-*/
+/* =========================================================
+   AUTOMATIC ADDRESS
+========================================================= */
 
 function buildFarmerAddress(
     village,
@@ -740,82 +907,89 @@ function buildFarmerAddress(
     district,
     state,
     pincode = ""
-) {
+){
 
     const parts = [];
 
 
-    if (village)
+    if(village)
         parts.push(village);
 
 
-    if (block)
+    if(block)
         parts.push(block);
 
 
-    if (tehsil)
+    if(tehsil)
         parts.push(tehsil);
 
 
-    if (district)
+    if(district)
         parts.push(district);
 
 
-    if (state)
+    if(state)
         parts.push(state);
 
 
-    if (pincode)
+    if(pincode)
         parts.push(pincode);
 
 
-    return parts.join(", ");
+    return parts.join(
+        ", "
+    );
 
 }
 
 
-/*
-===========================================================
-EXPORT
-===========================================================
-*/
+/* =========================================================
+   GLOBAL EXPORT
+========================================================= */
 
 window.LOCATION_MASTER =
     LOCATION_MASTER;
 
+
 window.PIN_MASTER =
     PIN_MASTER;
+
 
 window.getLocationStates =
     getLocationStates;
 
+
 window.getLocationDistricts =
     getLocationDistricts;
+
 
 window.getLocationTehsils =
     getLocationTehsils;
 
+
 window.getLocationBlocks =
     getLocationBlocks;
+
 
 window.getLocationVillages =
     getLocationVillages;
 
+
 window.getVillagePin =
     getVillagePin;
 
+
 window.findLocationVillage =
     findLocationVillage;
+
 
 window.buildFarmerAddress =
     buildFarmerAddress;
 
 
-/*
-===========================================================
-READY EVENT
-===========================================================
-*/
+/* =========================================================
+   READY EVENT
+========================================================= */
 
 window.dispatchEvent(
     new CustomEvent(
@@ -828,20 +1002,28 @@ window.dispatchEvent(
 );
 
 
-/*
-===========================================================
-TEST
-===========================================================
-*/
+/* =========================================================
+   CONSOLE TEST
+========================================================= */
 
 console.log(
     "LOCATION MASTER LOADED"
 );
 
+
 console.log(
     "States:",
     getLocationStates()
 );
+
+
+console.log(
+    "UP District Count:",
+    getLocationDistricts(
+        "Uttar Pradesh"
+    ).length
+);
+
 
 console.log(
     "UP Districts:",
@@ -850,6 +1032,7 @@ console.log(
     )
 );
 
+
 console.log(
     "Mahoba Tehsils:",
     getLocationTehsils(
@@ -857,6 +1040,7 @@ console.log(
         "Mahoba"
     )
 );
+
 
 console.log(
     "Mahoba Blocks:",
@@ -867,6 +1051,7 @@ console.log(
     )
 );
 
+
 console.log(
     "Charkhari Blocks:",
     getLocationBlocks(
@@ -875,6 +1060,7 @@ console.log(
         "Charkhari"
     )
 );
+
 
 console.log(
     "Kulpahar Blocks:",
@@ -885,16 +1071,6 @@ console.log(
     )
 );
 
-console.log(
-    "Kabrai PIN:",
-    getVillagePin(
-        "Uttar Pradesh",
-        "Mahoba",
-        "Mahoba",
-        "Kabrai",
-        "Kabrai"
-    )
-);
 
 console.log(
     "Srinagar PIN:",
@@ -907,35 +1083,14 @@ console.log(
     )
 );
 
+
 console.log(
-    "Charkhari PIN:",
+    "Barenda PIN:",
     getVillagePin(
         "Uttar Pradesh",
         "Mahoba",
         "Charkhari",
         "Charkhari",
-        "Charkhari"
-    )
-);
-
-console.log(
-    "Jaitpur PIN:",
-    getVillagePin(
-        "Uttar Pradesh",
-        "Mahoba",
-        "Kulpahar",
-        "Jaitpur",
-        "Jaitpur"
-    )
-);
-
-console.log(
-    "Panwari PIN:",
-    getVillagePin(
-        "Uttar Pradesh",
-        "Mahoba",
-        "Kulpahar",
-        "Panwari",
-        "Panwari"
+        "Barenda"
     )
 );
