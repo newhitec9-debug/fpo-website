@@ -1,6 +1,7 @@
 /* =========================================================
    Bundelkhand Organic FPO
    Firebase Admin Authentication
+   FINAL VERSION
    ========================================================= */
 
 import {
@@ -45,15 +46,17 @@ const firebaseConfig = {
    INITIALIZE FIREBASE
    ========================================================= */
 
-const app = initializeApp(firebaseConfig);
+const app =
+    initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
+const auth =
+    getAuth(app);
 
 
 /* =========================================================
-   ADMIN USER
+   ADMIN EMAIL
    =========================================================
-   अभी आपके Firebase Authentication में यही Admin Email है.
+   केवल यही Firebase account Admin रहेगा.
    ========================================================= */
 
 const ADMIN_EMAIL =
@@ -61,104 +64,268 @@ const ADMIN_EMAIL =
 
 
 /* =========================================================
-   CHECK ADMIN AUTHENTICATION
+   SECURITY SCREEN
    ========================================================= */
 
-onAuthStateChanged(
-    auth,
-    function(user) {
+function createSecurityScreen() {
 
-        /*
-         * User login नहीं है
-         */
-
-        if (!user) {
-
-            window.location.replace(
-                "login.html"
-            );
-
-            return;
-
-        }
-
-
-        /*
-         * User login है लेकिन Admin Email
-         * से match नहीं करता.
-         */
-
-        if (
-            user.email &&
-            user.email.toLowerCase() !==
-            ADMIN_EMAIL.toLowerCase()
-        ) {
-
-            signOut(auth)
-                .finally(
-                    function() {
-
-                        window.location.replace(
-                            "login.html"
-                        );
-
-                    }
-                );
-
-            return;
-
-        }
-
-
-        /*
-         * Admin successfully authenticated.
-         */
-
-        console.log(
-            "Admin Authentication Verified:",
-            user.email
+    let screen =
+        document.getElementById(
+            "adminSecurityScreen"
         );
 
 
-        /*
-         * Page को visible करें अगर
-         * page में #adminPage मौजूद है.
-         */
-
-        const adminPage =
-            document.getElementById(
-                "adminPage"
-            );
+    if (screen) {
+        return;
+    }
 
 
-        if (adminPage) {
-
-            adminPage.style.display =
-                "block";
-
-        }
+    screen =
+        document.createElement("div");
 
 
-        /*
-         * Admin email display करने के लिए
-         * optional element.
-         */
-
-        const adminEmail =
-            document.getElementById(
-                "adminEmail"
-            );
+    screen.id =
+        "adminSecurityScreen";
 
 
-        if (adminEmail) {
+    screen.innerHTML = `
 
-            adminEmail.textContent =
-                user.email;
+        <div style="
+            position:fixed;
+            inset:0;
+            background:#f4f7f5;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            z-index:999999;
+            font-family:Arial,'Noto Sans Devanagari',sans-serif;
+        ">
 
-        }
+            <div style="
+                background:#ffffff;
+                padding:35px;
+                border-radius:14px;
+                box-shadow:0 5px 25px rgba(0,0,0,.15);
+                text-align:center;
+                max-width:420px;
+                width:90%;
+            ">
+
+                <div style="
+                    font-size:45px;
+                    margin-bottom:15px;
+                ">
+                    🔐
+                </div>
+
+                <h2 style="
+                    margin:0 0 10px;
+                    color:#176b35;
+                ">
+                    Admin Security Check
+                </h2>
+
+                <p style="
+                    margin:0;
+                    color:#666;
+                    font-size:15px;
+                ">
+                    Admin access verify किया जा रहा है...
+                </p>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    document.body.appendChild(screen);
+
+}
+
+
+/* =========================================================
+   HIDE ADMIN PAGE
+   ========================================================= */
+
+function hideAdminPage() {
+
+    const adminPage =
+        document.getElementById(
+            "adminPage"
+        );
+
+
+    if (adminPage) {
+
+        adminPage.style.display =
+            "none";
 
     }
-);
+
+}
+
+
+/* =========================================================
+   SHOW ADMIN PAGE
+   ========================================================= */
+
+function showAdminPage(user) {
+
+    const adminPage =
+        document.getElementById(
+            "adminPage"
+        );
+
+
+    if (adminPage) {
+
+        adminPage.style.display =
+            "block";
+
+    }
+
+
+    /* -----------------------------------------
+       SHOW ADMIN EMAIL
+    ----------------------------------------- */
+
+    const adminEmail =
+        document.getElementById(
+            "adminEmail"
+        );
+
+
+    if (adminEmail) {
+
+        adminEmail.textContent =
+            user.email || ADMIN_EMAIL;
+
+    }
+
+
+    /* -----------------------------------------
+       REMOVE SECURITY SCREEN
+    ----------------------------------------- */
+
+    const screen =
+        document.getElementById(
+            "adminSecurityScreen"
+        );
+
+
+    if (screen) {
+
+        screen.remove();
+
+    }
+
+}
+
+
+/* =========================================================
+   CHECK ADMIN AUTHENTICATION
+   ========================================================= */
+
+function checkAdminAuthentication() {
+
+    createSecurityScreen();
+
+    hideAdminPage();
+
+
+    onAuthStateChanged(
+        auth,
+        async function(user) {
+
+            /* =====================================
+               USER NOT LOGGED IN
+            ===================================== */
+
+            if (!user) {
+
+                window.location.replace(
+                    "login.html"
+                );
+
+                return;
+
+            }
+
+
+            /* =====================================
+               CHECK EMAIL
+            ===================================== */
+
+            const userEmail =
+                String(
+                    user.email || ""
+                )
+                .trim()
+                .toLowerCase();
+
+
+            const adminEmail =
+                ADMIN_EMAIL
+                .trim()
+                .toLowerCase();
+
+
+            /* =====================================
+               WRONG ACCOUNT
+            ===================================== */
+
+            if (
+                userEmail !== adminEmail
+            ) {
+
+                console.warn(
+                    "Unauthorized Admin Access:",
+                    user.email
+                );
+
+
+                try {
+
+                    await signOut(auth);
+
+                }
+                catch(error) {
+
+                    console.error(
+                        "Unauthorized logout error:",
+                        error
+                    );
+
+                }
+
+
+                window.location.replace(
+                    "login.html"
+                );
+
+                return;
+
+            }
+
+
+            /* =====================================
+               ADMIN VERIFIED
+            ===================================== */
+
+            console.log(
+                "Admin Authentication Verified:",
+                user.email
+            );
+
+
+            showAdminPage(user);
+
+        }
+    );
+
+}
 
 
 /* =========================================================
@@ -172,17 +339,19 @@ window.adminLogout =
 
             await signOut(auth);
 
+
             window.location.replace(
                 "login.html"
             );
 
         }
-        catch (error) {
+        catch(error) {
 
             console.error(
                 "Logout Error:",
                 error
             );
+
 
             alert(
                 "Logout नहीं हो सका। कृपया फिर से प्रयास करें।"
@@ -203,3 +372,10 @@ window.getCurrentAdmin =
         return auth.currentUser;
 
     };
+
+
+/* =========================================================
+   START SECURITY CHECK
+   ========================================================= */
+
+checkAdminAuthentication();
