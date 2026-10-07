@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Checkout | Bundelkhand Organic FPO</title>
+<title>Checkout | Bundelkhand Organic Farmer Producer Company Limited</title>
 
 <style>
 
@@ -23,17 +23,18 @@ body{
 
 header{
     background:#087f23;
-    color:white;
-    padding:18px 15px;
+    color:#fff;
+    padding:18px 12px;
     text-align:center;
 }
 
 header h1{
     font-size:22px;
+    line-height:1.4;
 }
 
 header p{
-    margin-top:6px;
+    margin-top:5px;
     font-size:14px;
 }
 
@@ -44,7 +45,7 @@ header p{
 }
 
 .card{
-    background:white;
+    background:#fff;
     padding:20px;
     margin-bottom:18px;
     border-radius:12px;
@@ -65,13 +66,18 @@ label{
 }
 
 input,
-textarea,
-select{
+textarea{
     width:100%;
     padding:12px;
     border:1px solid #bbb;
     border-radius:7px;
     font-size:16px;
+    outline:none;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#087f23;
 }
 
 textarea{
@@ -85,10 +91,7 @@ textarea{
     border-radius:10px;
     padding:18px;
     text-align:center;
-}
-
-.order-total span{
-    display:block;
+    margin-top:15px;
 }
 
 .total-label{
@@ -96,18 +99,33 @@ textarea{
 }
 
 .total-amount{
+    display:block;
     color:#087f23;
     font-size:30px;
     font-weight:bold;
     margin-top:5px;
 }
 
+.summary-item{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+}
+
+.summary-item:last-child{
+    border-bottom:none;
+}
+
 .payment-option{
+    display:block;
     border:2px solid #ddd;
     padding:15px;
     border-radius:10px;
     margin-top:12px;
     cursor:pointer;
+    font-weight:bold;
 }
 
 .payment-option:hover{
@@ -120,12 +138,37 @@ textarea{
 }
 
 .upi-box{
-    display:none;
-    margin-top:15px;
+    display:block;
+    margin-top:18px;
     background:#f7fff8;
     border:2px solid #159447;
     padding:18px;
     border-radius:12px;
+}
+
+.upi-button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-height:52px;
+    background:#087f23;
+    color:#fff;
+    text-decoration:none;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+.upi-button:hover{
+    background:#05651c;
+}
+
+.upi-button:active{
+    transform:scale(.99);
 }
 
 .upi-id-box{
@@ -135,60 +178,51 @@ textarea{
 }
 
 .upi-id-box input{
-    background:white;
     font-weight:bold;
+    background:#fff;
 }
 
 .copy-btn{
     background:#1769aa;
-    color:white;
+    color:#fff;
     border:none;
     border-radius:7px;
-    padding:0 15px;
+    padding:0 16px;
     cursor:pointer;
     font-size:15px;
+    white-space:nowrap;
 }
 
-.pay-btn{
-    display:block;
-    width:100%;
-    background:#087f23;
-    color:white;
-    text-decoration:none;
-    text-align:center;
-    padding:14px;
-    border-radius:8px;
-    font-weight:bold;
-    font-size:18px;
-    margin-top:15px;
-    cursor:pointer;
-    border:none;
-}
-
-.pay-btn:hover{
-    background:#05651c;
+.copy-btn:hover{
+    background:#0f568d;
 }
 
 .qr-area{
     text-align:center;
-    margin-top:20px;
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid #ddd;
 }
 
 .qr-area img{
+    display:block;
     width:280px;
     max-width:100%;
-    border:8px solid white;
-    box-shadow:0 2px 10px rgba(0,0,0,.2);
+    height:auto;
+    margin:15px auto;
+    border:8px solid #fff;
+    border-radius:8px;
+    box-shadow:0 2px 12px rgba(0,0,0,.20);
 }
 
 .qr-note{
-    margin-top:10px;
-    font-size:14px;
     color:#555;
+    font-size:14px;
+    line-height:1.6;
 }
 
 .utr-box{
-    margin-top:18px;
+    margin-top:20px;
     padding:15px;
     background:#fffbea;
     border:1px solid #e3c65c;
@@ -196,20 +230,20 @@ textarea{
 }
 
 .utr-box strong{
-    color:#8a6500;
+    color:#795500;
 }
 
 .place-btn{
     width:100%;
     padding:15px;
     background:#ff7a00;
-    color:white;
+    color:#fff;
     border:none;
     border-radius:8px;
     font-size:19px;
     font-weight:bold;
     cursor:pointer;
-    margin-top:18px;
+    margin-top:20px;
 }
 
 .place-btn:hover{
@@ -221,38 +255,29 @@ textarea{
     cursor:not-allowed;
 }
 
-.summary-item{
-    display:flex;
-    justify-content:space-between;
-    border-bottom:1px solid #eee;
-    padding:10px 0;
-    gap:10px;
-}
-
-.summary-item:last-child{
-    border-bottom:none;
-}
-
 .status{
     display:none;
     padding:15px;
     border-radius:8px;
     margin-top:15px;
     text-align:center;
-    font-weight:bold;
+    line-height:1.7;
 }
 
 .success{
+    display:block;
     background:#e8f8ed;
     color:#087f23;
 }
 
 .error{
+    display:block;
     background:#ffe9e9;
     color:#b00000;
 }
 
 .warning{
+    display:block;
     background:#fff5d8;
     color:#795500;
 }
@@ -261,13 +286,21 @@ textarea{
     font-size:13px;
     color:#666;
     margin-top:8px;
-    line-height:1.5;
+    line-height:1.6;
+}
+
+.hidden{
+    display:none !important;
 }
 
 @media(max-width:600px){
 
     header h1{
-        font-size:19px;
+        font-size:18px;
+    }
+
+    .container{
+        width:96%;
     }
 
     .card{
@@ -275,7 +308,7 @@ textarea{
     }
 
     .total-amount{
-        font-size:27px;
+        font-size:28px;
     }
 
     .upi-id-box{
@@ -289,6 +322,11 @@ textarea{
     .qr-area img{
         width:260px;
     }
+
+    .upi-button{
+        font-size:16px;
+    }
+
 }
 
 </style>
@@ -299,9 +337,13 @@ textarea{
 
 <header>
 
-<h1>Bundelkhand Organic Farmer Producer Company Limited</h1>
+<h1>
+Bundelkhand Organic Farmer Producer Company Limited
+</h1>
 
-<p>ऑनलाइन ऑर्डर एवं भुगतान</p>
+<p>
+ऑनलाइन ऑर्डर एवं भुगतान
+</p>
 
 </header>
 
@@ -309,17 +351,27 @@ textarea{
 <div class="container">
 
 
-<!-- ================= ORDER SUMMARY ================= -->
+<!-- =====================================================
+     ORDER SUMMARY
+===================================================== -->
 
 <div class="card">
 
 <h2>🛒 Order Summary</h2>
 
-<div id="orderItems"></div>
+<div id="orderItems">
+
+<p>
+Order विवरण लोड हो रहा है...
+</p>
+
+</div>
 
 <div class="order-total">
 
-<span class="total-label">कुल भुगतान राशि</span>
+<span class="total-label">
+कुल भुगतान राशि
+</span>
 
 <span class="total-amount">
 ₹<span id="totalAmount">0.00</span>
@@ -330,45 +382,53 @@ textarea{
 </div>
 
 
-<!-- ================= CUSTOMER DETAILS ================= -->
+<!-- =====================================================
+     CUSTOMER DETAILS
+===================================================== -->
 
 <div class="card">
 
 <h2>👤 ग्राहक विवरण</h2>
 
-<label>नाम *</label>
+<label for="customerName">
+नाम *
+</label>
 
 <input
 type="text"
 id="customerName"
 placeholder="अपना पूरा नाम"
-required
+autocomplete="name"
 >
 
-
-<label>मोबाइल नंबर *</label>
+<label for="customerMobile">
+मोबाइल नंबर *
+</label>
 
 <input
 type="tel"
 id="customerMobile"
 placeholder="10 अंकों का मोबाइल नंबर"
 maxlength="10"
-required
+inputmode="numeric"
+autocomplete="tel"
 >
 
-
-<label>डिलीवरी पता *</label>
+<label for="customerAddress">
+डिलीवरी पता *
+</label>
 
 <textarea
 id="customerAddress"
-placeholder="पूरा पता लिखें"
-required
+placeholder="ग्राम, पोस्ट, ब्लॉक, जिला आदि पूरा पता लिखें"
 ></textarea>
 
 </div>
 
 
-<!-- ================= PAYMENT METHOD ================= -->
+<!-- =====================================================
+     PAYMENT
+===================================================== -->
 
 <div class="card">
 
@@ -382,7 +442,6 @@ type="radio"
 name="paymentMethod"
 value="UPI"
 checked
-onchange="paymentChanged()"
 >
 
 📲 UPI / BHIM से ऑनलाइन भुगतान
@@ -396,7 +455,6 @@ onchange="paymentChanged()"
 type="radio"
 name="paymentMethod"
 value="COD"
-onchange="paymentChanged()"
 >
 
 💵 Cash on Delivery
@@ -404,39 +462,55 @@ onchange="paymentChanged()"
 </label>
 
 
-<!-- ================= UPI ================= -->
+<!-- =====================================================
+     UPI BOX
+===================================================== -->
 
-<div
-class="upi-box"
-id="upiBox"
-style="display:block;"
->
+<div id="upiBox" class="upi-box">
 
-<h3>📲 UPI से भुगतान करें</h3>
+<h3>
+📲 UPI से भुगतान करें
+</h3>
 
 <p class="small">
 
-नीचे दिए गए बटन पर क्लिक करके मोबाइल में UPI App खोलें।
-यदि BHIM उपलब्ध है तो BHIM से भुगतान करें।
+मोबाइल पर नीचे दिए गए बटन पर क्लिक करें।
+आपके मोबाइल में उपलब्ध UPI App खुलेगा।
+वहाँ BHIM चुनकर भुगतान करें।
 
 </p>
 
 
+<!-- =====================================================
+     UPI PAYMENT BUTTON
+===================================================== -->
+
 <a
-href="#"
+href="javascript:void(0)"
 id="upiPayButton"
-class="pay-btn"
-onclick="openUPIPayment(event)"
+class="upi-button"
 >
 
-📲 BHIM / UPI App से ₹0 भुगतान करें
+📲 BHIM / UPI App से ₹0.00 भुगतान करें
 
 </a>
 
 
-<!-- UPI ID -->
+<p class="small">
 
-<h3 style="margin-top:20px;">
+<strong>
+नोट:
+</strong>
+यदि UPI App अपने-आप नहीं खुलता है तो नीचे दिया गया UPI ID Copy करें या QR Code Scan करें।
+
+</p>
+
+
+<!-- =====================================================
+     UPI ID
+===================================================== -->
+
+<h3 style="margin-top:22px;">
 📋 UPI ID
 </h3>
 
@@ -452,7 +526,7 @@ readonly
 <button
 type="button"
 class="copy-btn"
-onclick="copyUPI()"
+id="copyUpiButton"
 >
 
 Copy
@@ -462,29 +536,44 @@ Copy
 </div>
 
 
-<!-- QR -->
+<!-- =====================================================
+     QR CODE
+===================================================== -->
 
 <div class="qr-area">
 
-<h3 style="margin-bottom:12px;">
+<h3>
 📷 QR Code से भुगतान करें
 </h3>
 
 <img
-src="upi-qr.png"
+src="images/upi-qr.png.png"
 alt="UPI QR Code"
+id="upiQrImage"
 >
 
 <p class="qr-note">
 
-PC/Laptop पर इस QR Code को अपने मोबाइल के BHIM/UPI App से Scan करें।
+<strong>
+PC/Laptop पर:
+</strong>
+इस QR Code को अपने मोबाइल के BHIM App से Scan करें।
+
+<br><br>
+
+<strong>
+दूसरे मोबाइल पर:
+</strong>
+इस QR Code को BHIM App से Scan करें।
 
 </p>
 
 </div>
 
 
-<!-- UTR -->
+<!-- =====================================================
+     UTR
+===================================================== -->
 
 <div class="utr-box">
 
@@ -495,14 +584,15 @@ PC/Laptop पर इस QR Code को अपने मोबाइल के BH
 <input
 type="text"
 id="utrNumber"
-placeholder="जैसे 123456789012"
+placeholder="BHIM में मिली UTR / Transaction ID"
 maxlength="50"
-style="margin-top:10px;"
+inputmode="text"
 >
 
 <p class="small">
 
-UTR / Transaction ID आपके BHIM/UPI App में भुगतान के बाद दिखाई जाएगी।
+BHIM/UPI से भुगतान पूरा होने के बाद Transaction Details में दिखाई देने वाली
+<strong>UTR / Transaction ID</strong> यहाँ दर्ज करें।
 
 </p>
 
@@ -511,16 +601,19 @@ UTR / Transaction ID आपके BHIM/UPI App में भुगतान क�
 </div>
 
 
-<!-- ================= COD ================= -->
+<!-- =====================================================
+     COD BOX
+===================================================== -->
 
 <div
 id="codBox"
-style="display:none;"
+class="hidden"
 >
 
-<div class="warning status" style="display:block;">
+<div class="status warning">
 
-💵 Cash on Delivery चुना गया है।
+💵 <strong>Cash on Delivery</strong> चुना गया है।
+<br>
 भुगतान डिलीवरी के समय किया जाएगा।
 
 </div>
@@ -528,10 +621,14 @@ style="display:none;"
 </div>
 
 
+<!-- =====================================================
+     PLACE ORDER
+===================================================== -->
+
 <button
+type="button"
 class="place-btn"
 id="placeOrderButton"
-onclick="placeOrder()"
 >
 
 ✅ Place Order
@@ -542,31 +639,39 @@ onclick="placeOrder()"
 <div
 id="statusMessage"
 class="status"
-></div>
-
+>
 </div>
 
 </div>
 
+</div>
 
-<!-- ================= FIREBASE ================= -->
+
+<!-- =====================================================
+     FIREBASE
+===================================================== -->
 
 <script type="module">
 
 import {
     initializeApp
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
 
 import {
     getFirestore,
     collection,
     addDoc
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
-/* ==========================================
+/* =====================================================
    FIREBASE CONFIG
-========================================== */
+===================================================== */
 
 const firebaseConfig = {
 
@@ -591,14 +696,17 @@ const firebaseConfig = {
 };
 
 
-const app = initializeApp(firebaseConfig);
+const app =
+initializeApp(firebaseConfig);
 
-const db = getFirestore(app);
+
+const db =
+getFirestore(app);
 
 
-/* ==========================================
-   GLOBAL DATA
-========================================== */
+/* =====================================================
+   GLOBAL VARIABLES
+===================================================== */
 
 let cart = [];
 
@@ -609,9 +717,9 @@ let checkoutMode = null;
 let totalAmount = 0;
 
 
-/* ==========================================
-   LOAD CART / BUY NOW
-========================================== */
+/* =====================================================
+   LOAD LOCAL STORAGE
+===================================================== */
 
 try{
 
@@ -620,7 +728,7 @@ try{
         localStorage.getItem("cart")
     ) || [];
 
-}catch(e){
+}catch(error){
 
     cart = [];
 
@@ -634,7 +742,7 @@ try{
         localStorage.getItem("buyNowProduct")
     );
 
-}catch(e){
+}catch(error){
 
     buyNowProduct = null;
 
@@ -645,9 +753,9 @@ checkoutMode =
 sessionStorage.getItem("checkoutMode");
 
 
-/* ==========================================
-   GET PRODUCTS
-========================================== */
+/* =====================================================
+   GET CHECKOUT PRODUCTS
+===================================================== */
 
 function getCheckoutProducts(){
 
@@ -656,7 +764,9 @@ function getCheckoutProducts(){
         buyNowProduct
     ){
 
-        return [buyNowProduct];
+        return [
+            buyNowProduct
+        ];
 
     }
 
@@ -665,54 +775,79 @@ function getCheckoutProducts(){
 }
 
 
-/* ==========================================
+/* =====================================================
+   HTML ESCAPE
+===================================================== */
+
+function escapeHTML(value){
+
+    return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
    DISPLAY ORDER
-========================================== */
+===================================================== */
 
 function displayOrder(){
 
     const products =
     getCheckoutProducts();
 
-    const box =
-    document.getElementById("orderItems");
 
-    box.innerHTML = "";
+    const orderItems =
+    document.getElementById(
+        "orderItems"
+    );
+
+
+    orderItems.innerHTML = "";
+
 
     totalAmount = 0;
 
 
     if(!products.length){
 
-        box.innerHTML = `
+        orderItems.innerHTML = `
+
         <p style="color:#b00000;">
         आपका Cart खाली है।
         </p>
+
         `;
 
         document.getElementById(
             "placeOrderButton"
         ).disabled = true;
 
+        updateUPILink();
+
         return;
 
     }
 
 
-    products.forEach(function(product,index){
+    products.forEach(function(product){
 
         const price =
         Number(
-            product.price ||
-            product.salePrice ||
+            product.price ??
+            product.salePrice ??
             0
         );
 
 
         const quantity =
         Number(
-            product.quantity ||
-            product.qty ||
+            product.quantity ??
+            product.qty ??
             1
         );
 
@@ -721,32 +856,38 @@ function displayOrder(){
         price * quantity;
 
 
-        totalAmount += subtotal;
+        totalAmount +=
+        subtotal;
 
 
-        const name =
-        product.name ||
-        product.productName ||
+        const productName =
+        product.name ??
+        product.productName ??
         "Product";
 
 
-        box.innerHTML += `
+        orderItems.innerHTML += `
 
         <div class="summary-item">
 
             <div>
 
-                <strong>${escapeHTML(name)}</strong>
+                <strong>
+                ${escapeHTML(productName)}
+                </strong>
 
                 <div class="small">
-                    ₹${price.toFixed(2)}
-                    × ${quantity}
+
+                ₹${price.toFixed(2)}
+                ×
+                ${quantity}
+
                 </div>
 
             </div>
 
             <strong>
-                ₹${subtotal.toFixed(2)}
+            ₹${subtotal.toFixed(2)}
             </strong>
 
         </div>
@@ -762,83 +903,54 @@ function displayOrder(){
     totalAmount.toFixed(2);
 
 
-    updateUPIButton();
+    updateUPILink();
 
 }
 
 
-/* ==========================================
-   ESCAPE HTML
-========================================== */
+/* =====================================================
+   CREATE UPI LINK
+===================================================== */
 
-function escapeHTML(value){
-
-    return String(value)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-
-}
-
-
-/* ==========================================
-   UPI BUTTON
-========================================== */
-
-function updateUPIButton(){
+function createUPILink(){
 
     const amount =
     totalAmount.toFixed(2);
 
 
-    const button =
-    document.getElementById(
-        "upiPayButton"
-    );
+    const params = new URLSearchParams({
 
+        pa:
+        "8090040580@upi",
 
-    button.textContent =
-    `📲 BHIM / UPI App से ₹${amount} भुगतान करें`;
+        pn:
+        "Bundelkhand Organic FPO",
 
+        am:
+        amount,
 
-    const upiURL =
-    "upi://pay" +
-    "?pa=" +
-    encodeURIComponent(
-        "8090040580@upi"
-    ) +
-    "&pn=" +
-    encodeURIComponent(
-        "Bundelkhand Organic FPO"
-    ) +
-    "&am=" +
-    encodeURIComponent(
-        amount
-    ) +
-    "&cu=INR" +
-    "&tn=" +
-    encodeURIComponent(
+        cu:
+        "INR",
+
+        tn:
         "FPO Order Payment"
-    );
+
+    });
 
 
-    button.dataset.upi =
-    upiURL;
+    return:
+
+    "upi://pay?" +
+    params.toString();
 
 }
 
 
-/* ==========================================
-   OPEN UPI
-========================================== */
+/* =====================================================
+   UPDATE UPI BUTTON
+===================================================== */
 
-window.openUPIPayment =
-function(event){
-
-    event.preventDefault();
-
+function updateUPILink(){
 
     const button =
     document.getElementById(
@@ -846,133 +958,205 @@ function(event){
     );
 
 
-    const upiURL =
-    button.dataset.upi;
+    const amount =
+    totalAmount.toFixed(2);
 
 
-    if(!upiURL){
-
-        alert(
-            "UPI payment link तैयार नहीं हुआ।"
-        );
-
-        return;
-
-    }
+    button.textContent =
+    "📲 BHIM / UPI App से ₹"
+    +
+    amount
+    +
+    " भुगतान करें";
 
 
-    window.location.href =
-    upiURL;
+    button.dataset.upiUrl =
+    createUPILink();
 
-};
-
-
-/* ==========================================
-   COPY UPI ID
-========================================== */
-
-window.copyUPI =
-function(){
-
-    const upi =
-    "8090040580@upi";
+}
 
 
-    navigator.clipboard
-    .writeText(upi)
-    .then(function(){
+/* =====================================================
+   OPEN UPI
+===================================================== */
 
-        alert(
-            "UPI ID Copy हो गई: " +
-            upi
-        );
+document.getElementById(
+    "upiPayButton"
+)
+.addEventListener(
+    "click",
+    function(){
 
-    })
-    .catch(function(){
-
-        const input =
-        document.getElementById(
-            "upiId"
-        );
-
-        input.select();
-
-        document.execCommand(
-            "copy"
-        );
-
-        alert(
-            "UPI ID Copy हो गई: " +
-            upi
-        );
-
-    });
-
-};
+        const upiUrl =
+        this.dataset.upiUrl;
 
 
-/* ==========================================
-   PAYMENT METHOD
-========================================== */
+        if(
+            !upiUrl ||
+            totalAmount <= 0
+        ){
 
-window.paymentChanged =
-function(){
+            showError(
+                "Order amount सही नहीं है।"
+            );
 
-    const method =
-    document.querySelector(
-        'input[name="paymentMethod"]:checked'
-    ).value;
+            return;
 
-
-    const upiBox =
-    document.getElementById(
-        "upiBox"
-    );
+        }
 
 
-    const codBox =
-    document.getElementById(
-        "codBox"
-    );
+        /*
+          मोबाइल में UPI App खोलने की कोशिश।
+        */
 
-
-    if(method === "UPI"){
-
-        upiBox.style.display =
-        "block";
-
-        codBox.style.display =
-        "none";
-
-    }else{
-
-        upiBox.style.display =
-        "none";
-
-        codBox.style.display =
-        "block";
+        window.location.href =
+        upiUrl;
 
     }
+);
 
-};
+
+/* =====================================================
+   COPY UPI
+===================================================== */
+
+document.getElementById(
+    "copyUpiButton"
+)
+.addEventListener(
+    "click",
+    async function(){
+
+        const upi =
+        "8090040580@upi";
 
 
-/* ==========================================
+        try{
+
+            await navigator.clipboard.writeText(
+                upi
+            );
+
+
+            this.textContent =
+            "Copied ✓";
+
+
+            setTimeout(
+                () => {
+
+                    this.textContent =
+                    "Copy";
+
+                },
+                2000
+            );
+
+
+        }catch(error){
+
+            const input =
+            document.getElementById(
+                "upiId"
+            );
+
+
+            input.select();
+
+
+            document.execCommand(
+                "copy"
+            );
+
+
+            alert(
+                "UPI ID Copy हो गई: "
+                +
+                upi
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   PAYMENT METHOD CHANGE
+===================================================== */
+
+document
+.querySelectorAll(
+    'input[name="paymentMethod"]'
+)
+.forEach(
+    function(radio){
+
+        radio.addEventListener(
+            "change",
+            function(){
+
+                const upiBox =
+                document.getElementById(
+                    "upiBox"
+                );
+
+
+                const codBox =
+                document.getElementById(
+                    "codBox"
+                );
+
+
+                if(
+                    this.value === "UPI"
+                ){
+
+                    upiBox.classList.remove(
+                        "hidden"
+                    );
+
+                    codBox.classList.add(
+                        "hidden"
+                    );
+
+                }else{
+
+                    upiBox.classList.add(
+                        "hidden"
+                    );
+
+                    codBox.classList.remove(
+                        "hidden"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
    PLACE ORDER
-========================================== */
+===================================================== */
 
-window.placeOrder =
-async function(){
+document.getElementById(
+    "placeOrderButton"
+)
+.addEventListener(
+    "click",
+    placeOrder
+);
+
+
+async function placeOrder(){
 
     const button =
     document.getElementById(
         "placeOrderButton"
-    );
-
-
-    const status =
-    document.getElementById(
-        "statusMessage"
     );
 
 
@@ -994,21 +1178,21 @@ async function(){
     ).value.trim();
 
 
-    const paymentMethod =
-    document.querySelector(
-        'input[name="paymentMethod"]:checked'
-    ).value;
-
-
     const utr =
     document.getElementById(
         "utrNumber"
     ).value.trim();
 
 
-    /* ==========================
+    const paymentMethod =
+    document.querySelector(
+        'input[name="paymentMethod"]:checked'
+    ).value;
+
+
+    /* =================================================
        VALIDATION
-    ========================== */
+    ================================================= */
 
     if(!name){
 
@@ -1021,7 +1205,11 @@ async function(){
     }
 
 
-    if(!/^[0-9]{10}$/.test(mobile)){
+    if(
+        !/^[0-9]{10}$/.test(
+            mobile
+        )
+    ){
 
         showError(
             "कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।"
@@ -1043,7 +1231,9 @@ async function(){
     }
 
 
-    if(totalAmount <= 0){
+    if(
+        totalAmount <= 0
+    ){
 
         showError(
             "Order amount सही नहीं है।"
@@ -1054,21 +1244,26 @@ async function(){
     }
 
 
-    /* ==========================
-       UPI VALIDATION
-    ========================== */
+    /* =================================================
+       UPI UTR REQUIRED
+    ================================================= */
 
-    if(paymentMethod === "UPI"){
+    if(
+        paymentMethod === "UPI" &&
+        !utr
+    ){
 
-        if(!utr){
+        showError(
+            "पहले BHIM/UPI से भुगतान करें और फिर UTR / Transaction ID दर्ज करें।"
+        );
 
-            showError(
-                "पहले BHIM/UPI से भुगतान करें और UTR / Transaction ID दर्ज करें।"
-            );
+        document
+        .getElementById(
+            "utrNumber"
+        )
+        .focus();
 
-            return;
-
-        }
+        return;
 
     }
 
@@ -1088,35 +1283,75 @@ async function(){
     }
 
 
-    /* ==========================
-       DISABLE BUTTON
-    ========================== */
+    button.disabled =
+    true;
 
-    button.disabled = true;
 
     button.textContent =
-    "⏳ Order भेजा जा रहा है...";
+    "⏳ Order Save हो रहा है...";
 
 
     try{
 
-
-        const orderDate =
-        new Date();
-
-
-        /* ==========================
+        /* =============================================
            ORDER ID
-        ========================== */
+        ============================================= */
 
         const fpoOrderId =
         "FPO" +
         Date.now();
 
 
-        /* ==========================
+        const now =
+        new Date();
+
+
+        /* =============================================
+           PRODUCTS
+        ============================================= */
+
+        const orderProducts =
+        products.map(
+            function(product){
+
+                return {
+
+                    name:
+                    product.name ??
+                    product.productName ??
+                    "",
+
+                    price:
+                    Number(
+                        product.price ??
+                        product.salePrice ??
+                        0
+                    ),
+
+                    quantity:
+                    Number(
+                        product.quantity ??
+                        product.qty ??
+                        1
+                    ),
+
+                    unit:
+                    product.unit ??
+                    "",
+
+                    image:
+                    product.image ??
+                    ""
+
+                };
+
+            }
+        );
+
+
+        /* =============================================
            PAYMENT STATUS
-        ========================== */
+        ============================================= */
 
         let paymentStatus =
         "COD";
@@ -1126,7 +1361,9 @@ async function(){
         "Not Applicable";
 
 
-        if(paymentMethod === "UPI"){
+        if(
+            paymentMethod === "UPI"
+        ){
 
             paymentStatus =
             "Verification Pending";
@@ -1137,50 +1374,9 @@ async function(){
         }
 
 
-        /* ==========================
-           PRODUCTS
-        ========================== */
-
-        const orderProducts =
-        products.map(function(product){
-
-            return {
-
-                name:
-                product.name ||
-                product.productName ||
-                "",
-
-                price:
-                Number(
-                    product.price ||
-                    product.salePrice ||
-                    0
-                ),
-
-                quantity:
-                Number(
-                    product.quantity ||
-                    product.qty ||
-                    1
-                ),
-
-                unit:
-                product.unit ||
-                "",
-
-                image:
-                product.image ||
-                ""
-
-            };
-
-        });
-
-
-        /* ==========================
-           FIRESTORE ORDER
-        ========================== */
+        /* =============================================
+           FIRESTORE DATA
+        ============================================= */
 
         const orderData = {
 
@@ -1204,11 +1400,6 @@ async function(){
             address,
 
 
-            paymentMethod:
-
-            paymentMethod,
-
-
             products:
 
             orderProducts,
@@ -1224,24 +1415,35 @@ async function(){
             amountPaid:
 
             paymentMethod === "UPI"
-            ? Number(
+            ?
+            Number(
                 totalAmount.toFixed(2)
-              )
-            : 0,
+            )
+            :
+            0,
+
+
+            paymentMethod:
+
+            paymentMethod,
 
 
             upiId:
 
             paymentMethod === "UPI"
-            ? "8090040580@upi"
-            : "",
+            ?
+            "8090040580@upi"
+            :
+            "",
 
 
             utrNumber:
 
             paymentMethod === "UPI"
-            ? utr
-            : "",
+            ?
+            utr
+            :
+            "",
 
 
             paymentStatus:
@@ -1262,34 +1464,36 @@ async function(){
             orderType:
 
             checkoutMode === "buyNow"
-            ? "Buy Now"
-            : "Cart",
+            ?
+            "Buy Now"
+            :
+            "Cart",
 
 
             date:
 
-            orderDate.toLocaleDateString(
+            now.toLocaleDateString(
                 "en-IN"
             ),
 
 
             time:
 
-            orderDate.toLocaleTimeString(
+            now.toLocaleTimeString(
                 "en-IN"
             ),
 
 
             timestamp:
 
-            orderDate.toISOString()
+            now.toISOString()
 
         };
 
 
-        /* ==========================
-           SAVE FIRESTORE
-        ========================== */
+        /* =============================================
+           SAVE TO FIRESTORE
+        ============================================= */
 
         const docRef =
         await addDoc(
@@ -1301,9 +1505,9 @@ async function(){
         );
 
 
-        /* ==========================
+        /* =============================================
            LOCAL BACKUP
-        ========================== */
+        ============================================= */
 
         try{
 
@@ -1345,19 +1549,19 @@ async function(){
                 })
             );
 
-        }catch(e){
+        }catch(localError){
 
             console.log(
                 "Local backup skipped",
-                e
+                localError
             );
 
         }
 
 
-        /* ==========================
+        /* =============================================
            CLEAR CART
-        ========================== */
+        ============================================= */
 
         if(
             checkoutMode !== "buyNow"
@@ -1380,39 +1584,46 @@ async function(){
         );
 
 
-        /* ==========================
+        /* =============================================
            SUCCESS
-        ========================== */
+        ============================================= */
 
-        status.style.display =
-        "block";
+        const status =
+        document.getElementById(
+            "statusMessage"
+        );
+
 
         status.className =
         "status success";
 
 
-        if(paymentMethod === "UPI"){
+        status.style.display =
+        "block";
+
+
+        if(
+            paymentMethod === "UPI"
+        ){
 
             status.innerHTML = `
 
-            ✅ <strong>Order सफलतापूर्वक प्राप्त हो गया।</strong>
-
-            <br><br>
-
-            आपका भुगतान विवरण प्राप्त हो गया है।
-
-            <br>
-
-            <strong>
-            Payment Status:
-            Verification Pending
+            ✅ <strong>
+            Order सफलतापूर्वक प्राप्त हो गया।
             </strong>
 
             <br><br>
 
             Order ID:
             <strong>
-            ${fpoOrderId}
+            ${escapeHTML(fpoOrderId)}
+            </strong>
+
+            <br>
+
+            Amount:
+            <strong>
+            ₹${totalAmount.toFixed(2)}
             </strong>
 
             <br>
@@ -1424,7 +1635,13 @@ async function(){
 
             <br><br>
 
-            भुगतान की पुष्टि Admin द्वारा की जाएगी।
+            <strong>
+            Payment Status: Verification Pending
+            </strong>
+
+            <br>
+
+            आपका भुगतान Admin द्वारा verify किया जाएगा।
 
             `;
 
@@ -1432,19 +1649,27 @@ async function(){
 
             status.innerHTML = `
 
-            ✅ <strong>Order सफलतापूर्वक प्राप्त हो गया।</strong>
+            ✅ <strong>
+            Order सफलतापूर्वक प्राप्त हो गया।
+            </strong>
 
             <br><br>
 
             Order ID:
             <strong>
-            ${fpoOrderId}
+            ${escapeHTML(fpoOrderId)}
+            </strong>
+
+            <br>
+
+            Amount:
+            <strong>
+            ₹${totalAmount.toFixed(2)}
             </strong>
 
             <br><br>
 
-            💵 Payment:
-            Cash on Delivery
+            💵 Cash on Delivery
 
             `;
 
@@ -1455,16 +1680,27 @@ async function(){
         "none";
 
 
+        window.scrollTo({
+
+            top:
+            document.body.scrollHeight,
+
+            behavior:
+            "smooth"
+
+        });
+
+
     }catch(error){
 
         console.error(
-            "ORDER ERROR:",
+            "Firestore Order Error:",
             error
         );
 
 
         showError(
-            "Order save नहीं हुआ। कृपया दोबारा प्रयास करें।"
+            "Order save नहीं हुआ। Firebase Rules/Connection की जाँच करें।"
         );
 
 
@@ -1477,12 +1713,12 @@ async function(){
 
     }
 
-};
+}
 
 
-/* ==========================================
-   ERROR
-========================================== */
+/* =====================================================
+   ERROR MESSAGE
+===================================================== */
 
 function showError(message){
 
@@ -1492,34 +1728,35 @@ function showError(message){
     );
 
 
-    status.style.display =
-    "block";
-
-
     status.className =
     "status error";
 
 
+    status.style.display =
+    "block";
+
+
     status.innerHTML =
-    "❌ " + message;
+    "❌ " +
+    message;
 
 
-    window.scrollTo({
-
-        top:
-        status.offsetTop - 100,
+    status.scrollIntoView({
 
         behavior:
-        "smooth"
+        "smooth",
+
+        block:
+        "center"
 
     });
 
 }
 
 
-/* ==========================================
-   START
-========================================== */
+/* =====================================================
+   START PAGE
+===================================================== */
 
 displayOrder();
 
