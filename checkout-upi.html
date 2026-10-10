@@ -1,10 +1,11 @@
-
+```html
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checkout | Bundelkhand Organic FPO</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,"Noto Sans Devanagari",sans-serif;background:#f3fff5;color:#222}
@@ -23,10 +24,10 @@ textarea{min-height:85px}
 .option{display:block;border:2px solid #ddd;padding:14px;border-radius:9px;margin:10px 0;cursor:pointer;font-weight:bold}
 .option input{width:auto;margin-right:8px}
 .upi-box{background:#f7fff8;border:2px solid #159447;padding:16px;border-radius:10px;margin-top:15px}
-.upi-button,.place-btn{display:block;width:100%;padding:15px;border:0;border-radius:8px;text-align:center;font-size:17px;font-weight:bold;cursor:pointer;text-decoration:none;margin-top:15px}
+.upi-button,.place-btn,.copy-btn{display:block;width:100%;padding:15px;border:0;border-radius:8px;text-align:center;font-size:17px;font-weight:bold;cursor:pointer;text-decoration:none;margin-top:15px}
 .upi-button{background:#087f23;color:white}
 .place-btn{background:#ff7a00;color:white}
-.copy-btn{background:#1769aa;color:white;border:0;border-radius:7px;padding:12px;cursor:pointer}
+.copy-btn{background:#1769aa;color:white}
 .upi-row{display:flex;gap:8px;margin-top:8px}
 .qr-area{text-align:center;border-top:1px solid #ddd;margin-top:22px;padding-top:18px}
 .qr-area img{width:250px;max-width:100%;height:auto;margin:15px auto;display:block}
@@ -35,94 +36,130 @@ textarea{min-height:85px}
 .status{display:none;padding:15px;border-radius:8px;margin-top:15px;line-height:1.7;overflow-wrap:anywhere}
 .success{display:block;background:#e8f8ed;color:#087f23}
 .error{display:block;background:#ffe9e9;color:#b00000}
-.warning{display:block;background:#fff5d8;color:#795500;padding:12px;border-radius:8px}
+.warning{background:#fff5d8;color:#795500;padding:12px;border-radius:8px;margin-top:12px}
 .hidden{display:none!important}
-@media(max-width:600px){header h1{font-size:18px}.card{padding:14px}.upi-row{flex-direction:column}.copy-btn{width:100%}}
+button:disabled{opacity:.6;cursor:not-allowed}
+@media(max-width:600px){
+ header h1{font-size:18px}
+ .card{padding:14px}
+ .upi-row{flex-direction:column}
+}
 </style>
 </head>
-<body>
 
+<body>
 <header>
-<h1>Bundelkhand Organic Farmer Producer Company Limited</h1>
-<p style="margin-top:6px">ऑनलाइन ऑर्डर एवं भुगतान</p>
+  <h1>Bundelkhand Organic Farmer Producer Company Limited</h1>
+  <p style="margin-top:6px">ऑनलाइन ऑर्डर एवं भुगतान</p>
 </header>
 
 <div class="container">
+  <div class="card">
+    <h2>🛒 Order Summary</h2>
+    <div id="orderItems">ऑर्डर लोड हो रहा है...</div>
+    <div class="total">
+      कुल भुगतान राशि
+      <span class="amount">₹<span id="totalAmount">0.00</span></span>
+    </div>
+  </div>
 
-<div class="card">
-<h2>🛒 Order Summary</h2>
-<div id="orderItems">ऑर्डर लोड हो रहा है...</div>
-<div class="total">
-कुल भुगतान राशि
-<span class="amount">₹<span id="totalAmount">0.00</span></span>
-</div>
-</div>
+  <div class="card">
+    <h2>👤 ग्राहक विवरण</h2>
 
-<div class="card">
-<h2>👤 ग्राहक विवरण</h2>
-<label for="customerName">पूरा नाम *</label>
-<input id="customerName" type="text" autocomplete="name" placeholder="अपना पूरा नाम">
+    <label for="customerName">पूरा नाम *</label>
+    <input id="customerName" type="text" autocomplete="name"
+           placeholder="अपना पूरा नाम">
 
-<label for="customerMobile">मोबाइल नंबर *</label>
-<input id="customerMobile" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel" placeholder="10 अंकों का मोबाइल नंबर">
+    <label for="customerMobile">मोबाइल नंबर *</label>
+    <input id="customerMobile" type="tel" inputmode="numeric"
+           maxlength="10" autocomplete="tel"
+           placeholder="10 अंकों का मोबाइल नंबर">
 
-<label for="customerAddress">पूरा डिलीवरी पता *</label>
-<textarea id="customerAddress" placeholder="ग्राम, पोस्ट, ब्लॉक, जिला, पिन कोड"></textarea>
-</div>
+    <label for="customerAddress">पूरा डिलीवरी पता *</label>
+    <textarea id="customerAddress"
+              placeholder="ग्राम, पोस्ट, ब्लॉक, जिला, पिन कोड"></textarea>
+  </div>
 
-<div class="card">
-<h2>💳 भुगतान का तरीका चुनें</h2>
+  <div class="card">
+    <h2>💳 भुगतान का तरीका चुनें</h2>
 
-<label class="option">
-<input type="radio" name="paymentMethod" value="UPI" checked>
-📱 ऑनलाइन UPI भुगतान — Google Pay / PhonePe / BHIM / अन्य UPI ऐप
-</label>
+    <label class="option">
+      <input type="radio" name="paymentMethod" value="UPI" checked>
+      📱 ऑनलाइन UPI भुगतान — BHIM / Google Pay / PhonePe
+    </label>
 
-<label class="option">
-<input type="radio" name="paymentMethod" value="COD">
-💵 Cash on Delivery — डिलीवरी के समय भुगतान
-</label>
+    <label class="option">
+      <input type="radio" name="paymentMethod" value="COD">
+      💵 Cash on Delivery — डिलीवरी के समय भुगतान
+    </label>
 
-<div id="upiBox" class="upi-box">
-<h3>📲 UPI से भुगतान करें</h3>
-<p class="small">नीचे बटन दबाने पर मोबाइल में उपलब्ध UPI ऐप खुल सकता है। ऐप का खुलना आपके मोबाइल और उसमें मौजूद ऐप्स पर निर्भर करता है।</p>
+    <div id="upiBox" class="upi-box">
+      <h3>📲 UPI से भुगतान करें</h3>
+      <p class="small">
+        मोबाइल पर UPI ऐप खोलने की कोशिश होगी। कंप्यूटर पर नीचे दिख रहे
+        QR Code को मोबाइल के UPI ऐप से स्कैन करें।
+      </p>
 
-<a href="#" id="upiPayButton" class="upi-button">📲 UPI ऐप से भुगतान करें</a>
+      <a href="#" id="upiPayButton" class="upi-button">
+        📲 UPI ऐप से भुगतान करें
+      </a>
 
-<p class="small">यदि UPI ऐप नहीं खुलता, तो UPI ID कॉपी करें या QR Code स्कैन करें। कंप्यूटर पर QR Code को मोबाइल से स्कैन करें।</p>
+      <div id="desktopMessage" class="warning hidden">
+        आप कंप्यूटर पर हैं। मोबाइल में BHIM, Google Pay या PhonePe खोलकर
+        नीचे दिया गया QR Code स्कैन करें। बटन से कंप्यूटर पर UPI ऐप खुलना
+        जरूरी नहीं है।
+      </div>
 
-<h3>📋 UPI ID से भुगतान</h3>
-<div class="upi-row">
-<input id="upiId" type="text" value="8090040580@upi" readonly>
-<button type="button" id="copyUpiButton" class="copy-btn">UPI ID कॉपी करें</button>
-</div>
-<p id="copyMessage" class="small"></p>
+      <h3>📋 UPI ID</h3>
+      <div class="upi-row">
+        <input id="upiId" type="text" value="8090040580@upi" readonly>
+        <button type="button" id="copyUpiButton" class="copy-btn">
+          UPI ID कॉपी करें
+        </button>
+      </div>
+      <p id="copyMessage" class="small"></p>
 
-<div class="qr-area">
-<h3>📷 QR Code स्कैन करें</h3>
-<img src="https://newhitec9-debug.github.io/fpo-website/images/upi-qr.png" alt="UPI Payment QR Code">
-<p class="small">कंप्यूटर पर यह QR Code मोबाइल के BHIM, Google Pay या PhonePe से स्कैन करें। यदि इसी मोबाइल पर पेज खुला है, तो UPI बटन या UPI ID का उपयोग करें।</p>
-</div>
+      <div class="qr-area">
+        <h3>📷 QR Code स्कैन करें</h3>
+        <img
+          src="https://newhitec9-debug.github.io/fpo-website/images/upi-qr.png"
+          alt="UPI Payment QR Code"
+          width="250"
+        >
+        <p class="small">
+          QR Code में राशि पहले से तय हो सकती है। भुगतान से पहले UPI ऐप में
+          दिखाई गई UPI ID और राशि को ऑर्डर की कुल राशि से मिलाएँ।
+        </p>
+      </div>
 
-<div class="utr-box">
-<strong>🧾 भुगतान के बाद UTR / Transaction ID *</strong>
-<input id="utrNumber" type="text" maxlength="50" placeholder="UPI भुगतान की Transaction ID दर्ज करें">
-<p class="small">UTR दर्ज करने से भुगतान अपने-आप सत्यापित नहीं होता। व्यवस्थापक बैंक/UPI ऐप में भुगतान की पुष्टि करेगा।</p>
-</div>
-</div>
+      <div class="utr-box">
+        <label for="utrNumber">भुगतान के बाद UTR / Transaction ID *</label>
+        <input id="utrNumber" type="text" maxlength="50"
+               placeholder="भुगतान के बाद Transaction ID दर्ज करें">
+        <p class="small">
+          केवल वास्तविक सफल भुगतान के बाद मिला UTR दर्ज करें।
+          व्यवस्थापक बैंक/UPI रिकॉर्ड से भुगतान की पुष्टि करेगा।
+        </p>
+      </div>
+    </div>
 
-<div id="codBox" class="hidden">
-<div class="warning">💵 आपने Cash on Delivery चुना है। भुगतान सामान की डिलीवरी के समय करें।</div>
-</div>
+    <div id="codBox" class="hidden warning">
+      आपने Cash on Delivery चुना है। भुगतान सामान की डिलीवरी के समय करें।
+    </div>
 
-<button type="button" id="placeOrderButton" class="place-btn">✅ ऑर्डर दर्ज करें</button>
-<div id="statusMessage" class="status"></div>
-</div>
+    <button type="button" id="placeOrderButton" class="place-btn">
+      ✅ ऑर्डर दर्ज करें
+    </button>
+    <div id="statusMessage" class="status"></div>
+  </div>
 </div>
 
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { initializeApp } from
+  "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import { getFirestore, collection, addDoc } from
+  "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDEX5Ta3l2UVT7IKLwdqqyacY0HELM24s",
@@ -133,25 +170,43 @@ const firebaseConfig = {
   appId: "1:939641455963:web:1745b1299b3c463e74867e"
 };
 
+const UPI_ID = "8090040580@upi";
+const UPI_NAME = "Bundelkhand Organic FPO";
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 let cart = [];
 let buyNowProduct = null;
-let checkoutMode = sessionStorage.getItem("checkoutMode");
+const checkoutMode = sessionStorage.getItem("checkoutMode");
 let totalAmount = 0;
 
-try { cart = JSON.parse(localStorage.getItem("cart")) || []; } catch(e) { cart = []; }
-try { buyNowProduct = JSON.parse(localStorage.getItem("buyNowProduct")); } catch(e) { buyNowProduct = null; }
+try {
+  cart = JSON.parse(localStorage.getItem("cart")) || [];
+} catch (e) {
+  cart = [];
+}
+
+try {
+  buyNowProduct = JSON.parse(localStorage.getItem("buyNowProduct"));
+} catch (e) {
+  buyNowProduct = null;
+}
 
 function getProducts() {
-  if (checkoutMode === "buyNow" && buyNowProduct) return [buyNowProduct];
+  if (checkoutMode === "buyNow" && buyNowProduct) {
+    return [buyNowProduct];
+  }
   return cart;
 }
 
 function safe(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
   }[ch]));
 }
 
@@ -163,17 +218,27 @@ function qtyOf(p) {
   return Number(p.quantity ?? p.qty ?? 1) || 1;
 }
 
+function showMessage(message, type = "error") {
+  const box = document.getElementById("statusMessage");
+  box.className = "status " + type;
+  box.textContent = message;
+  box.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
 function updateUPILink() {
-  const link = document.getElementById("upiPayButton");
   const params = new URLSearchParams({
-    pa: "8090040580@upi",
-    pn: "Bundelkhand Organic FPO",
+    pa: UPI_ID,
+    pn: UPI_NAME,
     am: totalAmount.toFixed(2),
     cu: "INR",
     tn: "FPO Order Payment"
   });
-  link.href = "upi://pay?" + params.toString();
-  link.textContent = "📲 UPI ऐप से ₹" + totalAmount.toFixed(2) + " भुगतान करें";
+
+  document.getElementById("upiPayButton").href =
+    "upi://pay?" + params.toString();
+
+  document.getElementById("upiPayButton").textContent =
+    "📲 UPI ऐप से ₹" + totalAmount.toFixed(2) + " भुगतान करें";
 }
 
 function displayOrder() {
@@ -183,7 +248,8 @@ function displayOrder() {
   totalAmount = 0;
 
   if (!products.length) {
-    holder.innerHTML = '<p style="color:#b00000">आपका Cart खाली है। कृपया पहले सामान Cart में जोड़ें।</p>';
+    holder.innerHTML =
+      '<p style="color:#b00000">आपका Cart खाली है। पहले सामान Cart में जोड़ें।</p>';
     document.getElementById("placeOrderButton").disabled = true;
     document.getElementById("totalAmount").textContent = "0.00";
     updateUPILink();
@@ -199,51 +265,69 @@ function displayOrder() {
 
     holder.insertAdjacentHTML("beforeend", `
       <div class="summary-item">
-        <div><strong>${safe(name)}</strong><div class="small">₹${price.toFixed(2)} × ${qty}</div></div>
+        <div>
+          <strong>${safe(name)}</strong>
+          <div class="small">₹${price.toFixed(2)} × ${qty}</div>
+        </div>
         <strong>₹${subtotal.toFixed(2)}</strong>
-      </div>`);
+      </div>
+    `);
   });
 
-  document.getElementById("totalAmount").textContent = totalAmount.toFixed(2);
+  document.getElementById("totalAmount").textContent =
+    totalAmount.toFixed(2);
+
   document.getElementById("placeOrderButton").disabled = false;
   updateUPILink();
 }
 
-function showError(message) {
-  const box = document.getElementById("statusMessage");
-  box.className = "status error";
-  box.textContent = "❌ " + message;
-  box.scrollIntoView({behavior:"smooth", block:"center"});
-}
+const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(
+  navigator.userAgent
+);
 
 document.getElementById("upiPayButton").addEventListener("click", function(e) {
   if (totalAmount <= 0) {
     e.preventDefault();
-    showError("Cart खाली है या ऑर्डर की राशि सही नहीं है।");
+    showMessage("Cart खाली है या ऑर्डर की राशि सही नहीं है।");
     return;
   }
-  // मोबाइल पर UPI ऐप खोलने का प्रयास करें
+
+  if (!isMobile) {
+    e.preventDefault();
+    document.getElementById("desktopMessage").classList.remove("hidden");
+    document.getElementById("desktopMessage").scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }
+  // मोबाइल पर upi://pay लिंक खोलने की अनुमति दी जाती है।
 });
 
 document.getElementById("copyUpiButton").addEventListener("click", async function() {
-  const id = "8090040580@upi";
+  const field = document.getElementById("upiId");
+  const message = document.getElementById("copyMessage");
+
   try {
-    await navigator.clipboard.writeText(id);
-    document.getElementById("copyMessage").textContent = "UPI ID कॉपी हो गई: " + id;
-  } catch(e) {
-    const field = document.getElementById("upiId");
+    await navigator.clipboard.writeText(UPI_ID);
+    message.textContent = "UPI ID कॉपी हो गई: " + UPI_ID;
+  } catch (e) {
     field.focus();
     field.select();
     const copied = document.execCommand("copy");
-    document.getElementById("copyMessage").textContent = copied ? "UPI ID कॉपी हो गई।" : "UPI ID को चुनकर Copy करें।";
+    message.textContent = copied
+      ? "UPI ID कॉपी हो गई।"
+      : "UPI ID को चुनकर Copy करें।";
   }
 });
 
 document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
   radio.addEventListener("change", () => {
-    const isUPI = document.querySelector('input[name="paymentMethod"]:checked').value === "UPI";
+    const isUPI =
+      document.querySelector('input[name="paymentMethod"]:checked').value === "UPI";
+
     document.getElementById("upiBox").classList.toggle("hidden", !isUPI);
     document.getElementById("codBox").classList.toggle("hidden", isUPI);
+    document.getElementById("utrNumber").required = isUPI;
   });
 });
 
@@ -256,16 +340,23 @@ document.getElementById("placeOrderButton").addEventListener("click", async func
   const method = document.querySelector('input[name="paymentMethod"]:checked').value;
   const products = getProducts();
 
-  if (!name) return showError("कृपया अपना नाम दर्ज करें।");
-  if (!/^[0-9]{10}$/.test(mobile)) return showError("सही 10 अंकों का मोबाइल नंबर दर्ज करें।");
-  if (!address) return showError("कृपया पूरा डिलीवरी पता दर्ज करें।");
-  if (!products.length || totalAmount <= 0) return showError("Cart खाली है या राशि सही नहीं है।");
-  if (method === "UPI" && !utr) return showError("UPI भुगतान करने के बाद UTR / Transaction ID दर्ज करें।");
+  if (!name) return showMessage("कृपया अपना नाम दर्ज करें।");
+  if (!/^[0-9]{10}$/.test(mobile)) {
+    return showMessage("सही 10 अंकों का मोबाइल नंबर दर्ज करें।");
+  }
+  if (!address) return showMessage("कृपया पूरा डिलीवरी पता दर्ज करें।");
+  if (!products.length || totalAmount <= 0) {
+    return showMessage("Cart खाली है या राशि सही नहीं है।");
+  }
+  if (method === "UPI" && !utr) {
+    return showMessage("वास्तविक UPI भुगतान के बाद UTR / Transaction ID दर्ज करें।");
+  }
 
   button.disabled = true;
   button.textContent = "⏳ ऑर्डर सेव हो रहा है...";
 
   const orderId = "FPO" + Date.now();
+
   const orderProducts = products.map(p => ({
     name: p.name ?? p.productName ?? "",
     price: priceOf(p),
@@ -284,7 +375,7 @@ document.getElementById("placeOrderButton").addEventListener("click", async func
     amountPaid: 0,
     amountClaimed: method === "UPI" ? Number(totalAmount.toFixed(2)) : 0,
     paymentMethod: method,
-    upiId: method === "UPI" ? "8090040580@upi" : "",
+    upiId: method === "UPI" ? UPI_ID : "",
     utrNumber: method === "UPI" ? utr : "",
     paymentStatus: method === "UPI" ? "Verification Pending" : "COD",
     paymentVerification: method === "UPI" ? "Pending" : "Not Applicable",
@@ -303,23 +394,24 @@ document.getElementById("placeOrderButton").addEventListener("click", async func
       oldOrders.push(orderData);
       localStorage.setItem("orders", JSON.stringify(oldOrders));
       localStorage.setItem("lastOrder", JSON.stringify(orderData));
-    } catch(e) {}
+    } catch (e) {}
 
-    if (checkoutMode !== "buyNow") localStorage.removeItem("cart");
+    if (checkoutMode !== "buyNow") {
+      localStorage.removeItem("cart");
+    }
+
     localStorage.removeItem("buyNowProduct");
     sessionStorage.removeItem("checkoutMode");
 
-    const status = document.getElementById("statusMessage");
-    status.className = "status success";
-    status.innerHTML = method === "UPI"
-      ? "✅ <strong>ऑर्डर प्राप्त हो गया।</strong><br>Order ID: <strong>" + safe(orderId) + "</strong><br>राशि: <strong>₹" + totalAmount.toFixed(2) + "</strong><br>UTR: <strong>" + safe(utr) + "</strong><br><br><strong>भुगतान स्थिति: Verification Pending</strong><br>व्यवस्थापक भुगतान की पुष्टि करेगा।"
-      : "✅ <strong>ऑर्डर प्राप्त हो गया।</strong><br>Order ID: <strong>" + safe(orderId) + "</strong><br>राशि: <strong>₹" + totalAmount.toFixed(2) + "</strong><br><br>💵 Cash on Delivery";
+    const message = method === "UPI"
+      ? `ऑर्डर प्राप्त हो गया। Order ID: ${orderId}. राशि: ₹${totalAmount.toFixed(2)}. UTR: ${utr}. भुगतान स्थिति: Verification Pending. व्यवस्थापक भुगतान की पुष्टि करेगा।`
+      : `ऑर्डर प्राप्त हो गया। Order ID: ${orderId}. राशि: ₹${totalAmount.toFixed(2)}. Cash on Delivery चुना गया है।`;
 
+    showMessage(message, "success");
     button.style.display = "none";
-    status.scrollIntoView({behavior:"smooth", block:"center"});
-  } catch(error) {
+  } catch (error) {
     console.error("Order save error:", error);
-    showError("ऑर्डर सेव नहीं हुआ। Firebase Connection और Firestore Rules की जाँच करें।");
+    showMessage("ऑर्डर सेव नहीं हुआ। Firebase Connection और Firestore Rules की जाँच करें।");
     button.disabled = false;
     button.textContent = "✅ ऑर्डर दर्ज करें";
   }
@@ -329,3 +421,4 @@ displayOrder();
 </script>
 </body>
 </html>
+```
